@@ -2,6 +2,7 @@
 
 Une liste d'outils très utiles, voire indispensables :
 
+* VSCode : un environnement de développement
 * UML : une introduction à la modélisation UML
 * Git : pour gérer les versions du code
 * Bash : pour apprendre à utiliser un terminal de commande
