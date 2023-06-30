@@ -11,10 +11,29 @@ class DeuxRoues(ABC):
         motorise (bool): vrai si le deux-roues est motorisé
     """
 
+    # ------------------------------------------------------------
+    # Constructeur
+    # ------------------------------------------------------------
+
     def __init__(self, couleur, motorise):
+        # -------------------
+        # Attributs
+        # -------------------
         self.couleur = couleur
         self.vitesse = 0
         self.motorise = motorise
+
+    # ------------------------------------------------------------
+    # Méthode
+    # ------------------------------------------------------------
+
+    def est_arrete(self):
+        return self.vitesse == 0
+
+    # ------------------------------------------------------------
+    # Méthodes abstraites
+    #   à définir dans les classes filles
+    # ------------------------------------------------------------
 
     @abstractmethod
     def accelerer(self):
@@ -23,6 +42,3 @@ class DeuxRoues(ABC):
     @abstractmethod
     def ralentir(self):
         pass
-
-    def est_arrete(self):
-        return self.vitesse == 0

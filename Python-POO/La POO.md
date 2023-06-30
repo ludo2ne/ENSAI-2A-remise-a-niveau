@@ -1,7 +1,16 @@
 
 # La Programmation Orientée Objet (POO)
 
-La POO est un paradigme de programmation qui permet d'organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (attributs) et des actions (méthodes) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :
+Nous allons introduire les notions suivantes :
+
+* [ ] Principe de la POO
+* [ ] L'organisation du code
+* [ ] L'héritage
+* [ ] Les classe abstraites
+
+## :arrow_forward: Introduction
+
+La POO est un paradigme de programmation qui permet d'organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (**attributs**) et des actions (**méthodes**) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :
 
 * **Encapsulation** : L'encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d'un même objet. Cela permet de cacher les détails d'implémentation et de fournir une interface cohérente pour interagir avec l'objet
 * **Héritage** : L'héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d'une hiérarchie de classes
@@ -76,6 +85,48 @@ Voici un exemple plus concret :
         ├── personne.py
         └── etudiant.py
 ```
+
+---
+
+## :arrow_forward: Héritage
+
+Un des trois piliers de la POO est l'héritage.  
+Une classe enfant peut utiliser tous les attributs et méthode de sa classe parente.  
+Ce principe d'héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.  
+
+Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L'idée naïve est de créer une classe pour chacun.
+
+En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :
+
+* couleur
+* vitesse
+* accelerer()
+* ralentir()
+
+Une idée est de regrouper ces caractéristiques communes dans une classe `DeuxRoues`. Puis de faire hériter `Vélo` et `Trottinette` de `DeuxRoues`
+
+### Classe Abstraite
+
+Certaines classes n'ont pas vocation à être instanciée. Par exemple, nous n'allons pas créer d'objets de la classe `DeuxRoues`. Nous allons directement créer des `Velo` et des `Trottinettes`.
+
+Nous pouvons donc définir la classe `DeuxRoues`comme **abstraite**
+
+* c'est à dire qui ne peut pas être instanciée
+* dit autrement : on ne peut pas créer d'objets de cette classe
+
+La principale utilité des classes abstraites est de définir un contrat  pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.
+
+> En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.
+
+:warning: classe mère ne veut pas dire forcément classe abstraite
+
+Exemple :
+
+* Considérons par exemple une classe `VeloElectrique` qui hérite de la classe `Velo`
+* Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance...)
+* Or ici la classe `Velo` n'a pas vocation à être abstraite car il n'est pas absurde de créer un objet vélo
+
+---
 
 ## :arrow_forward: Exercices
 

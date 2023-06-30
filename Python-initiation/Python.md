@@ -1,6 +1,18 @@
 # Introduction au langage Python
 
-## :construction: TODO
+Ce dossier contient des Notebooks pour apprendre les bases du langage.
+Les thèmes abordés :
+
+* [ ] Les types et variables
+* [ ] Les listes
+* [ ] Les dictionnaires
+* [ ] Les boucles
+* [ ] Les fonctions
+* [ ] Introduction à la Programmation Orientée Objet (POO)
+* :construction: Tests unitaires
+* :construction: Exceptions
+
+## :arrow_forward: Ressources utiles
 
 * <https://www.data-transitionnumerique.com/anaconda-python/>
 * <https://github.com/ludo2ne/projet-info-2A>
@@ -11,11 +23,8 @@
   * initiation au Machine Learning
   * analyse textuelle
 * <https://pythonds.linogaliana.fr/rappels2a/>
-* [ ] Introduction, présentation
-* [ ] Installation
-* [ ] Premiers programmes
 
-## Introduction
+## :arrow_forward: Introduction
 
 * Python
   * 1ère version en 1991
@@ -58,9 +67,9 @@ pip install <package_name>    # installer un package
 python -c 'import platform; print(platform.python_implementation())'
 ```
 
-## Installation
+## :arrow_forward: Installation
 
-### projet Python avec VSCode
+### :small_orange_diamond: projet Python avec VSCode
 
 * Créer un dossier
   * à faire pour chaque nouveau projet
@@ -75,33 +84,40 @@ python -c 'import platform; print(platform.python_implementation())'
 * Ouvrir un terminal (CTRL + ù)
   * `python src/hello.py`
 
-### Notebook
+---
 
-* Cluster Jupyter ENSAI : <https://clust-n4.ensai.fr/>
-* Google Colab : <https://colab.research.google.com/>
+## :arrow_forward: Utilisation des Notebooks
+
+* Se connecter à [Jupyter](https://clust-n4.ensai.fr/)
+* importer les fichiers `.ipynb`
+* Autres possibilités pour utiliser des Notebooks
+  * [Google Colab](https://colab.research.google.com/)
+  * SSPCloud
+
+### :small_orange_diamond: Types de cellules
+
+Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton **`+`** dans la barre d'outils.  
+Il existe deux types de cellules principaux :
+
+* les cellules de code (où vous écrivez et exécutez du code Python)
+* les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)  
+
+Le type de cellule souhaité est modifiable dans la barre d'outils.  
+
+### :small_orange_diamond: Commandes utiles
+
+| Commande                   | Description                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------- |
+| `SHIFT + ENTER`            | Exécuter une cellule et passer à la suivante.                                     |
+| `CTRL + ENTER`             | Exécuter une cellule sans passer à la suivante.                                   |
+| `ESC`                      | Passer en mode commande (les bordures de cellule deviennent bleues).              |
+| `ENTER`                    | Passer en mode édition (vous pouvez modifier le contenu de la cellule).           |
+| `A`                        | Insérer une cellule au-dessus de la cellule courante.                             |
+| `B`                        | Insérer une cellule en dessous de la cellule courante.                            |
+| `D + D`                    | Supprimer une cellule.                                                            |
 
 ---
 
-## Premiers pas avec le langage
-
-* Types et variables
-  * Nombres, Chaînes de caractères, Booléens
-  * [x] cours
-  * [ ] exercices
-* Conteneurs
-  * Liste, Dictionnaire
-  * [x] cours
-  * [ ] exercices
-* Boucles
-  * ifelse, for, while
-  * [ ] cours
-  * [ ] exercices
-* Fonctions
-  * [ ] cours
-  * [ ] exercices
-* Tests unitaires
-* Exceptions
-
 ## :game_die: For fun
 
-* <https://adventofcode.com/>
+* Chaque année en décembre, l'[AdventOfCode](https://adventofcode.com/) occupe les développeurs
