@@ -59,3 +59,44 @@ Remarques importantes :
 
 * le fichier `__main__.py` contient le code à exécuter quand le pacakge est exécuté
 * les fichiers `__init__.py` sont des fichiers qu'il faut créer dans chaque module pour pouvoir les utiliser (c'est comme ça...)
+
+Voici un exemple plus concret :
+
+```
+.
+└── src
+    ├── __main__.py
+    ├── vehicules
+    │   ├── __init__.py
+    │   ├── deux_roues.py
+    │   ├── velo.py
+    │   └── trottinette.py
+    └── humain
+        ├── __init__.py
+        ├── personne.py
+        └── etudiant.py
+```
+
+## :arrow_forward: Exercices
+
+### Exercice 1 - Points
+
+voir ipoo - tp4
+
+Créer une classe `Point`
+
+```python
+class Point:
+def __init__(self, x, y):
+self.px = x self.py = y
+def decaler(self, dx, dy): return Point(self.px + dx, self.py + dy)
+def __str__(self): return "({}, {})".format(self.px, self.py)
+```
+
+### Exercice 2 - Domino
+
+voir ipoo tp3
+
+### Exercice 3 - Polygones
+
+voir ipoo tp5
