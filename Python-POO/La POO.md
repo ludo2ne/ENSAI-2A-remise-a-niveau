@@ -132,22 +132,80 @@ Exemple :
 
 ### Exercice 1 - Points
 
-voir ipoo - tp4
+Définissez une classe `Point` pour représenter un point du plan de coordonnées x et y.
+Coder les méthodes suivantes :
 
-Créer une classe `Point`
+* [ ] `__init__(self, x, y)` : constructeur du point avec des coordonnées cartésiennes
+* [ ] `r(self)` et `t(self)` : renvoyant les coordonnées polaires du point
+* [ ] `__str__(self)` : pour afficher le Point sous forme de texte, ex : `(1.0, 2.4)`
+* [ ] `distance(self, autre_point)` : distance avec un autre point
+* [ ] `__eq__(self, autre_point)` : renvoi un booléen qui dit si les 2 points sont identiques
+* [ ] `homothetie(self, k)` : appliquant au point une homothétie de centre (0, 0) et de rapport k
+* [ ] `translation(self, dx, dy)` : appliquant au point une translation de vecteur (dx, dy)
+* [ ] (bonus) `rotation(self, a)` : appliquant au point une rotation de centre (0, 0) et d’angle a
 
-```python
-class Point:
-def __init__(self, x, y):
-self.px = x self.py = y
-def decaler(self, dx, dy): return Point(self.px + dx, self.py + dy)
-def __str__(self): return "({}, {})".format(self.px, self.py)
+### Exercice 2 - Polygones
+
+* [ ] Créer une classe `Polygones` composées d'objets de la classe `Point`
+  * nous supposerons par la suite que les segments ne se croisent pas
+* [ ] Ajouter à cette classe 2 méthodes abstraites `aire()` et `périmètre()` qui seront définies dans les classes filles
+* [ ] Créer les classes `Segment`, `Triangle` et `Quadrilatere` qui héritent de la classe `Polygone`
+  * vérifier à chaque fois le nombre de points
+  * [ ] Définir les méthodes `aire()` et `périmètre()` dans ces classes
+* [ ] Créer la classe `Rectangle` qui hérite de `Quadrilatere`
+  * vérifier que les 2 cotés opposés sont de même longeur et qu'il y a un angle droit
+
+[Diagrammes de classe avec Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
+
+```mermaid
+classDiagram
+    Point --o Polygone
+    Polygone <|-- Segment : 2
+    Polygone <|-- Triangle : 3
+    Polygone <|-- Quadrilatere : 4
+    Quadrilatere <|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(autre_point)
+    }
+    class Polygone{
+        +liste[Point] liste_points
+        +aire()
+        +perimetre()
+    }
+    class Quadrilatere{
+        +aire()
+        +perimetre()
+    }
+    class Segment{
+        +aire()
+        +perimetre()
+    }
+    class Triangle{
+        +aire()
+        +perimetre()
+    }
 ```
 
 ### Exercice 2 - Domino
 
-voir ipoo tp3
+Ecrire une classe `Domino` avec :
 
-### Exercice 3 - Polygones
+* 2 attributs entiers entre 1 et 6 : `extr_A` et `extr_B`
+* `__str__()` : qui affiche les points présents sur les deux extrémités
+* `retourne()` qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).
+* `accepte_apres(autre_domino)` : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l'autre domino
 
-voir ipoo tp5
+Ecrivez une fonction affiche_dominos() qui affiche une liste de dominos.
+
+Ecrivez une fonction jeu_possible(jeu, dominos_poses) qui prend deux listes de dominos en arguments. La fonction retourne vrai s’il existe un domino de jeu qui pourrait être accepté après le dernier domino de dominos_poses.
+
+```mermaid
+classDiagram
+    class Domino{
+        +int sommet_A
+        +int sommet_B
+        +accepte(autre_domino)
+    }
+```
