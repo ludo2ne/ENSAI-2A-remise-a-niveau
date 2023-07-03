@@ -188,18 +188,29 @@ classDiagram
     }
 ```
 
-### Exercice 2 - Domino
+### Exercice 3 - Domino
 
-Ecrire une classe `Domino` avec :
+Écrire une classe `Domino` avec :
 
-* 2 attributs entiers entre 1 et 6 : `extr_A` et `extr_B`
-* `__str__()` : qui affiche les points présents sur les deux extrémités
-* `retourne()` qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).
-* `accepte_apres(autre_domino)` : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l'autre domino
+* [ ] 2 attributs entiers entre 1 et 6 : `extr_A` et `extr_B`
+* [ ] `__str__()` : qui affiche les points présents sur les deux extrémités
+* [ ] `retourne()` qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).
+* [ ] `accepte_apres(autre_domino)` : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l'autre domino
 
-Ecrivez une fonction affiche_dominos() qui affiche une liste de dominos.
+Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n'y aura qu'un seul joueur et il n'est possible de poser que d'un seul côté, à la fin de la rangée de domino):
 
-Ecrivez une fonction jeu_possible(jeu, dominos_poses) qui prend deux listes de dominos en arguments. La fonction retourne vrai s’il existe un domino de jeu qui pourrait être accepté après le dernier domino de dominos_poses.
+* [ ] Écrivez une fonction qui génère tous les dominos et renvoie la liste
+* [ ] Écrivez une fonction `pioche()` qui pioche au hasard un domino dans une liste et le retire de cette liste
+* [ ] Écrivez une fonction `affiche_dominos()` qui affiche une liste de dominos
+* [ ] Écrivez une fonction `domino_posables(dominos_en_main, dominos_poses)` qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste `dominos_poses`.
+* Écrivez une fonction `jouer()` qui :
+  * [ ] génére la liste de tous les dominos
+  * [ ] tire un 1er domino au hasard et le place dans la liste dominos_poses
+  * [ ] distribue aléatoirement 6 dominos au joueur
+  * [ ] affiche les dominos qu'il peut jouer
+  * [ ] si aucun domino n'est jouable, lui proposer de piocher
+  * [ ] lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et `quit` pour arrêter de jouer)
+  * [ ] ajoute le domino joué à la liste `dominos_poses` et le retire de `dominos_en_main`
 
 ```mermaid
 classDiagram
