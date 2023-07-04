@@ -203,6 +203,30 @@ SELECT p.prenom,
 
 ---
 
+### :small_orange_diamond: Jointures externes
+
+> Que se passe t'il si nous exécutons la requête ci-dessous et qu'Ali n'a passé aucune commande ?
+
+```sql
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personnes p
+  JOIN ran.commandes c ON p.id = c.id_client
+```
+
+Pour afficher toutes les personnes, même celles qui n'ont pas réalisé de commande, nous allons utiliser les **jointures externees** : `LEFT JOIN` ou `RIGHT JOIN`
+
+```sql
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personnes p
+  LEFT JOIN ran.commandes c ON p.id = c.id_client
+```
+
+---
+
 ### :small_orange_diamond: Mettre à jour des lignes
 
 ```sql
@@ -244,6 +268,8 @@ WHERE prenom = 'Ali';
 
 ## :arrow_forward: Premières manipulations
 
+> voir fichier `DBeaver.md` pour le paramétrage
+
 ### :small_orange_diamond: Les schémas
 
 Par défaut toutes les tables que nous allons créer iraient dans le schéma public.  
@@ -263,11 +289,56 @@ CREATE schema projet;
 
 #### :large_blue_circle: LIKE
 
+> Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne
+
 ```sql
 -- toutes les personnes ayant un prénom contenant "au"
-SELECT *
+SELECT 
   FROM ran.personnes
  WHERE prenom LIKE '%au%';
+```
+
+#### :large_blue_circle: GROUP BY
+
+> Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
+
+```sql
+-- toutes les personnes ayant un prénom contenant "au"
+SELECT adresse,
+       COUNT(1)
+  FROM ran.personnes
+ GROUP BY adresse;
+```
+
+#### :large_blue_circle: HAVING
+
+> Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d'une condition après le GROUP BY.  
+> :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
+
+```sql
+-- toutes les personnes ayant un prénom contenant "au"
+SELECT adresse,
+       COUNT(1)
+  FROM ran.personnes
+ GROUP BY adresse
+HAVING COUNT(1) >= 5;
+```
+
+#### :large_blue_circle: ORDER BY
+
+```sql
+SELECT *
+  FROM ran.personnes
+ ORDER BY adresse DESC
+```
+
+#### :large_blue_circle: AS
+
+> Permet de renommer une colonne dans l'affichage
+
+```sql
+SELECT adresse AS Ville
+  FROM ran.personnes
 ```
 
 ### :small_orange_diamond: Quelques possibilités d'utilisation sans table
@@ -285,13 +356,19 @@ SELECT 'Salut';
 
 ### Base de données `echecs`
 
-> * [ ] :construction: TODO : fichier echecs en bdd
+Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 
-1. Lister les joueurs
-2. Créer un nouveau joueur
-3. Supprimer le joueur **Elsa Rose**
-4. Lister les joueurs qui sont arbitres
-5. Lister les joueurs qui sont arbitres, ainsi que leur grade d'arbitre
-6. Créer une table pour codifier la colonne **vainqueur** de la table **parties**
-7. Créer une vue
-8. Ajouter une contrainte sur la table **joueur** pour que le **elo** soit entre 1000 et 3000
+* [ ] Listez tous les joueurs
+* [ ] Listez tous les joueurs ordonnés par elo descroissant
+* [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000
+* [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un `e` (majuscule ou minuscule) :bulb: *tip : voir méthode `UPPER`*
+* [ ] Créez la joueuse "Martine Dupont, elo : 1999, Arbitre Elite"
+* [ ] Supprimez le joueur de pseudo `marc78`
+* [ ] Listez les joueurs qui sont arbitres :bulb: *voir `IS NOT NULL`*
+* [ ] Ajoutez à la table joueur la colonne de type booléen `est_arbitre`
+* [ ] Remplissez cette nouvelle colonne pour tous les joueurs
+* [ ] Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d'arbitre
+* [ ] Listez **tous** les joueurs (nom, prénom) ainsi que leur grade d'arbitre s'ils le sont
+* [ ] Comptez le nombre de joueurs qui sont arbitre
+* [ ] Comptez le nombre d'arbitres par grade
+* [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000

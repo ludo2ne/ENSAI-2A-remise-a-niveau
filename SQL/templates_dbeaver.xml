@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+    <template autoinsert="true" context="sql" deleted="false" description="SELECT * FROM " enabled="true" id="org.jkiss.dbeaver.templates.sf" name="sf"
+>SELECT * 
+  FROM echecs.</template>
+    <template autoinsert="true" context="sql" deleted="false" description="SELECT COUNT(*) FROM " enabled="true" id="org.jkiss.dbeaver.templates.sc" name="sc"
+>SELECT COUNT(*) 
+  FROM </template>
+    <template autoinsert="true" context="sql" deleted="false" description="SELECT * FROM xxx JOIN yyy" enabled="true" id="org.jkiss.dbeaver.templates.sj" name="sj"
+>SELECT * 
+  FROM 
+  JOIN  USING()</template>
+    <template autoinsert="true" context="sql" deleted="false" description="SELECT * FROM xxx WHERE" enabled="true" id="org.jkiss.dbeaver.templates.sw" name="sw"
+>SELECT * 
+  FROM 
+ WHERE </template>
+    <template autoinsert="true" context="sql" deleted="false" description="DELETE" enabled="true" id="org.jkiss.dbeaver.templates.df" name="df"
+>DELETE FROM 
+WHERE </template>
+    <template autoinsert="true" context="sql" deleted="false" description="UPDATE table" enabled="true" id="org.jkiss.dbeaver.templates.ut" name="ut"
+>UPDATE table
+   SET column = 'new_value'
+WHERE </template>
+    <template autoinsert="true" context="sql" deleted="false" description="UPDATE table" enabled="true" id="org.jkiss.dbeaver.templates.oby" name="oby">ORDER BY </template>
+    <template autoinsert="true" context="sql" deleted="false" description="UPDATE table" enabled="true" id="org.jkiss.dbeaver.templates.gby" name="gby">GROUP BY </template>
+</templates>
