@@ -38,8 +38,11 @@ Table :
 
 ### :small_orange_diamond: Créer une Table
 
+:bulb: le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables
+
 ```sql
-CREATE TABLE personne (
+-- Création de la table personne (ceci est un commentaire)
+CREATE TABLE ran.personnes (
     id               INT         PRIMARY KEY,
     nom              VARCHAR(30) NOT NULL,
     prenom           VARCHAR(40),
@@ -58,7 +61,7 @@ CREATE TABLE personne (
 ### :small_orange_diamond: Insérer des données dans cette Table
 
 ```sql
-INSERT INTO personnes (id, nom, prenom, dnais, adresse)
+INSERT INTO ran.personnes (id, nom, prenom, dnais, adresse)
 VALUES
     (1, 'Dupont', 'Jean', '1990-05-15', 'Paris'),
     (2, 'Martin', 'Emma', '1985-09-22', 'Lyon'),
@@ -76,7 +79,7 @@ VALUES
 ### :small_orange_diamond: Renommer la colonne `date_naissance`
 
 ```sql
-ALTER TABLE personnes
+ALTER TABLE ran.personnes
 RENAME COLUMN date_naissance TO dnais;
 ```
 
@@ -91,7 +94,7 @@ RENAME COLUMN date_naissance TO dnais;
 ### :small_orange_diamond: Ajouter un attribut booléen `joue_aux_echecs`
 
 ```sql
-ALTER TABLE personnes
+ALTER TABLE ran.personnes
 ADD joue_aux_echecs BOOLEAN;
 ```
 
@@ -106,7 +109,7 @@ ADD joue_aux_echecs BOOLEAN;
 ### :small_orange_diamond: Supprimer la colonne `adresse`
 
 ```sql
-ALTER TABLE personnes
+ALTER TABLE ran.personnes
 DROP COLUMN adresse;
 ```
 
@@ -121,7 +124,11 @@ DROP COLUMN adresse;
 ### :small_orange_diamond: Supprimer la table `personnes`
 
 ```sql
-DROP TABLE personnes;
+DROP TABLE ran.personnes;
+```
+
+```
+> ERREUR: la relation « ran.personnes » n'existe pas
 ```
 
 ---
@@ -134,7 +141,7 @@ DROP TABLE personnes;
 ### :small_orange_diamond: Insérer des lignes
 
 ```sql
-INSERT INTO personnes (id, nom, prenom, date_naissance, adresse)
+INSERT INTO ran.personnes (id, nom, prenom, date_naissance, adresse)
 VALUES
     (1, 'Ali', 'Gatore', '1990-05-15', 'Paris'),
     (2, 'Laure', 'Dure', '1985-09-22', 'Lyon'),
@@ -154,7 +161,7 @@ VALUES
 
 ```sql
 SELECT *
-  FROM personnes
+  FROM ran.personnes
  WHERE adresse LIKE 'L%'
    AND prenom = 'Laure';
 ```
@@ -167,14 +174,39 @@ SELECT *
 
 ### :small_orange_diamond: Jointures entre tables
 
-> * [ ] :construction:
+> Table `commande`
+
+| id | produit | quantite | id_client | prix_unitaire |
+|----|---------|----------|-----------|---------------|
+| 1  | livre   | 1        | 2         | 3             |
+
+```sql
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personnes p
+  JOIN ran.commandes c ON p.id = c.id_client
+ WHERE prenom = 'Laure';
+```
+
+> :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont le même nom.  
+> exemple : si dans la table `personnes` nous avons `id_client` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
+
+```sql
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personnes p
+  JOIN ran.commandes c USING(id_client) -- <--
+ WHERE prenom = 'Laure';
+```
 
 ---
 
 ### :small_orange_diamond: Mettre à jour des lignes
 
 ```sql
-UPDATE personnes
+UPDATE ran.personnes
 SET adresse = 'Rennes'
 WHERE id = 2;
 ```
@@ -190,7 +222,7 @@ WHERE id = 2;
 ### :small_orange_diamond: Supprimer des lignes
 
 ```sql
-DELETE FROM personnes
+DELETE FROM ran.personnes
 WHERE prenom = 'Ali';
 ```
 
@@ -210,42 +242,42 @@ WHERE prenom = 'Ali';
 
 ---
 
-## :arrow_forward: Outils
+## :arrow_forward: Premières manipulations
 
-### :small_orange_diamond: DBeaver
+### :small_orange_diamond: Les schémas
 
-> * Fenêtre > Preference
->   * Formatage SQL
->     * Casse des mots clefs : UPPER
->     * [ ] Insert spaces for tabs
->   * Templates
->     * sf > Modifier
->       * Schéma = ==SELECT * FROM jdr.==
->   * Métadonnées
->     * Décocher "Ouvrir une connexion séparée pour la lecture des métadonnées"
->   * Editeur SQL
->     * Décocher "Ouvrir une connexion séparée pour chaque éditeur"
->
-> Pour créer une connexion vers la base de données ENSAI sur la VM :
->
-> * cliquer sur icone ==Nouvelle connexion== en haut à gauche sous fichier
-> * PostgreSQL puis suivant
->   * Host : sgbd-eleves.domensai.ecole
->   * Port : 5432
->   * Database : idxxxx
->   * Nom d'utilisateur : idxxxx
->   * Mot de passe : idxxxx
-> * cliquer sur l'icone ==SQL==
->   * coller les scripts ci-dessous (à la racine du projet)
->   * à chaque fois cliquer sur la 3e icone orange ==Executer le script SQL==
->     * init_db.sql
->     * pop_db.sql
+Par défaut toutes les tables que nous allons créer iraient dans le schéma public.  
+:bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
 
-### :small_orange_diamond: Interface pgAdmin
+* `ran` : schéma utilisé pour la remise à niveau
+* `ci` : schéma utilisé en complément d'informatique
+* `projet` : schéma du projet info 2A
 
-Une autre solution pour éxécuter des requêtes SQL est de passer par l'interface pgAdmin
+```sql
+CREATE schema ran;
+CREATE schema ci;
+CREATE schema projet;
+```
 
-> * [ ] :construction:
+### :small_orange_diamond: Mots clés utiles
+
+#### :large_blue_circle: LIKE
+
+```sql
+-- toutes les personnes ayant un prénom contenant "au"
+SELECT *
+  FROM ran.personnes
+ WHERE prenom LIKE '%au%';
+```
+
+### :small_orange_diamond: Quelques possibilités d'utilisation sans table
+
+```sql
+SELECT CURRENT_DATE;
+SELECT 1+2;
+SELECT 1 > 2;
+SELECT 'Salut';
+```
 
 ---
 
@@ -257,7 +289,7 @@ Une autre solution pour éxécuter des requêtes SQL est de passer par l'interfa
 
 1. Lister les joueurs
 2. Créer un nouveau joueur
-3. Supprimer le joueur **Sam Gratte**
+3. Supprimer le joueur **Elsa Rose**
 4. Lister les joueurs qui sont arbitres
 5. Lister les joueurs qui sont arbitres, ainsi que leur grade d'arbitre
 6. Créer une table pour codifier la colonne **vainqueur** de la table **parties**
