@@ -49,6 +49,9 @@ Pour créer une connexion vers la base de données ENSAI sur la VM :
 
 ## :arrow_forward: Interface pgAdmin
 
-Une autre solution pour éxécuter des requêtes SQL est de passer par l'interface pgAdmin
+Une autre solution pour éxécuter des requêtes SQL est de passer par l'interface [pgAdmin](http://sgbd-eleves.domensai.ecole/phppgadmin/)
 
-> * [ ] :construction:
+* Utilisateur : idxxxx
+* Mot de passe : idxxxx
+* Une fois connecté, cliquez sur `idxxxx` dans le menu de gauche
+* cliquez sur `SQL` pour exécuter des requêtes

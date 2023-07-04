@@ -1,14 +1,10 @@
-# SQL
+# SQL et Bases de données
 
 ## :arrow_forward: Programme
 
-* [ ] introduction
-* [ ] installation
-* [ ] exercices
-
-### Notions à aborder
-
-* [ ] ACID
+* [ ] Présentation
+* [ ] Utilisation avec DBeaver
+* [ ] Exercices
 
 ---
 
@@ -266,6 +262,15 @@ WHERE prenom = 'Ali';
 
 ---
 
+## :arrow_forward: Formes normales
+
+* **1ere forme normale** : Une relation est en 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
+  * Un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné, et donc s'il ne regroupe pas un ensemble de plusieurs valeurs.
+  * Par exemple, une adresse du type `20 rue du Général de Gaulle 35170 BRUZ` n'est pas atomique
+* autres formes normales : voir sur internet...
+
+---
+
 ## :arrow_forward: Premières manipulations
 
 > voir fichier `DBeaver.md` pour le paramétrage
@@ -284,6 +289,8 @@ CREATE schema ran;
 CREATE schema ci;
 CREATE schema projet;
 ```
+
+---
 
 ### :small_orange_diamond: Mots clés utiles
 
@@ -341,6 +348,8 @@ SELECT adresse AS Ville
   FROM ran.personnes
 ```
 
+---
+
 ### :small_orange_diamond: Quelques possibilités d'utilisation sans table
 
 ```sql
@@ -364,6 +373,8 @@ Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 * [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un `e` (majuscule ou minuscule) :bulb: *tip : voir méthode `UPPER`*
 * [ ] Créez la joueuse "Martine Dupont, elo : 1999, Arbitre Elite"
 * [ ] Supprimez le joueur de pseudo `marc78`
+* [ ] Essayez de supprimer le joueur ayant pour id : 20
+  * Pourquoi cela ne fonctionne pas ? Que faudrait-t_til faire pour supprimer ce joueur ?
 * [ ] Listez les joueurs qui sont arbitres :bulb: *voir `IS NOT NULL`*
 * [ ] Ajoutez à la table joueur la colonne de type booléen `est_arbitre`
 * [ ] Remplissez cette nouvelle colonne pour tous les joueurs
@@ -372,3 +383,5 @@ Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 * [ ] Comptez le nombre de joueurs qui sont arbitre
 * [ ] Comptez le nombre d'arbitres par grade
 * [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
+* [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
+* [ ] Ajouter le nombre de joueurs et le elo max des joueurs
