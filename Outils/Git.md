@@ -1,6 +1,6 @@
 # Introduction à Git
 
-## Objectifs
+## :arrow_forward: Objectifs
 
 * [ ] Comprendre le principe et l'utilité de Git
 * [ ] Configurer Git
@@ -10,7 +10,7 @@
 
 ---
 
-### Ressources
+### :small_orange_diamond: Ressources
 
 * [Git TP](https://hackmd.io/BdGZF6qOTk2qvzAlvrz_WA)
 * <https://github.com/InseeFrLab/formation-git>
@@ -18,9 +18,9 @@
 
 ---
 
-## Git présentation
+## :arrow_forward: Git présentation
 
-### :arrow_forward: Git, ça sert à quoi ?
+### :small_orange_diamond: Git, ça sert à quoi ?
 
 * Git
   * Logiciel de gestion de versions
@@ -34,7 +34,7 @@
   * S'utilise avec Git
   * Propose d'autres fonctionnalités (wiki, gestion des incidents...)
 
-### :arrow_forward: Pourquoi utiliser un outil de gestion de version ?
+### :small_orange_diamond: Pourquoi utiliser un outil de gestion de version ?
 
 Est-ce que vous préférez avoir ceci ?
 
@@ -69,7 +69,7 @@ Date         Heure   Auteur      Message commit
 
 Git permet de créer des points de sauvegardes (**commit**). Ainsi pour chaque fichier il est possible de consulter une version précédente et éventuellement de revenir en arrière en cas d'erreur.
 
-### :arrow_forward: Principe général de Git
+### :small_orange_diamond: Principe général de Git
 
 * Avec Git, vous allez avoir plusieurs dépôts de fichiers
   * un dépôt commun (dépôt distant)
@@ -78,7 +78,7 @@ Git permet de créer des points de sauvegardes (**commit**). Ainsi pour chaque f
   * la synchronisation n'est pas automatique
   * c'est à vous de dire quand vous voulez le faire avec des commandes git
 
-### :arrow_forward: Exemples
+### :small_orange_diamond: Exemples
 
 #### Exemple 1
 
@@ -96,7 +96,7 @@ Git permet de créer des points de sauvegardes (**commit**). Ainsi pour chaque f
 
 Pour gérer les versions, Git utilise des points de sauvegarde appelés **commits**. Grace à cela, il est possible de consulter les versions antérieures des fichiers.
 
-### :arrow_forward: Les 5 commandes qu'il faudra retenir
+### :small_orange_diamond: Les 5 commandes qu'il faudra retenir
 
 * **git status** : voir où l'on en est
 * **git add** : ajouter de nouveaux fichiers dans le dépôt
@@ -104,7 +104,7 @@ Pour gérer les versions, Git utilise des points de sauvegarde appelés **commit
 * **git pull** : mettre à jour son dépôt local en synchronisant avec le dépôt distant
 * **git push** : mettre à jour le dépôt distant avec les modifications faites en local
 
-### :arrow_forward: Schéma simplifié des liens entre votre dépôt local et le dépôt distant
+### :small_orange_diamond: Schéma simplifié des liens entre dépôt local et dépôt distant
 
 ![](https://i.imgur.com/QsermR0.png)
 
@@ -113,11 +113,11 @@ Pour gérer les versions, Git utilise des points de sauvegarde appelés **commit
 
 ---
 
-## :gear: Paramètrer Git
+## :arrow_forward: Paramètrer Git
 
 :information_source: Le paramètrage de Git n'est pas très drôle et peut faire un peu peur. Mais pas de panique, c'est à faire une et une seule fois sur votre machine !
 
-### :arrow_forward: 1. Configuration Git Bash
+### :small_orange_diamond: 1. Configuration Git Bash
 
 Git Bash est un Terminal où l'on peut écrire des commandes git.
 
@@ -131,7 +131,7 @@ git config -l
 
 La dernière commande permet de vérifier que les 2 attributs `user.name` et `user.email` sont bien renseignés
 
-### :arrow_forward: 2. Clé SSH
+### :small_orange_diamond: 2. Clé SSH
 
 Afin de pouvoir faire des mises à jour sur le dépôt distant, il faut que votre machine (locale) soit reconnue. Vous devez donc fournir une clé d'authentification à GitLab.
 
@@ -175,11 +175,11 @@ cat $HOME/.ssh/id_rsa.pub ## ou cat /c/Users/idxxxx/.ssh/id_rsa.pub
 
 ---
 
-### :arrow_forward: 3. Créer un compte sur GitLab
+### :small_orange_diamond: 3. Créer un compte sur GitLab
 
 [GitLab](https://gitlab.com/gitlab-org/gitlab) est le site qui permet d'héberger le dépôt distant du code ([Créer un compte](https://gitlab.com/users/sign_up))
 
-### :arrow_forward: 4. Déclarer votre clé publique SSH à GitLab
+### :small_orange_diamond: 4. Déclarer votre clé publique SSH à GitLab
 
 * Dans GitLab, aller dans **Preferences** (en haut à droite) puis dans **SSH Keys**
   * ou directement [ici](https://gitlab.com/-/profile/keys)
@@ -188,7 +188,7 @@ cat $HOME/.ssh/id_rsa.pub ## ou cat /c/Users/idxxxx/.ssh/id_rsa.pub
 
 :rainbow:  Bravo le paramètrage est terminé :confetti_ball:
 
-### :arrow_forward: 5. En cas d'erreurs
+### :small_orange_diamond: 5. En cas d'erreurs
 
 #### The authenticity of host xxx can't be established
 
@@ -207,3 +207,37 @@ and the repository exists.
 
 Vérifier que la clé ci-dessous est bien déclarée dans GitLab ou GitHub.
 Si le problème persiste, regénérez une nouvelle clé.
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>

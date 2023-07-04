@@ -363,8 +363,6 @@ SELECT 'Salut';
 
 ## :arrow_forward: Exercices
 
-### Base de données `echecs`
-
 Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 
 * [ ] Listez tous les joueurs
@@ -385,3 +383,37 @@ Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 * [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
 * [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
 * [ ] Ajouter le nombre de joueurs et le elo max des joueurs
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>

@@ -20,7 +20,7 @@ Le but de ce TP est de :
 
 ---
 
-### Création du fichier .gitignore
+### :small_orange_diamond: Création du fichier .gitignore
 
 > **.gitignore** est un fichier permettant de dire à Git quels fichiers il > faut ignorer.
 > Par exemple :
@@ -41,7 +41,7 @@ Le but de ce TP est de :
 
 ---
 
-### Inviter d'autres membres
+### :small_orange_diamond: Inviter d'autres membres
 
 Vous venez de créer un projet public donc visible par tous. Cependant, vous êtes seul à pouvoir modifier ce projet. Pour autoriser d'autres personnes à écrire sur ce projet (par exemple lors du projet info), il faut donner les droits en écriture :
 
@@ -235,7 +235,7 @@ Soyons clair, revenir en arrière n'est pas une action anodine et nécessite par
 
 ---
 
-### Revenir au dernier commit
+### :small_orange_diamond: Revenir au dernier commit
 
 Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliserons la commande `stash`
 
@@ -249,7 +249,7 @@ Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliseron
 
 ---
 
-### Consulter l'historique d'un fichier
+### :small_orange_diamond: Consulter l'historique d'un fichier
 
 #### Dans GitLab, aller sur le fichier `voiture.py`
 
@@ -281,7 +281,7 @@ Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliseron
 
 ---
 
-### Comparer 2 versions d'un fichier
+### :small_orange_diamond: Comparer 2 versions d'un fichier
 
 * Noter le numéro d'un commit où vous avez modifié `voiture.py`
   * `git bb voiture.py`
@@ -293,7 +293,7 @@ Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliseron
 
 ---
 
-### Retour vers le passé
+### :small_orange_diamond: Retour vers le passé
 
 * Toujours avec le numéro d'un ancien commit
 * **`git checkout 7539cf7`**
@@ -306,7 +306,7 @@ Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliseron
 
 ---
 
-### Annuler un commit
+### :small_orange_diamond: Annuler un commit
 
 * En fait non, on ne verra pas comment annuler un commit, ni sur le dépôt local, ni sur le dépôt distant. C'est possible mais à vos risques et périls.
 * Préférez la méthode un peu archaïque qui consiste à retourner dans le passé pour copier ce qui fonctionnait bien avant.
@@ -345,7 +345,7 @@ Voir un exemple avec [ce projet](https://gitlab.com/CalcProgrammer1/OpenRGB/-/wi
 
 :information_source: Uniquement si vous êtes à l'aise
 
-### A quoi sert une branche ?
+### :small_orange_diamond: A quoi sert une branche ?
 
 Imaginez vous avez votre code qui fonctionne bien mais qui est tout moche (avec des duplications...). Comme vous êtes sérieux, vous voulez faire tout bien comme il faut et mettre tout au propre.
 
@@ -362,7 +362,7 @@ En gros une branche permet de coder et/ou tester une nouvelle fonctionnalité sa
 
 ---
 
-### Un petit exemple pour y voir plus clair
+### :small_orange_diamond: Un petit exemple pour y voir plus clair
 
 * imaginons que vous voulez ajouter une classe trottinette, mais vous n'êtes pas encore sûr, alors vous testez sur une branche
 * `git checkout -b trottinette`
@@ -398,3 +398,37 @@ En gros une branche permet de coder et/ou tester une nouvelle fonctionnalité sa
       * cette fois-ci pas de conflits car ils ont été résolu juste avant
     * `git commit -am "ajout fonctionnalité trottinette"`
   * L'option `--squash` permet de ne pas polluer le main avec tous les commits réalisés sur la branche `trottinette`. Si par la suite vous utilisez GitLab ou GitHub cette option se retrouve directement dans les merge ou les pull requests.
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>

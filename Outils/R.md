@@ -1,6 +1,6 @@
 # R à l'ENSAI
 
-### Introduction
+## :arrow_forward: Introduction
 
 **R** est un langage de programmation open-source et un environnement logiciel dédié à l'analyse statistique et graphique.  
 Il offre une large gamme de fonctionnalités pour effectuer par exemple :
@@ -19,14 +19,14 @@ R dispose d'une vaste [collection de packages](https://cran.r-project.org/web/pa
 **RStudio** est un environnement de développement intégré (IDE) spécialement conçu pour travailler avec le langage R.  
 Il fournit une interface conviviale et des fonctionnalités avancées pour faciliter le développement, le débogage et la visualisation des résultats en R.
 
-### Liens utiles
+## :arrow_forward: Liens utiles
 
 * <https://www.book.utilitr.org/>
 * <https://github.com/ludo2ne/R-tuto>
 
 ---
 
-# Config ENSAI
+## :arrow_forward: Config ENSAI
 
 RStudio est disponible à différents endroits :
 
@@ -44,7 +44,7 @@ RStudio est disponible à différents endroits :
 La puissance de calcul est beaucoup beaucoup plus grande sur les clusters et le SSPCloud.  
 L'utilisation de RStudio sur la VM est déconseillée mais comme cela parait plus simple, c'est le choix de 95% des élèves...
 
-### RStudio sur la VM
+### :small_orange_diamond: RStudio sur la VM
 
 Le principal inconvénient est lié à l'utilisation de packages.
 Pour réaliser vos travaux, vous allez avoir besoin d'une multitude de packages, et donc de les télécharger.
@@ -52,7 +52,7 @@ Et si l'on ne fait pas attention, ces packages s'installent automatiquement sur 
 
 La solution est d'installer ces packages dans le `C:/`. Ce disque qui n'est pas sauvegardé mais peu importe, si par grande malchance vous perdez vos packages, il suffira de les réinstaller.
 
-##### Définir l'endroit où stocker les packages R
+#### Définir l'endroit où stocker les packages R
 
 * Créer un dossier `C:/users/idXXXX/R`
 * Aller dans `P:/`
@@ -80,10 +80,44 @@ if (default_lib_path != "") {
 
 ---
 
-# Quelques bonnes partiques
+## :arrow_forward: Quelques bonnes partiques
 
 * Aérez et commentez votre code
 * Utilisez des noms de variables significatifs
 * Commencez tous vos scripts par `rm(list=ls())` pour nettoyer votre environnement de travail
 * Pour nettoyer la console : clic dans la console puis CTRL + L
 * <https://www.book.utilitr.org/02_bonnes_pratiques/01-qualite-code>
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>

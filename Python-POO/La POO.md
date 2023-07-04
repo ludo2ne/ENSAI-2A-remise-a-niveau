@@ -34,7 +34,7 @@ Dans la suite, nous allons organsier notre code de manière logique dans différ
 
 > **paquet** : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.
 
-### :bulb: bonne pratique
+### :small_orange_diamond:  bonne pratique
 
 A la racine de votre projet, créez les 3 dossiers suivants :
 
@@ -105,7 +105,7 @@ En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs 
 
 Une idée est de regrouper ces caractéristiques communes dans une classe `DeuxRoues`. Puis de faire hériter `Vélo` et `Trottinette` de `DeuxRoues`
 
-### Classe Abstraite
+### :small_orange_diamond: Classe Abstraite
 
 Certaines classes n'ont pas vocation à être instanciée. Par exemple, nous n'allons pas créer d'objets de la classe `DeuxRoues`. Nous allons directement créer des `Velo` et des `Trottinettes`.
 
@@ -130,7 +130,7 @@ Exemple :
 
 ## :arrow_forward: Exercices
 
-### Exercice 1 - Points
+### :small_orange_diamond: Exercice 1 - Points
 
 Définissez une classe `Point` pour représenter un point du plan de coordonnées x et y.
 Coder les méthodes suivantes :
@@ -144,7 +144,7 @@ Coder les méthodes suivantes :
 * [ ] `translation(self, dx, dy)` : appliquant au point une translation de vecteur (dx, dy)
 * [ ] (bonus) `rotation(self, a)` : appliquant au point une rotation de centre (0, 0) et d’angle a
 
-### Exercice 2 - Polygones
+### :small_orange_diamond: Exercice 2 - Polygones
 
 * [ ] Créer une classe `Polygones` composées d'objets de la classe `Point`
   * nous supposerons par la suite que les segments ne se croisent pas
@@ -188,7 +188,7 @@ classDiagram
     }
 ```
 
-### Exercice 3 - Domino
+### :small_orange_diamond: Exercice 3 - Domino
 
 Écrire une classe `Domino` avec :
 
@@ -220,3 +220,37 @@ classDiagram
         +accepte(autre_domino)
     }
 ```
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>
