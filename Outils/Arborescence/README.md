@@ -1,9 +1,8 @@
-Script pour créer une arborescence des cours de 2A
+# Script pour créer une arborescence des cours de 2A
 
 * Ouvrir Git bash
 * Se positionner dans le dossier du fichier `create_folders.sh`
 * ./create_folders.sh
-
 
 ```
 ├── Cours2A

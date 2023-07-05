@@ -151,7 +151,12 @@ cat $HOME/.ssh/id_rsa.pub ## ou cat /c/Users/idxxxx/.ssh/id_rsa.pub
   * si vous ne trouvez toujours pas le fichier `id_rsa.pub`, retournez voir le résultat de la commande `ssh-keygen`, il est écrit dans quel dossier la clé a été générée
 * Sélectionner ce contenu et le copier dans notepad pour la prochaine étape
 
----
+#### Créez une copie de votre clé
+
+Il arrive que le dossier `C:/Users/idxxxx/.ssh` soit supprimé.  
+Il est interessant d'avoir une copie de cette clé pour la restaurer si besoin.
+
+* `cp -r $HOME/.ssh /p` pour copier le dossier dans le disque P:
 
 > * [ ] TODO  
 >
@@ -205,8 +210,19 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-Vérifier que la clé ci-dessous est bien déclarée dans GitLab ou GitHub.
-Si le problème persiste, regénérez une nouvelle clé.
+1. Vérifiez que le dossier `C:/users/idxxxx/.ssh` existe et contient les fichiers `id_rsa` et `id_rsa.pub`. Si oui passer à l'étape 2.
+
+Si non, recopiez votre clé dans `C:/users/idxxxx/.ssh` à partir de la sauvegarde que vous avez faite dans `P:/.ssh` lors de la création de la clé. Pour automatiser ceci, vous pouvez créer un script `restore_ssh.bat` sur le bureau contenant le code ci-dessous :
+
+```bash
+set "source=P:\.ssh"
+set "destination=%HOME%\.ssh"
+xcopy /E /H /I /Y "%source%" "%destination%"
+pause
+```
+
+2. Vérifiez que la clé `id_rsa.pub` est bien déclarée dans GitLab ou GitHub.
+Si le problème persiste, regénérez une nouvelle clé ssh et déclarez là dans GitHub ou GitLab.
 
 <style>
     h1{

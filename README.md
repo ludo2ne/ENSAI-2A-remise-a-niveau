@@ -10,11 +10,11 @@ Ce répo contient des ressources pour introduire les items suivants :
 * [ ] Python - initiation (6h)
 * [ ] Programmation Orientée Objet (POO) (9h)
 * [ ] UML (3h)
-* [ ] Divers outils utiles (git, markdown, r...)
+* [ ] Divers outils utiles (git, markdown, R...)
 
 ## :arrow_forward:Required packages
 
 ```bash
 pip install -r requirements.txt
-pip list
+pip list -v
 ```
