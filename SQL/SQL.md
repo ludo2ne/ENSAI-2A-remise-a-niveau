@@ -363,7 +363,14 @@ SELECT 'Salut';
 
 ## :arrow_forward: Exercices
 
-Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
+Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script.
+
+Description des données :
+* Nous avons des joueurs, des tournois
+* Certains joueurs sont aussi arbitre et ont un grade d'arbitre
+* Les tournois ont une cadence. Ils sont arbitrés par un arbitre
+
+---
 
 * [ ] Listez tous les joueurs
 * [ ] Listez tous les joueurs ordonnés par elo descroissant
@@ -372,7 +379,7 @@ Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script
 * [ ] Créez la joueuse "Martine Dupont, elo : 1999, Arbitre Elite"
 * [ ] Supprimez le joueur de pseudo `marc78`
 * [ ] Essayez de supprimer le joueur ayant pour id : 20
-  * Pourquoi cela ne fonctionne pas ? Que faudrait-t_til faire pour supprimer ce joueur ?
+  * Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?
 * [ ] Listez les joueurs qui sont arbitres :bulb: *voir `IS NOT NULL`*
 * [ ] Ajoutez à la table joueur la colonne de type booléen `est_arbitre`
 * [ ] Remplissez cette nouvelle colonne pour tous les joueurs

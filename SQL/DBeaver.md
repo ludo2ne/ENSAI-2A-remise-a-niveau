@@ -11,13 +11,13 @@
     * Casse des mots clefs : `UPPER`
     * [x] Insert spaces for tabs
     * Appliquer
-  * Templates
-    * Enlever les modèles existants
-    * Importer le fichier `templates_dbeaver.xml`
   * Metadonnées
     * Décocher "Ouvrir une connexion séparée pour la lecture des étadonnées"
   * Editeur SQL
     * Décocher "Ouvrir une connexion séparée pour chaque éditeur"
+  * Templates (bonus)
+    * Enlever les modèles existants
+    * Importer le fichier `templates_dbeaver.xml`
 
 ---
 

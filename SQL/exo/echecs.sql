@@ -2,7 +2,7 @@
 -- Suppression puis recreation complete du schema
 ------------------------------------------------------
 
-DROP SCHEMA IF EXISTS echecs CASCADE;
+--DROP SCHEMA IF EXISTS echecs CASCADE;
 CREATE SCHEMA echecs;
 
 
