@@ -370,6 +370,7 @@ Description des données :
 * Certains joueurs sont aussi arbitre et ont un grade d'arbitre
 * Les tournois ont une cadence. Ils sont arbitrés par un arbitre
 
+
 ---
 
 * [ ] Listez tous les joueurs
