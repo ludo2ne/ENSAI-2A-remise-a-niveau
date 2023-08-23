@@ -234,7 +234,7 @@ print(c1.calculer_surface())
 
 ## ex3
 
-# Testez votre réponse dans cette cellule
+```python
 class CompteBancaire:
     def __init__(self, titulaire, solde):
         self.titulaire = titulaire
@@ -291,3 +291,4 @@ print()
 client2.transferer(client1, 2000)
 client2.afficher_solde() # - 2000
 client1.afficher_solde() # + 2000
+```
