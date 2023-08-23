@@ -168,3 +168,70 @@ majuscule = lambda c:c.upper()
 
 appliquer_fonction_liste(l, majuscule)
 ```
+
+
+# POO
+
+## ex1
+
+```python
+# by ChatGPT
+
+class Etudiant:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+        self.liste_notes = []
+
+    def ajouter_note(self, note):
+        self.liste_notes.append(note)
+
+    def calculer_moyenne(self):
+        if len(self.liste_notes) == 0:
+            return 0
+        total = sum(self.liste_notes)
+        moyenne = total / len(self.liste_notes)
+        return moyenne
+
+# Exemple d'utilisation
+etudiant1 = Etudiant("Alice", 20)
+etudiant1.ajouter_note(15)
+etudiant1.ajouter_note(18)
+etudiant1.ajouter_note(12)
+moyenne_etudiant1 = etudiant1.calculer_moyenne()
+print(f"Moyenne de {etudiant1.nom}: {moyenne_etudiant1}")
+```
+
+
+
+## ex2
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def distance(self, autrePoint):
+        return math.sqrt((self.x - autrePoint.x)**2 + (self.y - autrePoint.y)**2)
+    
+p1 = Point(0,0)
+p2 = Point(1,1)
+print(p1.distance(p2))
+
+class Cercle:
+    def __init__(self, p_centre, p_rayon):
+        self.centre = p_centre
+        self.rayon = p_rayon
+        
+    def calculer_surface(self):
+        return math.pi * self.rayon**2
+    
+c1 = Cercle(p1, 2)
+print(c1.calculer_surface())
+```
+
+
+## ex3
+
+https://github.com/InseeFrLab/formation-python-initiation/blob/main/notebooks/fundamentals/oop/solutions.py#L64
