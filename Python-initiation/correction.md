@@ -234,4 +234,60 @@ print(c1.calculer_surface())
 
 ## ex3
 
-https://github.com/InseeFrLab/formation-python-initiation/blob/main/notebooks/fundamentals/oop/solutions.py#L64
+# Testez votre réponse dans cette cellule
+class CompteBancaire:
+    def __init__(self, titulaire, solde):
+        self.titulaire = titulaire
+        self.solde = solde
+        
+    def afficher_solde(self):
+        print("Le solde du compte de " + self.titulaire + " est " + str(self.solde) + " euros.")
+        
+    def deposer(self, montant):
+        self.solde += montant
+    
+    def retirer(self, montant):
+        if self.solde >= montant:
+            self.solde -= montant
+            print("Retrait accepté.")
+        else:
+            print("Retrait refusé : fonds insuffisants.")
+            
+    def transferer(self, autreCompte, montant):
+        if self.solde >= montant:
+            autreCompte.solde += montant
+            self.solde -= montant
+        else:
+            print("Transfert refusé : fonds insuffisants.")
+            
+client1 = CompteBancaire("Bernard", 2000)
+client2 = CompteBancaire("Bianca", 5000)
+
+client1.afficher_solde()
+client2.afficher_solde()
+
+print()  # saut de ligne
+
+client1.deposer(1000)
+client1.afficher_solde() # +1000
+
+print()
+
+client2.retirer(6000)
+client2.afficher_solde() # aucun changement
+
+print()
+
+client2.retirer(1000)
+client2.afficher_solde() # -1000
+
+print()
+
+client2.transferer(client1, 5000)
+client2.afficher_solde() # aucun changement
+
+print()
+
+client2.transferer(client1, 2000)
+client2.afficher_solde() # - 2000
+client1.afficher_solde() # + 2000
