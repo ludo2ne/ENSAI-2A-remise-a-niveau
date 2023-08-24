@@ -25,9 +25,20 @@ class Triangle(Polygone):
         s += self.points[1].distance(self.points[2])
         return s
 
+    def est_rectangle(self) -> bool:
+        res = False
+        cotes = [self.points[0].distance(self.points[1]),
+                 self.points[0].distance(self.points[2]),
+                 self.points[1].distance(self.points[2])]
+        cotes.sort()
+        if cotes[2]**2 == cotes[0]**2 + cotes[1]**2:
+            res = True
+        return res
+
 
 if __name__ == "__main__":
-    p1, p2, p3 = Point(0, 0), Point(3, 4), Point(0, 4)
+    p1, p2, p3 = Point(0, 0), Point(3, 0), Point(3, 4)
     t = Triangle([p1, p2, p3])
     print(t.perimetre())
     print(t.aire())
+    print(t.est_rectangle())
