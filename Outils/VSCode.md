@@ -7,6 +7,10 @@ Le but de cette fiche est de :
 * vous permettre d'exécuter un programme python avec VSCode
 * donner quelques astuces pour faciliter votre utilisation
 
+## :gear: Paramétrage
+
+* Désinstaller l'extension **Ruff**
+
 ---
 
 ## :arrow_forward: Mon 1er TP

@@ -1,5 +1,5 @@
 class Domino:
-    '''
+    """
     Classe représentant un domino
     Attributs :
         extr_A : le coté gauche
@@ -9,7 +9,8 @@ class Domino:
         accepte_apres(autreDomino) : vérifie si l'extrémité B
             du domino courant a la même valeur que l'extrémité A
             de l'autre domino
-    '''
+    """
+
     def __init__(self, a, b):
         self.extr_A = a
         self.extr_B = b
