@@ -16,7 +16,7 @@ class Rectangle(Quadrilatere):
     def verif_rectangle(self, points):
         res = True
 
-        # verif cotes de meme longueur
+        # verif cotes opposes de meme longueur
         if points[0].distance(points[1]) != points[2].distance(points[3]):
             res = False
         if points[1].distance(points[2]) != points[0].distance(points[3]):
