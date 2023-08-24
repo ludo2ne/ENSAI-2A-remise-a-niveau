@@ -20,7 +20,7 @@ class Rectangle(Quadrilatere):
         if points[0].distance(points[1]) != points[2].distance(points[3]):
             res = False
         if points[1].distance(points[2]) != points[0].distance(points[3]):
-            res = False
+            res = False 
 
         # verif que 3 points forment un triangle rectangle
         t = Triangle([points[0], points[1], points[2]])

@@ -18,3 +18,4 @@ Ce répo contient des ressources pour introduire les items suivants :
 pip install -r requirements.txt
 pip list -v
 ```
+
