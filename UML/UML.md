@@ -13,6 +13,64 @@ Les 3 principaux diagrammes :
 
 > :bulb: Memento UML disponibles à la bibliothèque
 
+## :arrow_forward: Exercice
+
+### Exercice 1 : Courrier
+
+Un Courrier peut être de 2 types : Lettre ou Colis.
+
+Une Lettre est caractérisée par :
+
+* poids (en grammes)
+* mode d'expédition (Rapide ou Normal)
+* adresse de destination
+* format (A3 ou A4)
+
+Un Colis est caractérisé par :
+
+* poids (en grammes)
+* mode d'expédition (Rapide ou Normal)
+* adresse de destination
+* volume (en litres)
+
+Chaque Courrier dispose des méthodes suivantes :
+
+* `__init__()` : un constructeur
+* `__str__()` : une méthode qui retourne une chaine décrivant le Courrier
+* `calcul_affranchissement()`
+  * pour une Lettre : tarif_base + poids * 0.001
+    * avec tarif_base = 2€50 pour le format A4 et 3€50 pour le A3
+  * pour un colis : volume / 4 + poids * 0.001
+  * en mode d'expédition rapide, les montants ci-dessus sont doublés
+
+Questions :
+
+* [ ] Définir le diagramme de classe
+* [ ] Coder ces classes en Python
+
+Exemple de résultat attendu
+
+```python
+>>> l1 = Lettre("Bordeaux", 80, "normal", "A4")
+>>> print(l1)
+Lettre : 
+    Adresse destination : Bordeaux
+    Poids : 80 grammes
+    Mode : normal
+    Format : A4
+    Prix du timbre : 2.58 €
+>>> c1 = Colis("Rennes", 3500, "rapide", 2.25)
+>>> print(c1)
+Colis : 
+    Adresse destination : Rennes 
+    Poids : 3500 grammes 
+    Mode : rapide 
+    Volume : 2.25 litres 
+    Prix du timbre : 8.12 €
+```
+
+
+
 <style>
     body{
         text-align: justify;
