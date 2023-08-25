@@ -1,7 +1,8 @@
 #!/bin/bash
 
 input_file="folders.csv"
-directory="$HOME/Cours2A"
+#directory="$HOME/Cours2A"
+directory="/p/Cours2A"
 
 mkdir -p "$directory"
 
