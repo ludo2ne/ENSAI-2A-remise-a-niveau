@@ -17,6 +17,13 @@
   * pour bloquer votre session dès que vous quittez votre poste
   * à votre retour, se reconnecter simplement
   * la session reste active pendant 3h
+* Disque plein
+  * Si vous recevez des mails **Votre disque est plein à 100%**
+  * Souvent cela est du à des fichiers temporaires qui se créent lorsque vous ouvrez VSCode, Teams...
+  * Paliatif :
+    * Cliquer sur l'icone Windows Démarrer
+    * 2-Accessoire
+    * lancer les scripts : `Nettoyage-profil` et `Nettoyage-Python`
 * Impression
   * Nom de l'imprimante : PAPERCUT
   * <http://papercut.domensai.ecole:9191/>
