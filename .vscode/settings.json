@@ -1,6 +1,6 @@
 {
-    "python.linting.flake8Args": [
-        "--max-line-length=120",
+    "flake8.args": [
+        "--max-line-length=120"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
@@ -12,14 +12,14 @@
         "./*"
     ],
     "terminal.integrated.env.windows": {
-        "PYTHONPATH": "${workspaceFolder}/src",
+        "PYTHONPATH": "${workspaceFolder}/src"
     },
     "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${workspaceFolder}/src",
+        "PYTHONPATH": "${workspaceFolder}/src"
     },
     "terminal.integrated.env.osx": {
-        "PYTHONPATH": "${workspaceFolder}/src",
+        "PYTHONPATH": "${workspaceFolder}/src"
     },
     "python.languageServer": "Jedi",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }

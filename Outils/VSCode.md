@@ -9,31 +9,73 @@ Le but de cette fiche est de :
 
 ## :gear: Paramétrage
 
-* Désinstaller l'extension **Ruff**
+### :small_orange_diamond: Extensions
+
+De très nombreuses extensions permettent d'améliorer votre utilisation de VSCode.
+Sur la version utilisées à l'ENSAI, vous pouvez trouver déjà installé :
+
+* Black Formatter
+* Flake8
+* isort
+* Python Test Explorer
+* ...
+* [ ] Désactiver l'extension **Ruff** (elle fait doublon avec **Flake8**)
+
+### :small_orange_diamond: Formatage et Linting
+
+* Un **formateur** est un outil qui va mettre en forme votre code pour que ce soit joli et lisible
+* un **linter** est un outil qui va vous avertir si votre code n'est pas joli
+  * ex : ligne trop longue, espace manquant ou en trop...
+
+Les extensions Black Formatter et Flake8 sont respectivement un formateur et un linter
+
+### :small_orange_diamond: Settings
+
+Vous pouvez préciser le paramètrage à plusieurs niveaux :
+
+* au niveau de l'application VSCode
+* au niveau d'un dépôt
+
+Le fichier `.vscode/settings.json` contient du paramètrage qui va s'appliquer à tous les fichiers du dépôt.
+
+Ce fichier contient par exemple les propriétés ci-dessous :
+
+```json
+    "flake8.args": [
+        "--max-line-length=120"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+```
 
 ---
 
-## :arrow_forward: Mon 1er TP
+## :arrow_forward: Première utilisation
 
-* Ouvrir Visual Studio Code Local
+> Nous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode
+
+* Ouvrir Visual Studio Code
 * Ouvrir un terminal
   * Menu Terminal > New terminal (raccourci : CTRL + ù)
 * Créer un dossier pour le TP
-  * Copier cette commande : `mkdir "P:\Cours\Python\tp1"`
+  * Copier cette commande : `mkdir -p /p/Cours2A/UE3_Remise_a_niveau`
   * Dans le terminal, faire clic droit (Coller) puis ENTREE
-  * Vérifier que les dossiers sont bien créés
-    * Sinon créer les dossiers à la main
+  * Vérifier que les dossiers sont bien créés, sinon créer les dossiers à la main
+* Cloner le dépôt
+  * Se postionner dans le dossier créé : `cd /p/Cours2A/UE3_Remise_a_niveau`
+  * `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
 * Ouvrir un espace de travail
   * Dans VSCode : File > Open Folder
-  * Sélectionner le dossier tp1 créé précédemment
+  * Sélectionner le dossier `P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau` créé précédemment
   * Yes i trust...
-* Créer un premier fichier python
-  * Dans VSCode : File > New File (CTRL + N)
-  * Ecrire dans ce fichier : `print("hello")`
-  * puis File > Save (CTRL + S)
-    * enregistrer dans le dossier tp1 sous le nom `bacasable.py`
-* Executer le fichier
-  * En haut à droite, cliquer sur l'icone en forme de triangle ▷
+* Ouvrir, puis exécuter un fichier Python
+  * Ouvrir le fichier `Python-POO/src/__main__.py`
+  * Executer le fichier
+    * En haut à droite, cliquer sur l'icone en forme de triangle ▷
     * Run python file in terminal
   * Cela ouvre un terminal et exécute le fichier
 
@@ -54,182 +96,6 @@ Le but de cette fiche est de :
     * en sélectionnant plusieurs lignes puis SHIFT + ENTREE
   * dans ce mode on peut aussi écrire directement du python dans le terminal
   * taper `quit()` ou CTRL + Z pour retourner à l'autre mode
-
----
-
-## :arrow_forward: Ma 1ere fonction
-
-Coller le code suivant et l'exécuter
-
-```python=
-def plus2(x):
-    return x + 2
-
-print(plus2(5))
-```
-
----
-
-## :arrow_forward: Indentation et formattage
-
-Python est sensible à l'indentation, c'est à dire qu'un code mal indenté ne s'exécutera pas et renverra une erreur (parfois peu parlante).
-Un outil utile pour écarter définitivement ce souci est le formatteur automatique
-
-* Dans Settings :gear: (en bas à gauche)
-* Dans la barre de recherche (en haut au milieu), taper `formatting`
-  * Dans Python > Formatting: Autopep8 Path, taper : `autopep8`
-* Dans la barre de recherche, taper `format`
-  * Editor: Format On Save :arrow_right: cocher la case
-
-Maintenant à chaque sauvegarde, le fichier sera indenté comme il faut.
-
-:warning: Il est probable qu'à chaque nouvelle session, dans VSCode une popup dise que Autopep8 n'est pas installé
-
-* Voulez-vous l'installer :arrow_right: Yes
-* Install with pip
-:
-
-## :arrow_forward: Ma 1ere classe
-
-* Créer un nouveau fichier nommé `voiture.py` contenant le code ci-dessous
-* Exécuter le fichier
-  * Python va lancer la méthode `__main__`, c'est à dire exécuter les tests unitaires
-
-```python=
-class Voiture:
-    '''Définition d'une voiture
-
-    Attributes
-    ----------
-    couleur : str
-        couleur de la voiture
-    nom : str
-        nom de la voiture
-    vitesse : float
-        vitesse de la voiture
-    '''
-
-    def __init__(self, nom, couleur):
-        '''Constructeur de l'objet
-        La vitesse n'est pas un paramètre du constructeur, elle est initialisée à 0
-
-        Parameters
-        ----------
-        nom : str
-            nom de la voiture
-        couleur : str
-            couleur de la voiture
-
-        Examples
-        ---------
-        >>> ma_voiture = Voiture("4L", "verte")
-        >>> ma_voiture.nom == "4L"
-        True
-        >>> ma_voiture.couleur == "verte"
-        True
-        >>> ma_voiture.vitesse == 0
-        True
-        '''
-        self.couleur = couleur
-        self.nom = nom
-        self.vitesse = 0
-
-    def accelere(self, increment):
-        '''Augmente la vitesse de la voiture
-
-        Vitesse max = 130 km/h
-        Augmentation max = 10 km/h
-
-        Parameters
-        ----------
-        increment : float
-            accélération
-
-        Examples
-        ---------
-        >>> ma_voiture = Voiture('4L', 'verte')
-        >>> ma_voiture.accelere(15)
-        >>> ma_voiture.vitesse == 10
-        True
-        '''
-        # si l increment est negatif rien ne se passe
-        if increment < 0:
-            return
-        if increment > 10:
-            increment = 10
-        self.vitesse = min(130, self.vitesse + increment)
-
-    def freine(self, decrement):
-        '''Diminue la vitesse de la voiture
-
-        Vitesse min = 0 km/h
-
-        Parameters
-        ----------
-        decrement : float
-            décélération
-
-        Examples
-        ---------
-        >>> ma_voiture = Voiture('4L', 'verte')
-        >>> ma_voiture.accelere(10)
-        >>> ma_voiture.freine(8)
-        >>> ma_voiture.vitesse == 2
-        True
-        '''
-        if decrement < 0:
-            return
-        self.vitesse = max(0, self.vitesse - max(0, decrement))
-
-    def est_arretee(self):
-        '''La voiture est-elle à l'arrêt ?
-
-        Returns
-        -------
-        bool
-            True si elle est à 0 km/h
-
-        Examples
-        ---------
-        >>> ma_voiture = Voiture('4L', 'verte')
-        >>> ma_voiture.est_arretee()
-        True
-        >>> ma_voiture.accelere(5)
-        >>> ma_voiture.est_arretee()
-        False
-        '''
-        return self.vitesse == 0
-
-    def __str__(self):
-        '''Convertit la voiture en chaîne de caractères
-
-        Examples
-        ---------
-        >>> ma_voiture = Voiture('4L', 'verte')
-        >>> print(ma_voiture)
-        voiture 4L de couleur verte à l'arrêt.
-        >>> ma_voiture.accelere(2)
-        >>> print(ma_voiture)
-        voiture 4L de couleur verte roule à 2 km/h.
-        '''
-        v = 'roule à ' + str(self.vitesse) + ' km/h'
-        if self.est_arretee():
-            v = "à l'arrêt"
-
-        return "voiture {} de couleur {} {}.".format(self.nom, self.couleur, v)
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod(verbose=True)
-
-```
-
-Entre les `'''` se trouvent :
-
-* de la documentation pour expliquer comment fonctionne la classe
-* des tests unitaires (sous le tag Examples)
-  * ils permettent de vérifier si la méthode est correcte
 
 ---
 
@@ -298,3 +164,39 @@ printenv
 echo $PYTHONPATH
 echo $HOME
 ```
+
+---
+
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>

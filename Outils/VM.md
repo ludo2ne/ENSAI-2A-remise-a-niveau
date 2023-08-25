@@ -3,10 +3,16 @@
 
 * Lecteur P:
   * espace Personnel de 2Go
-* faite des sauvegardes !
-* view.ensai.fr
-  * pour se connecter à distance la VM ENSAI
-  * mieux d'installer VMWare Horizon
+  * Enregistrez vos fichier dans ce lecteur
+  * faite des sauvegardes de temps en temps sur clé USB
+* Se connecter à distance la VM ENSAI
+  * http://view.ensai.fr
+  * installer VMWare Horizon (Recommandé)
+  * Ouvrir VMWare Horizon
+    * Aller dans Paramètre > Sécurité > Désactiver la vérification de Certificat
+    * Ajouter un serveur
+      * view.ensai.fr
+      * saisir id et mot de passe
 * CTRL + ALT + F12
   * pour bloquer votre session dès que vous quittez votre poste
   * à votre retour, se reconnecter simplement
