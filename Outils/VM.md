@@ -22,7 +22,7 @@
   * Souvent cela est du à des fichiers temporaires qui se créent lorsque vous ouvrez VSCode, Teams...
   * Paliatif :
     * Cliquer sur l'icone Windows Démarrer
-    * 2-Accessoire
+    * 2-Accessoires
     * lancer les scripts : `Nettoyage-profil` et `Nettoyage-Python`
 * Impression
   * Nom de l'imprimante : PAPERCUT

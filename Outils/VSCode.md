@@ -61,7 +61,7 @@ Ce fichier contient par exemple les propriétés ci-dessous :
 * Ouvrir Visual Studio Code
 * Ouvrir un terminal
   * Menu Terminal > New terminal (raccourci : CTRL + ù)
-* Créer un dossier pour le TP
+* Créer un dossier pour le Cours
   * Copier cette commande : `mkdir -p /p/Cours2A/UE3_Remise_a_niveau`
   * Dans le terminal, faire clic droit (Coller) puis ENTREE
   * Vérifier que les dossiers sont bien créés, sinon créer les dossiers à la main
@@ -73,7 +73,7 @@ Ce fichier contient par exemple les propriétés ci-dessous :
   * Sélectionner le dossier `P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau` créé précédemment
   * Yes i trust...
 * Ouvrir, puis exécuter un fichier Python
-  * Ouvrir le fichier `Python-POO/src/__main__.py`
+  * Ouvrir le fichier `Python-POO/exemple/src/__main__.py`
   * Executer le fichier
     * En haut à droite, cliquer sur l'icone en forme de triangle ▷
     * Run python file in terminal

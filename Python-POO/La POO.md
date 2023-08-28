@@ -130,6 +130,15 @@ Exemple :
 
 ## :arrow_forward: Exercices
 
+### Avant de commencer
+
+* Nous n'allons maintenant plus coder dans des Notebooks mais dans l'IDE VSCode
+* Dans ce même dépôt, ouvrir le fichier dans Outils > VSCode.md
+* Suivre les consignes du paragraphe `Première utilisation`
+* Dans `Python-POO/exercices`, créez les 2 dossiers suivants :
+  * `geometrie` pour stocker vos classes des exercices 1 et 2
+  * `domino` pour l'exercice 3
+
 ### :small_orange_diamond: Exercice 1 - Points
 
 Définissez une classe `Point` pour représenter un point du plan de coordonnées x et y.

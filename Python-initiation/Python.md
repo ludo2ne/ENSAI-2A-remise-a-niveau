@@ -1,30 +1,8 @@
 # Introduction au langage Python
 
-Ce dossier contient des Notebooks pour apprendre les bases du langage.
-Les thèmes abordés :
-
-* [ ] Les types et variables
-* [ ] Les listes
-* [ ] Les dictionnaires
-* [ ] Les boucles
-* [ ] Les fonctions
-* [ ] Introduction à la Programmation Orientée Objet (POO)
-* :construction: Tests unitaires
-* :construction: Exceptions
-
-## :arrow_forward: Ressources utiles
-
-* <https://www.data-transitionnumerique.com/anaconda-python/>
-* <https://github.com/ludo2ne/projet-info-2A>
-* SSPCloud
-  * initiation à Python
-  * Python pour la datascience
-  * initiation à Spark
-  * initiation au Machine Learning
-  * analyse textuelle
-* <https://pythonds.linogaliana.fr/rappels2a/>
-
 ## :arrow_forward: Introduction
+
+Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l'intelligence artificielle... Sa syntaxe claire facilite l'apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.
 
 * Python
   * 1ère version en 1991
@@ -46,11 +24,10 @@ Les thèmes abordés :
   * Autres IDE : PyCharm, Jupyter, Atom, Spyder...
 * Packages
   * Informatique
-    * autopep8 (formatage du code)
-      * inquirerPy
-      * requests
-      * psycopg2-binary
-      * tabulate
+    * inquirerPy
+    * requests
+    * psycopg2-binary
+    * tabulate
   * Datascience
     * NumPy
     * Pandas (manipulation et l'analyse des données, dataframe)
@@ -67,26 +44,20 @@ pip install <package_name>    # installer un package
 python -c 'import platform; print(platform.python_implementation())'
 ```
 
-## :arrow_forward: Installation
-
-### :small_orange_diamond: projet Python avec VSCode
-
-* Créer un dossier
-  * à faire pour chaque nouveau projet
-  * `mkdir /p/Cours2A/UE3_Remise_a_niveau/Python`
-  * `cd /p/Cours2A/UE3_Remise_a_niveau/Python`
-  * `mkdir src doc data`
-* Ouvrir Visual Studio Code
-  * File > Open Folder
-  * ouvrir le dossier créé ci-dessus
-* Dans `src`, créer un fichier `hello.py`
-  * `print("hello")`
-* Ouvrir un terminal (CTRL + ù)
-  * `python src/hello.py`
-
 ---
 
 ## :arrow_forward: Utilisation des Notebooks
+
+Pour découvrir Python, nous allons commencer par coder dans des Notebooks. Ce dossier contient des Notebooks pour apprendre les bases du langage.
+
+* [ ] Les types et variables
+* [ ] Les listes
+* [ ] Les dictionnaires
+* [ ] Les boucles
+* [ ] Les fonctions
+* [ ] Introduction à la Programmation Orientée Objet (POO)
+
+Pour utiliser les Notebooks :
 
 * Se connecter à [Jupyter](https://clust-n4.ensai.fr/)
 * importer les fichiers `.ipynb`
@@ -115,6 +86,20 @@ Le type de cellule souhaité est modifiable dans la barre d'outils.
 | `A`                        | Insérer une cellule au-dessus de la cellule courante.                             |
 | `B`                        | Insérer une cellule en dessous de la cellule courante.                            |
 | `D + D`                    | Supprimer une cellule.                                                            |
+
+---
+
+## :arrow_forward: Ressources utiles
+
+* <https://www.data-transitionnumerique.com/anaconda-python/>
+* <https://github.com/ludo2ne/projet-info-2A>
+* SSPCloud
+  * initiation à Python
+  * Python pour la datascience
+  * initiation à Spark
+  * initiation au Machine Learning
+  * analyse textuelle
+* <https://pythonds.linogaliana.fr/rappels2a/>
 
 ---
 

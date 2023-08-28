@@ -19,11 +19,6 @@ R dispose d'une vaste [collection de packages](https://cran.r-project.org/web/pa
 **RStudio** est un environnement de développement intégré (IDE) spécialement conçu pour travailler avec le langage R.  
 Il fournit une interface conviviale et des fonctionnalités avancées pour faciliter le développement, le débogage et la visualisation des résultats en R.
 
-## :arrow_forward: Liens utiles
-
-* <https://www.book.utilitr.org/>
-* <https://github.com/ludo2ne/R-tuto>
-
 ---
 
 ## :arrow_forward: Config ENSAI
@@ -44,39 +39,15 @@ RStudio est disponible à différents endroits :
 La puissance de calcul est beaucoup beaucoup plus grande sur les clusters et le SSPCloud.  
 L'utilisation de RStudio sur la VM est déconseillée mais comme cela parait plus simple, c'est le choix de 95% des élèves...
 
-### :small_orange_diamond: RStudio sur la VM
+---
 
-Le principal inconvénient est lié à l'utilisation de packages.
-Pour réaliser vos travaux, vous allez avoir besoin d'une multitude de packages, et donc de les télécharger.
-Et si l'on ne fait pas attention, ces packages s'installent automatiquement sur votre disque personnel `P:/` qui n'a que peu d'espace libre.
+## :arrow_forward: RStudio
 
-La solution est d'installer ces packages dans le `C:/`. Ce disque qui n'est pas sauvegardé mais peu importe, si par grande malchance vous perdez vos packages, il suffira de les réinstaller.
-
-#### Définir l'endroit où stocker les packages R
-
-* Créer un dossier `C:/users/idXXXX/R`
-* Aller dans `P:/`
-  * afficher les fichiers cachés
-  * Créer ou modifier le fichier `.Rprofile` en ajoutant le code ci-dessous
-
-```r
-# Get the default library path
-default_lib_path <- paste0("C:",Sys.getenv("HOMEPATH"), "\\R")     # correspond à C:/users/idXXXX/R
-
-# Add the default library path to .libPaths()
-if (default_lib_path != "") {
-  .libPaths(c(default_lib_path, .libPaths()))
-}
-```
-
-* Ouvrez RStudio
-  * vérifiez que le dossier créé ci-dessus est bien dans le libpath avec la commande `.libPaths()`
-  * testez l'installation d'un package `install.packages("dplyr")`
-  * vérifiez dans la console que le package s'installe dans le dossier créé ci-dessus
-  * listez les packages disponibles `library()`
-* Chargez le package
-  * Pour utiliser un package, il ne suffit pas de l'installer (l'installation c'est une seule fois)
-  * par contre il faut le charger à chaque session `library(dplyr)`
+* File > New File > RScript
+  * `ech1 <- rnorm(10); ech1` par exemple pour générer 10 valeur de Loi Normale Centrée Réduite, stocker le résultat dans la variable `ech1`, puis afficher le contenu de la variable
+  * CTRL + ENTREE pour éxécuter le code ci-dessus
+* Les résultats s'affichent dans le terminal en bas à gauche
+* En haut à gauche, sont listées les variables créées
 
 ---
 
@@ -87,6 +58,14 @@ if (default_lib_path != "") {
 * Commencez tous vos scripts par `rm(list=ls())` pour nettoyer votre environnement de travail
 * Pour nettoyer la console : clic dans la console puis CTRL + L
 * <https://www.book.utilitr.org/02_bonnes_pratiques/01-qualite-code>
+
+---
+
+## :arrow_forward: Liens utiles
+
+* <https://www.book.utilitr.org/>
+* <https://teaching.slmc.fr/r/>
+* <https://github.com/ludo2ne/R-tuto>
 
 <style>
     h1{
