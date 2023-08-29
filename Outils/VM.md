@@ -3,7 +3,7 @@
 
 * Lecteur P:
   * espace Personnel de 2Go
-  * Enregistrez vos fichier dans ce lecteur
+  * Enregistrez vos fichiers dans ce lecteur
   * faite des sauvegardes de temps en temps sur clé USB
 * Se connecter à distance la VM ENSAI
   * http://view.ensai.fr
@@ -25,8 +25,13 @@
     * 2-Accessoires
     * lancer les scripts : `Nettoyage-profil` et `Nettoyage-Python`
 * Impression
-  * Nom de l'imprimante : PAPERCUT
-  * <http://papercut.domensai.ecole:9191/>
-    * Retenir le code à 6 chiffre
-    * il sert à accéder à l'imprimante
-  * Autre possibilité : utiliser votre carte étudiant
+  * Mode opératoire complet : ENT > Assistance > Foire aux questions > Rechercher "imprimer"
+  * Imprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)
+  * Retenez votre code d'identification à 6 chiffres
+	* <http://papercut.domensai.ecole:9191/> (ou dans ENT > Impression > Papercut)
+  * Allez en salle 113
+	* Entrez votre code d'identification sur l'imprimante
+	* Sélectionnez et libérez vos documents en attente d'impression
+  * Autre possibilité pour s'identifier auprès de l'imprimante : 
+	* En utilisant votre carte étudiant
+    * Suivre mode opératoire affiché en salle 113
