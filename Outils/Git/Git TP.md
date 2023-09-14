@@ -2,9 +2,10 @@
 
 Le but de ce TP est de :
 
-* vous présenter les fonctionnalités de base de Git
-* vous faire utiliser les 5 commandes principales (status, add, commit, pull, push)
-* vous montrer comment résoudre un conflit
+* [ ] vous présenter les fonctionnalités de base de Git
+* [ ] vous faire manipuler les 5 commandes principales (status, add, commit, pull, push)
+* [ ] vous montrer comment résoudre un conflit
+* [ ] bonus : retour en arrière, branches...
 
 ## :arrow_forward: 1. Créer un projet
 
@@ -290,6 +291,9 @@ Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliseron
 * **`git diff 7539cf7 voiture.py`**
   * remplacer `7539cf7` par votre numéro de commit
   * vous voyez les différences la version actuelle et une ancienne version
+* **`git diff`**
+  * pour lister toutes les modifications effectuées depuis le dernier commit
+  * **`git diff voiture.py`** : pour se limiter aux modifications effectuée sur ce fichier
 
 ---
 

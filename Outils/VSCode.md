@@ -21,6 +21,10 @@ Sur la version utilisées à l'ENSAI, vous pouvez trouver déjà installé :
 * ...
 * [ ] Désactiver l'extension **Ruff** (elle fait doublon avec **Flake8**)
 
+Autres extensions interessantes : 
+
+* Better Comments
+
 ### :small_orange_diamond: Formatage et Linting
 
 * Un **formateur** est un outil qui va mettre en forme votre code pour que ce soit joli et lisible

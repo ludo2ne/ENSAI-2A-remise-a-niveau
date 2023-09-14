@@ -5,14 +5,14 @@
 * [ ] Comprendre le principe et l'utilité de Git
 * [ ] Configurer Git
 * [ ] Créer un compte GitLab
-* [ ] Manipuler avec les commandes de base (clone, status, add, commit, pull, push)
-* [ ] Gérer un conflit
+* puis dans le fichier Git TP :
+  * [ ] Manipuler avec les commandes de base (clone, status, add, commit, pull, push)
+  * [ ] Gérer un conflit
 
 ---
 
 ### :small_orange_diamond: Ressources
 
-* [Git TP](https://hackmd.io/BdGZF6qOTk2qvzAlvrz_WA)
 * <https://github.com/InseeFrLab/formation-git>
 * <https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R>
 
@@ -28,7 +28,8 @@
   * créé par Linus Torvalds, qui n'est pas n'importe qui : également créateur du noyau Linux
 * Git Bash
   * Terminal pour écrire des commandes **git**
-* GitLab
+  * Possible d'ouvrir via le menu Démarrer, mais aussi inclus dans Visual Studio Code
+* GitLab / GitHub
   * Logiciel permettant de gérer des fichiers (dépôt)
   * Partagé par plusieurs personnes
   * S'utilise avec Git
@@ -142,8 +143,10 @@ ssh-keygen -t rsa -b 4096 -C "prenom.nom@eleve.ensai.fr"
 
 ## tapez ENTREE à chaque question
 
-## Récupérez le contenu de la clé avec la commande cat
-cat $HOME/.ssh/id_rsa.pub ## ou cat /c/Users/idxxxx/.ssh/id_rsa.pub
+## Récupérez le contenu de la clé avec l'une de ces 2 commandes
+cat $HOME/.ssh/id_rsa.pub 
+## ou avec
+cat /c/Users/idxxxx/.ssh/id_rsa.pub
 ```
 
 * La commande cat renvoie tout le contenu de ce fichier
@@ -158,38 +161,21 @@ Il est interessant d'avoir une copie de cette clé pour la restaurer si besoin.
 
 * `cp -r $HOME/.ssh /p` pour copier le dossier dans le disque P:
 
-> * [ ] TODO  
->
-> :warning: il peut y avoir des soucis de clés ssh
->
-> * la commande `ssh-keygen` crée par défaut la clé dans `/c/Users/id1965/.> ssh/id_rsa`
-> * or cette clé est supprimée à chaque nouvelle ouverture de session
->   * [ ] Voir avec la DSI si possible de corriger
->
-> une autre solution perenne serait de générer la clé dans /p/.ssh
-> puis de définir ce path comme un endroit ou chercher un clé ssh en cas > de besoin
->
-> ```bash
-> eval `ssh-agent -s`    # Pour demarrer l agent ssh
-> ssh-add /p/.ssh/id_rsa   # pour ajouter ce path lors de la recherche de > cle ssh
-> 
-> ## pb : le ssh-add est lié à la session, et devrait être refait à chaque > nouvelle session
-> ssh-add -K /p/.ssh/id_rsa   # -K pour keep et éviter de refaire à chaque > session
-> ## Souci car ça demande : Enter PIN for authenticator... ?!
-> ```
-
 ---
 
-### :small_orange_diamond: 3. Créer un compte sur GitLab
+### :small_orange_diamond: 3. Créer un compte sur GitLab, GitHub ou autre
 
-[GitLab](https://gitlab.com/gitlab-org/gitlab) est le site qui permet d'héberger le dépôt distant du code ([Créer un compte](https://gitlab.com/users/sign_up))
+* [GitLab](https://gitlab.com/gitlab-org/gitlab) est le site qui permet d'héberger le dépôt distant du code ([Créer un compte](https://gitlab.com/users/sign_up))
+* [GitHub](https://github.com/)
 
 ### :small_orange_diamond: 4. Déclarer votre clé publique SSH à GitLab
 
-* Dans GitLab, aller dans **Preferences** (en haut à droite) puis dans **SSH Keys**
-  * ou directement [ici](https://gitlab.com/-/profile/keys)
+* Dans GitLab, aller dans **Preferences** (en haut à droite) puis dans [SSH Keys]((https://gitlab.com/-/profile/keys))
   * Key : coller le résultat de l'étape 2
   * Add SSH Key
+* Dans GitHub, aller dans Paramètres, puis [SSH and GPG Keys]((https://github.com/settings/keys))
+  * New SSh key
+  * donnez un titre et coller dans **Key** le résultat de l'étape 2
 
 :rainbow:  Bravo le paramètrage est terminé :confetti_ball:
 
