@@ -4,7 +4,7 @@
 
 * [ ] Présentation
 * [ ] Utilisation avec DBeaver
-* [ ] Exercices
+* [ ] Exercice
 
 ---
 
@@ -363,13 +363,15 @@ SELECT 'Salut';
 
 ## :arrow_forward: Exercices
 
-Copiez le contenu du fichier `echecs.sql` dans DBeaver, puis exécuter le script.
+Avant de commencer l'exercice, consultez le fichier `DBeaver.md`.  
+
+Copiez le contenu du fichier `echecs.sql`, Collez dans DBeaver, puis exécuter le script.
 
 Description des données :
+
 * Nous avons des joueurs, des tournois
 * Certains joueurs sont aussi arbitre et ont un grade d'arbitre
 * Les tournois ont une cadence. Ils sont arbitrés par un arbitre
-
 
 ---
 
@@ -391,6 +393,10 @@ Description des données :
 * [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
 * [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
 * [ ] Ajouter le nombre de joueurs et le elo max des joueurs
+
+---
+
+la correction est disponible dans le dossier `SQL/exo`
 
 <style>
     h1{

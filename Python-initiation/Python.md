@@ -59,8 +59,12 @@ Pour découvrir Python, nous allons commencer par coder dans des Notebooks. Ce d
 
 Pour utiliser les Notebooks :
 
-* Se connecter à [Jupyter](https://clust-n4.ensai.fr/)
-* importer les fichiers `.ipynb`
+* Se connecter à [Jupyter](https://clust-n4.ensai.fr/) avec idxxxx et mot de passe
+* Importer dans Jupyter les 5 fichiers `.ipynb`, présents dans ce même dossier
+  * pour importer, utiliser la flèche :arrow_up: en haut à gauche
+* Ouvrir le premier notebook `01. types et variables.ipynb`
+* Suivre les consignes et faire les exercices
+* Faire de même avec les 4 autres notebooks
 * Autres possibilités pour utiliser des Notebooks
   * [Google Colab](https://colab.research.google.com/)
   * SSPCloud

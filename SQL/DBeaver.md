@@ -4,6 +4,8 @@
 
 > DBeaver est un outil de gestion de base de données multiplateforme et open source. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQL Server, SQLite, et bien d'autres encore.
 
+Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.
+
 ### :small_orange_diamond: Configuration
 
 * Menu Fenêtre > Preference
@@ -15,9 +17,10 @@
     * Décocher "Ouvrir une connexion séparée pour la lecture des étadonnées"
   * Editeur SQL
     * Décocher "Ouvrir une connexion séparée pour chaque éditeur"
-  * Templates (bonus)
+  * Templates (OPTIONNEL)
     * Enlever les modèles existants
     * Importer le fichier `templates_dbeaver.xml`
+    * Les templates permettent d'écrire plus rapidement des requêtes
 
 ---
 
