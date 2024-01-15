@@ -1,2 +1,3 @@
 tabulate
 mapplotlib
+ipykernel
