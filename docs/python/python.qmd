@@ -1,0 +1,10 @@
+---
+title: "Python"
+description: "Introduction à Python"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+---

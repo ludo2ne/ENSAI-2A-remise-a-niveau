@@ -1,38 +1,161 @@
-# SQL et Bases de données
+---
+title: "Bases de Données Relationnelles et SQL"
+description: "Introduction aux Bases de Données Relationnelles et SQL"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+---
 
-## :arrow_forward: Programme
+## Objectifs
 
-* [ ] Présentation
-* [ ] Utilisation avec DBeaver
-* [ ] Exercice
+* [ ] Qu'est ce qu'une base de données relationnelle ?
+* [ ] Comment sont construits les tables ?
+* [ ] Savoir utiliser le SQL
+
+
+## Introduction
+
+Une `Base de données` (BDD) est une collection organisée de données structurées stockées dans des `Tables`
+
+
+Une `Table` est composée de lignes et de colonnes :
+- une `ligne` représente un enregistrement spécifique
+- une `colonne` représente un attribut particulier de ces enregistrements
+- `Clé primaire` (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table
+
+
+Une base de données relationnelle (BDDR) organise les données sous forme de tables interconnectées.
+Les tables seront liées entre elle grace à des `clés étrangères` (FK). Il y a trois principaux types d'associations :
+
+- `1..1` : Une *Personne* a un *Passport* et un *Passport* appartient à une seule *Personne*
+  - la clé étrangère pourra être placée dans l'une des deux tables
+- `1..` : Une *Joueuse* joue pour une seule équipe *Equipe*. Une *Equipe* est composée de plusieurs *Joueuses*
+  - la clé étrangère devra être placée dans la table *Joueuse*
+- `..`* : Un *Etudiant* suit plusieurs *Cours* et un *Cours* et suivi par plusieurs *Etudiants*
+  - il faut créer une table d'association entre *Etudiant* et *Cours*
 
 ---
 
-## :arrow_forward: Introduction
+- `SGBD` (Système de Gestion de Base de Données) : logiciel qui permet de stocker, organiser et gérer des données de manière structurée
+  - exemples (Bases de données relationnelles) : PostgreSQL, MySQL, Oracle Database
+  - exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra 
+- `SQL` (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles
+
+
+## Exemples
+
+#### Une simple table
+
+```{mermaid}
+classDiagram
+  class Joueuse {
+    id_joueuse: INT(PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    pays: VARCHAR
+    date_naissance: DATE
+  }
+```
+
+| id_joueuse | nom        | prenom     | date_naissance | pays       |
+|------------|------------|------------|----------------|------------|
+| 1          | Sebag      | Marie      | 1986-10-15     | France     |
+| 2          | Polgar     | Judit      | 1976-07-23     | Hongrie    |
+| 3          | Hou        | Yifan      | 1994-02-27     | Chine      |
+| 4          | Kosteniuk  | Alexandra  | 1984-04-23     | Suisse     |
+| 5          | Ju         | Wenjun     | 1991-01-31     | Chine      |
+
+---
+
+#### Lien entre 2 tables via une clé étrangère
+
+```{mermaid}
+classDiagram
+  class Joueuse {
+    id_joueuse: INT (PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR (FK)
+  }
+  
+  class Pays {
+    code_pays: VARCHAR (PK)
+    nom: VARCHAR
+  }
+
+  Joueuse "*" -- "1" Pays : Appartient
+```
+
+`Joueuse`
+
+| id_joueuse | nom        | prenom     | date_naissance | code_pays  |
+|------------|------------|------------|----------------|------------|
+| 1          | Sebag      | Marie      | 1986-10-15     | FR         |
+| 2          | Polgar     | Judit      | 1976-07-23     | HU         |
+| 3          | Hou        | Yifan      | 1994-02-27     | CN         |
+| 4          | Kosteniuk  | Alexandra  | 1984-04-23     | CH         |
+| 5          | Ju         | Wenjun     | 1991-01-31     | CN         |
+
+
+`Pays`
+
+| code_pays | nom          |
+|-----------|--------------|
+| CH        | Suisse       |
+| CN        | Chine        |
+| FR        | France       |
+| HU        | Hongrie      |
+
+---
+
+#### Lien entre 2 tables via une table d'association
+
+```{mermaid}
+classDiagram
+
+  class Joueuse {
+    id_joueuse: INT (PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR (FK)
+  }
+  
+  class Tournoi {
+    id_tournoi: INT (PK)
+    nom: VARCHAR
+    ville: VARCHAR
+  }
+
+  
+  class Participation {
+    id_joueuse: INT (PK)
+    id_tournoi: INT (FK)
+  }
+
+  Joueuse "*" .. "1" Participation
+  Participation "1" .. "*" Tournoi
+```
+
+## SQL
 
 SQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.
 
-* BDD (Base de données) = ensemble de tableaux
-  * BDD relationnelle : utilise des relations pour établir des liens entre les tables
-    * exemple
+Il permet d'effectuer les opérations du CRUD (Create, Read, Upadate, Delete)
 
-Il permet d'effectuer les opérations suivantes sur les données d'une base de données (CRUD) :
+- `SELECT` : récupérer des données depuis une table.
+- `INSERT` : insérer de nouvelles données dans une table.
+- `UPDATE` : mettre à jour des données existantes dans une table.
+- `DELETE` : supprimer des données d'une table.
 
-* créer : INSERT
-* lire : SELECT
-* modifier : UPDATE
-* supprimer : DELETE
 
-Table :
+##  Actions sur les colonnes
 
-* clé primaire (PK)
-* clés étrangères (FK)
-
----
-
-## :arrow_forward: Actions sur les colonnes
-
-### :small_orange_diamond: Créer une Table
+### Créer une Table
 
 :bulb: le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables
 
@@ -54,7 +177,7 @@ CREATE TABLE ran.personnes (
 
 ---
 
-### :small_orange_diamond: Insérer des données dans cette Table
+###  Insérer des données
 
 ```sql
 INSERT INTO ran.personnes (id, nom, prenom, dnais, adresse)
@@ -72,7 +195,7 @@ VALUES
 
 ---
 
-### :small_orange_diamond: Renommer la colonne `date_naissance`
+###  Renommer une colonne
 
 ```sql
 ALTER TABLE ran.personnes
@@ -87,7 +210,7 @@ RENAME COLUMN date_naissance TO dnais;
 
 ---
 
-### :small_orange_diamond: Ajouter un attribut booléen `joue_aux_echecs`
+###  Ajouter un attribut
 
 ```sql
 ALTER TABLE ran.personnes
@@ -102,7 +225,7 @@ ADD joue_aux_echecs BOOLEAN;
 
 ---
 
-### :small_orange_diamond: Supprimer la colonne `adresse`
+###  Supprimer une colonne
 
 ```sql
 ALTER TABLE ran.personnes
@@ -117,7 +240,7 @@ DROP COLUMN adresse;
 
 ---
 
-### :small_orange_diamond: Supprimer la table `personnes`
+###  Supprimer une table
 
 ```sql
 DROP TABLE ran.personnes;
@@ -129,19 +252,20 @@ DROP TABLE ran.personnes;
 
 ---
 
-## :arrow_forward: Actions sur les lignes
+##  Actions sur les lignes
 
 | id | prenom | nom    | date_naissance | adresse |
 |----|--------|--------|----------------|---------|
 
-### :small_orange_diamond: Insérer des lignes
+###  Insérer des lignes
 
 ```sql
-INSERT INTO ran.personnes (id, nom, prenom, date_naissance, adresse)
+INSERT INTO ran.personnes 
+(id, nom,     prenom,     date_naissance,  adresse)
 VALUES
-    (1, 'Ali', 'Gatore', '1990-05-15', 'Paris'),
-    (2, 'Laure', 'Dure', '1985-09-22', 'Lyon'),
-    (3, 'Maud', 'Erateur', '1995-03-10', 'Lille');
+(1, 'Ali',    'Gatore',   '1990-05-15',    'Paris'),
+(2, 'Laure',  'Dure',     '1985-09-22',    'Lyon' ),
+(3, 'Maud',   'Erateur',  '1995-03-10',    'Lille');
 
 ```
 
@@ -153,7 +277,7 @@ VALUES
 
 ---
 
-### :small_orange_diamond: Sélectionner des lignes avec des restrictions
+###  Sélectionner des lignes
 
 ```sql
 SELECT *
@@ -168,38 +292,38 @@ SELECT *
 
 ---
 
-### :small_orange_diamond: Jointures entre tables
+###  Jointures
 
 > Table `commande`
 
-| id | produit | quantite | id_client | prix_unitaire |
-|----|---------|----------|-----------|---------------|
-| 1  | livre   | 1        | 2         | 3             |
+| id | produit | quantite | id_personne | prix_unitaire |
+|----|---------|----------|-------------|---------------|
+| 1  | livre   | 1        | 2           | 3             |
 
 ```sql
 SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personnes p
-  JOIN ran.commandes c ON p.id = c.id_client
+  JOIN ran.commandes c ON p.id = c.id_personne
  WHERE prenom = 'Laure';
 ```
 
-> :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont le même nom.  
-> exemple : si dans la table `personnes` nous avons `id_client` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
+> :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont **le même nom**.  
+> exemple : si dans la table `personnes` nous avons `id_personne` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
 
 ```sql
 SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personnes p
-  JOIN ran.commandes c USING(id_client) -- <--
+  JOIN ran.commandes c USING(id_personne) -- <--
  WHERE prenom = 'Laure';
 ```
 
 ---
 
-### :small_orange_diamond: Jointures externes
+###  Jointures externes
 
 > Que se passe t'il si nous exécutons la requête ci-dessous et qu'Ali n'a passé aucune commande ?
 
@@ -221,14 +345,18 @@ SELECT p.prenom,
   LEFT JOIN ran.commandes c ON p.id = c.id_client
 ```
 
+Ici le `LEFT JOIN` indique que nous affichons :
+- les données provenant de la table **personnes**
+- complétées par les données de la table **commandes** pour les lignes où le lien est établi 
+
 ---
 
-### :small_orange_diamond: Mettre à jour des lignes
+###  Mettre à jour des lignes
 
 ```sql
 UPDATE ran.personnes
-SET adresse = 'Rennes'
-WHERE id = 2;
+   SET adresse = 'Rennes'
+ WHERE id = 2;
 ```
 
 | id | prenom | nom    | date_naissance | adresse |
@@ -239,11 +367,11 @@ WHERE id = 2;
 
 ---
 
-### :small_orange_diamond: Supprimer des lignes
+###  Supprimer des lignes
 
 ```sql
 DELETE FROM ran.personnes
-WHERE prenom = 'Ali';
+ WHERE prenom = 'Ali';
 ```
 
 | id | prenom | nom    | date_naissance | adresse |
@@ -253,36 +381,27 @@ WHERE prenom = 'Ali';
 
 ---
 
-## :arrow_forward: Principaux SGBD
+##  Formes normales
 
-* PostgreSQL
-* Oracle Database
-* MySQL
-* Microsoft SQL Server
-
----
-
-## :arrow_forward: Formes normales
-
-* **1ere forme normale** : Une relation est en 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
-  * Un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné, et donc s'il ne regroupe pas un ensemble de plusieurs valeurs.
-  * Par exemple, une adresse du type `20 rue du Général de Gaulle 35170 BRUZ` n'est pas atomique
-* autres formes normales : voir sur internet...
+- `1ere forme normale` : Une relation est en 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
+  - Un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné, et donc s'il ne regroupe pas un ensemble de plusieurs valeurs.
+  - Par exemple, une adresse du type `20 rue du Général de Gaulle 35170 BRUZ` n'est pas atomique
+- autres formes normales : voir sur internet...
 
 ---
 
-## :arrow_forward: Premières manipulations
+##  Premières manipulations
 
 > voir fichier `DBeaver.md` pour le paramétrage
 
-### :small_orange_diamond: Les schémas
+### Les schémas
 
 Par défaut toutes les tables que nous allons créer iraient dans le schéma public.  
 :bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
 
-* `ran` : schéma utilisé pour la remise à niveau
-* `ci` : schéma utilisé en complément d'informatique
-* `projet` : schéma du projet info 2A
+- `ran` : schéma utilisé pour la remise à niveau
+- `ci` : schéma utilisé en complément d'informatique
+- `projet` : schéma du projet info 2A
 
 ```sql
 CREATE schema ran;
@@ -292,9 +411,9 @@ CREATE schema projet;
 
 ---
 
-### :small_orange_diamond: Mots clés utiles
+### Mots clés utiles
 
-#### :large_blue_circle: LIKE
+#### LIKE
 
 > Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne
 
@@ -305,7 +424,7 @@ SELECT
  WHERE prenom LIKE '%au%';
 ```
 
-#### :large_blue_circle: GROUP BY
+#### GROUP BY
 
 > Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
 
@@ -317,7 +436,7 @@ SELECT adresse,
  GROUP BY adresse;
 ```
 
-#### :large_blue_circle: HAVING
+#### HAVING
 
 > Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d'une condition après le GROUP BY.  
 > :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
@@ -331,7 +450,7 @@ SELECT adresse,
 HAVING COUNT(1) >= 5;
 ```
 
-#### :large_blue_circle: ORDER BY
+#### ORDER BY
 
 ```sql
 SELECT *
@@ -339,7 +458,7 @@ SELECT *
  ORDER BY adresse DESC
 ```
 
-#### :large_blue_circle: AS
+#### AS
 
 > Permet de renommer une colonne dans l'affichage
 
@@ -350,7 +469,7 @@ SELECT adresse AS Ville
 
 ---
 
-### :small_orange_diamond: Quelques possibilités d'utilisation sans table
+####  Quelques possibilités d'utilisation sans table
 
 ```sql
 SELECT CURRENT_DATE;
@@ -361,7 +480,7 @@ SELECT 'Salut';
 
 ---
 
-## :arrow_forward: Exercices
+##  Exercice
 
 Avant de commencer l'exercice, consultez le fichier `DBeaver.md`.  
 
@@ -397,37 +516,3 @@ Description des données :
 ---
 
 la correction est disponible dans le dossier `SQL/exo`
-
-<style>
-    h1{
-        color: darkblue;
-        font-family: "Calibri";
-        font-weight: bold;
-        background-color: seagreen;
-        padding-left: 10px;
-    }
-    h2{
-        color: darkblue;
-        background-color: mediumseagreen;
-        margin-right: 10%;
-        padding-left: 10px;
-    }
-    h3{
-        color: darkblue;
-        background-color: darkseagreen;
-        margin-right: 20%;
-        padding-left: 10px;
-    }
-    h4{
-        color: darkblue;
-        background-color: lightseagreen;
-        margin-right: 30%;
-        padding-left: 10px;
-    }
-    h5{
-        color: darkblue;
-        background-color: aquamarine;
-        margin-right: 40%;
-        padding-left: 10px;
-    }
-</style>

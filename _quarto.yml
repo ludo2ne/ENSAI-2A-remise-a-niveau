@@ -1,0 +1,43 @@
+
+project:
+  type: website
+  render:
+    - "**/*.qmd"
+    - "**/*.ipynb"
+
+website:
+  title: "Remise à Niveau Informatique"
+  navbar:
+    background: "#447099"
+    left:
+      - href: index.qmd
+        text: Home
+      - text: SQL
+        menu: 
+          - href: docs/sql/sql.qmd
+            text: "Introduction à SQL"
+      - text: Python
+        menu: 
+          - href: docs/python/python.qmd
+            text: "Introduction à Python"
+    right:
+      - icon: github
+        href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
+        target: "_blank"        
+  page-footer:
+    right: |
+      Website built with <a href=https://quarto.org/ target="_blank">Quarto</a><br>
+      <a href=https://github.com/ludo2ne/ENSAI-2A-Big-Data target="_blank">Source code</a>
+  repo-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
+  repo-branch: main
+  issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new
+  repo-actions: [edit, issue]
+
+format:
+  html:
+    theme: 
+      dark: solar
+      light: cosmo
+
+
+
