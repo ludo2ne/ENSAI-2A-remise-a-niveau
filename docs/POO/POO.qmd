@@ -1,5 +1,14 @@
+---
+title: "Programmation Orientée Objet"
+description: "POO avec Python"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+---
 
-# La Programmation Orientée Objet (POO)
 
 Nous allons introduire les notions suivantes :
 
