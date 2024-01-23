@@ -1,0 +1,590 @@
+[
+  {
+    "objectID": "docs/python/05-POO-introduction.html",
+    "href": "docs/python/05-POO-introduction.html",
+    "title": "Introduction à la POO",
+    "section": "",
+    "text": "La Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d’objets, qui contiennent :\n\ndes attributs (caractéristiques de l’objet)\ndes méthodes (fonctions propres à l’objet)\n\nEn Python, il est possible mais pas obligatoire d’utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.\n\n\nEn Python, tout est un objet (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.\n\nprint(type(1))\nprint(type(\"bonjour\"))\nprint(type([]))\nprint(type({}))          \nprint(type(lambda x: x**2))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n&lt;class 'list'&gt;\n&lt;class 'dict'&gt;\n&lt;class 'function'&gt;\n\n\n\n\n\nPour créer un objet, nous avons besoin dans un premier temps d’un modèle : une classe.\nNous pouvons voir la classe comme un « moule » qui permettra ensuite de construire des objets.\nPar exemple, nous créons une classe Velo dont voici la documentation :\n    \"\"\"\n    Classe représentant un vélo.\n\n    Attributs:\n        couleur (str): La couleur du vélo.\n        vitesse (int): La vitesse actuelle du vélo.\n        porte_bagage (bool): Indique si le vélo a un porte-bagage.\n\n    Méthodes:\n        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo \n        __str__(): représentation en chaîne de caractères d'un objet Velo\n        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.\n        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.\n        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.\n        est_arrete(): Vérifie si le vélo est complètement arrêté.\n\n    \"\"\"\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        \n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    def accelerer(self, acceleration):\n        self.vitesse += acceleration\n\n    def ralentir(self, deceleration):\n        self.vitesse -= deceleration\n        if self.vitesse &lt; 0:\n            self.vitesse = 0\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n            \n    def est_arrete(self):\n        return self.vitesse == 0\n\n: \n\n\nAvec cette classe nous pouvons maintenant créer des instances (objets) de type Velo\n\nv1 = Velo(\"bleu\")\nprint(v1)\n\nv2 = Velo(\"violet\", True)\nprint(v2)\n\nJe suis un vélo bleu. Ma vitesse est de : 0.\nJe suis un vélo violet. Ma vitesse est de : 0. J'ai un porte-bagages.\n\n\n\n## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo\nv1.accelerer(20)\nv1.installer_porte_bagage()\nprint(v1)\n\nJe suis un vélo bleu. Ma vitesse est de : 20. J'ai un porte-bagages.\n\n\nAnalysons la syntaxe de construction d’une classe d’objets : - l’instruction class définit la classe d’objets. Différents objets pourront être créés selon le modèle défini par cette classe.\nPar convention, le nom de la classe doit commencer par une majuscule. - la classe spécifie un certains nombres de fonctions que l’on appelle méthodes : ce sont des fonctions spécifiques à la classe d’objets définie. - la méthode __init__, est appelée le constructeur. Elle est obligatoire, sinon il est impossible d’instancier d’objets de la classe.\nElle permet de définir les attributs attachés à cette classe d’objets.\nIl est possible de passer des paramètres au constructeur (ex : couleur) pour définir des attributs propres à une instance de l’objet. - le constructeur a un paramètre obligatoire : self. C’est une référence aux instances qui vont être créées à partir de cette classe.\nLa syntaxe suivante définit un attribut : self.attribut = valeur. - La méthode __str__ (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet. - les autres méthodes sont définies par l’utilisateur. Elles prennent également le self en paramètre, pour accéder aux attributs et méthodes.\nComme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.\n\n\n\nUn attribut est une variable associée à un objet. Un attribut peut contenir n’importe quel objet Python.\n\n\nUne fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : instance.attribut.\n\nprint(v1.couleur)\nprint(v2.couleur)\nprint()\nprint(v1.vitesse)\nprint(v2.vitesse)\n\nbleu\nviolet\n\n40\n0\n\n\nOn voit bien que les deux instances sont autonomes : bien qu’elles soient du même type, leurs attributs diffèrent.\n\n\n\nModifier un attribut d’une instance est très simple, la syntaxe est : instance.attribut = nouvelle_valeur.\n\nv2.couleur = \"jaune\"\nprint(v2.couleur)\n\njaune\n\n\n\n\n\nChaque instance de Velo a ses propres attributs d’instance (couleur, vitesse, porte_bagage).\nIl est possible d’avoir des attributs communs à tous les Velos : les attributs de classe.\nCréons la classe VeloBis pour illustrer avec un attribut comptant le nombre de VeloBis créés.\n\nclass VeloBis:\n    nb_velos_bis = 0                                       # Attribut de classe pour compter le nombre de VeloBis\n\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        VeloBis.nb_velos_bis += 1\n\n\nprint(VeloBis.nb_velos_bis)\nvb1 = VeloBis(\"rose\")\nprint(VeloBis.nb_velos_bis)\nvb2 = VeloBis(\"orange\")\nprint(VeloBis.nb_velos_bis)\n\n4\n5\n6\n\n\n\n\n\n\nUne méthode est une fonction associée à un objet. Elle peut utiliser ses attributs, les modifier, et faire intervenir d’autres méthodes de l’objet.\n\n\nLa syntaxe pour appeler une méthode d’un objet instancié est la suivante : instance.methode(parametres).\n\nv1.est_arrete()\n\nFalse\n\n\nRemarque : les méthodes n’ont pas d’existence propre en dehors de l’objet.\nNous ne pouvons pas appeler la méthode est_arrete() seule, cela n’a pas de sens.\n\nest_arrete()\n\nNameError: name 'est_arrete' is not defined\n\n\nRemarque 2 : * le 1er paramètre de chaque méthode d’instance est toujours self pour faire référence à l’objet lui même * lors des appels aux méthodes, on ne spécifie pas ce paramètre self\n\n\n\nTout l’intérêt des méthodes est qu’elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.\nPar exemple : - si l’on n’utilise pas les méthodes accelerer et decelerer, il est possible de se retrouver avec une vitesse négative\n\nv1.vitesse = -10\nprint(v1)\n\nJe suis un vélo bleu. Ma vitesse est de : -10. J'ai un porte-bagages.\n\n\nModifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.\nIl est possible d’aller encore plus loin :\n\nv1.vitesse = \"Jean-Michel\"\nprint(v1)\n\nJe suis un vélo Sieste. Ma vitesse est de : Jean-Michel. J'ai un porte-bagages.\n\n\nEn utilisant les méthodes, cela évite de se retrouver dans des situations absurdes ou incohérentes.\n\nv1 = Velo(\"Bleu\")\nv1.accelerer(10)\nprint(v1)\nv1.ralentir(20)\nprint(v1)\n\nJe suis un vélo Bleu. Ma vitesse est de : 10.\nJe suis un vélo Bleu. Ma vitesse est de : 0.\n\n\n\n\n\n\nPour écarter tout problème, une solution intéressante est d’utiliser la classe property.\nCette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self._vitesse = 0                                    # Attribut privé pour stocker la vitesse\n        self.porte_bagage = porte_bagage\n\n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    @property\n    def vitesse(self):\n        return self._vitesse\n\n    @vitesse.setter\n    def vitesse(self, nouvelle_vitesse):\n        if nouvelle_vitesse &gt;= 0:\n            self._vitesse = nouvelle_vitesse\n        else:\n            raise ValueError(\"La vitesse doit être un nombre positif.\")\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n\n    def est_arrete(self):\n        return self.vitesse == 0\n\n\nv3 = Velo(\"noir\")\nprint(v3)\nv3.vitesse = 10\nprint(v3)\nv3.vitesse = -20\nprint(v3)\n\nJe suis un vélo noir. Ma vitesse est de : 0.\nJe suis un vélo noir. Ma vitesse est de : 10.\n\n\nValueError: La vitesse doit être un nombre positif."
+  },
+  {
+    "objectID": "docs/python/05-POO-introduction.html#la-programmation-orientée-objet",
+    "href": "docs/python/05-POO-introduction.html#la-programmation-orientée-objet",
+    "title": "Introduction à la POO",
+    "section": "",
+    "text": "La Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d’objets, qui contiennent :\n\ndes attributs (caractéristiques de l’objet)\ndes méthodes (fonctions propres à l’objet)\n\nEn Python, il est possible mais pas obligatoire d’utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.\n\n\nEn Python, tout est un objet (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.\n\nprint(type(1))\nprint(type(\"bonjour\"))\nprint(type([]))\nprint(type({}))          \nprint(type(lambda x: x**2))\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n&lt;class 'list'&gt;\n&lt;class 'dict'&gt;\n&lt;class 'function'&gt;\n\n\n\n\n\nPour créer un objet, nous avons besoin dans un premier temps d’un modèle : une classe.\nNous pouvons voir la classe comme un « moule » qui permettra ensuite de construire des objets.\nPar exemple, nous créons une classe Velo dont voici la documentation :\n    \"\"\"\n    Classe représentant un vélo.\n\n    Attributs:\n        couleur (str): La couleur du vélo.\n        vitesse (int): La vitesse actuelle du vélo.\n        porte_bagage (bool): Indique si le vélo a un porte-bagage.\n\n    Méthodes:\n        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo \n        __str__(): représentation en chaîne de caractères d'un objet Velo\n        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.\n        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.\n        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.\n        est_arrete(): Vérifie si le vélo est complètement arrêté.\n\n    \"\"\"\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        \n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    def accelerer(self, acceleration):\n        self.vitesse += acceleration\n\n    def ralentir(self, deceleration):\n        self.vitesse -= deceleration\n        if self.vitesse &lt; 0:\n            self.vitesse = 0\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n            \n    def est_arrete(self):\n        return self.vitesse == 0\n\n: \n\n\nAvec cette classe nous pouvons maintenant créer des instances (objets) de type Velo\n\nv1 = Velo(\"bleu\")\nprint(v1)\n\nv2 = Velo(\"violet\", True)\nprint(v2)\n\nJe suis un vélo bleu. Ma vitesse est de : 0.\nJe suis un vélo violet. Ma vitesse est de : 0. J'ai un porte-bagages.\n\n\n\n## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo\nv1.accelerer(20)\nv1.installer_porte_bagage()\nprint(v1)\n\nJe suis un vélo bleu. Ma vitesse est de : 20. J'ai un porte-bagages.\n\n\nAnalysons la syntaxe de construction d’une classe d’objets : - l’instruction class définit la classe d’objets. Différents objets pourront être créés selon le modèle défini par cette classe.\nPar convention, le nom de la classe doit commencer par une majuscule. - la classe spécifie un certains nombres de fonctions que l’on appelle méthodes : ce sont des fonctions spécifiques à la classe d’objets définie. - la méthode __init__, est appelée le constructeur. Elle est obligatoire, sinon il est impossible d’instancier d’objets de la classe.\nElle permet de définir les attributs attachés à cette classe d’objets.\nIl est possible de passer des paramètres au constructeur (ex : couleur) pour définir des attributs propres à une instance de l’objet. - le constructeur a un paramètre obligatoire : self. C’est une référence aux instances qui vont être créées à partir de cette classe.\nLa syntaxe suivante définit un attribut : self.attribut = valeur. - La méthode __str__ (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet. - les autres méthodes sont définies par l’utilisateur. Elles prennent également le self en paramètre, pour accéder aux attributs et méthodes.\nComme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.\n\n\n\nUn attribut est une variable associée à un objet. Un attribut peut contenir n’importe quel objet Python.\n\n\nUne fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : instance.attribut.\n\nprint(v1.couleur)\nprint(v2.couleur)\nprint()\nprint(v1.vitesse)\nprint(v2.vitesse)\n\nbleu\nviolet\n\n40\n0\n\n\nOn voit bien que les deux instances sont autonomes : bien qu’elles soient du même type, leurs attributs diffèrent.\n\n\n\nModifier un attribut d’une instance est très simple, la syntaxe est : instance.attribut = nouvelle_valeur.\n\nv2.couleur = \"jaune\"\nprint(v2.couleur)\n\njaune\n\n\n\n\n\nChaque instance de Velo a ses propres attributs d’instance (couleur, vitesse, porte_bagage).\nIl est possible d’avoir des attributs communs à tous les Velos : les attributs de classe.\nCréons la classe VeloBis pour illustrer avec un attribut comptant le nombre de VeloBis créés.\n\nclass VeloBis:\n    nb_velos_bis = 0                                       # Attribut de classe pour compter le nombre de VeloBis\n\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        VeloBis.nb_velos_bis += 1\n\n\nprint(VeloBis.nb_velos_bis)\nvb1 = VeloBis(\"rose\")\nprint(VeloBis.nb_velos_bis)\nvb2 = VeloBis(\"orange\")\nprint(VeloBis.nb_velos_bis)\n\n4\n5\n6\n\n\n\n\n\n\nUne méthode est une fonction associée à un objet. Elle peut utiliser ses attributs, les modifier, et faire intervenir d’autres méthodes de l’objet.\n\n\nLa syntaxe pour appeler une méthode d’un objet instancié est la suivante : instance.methode(parametres).\n\nv1.est_arrete()\n\nFalse\n\n\nRemarque : les méthodes n’ont pas d’existence propre en dehors de l’objet.\nNous ne pouvons pas appeler la méthode est_arrete() seule, cela n’a pas de sens.\n\nest_arrete()\n\nNameError: name 'est_arrete' is not defined\n\n\nRemarque 2 : * le 1er paramètre de chaque méthode d’instance est toujours self pour faire référence à l’objet lui même * lors des appels aux méthodes, on ne spécifie pas ce paramètre self\n\n\n\nTout l’intérêt des méthodes est qu’elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.\nPar exemple : - si l’on n’utilise pas les méthodes accelerer et decelerer, il est possible de se retrouver avec une vitesse négative\n\nv1.vitesse = -10\nprint(v1)\n\nJe suis un vélo bleu. Ma vitesse est de : -10. J'ai un porte-bagages.\n\n\nModifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.\nIl est possible d’aller encore plus loin :\n\nv1.vitesse = \"Jean-Michel\"\nprint(v1)\n\nJe suis un vélo Sieste. Ma vitesse est de : Jean-Michel. J'ai un porte-bagages.\n\n\nEn utilisant les méthodes, cela évite de se retrouver dans des situations absurdes ou incohérentes.\n\nv1 = Velo(\"Bleu\")\nv1.accelerer(10)\nprint(v1)\nv1.ralentir(20)\nprint(v1)\n\nJe suis un vélo Bleu. Ma vitesse est de : 10.\nJe suis un vélo Bleu. Ma vitesse est de : 0.\n\n\n\n\n\n\nPour écarter tout problème, une solution intéressante est d’utiliser la classe property.\nCette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self._vitesse = 0                                    # Attribut privé pour stocker la vitesse\n        self.porte_bagage = porte_bagage\n\n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    @property\n    def vitesse(self):\n        return self._vitesse\n\n    @vitesse.setter\n    def vitesse(self, nouvelle_vitesse):\n        if nouvelle_vitesse &gt;= 0:\n            self._vitesse = nouvelle_vitesse\n        else:\n            raise ValueError(\"La vitesse doit être un nombre positif.\")\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n\n    def est_arrete(self):\n        return self.vitesse == 0\n\n\nv3 = Velo(\"noir\")\nprint(v3)\nv3.vitesse = 10\nprint(v3)\nv3.vitesse = -20\nprint(v3)\n\nJe suis un vélo noir. Ma vitesse est de : 0.\nJe suis un vélo noir. Ma vitesse est de : 10.\n\n\nValueError: La vitesse doit être un nombre positif."
+  },
+  {
+    "objectID": "docs/python/05-POO-introduction.html#bonnes-pratiques",
+    "href": "docs/python/05-POO-introduction.html#bonnes-pratiques",
+    "title": "Introduction à la POO",
+    "section": "Bonnes pratiques",
+    "text": "Bonnes pratiques\nPour conclure cette introduction au langage Python, voici une liste de bonnes pratiques généralement suivies par les développeurs.\nLe respect de ces pratiques est fortement recommandé et vous aidera à mieux coder.\n\nConvention de nommage\n\nvariables\n\ndonner des noms explicites (éviter les toto, var1 …)\nen minuscules avec des mots séparés par des underscores (snake_case)\n\nexception pour les variables constantes : utiliser des MAJUSCULES avec des mots séparés par des underscores\n\ncela permet d’avoir un code plus lisible pour vous même et pour les autres\n\nfonctions et méthodes\n\nidem que pour les variables\n\nclasses\n\nutiliser le camelCase : chaque mot commence par une Majuscule.\nex : VeloElectrique\n\n\n\n\nIndenter correctement le code\nUtilisez une indentation de 4 espaces pour chaque niveau d’indentation.\nL’indentation correcte est essentielle en Python, car elle détermine la structure du code.\n\n\nAjouter des commentaires pertinents\nDès qu’il y a un peu de complexité, commentez votre code pour expliquer son fonctionnement.\nAjoutez des docstrings aux fonctions, classes et modules pour expliquer leur fonctionnement, leurs paramètres et leurs valeurs de retour."
+  },
+  {
+    "objectID": "docs/python/05-POO-introduction.html#exercices",
+    "href": "docs/python/05-POO-introduction.html#exercices",
+    "title": "Introduction à la POO",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nCréez une classe Etudiant avec les attributs : * nom * age * liste_notes\nAvec les méthodes : * init() : constructeur * ajouter_note() : pour ajouter une nouvelle note à la liste * calculer_moyenne() : calculer la moyenne des notes\n\n## Testez votre réponse dans cette cellule\n\n\n\nExercice 2\nCréer une classe Point qui représente les coordonnées d’un point en 2D.\nAjouter une méthode distance(autre_point) qui calcule la distance avec un autre point.\nCréez une classe Cercle avec les attributs centre (de la classe Point) et rayon.\nAjoutez une méthode calculer_surface() qui renvoie la surface du cercle.\n\n## Testez votre réponse dans cette cellule\n\n\n\nExercice 3\nCréez une classe CompteBancaire avec les attributs suivants : * titulaire : le nom du titulaire du compte (chaîne de caractères) * solde : le solde du compte (nombre réel)\nLa classe devra avoir les méthodes suivantes :\n\n__init__(self, titulaire) : le constructeur de la classe\ndeposer(self, montant) : une méthode qui permet de déposer un montant sur le compte. Le montant devra être ajouté au solde\nretirer(self, montant) : une méthode qui permet de retirer un montant du compte. Le montant devra être soustrait du solde\nafficher_solde(self) : une méthode qui affiche le solde du compte\ntransferer(autreCompte, montant) qui transfère de l’argent du compte vers l’autre si le solde est suffisant\n\nCréer 2 Comptes et tester les différentes fonctionnalités.\n\n## Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html",
+    "href": "docs/python/03-tests-et-boucles.html",
+    "title": "Tests et Boucles",
+    "section": "",
+    "text": "Dans ce Notebook, nous allons aborder les thèmes suivants : * les structures if, else * la boucle for * la boucle while * les instructions break et continue"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#la-boucle-for",
+    "href": "docs/python/03-tests-et-boucles.html#la-boucle-for",
+    "title": "Tests et Boucles",
+    "section": "La boucle for",
+    "text": "La boucle for\nIl y a plusieurs manières d’utiliser la boucle for, voici quelques exemples.\nIl est très fréquent d’utiliser avec les boucles la méthode range(start, stop, step) qui génére une suite d’entiers * start : Valeur de départ de la séquence (optionnelle). Par défaut, elle est définie à 0. * stop : Valeur de fin de la séquence (exclue). * step : Pas d’incrément (optionnel). Par défaut, il est défini à 1.\n\n# Afficher les entiers entre 1 et 6\nfor i in range(1, 6):\n    print(i)\n\n1\n2\n3\n4\n5\n\n\n\nfor i in range(6):\n    print(i, i ** 2, sep=\"\\t\")\n\n0   0\n1   1\n2   4\n3   9\n4   16\n5   25\n\n\n\n# Parcours d'une liste\npersonnages = [\"Luke\", \"Leia\", \"Han\", \"Obi-Wan\"]\n\nfor p in personnages:\n    print(\"Hello \" + p)\n\nHello Luke\nHello Leia\nHello Han\nHello Obi-Wan\n\n\n\n# Parcours d'une liste par indice\nfor i in range(len(personnages)):\n    print(\"Personnage \" + str(i) + \" : \" + personnages[i])\n\nPersonnage 0 : Luke\nPersonnage 1 : Leia\nPersonnage 2 : Han\nPersonnage 3 : Obi-Wan\n\n\nLa fonction enumerate() est utilisée pour itérer simultanément sur les indices et les éléments.\nElle permet de générer un tuple(indice, élément)\n\nlist(enumerate(personnages))\n\n[(0, 'Luke'), (1, 'Leia'), (2, 'Han'), (3, 'Obi-Wan')]\n\n\n\n# Parcours d'une liste en utilisant enumerate\nfor numero, nom in enumerate(personnages):\n    print(\"Personnage \" + str(numero) + \" : \" + nom)\n\nPersonnage 0 : Luke\nPersonnage 1 : Leia\nPersonnage 2 : Han\nPersonnage 3 : Obi-Wan\n\n\n\n# Parcours d'une chaîne de caractères\nfor char in \"Dark Vador\":\n    print(char, end=\" - \")\n\nD - a - r - k -   - V - a - d - o - r - \n\n\n\nimport time\n\nmessage = \"Salut les lapinous\"\nfor i in range(len(message)):\n    time.sleep(0.5)\n    print(message[i], end=\"\")\n\nSalut les lapinous\n\n\n\ningredients = {'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True}\n\n# Parcours des clés d'un dictionnaire\nfor cle in ingredients:\n    print(cle)\n\nsucre\npoire\nlait\nsel"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#la-boucle-while",
+    "href": "docs/python/03-tests-et-boucles.html#la-boucle-while",
+    "title": "Tests et Boucles",
+    "section": "La boucle while",
+    "text": "La boucle while\nLe principe de la boucle while est le suivant : * une condition d’entrée dans la boucle est définie * tant que la condition est vérifiée, le code dans la boucle est exécuté * et ainsi de suite, jusqu’à ce que l’on sorte de la boucle (ou que l’on reste coincé dedans à tout jamais…)\n\ncpt = 5\nwhile cpt &gt;= 0:\n    print(cpt, end=\"...\")\n    cpt -= 1      # cpt = cpt - 1\nprint(\"Boom\")\n\n5...4...3...2...1...0...Boom\n\n\n\nuser_input = input(\"Entrez un nombre pair : \")\nwhile int(user_input) % 2 != 0:\n    print(\"Ce n'est pas un nombre pair.\")\n    user_input = input(\"Entrez un nombre pair : \")\nprint(\"Merci, vous avez entré un nombre pair.\")\n\nEntrez un nombre pair :  3\nEntrez un nombre pair :  5\nEntrez un nombre pair :  4\n\n\nCe n'est pas un nombre pair.\nCe n'est pas un nombre pair.\nMerci, vous avez entré un nombre pair.\n\n\n\nCritère d’arrêt\nLa différence principale avec la boucle for est le critère d’arrêt.\nDans une boucle for, ce critère est clair : la boucle itère sur les éléments d’un objet itérable, nécessairement de taille finie.\nAu contraire, dans la boucle while, ce critère peut ne jamais se réaliser et l’on se retrouve alors dans une boucle infinie…\nPar exemple si l’on se trompe dans le nom des indices, voici le résultat :\n\n# Utilisez le bouton \"Stop\" (carré noir) de Jupyter pour arrêter le programme en cours\ni = 1\nj = 1\nwhile i &lt;= 5:\n    j = j + 1\n\nComme i = 1 et ne change jamais, la condition i &lt;= 5 est toujours égale à True\n\nprint(i)\nprint(j)\n\n1\n67414191"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#linstruction-break",
+    "href": "docs/python/03-tests-et-boucles.html#linstruction-break",
+    "title": "Tests et Boucles",
+    "section": "L’instruction break",
+    "text": "L’instruction break\nUne autre possibilité pour sortir d’une boucle for ou while est d’utiliser l’instruction break.\nLe code ci-dessous montre une utilisation de cette instruction : * On rentre dans une boucle infinie (While true) * Le seul moyen d’en sortir est de trouver le bon nombre, ce qui nous envoie vers le break\nLe code contient également des instructions try et except qui gérent le cas ou la valeur saisie n’est pas numérique.\nRemarque : en cas de boucles imbriquées, le break ne met fin qu’à la boucle de niveau supérieur.\n\nimport random\n\nnombre_aleatoire = random.randint(1, 20)\n\nprint(\"Entrez un nombre entre 1 et 20\")\nwhile True:\n    nombre_saisi = input()\n    try:\n        nombre_saisi = int(nombre_saisi)\n        if nombre_saisi == nombre_aleatoire:\n            break\n        elif nombre_saisi &lt; 1 or nombre_saisi &gt; 20:\n            print(\"Entre 1 et 20 !!!\")        \n        elif nombre_saisi &gt; nombre_aleatoire:\n            print(\"c'est moins\")\n        elif nombre_saisi &lt; nombre_aleatoire:\n            print(\"c'est plus\")\n    except ValueError:\n        print(\"Veuillez entrer un entier valide\")\n        \nprint(\"Félicitations, vous avez trouvé le nombre secret :\", nombre_aleatoire)\n\nEntrez un nombre entre 1 et 20\nc'est plus\nc'est plus\nc'est moins\nFélicitations, vous avez trouvé le nombre secret : 16\n\n\n 10\n 15\n 17\n 16"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#linstruction-continue",
+    "href": "docs/python/03-tests-et-boucles.html#linstruction-continue",
+    "title": "Tests et Boucles",
+    "section": "L’instruction continue",
+    "text": "L’instruction continue\nL’instruction continue permet de passer à l’itération suivante de la boucle.\nDans l’exemple ci-dessus : * on rentre dans une boucle infinie * tant que l’on ne rentre pas le bon prénom, on recommence au début de la boucle * puis on ne sort de la boucle que lorsque l’on a rentré le bon mot de passe\n\nvotre_prenom = \"alice\"\n\nwhile True:\n    print(\"Veuillez entrer votre prénom.\")\n    prenom = input()\n    if prenom != votre_prenom:\n        continue\n    print(\"Veuillez entrer votre mot de passe.\")\n    mdp = input()\n    if mdp == \"123456\":\n        break\nprint(\"Bienvenue \" + votre_prenom)\n\nVeuillez entrer votre prénom.\nVeuillez entrer votre mot de passe.\nBienvenue alice\n\n\n alice\n 123456"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-1",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-1",
+    "title": "Tests et Boucles",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nEcrire un programme qui calcule la somme des 10 premiers entiers au carré.\nEcrire un programme qui calcule la somme des 5 premiers entiers impairs au carré.\n\n# Testez votre réponse dans cette cellule\n\n165\n\n\n\n# Remarque : avec Python il est possible parfois de condenser l'écriture\nsum(i**2 for i in range(1,11) if i%2 == 1)\n\n165"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-2",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-2",
+    "title": "Tests et Boucles",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nRé-écrivez le code ci-dessous à l’aide d’une boucle for.\nIndice : explorez les différentes utilisations de la méthode range()\n\ncpt = 5\nwhile cpt &gt;= 0:\n    print(cpt)\n    cpt -= 1      # cpt = cpt - 1\nprint(\"Boom\")\n\n5\n4\n3\n2\n1\n0\nBoom\n\n\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-3",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-3",
+    "title": "Tests et Boucles",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nRéécrivez la boucle for suivante à l’aide d’une boucle while.\n\ngamme = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']\n\nfor i, note in enumerate(gamme):\n    print(\"La note numéro \" + str(i) + \" de la gamme de do majeur est \" + note)\n\nLa note numéro 0 de la gamme de do majeur est do\nLa note numéro 1 de la gamme de do majeur est re\nLa note numéro 2 de la gamme de do majeur est mi\nLa note numéro 3 de la gamme de do majeur est fa\nLa note numéro 4 de la gamme de do majeur est sol\nLa note numéro 5 de la gamme de do majeur est la\nLa note numéro 6 de la gamme de do majeur est si\n\n\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-4",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-4",
+    "title": "Tests et Boucles",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nTriez la liste ci-dessous à l’aide de 2 boucles for (sans utiliser de méthode toute faite de tri) : * liste = [34, 7, 20, 12, 50, 23, 16, 28, 6, 11, 19, 13, 26, 8, 9]\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-5",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-5",
+    "title": "Tests et Boucles",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nEcrivez un programme permettant de calculer les 10 premiers termes de la suite de Fibonacci à l’aide d’une boucle for.\nMême question avec une boucle while.\nRappel : La suite de Fibonacci se définit de la manière suivante : - les deux premiers nombres sont 0 et 1 - chaque autre nombre de la suite s’obtient en additionnant les deux nombres qui le précèdent\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-6",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-6",
+    "title": "Tests et Boucles",
+    "section": "Exercice 6",
+    "text": "Exercice 6\nCalculer le minimum et le maximum de la série de valeurs suivantes, sans utiliser les fonctions min et max de Python.\nx = [8, 18, 6, 0, 15, 17.5, 9, 1]\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-7",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-7",
+    "title": "Tests et Boucles",
+    "section": "Exercice 7",
+    "text": "Exercice 7\nÀ l’aide de boucles for et while, parcourez ce dictionnaire et affichez la moyenne de chaque élève.\n\nnotes = {\n    \"Miranda\"  : [16, 5, 8, 12],\n    \"Celestin\" : [19, 1, 7, 10],\n    \"Hypolyte\" : [18, 3, 12],\n    \"Josephine\": [12, 15, 14, 14]\n}\n\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/03-tests-et-boucles.html#exercice-8",
+    "href": "docs/python/03-tests-et-boucles.html#exercice-8",
+    "title": "Tests et Boucles",
+    "section": "Exercice 8",
+    "text": "Exercice 8\nCalculer la moyenne et la variance de la série de valeurs suivantes, sans utiliser des fonctions déjà codées :\nx = [8, 18, 6, 0, 15, 17.5, 9, 1]\nPour rappel, les formules sont : - moyenne : \\[\\bar{x} = {\\frac {1}{n}}\\sum_{i=1}^{n}x_{i}\\] - variance : \\[\\sigma^2 = {\\frac {1}{n}}\\sum_{i=1}^{n} (x_{i}-\\bar{x})^2\\]\n\n# Testez votre réponse dans cette cellule\n\n\n# Pour vérifier vos résultats\nimport numpy as np\n\n# Create an array of numbers\nx = [8, 18, 6, 0, 15, 17.5, 9, 1]\n\nprint(\"Mean     : \", np.mean(x))\nprint(\"Variance : \", np.var(x))\n\nMean     :  9.3125\nVariance :  42.93359375"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html",
+    "href": "docs/python/01-types-et-variables.html",
+    "title": "Types et variables",
+    "section": "",
+    "text": "Pour réaliser ce Notebook, je me suis inspiré de :"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html#affectation-de-variables",
+    "href": "docs/python/01-types-et-variables.html#affectation-de-variables",
+    "title": "Types et variables",
+    "section": "Affectation de variables",
+    "text": "Affectation de variables\n\n# Créer la variable a et lui affecter la valeur 8\na = 8\n\n# Créer la variable b et lui affecter la chaîne de caractère \"texte\"\nb = \"texte\"\n\n# Créer la variable c et lui affecter le booléen True\nc = True\n\n\n# Afficher le contenu de a\na\n\nRemarque : Un notebook n’affiche que la dernière valeur qui lui est demandé.\nPour réaliser plusieurs affichage, il faut utiliser la méthode print\n\nprint(a+1)\nprint(b)\nprint(c)\n\nPython est langage typé dynamiquement.\nCela siginifie qu’il est possible de modifier le type d’une variable sans contrainte.\nSi la variable a contient du texte, il est possible de lui affecter ensuite un entier.\n\nprint(a)\na = \"abcd\"\nprint(a)\na = False\nprint(a)\n\nAstuce : Pour afficher toutes les variables créées et leurs valeurs, vous pouvez utiliser la commande %whos\n\n%whos"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html#nombres",
+    "href": "docs/python/01-types-et-variables.html#nombres",
+    "title": "Types et variables",
+    "section": "Nombres",
+    "text": "Nombres\nLa fonction type permet de connaitre le type\n\na = 8\ntype(a)\n\n\nb = 33.5\ntype(b)\n\n\nfloat('inf')\n\n\nConvertions\nLes fonctions float et int peuvent être utilisées pour passer d’un type à l’autre.\n\n# Conversion en float\nfloat(a)\n\n\n# Conversion en int (partie entière)\nint(b)\n\n\n# Notation scientifique\n2.1e3\n\n\n\nOpérations arithmétiques de base\n\n# Addition\n1 + 1\n\n\n# Soustraction\n6 - 2\n\n\n# Multiplication\n3 * 4\n\n\n# Division\n11 / 5\n\n\n# Division euclidienne : quotient\n11 // 5\n\n\n# Division euclidienne : reste (modulo)\n11 % 5\n\n\n# Puissance\n2 ** 10\n\n\n# Racine carrée\n36 ** 0.5"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html#chaînes-de-charactères",
+    "href": "docs/python/01-types-et-variables.html#chaînes-de-charactères",
+    "title": "Types et variables",
+    "section": "Chaînes de charactères",
+    "text": "Chaînes de charactères\nLes chaînes de caractères (strings) sont utilisées pour stocker de l’information textuelle.\nUn string se définit en mettant l’information entre apostrophes ' ou entre guillemets \".\n\nDéfinition\n\na = 'une chaine de caractères définie avec des apostrophes'\na\n\n\nb = \"une chaine de caractères définie avec des guillemets\"\nb\n\n\n# Pour inclure une apostrophe à l'intérieur de la chaine\n\"j'inclus l'apostrophe\"\n\n\n# Pour inclure des guillemets à l'intérieur de la chaine\n'les \"guillemets\" sont là'\n\n\n\nMétodes utiles\nVoici un aperçu de quelques méthodes utiles. De nombreuses autres existent (voir documentation officielle)\n\n# Longueur d'une chaîne (nombre de caractères)\nlen(\"J'ai 18 caractères\")\n\n\n# Concaténation\n\"I am\" + \"your father\"\n\n\n# Concaténation avec un nombre\nannee = 2\n\"je suis en \" + annee + \"ème année\"\n\nProblème, il faut au préalable convertir le nombre en chaîne de caractères.\nLa méthode str fait le travail.\n\n# Concaténation avec un nombre - après convertion du nombre en string\nannee = 2\n\"je suis en \" + str(annee) + \"ème année\"\n\n\n# Répétition\n\"hop \" * 5\n\n\n# Mettre en majuscules\n\"C'est OK\".upper()\n\n\n# Mettre en minuscules\n\"C'est OK\".lower()\n\n\n# Compter le nombre d'occurences\n\"Mangez cinq fruits et légumes par jour\".count(\"a\")\n\n\n# Créer une liste de mots\n\"Mangez cinq fruits et légumes par jour\".split()\n\n\n# Séparer les mots selon un caractère spécifique\n\"un-deux-trois-soleil\".split(\"-\")\n\n\n# Utiliser les strings comme templates\n\"mon numéro est : {}\".format(\"06 12 34 56 78\")\n\n\n# Commence par ?\n\"vélo\".startswith(\"vé\")\n\n\n# Se termine par ?\n\"vélo\".endswith(\"lo\")\n\n\n\nExtraire des sous-chaînes\nUne chaîne de caractères est considérée en Python comme une liste de caractères.\nIl est donc possible d’extraire différents éléments de cette liste\n\n# Premier élémént\n\"c'est de toute beauté\"[0]\n\n\n# Deuxième élémént\n\"c'est de toute beauté\"[1]\n\n\n# Dernier élémént\n\"c'est de toute beauté\"[-1]\n\n\n# À partir d'un certain caractère\n\"c'est de toute beauté\"[6:]\n\n\n# Jusqu'à un certain caractère\n\"c'est de toute beauté\"[:8]\n\n\n# Extraire une sous-chaîne\n\"c'est de toute beauté\"[9:14]\n\n\n# Extraire tous les 2 caractères, à partir de la 4 ème position\n\"c'est de toute beauté\"[4::2]\n\n\n# Inverser une chaîne\n\"c'est de toute beauté\"[::-1]\n\n\nCaractères spéciaux\nPour insérer des caractères spéciaux au sein d’une chaîne de caractère, il faut utiliser le caractère d’échappement \\.\n\n\n\nCaractère\nDescription\n\n\n\n\n\\\nCaractère d’échappement\n\n\n\\’\nApostrophe\n\n\n\\”\nGuillemets doubles\n\n\n\\n\nRetour à la ligne\n\n\n\\t\nTabulation horizontale\n\n\n\\r\nRetour chariot\n\n\n\n\nc = \"une chaîne\\nsur 2 lignes\"\nprint(c)\n\n\n# Définir une chaîne de caractères sur plusieurs lignes\nd = \"\"\"une autre \\\"possibilité\\\" pour\navoir une chaîne sur 2 lignes\"\"\"\nprint(d)"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html#boléens",
+    "href": "docs/python/01-types-et-variables.html#boléens",
+    "title": "Types et variables",
+    "section": "Boléens",
+    "text": "Boléens\nLes Booléens ne peuvent prendre que deux valeurs : True et False\nAttention à bien respecter la notation avec la première lettre en majuscule et les autres en minuscule.\n\ntype(True)\n\n\nOpérateurs de comparaison\n\n\n\nOpérateur\nSignification\n\n\n\n\n==\nEgal à\n\n\n!=\nNon égal à\n\n\n&lt;\nStrictement inférieur à\n\n\n&gt;\nStrictement supérieur à\n\n\n&lt;=\nInférieur ou égal à\n\n\n&gt;=\nSupérieur ou égal à\n\n\n\n\n8 &gt; 5\n\n\n1+1 == 2\n\n\n[1, 2, 3] == [1, 2, 3]\n\n\n\"girafe\" != \"gnou\"\n\n\n# Enchainement d'opérateurs\n1 &lt; 2 == 2 &gt;= 1 != 2\n\n\n\nOpérateurs and, or, not\n\na = True\nb = False\n\na and b\n\n\na or b\n\n\nnot a\n\n\n(a or b) and (a and not b)"
+  },
+  {
+    "objectID": "docs/python/01-types-et-variables.html#exercices",
+    "href": "docs/python/01-types-et-variables.html#exercices",
+    "title": "Types et variables",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nCalculer la somme des longueurs des trois chaînes de caractères suivantes : - “une première chaîne” - “et une deuxième” - “jamais deux sans trois”\n\n# Tapez votre réponse dans cette cellule\n\n\n\nExercice 2\nQuel est le type adapté pour définir un code postal ?\nEssayer de définir les codes postaux suivants au format int et au format string : - 92120 - 02350\nQue concluez-vous ?\n\n# Tapez votre réponse dans cette cellule\n\n\n\nExercice 3\nCompter le nombre de fois où la lettre e est présente dans la chaîne suivante : Je compte le nombre de e dans cette chaîne de caractères\n\n# Tapez votre réponse dans cette cellule\n\n\n\nExercice 4\nRepérer la première position où la lettre e est présente dans la chaîne suivante : “Je fais un comptage des e.”\nIndice : on peut utiliser la méthode built-in find.\n\n# Tapez votre réponse dans cette cellule\n\n\n\nExercice 5\nSupprimer les espaces superflus au début et à la fin de la chaîne suivante :\nIndice : on peut utiliser la méthode built-in strip.\n\n# Tapez votre réponse dans cette cellule\na = \"    Un string très mal formatté.         \"\n\n\n\nExercice 6\nRéaliser la suite d’opérations suivantes à l’aide des opérateurs d’incrémentation, et imprimer la valeur finale : - initialiser une variable à 1 - lui soustraire 5 - la multiplier par 4 - lui ajouter 22\n\n# Tapez votre réponse dans cette cellule\n\n\n\nExercice 7\nConsidérons les deux séquences suivantes : - “nous sommes en” - “2022”\nTrouvez à partir du tutoriel deux manières différentes de les utiliser pour composer la séquence “nous sommes en 2022”.\n\n# Tapez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/sql/sql.html",
+    "href": "docs/sql/sql.html",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "",
+    "text": "Qu’est ce qu’une base de données relationnelle ?\nComment sont construits les tables ?\nSavoir écrire des requêtes SQL\nUtiliser DBeaver"
+  },
+  {
+    "objectID": "docs/sql/sql.html#objectifs",
+    "href": "docs/sql/sql.html#objectifs",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "",
+    "text": "Qu’est ce qu’une base de données relationnelle ?\nComment sont construits les tables ?\nSavoir écrire des requêtes SQL\nUtiliser DBeaver"
+  },
+  {
+    "objectID": "docs/sql/sql.html#introduction",
+    "href": "docs/sql/sql.html#introduction",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Introduction",
+    "text": "Introduction\nUne Base de données (BDD) est une collection organisée de données structurées stockées dans des Tables\nUne Table est composée de lignes et de colonnes : - une ligne représente un enregistrement spécifique - une colonne représente un attribut particulier de ces enregistrements - Clé primaire (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table\nUne base de données relationnelle (BDDR) organise les données sous forme de tables interconnectées. Les tables seront liées entre elle grace à des clés étrangères (FK). Il y a trois principaux types d’associations :\n\n1..1 : Une Personne a un Passport et un Passport appartient à une seule Personne\n\nla clé étrangère pourra être placée dans l’une des deux tables\n\n1.. : Une Joueuse joue pour une seule équipe Equipe. Une Equipe est composée de plusieurs Joueuses\n\nla clé étrangère devra être placée dans la table Joueuse\n\n..* : Un Etudiant suit plusieurs Cours et un Cours et suivi par plusieurs Etudiants\n\nil faut créer une table d’association entre Etudiant et Cours\n\n\nUn SGBD (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée - exemples (Bases de données relationnelles) : PostgreSQL, MySQL, Oracle Database - exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra\nSQL (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.\nDBeaver est un outil client qui permet de se connecter à un SGBD."
+  },
+  {
+    "objectID": "docs/sql/sql.html#exemples",
+    "href": "docs/sql/sql.html#exemples",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Exemples",
+    "text": "Exemples\n\nUne simple table\n\n\n\n\n\nclassDiagram\n  class Joueuse {\n    id_joueuse: INT(PK)\n    nom: VARCHAR\n    prenom: VARCHAR\n    pays: VARCHAR\n    date_naissance: DATE\n  }\n\n\n\n\n\n\n\n\n\nid_joueuse\nnom\nprenom\ndate_naissance\npays\n\n\n\n\n1\nSebag\nMarie\n1986-10-15\nFrance\n\n\n2\nPolgar\nJudit\n1976-07-23\nHongrie\n\n\n3\nHou\nYifan\n1994-02-27\nChine\n\n\n4\nKosteniuk\nAlexandra\n1984-04-23\nSuisse\n\n\n5\nJu\nWenjun\n1991-01-31\nChine\n\n\n\n\n\n\nLien entre 2 tables via une clé étrangère\n\n\n\n\n\nclassDiagram\n  class Joueuse {\n    id_joueuse: INT (PK)\n    nom: VARCHAR\n    prenom: VARCHAR\n    date_naissance: DATE\n    code_pays: VARCHAR (FK)\n  }\n  \n  class Pays {\n    code_pays: VARCHAR (PK)\n    nom: VARCHAR\n  }\n\n  Joueuse \"*\" -- \"1\" Pays : Appartient\n\n\n\n\n\n\nJoueuse\n\n\n\nid_joueuse\nnom\nprenom\ndate_naissance\ncode_pays\n\n\n\n\n1\nSebag\nMarie\n1986-10-15\nFR\n\n\n2\nPolgar\nJudit\n1976-07-23\nHU\n\n\n3\nHou\nYifan\n1994-02-27\nCN\n\n\n4\nKosteniuk\nAlexandra\n1984-04-23\nCH\n\n\n5\nJu\nWenjun\n1991-01-31\nCN\n\n\n\nPays\n\n\n\ncode_pays\nnom\n\n\n\n\nCH\nSuisse\n\n\nCN\nChine\n\n\nFR\nFrance\n\n\nHU\nHongrie\n\n\n\n\n\n\nLien entre 2 tables via une table d’association\n\n\n\n\n\nclassDiagram\n\n  class Joueuse {\n    id_joueuse: INT (PK)\n    nom: VARCHAR\n    prenom: VARCHAR\n    date_naissance: DATE\n    code_pays: VARCHAR (FK)\n  }\n  \n  class Tournoi {\n    id_tournoi: INT (PK)\n    nom: VARCHAR\n    ville: VARCHAR\n  }\n\n  \n  class Participation {\n    id_joueuse: INT (PK)\n    id_tournoi: INT (FK)\n  }\n\n  Joueuse \"*\" .. \"1\" Participation\n  Participation \"1\" .. \"*\" Tournoi"
+  },
+  {
+    "objectID": "docs/sql/sql.html#sql",
+    "href": "docs/sql/sql.html#sql",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "SQL",
+    "text": "SQL\nSQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.\nIl permet d’effectuer les opérations du CRUD (Create, Read, Upadate, Delete)\n\nSELECT : récupérer des données depuis une table.\nINSERT : insérer de nouvelles données dans une table.\nUPDATE : mettre à jour des données existantes dans une table.\nDELETE : supprimer des données d’une table."
+  },
+  {
+    "objectID": "docs/sql/sql.html#actions-sur-les-colonnes",
+    "href": "docs/sql/sql.html#actions-sur-les-colonnes",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions sur les colonnes",
+    "text": "Actions sur les colonnes\n\nCréer une Table\n💡 le ran. correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables\n-- Création de la table personne (ceci est un commentaire)\nCREATE TABLE ran.personnes (\n    id               INT         PRIMARY KEY,\n    nom              VARCHAR(30) NOT NULL,\n    prenom           VARCHAR(40),\n    date_naissance   DATE,\n    adresse          TEXT\n);\n\n\n\nid\nnom\nprenom\ndate_naissance\nadresse\n\n\n\n\n\n\nLa table est créée mais vide\n\n\n\n\nInsérer des données\nINSERT INTO ran.personnes (id, nom, prenom, dnais, adresse)\nVALUES\n    (1, 'Dupont', 'Jean', '1990-05-15', 'Paris'),\n    (2, 'Martin', 'Emma', '1985-09-22', 'Lyon'),\n    (3, 'Leroy', 'Paul', '1995-03-10', 'Lille');\n\n\n\nid\nnom\nprenom\ndate_naissance\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nParis\n\n\n2\nDure\nLaure\n1985-09-22\nLyon\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\nRenommer une colonne\nALTER TABLE ran.personnes\nRENAME COLUMN date_naissance TO dnais;\n\n\n\nid\nnom\nprenom\ndnais\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nParis\n\n\n2\nDure\nLaure\n1985-09-22\nLyon\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\nAjouter un attribut\nALTER TABLE ran.personnes\nADD joue_aux_echecs BOOLEAN;\n\n\n\nid\nnom\nprenom\ndnais\nadresse\nechecs\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nParis\ntrue\n\n\n2\nDure\nLaure\n1985-09-22\nLyon\nfalse\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\ntrue\n\n\n\n\n\n\nSupprimer une colonne\nALTER TABLE ran.personnes\nDROP COLUMN adresse;\n\n\n\nid\nnom\nprenom\ndnais\nechecs\n\n\n\n\n1\nGatore\nAli\n1990-05-15\ntrue\n\n\n2\nDure\nLaure\n1985-09-22\nfalse\n\n\n3\nErateur\nMaud\n1995-03-10\ntrue\n\n\n\n\n\n\nSupprimer une table\nDROP TABLE ran.personnes;\n&gt; ERREUR: la relation « ran.personnes » n'existe pas"
+  },
+  {
+    "objectID": "docs/sql/sql.html#actions-sur-les-lignes",
+    "href": "docs/sql/sql.html#actions-sur-les-lignes",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions sur les lignes",
+    "text": "Actions sur les lignes\n\n\n\nid\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n\n\n\n\n\n\n\n\n\nInsérer des lignes\nINSERT INTO ran.personnes \n(id, nom,     prenom,     date_naissance,  adresse)\nVALUES\n(1, 'Ali',    'Gatore',   '1990-05-15',    'Paris'),\n(2, 'Laure',  'Dure',     '1985-09-22',    'Lyon' ),\n(3, 'Maud',   'Erateur',  '1995-03-10',    'Lille');\n\n\n\nid\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n1\nAli\nGatore\n1990-05-15\nParis\n\n\n2\nLaure\nDure\n1985-09-22\nLyon\n\n\n3\nMaud\nErateur\n1995-03-10\nLille\n\n\n\n\n\n\nSélectionner des lignes\nSELECT *\n  FROM ran.personnes\n WHERE adresse LIKE 'L%'\n   AND prenom = 'Laure';\n\n\n\nid\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n2\nLaure\nDure\n1985-09-22\nLyon\n\n\n\n\n\n\nJointures\n\nTable commande\n\n\n\n\nid\nproduit\nquantite\nid_personne\nprix_unitaire\n\n\n\n\n1\nlivre\n1\n2\n3\n\n\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM ran.personnes p\n  JOIN ran.commandes c ON p.id = c.id_personne\n WHERE prenom = 'Laure';\n\n💡 il est possible d’utiliser le mot clé USING à la place de ON si les 2 colonnes permettant la jointure ont le même nom.\nexemple : si dans la table personnes nous avons id_personne au lieu de id, la requête ci-dessous peut-être modifiée en :\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM ran.personnes p\n  JOIN ran.commandes c USING(id_personne) -- &lt;--\n WHERE prenom = 'Laure';\n\n\n\nJointures externes\n\nQue se passe t’il si nous exécutons la requête ci-dessous et qu’Ali n’a passé aucune commande ?\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM ran.personnes p\n  JOIN ran.commandes c ON p.id = c.id_client\nPour afficher toutes les personnes, même celles qui n’ont pas réalisé de commande, nous allons utiliser les jointures externees : LEFT JOIN ou RIGHT JOIN\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM ran.personnes p\n  LEFT JOIN ran.commandes c ON p.id = c.id_client\nIci le LEFT JOIN indique que nous affichons : - les données provenant de la table personnes - complétées par les données de la table commandes pour les lignes où le lien est établi\n\n\n\nMettre à jour des lignes\nUPDATE ran.personnes\n   SET adresse = 'Rennes'\n WHERE id = 2;\n\n\n\nid\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n1\nAli\nGatore\n1990-05-15\nParis\n\n\n2\nLaure\nDure\n1985-09-22\nRennes\n\n\n3\nMaud\nErateur\n1995-03-10\nLille\n\n\n\n\n\n\nSupprimer des lignes\nDELETE FROM ran.personnes\n WHERE prenom = 'Ali';\n\n\n\nid\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n2\nLaure\nDure\n1985-09-22\nRennes\n\n\n3\nMaud\nErateur\n1995-03-10\nLille"
+  },
+  {
+    "objectID": "docs/sql/sql.html#formes-normales",
+    "href": "docs/sql/sql.html#formes-normales",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Formes normales",
+    "text": "Formes normales\n\n1ere forme normale (1NF) : Une relation est 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.\n\nUn attribut est atomique si il ne contient qu’une seule valeur pour un tuple donné, et donc s’il ne regroupe pas un ensemble de plusieurs valeurs.\nPar exemple, une adresse du type 20 rue du Général de Gaulle 35170 BRUZ n’est pas atomique\n\n2NF : 1NF + tout attribut non clé dépend de la clé\n3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé"
+  },
+  {
+    "objectID": "docs/sql/sql.html#premières-manipulations",
+    "href": "docs/sql/sql.html#premières-manipulations",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Premières manipulations",
+    "text": "Premières manipulations\n\nLes schémas\nPar défaut toutes les tables que nous allons créer iraient dans le schéma public.\n💡 pour une meilleure organisation, nous allons classer nos tables dans différents schémas :\n\nran : schéma utilisé pour la remise à niveau\nci : schéma utilisé en compléments d’informatique\nprojet : schéma du projet info 2A\n\nCREATE schema ran;\nCREATE schema ci;\nCREATE schema projet;\n\n\n\nMots clés utiles\n\nLIKE\n\nUtilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne\n\n-- toutes les personnes ayant un prénom contenant \"au\"\nSELECT \n  FROM ran.personnes\n WHERE prenom LIKE '%au%';\n\n\nGROUP BY\n\nUtilisé pour regrouper les résultats en fonction d’une ou plusieurs colonnes et permettre l’utilisation de fonctions d’agrégation telles que COUNT, SUM, AVG\n\nSELECT adresse,\n       COUNT(1)\n  FROM ran.personnes\n GROUP BY adresse;\n\n\nHAVING\n\nUtilisé après la clause GROUP BY pour filtrer les résultats en fonction d’une condition après le GROUP BY.\n⚠️ ne pas confondre avec WHERE qui s’appliquerait avant le GROUP BY\n\nSELECT adresse,\n       COUNT(1)\n  FROM ran.personnes\n GROUP BY adresse\nHAVING COUNT(1) &gt;= 5;\n\n\nORDER BY\nSELECT *\n  FROM ran.personnes\n ORDER BY adresse DESC\n\n\nAS\n\nPermet de renommer une colonne dans l’affichage\n\nSELECT adresse AS Ville\n  FROM ran.personnes\n\n\n\nQuelques possibilités d’utilisation sans table\nSELECT CURRENT_DATE;\nSELECT 1+2;\nSELECT 1 &gt; 2;\nSELECT 'Salut';"
+  },
+  {
+    "objectID": "docs/sql/sql.html#exercice",
+    "href": "docs/sql/sql.html#exercice",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Exercice",
+    "text": "Exercice\n\nAvant de commencer\n\nconsultez le fichier d’utilisation de DBeaver\nCopiez le contenu du fichier echecs.sql,\nCollez dans DBeaver\nExécuter le script.\n\n\n\nDescription des données\n\nNous avons des joueurs, des tournois\nCertains joueurs sont aussi arbitres et ont un grade d’arbitre\nLes tournois ont une cadence. Ils sont arbitrés par un arbitre\n\n\n\n\n\n\nclassDiagram\n  class arbitre_grade {\n    id_arbitre_grade: INT(PK)\n    nom: VARCHAR\n  }\n\n  class joueur {\n    id_joueur: INT(PK)\n    pseudo: VARCHAR\n    nom: VARCHAR\n    prenom: VARCHAR\n    elo: INT\n    mail: VARCHAR\n    id_arbitre_grade: INT(FK -&gt; arbitre_grade)\n  }\n\n  class cadence {\n    id_cadence: INT(PK)\n    nom: VARCHAR\n  }\n\n  class tournoi {\n    id_tournoi: INT(PK)\n    id_arbitre: INT(FK -&gt; joueur)\n    nom: VARCHAR\n    debut: DATE\n    fin: DATE\n    nb_rondes: INT\n    id_cadence: INT(FK -&gt; cadence)\n  }\n\n  class participant {\n    id_tournoi: INT(FK -&gt; tournoi)\n    id_joueur: INT(FK -&gt; joueur)\n  }\n\n  arbitre_grade -- joueur\n  cadence -- tournoi\n  tournoi -- participant\n  joueur -- participant\n\n\n\n\n\n\n\n\n\nQuestions\n\nListez tous les joueurs\n\nFaîtes de même sur les autres tables pour observer leur contenu\n\nListez tous les joueurs ordonnés par elo descroissant\nListez tous les joueurs ayant un elo inférieur ou égal à 2000\nListez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule) 💡 tip : voir méthode UPPER\nCréez la joueuse : Martine Dupont, elo : 1999, Arbitre Elite\nSupprimez le joueur de pseudo marc78\nEssayez de supprimer le joueur ayant pour id : 20\n\nPourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?\n\nListez les joueurs qui sont arbitres 💡 voir IS NOT NULL\nAjoutez à la table joueur la colonne de type booléen est_arbitre\nRemplissez cette nouvelle colonne pour tous les joueurs\nListez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre\nListez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont\nComptez le nombre de joueurs qui sont arbitre\nComptez le nombre d’arbitres par grade\nComptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000\nAffichez la liste des tournois (nom du tournoi, cadence, arbitre)\nAjouter le nombre de joueurs et le elo max des joueurs\n\n\nLa correction est disponible ici."
+  },
+  {
+    "objectID": "docs/python/python.html",
+    "href": "docs/python/python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.\n\nPython\n\n1ère version en 1991\ngratuit\nmultiplateforme (Linux, Windows…)\nlangage interprété\n\nle script python est directement exécuté\npas de compilation\n\nlangage orienté objet\nsensible à l’indentation (généralement 4 espaces)\n\nutiliser un formatage automatique (autopep8)\n\n\nVersion utilisée à l’ENSAI : 3.10.4\n\ndernière version : 3.11.3\n\nDistribution utilisée à l’ENSAI\n\nCPython\nAutre distribution populaire : Anaconda\n\nIDE (Integrated Development Environment) utilisé à l’ENSAI\n\nVisual Studio Code\nAutres IDE : PyCharm, Jupyter, Atom, Spyder…\n\nPackages\n\nInformatique\n\ninquirerPy\nrequests\npsycopg2-binary\ntabulate\n\nDatascience\n\nNumPy\nPandas (manipulation et analyse des données, dataframe)\nMatplotlib (graphiques 2D et 3D), Seaborn\n\n\n\n\n\nOuvrir une invite de commandes Git Bash\n\npython --version              # Python 3.10.4 \npip list                      # Packages installés\npip install &lt;package_name&gt;    # installer un package\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'"
+  },
+  {
+    "objectID": "docs/python/python.html#introduction",
+    "href": "docs/python/python.html#introduction",
+    "title": "Python",
+    "section": "",
+    "text": "Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.\n\nPython\n\n1ère version en 1991\ngratuit\nmultiplateforme (Linux, Windows…)\nlangage interprété\n\nle script python est directement exécuté\npas de compilation\n\nlangage orienté objet\nsensible à l’indentation (généralement 4 espaces)\n\nutiliser un formatage automatique (autopep8)\n\n\nVersion utilisée à l’ENSAI : 3.10.4\n\ndernière version : 3.11.3\n\nDistribution utilisée à l’ENSAI\n\nCPython\nAutre distribution populaire : Anaconda\n\nIDE (Integrated Development Environment) utilisé à l’ENSAI\n\nVisual Studio Code\nAutres IDE : PyCharm, Jupyter, Atom, Spyder…\n\nPackages\n\nInformatique\n\ninquirerPy\nrequests\npsycopg2-binary\ntabulate\n\nDatascience\n\nNumPy\nPandas (manipulation et analyse des données, dataframe)\nMatplotlib (graphiques 2D et 3D), Seaborn\n\n\n\n\n\nOuvrir une invite de commandes Git Bash\n\npython --version              # Python 3.10.4 \npip list                      # Packages installés\npip install &lt;package_name&gt;    # installer un package\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'"
+  },
+  {
+    "objectID": "docs/python/python.html#utilisation-des-notebooks",
+    "href": "docs/python/python.html#utilisation-des-notebooks",
+    "title": "Python",
+    "section": "Utilisation des Notebooks",
+    "text": "Utilisation des Notebooks\nPour découvrir Python, nous allons commencer par coder dans des Notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour utiliser les Notebooks :\n\nSe connecter à Jupyter avec idxxxx et mot de passe\nImporter dans Jupyter les 5 fichiers .ipynb, présents dans ce même dossier\n\npour importer, utiliser la flèche ⬆️ en haut à gauche\n\nOuvrir le premier notebook 01. types et variables.ipynb\nSuivre les consignes et faire les exercices\nFaire de même avec les 4 autres notebooks\nAutres possibilités pour utiliser des Notebooks\n\nGoogle Colab\nSSPCloud\n\n\n\nTypes de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\nLe type de cellule souhaité est modifiable dans la barre d’outils.\n\n\nCommandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
+  },
+  {
+    "objectID": "docs/python/python.html#ressources-utiles",
+    "href": "docs/python/python.html#ressources-utiles",
+    "title": "Python",
+    "section": "Ressources utiles",
+    "text": "Ressources utiles\n\n\nhttps://www.data-transitionnumerique.com/anaconda-python/\nhttps://github.com/ludo2ne/projet-info-2A\nSSPCloud\n\ninitiation à Python\nPython pour la datascience\ninitiation à Spark\ninitiation au Machine Learning\nanalyse textuelle\n\nhttps://pythonds.linogaliana.fr/rappels2a/"
+  },
+  {
+    "objectID": "docs/python/python.html#for-fun",
+    "href": "docs/python/python.html#for-fun",
+    "title": "Python",
+    "section": "For fun",
+    "text": "For fun\nChaque année en décembre, l’AdventOfCode occupe les développeurs"
+  },
+  {
+    "objectID": "docs/POO/POO.html",
+    "href": "docs/POO/POO.html",
+    "title": "Programmation Orientée Objet",
+    "section": "",
+    "text": "Nous allons introduire les notions suivantes :"
+  },
+  {
+    "objectID": "docs/POO/POO.html#introduction",
+    "href": "docs/POO/POO.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "Introduction",
+    "text": "Introduction\nLa POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (attributs) et des actions (méthodes) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :\n\nEncapsulation : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet\nHéritage : L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d’une hiérarchie de classes\nPolymorphisme : Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action. Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives."
+  },
+  {
+    "objectID": "docs/POO/POO.html#organisation-du-code",
+    "href": "docs/POO/POO.html#organisation-du-code",
+    "title": "Programmation Orientée Objet",
+    "section": "Organisation du code",
+    "text": "Organisation du code\nDans la suite, nous allons organsier notre code de manière logique dans différents modules.\n\nmodule : Les modules d’un programme Python sont ses fichiers sources.\n\n\npaquet : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.\n\n\nbonne pratique\nA la racine de votre projet, créez les 3 dossiers suivants :\n\nsrc : pour stocker votre code source\ndata : pour vos fichiers de données\ndoc : pour votre documentation\n\n.\n├── data\n│   └── temperatures.csv\n├── doc\n│   ├── suivi.md\n│   └── rapport.tex\n└── src\n    ├── __main__.py\n    ├── package1\n    │   ├── __init__.py\n    │   ├── module1.py\n    │   ├── module2.py\n    └── package2\n        ├── __init__.py\n        ├── module3.py\n        └── subpackage21\n            ├── __init__.py\n            ├── module4.py\n            ├── module5.py\nRemarques importantes :\n\nle fichier __main__.py contient le code à exécuter quand le pacakge est exécuté\nles fichiers __init__.py sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)\n\nVoici un exemple plus concret :\n.\n└── src\n    ├── __main__.py\n    ├── vehicules\n    │   ├── __init__.py\n    │   ├── deux_roues.py\n    │   ├── velo.py\n    │   └── trottinette.py\n    └── humain\n        ├── __init__.py\n        ├── personne.py\n        └── etudiant.py"
+  },
+  {
+    "objectID": "docs/POO/POO.html#héritage",
+    "href": "docs/POO/POO.html#héritage",
+    "title": "Programmation Orientée Objet",
+    "section": "Héritage",
+    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthode de sa classe parente.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.\nSupposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L’idée naïve est de créer une classe pour chacun.\nEn réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :\n\ncouleur\nvitesse\naccelerer()\nralentir()\n\nUne idée est de regrouper ces caractéristiques communes dans une classe DeuxRoues. Puis de faire hériter Vélo et Trottinette de DeuxRoues\n\nClasse Abstraite\nCertaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe DeuxRoues. Nous allons directement créer des Velo et des Trottinettes.\nNous pouvons donc définir la classe DeuxRouescomme abstraite\n\nc’est à dire qui ne peut pas être instanciée\ndit autrement : on ne peut pas créer d’objets de cette classe\n\nLa principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.\n\nEn Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.\n\n⚠️ classe mère ne veut pas dire forcément classe abstraite\nExemple :\n\nConsidérons par exemple une classe VeloElectrique qui hérite de la classe Velo\nCela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)\nOr ici la classe Velo n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo"
+  },
+  {
+    "objectID": "docs/POO/POO.html#exercices",
+    "href": "docs/POO/POO.html#exercices",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercices",
+    "text": "Exercices\n\nAvant de commencer\n\nNous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode\nDans ce même dépôt, ouvrir le fichier dans Outils/VSCode.md\nSuivre les consignes du paragraphe Première utilisation\nDans Python-POO/exercices, créez les 2 dossiers suivants :\n\ngeometrie pour stocker vos classes des exercices 1 et 2\ndomino pour l’exercice 3\n\n\n\n\nExercice 1 - Points\nDéfinissez une classe Point pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :\n\n__init__(self, x, y) : constructeur du point avec des coordonnées cartésiennes\nr(self) et t(self) : renvoyant les coordonnées polaires du point\n__str__(self) : pour afficher le Point sous forme de texte, ex : (1.0, 2.4)\ndistance(self, autre_point) : distance avec un autre point\n__eq__(self, autre_point) : renvoi un booléen qui dit si les 2 points sont identiques\nhomothetie(self, k) : appliquant au point une homothétie de centre (0, 0) et de rapport k\ntranslation(self, dx, dy) : appliquant au point une translation de vecteur (dx, dy)\n(bonus) rotation(self, a) : appliquant au point une rotation de centre (0, 0) et d’angle a\n\n\n\nExercice 2 - Polygones\n\nCréer une classe Polygones composées d’objets de la classe Point\n\nnous supposerons par la suite que les segments ne se croisent pas\n\nAjouter à cette classe 2 méthodes abstraites aire() et périmètre() qui seront définies dans les classes filles\nCréer les classes Segment, Triangle et Quadrilatere qui héritent de la classe Polygone\n\nvérifier à chaque fois le nombre de points\nDéfinir les méthodes aire() et périmètre() dans ces classes\n\nCréer la classe Rectangle qui hérite de Quadrilatere\n\nvérifier que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit\n\n\nDiagrammes de classe avec Mermaid\nclassDiagram\n    Point --o Polygone\n    Polygone &lt;|-- Segment : 2\n    Polygone &lt;|-- Triangle : 3\n    Polygone &lt;|-- Quadrilatere : 4\n    Quadrilatere &lt;|-- Rectangle\n    class Point{\n        +float x\n        +float y\n        +distance(autre_point)\n    }\n    class Polygone{\n        +liste[Point] liste_points\n        +aire()\n        +perimetre()\n    }\n    class Quadrilatere{\n        +aire()\n        +perimetre()\n    }\n    class Segment{\n        +aire()\n        +perimetre()\n    }\n    class Triangle{\n        +aire()\n        +perimetre()\n    }\n\n\nExercice 3 - Domino\nÉcrire une classe Domino avec :\n\n2 attributs entiers entre 1 et 6 : extr_A et extr_B\n__str__() : qui affiche les points présents sur les deux extrémités\nretourne() qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).\naccepte_apres(autre_domino) : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino\n\nMaintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n’y aura qu’un seul joueur et il n’est possible de poser que d’un seul côté, à la fin de la rangée de domino):\n\nÉcrivez une fonction qui génère tous les dominos et renvoie la liste\nÉcrivez une fonction pioche() qui pioche au hasard un domino dans une liste et le retire de cette liste\nÉcrivez une fonction affiche_dominos() qui affiche une liste de dominos\nÉcrivez une fonction domino_posables(dominos_en_main, dominos_poses) qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste dominos_poses.\nÉcrivez une fonction jouer() qui :\n\ngénére la liste de tous les dominos\ntire un 1er domino au hasard et le place dans la liste dominos_poses\ndistribue aléatoirement 6 dominos au joueur\naffiche les dominos qu’il peut jouer\nsi aucun domino n’est jouable, lui proposer de piocher\nlui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et quit pour arrêter de jouer)\najoute le domino joué à la liste dominos_poses et le retire de dominos_en_main\n\n\nclassDiagram\n    class Domino{\n        +int sommet_A\n        +int sommet_B\n        +accepte(autre_domino)\n    }"
+  },
+  {
+    "objectID": "docs/UML/UML.html",
+    "href": "docs/UML/UML.html",
+    "title": "UML",
+    "section": "",
+    "text": "UML (Unified Modeling Language) est un langage de modélisation graphique largement utilisé dans le domaine de l’ingénierie logicielle. Il fournit un ensemble de notations et de diagrammes standardisés pour représenter visuellement différents aspects d’un système logiciel.\nL’objectif principal d’UML est de faciliter la communication, la compréhension et la documentation des systèmes logiciels complexes. Il permet aux concepteurs, développeurs et parties prenantes de collaborer efficacement en utilisant des diagrammes compréhensibles et normalisés.\nLes 3 principaux diagrammes :"
+  },
+  {
+    "objectID": "docs/UML/UML.html#diagramme-de-cas-dutilisation",
+    "href": "docs/UML/UML.html#diagramme-de-cas-dutilisation",
+    "title": "UML",
+    "section": "Diagramme de cas d’utilisation",
+    "text": "Diagramme de cas d’utilisation\nUn diagramme de cas d’utilisation UML (Unified Modeling Language) est un type de diagramme utilisé pour représenter les interactions entre les acteurs (utilisateurs ou systèmes externes) et le système logiciel. Il met l’accent sur les fonctionnalités fournies par le système du point de vue des utilisateurs.\nUn diagramme de cas d’utilisation se compose de plusieurs éléments clés :\n\nActeur : Un acteur représente un rôle joué par un utilisateur ou un système externe qui interagit avec le système logiciel. Il peut s’agir d’une personne, d’un autre système, d’un périphérique matériel, etc. Les acteurs sont souvent représentés par des silhouettes.\nCas d'utilisation : Un cas d’utilisation représente une fonctionnalité ou une action que le système logiciel fournit à ses acteurs. Il décrit une interaction entre les acteurs et le système pour atteindre un objectif spécifique.\nRelation d'association : Les relations d’association connectent les acteurs aux cas d’utilisation pour montrer quel acteur utilise quel cas d’utilisation.\n\nLes diagrammes de cas d’utilisation UML sont utilisés pour :\n\ncapturer les exigences fonctionnelles du système\nidentifier les acteurs impliqués\ndécrire les interactions entre les acteurs et le système\ndéfinir les fonctionnalités attendues du système\n\nIls aident à communiquer efficacement les besoins des utilisateurs et à guider le processus de développement logiciel en se concentrant sur les objectifs de l’utilisateur final.\n\nOutils\n\nPlantUML\n\nexemple\n\n\n\n\nExemple\n\n\n\n\n\ngraph LR\n\n  player[\",-. \\n`-' \\n/|\\ \\n |\\n/ \\ \\n Player\"]\n  organizer[\",-. \\n`-' \\n/|\\ \\n |\\n/ \\ \\n Organizer\"]\n\n  player --&gt; modifyProfile([Modify Profile])\n  player --&gt; register([Register Tournament])\n  player --&gt; becomeArbiter([Become Arbiter])\n  \n  organizer --&gt; createTournament([Create   Tournament])\n  organizer --&gt; modifyTournament([Modify Tournament])"
+  },
+  {
+    "objectID": "docs/UML/UML.html#diagramme-de-classe",
+    "href": "docs/UML/UML.html#diagramme-de-classe",
+    "title": "UML",
+    "section": "Diagramme de classe",
+    "text": "Diagramme de classe\nUn diagramme de classes UML (Unified Modeling Language) est un type de diagramme utilisé pour représenter la structure statique d’un système logiciel. Il montre les classes du système, leurs attributs, leurs méthodes et les relations entre les classes.\nUn diagramme de classes UML se compose de différentes boîtes représentant les classes, avec des lignes qui connectent ces boîtes pour montrer les relations entre les classes. Voici quelques éléments clés que l’on retrouve généralement dans un diagramme de classes :\n\nClasse : Elle est représentée par une boîte avec trois sections :\n\nle nom de la classe\nles attributs\nles méthodes\n\nRelation d'association : Une relation d’association représente une connexion entre 2 classes. Elle montre que les objets d’une classe sont associés aux objets d’une autre classe. Par exemple, une classe Étudiant peut être associée à une classe Cours via une relation d’association pour indiquer que les étudiants suivent des cours.\nHéritage : Cela permet de modéliser les concepts de généralisation et de spécialisation.\nAgrégation et Composition : Ces relations décrivent la structure des classes et leur association avec d’autres classes.\n\nL’agrégation est une relation où une classe peut être composée d’autres classes, mais ces classes peuvent exister indépendamment\nLa composition est une relation plus forte où une classe est composée d’autres classes, et ces classes n’existent pas sans la classe parente.\n\nMultiplicité : La multiplicité spécifie le nombre d’objets d’une classe associés à un ou plusieurs objets d’une autre classe dans une relation d’association. Elle est représentée par des nombres ou des symboles tels que “0..1”, “1”, “*“, etc.\n\nLes diagrammes de classes UML sont utilisés pour modéliser la structure conceptuelle d’un système logiciel, identifier les classes et leurs relations. Ils fournissent une représentation visuelle et standardisée pour analyser, concevoir et documenter les systèmes orientés objet.\n\nOutils\n\nPlantUML\n\nexemples\n\nmermaid\n\n\n\nExemple\n\n\n\n\n\nclassDiagram\n    class Adresse {\n        +numero: string\n        +rue: string\n        +ville: string\n    }\n\n    class Personne {\n        +nom: string\n        +prenom: string\n        +age: int\n        +demenager()\n    }\n\n    class Conducteur {\n        +no_permis: string\n    }\n\n    class Voiture {\n        +immat : string\n        +vitesse: float\n    }\n\n    class Roue {\n        +taille: string\n    }\n\n    class Carrosserie {\n        +couleur: string\n    }\n\n    Personne \"*\" -- \"1\" Adresse\n    Personne &lt;|-- Conducteur\n    Conducteur \"*\" -- \"*\" Voiture : conduit\n    Voiture o-- Roue\n    Voiture *-- Carrosserie"
+  },
+  {
+    "objectID": "docs/UML/UML.html#exercice",
+    "href": "docs/UML/UML.html#exercice",
+    "title": "UML",
+    "section": "Exercice",
+    "text": "Exercice\nUn Courrier peut être de 2 types : Lettre ou Colis.\nUne Lettre est caractérisée par :\n\npoids (en grammes)\nmode d’expédition (Rapide ou Normal)\nadresse de destination\nformat (A3 ou A4)\n\nUn Colis est caractérisé par :\n\npoids (en grammes)\nmode d’expédition (Rapide ou Normal)\nadresse de destination\nvolume (en litres)\n\nChaque Courrier dispose des méthodes suivantes :\n\n__init__() : un constructeur\n__str__() : une méthode qui retourne une chaine décrivant le Courrier\ncalcul_affranchissement()\n\npour une Lettre : tarif_base + poids * 0.001\n\navec tarif_base = 2€50 pour le format A4 et 3€50 pour le A3\n\npour un colis : volume / 4 + poids * 0.001\nen mode d’expédition rapide, les montants ci-dessus sont doublés\n\n\n\nQuestions\n\nDéfinir le diagramme de classe\nCoder ces classes en Python\n\nExemple de résultat attendu\n&gt;&gt;&gt; l1 = Lettre(\"Bordeaux\", 80, \"normal\", \"A4\")\n&gt;&gt;&gt; print(l1)\nLettre : \n    Adresse destination : Bordeaux\n    Poids : 80 grammes\n    Mode : normal\n    Format : A4\n    Prix du timbre : 2.58 €\n&gt;&gt;&gt; c1 = Colis(\"Rennes\", 3500, \"rapide\", 2.25)\n&gt;&gt;&gt; print(c1)\nColis : \n    Adresse destination : Rennes \n    Poids : 3500 grammes \n    Mode : rapide \n    Volume : 2.25 litres \n    Prix du timbre : 8.12 €"
+  },
+  {
+    "objectID": "docs/sql/DBeaver.html",
+    "href": "docs/sql/DBeaver.html",
+    "title": "DBeaver",
+    "section": "",
+    "text": "DBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d’autres encore.\nOuvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous."
+  },
+  {
+    "objectID": "docs/sql/DBeaver.html#configuration",
+    "href": "docs/sql/DBeaver.html#configuration",
+    "title": "DBeaver",
+    "section": "⚙️ Configuration",
+    "text": "⚙️ Configuration\n\nMenu Fenêtre &gt; Preference\n\nFormatage SQL\n\nCasse des mots clefs : UPPER\nInsert spaces for tabs\nAppliquer\n\nMetadonnées\n\nDécocher Ouvrir une connexion séparée pour la lecture des étadonnées\n\nEditeur SQL\n\nDécocher Ouvrir une connexion séparée pour chaque éditeur\n\n\n\n\nOptionnel\n\nTemplates\n\nEnlever les modèles existants\nImporter le fichier templates_dbeaver.xml\nLes templates permettent d’écrire plus rapidement des requêtes"
+  },
+  {
+    "objectID": "docs/sql/DBeaver.html#créer-la-connexion",
+    "href": "docs/sql/DBeaver.html#créer-la-connexion",
+    "title": "DBeaver",
+    "section": "⚡ Créer la connexion",
+    "text": "⚡ Créer la connexion\nPour créer une connexion vers la base de données ENSAI sur la VM :\n\nCliquer sur l’icone Nouvelle connexion en haut à gauche sous fichier\nSélectionner PostgreSQL puis suivant\n\nHost : sgbd-eleves.domensai.ecole\nPort : 5432\nDatabase : idxxxx\nNom d’utilisateur : idxxxx\nMot de passe : idxxxx\nTest de connexion\nAcceptez les mises à jour des pilotes\nTerminer"
+  },
+  {
+    "objectID": "docs/sql/DBeaver.html#exécuter-du-sql",
+    "href": "docs/sql/DBeaver.html#exécuter-du-sql",
+    "title": "DBeaver",
+    "section": "🎰 Exécuter du SQL",
+    "text": "🎰 Exécuter du SQL\n\nCliquer sur l’icone SQL\nExécuter la requête courante (où est le curseur de la souris):\n\nCTRL + ENTREE\nle petit triangle orange\n\nExécuter toutes les requêtes\n\nle triangle orange à l’intérieur d’un parachemin"
+  },
+  {
+    "objectID": "docs/sql/DBeaver.html#interface-pgadmin",
+    "href": "docs/sql/DBeaver.html#interface-pgadmin",
+    "title": "DBeaver",
+    "section": "💊 Interface pgAdmin",
+    "text": "💊 Interface pgAdmin\nEn cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface  pgAdmin\n\nUtilisateur : idxxxx\nMot de passe : idxxxx\nUne fois connecté, cliquez sur idxxxx dans le menu de gauche\ncliquez sur SQL pour exécuter des requêtes"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Bases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (git, markdown, R…)\n\n\n\n\nVous pouvez commencer par créer un clone de ce dépôt sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\nLire et suivre les consignes données dans le fichier Python-initiation/Python.md\n\nImporter dans Jupyter les 5 notebooks, lire, puis faire les exercices\n\n\n\n\n\n\nLire et suivre les consignes données dans le fichier Python-POO/La POO.md\nFaire les exercices\n\n\n\n\nLire dans cet ordre les fichiers du dossier UML :\n\nUML.md\nDiag cas utilisation.md\nDiag classe.md\n\nfaire l’exercice\n\n\n\n\n\n\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\n\nsi vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354\n\n\n\n\nSQL\n\nhttps://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql\n\nPython\n\nhttps://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content\n\nparties 1 et 2\n\nhttps://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python\n\nparties 1 et 2"
+  },
+  {
+    "objectID": "index.html#programme",
+    "href": "index.html#programme",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Bases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (git, markdown, R…)"
+  },
+  {
+    "objectID": "index.html#initiation-à-python",
+    "href": "index.html#initiation-à-python",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\nLire et suivre les consignes données dans le fichier Python-initiation/Python.md\n\nImporter dans Jupyter les 5 notebooks, lire, puis faire les exercices"
+  },
+  {
+    "objectID": "index.html#programmation-orientée-objet",
+    "href": "index.html#programmation-orientée-objet",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Lire et suivre les consignes données dans le fichier Python-POO/La POO.md\nFaire les exercices"
+  },
+  {
+    "objectID": "index.html#uml",
+    "href": "index.html#uml",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Lire dans cet ordre les fichiers du dossier UML :\n\nUML.md\nDiag cas utilisation.md\nDiag classe.md\n\nfaire l’exercice"
+  },
+  {
+    "objectID": "index.html#alternatives",
+    "href": "index.html#alternatives",
+    "title": "Remise à niveau informatique",
+    "section": "",
+    "text": "Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\n\nsi vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354\n\n\n\n\nSQL\n\nhttps://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql\n\nPython\n\nhttps://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content\n\nparties 1 et 2\n\nhttps://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python\n\nparties 1 et 2"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html",
+    "href": "docs/python/02-listes-et-dictionnaires.html",
+    "title": "Listes et Dictionnaires",
+    "section": "",
+    "text": "Il existe plusieurs structures de données en Python : * Listes (list) : collection ordonnée et modifiable d’éléments * Dictionnaires (dict) : collection non ordonnée de paires clé-valeur * Ensembles (set) : collection non ordonnée d’éléments uniques * Tuples (tuple) : collection ordonnée et immuable d’éléments\nNous allons ici nous concentrer sur les deux structures les plus courantes : les listes et les dictionnaires"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#créer-une-liste",
+    "href": "docs/python/02-listes-et-dictionnaires.html#créer-une-liste",
+    "title": "Listes et Dictionnaires",
+    "section": "Créer une liste",
+    "text": "Créer une liste\n\n# Liste d'entiers\na = [22, 29, 35, 56]\na\n\n[22, 29, 35, 56]\n\n\n\ntype(a)\n\nlist\n\n\n\n# Liste mixte\nb = [\"bonjour\", 20, True]\nprint(b)\n\n['bonjour', 20, True]\n\n\n\n# Concaténation\na + b\n\n[22, 29, 35, 56, 'bonjour', 20, True]\n\n\n\n# Répétition\na * 2\n\n[22, 29, 35, 56, 22, 29, 35, 56]\n\n\nIl existe de nombreuses autres possibilités pour créer des listes.\n\nlist(range(1, 7))\n\n[1, 2, 3, 4, 5, 6]\n\n\n\n[x for x in range(1, 7)]\n\n[1, 2, 3, 4, 5, 6]\n\n\n\n# En séparant une chaîne de caractères\nc = \"bleu;blanc;rouge;vert;jaune\"\nc.split(\";\")\n\n['bleu', 'blanc', 'rouge', 'vert', 'jaune']"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#méthodes-utiles",
+    "href": "docs/python/02-listes-et-dictionnaires.html#méthodes-utiles",
+    "title": "Listes et Dictionnaires",
+    "section": "Méthodes utiles",
+    "text": "Méthodes utiles\n\n# Nombre d'éléments\nlen(a)\n\n4\n\n\n\n# Premier élément\na[0]\n\n22\n\n\n\n# Dernier élément\na[-1]\n\n56\n\n\n\n# Tous les éléments à partir de la position 1\na[1:]\n\n[29, 35, 56]\n\n\n\n# Tester si une valeur appartient à une liste\n22 in a\n\nTrue\n\n\n\n# Trouver la position d'un élément\na.index(29)\n\n1\n\n\n\n# Inverser une liste (sans modifier la liste d'origine)\nprint(\"a[::-1] : \" + str(a[::-1]))\nprint(\"a :       \" + str(a))\n\na[::-1] : [56, 35, 29, 22]\na :       [22, 29, 35, 56]\n\n\n\n# Inverser une liste (ici l'inversion est sauvegardée dans la variable **a** )\na.reverse()\na\n\n[56, 35, 29, 22]\n\n\n\n# Trier une liste (sans modifier la liste d'origine)\nsorted(a)\n\n[22, 29, 35, 56]\n\n\n\n# Order décroissant\nsorted(a, reverse=True)\n\n[56, 35, 29, 22]\n\n\n\n# Trier une liste (en sauvegardant la modification dans la variable **a**)\nprint(\"Avant : \" + str(a))\na.sort()\nprint(\"Après : \" + str(a))\n\nAvant : [56, 35, 29, 22]\nAprès : [22, 29, 35, 56]"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#ajouter-modifier-et-supprimer",
+    "href": "docs/python/02-listes-et-dictionnaires.html#ajouter-modifier-et-supprimer",
+    "title": "Listes et Dictionnaires",
+    "section": "Ajouter, modifier et supprimer",
+    "text": "Ajouter, modifier et supprimer\n\n# Ajouter à la fin\na.append(44)\na\n\n[22, 29, 35, 56, 44]\n\n\n\n# Insérer à une position précise\na.insert(2, 88)\na\n\n[22, 29, 88, 35, 56, 44]\n\n\n\n# Modifier\na[0] = 99\na\n\n[99, 29, 88, 35, 56, 44]\n\n\n\n# Supprimer par position\na.pop(3)\na\n\n[99, 29, 88, 56, 44]\n\n\n\n# Supprimer par valeur\na.remove(44)\na\n\n[99, 29, 88, 56]"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#copier-une-liste",
+    "href": "docs/python/02-listes-et-dictionnaires.html#copier-une-liste",
+    "title": "Listes et Dictionnaires",
+    "section": "Copier une liste",
+    "text": "Copier une liste\nObservez, puis exécutez le code ci-dessous, il contient les instructions suivantes : - création de la variable liste - création de la variable copie - suppression du dernier élément de copie - affichage de liste\n\nliste = [1, 2, 3, 4]\nliste2 = liste\nliste2.pop()\nliste\n\n[1, 2, 3]\n\n\nNous pourrions nous attendre à ce que la variable liste ne soit pas modifiée et affiche [1, 2, 3, 4].\nPourtant la variable liste2 n’est pas une copie de liste, c’est simplement une autre manière d’appeler la même liste.\n\n# Pour créer une vraie copie qui sera distinct de l'original\ncopie = list(liste)\ncopie.append(9)\nliste, copie\n\n([1, 2, 3], [1, 2, 3, 9])\n\n\n\n# Autre possibilité pour copier\ncp = liste.copy()\ncp.append(8)\nliste, cp\n\n([1, 2, 3], [1, 2, 3, 8])"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#créer-un-dictionnaire",
+    "href": "docs/python/02-listes-et-dictionnaires.html#créer-un-dictionnaire",
+    "title": "Listes et Dictionnaires",
+    "section": "Créer un dictionnaire",
+    "text": "Créer un dictionnaire\n\ningredients = {'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True}\ningredients\n\n{'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True}\n\n\n\ntype(ingredients)\n\ndict\n\n\n\n# Nombre d'éléments\nlen(ingredients)\n\n4\n\n\n\n# Recherche par clé\ningredients['lait']\n\n'1L'\n\n\n\n# Recherche par clé - autre possibilité\ningredients.get('lait')\n\n'1L'"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#ajouter-modifier-et-supprimer-1",
+    "href": "docs/python/02-listes-et-dictionnaires.html#ajouter-modifier-et-supprimer-1",
+    "title": "Listes et Dictionnaires",
+    "section": "Ajouter, modifier et supprimer",
+    "text": "Ajouter, modifier et supprimer\n\n# Ajouter un élément\ningredients['fraise'] =  '200g'\ningredients\n\n{'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True, 'fraise': '200g'}\n\n\n\n# Modifier\ningredients['sucre'] =  '35g'\ningredients\n\n{'sucre': '35g', 'poire': 2, 'lait': '1L', 'sel': True, 'fraise': '200g'}\n\n\n\n# Supprimer \ningredients.pop('lait')\ningredients\n\n{'sucre': '35g', 'poire': 2, 'sel': True, 'fraise': '200g'}"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#méthodes-utiles-1",
+    "href": "docs/python/02-listes-et-dictionnaires.html#méthodes-utiles-1",
+    "title": "Listes et Dictionnaires",
+    "section": "Méthodes utiles",
+    "text": "Méthodes utiles\n\n# Liste des clés\nlist(ingredients.keys())      # idem : list(ingredients)\n\n['sucre', 'poire', 'lait', 'sel']\n\n\n\n# Liste des valeurs\nlist(ingredients.values())\n\n['35g', 2, True, '200g']\n\n\n\n# Liste des items (liste de tuples)\nlist(ingredients.items())\n\n[('sucre', '35g'), ('poire', 2), ('sel', True), ('fraise', '200g')]"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-1",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-1",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nEn partant de la liste notes = [\"do\", \"re\", \"re\", \"re\", \"fa\", \"sol\", \"solsi\", \"la\"], ajoutez, supprimez et modifiez des éléments pour qu’elle contienne les notes de musique “do re mi fa sol la si” dans le bon ordre.\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-2",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-2",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nProposez deux méthodes pour inverser la liste [\"un\", \"deux\", \"trois\", \"quatre\"]. Quelle est la différence majeure entre les deux méthodes ?\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-3",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-3",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nTestez le comportement de la méthode pop sur la liste des entiers de 1 à 9.\nPar exemple, testez pop() sans paramètres ou encore pop(-1).\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-4",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-4",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nTestez le comportement des méthodes min et max sur : - sur une liste composée uniquement d’objets numériques (int et float) ; - sur une liste composée uniquement de chaînes de caractères ; - sur une liste composée d’un mélange d’objets numériques et textuels.\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-5",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-5",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nEssayer de créer une liste vide puis vérifiez son type.\nQuel intérêt cela pourrait-il avoir ?\n\n# Testez votre réponse dans cette cellule\n\nExercice Soit le dictionnaire suivant : animaux = {'chats': 5, 'chiens': 12}\nQue vont retourner les tests d’appartenance suivants ? Vérifiez vos prédictions.\n- 'chats' in animaux.keys() - 'chats' in animaux.values() - 'chats' in animaux\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-6",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-6",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 6",
+    "text": "Exercice 6\nSoit le dictionnaire défini dans la cellule ci-dessous.\nAffichez à l’aide d’opérations print :\n\nla liste des noms des différentes classes\nla note de Miranda en histoire\nla liste des notes obtenues par Hypolyte\nla liste des noms des élèves de la 6emeB\nla liste des matières enseignées en 6eme A\nla liste de toutes les matières enseignées\nla liste des notes obtenues par les filles des deux classes\n\n\nresultats = {\n    \"6emeA\": {\"Miranda\" : {\"notes\": {\"physique\": 16, \"histoire\": 12}},\n              \"Celestin\": {\"notes\": {\"physique\": \"absent\", \"histoire\": 18}}\n             },\n    \"6emeB\": {\"Hypolyte\": {\"notes\": {\"maths\": 11, \"anglais\": 0}},\n              \"Josephine\": {\"notes\": {\"maths\": 16, \"anglais\": 20}}\n             }\n}\n\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-7",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-7",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 7",
+    "text": "Exercice 7\nÀ l’aide d’un dictionnaire, comptez puis affichez le nombre d’occurences de chaque caractère dans la phrase suivante : * Je compte le nombre d'occurences de chaque caractère de la phrase courante.\nAstuce : au préalable, faites un test sur une chaine plus petite.\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/02-listes-et-dictionnaires.html#exercice-8",
+    "href": "docs/python/02-listes-et-dictionnaires.html#exercice-8",
+    "title": "Listes et Dictionnaires",
+    "section": "Exercice 8",
+    "text": "Exercice 8\nNettoyer cette liste pour retirer tous les doublons et ne conserver qu’une seule occurence de chaque fruit : * fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']\nIndice : utiliser les set\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html",
+    "href": "docs/python/04-fonctions.html",
+    "title": "Les fonctions",
+    "section": "",
+    "text": "L’idée d’une fonction est de regrouper ensemble des morceaux de codes qui pourraient être utilisés à plusieurs endroits de votre programme.\nUtiliser des fonctions est une bonne pratique : * cela réduit la duplication du code * cela permet de mieux structurer le code et le rendre plus clair\nUne fonction est composée de : * un ensemble de paramètres * des instructions qui utilisent les paramètres * retourne ou affiche un résultat\nLe mot clé def sert à définir une fonction.\nVoici un exemple de fonction : * Nom de la fonction : ma_fonction * Paramètres : 2 paramètres p1 et p2 * Sortie : résultat de l’opération p1 x p2 + p1 + 5\n\ndef ma_fonction(p1, p2):\n    resultat = p1 * p2 + p1 + 5\n    return resultat\n\nMaintenant que notre fonction est définie, nous pouvons l’appeler autant de fois que nous le souhaitons\n\nma_fonction(2, 6)\n\n19\n\n\n\nma_fonction(5, 1) + ma_fonction(8, 2)\n\n44\n\n\n\n\nLes arguments sont les paramètres de la fonction.\nLorsqu’on appelle une fonction en lui spécifiant des arguments, on dit qu’on lui « passe » des arguments.\nCes arguments deviennent alors des variables qui peuvent être utilisées uniquement à l’intérieur de la fonction.\n\ndef maximum(a, b):\n    if a &gt; b:\n        resultat = a\n    else:\n        resultat = b\n    return resultat\n\n\nmaximum(1, 5)\n\n5\n\n\nÀ l’extérieur des fonctions, les arguments n’existent plus et ne sont plus connus.\n\na\n\nNameError: name 'a' is not defined\n\n\n\n\nEn Python, les fonctions admettent deux modes de passage des arguments : - le passage par position : les arguments sont passés dans l’ordre dans lequel ils ont été définis - le passage par mot-clé : on précise le nom du paramètre lors du passage de l’argument\nIllustrons cette différence à partir d’une fonction qui réalise simplement une division.\n\ndef division(x, y):\n    if y == 0:\n        print(\"ERREUR : Division par 0 impossible\")\n    else:\n        return x / y\n\n\n# Passage par position\ndivision(8, 2)  \n\n4.0\n\n\n\n# Passage par mot-clé\ndivision(x=8, y=2)  \n\n4.0\n\n\nDans le cas du passage par position, le respect de l’ordre est impératif.\n\nprint(division(0, 5))\nprint(division(5, 0))\n\n0.0\nERREUR : Division par 0 impossible\nNone\n\n\nNous remarquons que s’affiche None ci-dessus.\nL’explication est que lorsque l’on passe dans la partie de code if y == 0, il n’y a pas de return.\nDonc par défaut la méthode renvoie None, ce qui représente l’absence de valeur.\nDans le cas du passage par mot-clé, l’ordre n’a plus d’importance.\n\nprint(division(x=0, y=5))\nprint(division(y=5, x=0))\n\n0.0\n0.0\n\n\n\n\n\nLorsqu’on définit une fonction, il est fréquent de vouloir faire cohabiter : * des arguments que doit absolument spécifier l’utilisateur * des arguments optionnels qui spécifient un comportement par défaut de la fonction, mais peuvent également être modifiés si nécessaire\nRegardons par exemple comment on peut modifier le comportement de la fonction print à l’aide d’un argument optionnel.\n\nprint(\"salut\")\nprint(\"salut\")\n\nsalut\nsalut\n\n\n\nprint(\"salut\", end=' ')\nprint(\"salut\")\n\nsalut salut\n\n\nNous avons modifié le comportement du premier appel à print via le paramètre optionnel end.\nPar défaut, cette valeur est fixée à '\\n', soit un retour à la ligne.\nNous l’avons modifié dans la deuxième cellule à un espace, d’où la différence de résultat.\nNous allons maintenant créer une fonction avec un argument optionnel.\nPour expliquer le comportement de cette méthode, une documentation a été ajoutée entre les caractères '''.\n\ndef note_finale(note1, note2, bonus=0):\n    '''Fonction d'ajout de 2 notes\n    Parameters\n    ----------\n        note1 : float\n            la première note\n        note2 : float\n            la deuxième note\n        bonus : float\n            un bonus (optionnel, par défaut égal à 0)\n    Returns\n    -------\n        float : sommes des 2 notes et du bonus\n    '''\n    return note1 + note2 + bonus\n\n\n# Comportement par défaut (bonus=0)\nnote_finale(8.5, 7)  \n\n15.5\n\n\n\n# Comportement modifié\nnote_finale(8.5, 7, bonus = 2)  \n\n17.5\n\n\n\n\n\n\nLa notation *args permet à une fonction de recevoir un nombre variable d’arguments positionnels\nLa notation **kwargs permet à une fonction de recevoir un nombre variable d’arguments clé-valeur\n\n\n# Exemple d'utilisation de args\n\ndef moyenne(*args):\n    somme = 0\n    nb = 0\n    for a in args:\n        somme += a\n        nb += 1\n    print(f\"Moyenne de {args} : {somme / nb}\")\n\nmoyenne(10, 15)\nmoyenne(8, 20, 16, 12)\n\nMoyenne de (8, 20, 15) : 14.333333333333334\n\n\n\n# Exemple d'utilisation de kwargs\n\ndef recette(**kwargs):\n    for a in kwargs:\n        # get argument name\n        arg_name = a\n        # get argument value\n        arg_value = kwargs[arg_name]\n        print(arg_name, \" = \", arg_value)\n    \n    \nrecette(tomate=2, farine=\"100g\", sel=True)\n\ntomate  =  2\nfarine  =  100g\nsel  =  True\n\n\n\n\n\n\n\n\nOn a vu : - que toute fonction renvoie un résultat en sortie - que l’instruction return permet de spécifier ce résultat\nLorsque la fonction est appelée, elle est évaluée à la valeur spécifiée par return, et cette valeur peut alors être récupérée dans une variable et utilisée dans des calculs ultérieurs, et ainsi de suite.\n\ndef division(x, y):\n    return x / y\n\n\na = division(4, 2)\nb = division(9, 3)\ndivision(a, b)  # 2 / 3\n\n0.6666666666666666\n\n\nRemarque importante : lorsqu’une instruction return est atteinte dans une fonction, le reste de la fonction n’est pas exécuté.\n\ndef test(x):\n    return x\n    print(\"vais-je être affiché ?\")\n    \ntest(3)\n\n3\n\n\n\n\n\nUne fonction renvoie par définition un résultat, qui peut être tout objet Python. Comment faire si l’on souhaite renvoyer plusieurs résultats ? On peut simplement enregistrer les différents résultats dans un conteneur (liste, tuple, dictionnaire, etc.), qui peut lui contenir un grand nombre d’objets.\n\ndef calculs_mathematiques(a, b):\n    somme = a + b\n    difference = a - b\n    produit = a * b\n    return somme, difference, produit\n\nresultats = calculs_mathematiques(10, 5)\n\nprint(resultats)\ntype(resultats)\n\n(15, 5, 50)\n\n\ntuple\n\n\nPar défaut, les retours multiples sont des tuples.\nMais il est également possible de retourner une liste ou un dictionnaire.\n\ndef puissance_liste(a):\n    return [a**2, a**3]\n\npuissance_liste(4)\n\n[16, 64]\n\n\n\ndef puissance_dico(nombre):\n    carre = nombre ** 2\n    cube = nombre ** 3\n    return {\"carre\": a**2, \"cube\": a**3}\n\npuissance_dico(4)\n\n{'carre': 16, 'cube': 64}\n\n\n\n\n\n\nIl existe une autre manière concise de définir une fonction simple, la lambda fonction.\n\ncarre = lambda x: x**2\n\ncarre(6)\n\n36"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#arguments",
+    "href": "docs/python/04-fonctions.html#arguments",
+    "title": "Les fonctions",
+    "section": "",
+    "text": "Les arguments sont les paramètres de la fonction.\nLorsqu’on appelle une fonction en lui spécifiant des arguments, on dit qu’on lui « passe » des arguments.\nCes arguments deviennent alors des variables qui peuvent être utilisées uniquement à l’intérieur de la fonction.\n\ndef maximum(a, b):\n    if a &gt; b:\n        resultat = a\n    else:\n        resultat = b\n    return resultat\n\n\nmaximum(1, 5)\n\n5\n\n\nÀ l’extérieur des fonctions, les arguments n’existent plus et ne sont plus connus.\n\na\n\nNameError: name 'a' is not defined\n\n\n\n\nEn Python, les fonctions admettent deux modes de passage des arguments : - le passage par position : les arguments sont passés dans l’ordre dans lequel ils ont été définis - le passage par mot-clé : on précise le nom du paramètre lors du passage de l’argument\nIllustrons cette différence à partir d’une fonction qui réalise simplement une division.\n\ndef division(x, y):\n    if y == 0:\n        print(\"ERREUR : Division par 0 impossible\")\n    else:\n        return x / y\n\n\n# Passage par position\ndivision(8, 2)  \n\n4.0\n\n\n\n# Passage par mot-clé\ndivision(x=8, y=2)  \n\n4.0\n\n\nDans le cas du passage par position, le respect de l’ordre est impératif.\n\nprint(division(0, 5))\nprint(division(5, 0))\n\n0.0\nERREUR : Division par 0 impossible\nNone\n\n\nNous remarquons que s’affiche None ci-dessus.\nL’explication est que lorsque l’on passe dans la partie de code if y == 0, il n’y a pas de return.\nDonc par défaut la méthode renvoie None, ce qui représente l’absence de valeur.\nDans le cas du passage par mot-clé, l’ordre n’a plus d’importance.\n\nprint(division(x=0, y=5))\nprint(division(y=5, x=0))\n\n0.0\n0.0\n\n\n\n\n\nLorsqu’on définit une fonction, il est fréquent de vouloir faire cohabiter : * des arguments que doit absolument spécifier l’utilisateur * des arguments optionnels qui spécifient un comportement par défaut de la fonction, mais peuvent également être modifiés si nécessaire\nRegardons par exemple comment on peut modifier le comportement de la fonction print à l’aide d’un argument optionnel.\n\nprint(\"salut\")\nprint(\"salut\")\n\nsalut\nsalut\n\n\n\nprint(\"salut\", end=' ')\nprint(\"salut\")\n\nsalut salut\n\n\nNous avons modifié le comportement du premier appel à print via le paramètre optionnel end.\nPar défaut, cette valeur est fixée à '\\n', soit un retour à la ligne.\nNous l’avons modifié dans la deuxième cellule à un espace, d’où la différence de résultat.\nNous allons maintenant créer une fonction avec un argument optionnel.\nPour expliquer le comportement de cette méthode, une documentation a été ajoutée entre les caractères '''.\n\ndef note_finale(note1, note2, bonus=0):\n    '''Fonction d'ajout de 2 notes\n    Parameters\n    ----------\n        note1 : float\n            la première note\n        note2 : float\n            la deuxième note\n        bonus : float\n            un bonus (optionnel, par défaut égal à 0)\n    Returns\n    -------\n        float : sommes des 2 notes et du bonus\n    '''\n    return note1 + note2 + bonus\n\n\n# Comportement par défaut (bonus=0)\nnote_finale(8.5, 7)  \n\n15.5\n\n\n\n# Comportement modifié\nnote_finale(8.5, 7, bonus = 2)  \n\n17.5\n\n\n\n\n\n\nLa notation *args permet à une fonction de recevoir un nombre variable d’arguments positionnels\nLa notation **kwargs permet à une fonction de recevoir un nombre variable d’arguments clé-valeur\n\n\n# Exemple d'utilisation de args\n\ndef moyenne(*args):\n    somme = 0\n    nb = 0\n    for a in args:\n        somme += a\n        nb += 1\n    print(f\"Moyenne de {args} : {somme / nb}\")\n\nmoyenne(10, 15)\nmoyenne(8, 20, 16, 12)\n\nMoyenne de (8, 20, 15) : 14.333333333333334\n\n\n\n# Exemple d'utilisation de kwargs\n\ndef recette(**kwargs):\n    for a in kwargs:\n        # get argument name\n        arg_name = a\n        # get argument value\n        arg_value = kwargs[arg_name]\n        print(arg_name, \" = \", arg_value)\n    \n    \nrecette(tomate=2, farine=\"100g\", sel=True)\n\ntomate  =  2\nfarine  =  100g\nsel  =  True"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#résultats",
+    "href": "docs/python/04-fonctions.html#résultats",
+    "title": "Les fonctions",
+    "section": "",
+    "text": "On a vu : - que toute fonction renvoie un résultat en sortie - que l’instruction return permet de spécifier ce résultat\nLorsque la fonction est appelée, elle est évaluée à la valeur spécifiée par return, et cette valeur peut alors être récupérée dans une variable et utilisée dans des calculs ultérieurs, et ainsi de suite.\n\ndef division(x, y):\n    return x / y\n\n\na = division(4, 2)\nb = division(9, 3)\ndivision(a, b)  # 2 / 3\n\n0.6666666666666666\n\n\nRemarque importante : lorsqu’une instruction return est atteinte dans une fonction, le reste de la fonction n’est pas exécuté.\n\ndef test(x):\n    return x\n    print(\"vais-je être affiché ?\")\n    \ntest(3)\n\n3\n\n\n\n\n\nUne fonction renvoie par définition un résultat, qui peut être tout objet Python. Comment faire si l’on souhaite renvoyer plusieurs résultats ? On peut simplement enregistrer les différents résultats dans un conteneur (liste, tuple, dictionnaire, etc.), qui peut lui contenir un grand nombre d’objets.\n\ndef calculs_mathematiques(a, b):\n    somme = a + b\n    difference = a - b\n    produit = a * b\n    return somme, difference, produit\n\nresultats = calculs_mathematiques(10, 5)\n\nprint(resultats)\ntype(resultats)\n\n(15, 5, 50)\n\n\ntuple\n\n\nPar défaut, les retours multiples sont des tuples.\nMais il est également possible de retourner une liste ou un dictionnaire.\n\ndef puissance_liste(a):\n    return [a**2, a**3]\n\npuissance_liste(4)\n\n[16, 64]\n\n\n\ndef puissance_dico(nombre):\n    carre = nombre ** 2\n    cube = nombre ** 3\n    return {\"carre\": a**2, \"cube\": a**3}\n\npuissance_dico(4)\n\n{'carre': 16, 'cube': 64}"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#lambda-fonctions",
+    "href": "docs/python/04-fonctions.html#lambda-fonctions",
+    "title": "Les fonctions",
+    "section": "",
+    "text": "Il existe une autre manière concise de définir une fonction simple, la lambda fonction.\n\ncarre = lambda x: x**2\n\ncarre(6)\n\n36"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-1",
+    "href": "docs/python/04-fonctions.html#exercice-1",
+    "title": "Les fonctions",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nCréer une fonction puissance qui prend en entrée deux nombres x et y et renvoie la fonction puissance \\(x^y\\).\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-2",
+    "href": "docs/python/04-fonctions.html#exercice-2",
+    "title": "Les fonctions",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nÉcrire une fonction statistiques_descriptives qui : - prend en entrée une liste de nombre - renvoie la moyenne et la variance\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-3",
+    "href": "docs/python/04-fonctions.html#exercice-3",
+    "title": "Les fonctions",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nÉcrire une fonction est_pair qui : * prend en entrée un paramètre * retourne un booléen pour dire si ce paramètre est pair\nAjouter un test pour vérifier que le paramètre est un entier.\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-4",
+    "href": "docs/python/04-fonctions.html#exercice-4",
+    "title": "Les fonctions",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nÉcrire une fonction qui : - prend en entrée une liste d’éléments quelconques - renvoie une nouvelle liste constituée des éléments uniques de la liste initiale - permet via un paramètre optionnel de trier ou non la liste finale par ordre alphanumérique (le comportement par défaut est de ne pas trier).\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-5",
+    "href": "docs/python/04-fonctions.html#exercice-5",
+    "title": "Les fonctions",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nLes fonctions récursives sont des fonctions qui s’appellent elles-mêmes dans le corps de la fonction, ce qui entraîne des appels infinis jusqu’à atteindre un critère d’arrêt (voir exemple du triangle de Pascal ci-dessous).\nCoder de manière récursive la fonction factoriel.\n\ndef triangle_pascal(n):\n    if n == 0:\n        return [[1]]                                          # Condition d'arrêt\n    else:\n        triangle = triangle_pascal(n - 1)                     # Appel récursif pour obtenir les lignes précédentes\n        prev_row = triangle[-1]                               # Récupérer la dernière ligne générée\n        new_row = [1]                                         # Premier élément de la nouvelle ligne\n        # Calculer les éléments de la nouvelle ligne\n        for i in range(len(prev_row) - 1):\n            new_row.append(prev_row[i] + prev_row[i + 1])  \n        new_row.append(1)                                     # Dernier élément de la nouvelle ligne\n        triangle.append(new_row)                              # Ajouter la nouvelle ligne au triangle\n        return triangle\n\nprint('\\n'.join(['\\t'.join(map(str, row)) for row in triangle_pascal(10)]))\n\n1\n1   1\n1   2   1\n1   3   3   1\n1   4   6   4   1\n1   5   10  10  5   1\n1   6   15  20  15  6   1\n1   7   21  35  35  21  7   1\n1   8   28  56  70  56  28  8   1\n1   9   36  84  126 126 84  36  9   1\n1   10  45  120 210 252 210 120 45  10  1\n\n\n\n# Testez votre réponse dans cette cellule"
+  },
+  {
+    "objectID": "docs/python/04-fonctions.html#exercice-6",
+    "href": "docs/python/04-fonctions.html#exercice-6",
+    "title": "Les fonctions",
+    "section": "Exercice 6",
+    "text": "Exercice 6\nÉcrire une fonction appliquer_fonction_liste qui : * prend en paramètre : * une liste d’entiers * une fonction * retourne la liste à laquelle on a appliqué la fonction\nExemple :\nappliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2) -&gt; [1, 4, 9, 16]\n\n# Testez votre réponse dans cette cellule"
+  }
+]

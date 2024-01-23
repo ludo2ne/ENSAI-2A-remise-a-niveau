@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.538">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="POO avec Python">
+
+<title>Remise à Niveau Informatique - Programmation Orientée Objet</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Remise à Niveau Informatique</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SQL</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
+        <li>
+    <a class="dropdown-item" href="../../docs/sql/sql.html">
+ <span class="dropdown-text">Introduction à SQL</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
+ <span class="dropdown-text">DBeaver</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Python</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
+        <li>
+    <a class="dropdown-item" href="../../docs/python/python.html">
+ <span class="dropdown-text">Introduction à Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/python/01-types-et-variables.html">
+ <span class="dropdown-text">Types et Variables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/python/02-listes-et-dictionnaires.html">
+ <span class="dropdown-text">Listes et Dictionnaires</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/python/03-tests-et-boucles.html">
+ <span class="dropdown-text">Tests et Boucles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/python/04-fonctions.html">
+ <span class="dropdown-text">Fonctions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/python/05-POO-introduction.html">
+ <span class="dropdown-text">Introduction à la POO</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="../../docs/POO/POO.html" aria-current="page"> 
+<span class="menu-text">POO</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/UML/UML.html"> 
+<span class="menu-text">UML</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#organisation-du-code" id="toc-organisation-du-code" class="nav-link" data-scroll-target="#organisation-du-code">Organisation du code</a>
+  <ul class="collapse">
+  <li><a href="#bonne-pratique" id="toc-bonne-pratique" class="nav-link" data-scroll-target="#bonne-pratique">bonne pratique</a></li>
+  </ul></li>
+  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage">Héritage</a>
+  <ul class="collapse">
+  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite">Classe Abstraite</a></li>
+  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer">Avant de commencer</a></li>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points">Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones">Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino">Exercice 3 - Domino</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Programmation Orientée Objet</h1>
+</div>
+
+<div>
+  <div class="description">
+    POO avec Python
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Nous allons introduire les notions suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Principe de la POO</label></li>
+<li><label><input type="checkbox">L’organisation du code</label></li>
+<li><label><input type="checkbox">L’héritage</label></li>
+<li><label><input type="checkbox">Les classe abstraites</label></li>
+</ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>La POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (<code>attributs</code>) et des actions (<code>méthodes</code>) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :</p>
+<ul>
+<li><code>Encapsulation</code> : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet</li>
+<li><code>Héritage</code> : L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d’une hiérarchie de classes</li>
+<li><code>Polymorphisme</code> : Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action. Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes</li>
+</ul>
+<p>La POO permet :</p>
+<ul>
+<li>d’organiser le code de manière plus structurée</li>
+<li>de favoriser la réutilisation et la maintenance du code</li>
+<li>de modéliser les concepts du domaine d’application de manière naturelle</li>
+</ul>
+<p>Elle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.</p>
+</section>
+<section id="organisation-du-code" class="level2">
+<h2 class="anchored" data-anchor-id="organisation-du-code">Organisation du code</h2>
+<p>Dans la suite, nous allons organsier notre code de manière logique dans différents modules.</p>
+<blockquote class="blockquote">
+<p><code>module</code> : Les modules d’un programme Python sont ses fichiers sources.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><code>paquet</code> : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.</p>
+</blockquote>
+<section id="bonne-pratique" class="level3">
+<h3 class="anchored" data-anchor-id="bonne-pratique">bonne pratique</h3>
+<p>A la racine de votre projet, créez les 3 dossiers suivants :</p>
+<ul>
+<li><code>src</code> : pour stocker votre code source</li>
+<li><code>data</code> : pour vos fichiers de données</li>
+<li><code>doc</code> : pour votre documentation</li>
+</ul>
+<pre><code>.
+├── data
+│   └── temperatures.csv
+├── doc
+│   ├── suivi.md
+│   └── rapport.tex
+└── src
+    ├── __main__.py
+    ├── package1
+    │   ├── __init__.py
+    │   ├── module1.py
+    │   ├── module2.py
+    └── package2
+        ├── __init__.py
+        ├── module3.py
+        └── subpackage21
+            ├── __init__.py
+            ├── module4.py
+            ├── module5.py</code></pre>
+<p>Remarques importantes :</p>
+<ul>
+<li>le fichier <code>__main__.py</code> contient le code à exécuter quand le pacakge est exécuté</li>
+<li>les fichiers <code>__init__.py</code> sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)</li>
+</ul>
+<p>Voici un exemple plus concret :</p>
+<pre><code>.
+└── src
+    ├── __main__.py
+    ├── vehicules
+    │   ├── __init__.py
+    │   ├── deux_roues.py
+    │   ├── velo.py
+    │   └── trottinette.py
+    └── humain
+        ├── __init__.py
+        ├── personne.py
+        └── etudiant.py</code></pre>
+</section>
+</section>
+<section id="héritage" class="level2">
+<h2 class="anchored" data-anchor-id="héritage">Héritage</h2>
+<p>Un des trois piliers de la POO est l’héritage.<br>
+Une classe enfant peut utiliser tous les attributs et méthode de sa classe parente.<br>
+Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
+<p>Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L’idée naïve est de créer une classe pour chacun.</p>
+<p>En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :</p>
+<ul>
+<li>couleur</li>
+<li>vitesse</li>
+<li>accelerer()</li>
+<li>ralentir()</li>
+</ul>
+<p>Une idée est de regrouper ces caractéristiques communes dans une classe <code>DeuxRoues</code>. Puis de faire hériter <code>Vélo</code> et <code>Trottinette</code> de <code>DeuxRoues</code></p>
+<section id="classe-abstraite" class="level3">
+<h3 class="anchored" data-anchor-id="classe-abstraite">Classe Abstraite</h3>
+<p>Certaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe <code>DeuxRoues</code>. Nous allons directement créer des <code>Velo</code> et des <code>Trottinettes</code>.</p>
+<p>Nous pouvons donc définir la classe <code>DeuxRoues</code>comme <code>abstraite</code></p>
+<ul>
+<li>c’est à dire qui ne peut pas être instanciée</li>
+<li>dit autrement : on ne peut pas créer d’objets de cette classe</li>
+</ul>
+<p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
+<blockquote class="blockquote">
+<p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <span class="citation" data-cites="abstractmethod">@abstractmethod</span> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
+</blockquote>
+<p><span class="emoji" data-emoji="warning">⚠️</span> classe mère ne veut pas dire forcément classe abstraite</p>
+<p>Exemple :</p>
+<ul>
+<li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
+<li>Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
+<li>Or ici la classe <code>Velo</code> n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="exercices" class="level2">
+<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="avant-de-commencer" class="level3">
+<h3 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h3>
+<ul>
+<li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
+<li>Dans ce même dépôt, ouvrir le fichier dans <code>Outils/VSCode.md</code></li>
+<li>Suivre les consignes du paragraphe <code>Première utilisation</code></li>
+<li>Dans <code>Python-POO/exercices</code>, créez les 2 dossiers suivants :
+<ul>
+<li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
+<li><code>domino</code> pour l’exercice 3</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercice-1---points" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1---points">Exercice 1 - Points</h3>
+<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
+<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
+<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
+<li><label><input type="checkbox"><code>distance(self, autre_point)</code> : distance avec un autre point</label></li>
+<li><label><input type="checkbox"><code>__eq__(self, autre_point)</code> : renvoi un booléen qui dit si les 2 points sont identiques</label></li>
+<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
+<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
+<li><label><input type="checkbox">(bonus) <code>rotation(self, a)</code> : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
+</ul>
+</section>
+<section id="exercice-2---polygones" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2---polygones">Exercice 2 - Polygones</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Créer une classe <code>Polygones</code> composées d’objets de la classe <code>Point</code></label>
+<ul>
+<li>nous supposerons par la suite que les segments ne se croisent pas</li>
+</ul></li>
+<li><label><input type="checkbox">Ajouter à cette classe 2 méthodes abstraites <code>aire()</code> et <code>périmètre()</code> qui seront définies dans les classes filles</label></li>
+<li><label><input type="checkbox">Créer les classes <code>Segment</code>, <code>Triangle</code> et <code>Quadrilatere</code> qui héritent de la classe <code>Polygone</code></label>
+<ul>
+<li>vérifier à chaque fois le nombre de points</li>
+<li><label><input type="checkbox">Définir les méthodes <code>aire()</code> et <code>périmètre()</code> dans ces classes</label></li>
+</ul></li>
+<li><label><input type="checkbox">Créer la classe <code>Rectangle</code> qui hérite de <code>Quadrilatere</code></label>
+<ul>
+<li>vérifier que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit</li>
+</ul></li>
+</ul>
+<p><a href="https://mermaid.js.org/syntax/classDiagram.html">Diagrammes de classe avec Mermaid</a></p>
+<pre class="mermaid"><code>classDiagram
+    Point --o Polygone
+    Polygone &lt;|-- Segment : 2
+    Polygone &lt;|-- Triangle : 3
+    Polygone &lt;|-- Quadrilatere : 4
+    Quadrilatere &lt;|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(autre_point)
+    }
+    class Polygone{
+        +liste[Point] liste_points
+        +aire()
+        +perimetre()
+    }
+    class Quadrilatere{
+        +aire()
+        +perimetre()
+    }
+    class Segment{
+        +aire()
+        +perimetre()
+    }
+    class Triangle{
+        +aire()
+        +perimetre()
+    }</code></pre>
+</section>
+<section id="exercice-3---domino" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-3---domino">Exercice 3 - Domino</h3>
+<p>Écrire une classe <code>Domino</code> avec :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
+<li><label><input type="checkbox"><code>__str__()</code> : qui affiche les points présents sur les deux extrémités</label></li>
+<li><label><input type="checkbox"><code>retourne()</code> qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).</label></li>
+<li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
+</ul>
+<p>Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n’y aura qu’un seul joueur et il n’est possible de poser que d’un seul côté, à la fin de la rangée de domino):</p>
+<ul>
+<li><label><input type="checkbox">Écrivez une fonction qui génère tous les dominos et renvoie la liste</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>pioche()</code> qui pioche au hasard un domino dans une liste et le retire de cette liste</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>affiche_dominos()</code> qui affiche une liste de dominos</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>domino_posables(dominos_en_main, dominos_poses)</code> qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste <code>dominos_poses</code>.</label></li>
+<li>Écrivez une fonction <code>jouer()</code> qui :
+<ul class="task-list">
+<li><label><input type="checkbox">génére la liste de tous les dominos</label></li>
+<li><label><input type="checkbox">tire un 1er domino au hasard et le place dans la liste dominos_poses</label></li>
+<li><label><input type="checkbox">distribue aléatoirement 6 dominos au joueur</label></li>
+<li><label><input type="checkbox">affiche les dominos qu’il peut jouer</label></li>
+<li><label><input type="checkbox">si aucun domino n’est jouable, lui proposer de piocher</label></li>
+<li><label><input type="checkbox">lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et <code>quit</code> pour arrêter de jouer)</label></li>
+<li><label><input type="checkbox">ajoute le domino joué à la liste <code>dominos_poses</code> et le retire de <code>dominos_en_main</code></label></li>
+</ul></li>
+</ul>
+<pre class="mermaid"><code>classDiagram
+    class Domino{
+        +int sommet_A
+        +int sommet_B
+        +accepte(autre_domino)
+    }</code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
