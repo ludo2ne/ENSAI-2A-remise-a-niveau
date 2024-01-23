@@ -1,0 +1,71 @@
+---
+title: "DBeaver"
+description: "Paramétrage et utilisation"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+---
+
+> DBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d'autres encore.
+
+Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.
+
+## :gear: Configuration
+
+* Menu `Fenêtre` > `Preference`
+  * Formatage SQL
+    * Casse des mots clefs : `UPPER`
+    * [x] Insert spaces for tabs
+    * Appliquer
+  * Metadonnées
+    * Décocher `Ouvrir une connexion séparée pour la lecture des étadonnées`
+  * Editeur SQL
+    * Décocher `Ouvrir une connexion séparée pour chaque éditeur`
+
+##### Optionnel 
+
+* Templates
+  * Enlever les modèles existants
+  * Importer le fichier <a href="templates_dbeaver.xml" download>templates_dbeaver.xml</a>
+  * Les templates permettent d'écrire plus rapidement des requêtes
+
+
+## :zap: Créer la connexion
+
+Pour créer une connexion vers la base de données ENSAI sur la VM :
+
+* Cliquer sur l'icone `Nouvelle connexion` en haut à gauche sous fichier
+* Sélectionner `PostgreSQL` puis suivant
+  * Host : `sgbd-eleves.domensai.ecole`
+  * Port : `5432`
+  * Database : `idxxxx`
+  * Nom d'utilisateur : `idxxxx`
+  * Mot de passe : `idxxxx`
+  * `Test de connexion`
+  * Acceptez les mises à jour des pilotes
+  * `Terminer`
+
+---
+
+## :slot_machine: Exécuter du SQL
+
+* Cliquer sur l'icone `SQL`
+* Exécuter la requête courante (où est le curseur de la souris):
+  * CTRL + ENTREE
+  * le petit triangle orange
+* Exécuter toutes les requêtes
+  * le triangle orange à l'intérieur d'un parachemin
+
+---
+
+## :pill: Interface pgAdmin
+
+En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l'interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank"> pgAdmin</a>
+
+* Utilisateur : idxxxx
+* Mot de passe : idxxxx
+* Une fois connecté, cliquez sur `idxxxx` dans le menu de gauche
+* cliquez sur `SQL` pour exécuter des requêtes
