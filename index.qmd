@@ -12,19 +12,11 @@ Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e ann
 ## :memo: Programme
 
 * [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
-* [ ] Python - initiation (6h)
-* [ ] Programmation Orientée Objet (POO) (9h)
-* [ ] UML (3h)
+* [ ] [Python - initiation](docs/python/python.qmd) (6h)
+* [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
+* [ ] [UML](docs/UML/UML.qmd) (3h)
 * [ ] Divers outils utiles (git, markdown, R...)
 
-
-## :small_orange_diamond: 1. Inititation à SQL
-
-Dans le dossier `SQL`
-
-* [ ] lire le fichier `SQL.md`
-* [ ] faire l'exercice
-* la correction est disponible dans le dossier `SQL/exo`
 
 ## :small_orange_diamond: 2. Initiation à Python
 

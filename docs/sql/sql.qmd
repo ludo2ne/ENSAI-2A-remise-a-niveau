@@ -11,9 +11,10 @@ from: markdown+emoji
 
 ## Objectifs
 
-* [ ] Qu'est ce qu'une base de données relationnelle ?
-* [ ] Comment sont construits les tables ?
-* [ ] Savoir utiliser le SQL
+- [ ] Qu'est ce qu'une base de données relationnelle ?
+- [ ] Comment sont construits les tables ?
+- [ ] Savoir écrire des requêtes SQL
+- [ ] Utiliser [DBeaver](DBeaver.qmd)
 
 
 ## Introduction
@@ -37,12 +38,14 @@ Les tables seront liées entre elle grace à des `clés étrangères` (FK). Il y
 - `..`* : Un *Etudiant* suit plusieurs *Cours* et un *Cours* et suivi par plusieurs *Etudiants*
   - il faut créer une table d'association entre *Etudiant* et *Cours*
 
----
+Un `SGBD` (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée
+- exemples (Bases de données relationnelles) : `PostgreSQL`, MySQL, Oracle Database
+- exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra 
 
-- `SGBD` (Système de Gestion de Base de Données) : logiciel qui permet de stocker, organiser et gérer des données de manière structurée
-  - exemples (Bases de données relationnelles) : PostgreSQL, MySQL, Oracle Database
-  - exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra 
-- `SQL` (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles
+`SQL` (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.
+
+`DBeaver` est un outil client qui permet de se connecter à un SGBD.
+
 
 
 ## Exemples
@@ -256,6 +259,7 @@ DROP TABLE ran.personnes;
 
 | id | prenom | nom    | date_naissance | adresse |
 |----|--------|--------|----------------|---------|
+|    |        |        |                |         |
 
 ###  Insérer des lignes
 
@@ -383,16 +387,15 @@ DELETE FROM ran.personnes
 
 ##  Formes normales
 
-- `1ere forme normale` : Une relation est en 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
+- `1ere forme normale` (1NF) : Une relation est 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
   - Un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné, et donc s'il ne regroupe pas un ensemble de plusieurs valeurs.
   - Par exemple, une adresse du type `20 rue du Général de Gaulle 35170 BRUZ` n'est pas atomique
-- autres formes normales : voir sur internet...
+- 2NF : 1NF + tout attribut non clé dépend de la clé
+- 3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé
 
 ---
 
 ##  Premières manipulations
-
-> voir fichier `DBeaver.md` pour le paramétrage
 
 ### Les schémas
 
@@ -400,7 +403,7 @@ Par défaut toutes les tables que nous allons créer iraient dans le schéma pub
 :bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
 
 - `ran` : schéma utilisé pour la remise à niveau
-- `ci` : schéma utilisé en complément d'informatique
+- `ci` : schéma utilisé en compléments d'informatique
 - `projet` : schéma du projet info 2A
 
 ```sql
@@ -429,7 +432,6 @@ SELECT
 > Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
 
 ```sql
--- toutes les personnes ayant un prénom contenant "au"
 SELECT adresse,
        COUNT(1)
   FROM ran.personnes
@@ -442,7 +444,6 @@ SELECT adresse,
 > :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
 
 ```sql
--- toutes les personnes ayant un prénom contenant "au"
 SELECT adresse,
        COUNT(1)
   FROM ran.personnes
@@ -482,37 +483,85 @@ SELECT 'Salut';
 
 ##  Exercice
 
-Avant de commencer l'exercice, consultez le fichier `DBeaver.md`.  
+#### Avant de commencer
 
-Copiez le contenu du fichier `echecs.sql`, Collez dans DBeaver, puis exécuter le script.
+- consultez le fichier d'utilisation de [DBeaver](DBeaver.qmd)
+- [ ] Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>, 
+- [ ] Collez dans DBeaver
+- [ ] Exécuter le script.
 
-Description des données :
+#### Description des données
 
-* Nous avons des joueurs, des tournois
-* Certains joueurs sont aussi arbitre et ont un grade d'arbitre
-* Les tournois ont une cadence. Ils sont arbitrés par un arbitre
+- Nous avons des joueurs, des tournois
+- Certains joueurs sont aussi arbitres et ont un grade d'arbitre
+- Les tournois ont une cadence. Ils sont arbitrés par un arbitre
+
+```{mermaid}
+classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -> arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -> joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -> cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -> tournoi)
+    id_joueur: INT(FK -> joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
+
+```
+
+#### Questions
+
+- [ ] Listez tous les joueurs
+  - [ ] Faîtes de même sur les autres tables pour observer leur contenu
+- [ ] Listez tous les joueurs ordonnés par elo descroissant
+- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000
+- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un "e" (majuscule ou minuscule) :bulb: *tip : voir méthode UPPER*
+- [ ] Créez la joueuse : *Martine Dupont, elo : 1999, Arbitre Elite*
+- [ ] Supprimez le joueur de pseudo *marc78*
+- [ ] Essayez de supprimer le joueur ayant pour id : 20
+  - Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?
+- [ ] Listez les joueurs qui sont arbitres :bulb: *voir IS NOT NULL*
+- [ ] Ajoutez à la table joueur la colonne de type booléen *est_arbitre*
+- [ ] Remplissez cette nouvelle colonne pour tous les joueurs
+- [ ] Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d'arbitre
+- [ ] Listez tous les joueurs (nom, prénom) ainsi que leur grade d'arbitre s'ils le sont
+- [ ] Comptez le nombre de joueurs qui sont arbitre
+- [ ] Comptez le nombre d'arbitres par grade
+- [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
+- [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
+- [ ] Ajouter le nombre de joueurs et le elo max des joueurs
 
 ---
 
-* [ ] Listez tous les joueurs
-* [ ] Listez tous les joueurs ordonnés par elo descroissant
-* [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000
-* [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un `e` (majuscule ou minuscule) :bulb: *tip : voir méthode `UPPER`*
-* [ ] Créez la joueuse "Martine Dupont, elo : 1999, Arbitre Elite"
-* [ ] Supprimez le joueur de pseudo `marc78`
-* [ ] Essayez de supprimer le joueur ayant pour id : 20
-  * Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?
-* [ ] Listez les joueurs qui sont arbitres :bulb: *voir `IS NOT NULL`*
-* [ ] Ajoutez à la table joueur la colonne de type booléen `est_arbitre`
-* [ ] Remplissez cette nouvelle colonne pour tous les joueurs
-* [ ] Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d'arbitre
-* [ ] Listez **tous** les joueurs (nom, prénom) ainsi que leur grade d'arbitre s'ils le sont
-* [ ] Comptez le nombre de joueurs qui sont arbitre
-* [ ] Comptez le nombre d'arbitres par grade
-* [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
-* [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
-* [ ] Ajouter le nombre de joueurs et le elo max des joueurs
-
----
-
-la correction est disponible dans le dossier `SQL/exo`
+La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.

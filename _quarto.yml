@@ -16,6 +16,8 @@ website:
         menu: 
           - href: docs/sql/sql.qmd
             text: "Introduction à SQL"
+          - href: docs/sql/DBeaver.qmd
+            text: "DBeaver"
       - text: Python
         menu: 
           - href: docs/python/python.qmd
