@@ -1,5 +1,6 @@
 ---
 title: "Remise à niveau informatique"
+description: "Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e année (21h)"
 format: html
 from: markdown+emoji
 ---
@@ -7,9 +8,9 @@ from: markdown+emoji
 
 # :construction: 
 
-Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e année (21h)
 
-## :memo: Programme
+
+## Programme
 
 * [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
 * [ ] [Python - initiation](docs/python/python.qmd) (6h)
@@ -18,7 +19,7 @@ Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e ann
 * [ ] Divers outils utiles (git, markdown, R...)
 
 
-## :small_orange_diamond: 2. Initiation à Python
+## 2. Initiation à Python
 
 Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :
 
@@ -32,12 +33,12 @@ Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :
 * [ ] Lire et suivre les consignes données dans le fichier `Python-initiation/Python.md`
   * [ ] Importer dans Jupyter les 5 notebooks, lire, puis faire les exercices
 
-## :small_orange_diamond: 3. Programmation Orientée Objet
+## 3. Programmation Orientée Objet
 
 * [ ] Lire et suivre les consignes données dans le fichier `Python-POO/La POO.md`
 * [ ] Faire les exercices
 
-## :small_orange_diamond: 4. UML
+## 4. UML
 
 Lire dans cet ordre les fichiers du dossier `UML` :
 
@@ -48,7 +49,7 @@ Lire dans cet ordre les fichiers du dossier `UML` :
 
 ---
 
-## :arrow_forward: Alternatives 
+## Alternatives 
 
 Voici d'autres possibilités pour se mettre à niveau en Python, POO et SQL
 

@@ -90,7 +90,7 @@ Les diagrammes de classes UML sont utilisés pour modéliser la structure concep
 
 - [PlantUML](http://www.plantuml.com/)
   - [exemples](https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes)
-- [{mermaid}](https://{mermaid}.js.org/syntax/classDiagram.html)
+- [mermaid](https://mermaid.js.org/syntax/classDiagram.html)
 
 ### Exemple
 
@@ -132,8 +132,6 @@ classDiagram
     Voiture o-- Roue
     Voiture *-- Carrosserie
 ```
-
-
 
 
 ## Exercice

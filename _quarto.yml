@@ -22,6 +22,16 @@ website:
         menu: 
           - href: docs/python/python.qmd
             text: "Introduction à Python"
+          - href: docs/python/01-types-et-variables.ipynb
+            text: "Types et Variables"
+          - href: docs/python/02-listes-et-dictionnaires.ipynb
+            text: "Listes et Dictionnaires"
+          - href: docs/python/03-tests-et-boucles.ipynb
+            text: "Tests et Boucles"
+          - href: docs/python/04-fonctions.ipynb
+            text: "Fonctions"
+          - href: docs/python/05-POO-introduction.ipynb
+            text: "Introduction à la POO"
       - href: docs/POO/POO.qmd
         text: POO
       - href: docs/UML/UML.qmd
@@ -38,7 +48,6 @@ website:
   repo-branch: main
   issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new
   repo-actions: [edit, issue]
-  downloads: [pdf]
 
 format:
   html:
