@@ -9,9 +9,7 @@ format:
 from: markdown+emoji
 ---
 
-# Introduction au langage Python
-
-## :arrow_forward: Introduction
+## Introduction
 
 Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l'intelligence artificielle... Sa syntaxe claire facilite l'apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.
 
@@ -41,8 +39,8 @@ Python est un langage de programmation. Connu pour sa simplicité et sa lisibili
     * tabulate
   * Datascience
     * NumPy
-    * Pandas (manipulation et l'analyse des données, dataframe)
-    * Matplotlib (graphiques 2D et 3D)
+    * Pandas (manipulation et analyse des données, dataframe)
+    * Matplotlib (graphiques 2D et 3D), Seaborn
 
 Ouvrir une invite de commandes **Git Bash**
 
@@ -55,9 +53,7 @@ pip install <package_name>    # installer un package
 python -c 'import platform; print(platform.python_implementation())'
 ```
 
----
-
-## :arrow_forward: Utilisation des Notebooks
+## Utilisation des Notebooks
 
 Pour découvrir Python, nous allons commencer par coder dans des Notebooks. Ce dossier contient des Notebooks pour apprendre les bases du langage.
 
@@ -80,7 +76,7 @@ Pour utiliser les Notebooks :
   * [Google Colab](https://colab.research.google.com/)
   * SSPCloud
 
-### :small_orange_diamond: Types de cellules
+### Types de cellules
 
 Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton **`+`** dans la barre d'outils.  
 Il existe deux types de cellules principaux :
@@ -90,7 +86,7 @@ Il existe deux types de cellules principaux :
 
 Le type de cellule souhaité est modifiable dans la barre d'outils.  
 
-### :small_orange_diamond: Commandes utiles
+### Commandes utiles
 
 | Commande                   | Description                                                                       |
 | -------------------------- | --------------------------------------------------------------------------------- |
@@ -104,7 +100,7 @@ Le type de cellule souhaité est modifiable dans la barre d'outils.
 
 ---
 
-## :arrow_forward: Ressources utiles
+## Ressources utiles
 
 * <https://www.data-transitionnumerique.com/anaconda-python/>
 * <https://github.com/ludo2ne/projet-info-2A>
@@ -120,4 +116,4 @@ Le type de cellule souhaité est modifiable dans la barre d'outils.
 
 ## :game_die: For fun
 
-* Chaque année en décembre, l'[AdventOfCode](https://adventofcode.com/) occupe les développeurs
+* Chaque année en décembre, l'<a href="https://adventofcode.com/" target="_blank">AdventOfCode</a> occupe les développeurs

@@ -38,6 +38,7 @@ website:
   repo-branch: main
   issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new
   repo-actions: [edit, issue]
+  downloads: [pdf]
 
 format:
   html:
