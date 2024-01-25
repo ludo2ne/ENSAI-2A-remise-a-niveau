@@ -190,6 +190,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
+    <a class="dropdown-item" href="../../docs/outils/outils.html">
+ <span class="dropdown-text">Outils</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VM.html">
+ <span class="dropdown-text">VM</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
@@ -199,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
- <span class="dropdown-text">Visual Studio Conde</span></a>
+ <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
     </ul>
   </li>
@@ -226,16 +234,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#paramétrage" id="toc-paramétrage" class="nav-link active" data-scroll-target="#paramétrage">Paramétrage</a>
+  <li><a href="#paramétrage" id="toc-paramétrage" class="nav-link active" data-scroll-target="#paramétrage"><span class="header-section-number">1</span> Paramétrage</a>
   <ul class="collapse">
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
-  <li><a href="#formatage-et-linting" id="toc-formatage-et-linting" class="nav-link" data-scroll-target="#formatage-et-linting">Formatage et Linting</a></li>
-  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="header-section-number">1.1</span> Extensions</a></li>
+  <li><a href="#formatage-et-linting" id="toc-formatage-et-linting" class="nav-link" data-scroll-target="#formatage-et-linting"><span class="header-section-number">1.2</span> Formatage et Linting</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings"><span class="header-section-number">1.3</span> Settings</a></li>
   </ul></li>
-  <li><a href="#première-utilisation" id="toc-première-utilisation" class="nav-link" data-scroll-target="#première-utilisation">Première utilisation</a></li>
-  <li><a href="#le-terminal-python" id="toc-le-terminal-python" class="nav-link" data-scroll-target="#le-terminal-python">Le terminal python</a></li>
-  <li><a href="#python-vscode-et-les-packages" id="toc-python-vscode-et-les-packages" class="nav-link" data-scroll-target="#python-vscode-et-les-packages">Python, VSCode et les packages</a></li>
-  <li><a href="#afficher-les-variables-denvironnement" id="toc-afficher-les-variables-denvironnement" class="nav-link" data-scroll-target="#afficher-les-variables-denvironnement">Afficher les variables d’environnement</a></li>
+  <li><a href="#première-utilisation" id="toc-première-utilisation" class="nav-link" data-scroll-target="#première-utilisation"><span class="header-section-number">2</span> Première utilisation</a></li>
+  <li><a href="#le-terminal-python" id="toc-le-terminal-python" class="nav-link" data-scroll-target="#le-terminal-python"><span class="header-section-number">3</span> Le terminal python</a></li>
+  <li><a href="#python-vscode-et-les-packages" id="toc-python-vscode-et-les-packages" class="nav-link" data-scroll-target="#python-vscode-et-les-packages"><span class="header-section-number">4</span> Python, VSCode et les packages</a></li>
+  <li><a href="#afficher-les-variables-denvironnement" id="toc-afficher-les-variables-denvironnement" class="nav-link" data-scroll-target="#afficher-les-variables-denvironnement"><span class="header-section-number">5</span> Afficher les variables d’environnement</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/VSCode.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -282,10 +290,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>vous permettre d’exécuter un programme python avec VSCode</li>
 <li>donner quelques astuces pour faciliter votre utilisation</li>
 </ul>
-<section id="paramétrage" class="level2">
-<h2 class="anchored" data-anchor-id="paramétrage">Paramétrage</h2>
-<section id="extensions" class="level3">
-<h3 class="anchored" data-anchor-id="extensions">Extensions</h3>
+<section id="paramétrage" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="paramétrage"><span class="header-section-number">1</span> Paramétrage</h2>
+<section id="extensions" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="extensions"><span class="header-section-number">1.1</span> Extensions</h3>
 <p>De très nombreuses extensions permettent d’améliorer votre utilisation de VSCode. Sur la version utilisées à l’ENSAI, vous pouvez trouver déjà installé :</p>
 <ul>
 <li>Black Formatter</li>
@@ -300,8 +308,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Better Comments</li>
 </ul>
 </section>
-<section id="formatage-et-linting" class="level3">
-<h3 class="anchored" data-anchor-id="formatage-et-linting">Formatage et Linting</h3>
+<section id="formatage-et-linting" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="formatage-et-linting"><span class="header-section-number">1.2</span> Formatage et Linting</h3>
 <ul>
 <li>Un **formateur*- est un outil qui va mettre en forme votre code pour que ce soit joli et lisible</li>
 <li>un **linter*- est un outil qui va vous avertir si votre code n’est pas joli
@@ -311,8 +319,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Les extensions Black Formatter et Flake8 sont respectivement un formateur et un linter</p>
 </section>
-<section id="settings" class="level3">
-<h3 class="anchored" data-anchor-id="settings">Settings</h3>
+<section id="settings" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="settings"><span class="header-section-number">1.3</span> Settings</h3>
 <p>Vous pouvez préciser le paramètrage à plusieurs niveaux :</p>
 <ul>
 <li>au niveau de l’application VSCode</li>
@@ -332,8 +340,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="première-utilisation" class="level2">
-<h2 class="anchored" data-anchor-id="première-utilisation">Première utilisation</h2>
+<section id="première-utilisation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="première-utilisation"><span class="header-section-number">2</span> Première utilisation</h2>
 <blockquote class="blockquote">
 <p>Nous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode</p>
 </blockquote>
@@ -373,8 +381,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <hr>
 </section>
-<section id="le-terminal-python" class="level2">
-<h2 class="anchored" data-anchor-id="le-terminal-python">Le terminal python</h2>
+<section id="le-terminal-python" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="le-terminal-python"><span class="header-section-number">3</span> Le terminal python</h2>
 <p>2 modes :</p>
 <ul>
 <li><code>P:\Cours\Python\tp1&gt;</code>
@@ -399,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <hr>
 </section>
-<section id="python-vscode-et-les-packages" class="level2">
-<h2 class="anchored" data-anchor-id="python-vscode-et-les-packages">Python, VSCode et les packages</h2>
+<section id="python-vscode-et-les-packages" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="python-vscode-et-les-packages"><span class="header-section-number">4</span> Python, VSCode et les packages</h2>
 <p>Imaginez que votre code est organisé de la manière ci-dessous</p>
 <pre><code>├───tp1
 │   └───code
@@ -448,8 +456,8 @@ class Girafe:
 <li>File &gt; Open Folder &gt; <code>C:/.../tp1/code</code></li>
 </ul>
 </section>
-<section id="afficher-les-variables-denvironnement" class="level2">
-<h2 class="anchored" data-anchor-id="afficher-les-variables-denvironnement">Afficher les variables d’environnement</h2>
+<section id="afficher-les-variables-denvironnement" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="afficher-les-variables-denvironnement"><span class="header-section-number">5</span> Afficher les variables d’environnement</h2>
 <pre class="bash="><code>printenv
 echo $PYTHONPATH
 echo $HOME</code></pre>

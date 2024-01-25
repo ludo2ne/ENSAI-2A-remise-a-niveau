@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="Présentation de Git">
 
-<title>Remise à Niveau Informatique</title>
+<title>Remise à Niveau Informatique - Git</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -188,6 +190,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
+    <a class="dropdown-item" href="../../docs/outils/outils.html">
+ <span class="dropdown-text">Outils</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VM.html">
+ <span class="dropdown-text">VM</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
@@ -197,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
- <span class="dropdown-text">Visual Studio Conde</span></a>
+ <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
     </ul>
   </li>
@@ -219,18 +229,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a>
+  <ul class="collapse">
+  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources">Ressources</a></li>
+  </ul></li>
+  <li><a href="#git-présentation" id="toc-git-présentation" class="nav-link" data-scroll-target="#git-présentation"><span class="header-section-number">1</span> Git présentation</a>
+  <ul class="collapse">
+  <li><a href="#git-ça-sert-à-quoi" id="toc-git-ça-sert-à-quoi" class="nav-link" data-scroll-target="#git-ça-sert-à-quoi"><span class="header-section-number">1.1</span> Git, ça sert à quoi ?</a></li>
+  <li><a href="#pourquoi-utiliser-un-outil-de-gestion-de-version" id="toc-pourquoi-utiliser-un-outil-de-gestion-de-version" class="nav-link" data-scroll-target="#pourquoi-utiliser-un-outil-de-gestion-de-version"><span class="header-section-number">1.2</span> Pourquoi utiliser un outil de gestion de version ?</a></li>
+  <li><a href="#principe-général-de-git" id="toc-principe-général-de-git" class="nav-link" data-scroll-target="#principe-général-de-git"><span class="header-section-number">1.3</span> Principe général de Git</a></li>
+  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples"><span class="header-section-number">1.4</span> Exemples</a></li>
+  <li><a href="#les-5-commandes-quil-faudra-retenir" id="toc-les-5-commandes-quil-faudra-retenir" class="nav-link" data-scroll-target="#les-5-commandes-quil-faudra-retenir"><span class="header-section-number">1.5</span> Les 5 commandes qu’il faudra retenir</a></li>
+  <li><a href="#schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" id="toc-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="nav-link" data-scroll-target="#schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant"><span class="header-section-number">1.6</span> Schéma simplifié des liens entre dépôt local et dépôt distant</a></li>
+  </ul></li>
+  <li><a href="#paramètrer-git" id="toc-paramètrer-git" class="nav-link" data-scroll-target="#paramètrer-git"><span class="header-section-number">2</span> Paramètrer Git</a>
+  <ul class="collapse">
+  <li><a href="#configuration-git-bash" id="toc-configuration-git-bash" class="nav-link" data-scroll-target="#configuration-git-bash"><span class="header-section-number">2.1</span> Configuration Git Bash</a></li>
+  <li><a href="#clé-ssh" id="toc-clé-ssh" class="nav-link" data-scroll-target="#clé-ssh"><span class="header-section-number">2.2</span> Clé SSH</a></li>
+  <li><a href="#créer-un-compte-sur-gitlab-github-ou-autre" id="toc-créer-un-compte-sur-gitlab-github-ou-autre" class="nav-link" data-scroll-target="#créer-un-compte-sur-gitlab-github-ou-autre"><span class="header-section-number">2.3</span> Créer un compte sur GitLab, GitHub ou autre</a></li>
+  <li><a href="#déclarer-votre-clé-publique-ssh-à-gitlab" id="toc-déclarer-votre-clé-publique-ssh-à-gitlab" class="nav-link" data-scroll-target="#déclarer-votre-clé-publique-ssh-à-gitlab"><span class="header-section-number">2.4</span> Déclarer votre clé publique SSH à GitLab</a></li>
+  <li><a href="#en-cas-derreurs" id="toc-en-cas-derreurs" class="nav-link" data-scroll-target="#en-cas-derreurs"><span class="header-section-number">2.5</span> En cas d’erreurs</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Git</h1>
+</div>
+
+<div>
+  <div class="description">
+    Présentation de Git
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
-<section id="introduction-à-git" class="level1">
-<h1>Introduction à Git</h1>
-<section id="arrow_forward-objectifs" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-objectifs">:arrow_forward: Objectifs</h2>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="objectifs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
 <ul>
 <li><label><input type="checkbox">Comprendre le principe et l’utilité de Git</label></li>
 <li><label><input type="checkbox">Configurer Git</label></li>
@@ -242,19 +308,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <hr>
-<section id="small_orange_diamond-ressources" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-ressources">:small_orange_diamond: Ressources</h3>
+<section id="ressources" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ressources">Ressources</h3>
 <ul>
-<li><a href="https://github.com/InseeFrLab/formation-git" class="uri">https://github.com/InseeFrLab/formation-git</a></li>
-<li><a href="https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R" class="uri">https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R</a></li>
+<li><a href="https://github.com/InseeFrLab/formation-git" class="external" target="_blank">Formation Git du Lab INSEE</a></li>
+<li><a href="https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R" class="external" target="_blank">Bonnes pratiques Git</a></li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="arrow_forward-git-présentation" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-git-présentation">:arrow_forward: Git présentation</h2>
-<section id="small_orange_diamond-git-ça-sert-à-quoi" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-git-ça-sert-à-quoi">:small_orange_diamond: Git, ça sert à quoi ?</h3>
+<section id="git-présentation" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="git-présentation"><span class="header-section-number">1</span> Git présentation</h2>
+<section id="git-ça-sert-à-quoi" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="git-ça-sert-à-quoi"><span class="header-section-number">1.1</span> Git, ça sert à quoi ?</h3>
 <ul>
 <li>Git
 <ul>
@@ -264,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Git Bash
 <ul>
-<li>Terminal pour écrire des commandes <strong>git</strong></li>
+<li>Terminal pour écrire des commandes <code>git</code></li>
 <li>Possible d’ouvrir via le menu Démarrer, mais aussi inclus dans Visual Studio Code</li>
 </ul></li>
 <li>GitLab / GitHub
@@ -276,8 +342,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="small_orange_diamond-pourquoi-utiliser-un-outil-de-gestion-de-version" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-pourquoi-utiliser-un-outil-de-gestion-de-version">:small_orange_diamond: Pourquoi utiliser un outil de gestion de version ?</h3>
+<section id="pourquoi-utiliser-un-outil-de-gestion-de-version" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="pourquoi-utiliser-un-outil-de-gestion-de-version"><span class="header-section-number">1.2</span> Pourquoi utiliser un outil de gestion de version ?</h3>
 <p>Est-ce que vous préférez avoir ceci ?</p>
 <pre><code>├───Projet info
 │   ├───Livrables
@@ -301,10 +367,10 @@ Date         Heure   Auteur      Message commit
 2022.05.29   21h32   tryphon     "ajout partie 2"
 2022.05.29   20h25   bianca      "v1.1"
 2022.05.29   20h12   tryphon     "Création du rapport"</code></pre>
-<p>Git permet de créer des points de sauvegardes (<strong>commit</strong>). Ainsi pour chaque fichier il est possible de consulter une version précédente et éventuellement de revenir en arrière en cas d’erreur.</p>
+<p>Git permet de créer des points de sauvegardes (<code>commit</code>). Ainsi pour chaque fichier il est possible de consulter une version précédente et éventuellement de revenir en arrière en cas d’erreur.</p>
 </section>
-<section id="small_orange_diamond-principe-général-de-git" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-principe-général-de-git">:small_orange_diamond: Principe général de Git</h3>
+<section id="principe-général-de-git" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="principe-général-de-git"><span class="header-section-number">1.3</span> Principe général de Git</h3>
 <ul>
 <li>Avec Git, vous allez avoir plusieurs dépôts de fichiers
 <ul>
@@ -318,8 +384,8 @@ Date         Heure   Auteur      Message commit
 </ul></li>
 </ul>
 </section>
-<section id="small_orange_diamond-exemples" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-exemples">:small_orange_diamond: Exemples</h3>
+<section id="exemples" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="exemples"><span class="header-section-number">1.4</span> Exemples</h3>
 <section id="exemple-1" class="level4">
 <h4 class="anchored" data-anchor-id="exemple-1">Exemple 1</h4>
 <ul>
@@ -337,21 +403,21 @@ Date         Heure   Auteur      Message commit
 <li>Puis, la commande <code>git push</code> permet de partager cette nouvelle version sur le dépôt distant</li>
 <li>Sur le dépôt distant, les 2 fichiers seront créés ou mis à jour</li>
 </ul>
-<p>Pour gérer les versions, Git utilise des points de sauvegarde appelés <strong>commits</strong>. Grace à cela, il est possible de consulter les versions antérieures des fichiers.</p>
+<p>Pour gérer les versions, Git utilise des points de sauvegarde appelés <code>commits</code>. Grace à cela, il est possible de consulter les versions antérieures des fichiers.</p>
 </section>
 </section>
-<section id="small_orange_diamond-les-5-commandes-quil-faudra-retenir" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-les-5-commandes-quil-faudra-retenir">:small_orange_diamond: Les 5 commandes qu’il faudra retenir</h3>
+<section id="les-5-commandes-quil-faudra-retenir" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="les-5-commandes-quil-faudra-retenir"><span class="header-section-number">1.5</span> Les 5 commandes qu’il faudra retenir</h3>
 <ul>
-<li><strong>git status</strong> : voir où l’on en est</li>
-<li><strong>git add</strong> : ajouter de nouveaux fichiers dans le dépôt</li>
-<li><strong>git commit</strong> : créer un point de sauvegarde</li>
-<li><strong>git pull</strong> : mettre à jour son dépôt local en synchronisant avec le dépôt distant</li>
-<li><strong>git push</strong> : mettre à jour le dépôt distant avec les modifications faites en local</li>
+<li><code>git status</code> : voir où l’on en est</li>
+<li><code>git add</code> : ajouter de nouveaux fichiers dans le dépôt</li>
+<li><code>git commit</code> : créer un point de sauvegarde</li>
+<li><code>git pull</code> : mettre à jour son dépôt local en synchronisant avec le dépôt distant</li>
+<li><code>git push</code> : mettre à jour le dépôt distant avec les modifications faites en local</li>
 </ul>
 </section>
-<section id="small_orange_diamond-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant">:small_orange_diamond: Schéma simplifié des liens entre dépôt local et dépôt distant</h3>
+<section id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant"><span class="header-section-number">1.6</span> Schéma simplifié des liens entre dépôt local et dépôt distant</h3>
 <p><img src="https://i.imgur.com/QsermR0.png" class="img-fluid"></p>
 <ul>
 <li>Git distingue plusieurs états de votre dépôt local mais vous pouvez considérer que les 3 dépôts de gauche forment votre dépôt local</li>
@@ -360,20 +426,20 @@ Date         Heure   Auteur      Message commit
 <hr>
 </section>
 </section>
-<section id="arrow_forward-paramètrer-git" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-paramètrer-git">:arrow_forward: Paramètrer Git</h2>
-<p>:information_source: Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
-<section id="small_orange_diamond-1.-configuration-git-bash" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-1.-configuration-git-bash">:small_orange_diamond: 1. Configuration Git Bash</h3>
+<section id="paramètrer-git" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="paramètrer-git"><span class="header-section-number">2</span> Paramètrer Git</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
+<section id="configuration-git-bash" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="configuration-git-bash"><span class="header-section-number">2.1</span> Configuration Git Bash</h3>
 <p>Git Bash est un Terminal où l’on peut écrire des commandes git.</p>
-<p>Ouvrir <strong>Git Bash</strong> et entrer une à une les commandes suivantes</p>
+<p>Ouvrir <code>Git Bash</code> et entrer une à une les commandes suivantes</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Prenom Nom"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email prenom.nom@eleve.ensai.fr</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La dernière commande permet de vérifier que les 2 attributs <code>user.name</code> et <code>user.email</code> sont bien renseignés</p>
 </section>
-<section id="small_orange_diamond-2.-clé-ssh" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-2.-clé-ssh">:small_orange_diamond: 2. Clé SSH</h3>
+<section id="clé-ssh" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="clé-ssh"><span class="header-section-number">2.2</span> Clé SSH</h3>
 <p>Afin de pouvoir faire des mises à jour sur le dépôt distant, il faut que votre machine (locale) soit reconnue. Vous devez donc fournir une clé d’authentification à GitLab.</p>
 <p>Toujours dans Git Bash, lancer une à une ces 2 commandes. La première commande permet de générer une clé publique SSH. La seconde permet de récupérer la valeur de cette clé.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">"prenom.nom@eleve.ensai.fr"</span></span>
@@ -402,17 +468,17 @@ Il est interessant d’avoir une copie de cette clé pour la restaurer si besoin
 <hr>
 </section>
 </section>
-<section id="small_orange_diamond-3.-créer-un-compte-sur-gitlab-github-ou-autre" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-3.-créer-un-compte-sur-gitlab-github-ou-autre">:small_orange_diamond: 3. Créer un compte sur GitLab, GitHub ou autre</h3>
+<section id="créer-un-compte-sur-gitlab-github-ou-autre" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="créer-un-compte-sur-gitlab-github-ou-autre"><span class="header-section-number">2.3</span> Créer un compte sur GitLab, GitHub ou autre</h3>
 <ul>
 <li><a href="https://gitlab.com/gitlab-org/gitlab">GitLab</a> est le site qui permet d’héberger le dépôt distant du code (<a href="https://gitlab.com/users/sign_up">Créer un compte</a>)</li>
 <li><a href="https://github.com/">GitHub</a></li>
 </ul>
 </section>
-<section id="small_orange_diamond-4.-déclarer-votre-clé-publique-ssh-à-gitlab" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-4.-déclarer-votre-clé-publique-ssh-à-gitlab">:small_orange_diamond: 4. Déclarer votre clé publique SSH à GitLab</h3>
+<section id="déclarer-votre-clé-publique-ssh-à-gitlab" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="déclarer-votre-clé-publique-ssh-à-gitlab"><span class="header-section-number">2.4</span> Déclarer votre clé publique SSH à GitLab</h3>
 <ul>
-<li>Dans GitLab, aller dans <strong>Preferences</strong> (en haut à droite) puis dans <a href="(https://gitlab.com/-/profile/keys)">SSH Keys</a>
+<li>Dans GitLab, aller dans <code>Preferences</code> (en haut à droite) puis dans <a href="(https://gitlab.com/-/profile/keys)">SSH Keys</a>
 <ul>
 <li>Key : coller le résultat de l’étape 2</li>
 <li>Add SSH Key</li>
@@ -420,13 +486,13 @@ Il est interessant d’avoir une copie de cette clé pour la restaurer si besoin
 <li>Dans GitHub, aller dans Paramètres, puis <a href="(https://github.com/settings/keys)">SSH and GPG Keys</a>
 <ul>
 <li>New SSh key</li>
-<li>donnez un titre et coller dans <strong>Key</strong> le résultat de l’étape 2</li>
+<li>donnez un titre et coller dans <code>Key</code> le résultat de l’étape 2</li>
 </ul></li>
 </ul>
-<p>:rainbow: Bravo le paramètrage est terminé :confetti_ball:</p>
+<p><span class="emoji" data-emoji="rainbow">🌈</span> Bravo le paramètrage est terminé <span class="emoji" data-emoji="confetti_ball">🎊</span></p>
 </section>
-<section id="small_orange_diamond-5.-en-cas-derreurs" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-5.-en-cas-derreurs">:small_orange_diamond: 5. En cas d’erreurs</h3>
+<section id="en-cas-derreurs" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="en-cas-derreurs"><span class="header-section-number">2.5</span> En cas d’erreurs</h3>
 <section id="the-authenticity-of-host-xxx-cant-be-established" class="level4">
 <h4 class="anchored" data-anchor-id="the-authenticity-of-host-xxx-cant-be-established">The authenticity of host xxx can’t be established</h4>
 <pre><code>The authenticity of host 'github.com (140.82.121.4)' can't be established.  
@@ -450,42 +516,8 @@ and the repository exists.</code></pre>
 <ol start="2" type="1">
 <li>Vérifiez que la clé <code>id_rsa.pub</code> est bien déclarée dans GitLab ou GitHub. Si le problème persiste, regénérez une nouvelle clé ssh et déclarez là dans GitHub ou GitLab.</li>
 </ol>
-<style>
-    h1{
-        color: darkblue;
-        font-family: "Calibri";
-        font-weight: bold;
-        background-color: seagreen;
-        padding-left: 10px;
-    }
-    h2{
-        color: darkblue;
-        background-color: mediumseagreen;
-        margin-right: 10%;
-        padding-left: 10px;
-    }
-    h3{
-        color: darkblue;
-        background-color: darkseagreen;
-        margin-right: 20%;
-        padding-left: 10px;
-    }
-    h4{
-        color: darkblue;
-        background-color: lightseagreen;
-        margin-right: 30%;
-        padding-left: 10px;
-    }
-    h5{
-        color: darkblue;
-        background-color: aquamarine;
-        margin-right: 40%;
-        padding-left: 10px;
-    }
-</style>
 
 
-</section>
 </section>
 </section>
 </section>
@@ -1030,7 +1062,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
 </div>

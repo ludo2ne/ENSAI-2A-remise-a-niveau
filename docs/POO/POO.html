@@ -156,6 +156,14 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
+    <a class="dropdown-item" href="../../docs/outils/outils.html">
+ <span class="dropdown-text">Outils</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VM.html">
+ <span class="dropdown-text">VM</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
@@ -165,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
- <span class="dropdown-text">Visual Studio Conde</span></a>
+ <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
     </ul>
   </li>
@@ -193,20 +201,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#organisation-du-code" id="toc-organisation-du-code" class="nav-link" data-scroll-target="#organisation-du-code">Organisation du code</a>
+  <li><a href="#organisation-du-code" id="toc-organisation-du-code" class="nav-link" data-scroll-target="#organisation-du-code"><span class="header-section-number">1</span> Organisation du code</a>
   <ul class="collapse">
-  <li><a href="#bonne-pratique" id="toc-bonne-pratique" class="nav-link" data-scroll-target="#bonne-pratique">bonne pratique</a></li>
+  <li><a href="#bonne-pratique" id="toc-bonne-pratique" class="nav-link" data-scroll-target="#bonne-pratique"><span class="header-section-number">1.1</span> bonne pratique</a></li>
   </ul></li>
-  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage">Héritage</a>
+  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage"><span class="header-section-number">2</span> Héritage</a>
   <ul class="collapse">
-  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite">Classe Abstraite</a></li>
+  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite"><span class="header-section-number">2.1</span> Classe Abstraite</a></li>
   </ul></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a>
   <ul class="collapse">
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer">Avant de commencer</a></li>
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points">Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones">Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino">Exercice 3 - Domino</a></li>
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer"><span class="header-section-number">3.1</span> Avant de commencer</a></li>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">3.2</span> Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3.3</span> Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3.4</span> Exercice 3 - Domino</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -255,8 +263,8 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">L’héritage</label></li>
 <li><label><input type="checkbox">Les classe abstraites</label></li>
 </ul>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
 <p>La POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (<code>attributs</code>) et des actions (<code>méthodes</code>) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :</p>
 <ul>
 <li><code>Encapsulation</code> : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet</li>
@@ -271,8 +279,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Elle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.</p>
 </section>
-<section id="organisation-du-code" class="level2">
-<h2 class="anchored" data-anchor-id="organisation-du-code">Organisation du code</h2>
+<section id="organisation-du-code" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="organisation-du-code"><span class="header-section-number">1</span> Organisation du code</h2>
 <p>Dans la suite, nous allons organsier notre code de manière logique dans différents modules.</p>
 <blockquote class="blockquote">
 <p><code>module</code> : Les modules d’un programme Python sont ses fichiers sources.</p>
@@ -280,8 +288,8 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><code>paquet</code> : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.</p>
 </blockquote>
-<section id="bonne-pratique" class="level3">
-<h3 class="anchored" data-anchor-id="bonne-pratique">bonne pratique</h3>
+<section id="bonne-pratique" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="bonne-pratique"><span class="header-section-number">1.1</span> bonne pratique</h3>
 <p>A la racine de votre projet, créez les 3 dossiers suivants :</p>
 <ul>
 <li><code>src</code> : pour stocker votre code source</li>
@@ -327,8 +335,8 @@ ul.task-list li input[type="checkbox"] {
         └── etudiant.py</code></pre>
 </section>
 </section>
-<section id="héritage" class="level2">
-<h2 class="anchored" data-anchor-id="héritage">Héritage</h2>
+<section id="héritage" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="héritage"><span class="header-section-number">2</span> Héritage</h2>
 <p>Un des trois piliers de la POO est l’héritage.<br>
 Une classe enfant peut utiliser tous les attributs et méthode de sa classe parente.<br>
 Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
@@ -341,8 +349,8 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <li>ralentir()</li>
 </ul>
 <p>Une idée est de regrouper ces caractéristiques communes dans une classe <code>DeuxRoues</code>. Puis de faire hériter <code>Vélo</code> et <code>Trottinette</code> de <code>DeuxRoues</code></p>
-<section id="classe-abstraite" class="level3">
-<h3 class="anchored" data-anchor-id="classe-abstraite">Classe Abstraite</h3>
+<section id="classe-abstraite" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="classe-abstraite"><span class="header-section-number">2.1</span> Classe Abstraite</h3>
 <p>Certaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe <code>DeuxRoues</code>. Nous allons directement créer des <code>Velo</code> et des <code>Trottinettes</code>.</p>
 <p>Nous pouvons donc définir la classe <code>DeuxRoues</code>comme <code>abstraite</code></p>
 <ul>
@@ -363,10 +371,10 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <hr>
 </section>
 </section>
-<section id="exercices" class="level2">
-<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="avant-de-commencer" class="level3">
-<h3 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h3>
+<section id="exercices" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
+<section id="avant-de-commencer" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="avant-de-commencer"><span class="header-section-number">3.1</span> Avant de commencer</h3>
 <ul>
 <li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
 <li>Suivez les consignes données dans le fichier de <a href="../../docs/outils/VSCode.html">paramétrage et d’utilisation de VSCode</a></li>
@@ -377,8 +385,8 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 </ul></li>
 </ul>
 </section>
-<section id="exercice-1---points" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-1---points">Exercice 1 - Points</h3>
+<section id="exercice-1---points" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">3.2</span> Exercice 1 - Points</h3>
 <p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
@@ -391,8 +399,8 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <li><label><input type="checkbox">(bonus) <code>rotation(self, a)</code> : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
 </ul>
 </section>
-<section id="exercice-2---polygones" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-2---polygones">Exercice 2 - Polygones</h3>
+<section id="exercice-2---polygones" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3.3</span> Exercice 2 - Polygones</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Créer une classe <code>Polygones</code> composées d’objets de la classe <code>Point</code></label>
 <ul>
@@ -439,8 +447,8 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
         +perimetre()
     }</code></pre>
 </section>
-<section id="exercice-3---domino" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-3---domino">Exercice 3 - Domino</h3>
+<section id="exercice-3---domino" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3.4</span> Exercice 3 - Domino</h3>
 <p>Écrire une classe <code>Domino</code> avec :</p>
 <ul class="task-list">
 <li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>

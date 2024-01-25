@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="TP de découverte de Git">
 
-<title>Remise à Niveau Informatique</title>
+<title>Remise à Niveau Informatique - Git TP</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -73,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -154,6 +190,14 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
+    <a class="dropdown-item" href="../../docs/outils/outils.html">
+ <span class="dropdown-text">Outils</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VM.html">
+ <span class="dropdown-text">VM</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
@@ -163,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
- <span class="dropdown-text">Visual Studio Conde</span></a>
+ <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
     </ul>
   </li>
@@ -185,26 +229,87 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#créer-un-projet" id="toc-créer-un-projet" class="nav-link" data-scroll-target="#créer-un-projet"><span class="header-section-number">1</span> Créer un projet</a>
+  <ul class="collapse">
+  <li><a href="#création-du-fichier-.gitignore" id="toc-création-du-fichier-.gitignore" class="nav-link" data-scroll-target="#création-du-fichier-.gitignore"><span class="header-section-number">1.1</span> Création du fichier .gitignore</a></li>
+  <li><a href="#inviter-dautres-membres" id="toc-inviter-dautres-membres" class="nav-link" data-scroll-target="#inviter-dautres-membres"><span class="header-section-number">1.2</span> Inviter d’autres membres</a></li>
+  </ul></li>
+  <li><a href="#cloner-le-projet" id="toc-cloner-le-projet" class="nav-link" data-scroll-target="#cloner-le-projet"><span class="header-section-number">2</span> Cloner le projet</a></li>
+  <li><a href="#ajouter-un-nouveau-fichier" id="toc-ajouter-un-nouveau-fichier" class="nav-link" data-scroll-target="#ajouter-un-nouveau-fichier"><span class="header-section-number">3</span> Ajouter un nouveau fichier</a></li>
+  <li><a href="#gérer-un-conflit" id="toc-gérer-un-conflit" class="nav-link" data-scroll-target="#gérer-un-conflit"><span class="header-section-number">4</span> Gérer un conflit</a></li>
+  <li><a href="#revenir-en-arrière" id="toc-revenir-en-arrière" class="nav-link" data-scroll-target="#revenir-en-arrière"><span class="header-section-number">5</span> Revenir en arrière</a>
+  <ul class="collapse">
+  <li><a href="#revenir-au-dernier-commit" id="toc-revenir-au-dernier-commit" class="nav-link" data-scroll-target="#revenir-au-dernier-commit"><span class="header-section-number">5.1</span> Revenir au dernier commit</a></li>
+  <li><a href="#consulter-lhistorique-dun-fichier" id="toc-consulter-lhistorique-dun-fichier" class="nav-link" data-scroll-target="#consulter-lhistorique-dun-fichier"><span class="header-section-number">5.2</span> Consulter l’historique d’un fichier</a></li>
+  <li><a href="#comparer-2-versions-dun-fichier" id="toc-comparer-2-versions-dun-fichier" class="nav-link" data-scroll-target="#comparer-2-versions-dun-fichier"><span class="header-section-number">5.3</span> Comparer 2 versions d’un fichier</a></li>
+  <li><a href="#retour-vers-le-passé" id="toc-retour-vers-le-passé" class="nav-link" data-scroll-target="#retour-vers-le-passé"><span class="header-section-number">5.4</span> Retour vers le passé</a></li>
+  <li><a href="#annuler-un-commit" id="toc-annuler-un-commit" class="nav-link" data-scroll-target="#annuler-un-commit"><span class="header-section-number">5.5</span> Annuler un commit</a></li>
+  </ul></li>
+  <li><a href="#fonctionnalités-de-gitlab" id="toc-fonctionnalités-de-gitlab" class="nav-link" data-scroll-target="#fonctionnalités-de-gitlab"><span class="header-section-number">6</span> Fonctionnalités de GitLab</a></li>
+  <li><a href="#un-petit-exo-dapplication" id="toc-un-petit-exo-dapplication" class="nav-link" data-scroll-target="#un-petit-exo-dapplication"><span class="header-section-number">7</span> Un petit exo d’application</a></li>
+  <li><a href="#les-branches" id="toc-les-branches" class="nav-link" data-scroll-target="#les-branches"><span class="header-section-number">8</span> Les branches</a>
+  <ul class="collapse">
+  <li><a href="#a-quoi-sert-une-branche" id="toc-a-quoi-sert-une-branche" class="nav-link" data-scroll-target="#a-quoi-sert-une-branche"><span class="header-section-number">8.1</span> A quoi sert une branche ?</a></li>
+  <li><a href="#un-petit-exemple-pour-y-voir-plus-clair" id="toc-un-petit-exemple-pour-y-voir-plus-clair" class="nav-link" data-scroll-target="#un-petit-exemple-pour-y-voir-plus-clair"><span class="header-section-number">8.2</span> Un petit exemple pour y voir plus clair</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git TP.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Git TP</h1>
+</div>
+
+<div>
+  <div class="description">
+    TP de découverte de Git
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
-<section id="git-tp" class="level1">
-<h1>Git TP</h1>
-<p>Le but de ce TP est de :</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="objectifs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">vous présenter les fonctionnalités de base de Git</label></li>
 <li><label><input type="checkbox">vous faire manipuler les 5 commandes principales (status, add, commit, pull, push)</label></li>
 <li><label><input type="checkbox">vous montrer comment résoudre un conflit</label></li>
 <li><label><input type="checkbox">bonus : retour en arrière, branches…</label></li>
 </ul>
-<section id="arrow_forward-1.-créer-un-projet" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-1.-créer-un-projet">:arrow_forward: 1. Créer un projet</h2>
-<p>:information_source: Ce projet permettra d’héberger le dépôt distant</p>
+</section>
+<section id="créer-un-projet" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="créer-un-projet"><span class="header-section-number">1</span> Créer un projet</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> Ce projet permettra d’héberger le dépôt distant</p>
 <ul>
 <li>se connecter à <a href="https://gitlab.com/">GitLab</a></li>
 <li>En haut à gauche, Menu &gt; Projects &gt; <a href="https://gitlab.com/projects/new">Create new project</a></li>
@@ -217,8 +322,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <hr>
-<section id="small_orange_diamond-création-du-fichier-.gitignore" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-création-du-fichier-.gitignore">:small_orange_diamond: Création du fichier .gitignore</h3>
+<section id="création-du-fichier-.gitignore" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="création-du-fichier-.gitignore"><span class="header-section-number">1.1</span> Création du fichier .gitignore</h3>
 <blockquote class="blockquote">
 <p><strong>.gitignore</strong> est un fichier permettant de dire à Git quels fichiers il &gt; faut ignorer. Par exemple :</p>
 <ul>
@@ -231,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Dans GitLab, sur la page de votre projet</li>
 <li>Aller dans Repository &gt; Files</li>
-<li>Au milieu , à droite de <code>git-tp/</code> cliquer sur l’icone :heavy_plus_sign:</li>
+<li>Au milieu , à droite de <code>git-tp/</code> cliquer sur l’icone <span class="emoji" data-emoji="heavy_plus_sign">➕</span></li>
 <li>New file</li>
 <li>Select a template type : .gitignore</li>
 <li>Apply a template : Python</li>
@@ -240,8 +345,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="small_orange_diamond-inviter-dautres-membres" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-inviter-dautres-membres">:small_orange_diamond: Inviter d’autres membres</h3>
+<section id="inviter-dautres-membres" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="inviter-dautres-membres"><span class="header-section-number">1.2</span> Inviter d’autres membres</h3>
 <p>Vous venez de créer un projet public donc visible par tous. Cependant, vous êtes seul à pouvoir modifier ce projet. Pour autoriser d’autres personnes à écrire sur ce projet (par exemple lors du projet info), il faut donner les droits en écriture :</p>
 <ul>
 <li>Project informations &gt; Members &gt; Invite members</li>
@@ -251,9 +356,9 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="arrow_forward-2.-cloner-le-projet" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-2.-cloner-le-projet">:arrow_forward: 2. Cloner le projet</h2>
-<p>:information_source: Le but de cette étape est de créer votre dépôt local en faisant un clone du dépôt distant</p>
+<section id="cloner-le-projet" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="cloner-le-projet"><span class="header-section-number">2</span> Cloner le projet</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> Le but de cette étape est de créer votre dépôt local en faisant un clone du dépôt distant</p>
 <ul>
 <li>Ouvrir Visual Studio Code</li>
 <li>Ouvrir un Terminal</li>
@@ -302,25 +407,25 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="arrow_forward-3.-ajouter-un-nouveau-fichier" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-3.-ajouter-un-nouveau-fichier">:arrow_forward: 3. Ajouter un nouveau fichier</h2>
-<p>:information_source: Nous allons ici voir comment :</p>
+<section id="ajouter-un-nouveau-fichier" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ajouter-un-nouveau-fichier"><span class="header-section-number">3</span> Ajouter un nouveau fichier</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> Nous allons ici voir comment :</p>
 <ul>
 <li>ajouter/modifier des fichiers dans le dépôt local</li>
 <li>envoyer ces mises à jour au dépôt distant</li>
 </ul>
 <p>Dans le dossier git-tp, créer un fichier <code>voiture.py</code> contenant le code suivant :</p>
-<pre class="python="><code>class Voiture:
-    
-    def __init__(self, nom, couleur):
-        self.couleur = couleur
-        self.nom = nom
-        self.vitesse = 0
-
-    def accelere(self, increment):
-        if increment &gt; 10:
-            increment = 10
-        self.vitesse = min(130, self.vitesse + increment)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Voiture:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, couleur):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelere(<span class="va">self</span>, increment):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> increment <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            increment <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="bu">min</span>(<span class="dv">130</span>, <span class="va">self</span>.vitesse <span class="op">+</span> increment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Dans le terminal Git Bash, exécuter les commandes suivantes :</li>
 <li><code>git status</code>
@@ -357,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Pour mettre à jour le dépôt distant avec mes modifications locales</li>
 </ul></li>
 </ul>
-<p>:bulb: <strong>Combiner les commandes add et commit</strong></p>
+<p><span class="emoji" data-emoji="bulb">💡</span> <strong>Combiner les commandes add et commit</strong></p>
 <p>Dans le cas d’un nouveau fichier, il faut impérativement enchaîner les deux commandes suivantes pour que Git suive ce fichier :</p>
 <ul>
 <li><code>git add mon_fichier.py</code></li>
@@ -365,11 +470,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Si le fichier existait déjà, il est possible de combiner les deux commandes :</p>
 <ul>
-<li>en ajoutant au commit un <strong>-a</strong> qui signifie add</li>
+<li>en ajoutant au commit un *<strong>a</strong> qui signifie add</li>
 <li><code>git commit -am "Modification mon_fichier"</code></li>
 </ul>
-<p>:bulb: Si vous créez, non pas un mais plusieurs fichiers, vous pouvez utiliser la commande suivante pour tous les faire suivre par Git : <strong><code>git add .</code></strong></p>
-<p>:bulb: Il est fortement recommandé de créer des commits très fréquement, par exemple</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Si vous créez, non pas un mais plusieurs fichiers, vous pouvez utiliser la commande suivante pour tous les faire suivre par Git : <strong><code>git add .</code></strong></p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Il est fortement recommandé de créer des commits très fréquement, par exemple</p>
 <ul>
 <li>Vous venez de modifier une fonction</li>
 <li>Testez pour vérifier que votre code fonctionne bien</li>
@@ -378,8 +483,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="arrow_forward-4.-gérer-un-conflit" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-4.-gérer-un-conflit">:arrow_forward: 4. Gérer un conflit</h2>
+<section id="gérer-un-conflit" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="gérer-un-conflit"><span class="header-section-number">4</span> Gérer un conflit</h2>
 <blockquote class="blockquote">
 <p>Dans le monde merveilleux de Git, tout se passe bien quand chacun &gt; travaille sur des fichiers différents. Lorsque deux personnes ont &gt; modifié le même fichier, ça peut se compliquer.</p>
 <p>Au moment de la synchronisation des dépôts, Git va tenter de faire un &gt; auto-merge. Celui-ci fonctionnera bien si par exemple l’une des deux &gt; personnes a modifié le début du fichier et l’autre la fin.</p>
@@ -391,7 +496,7 @@ ul.task-list li input[type="checkbox"] {
 <li>ce n’est pas grave</li>
 <li>ce n’est pas une erreur</li>
 <li>vous n’avez pas tout cassé</li>
-<li>:scream: il ne faut pas paniquer, simplement savoir comment le résoudre</li>
+<li><span class="emoji" data-emoji="scream">😱</span> il ne faut pas paniquer, simplement savoir comment le résoudre</li>
 </ul>
 <hr>
 <ul>
@@ -415,14 +520,14 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><code>git push</code>
 <ul>
-<li>:warning: Error : petit piège, il faut toujours faire un pull avant de tenter un push</li>
+<li><span class="emoji" data-emoji="warning">⚠️</span> Error : petit piège, il faut toujours faire un pull avant de tenter un push</li>
 <li>Le dépôt distant a été modifié</li>
 <li>Je dois d’abord récupérer ces modifications sur mon dépôt local (pull)</li>
 <li>Ensuite seulement je pourrai mettre à jour le dépôt distant (push)</li>
 </ul></li>
 <li><code>git pull</code>
 <ul>
-<li>:rotating_light: <em>Conflict - Automatic merge failed</em></li>
+<li><span class="emoji" data-emoji="rotating_light">🚨</span> <em>Conflict - Automatic merge failed</em></li>
 <li>Sur les 2 dépôts, la même ligne a été modifiée
 <ul>
 <li>Ainsi dans le cas présent, Git ne peut pas savoir quelle version choisir</li>
@@ -435,11 +540,11 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Dans VSCode, ouvrir le fichier <code>voiture.py</code>, on voit s’afficher :</li>
 </ul>
-<pre class="python="><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-        self.vitesse = min(150, self.vitesse + increment)
-******=
-        self.vitesse = min(110, self.vitesse + increment)
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; d29aa04e48e16d3648fd4ae9796b4a035e176f1c</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="bu">min</span>(<span class="dv">150</span>, <span class="va">self</span>.vitesse <span class="op">+</span> increment)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">******=</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="bu">min</span>(<span class="dv">110</span>, <span class="va">self</span>.vitesse <span class="op">+</span> increment)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> d29aa04e48e16d3648fd4ae9796b4a035e176f1c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Maintenant il faut choisir quelle ligne on garde
 <ul>
@@ -451,7 +556,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Ou cliquer simplement sur le bouton VSCode <code>Accept Current Change</code></li>
 <li>Enregistrer</li>
 </ul></li>
-<li>:bulb: En théorie, à cet instant, il faut tester de nouveau que le programme fonctionne bien, cependant ce n’est pas l’objet de ce TP</li>
+<li><span class="emoji" data-emoji="bulb">💡</span> En théorie, à cet instant, il faut tester de nouveau que le programme fonctionne bien, cependant ce n’est pas l’objet de ce TP</li>
 <li><code>git commit -am "Resolve merge"</code>
 <ul>
 <li>cela crée un nouveau point de sauvegarde pour valider le merge</li>
@@ -462,7 +567,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>cette fois ci, c’est ok, les modifications faites sur le dépôt local sont poussées vers le dépôt distant</li>
 </ul></li>
-<li>:tada: Félicitations, vous venez de résoudre votre 1er conflit :champagne:
+<li><span class="emoji" data-emoji="tada">🎉</span> Félicitations, vous venez de résoudre votre 1er conflit <span class="emoji" data-emoji="champagne">🍾</span>
 <ul>
 <li>c’était pas compliqué, hein ?</li>
 </ul></li>
@@ -472,13 +577,13 @@ ul.task-list li input[type="checkbox"] {
 <p>La suite permet d’aller un peu plus loin si vous commencez à être à l’aise.</p>
 <hr>
 </section>
-<section id="arrow_forward-5.-revenir-en-arrière" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-5.-revenir-en-arrière">:arrow_forward: 5. Revenir en arrière</h2>
-<p>:information_source: L’intérêt de versionner est d’avoir la possibilité de revenir en arrière si besoin !</p>
+<section id="revenir-en-arrière" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="revenir-en-arrière"><span class="header-section-number">5</span> Revenir en arrière</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> L’intérêt de versionner est d’avoir la possibilité de revenir en arrière si besoin !</p>
 <p>Soyons clair, revenir en arrière n’est pas une action anodine et nécessite parfois une certaine maîtrise de Git. Nous nous contenterons donc ici de quelques outils de base.</p>
 <hr>
-<section id="small_orange_diamond-revenir-au-dernier-commit" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-revenir-au-dernier-commit">:small_orange_diamond: Revenir au dernier commit</h3>
+<section id="revenir-au-dernier-commit" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="revenir-au-dernier-commit"><span class="header-section-number">5.1</span> Revenir au dernier commit</h3>
 <p>Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliserons la commande <code>stash</code></p>
 <ul>
 <li>Créer un fichier <code>vehicule.py</code></li>
@@ -495,17 +600,17 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="small_orange_diamond-consulter-lhistorique-dun-fichier" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-consulter-lhistorique-dun-fichier">:small_orange_diamond: Consulter l’historique d’un fichier</h3>
-<section id="dans-gitlab-aller-sur-le-fichier-voiture.py" class="level4">
-<h4 class="anchored" data-anchor-id="dans-gitlab-aller-sur-le-fichier-voiture.py">Dans GitLab, aller sur le fichier <code>voiture.py</code></h4>
+<section id="consulter-lhistorique-dun-fichier" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="consulter-lhistorique-dun-fichier"><span class="header-section-number">5.2</span> Consulter l’historique d’un fichier</h3>
+<section id="dans-gitlab-aller-sur-le-fichier-voiture.py" class="level4" data-number="5.2.1">
+<h4 data-number="5.2.1" class="anchored" data-anchor-id="dans-gitlab-aller-sur-le-fichier-voiture.py"><span class="header-section-number">5.2.1</span> Dans GitLab, aller sur le fichier <code>voiture.py</code></h4>
 <ul>
 <li>Cliquer sur History</li>
 <li>Cela affiche la liste des commits qui ont mis à jour ce fichier</li>
 </ul>
 </section>
-<section id="dans-git-bash" class="level4">
-<h4 class="anchored" data-anchor-id="dans-git-bash">Dans Git Bash</h4>
+<section id="dans-git-bash" class="level4" data-number="5.2.2">
+<h4 data-number="5.2.2" class="anchored" data-anchor-id="dans-git-bash"><span class="header-section-number">5.2.2</span> Dans Git Bash</h4>
 <ul>
 <li><code>git log voiture.py</code>
 <ul>
@@ -543,8 +648,8 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="small_orange_diamond-comparer-2-versions-dun-fichier" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-comparer-2-versions-dun-fichier">:small_orange_diamond: Comparer 2 versions d’un fichier</h3>
+<section id="comparer-2-versions-dun-fichier" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="comparer-2-versions-dun-fichier"><span class="header-section-number">5.3</span> Comparer 2 versions d’un fichier</h3>
 <ul>
 <li>Noter le numéro d’un commit où vous avez modifié <code>voiture.py</code>
 <ul>
@@ -565,8 +670,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="small_orange_diamond-retour-vers-le-passé" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-retour-vers-le-passé">:small_orange_diamond: Retour vers le passé</h3>
+<section id="retour-vers-le-passé" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="retour-vers-le-passé"><span class="header-section-number">5.4</span> Retour vers le passé</h3>
 <ul>
 <li>Toujours avec le numéro d’un ancien commit</li>
 <li><strong><code>git checkout 7539cf7</code></strong>
@@ -583,20 +688,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="small_orange_diamond-annuler-un-commit" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-annuler-un-commit">:small_orange_diamond: Annuler un commit</h3>
+<section id="annuler-un-commit" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="annuler-un-commit"><span class="header-section-number">5.5</span> Annuler un commit</h3>
 <ul>
 <li>En fait non, on ne verra pas comment annuler un commit, ni sur le dépôt local, ni sur le dépôt distant. C’est possible mais à vos risques et périls.</li>
 <li>Préférez la méthode un peu archaïque qui consiste à retourner dans le passé pour copier ce qui fonctionnait bien avant.</li>
 <li>Et pour vous faciliter la vie, faites des commits réguliers et ne modifiez pas 50 fichiers dans un commit.</li>
 </ul>
-<p>:bulb: Si à un moment vous avez peur de faire une bétise et de perdre tout votre code (par exemple si une commande Git ne se passe pas comme vous l’aviez prévu), il est tout a fait possible de copier votre dépôt. Votre dépôt local est un dossier, allez dans l’explorateur windows, faites <code>CTRL + C</code> <code>CTRL + V</code> et voila vous avez une copie que vous pouvez garder de coté au cas où ça tourne mal.<br>
-:bulb: Et surtout n’hésitez pas à demander de l’aide !</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> Si à un moment vous avez peur de faire une bétise et de perdre tout votre code (par exemple si une commande Git ne se passe pas comme vous l’aviez prévu), il est tout a fait possible de copier votre dépôt. Votre dépôt local est un dossier, allez dans l’explorateur windows, faites <code>CTRL + C</code> <code>CTRL + V</code> et voila vous avez une copie que vous pouvez garder de coté au cas où ça tourne mal.<br>
+<span class="emoji" data-emoji="bulb">💡</span> Et surtout n’hésitez pas à demander de l’aide !</p>
 <hr>
 </section>
 </section>
-<section id="arrow_forward-fonctionnalités-de-gitlab" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-fonctionnalités-de-gitlab">:arrow_forward: Fonctionnalités de GitLab</h2>
+<section id="fonctionnalités-de-gitlab" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="fonctionnalités-de-gitlab"><span class="header-section-number">6</span> Fonctionnalités de GitLab</h2>
 <p>GitLab n’est pas seulement un dépôt distant, il y a de nombreuses fonctionnalités interessantes.</p>
 <ul>
 <li>Issues : Pour lister et suivre les incidents ou les évolutions du programme</li>
@@ -606,8 +711,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Voir un exemple avec <a href="https://gitlab.com/CalcProgrammer1/OpenRGB/-/wikis/home">ce projet</a></p>
 <hr>
 </section>
-<section id="arrow_forward-un-petit-exo-dapplication" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-un-petit-exo-dapplication">:arrow_forward: Un petit exo d’application</h2>
+<section id="un-petit-exo-dapplication" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="un-petit-exo-dapplication"><span class="header-section-number">7</span> Un petit exo d’application</h2>
 <ol type="1">
 <li>Revenez dans VSCode, ouvrez un terminal Git Bash et positionnez votre terminal dans le dossier <code>P:\Cours\Python\git-tp</code> comme cela a été fait au début de la partie 2.</li>
 <li>Dans VSCode, sur le constructeur de la classe <code>voiture</code>, mettre la valeur par défaut de couleur à <code>verte</code> : <code>def __init__(self, nom, couleur=verte)</code></li>
@@ -619,11 +724,11 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <hr>
 </section>
-<section id="arrow_forward-les-branches" class="level2">
-<h2 class="anchored" data-anchor-id="arrow_forward-les-branches">:arrow_forward: Les branches</h2>
-<p>:information_source: Uniquement si vous êtes à l’aise</p>
-<section id="small_orange_diamond-a-quoi-sert-une-branche" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-a-quoi-sert-une-branche">:small_orange_diamond: A quoi sert une branche ?</h3>
+<section id="les-branches" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="les-branches"><span class="header-section-number">8</span> Les branches</h2>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> Uniquement si vous êtes à l’aise</p>
+<section id="a-quoi-sert-une-branche" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="a-quoi-sert-une-branche"><span class="header-section-number">8.1</span> A quoi sert une branche ?</h3>
 <p>Imaginez vous avez votre code qui fonctionne bien mais qui est tout moche (avec des duplications…). Comme vous êtes sérieux, vous voulez faire tout bien comme il faut et mettre tout au propre.</p>
 <p>Vous faites vos corrections, faites de commits, et puis à un moment vous en avez marre car plus rien ne fonctionne. Vous avez envie de retourner en arrière, ce qui est possible avec ce que l’on a vu précédemment mais pas trivial ni très propre.</p>
 <p>Si vous connaissiez les branches voici ce que vous auriez fait :</p>
@@ -636,8 +741,8 @@ ul.task-list li input[type="checkbox"] {
 <p>En gros une branche permet de coder et/ou tester une nouvelle fonctionnalité sans polluer la branche principale.</p>
 <hr>
 </section>
-<section id="small_orange_diamond-un-petit-exemple-pour-y-voir-plus-clair" class="level3">
-<h3 class="anchored" data-anchor-id="small_orange_diamond-un-petit-exemple-pour-y-voir-plus-clair">:small_orange_diamond: Un petit exemple pour y voir plus clair</h3>
+<section id="un-petit-exemple-pour-y-voir-plus-clair" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="un-petit-exemple-pour-y-voir-plus-clair"><span class="header-section-number">8.2</span> Un petit exemple pour y voir plus clair</h3>
 <ul>
 <li>imaginons que vous voulez ajouter une classe trottinette, mais vous n’êtes pas encore sûr, alors vous testez sur une branche</li>
 <li><code>git checkout -b trottinette</code>
@@ -696,42 +801,8 @@ ul.task-list li input[type="checkbox"] {
 <li>L’option <code>--squash</code> permet de ne pas polluer le main avec tous les commits réalisés sur la branche <code>trottinette</code>. Si par la suite vous utilisez GitLab ou GitHub cette option se retrouve directement dans les merge ou les pull requests.</li>
 </ul></li>
 </ul>
-<style>
-    h1{
-        color: darkblue;
-        font-family: "Calibri";
-        font-weight: bold;
-        background-color: seagreen;
-        padding-left: 10px;
-    }
-    h2{
-        color: darkblue;
-        background-color: mediumseagreen;
-        margin-right: 10%;
-        padding-left: 10px;
-    }
-    h3{
-        color: darkblue;
-        background-color: darkseagreen;
-        margin-right: 20%;
-        padding-left: 10px;
-    }
-    h4{
-        color: darkblue;
-        background-color: lightseagreen;
-        margin-right: 30%;
-        padding-left: 10px;
-    }
-    h5{
-        color: darkblue;
-        background-color: aquamarine;
-        margin-right: 40%;
-        padding-left: 10px;
-    }
-</style>
 
 
-</section>
 </section>
 </section>
 
@@ -1275,7 +1346,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git TP.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git TP.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
 </div>
