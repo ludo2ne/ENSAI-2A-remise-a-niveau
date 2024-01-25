@@ -1,6 +1,7 @@
 ---
 title: "UML"
 description: "Introduction à UML"
+author: "Ludovic Deneuville"
 format: 
   html:
     toc: true
@@ -46,8 +47,8 @@ Ils aident à communiquer efficacement les besoins des utilisateurs et à guider
 
 ### Outils
 
-- [PlantUML](http://www.plantuml.com/)
-  - [exemple](https://github.com/ludo2ne/projet-info-2A/blob/main/doc/diagrammes/diag_cas_utilisation.txt)
+- [PlantUML](http://www.plantuml.com/){.external target="_blank"}
+  - [exemple](https://github.com/ludo2ne/projet-info-2A/blob/main/doc/diagrammes/diag_cas_utilisation.txt){.external target="_blank"}
 
 
 ### Exemple
@@ -88,9 +89,9 @@ Les diagrammes de classes UML sont utilisés pour modéliser la structure concep
 
 ### Outils
 
-- [PlantUML](http://www.plantuml.com/)
-  - [exemples](https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes)
-- [mermaid](https://mermaid.js.org/syntax/classDiagram.html)
+- [PlantUML](http://www.plantuml.com/){.external target="_blank"}
+  - [exemples](https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes){.external target="_blank"}
+- [mermaid](https://mermaid.js.org/syntax/classDiagram.html){.external target="_blank"}
 
 ### Exemple
 
@@ -187,3 +188,5 @@ Colis :
     Volume : 2.25 litres 
     Prix du timbre : 8.12 €
 ```
+
+La correction est disponible [ici](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction){.external target="_blank"}

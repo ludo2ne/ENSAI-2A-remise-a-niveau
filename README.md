@@ -14,7 +14,6 @@ Ce répo contient des ressources pour introduire les items suivants :
 
 ## :arrow_forward: Comment utiliser les ressources de ce dépôt ?
 
-
 ### :small_orange_diamond: 1. Inititation à SQL
 
 Dans le dossier `SQL`

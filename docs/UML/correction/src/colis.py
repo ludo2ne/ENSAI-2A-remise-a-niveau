@@ -1,15 +1,11 @@
 """
-Module des courrrier
+Module des courrriers
 """
-import doctest
 from courrier import Courrier
 
 
 class Colis(Courrier):
     """Définition d'un colis
-
-    Examples
-    --------
     """
 
     def __init__(self, poids, expedition_rapide, adresse_destination, volume):
@@ -23,7 +19,7 @@ class Colis(Courrier):
         self.volume = volume
 
     def complement_str(self) -> str:
-        return "Volume : {} litres".format(self.volume)
+        return f"Volume : {self.volume} litres"
 
     def calcul_affranchissement(self):
         """Calcule l'affranchissement
@@ -32,18 +28,9 @@ class Colis(Courrier):
         --------
         float
            prix du timbre
-
-        Examples
-        --------
-        >>> c1 = Colis(10,"","","",8)
-        >>> c1.calcul_affranchissement()
-        12
         """
         tarif = self.volume / 4 + self.poids * 0.001
         if self.expedition_rapide:
             tarif *= 2
         return tarif
 
-
-if __name__ == "__main__":
-    doctest.testmod(verbose=True)

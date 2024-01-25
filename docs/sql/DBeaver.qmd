@@ -1,6 +1,7 @@
 ---
 title: "DBeaver"
 description: "Paramétrage et utilisation"
+author: "Ludovic Deneuville"
 format: 
   html:
     toc: true
@@ -13,7 +14,7 @@ from: markdown+emoji
 
 Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.
 
-## :gear: Configuration
+## Configuration
 
 * Menu `Fenêtre` > `Preference`
   * Formatage SQL
@@ -25,7 +26,7 @@ Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications c
   * Editeur SQL
     * Décocher `Ouvrir une connexion séparée pour chaque éditeur`
 
-##### Optionnel 
+#### Optionnel 
 
 * Templates
   * Enlever les modèles existants
@@ -33,7 +34,7 @@ Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications c
   * Les templates permettent d'écrire plus rapidement des requêtes
 
 
-## :zap: Créer la connexion
+## Créer la connexion
 
 Pour créer une connexion vers la base de données ENSAI sur la VM :
 
@@ -50,7 +51,7 @@ Pour créer une connexion vers la base de données ENSAI sur la VM :
 
 ---
 
-## :slot_machine: Exécuter du SQL
+## Exécuter du SQL
 
 * Cliquer sur l'icone `SQL`
 * Exécuter la requête courante (où est le curseur de la souris):
@@ -61,7 +62,7 @@ Pour créer une connexion vers la base de données ENSAI sur la VM :
 
 ---
 
-## :pill: Interface pgAdmin
+## Interface pgAdmin
 
 En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l'interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank"> pgAdmin</a>
 

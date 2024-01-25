@@ -1,6 +1,7 @@
 ---
 title: "Programmation Orientée Objet"
 description: "POO avec Python"
+author: "Ludovic Deneuville"
 format: 
   html:
     toc: true
@@ -140,8 +141,7 @@ Exemple :
 ### Avant de commencer
 
 - Nous n'allons maintenant plus coder dans des Notebooks mais dans l'IDE VSCode
-- Dans ce même dépôt, ouvrir le fichier dans `Outils/VSCode.md`
-- Suivre les consignes du paragraphe `Première utilisation`
+- Suivez les consignes données dans le fichier de [paramétrage et d'utilisation de VSCode](../outils/VSCode.qmd)
 - Dans `Python-POO/exercices`, créez les 2 dossiers suivants :
   - `geometrie` pour stocker vos classes des exercices 1 et 2
   - `domino` pour l'exercice 3
@@ -171,7 +171,7 @@ Coder les méthodes suivantes :
 - [ ] Créer la classe `Rectangle` qui hérite de `Quadrilatere`
   - vérifier que les 2 cotés opposés sont de même longeur et qu'il y a un angle droit
 
-[Diagrammes de classe avec Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
+[Diagrammes de classe avec Mermaid](https://mermaid.js.org/syntax/classDiagram.html){.external target="_blank"}
 
 ```mermaid
 classDiagram

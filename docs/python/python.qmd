@@ -1,6 +1,7 @@
 ---
 title: "Python"
 description: "Introduction à Python"
+author: "Ludovic Deneuville"
 format: 
   html:
     toc: true

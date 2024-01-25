@@ -36,6 +36,14 @@ website:
         text: POO
       - href: docs/UML/UML.qmd
         text: UML
+      - text: Outils
+        menu: 
+          - href: docs/outils/Git.qmd
+            text: "Git"
+          - href: docs/outils/Git TP.qmd
+            text: "Git TP"
+          - href: docs/outils/VSCode.qmd
+            text: "Visual Studio Conde"
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau

@@ -1,6 +1,7 @@
 ---
 title: "Remise à niveau informatique"
 description: "Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e année (21h)"
+author: "Ludovic Deneuville"
 format: html
 from: markdown+emoji
 ---

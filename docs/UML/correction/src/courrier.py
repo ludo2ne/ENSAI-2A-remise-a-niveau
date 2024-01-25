@@ -1,15 +1,11 @@
 """
 Module des courrrier
 """
-import doctest
 from abc import abstractmethod
 
 
 class Courrier:
     """Définition d'un article
-
-    Examples
-    --------
     """
 
     def __init__(self, poids, expedition_rapide, adresse_destination):

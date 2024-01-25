@@ -1,6 +1,7 @@
 ---
 title: "Bases de Données Relationnelles et SQL"
 description: "Introduction aux Bases de Données Relationnelles et SQL"
+author: "Ludovic Deneuville"
 format: 
   html:
     toc: true

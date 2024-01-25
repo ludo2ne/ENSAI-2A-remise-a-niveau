@@ -1,7 +1,6 @@
 """
 Module des courrrier
 """
-import doctest
 from courrier import Courrier
 
 
