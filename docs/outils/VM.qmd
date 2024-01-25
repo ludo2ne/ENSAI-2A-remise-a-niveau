@@ -1,4 +1,3 @@
-
 ---
 title: "VM"
 description: "Trucs et astuces pour la VM"
@@ -10,11 +9,12 @@ format:
     toc-expand: 3
 from: markdown+emoji
 number-sections: true
+number-depth: 3
 ---
 
 ## Se connecter à distance la VM ENSAI
 
-- http://view.ensai.fr
+- [http://view.ensai.fr](http://view.ensai.fr){.external target="_blank"}
 - installer VMWare Horizon (Recommandé)
 - Ouvrir VMWare Horizon
   - Aller dans Paramètre > Sécurité > Désactiver la vérification de Certificat
@@ -49,7 +49,7 @@ number-sections: true
 - Mode opératoire complet : ENT > Assistance > Foire aux questions > Rechercher "imprimer"
 - Imprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)
 - Retenez votre code d'identification à 6 chiffres
-- [](http://papercut.domensai.ecole:9191/){.external target="_blank"} (ou dans ENT > Impression > Papercut)
+- [Papercut](http://papercut.domensai.ecole:9191/){.external target="_blank"} (ou dans ENT > Impression > Papercut)
 - Allez en salle 113
 - Entrez votre code d'identification sur l'imprimante
 - Sélectionnez et libérez vos documents en attente d'impression

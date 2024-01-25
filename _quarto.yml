@@ -51,11 +51,12 @@ website:
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
-        target: "_blank"        
+        target: "_blank"  
+  reader-mode: true      
   page-footer:
     right: |
-      Website built with <a href=https://quarto.org/ target="_blank">Quarto</a><br>
-      <a href=https://github.com/ludo2ne/ENSAI-2A-Big-Data target="_blank">Source code</a>
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"}
+      [Code source](https://github.com/ludo2ne/ENSAI-2A-Big-Data){.external target="_blank"}
   repo-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
   repo-branch: main
   issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new

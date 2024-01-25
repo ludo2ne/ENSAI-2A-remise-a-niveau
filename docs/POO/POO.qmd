@@ -128,7 +128,9 @@ La principale utilité des classes abstraites est de définir un contrat  pour l
 
 > En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.
 
-:warning: classe mère ne veut pas dire forcément classe abstraite
+:::{.callout-warning}
+classe mère ne veut pas dire forcément classe abstraite
+:::
 
 Exemple :
 
@@ -144,7 +146,7 @@ Exemple :
 
 - Nous n'allons maintenant plus coder dans des Notebooks mais dans l'IDE VSCode
 - Suivez les consignes données dans le fichier de [paramétrage et d'utilisation de VSCode](../outils/VSCode.qmd)
-- Dans `Python-POO/exercices`, créez les 2 dossiers suivants :
+- Dans `src/Python-POO/exercices`, créez les 2 dossiers suivants :
   - `geometrie` pour stocker vos classes des exercices 1 et 2
   - `domino` pour l'exercice 3
 

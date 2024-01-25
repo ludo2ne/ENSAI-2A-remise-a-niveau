@@ -119,7 +119,7 @@ Pour gérer les versions, Git utilise des points de sauvegarde appelés `commits
 
 ### Schéma simplifié des liens entre dépôt local et dépôt distant
 
-![](https://i.imgur.com/QsermR0.png)
+![](img/git-repo.png)
 
 - Git distingue plusieurs états de votre dépôt local mais vous pouvez considérer que les 3 dépôts de gauche forment votre dépôt local
 - Comme visible sur le schéma la commande `git commit -a` permet de combiner les 2 commandes `add` et `commit` en une seule
@@ -128,7 +128,11 @@ Pour gérer les versions, Git utilise des points de sauvegarde appelés `commits
 
 ## Paramètrer Git
 
-:information_source: Le paramètrage de Git n'est pas très drôle et peut faire un peu peur. Mais pas de panique, c'est à faire une et une seule fois sur votre machine !
+
+:::{.callout-note}
+Le paramètrage de Git n'est pas très drôle et peut faire un peu peur. Mais pas de panique, c'est à faire une et une seule fois sur votre machine !
+:::
+
 
 ### Configuration Git Bash
 
@@ -177,15 +181,15 @@ Il est interessant d'avoir une copie de cette clé pour la restaurer si besoin.
 
 ### Créer un compte sur GitLab, GitHub ou autre
 
-- [GitLab](https://gitlab.com/gitlab-org/gitlab) est le site qui permet d'héberger le dépôt distant du code ([Créer un compte](https://gitlab.com/users/sign_up))
-- [GitHub](https://github.com/)
+- [GitLab](https://gitlab.com/gitlab-org/gitlab){.external target="blank"} est le site qui permet d'héberger le dépôt distant du code ([Créer un compte](https://gitlab.com/users/sign_up){.external target="blank"} )
+- [GitHub](https://github.com/){.external target="blank"} 
 
 ### Déclarer votre clé publique SSH à GitLab
 
-- Dans GitLab, aller dans `Preferences` (en haut à droite) puis dans [SSH Keys]((https://gitlab.com/-/profile/keys))
+- Dans GitLab, aller dans `Preferences` (en haut à droite) puis dans [SSH Keys](https://gitlab.com/-/profile/keys){.external target="blank"}
   - Key : coller le résultat de l'étape 2
   - Add SSH Key
-- Dans GitHub, aller dans Paramètres, puis [SSH and GPG Keys]((https://github.com/settings/keys))
+- Dans GitHub, aller dans Paramètres, puis [SSH and GPG Keys](https://github.com/settings/keys){.external target="blank"}
   - New SSh key
   - donnez un titre et coller dans `Key` le résultat de l'étape 2
 

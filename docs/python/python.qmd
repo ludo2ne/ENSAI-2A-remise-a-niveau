@@ -70,17 +70,24 @@ Pour découvrir Python, nous allons commencer par coder dans des Notebooks :
 - [ ] [Les fonctions](04-fonctions.ipynb)
 - [ ] [Introduction à la Programmation Orientée Objet](05-POO-introduction.ipynb)
 
+
 Pour utiliser les Notebooks :
 
-- Se connecter à <a href="https://clust-n4.ensai.fr/" target="_blank">Jupyter</a> avec idxxxx et mot de passe
-- Importer dans Jupyter les 5 fichiers `.ipynb`, présents dans ce même dossier
+- Télécharger les notebooks (plusieurs solutions)
+  - télécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python
+  - sur chacune des notebooks, il y a en bas de la table des matières, un lien `Jupyter` pour télécharger le fichier *.ipynb*
+  - si vous avez cloné le dépôt Git, allez dans *docs/python/*
+- Se connecter à [Jupyter](https://clust-n4.ensai.fr/){.external target="_blank"} avec idxxxx et mot de passe
+- Importer dans Jupyter les 5 fichiers `.ipynb`
   - pour importer, utiliser la flèche :arrow_up: en haut à gauche
 - Ouvrir le premier notebook `01. types et variables.ipynb`
 - Suivre les consignes et faire les exercices
 - Faire de même avec les 4 autres notebooks
-- Autres possibilités pour utiliser des Notebooks
-  - <a href="https://colab.research.google.com/" target="_blank">Google Colab</a>
-  - <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a>
+
+Autres possibilités pour utiliser des Notebooks :
+
+- [Google Colab](https://colab.research.google.com/){.external target="_blank"}
+- [SSPCloud](https://datalab.sspcloud.fr/){.external target="_blank"}
 
 ### Types de cellules
 
@@ -117,7 +124,7 @@ Le type de cellule souhaité est modifiable dans la barre d'outils.
   - initiation à Spark
   - initiation au Machine Learning
   - analyse textuelle
-- <https://pythonds.linogaliana.fr/rappels2a/>
+- [Python pour la data science](https://pythonds.linogaliana.fr/){.external target="_blank"}
 
 
 ## For fun

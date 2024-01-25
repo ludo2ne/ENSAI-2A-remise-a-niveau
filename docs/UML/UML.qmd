@@ -9,6 +9,7 @@ format:
     toc-expand: 3
 from: markdown+emoji
 number-sections: true
+number-depth: 3
 ---
 
 UML (Unified Modeling Language) est un langage de modélisation graphique largement utilisé dans le domaine de l'ingénierie logicielle. Il fournit un ensemble de notations et de diagrammes standardisés pour représenter visuellement différents aspects d'un système logiciel.
@@ -22,8 +23,9 @@ Les 3 principaux diagrammes :
 - `Diagramme d'activité` (Activity Diagram) : Il représente le flux de contrôle à l'intérieur d'un système logiciel ou d'un processus métier. Il montre les étapes, les décisions, les branchements et les flux de données.
 - ...
 
-> :bulb: Memento UML disponibles à la bibliothèque
-
+:::{.callout-tip}
+Memento UML disponibles à la bibliothèque
+:::
 
 
 ## Diagramme de cas d'utilisation
