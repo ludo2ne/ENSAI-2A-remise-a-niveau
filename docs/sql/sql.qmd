@@ -8,9 +8,11 @@ format:
     toc-location: left
     toc-expand: 3
 from: markdown+emoji
+number-sections: true
+number-depth: 3
 ---
 
-## Objectifs
+## Objectifs {.unnumbered}
 
 - [ ] Qu'est ce qu'une base de données relationnelle ?
 - [ ] Comment sont construits les tables ?

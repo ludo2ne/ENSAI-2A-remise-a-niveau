@@ -1,8 +1,19 @@
-# HackMd pour suivre son Projet
+---
+title: "HackMd"
+description: "Utiliser HackMd pour suivre son projet"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
 
-* Allez sur <https://hackmd.io/>
-* Créez une nouvelle note
-* Coller le code ci-dessous
+- [ ] Allez sur <https://hackmd.io/>
+- [ ] Créez une nouvelle note
+- [ ] Coller le code ci-dessous
 
 ---
 
@@ -19,17 +30,15 @@ Si vous voulez essayer, copiez le contenu de gauche (sur fond noir), créez une 
 
 :::success
 
-* **Sujet** : Dynamisme et attractivité des territoires
-* [Observatoire des territoires](https://www.observatoire-des-territoires.gouv.fr/) --- [Cartographie interractive](https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&view=map38)
-* **Tuteur / Tutrice** : Rick Auray (<rick.auray@ensai.fr>)
-* **Coach** : Ella Lapêche
-* [Dépôt GitLab](https://gitlab.com/ludo2ne/projet-info-1a)
+- **Sujet** : Dynamisme et attractivité des territoires
+- [Observatoire des territoires](https://www.observatoire-des-territoires.gouv.fr/) --- [Cartographie interractive](https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&view=map38)
+- **Tuteur / Tutrice** : Rick Auray (<rick.auray@ensai.fr>)
+- **Coach** : Ella Lapêche
+- [Dépôt GitLab](https://gitlab.com/ludo2ne/projet-info-1a)
 :::
 
 -------------------------------------------------------
-
 # :dart: Échéances
-
 -------------------------------------------------------
 
 :::danger
@@ -68,9 +77,7 @@ gantt
 ```
 
 -------------------------------------------------------
-
 # :calendar: Livrables
-
 -------------------------------------------------------
 
 | Date    | Livrables                                                    |
@@ -82,9 +89,7 @@ gantt
 | 19 déc. | [Rapport intermédiaire](https://www.overleaf.com/read/qmjjpbkybpmy) (:hammer_and_wrench:  [correcteur orthographe et grammaire](https://www.scribens.fr/))            |
 
 -------------------------------------------------------
-
 # :left_speech_bubble: Discussions
-
 -------------------------------------------------------
 
 > [color=purple][name=Tryphon ] Pour le clustering, est-ce qu'on utilise plutôt le critère de Ward ou le single linkage ?
@@ -94,40 +99,36 @@ gantt
 
 ```sas=
 PROC FREQ DATA = travail.seniors_zones;
-  TABLE centrale * typ_pop / NOCOL NOPERCENT;
+  TABLE centrale - typ_pop / NOCOL NOPERCENT;
 RUN;
 ```
 
 -------------------------------------------------------
-
 # :construction: Todo List
-
 -------------------------------------------------------
 
 :::warning
 :rotating_light: **Priorité 1**
 
-* [ ] Savoir calculer une moyenne
+- [ ] Savoir calculer une moyenne
 
 :::
 
-* [x] Créer page ++hackMd++
-* [ ] Trouver problèmatique
-  * [ ] Comprendre le sujet
-* [ ] Lire articles
+- [x] Créer page ++hackMd++
+- [ ] Trouver problèmatique
+  - [ ] Comprendre le sujet
+- [ ] Lire articles
 
 -------------------------------------------------------
-
 # :clock2: Timeline
-
 -------------------------------------------------------
 
 > partie très très utile pour noter ce qui a été fait et quand ça a été fait
 
 ### 2022.10.20 Point tuteur / tutrice
 
-* [ ] Comment on calcule une moyenne géométrique ?
-* [ ] Pourquoi on doit utiliser ==SAS== ?
+- [ ] Comment on calcule une moyenne géométrique ?
+- [ ] Pourquoi on doit utiliser ==SAS== ?
 
 ### 2022.09.30 Liste d'articles pour Note exploratoire
 
@@ -137,24 +138,22 @@ RUN;
 
 ### 2022.09.22 Choix des sujets
 
-* [x] [Classer les sujets](https://lite.framacalc.org/9pr8-projetstatensaigroupe26)
-* [x] envoyer liste des voeux le mardi 21 septembre avant 18h
-  * 5. Caractéristiques des territoires frontaliers.
-  * 9. Dynamisme et impact de la métropolisation.
-  * 19. Niveau de vie, chômage et précarité.
-  * 14. Dynamisme et attractivité des territoires.
-  * 20. Tissu économique et richesse.
+- [x] [Classer les sujets](https://lite.framacalc.org/9pr8-projetstatensaigroupe26)
+- [x] envoyer liste des voeux le mardi 21 septembre avant 18h
+  - 5. Caractéristiques des territoires frontaliers.
+  - 9. Dynamisme et impact de la métropolisation.
+  - 19. Niveau de vie, chômage et précarité.
+  - 14. Dynamisme et attractivité des territoires.
+  - 20. Tissu économique et richesse.
 
 ### 2022.09.15 Composition du groupe
 
-* Bianca
-* Tryphon
-* Archibald
+- Bianca
+- Tryphon
+- Archibald
 
 -------------------------------------------------------
-
 # :gift: Bonus - Modifier le style avec le CSS
-
 -------------------------------------------------------
 
 :bulb: Vous trouvez que cette page manque de couleur et de style. Heureusement le css est là pour vous aider (**[Basic CSS Guide](https://www.geeksforgeeks.org/css-cheat-sheet-a-basic-guide-to-css/)**).
@@ -163,7 +162,7 @@ Décommenter le code ci-dessous (enlever les \`\`\` juste avant et juste après 
 
 ```css=
 <style>
-   /* headers level 1 # */
+   /- headers level 1 # */
     h1{
         color: darkblue;
         font-family: "Calibri";
@@ -172,7 +171,7 @@ Décommenter le code ci-dessous (enlever les \`\`\` juste avant et juste après 
         padding-left: 10px; 
     }
 
-   /* headers level 3 ### */
+   /- headers level 3 ### */
     h3{
         color: darkgreen;
         background-color: pink;
@@ -180,17 +179,17 @@ Décommenter le code ci-dessous (enlever les \`\`\` juste avant et juste après 
         margin-right: 100px;
     }
 
-   /* paragraphs */
+   /- paragraphs */
     p{
         text-align: justify;
     }
     
-    /* unordered lists */
+    /- unordered lists */
     ul{
         color: #400000;   
     }
     
-    /* ordered lists*/
+    /- ordered lists*/
     ol{
         font-family: "Papyrus";
         font-size: 18px;        

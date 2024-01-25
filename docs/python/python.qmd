@@ -7,11 +7,12 @@ format:
     toc: true
     toc-location: left
     toc-expand: 3
-  ipynb: default
 from: markdown+emoji
+number-sections: true
+number-depth: 3
 ---
 
-## Introduction
+## Introduction {.unnumbered}
 
 <!-- TODO : mettre au propre -->
 

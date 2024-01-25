@@ -1,0 +1,36 @@
+---
+title: "Divers outils"
+description: "Outils utile pour développer ou autre"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Outils présentés dans cette partie
+
+- VM : parler de l'environnement de travail à l'ENSAI
+- Arborescence : pour bien organiser vos cours
+- [Bookmarks](Bookmarks-ENSAI-student.html) : des favoris à importer dans votre navigateur
+- VSCode : un environnement de développement
+- UML : une introduction à la modélisation UML
+- Git : pour gérer les versions du code
+- Bash : pour apprendre à utiliser un terminal de commande
+- Markdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte
+  - HackMd : un éditeur en ligne de Markdown
+
+
+## Autres outils
+
+| Outil                                                                                    | Intérêt                                                             |
+|------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| [ChatGPT](https://chat.openai.com/){.external target="_blank"}                           | Débugage, Génération de code, Génération de données, Documentation automatique  |
+| [Stack Overflow](https://stackoverflow.com/){.external target="_blank"}                  | Trés nombreuses questions et réponses en informatique               |
+| [JSON Formatter](https://jsonformatter.org/json-pretty-print){.external target="_blank"} | Outil en ligne pour formater et visualiser des données JSON         |
+| [DeepL](https://www.deepl.com/){.external target="_blank"}                               | Outil de traduction                                                 |
+| [Scribens](https://www.scribens.com/){.external target="_blank"}                         | Correcteur grammatical en ligne                                     |

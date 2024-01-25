@@ -1,10 +1,9 @@
+from point import Point
 from polygone import Polygone
 from triangle import Triangle
-from point import Point
 
 
 class Quadrilatere(Polygone):
-
     def __init__(self, points):
         if len(points) == 4:
             super().__init__(points)

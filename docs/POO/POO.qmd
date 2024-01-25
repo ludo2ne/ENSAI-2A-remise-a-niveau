@@ -8,6 +8,8 @@ format:
     toc-location: left
     toc-expand: 3
 from: markdown+emoji
+number-sections: true
+number-depth: 3
 ---
 
 
@@ -18,7 +20,7 @@ Nous allons introduire les notions suivantes :
 - [ ] L'héritage
 - [ ] Les classe abstraites
 
-## Introduction
+## Introduction {.unnumbered}
 
 La POO est un paradigme de programmation qui permet d'organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (`attributs`) et des actions (`méthodes`) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :
 

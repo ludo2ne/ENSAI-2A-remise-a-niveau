@@ -1,0 +1,58 @@
+
+---
+title: "VM"
+description: "Trucs et astuces pour la VM"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
+
+## Se connecter à distance la VM ENSAI
+
+- http://view.ensai.fr
+- installer VMWare Horizon (Recommandé)
+- Ouvrir VMWare Horizon
+  - Aller dans Paramètre > Sécurité > Désactiver la vérification de Certificat
+  - Ajouter un serveur
+    - view.ensai.fr
+    - saisir id et mot de passe
+
+
+## CTRL + ALT + F12
+
+- pour bloquer votre session dès que vous quittez votre poste
+- à votre retour, se reconnecter simplement
+- la session reste active pendant 3h
+
+## Lecteur P:
+
+- espace Personnel de 2Go
+- Enregistrez vos fichiers dans ce lecteur
+- faite des sauvegardes de temps en temps sur clé USB
+
+## Disque plein
+
+- Si vous recevez des mails **Votre disque est plein à 100%**
+- Souvent cela est du à des fichiers temporaires qui se créent lorsque vous ouvrez VSCode, Teams...
+- Paliatif :
+  - Cliquer sur l'icone Windows Démarrer
+  - 2-Accessoires
+  - lancer les scripts : `Nettoyage-profil` et `Nettoyage-Python`
+
+## Impression
+
+- Mode opératoire complet : ENT > Assistance > Foire aux questions > Rechercher "imprimer"
+- Imprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)
+- Retenez votre code d'identification à 6 chiffres
+- [](http://papercut.domensai.ecole:9191/){.external target="_blank"} (ou dans ENT > Impression > Papercut)
+- Allez en salle 113
+- Entrez votre code d'identification sur l'imprimante
+- Sélectionnez et libérez vos documents en attente d'impression
+- Autre possibilité pour s'identifier auprès de l'imprimante
+- En utilisant votre carte étudiant
+  - Suivre mode opératoire affiché en salle 113

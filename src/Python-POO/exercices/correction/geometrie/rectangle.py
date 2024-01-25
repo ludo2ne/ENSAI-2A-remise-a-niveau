@@ -1,17 +1,16 @@
-from quadrilatere import Quadrilatere
 from point import Point
+from quadrilatere import Quadrilatere
 from triangle import Triangle
 
 
 class Rectangle(Quadrilatere):
-
     def __init__(self, points):
         if len(points) != 4:
             print("Vous n'avez pas le bon nombre de points")
         elif not self.verif_rectangle(points):
             print("Pas un rectangle")
         else:
-            super().__init__(points)          
+            super().__init__(points)
 
     def verif_rectangle(self, points):
         res = True
@@ -20,7 +19,7 @@ class Rectangle(Quadrilatere):
         if points[0].distance(points[1]) != points[2].distance(points[3]):
             res = False
         if points[1].distance(points[2]) != points[0].distance(points[3]):
-            res = False 
+            res = False
 
         # verif que 3 points forment un triangle rectangle
         t = Triangle([points[0], points[1], points[2]])

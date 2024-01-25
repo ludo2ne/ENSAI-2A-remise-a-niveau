@@ -1,99 +1,110 @@
-# Git TP
+---
+title: "Git TP"
+description: "TP de découverte de Git"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
 
-Le but de ce TP est de :
+## Objectifs {.unnumbered}
 
-* [ ] vous présenter les fonctionnalités de base de Git
-* [ ] vous faire manipuler les 5 commandes principales (status, add, commit, pull, push)
-* [ ] vous montrer comment résoudre un conflit
-* [ ] bonus : retour en arrière, branches...
+- [ ] vous présenter les fonctionnalités de base de Git
+- [ ] vous faire manipuler les 5 commandes principales (status, add, commit, pull, push)
+- [ ] vous montrer comment résoudre un conflit
+- [ ] bonus : retour en arrière, branches...
 
-## :arrow_forward: 1. Créer un projet
+## Créer un projet
 
 :information_source: Ce projet permettra d'héberger le dépôt distant
 
-* se connecter à [GitLab](https://gitlab.com/)
-* En haut à gauche, Menu > Projects > [Create new project](https://gitlab.com/projects/new)
-* Create blank project
-  * Project name : **git-tp**
-  * Public
-  * [x] Initialize repository with a README
-  * Create Project
+- se connecter à [GitLab](https://gitlab.com/)
+- En haut à gauche, Menu > Projects > [Create new project](https://gitlab.com/projects/new)
+- Create blank project
+  - Project name : **git-tp**
+  - Public
+  - [x] Initialize repository with a README
+  - Create Project
 
 ---
 
-### :small_orange_diamond: Création du fichier .gitignore
+### Création du fichier .gitignore
 
 > **.gitignore** est un fichier permettant de dire à Git quels fichiers il > faut ignorer.
 > Par exemple :
 >
-> * si .gitignore contient **`*.csv`**
-> * et sur votre dépôt local, vous avez un fichier **`resultats.csv`**
-> * Git fera comme si ce fichier n'existe pas
-> * Ainsi, ce fichier ne sera jamais poussé vers le dépôt distant
+> - si .gitignore contient **`*.csv`**
+> - et sur votre dépôt local, vous avez un fichier **`resultats.csv`**
+> - Git fera comme si ce fichier n'existe pas
+> - Ainsi, ce fichier ne sera jamais poussé vers le dépôt distant
 
-* Dans GitLab, sur la page de votre projet
-* Aller dans Repository > Files
-* Au milieu , à droite de `git-tp/` cliquer sur l'icone :heavy_plus_sign:
-* New file
-* Select a template type : .gitignore
-* Apply a template : Python
-* Modifier le Commit message
-* Commit changes
+- Dans GitLab, sur la page de votre projet
+- Aller dans Repository > Files
+- Au milieu , à droite de `git-tp/` cliquer sur l'icone :heavy_plus_sign:
+- New file
+- Select a template type : .gitignore
+- Apply a template : Python
+- Modifier le Commit message
+- Commit changes
 
 ---
 
-### :small_orange_diamond: Inviter d'autres membres
+### Inviter d'autres membres
 
 Vous venez de créer un projet public donc visible par tous. Cependant, vous êtes seul à pouvoir modifier ce projet. Pour autoriser d'autres personnes à écrire sur ce projet (par exemple lors du projet info), il faut donner les droits en écriture :
 
-* Project informations > Members > Invite members
-* Role : Maintainer or Owner
+- Project informations > Members > Invite members
+- Role : Maintainer or Owner
 
 Cependant ce n'est pas nécessaire dans le cadre de ce TP, vous pouvez donc passer à la suite.
 
 ---
 
-## :arrow_forward: 2. Cloner le projet
+## Cloner le projet
 
 :information_source: Le but de cette étape est de créer votre dépôt local en faisant un clone du dépôt distant
 
-* Ouvrir Visual Studio Code
-* Ouvrir un Terminal
-* Ouvrir un Terminal Git Bash
-  * En haut à droite du terminal, à coté du **+**, cliquer sur la flèche vers le bas **˅**
-* Créer le dossier ci-dessous s'il n'existe pas déjà
-  * `mkdir "P:\Cours\Python"`
-* Se positionner dans ce dossier
-  * `cd "P:\Cours\Python"`
-* Cloner le projet
-  * `git clone git@gitlab.com:???????/git-tp.git`
-    * Remplacer les `??????` par votre nom d'utilisateur GitLab
-    * Ou sinon sur la page GitLab du projet
-      * cliquer sur Clone
-      * copier la ligne qui commence par `git@gitlab...`
-  * *Are you sure you want to continue connecting (yes/no)?*
-    * taper `yes` puis `ENTREE`
-  * Votre dépôt local est maintenant créé
-* Ouvrir ce dépôt dans l'explorateur VSCode
-  * File > Open Folder
-  * git-tp
-* Réouvrir le terminal Git Bash
-  * Si ce n'est pas le cas, se positionner dans le dossier suivant :
-    * `cd "P:\Cours\Python\git-tp"`
-  * un **(main)** apparait dans le terminal, cela signifie bien que vous êtes dans un dépôt Git
+- Ouvrir Visual Studio Code
+- Ouvrir un Terminal
+- Ouvrir un Terminal Git Bash
+  - En haut à droite du terminal, à coté du **+**, cliquer sur la flèche vers le bas **˅**
+- Créer le dossier ci-dessous s'il n'existe pas déjà
+  - `mkdir "P:\Cours\Python"`
+- Se positionner dans ce dossier
+  - `cd "P:\Cours\Python"`
+- Cloner le projet
+  - `git clone git@gitlab.com:???????/git-tp.git`
+    - Remplacer les `??????` par votre nom d'utilisateur GitLab
+    - Ou sinon sur la page GitLab du projet
+      - cliquer sur Clone
+      - copier la ligne qui commence par `git@gitlab...`
+  - *Are you sure you want to continue connecting (yes/no)?*
+    - taper `yes` puis `ENTREE`
+  - Votre dépôt local est maintenant créé
+- Ouvrir ce dépôt dans l'explorateur VSCode
+  - File > Open Folder
+  - git-tp
+- Réouvrir le terminal Git Bash
+  - Si ce n'est pas le cas, se positionner dans le dossier suivant :
+    - `cd "P:\Cours\Python\git-tp"`
+  - un **(main)** apparait dans le terminal, cela signifie bien que vous êtes dans un dépôt Git
 
 ---
 
-## :arrow_forward: 3. Ajouter un nouveau fichier
+## Ajouter un nouveau fichier
 
 :information_source: Nous allons ici voir comment :
 
-* ajouter/modifier des fichiers dans le dépôt local
-* envoyer ces mises à jour au dépôt distant
+- ajouter/modifier des fichiers dans le dépôt local
+- envoyer ces mises à jour au dépôt distant
 
 Dans le dossier git-tp, créer un fichier `voiture.py` contenant le code suivant :
 
-```python=
+```{.python}
 class Voiture:
     
     def __init__(self, nom, couleur):
@@ -107,51 +118,51 @@ class Voiture:
         self.vitesse = min(130, self.vitesse + increment)
 ```
 
-* Dans le terminal Git Bash, exécuter les commandes suivantes :
-* `git status`
-  * Le fichier apparait dans les *Untracked files*
-  * Cela siginifie que Git a repéré ce fichier mais pour le moment il ne le versionnera pas
-* `git add voiture.py`
-  * pour dire à Git de suivre ce fichier
-* `git status`
-  * maintenant le fichier est reconnu par Git
-* `git commit -m "creation classe voiture"`
-  * pour créer un point de sauvegarde
-  * Entre les `" "`, mettre un message court et explicite
-* `git status`
-  * *Your branch is ahead of 'origin/main' by 1 commit*
-  * Ce qui signifie que votre dépôt local est en avance d'un commit par rapport au dépôt distant
-* `git pull`
-  * *Already up to date*
-  * Pour vérifier que le dépôt distant n'a pas été mis à jour
-* `git push`
-  * Vérifier qu'il n'y a pas d'erreur
-  * Pour mettre à jour le dépôt distant avec mes modifications locales
+- Dans le terminal Git Bash, exécuter les commandes suivantes :
+- `git status`
+  - Le fichier apparait dans les *Untracked files*
+  - Cela siginifie que Git a repéré ce fichier mais pour le moment il ne le versionnera pas
+- `git add voiture.py`
+  - pour dire à Git de suivre ce fichier
+- `git status`
+  - maintenant le fichier est reconnu par Git
+- `git commit -m "creation classe voiture"`
+  - pour créer un point de sauvegarde
+  - Entre les `" "`, mettre un message court et explicite
+- `git status`
+  - *Your branch is ahead of 'origin/main' by 1 commit*
+  - Ce qui signifie que votre dépôt local est en avance d'un commit par rapport au dépôt distant
+- `git pull`
+  - *Already up to date*
+  - Pour vérifier que le dépôt distant n'a pas été mis à jour
+- `git push`
+  - Vérifier qu'il n'y a pas d'erreur
+  - Pour mettre à jour le dépôt distant avec mes modifications locales
 
 :bulb: **Combiner les commandes add et commit**
 
 Dans le cas d'un nouveau fichier, il faut impérativement enchaîner les deux commandes suivantes pour que Git suive ce fichier :
 
-* `git add mon_fichier.py`
-* `git commit -m "Creation mon_fichier"`
+- `git add mon_fichier.py`
+- `git commit -m "Creation mon_fichier"`
 
 Si le fichier existait déjà, il est possible de combiner les deux commandes :
 
-* en ajoutant au commit un **-a** qui signifie add
-* `git commit -am "Modification mon_fichier"`
+- en ajoutant au commit un ***a** qui signifie add
+- `git commit -am "Modification mon_fichier"`
 
 :bulb: Si vous créez, non pas un mais plusieurs fichiers, vous pouvez utiliser la commande suivante pour tous les faire suivre par Git : **`git add .`**
 
 :bulb: Il est fortement recommandé de créer des commits très fréquement, par exemple
 
-* Vous venez de modifier une fonction
-* Testez pour vérifier que votre code fonctionne bien
-* Créez un commit
-* Si jamais par la suite vous "cassez tout" et que plus rien ne marche, il est facile de revenir au dernier commit
+- Vous venez de modifier une fonction
+- Testez pour vérifier que votre code fonctionne bien
+- Créez un commit
+- Si jamais par la suite vous "cassez tout" et que plus rien ne marche, il est facile de revenir au dernier commit
 
 ---
 
-## :arrow_forward: 4. Gérer un conflit
+## Gérer un conflit
 
 > Dans le monde merveilleux de Git, tout se passe bien quand chacun > travaille sur des fichiers différents. Lorsque deux personnes ont > modifié le même fichier, ça peut se compliquer.
 >
@@ -163,40 +174,40 @@ Nous allons créer artificiellement un conflit, c'est à dire faire comme si 2 p
 
 Il faut bien avoir en tête qu'un conflit :
 
-* ce n'est pas grave
-* ce n'est pas une erreur
-* vous n'avez pas tout cassé
-* :scream: il ne faut pas paniquer, simplement savoir comment le résoudre
+- ce n'est pas grave
+- ce n'est pas une erreur
+- vous n'avez pas tout cassé
+- :scream: il ne faut pas paniquer, simplement savoir comment le résoudre
 
 ---
 
-* Dans GitLab, cliquer sur le fichier `voiture.py`
-* Puis sur la petite flèche après `Open in web IDE` et `Edit`
-* Cliquer sur `Edit`
-  * Remplacer à la dernière ligne 130 par 110
-  * Commit changes
-  * *Le fichier a été modifié sur le dépôt distant*
-* Dans VSCode, éditer le fichier `voiture.py`
-  * Remplacer à la dernière ligne 130 par 150 et enregistrer
-  * `git status`
-    * le fichier `voiture.py` est à l'état modifié
-  * `git commit -am "Modif vitesse max"`
-  * *Le fichier a été modifié sur le dépôt local*
-* `git push`
-  * :warning: Error : petit piège, il faut toujours faire un pull avant de tenter un push
-  * Le dépôt distant a été modifié
-  * Je dois d'abord récupérer ces modifications sur mon dépôt local (pull)
-  * Ensuite seulement je pourrai mettre à jour le dépôt distant (push)
-* `git pull`
-  * :rotating_light: *Conflict - Automatic merge failed*
-  * Sur les 2 dépôts, la même ligne a été modifiée
-    * Ainsi dans le cas présent, Git ne peut pas savoir quelle version choisir
-  * dans le terminal Git est au statut **`(main|MERGING)`**
-* `git status`
-  * *both modified: `voiture.py`*
-* Dans VSCode, ouvrir le fichier `voiture.py`, on voit s'afficher :
+- Dans GitLab, cliquer sur le fichier `voiture.py`
+- Puis sur la petite flèche après `Open in web IDE` et `Edit`
+- Cliquer sur `Edit`
+  - Remplacer à la dernière ligne 130 par 110
+  - Commit changes
+  - *Le fichier a été modifié sur le dépôt distant*
+- Dans VSCode, éditer le fichier `voiture.py`
+  - Remplacer à la dernière ligne 130 par 150 et enregistrer
+  - `git status`
+    - le fichier `voiture.py` est à l'état modifié
+  - `git commit -am "Modif vitesse max"`
+  - *Le fichier a été modifié sur le dépôt local*
+- `git push`
+  - :warning: Error : petit piège, il faut toujours faire un pull avant de tenter un push
+  - Le dépôt distant a été modifié
+  - Je dois d'abord récupérer ces modifications sur mon dépôt local (pull)
+  - Ensuite seulement je pourrai mettre à jour le dépôt distant (push)
+- `git pull`
+  - :rotating_light: *Conflict - Automatic merge failed*
+  - Sur les 2 dépôts, la même ligne a été modifiée
+    - Ainsi dans le cas présent, Git ne peut pas savoir quelle version choisir
+  - dans le terminal Git est au statut **`(main|MERGING)`**
+- `git status`
+  - *both modified: `voiture.py`*
+- Dans VSCode, ouvrir le fichier `voiture.py`, on voit s'afficher :
 
-```python=
+```{.python}
 <<<<<<< HEAD
         self.vitesse = min(150, self.vitesse + increment)
 ******=
@@ -204,21 +215,21 @@ Il faut bien avoir en tête qu'un conflit :
 >>>>>>> d29aa04e48e16d3648fd4ae9796b4a035e176f1c
 ```
 
-* Maintenant il faut choisir quelle ligne on garde
-  * Celle du dessus est la notre (dépôt local)
-  * Celle du dessous est celle telle qu'elle a été modifiée sur le dépôt distant
-* Supprimer la ligne avec le 110, ainsi que les lignes avec `<<<<<`, `****=` et `>>>>>`
-  * Ou cliquer simplement sur le bouton VSCode `Accept Current Change`
-  * Enregistrer
-* :bulb: En théorie, à cet instant, il faut tester de nouveau que le programme fonctionne bien, cependant ce n'est pas l'objet de ce TP
-* `git commit -am "Resolve merge"`
-  * cela crée un nouveau point de sauvegarde pour valider le merge
-  * dans le terminal Git repasse au statut **`(main)`**
-* `git status`
-* `git push`
-  * cette fois ci, c'est ok, les modifications faites sur le dépôt local sont poussées vers le dépôt distant
-* :tada: Félicitations, vous venez de résoudre votre 1er conflit :champagne:
-  * c'était pas compliqué, hein ?
+- Maintenant il faut choisir quelle ligne on garde
+  - Celle du dessus est la notre (dépôt local)
+  - Celle du dessous est celle telle qu'elle a été modifiée sur le dépôt distant
+- Supprimer la ligne avec le 110, ainsi que les lignes avec `<<<<<`, `****=` et `>>>>>`
+  - Ou cliquer simplement sur le bouton VSCode `Accept Current Change`
+  - Enregistrer
+- :bulb: En théorie, à cet instant, il faut tester de nouveau que le programme fonctionne bien, cependant ce n'est pas l'objet de ce TP
+- `git commit -am "Resolve merge"`
+  - cela crée un nouveau point de sauvegarde pour valider le merge
+  - dans le terminal Git repasse au statut **`(main)`**
+- `git status`
+- `git push`
+  - cette fois ci, c'est ok, les modifications faites sur le dépôt local sont poussées vers le dépôt distant
+- :tada: Félicitations, vous venez de résoudre votre 1er conflit :champagne:
+  - c'était pas compliqué, hein ?
 
 ---
 
@@ -228,7 +239,7 @@ La suite permet d'aller un peu plus loin si vous commencez à être à l'aise.
 
 ---
 
-## :arrow_forward: 5. Revenir en arrière
+## Revenir en arrière
 
 :information_source: L'intérêt de versionner est d'avoir la possibilité de revenir en arrière si besoin !
 
@@ -236,104 +247,104 @@ Soyons clair, revenir en arrière n'est pas une action anodine et nécessite par
 
 ---
 
-### :small_orange_diamond: Revenir au dernier commit
+### Revenir au dernier commit
 
 Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliserons la commande `stash`
 
-* Créer un fichier `vehicule.py`
-* Modifier le fichier `voiture.py`
-  * par exemple en ajoutant `toto` sur la dernière ligne
-* **`git stash -u`**
-  * Le fichier `vehicule.py` a été supprimé
-  * Le fichier `voiture.py` est revenu à l'état du dernier commit
-* il est possible de retrouver les fichiers qui ont été "stashés" (voir commandes stash et pop)
+- Créer un fichier `vehicule.py`
+- Modifier le fichier `voiture.py`
+  - par exemple en ajoutant `toto` sur la dernière ligne
+- **`git stash -u`**
+  - Le fichier `vehicule.py` a été supprimé
+  - Le fichier `voiture.py` est revenu à l'état du dernier commit
+- il est possible de retrouver les fichiers qui ont été "stashés" (voir commandes stash et pop)
 
 ---
 
-### :small_orange_diamond: Consulter l'historique d'un fichier
+### Consulter l'historique d'un fichier
 
 #### Dans GitLab, aller sur le fichier `voiture.py`
 
-* Cliquer sur History
-* Cela affiche la liste des commits qui ont mis à jour ce fichier
+- Cliquer sur History
+- Cela affiche la liste des commits qui ont mis à jour ce fichier
 
 #### Dans Git Bash
 
-* `git log voiture.py`
-  * Cela affiche a peu près la même chose que dans GitLab
-    * Faire `ENTREE` pour continuer à défiler
-    * Faire `q` comme quit  pour sortir
-  * Mais ce n'est pas très lisible, voire très moche
-  * Heureusement la commande git log propose de nombreuses options
-* `git log` affiche une liste de commit
-  * Pour la suite, nous ne limeterons pas aux commits impactant le fichier `voiture.py` mais nous afficherons tous les commits
-  * vous pouvez ajouter à la fin de chaque commande le nom d'un fichier pour se restreindre aux commits sur ce fichier
-* `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative`
-  * C'est joli, non ?
-  * Mais un peu pénible à retenir, et long à écrire
-  * C'est ici que l'on présente les alias
-* Voici deux commandes pour créer les alias nommés arbitrairement `bb` et `cc` :
-  * `git config --global alias.bb "log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative"`
-  * `git config --global alias.cc "log --all --decorate --oneline --graph"`
-  * ces 2 alias sont à créer une seule fois
-  * éventuellement vous pouvez en créer d'autres, ou les modifier
-* Maintenant essayez `git bb` et `git cc`
-  * C'est de toute beauté !
+- `git log voiture.py`
+  - Cela affiche a peu près la même chose que dans GitLab
+    - Faire `ENTREE` pour continuer à défiler
+    - Faire `q` comme quit  pour sortir
+  - Mais ce n'est pas très lisible, voire très moche
+  - Heureusement la commande git log propose de nombreuses options
+- `git log` affiche une liste de commit
+  - Pour la suite, nous ne limeterons pas aux commits impactant le fichier `voiture.py` mais nous afficherons tous les commits
+  - vous pouvez ajouter à la fin de chaque commande le nom d'un fichier pour se restreindre aux commits sur ce fichier
+- `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative`
+  - C'est joli, non ?
+  - Mais un peu pénible à retenir, et long à écrire
+  - C'est ici que l'on présente les alias
+- Voici deux commandes pour créer les alias nommés arbitrairement `bb` et `cc` :
+  - `git config --global alias.bb "log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative"`
+  - `git config --global alias.cc "log --all --decorate --oneline --graph"`
+  - ces 2 alias sont à créer une seule fois
+  - éventuellement vous pouvez en créer d'autres, ou les modifier
+- Maintenant essayez `git bb` et `git cc`
+  - C'est de toute beauté !
 
 ---
 
-### :small_orange_diamond: Comparer 2 versions d'un fichier
+### Comparer 2 versions d'un fichier
 
-* Noter le numéro d'un commit où vous avez modifié `voiture.py`
-  * `git bb voiture.py`
-  * en jaune sur 7 caractères alphanumériques
-  * ne choisissez pas le plus récent, sinon il n'y aura aucune différence
-* **`git diff 7539cf7 voiture.py`**
-  * remplacer `7539cf7` par votre numéro de commit
-  * vous voyez les différences la version actuelle et une ancienne version
-* **`git diff`**
-  * pour lister toutes les modifications effectuées depuis le dernier commit
-  * **`git diff voiture.py`** : pour se limiter aux modifications effectuée sur ce fichier
-
----
-
-### :small_orange_diamond: Retour vers le passé
-
-* Toujours avec le numéro d'un ancien commit
-* **`git checkout 7539cf7`**
-  * *HEAD is now 7539cf7*
-  * HEAD est un mot que l'on retrouve souvent dans Git
-    * on peut le traduire par "tête de lecture"
-  * Au bout de la ligne de commande, ne s'affiche plus `(main)` mais `((7539cf7...))`
-  * Vous voici revenu au code tel qu'il était à l'époque de ce commit
-* `git checkout main` pour revenir au présent
+- Noter le numéro d'un commit où vous avez modifié `voiture.py`
+  - `git bb voiture.py`
+  - en jaune sur 7 caractères alphanumériques
+  - ne choisissez pas le plus récent, sinon il n'y aura aucune différence
+- **`git diff 7539cf7 voiture.py`**
+  - remplacer `7539cf7` par votre numéro de commit
+  - vous voyez les différences la version actuelle et une ancienne version
+- **`git diff`**
+  - pour lister toutes les modifications effectuées depuis le dernier commit
+  - **`git diff voiture.py`** : pour se limiter aux modifications effectuée sur ce fichier
 
 ---
 
-### :small_orange_diamond: Annuler un commit
+### Retour vers le passé
 
-* En fait non, on ne verra pas comment annuler un commit, ni sur le dépôt local, ni sur le dépôt distant. C'est possible mais à vos risques et périls.
-* Préférez la méthode un peu archaïque qui consiste à retourner dans le passé pour copier ce qui fonctionnait bien avant.
-* Et pour vous faciliter la vie, faites des commits réguliers et ne modifiez pas 50 fichiers dans un commit.
+- Toujours avec le numéro d'un ancien commit
+- **`git checkout 7539cf7`**
+  - *HEAD is now 7539cf7*
+  - HEAD est un mot que l'on retrouve souvent dans Git
+    - on peut le traduire par "tête de lecture"
+  - Au bout de la ligne de commande, ne s'affiche plus `(main)` mais `((7539cf7...))`
+  - Vous voici revenu au code tel qu'il était à l'époque de ce commit
+- `git checkout main` pour revenir au présent
+
+---
+
+### Annuler un commit
+
+- En fait non, on ne verra pas comment annuler un commit, ni sur le dépôt local, ni sur le dépôt distant. C'est possible mais à vos risques et périls.
+- Préférez la méthode un peu archaïque qui consiste à retourner dans le passé pour copier ce qui fonctionnait bien avant.
+- Et pour vous faciliter la vie, faites des commits réguliers et ne modifiez pas 50 fichiers dans un commit.
 
 :bulb: Si à un moment vous avez peur de faire une bétise et de perdre tout votre code (par exemple si une commande Git ne se passe pas comme vous l'aviez prévu), il est tout a fait possible de copier votre dépôt. Votre dépôt local est un dossier, allez dans l'explorateur windows, faites `CTRL + C` `CTRL + V` et voila vous avez une copie que vous pouvez garder de coté au cas où ça tourne mal.  
 :bulb: Et surtout n'hésitez pas à demander de l'aide !
 
 ---
 
-## :arrow_forward: Fonctionnalités de GitLab
+## Fonctionnalités de GitLab
 
 GitLab n'est pas seulement un dépôt distant, il y a de nombreuses fonctionnalités interessantes.
 
-* Issues : Pour lister et suivre les incidents ou les évolutions du programme
-* Wiki : Pour créer facilement des pages de documentation en langage markdown
-* CI/CD (Continuous Integration/Continuous Delivery) : Cela permet lorsque l'on met à jour le dépôt distant de lancer des tâches automatisées, par exemple pour : tester le code, évaluer la qualité du code, déployer le code sur une machine de production ou de développement...
+- Issues : Pour lister et suivre les incidents ou les évolutions du programme
+- Wiki : Pour créer facilement des pages de documentation en langage markdown
+- CI/CD (Continuous Integration/Continuous Delivery) : Cela permet lorsque l'on met à jour le dépôt distant de lancer des tâches automatisées, par exemple pour : tester le code, évaluer la qualité du code, déployer le code sur une machine de production ou de développement...
 
 Voir un exemple avec [ce projet](https://gitlab.com/CalcProgrammer1/OpenRGB/-/wikis/home)
 
 ---
 
-## :arrow_forward: Un petit exo d'application
+## Un petit exo d'application
 
 1. Revenez dans VSCode, ouvrez un terminal Git Bash et positionnez votre terminal dans le dossier `P:\Cours\Python\git-tp` comme cela a été fait au début de la partie 2.
 2. Dans VSCode, sur le constructeur de la classe `voiture`, mettre la valeur par défaut de couleur à `verte` : `def __init__(self, nom, couleur=verte)`
@@ -345,11 +356,11 @@ Voir un exemple avec [ce projet](https://gitlab.com/CalcProgrammer1/OpenRGB/-/wi
 
 ---
 
-## :arrow_forward: Les branches
+## Les branches
 
 :information_source: Uniquement si vous êtes à l'aise
 
-### :small_orange_diamond: A quoi sert une branche ?
+### A quoi sert une branche ?
 
 Imaginez vous avez votre code qui fonctionne bien mais qui est tout moche (avec des duplications...). Comme vous êtes sérieux, vous voulez faire tout bien comme il faut et mettre tout au propre.
 
@@ -366,73 +377,39 @@ En gros une branche permet de coder et/ou tester une nouvelle fonctionnalité sa
 
 ---
 
-### :small_orange_diamond: Un petit exemple pour y voir plus clair
+### Un petit exemple pour y voir plus clair
 
-* imaginons que vous voulez ajouter une classe trottinette, mais vous n'êtes pas encore sûr, alors vous testez sur une branche
-* `git checkout -b trottinette`
-  * création d'une branche trottinette
-  * *Switched to a new branch 'trottinette'*
-    * et comme l'indique le message, avec cette commande vous êtes directement positionné sur cette branche
-* Créez un fichier `trottinette.py`
-* Modifiez la vitesse de voiture à 210 parce que vous êtes un malade
-* add puis commit
-* `git push` pour partager sur le dépôt distant
-  * Git dit que cette branche n'est pas connue sur le dépôt distant
-  * Mais comme il est sympa, il donne la commande pour la créer
-  * `git push --set-upstream origin trottinette`
-* Ensuite revenons sur la branche principale `main`
-  * `git checkout main`
-* Modifiez la vitesse maximale de voiture à 90 parce qu'en fait vous êtes très prudent puis commit
-* Maintenant, après mûre réflexion, vous vous dites que la trottinette c'est trop bien et qu'il faut l'intégrer à la branche main
-* Vous avec envie de fusionner directement les branches `trottinette` et `main`
-  * `git merge trottinette`
-  * Seulement il y a un conflit et c'est fait exprés
-  * Il a été dit plus haut que la branche **main** doit rester le plus propre possible, ainsi on va éviter de la polluer avec des commits de gestion de conflit. Les conflits doivent être réglé sur les autres branches
-  * Annulons ce merge
-    * `git merge --abort`
-* Voici comment nous allons procéder pour faire cela proprement
-  * On retourne sur la branche `trottinette`
-    * `git checkout trottinette`
-  * Nous allons faire la fusion sur cette branche
-    * `git merge main`
-    * nous résolvons le conflit puis commit
-  * Maintenant que les 2 branches sont synchronisées, retournons sur la branche `main`
-    * `git checkout main`
-    * `git merge --squash trottinette`
-      * cette fois-ci pas de conflits car ils ont été résolu juste avant
-    * `git commit -am "ajout fonctionnalité trottinette"`
-  * L'option `--squash` permet de ne pas polluer le main avec tous les commits réalisés sur la branche `trottinette`. Si par la suite vous utilisez GitLab ou GitHub cette option se retrouve directement dans les merge ou les pull requests.
-
-<style>
-    h1{
-        color: darkblue;
-        font-family: "Calibri";
-        font-weight: bold;
-        background-color: seagreen;
-        padding-left: 10px;
-    }
-    h2{
-        color: darkblue;
-        background-color: mediumseagreen;
-        margin-right: 10%;
-        padding-left: 10px;
-    }
-    h3{
-        color: darkblue;
-        background-color: darkseagreen;
-        margin-right: 20%;
-        padding-left: 10px;
-    }
-    h4{
-        color: darkblue;
-        background-color: lightseagreen;
-        margin-right: 30%;
-        padding-left: 10px;
-    }
-    h5{
-        color: darkblue;
-        background-color: aquamarine;
-        margin-right: 40%;
-        padding-left: 10px;
-    }
-</style>
+- imaginons que vous voulez ajouter une classe trottinette, mais vous n'êtes pas encore sûr, alors vous testez sur une branche
+- `git checkout -b trottinette`
+  - création d'une branche trottinette
+  - *Switched to a new branch 'trottinette'*
+    - et comme l'indique le message, avec cette commande vous êtes directement positionné sur cette branche
+- Créez un fichier `trottinette.py`
+- Modifiez la vitesse de voiture à 210 parce que vous êtes un malade
+- add puis commit
+- `git push` pour partager sur le dépôt distant
+  - Git dit que cette branche n'est pas connue sur le dépôt distant
+  - Mais comme il est sympa, il donne la commande pour la créer
+  - `git push --set-upstream origin trottinette`
+- Ensuite revenons sur la branche principale `main`
+  - `git checkout main`
+- Modifiez la vitesse maximale de voiture à 90 parce qu'en fait vous êtes très prudent puis commit
+- Maintenant, après mûre réflexion, vous vous dites que la trottinette c'est trop bien et qu'il faut l'intégrer à la branche main
+- Vous avec envie de fusionner directement les branches `trottinette` et `main`
+  - `git merge trottinette`
+  - Seulement il y a un conflit et c'est fait exprés
+  - Il a été dit plus haut que la branche **main** doit rester le plus propre possible, ainsi on va éviter de la polluer avec des commits de gestion de conflit. Les conflits doivent être réglé sur les autres branches
+  - Annulons ce merge
+    - `git merge --abort`
+- Voici comment nous allons procéder pour faire cela proprement
+  - On retourne sur la branche `trottinette`
+    - `git checkout trottinette`
+  - Nous allons faire la fusion sur cette branche
+    - `git merge main`
+    - nous résolvons le conflit puis commit
+  - Maintenant que les 2 branches sont synchronisées, retournons sur la branche `main`
+    - `git checkout main`
+    - `git merge --squash trottinette`
+      - cette fois-ci pas de conflits car ils ont été résolu juste avant
+    - `git commit -am "ajout fonctionnalité trottinette"`
+  - L'option `--squash` permet de ne pas polluer le main avec tous les commits réalisés sur la branche `trottinette`. Si par la suite vous utilisez GitLab ou GitHub cette option se retrouve directement dans les merge ou les pull requests.

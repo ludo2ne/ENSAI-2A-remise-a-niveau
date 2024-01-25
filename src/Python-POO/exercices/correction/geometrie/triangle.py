@@ -1,11 +1,10 @@
 import math
 
-from polygone import Polygone
 from point import Point
+from polygone import Polygone
 
 
 class Triangle(Polygone):
-
     def __init__(self, points):
         if len(points) == 3:
             super().__init__(points)
@@ -17,7 +16,7 @@ class Triangle(Polygone):
         b = self.points[0].distance(self.points[2])
         c = self.points[1].distance(self.points[2])
         p = (a + b + c) / 2
-        return math.sqrt(p*(p-a)*(p-b)*(p-c))
+        return math.sqrt(p * (p - a) * (p - b) * (p - c))
 
     def perimetre(self):
         s = self.points[0].distance(self.points[1])
@@ -29,15 +28,17 @@ class Triangle(Polygone):
         res = False
 
         # Creation d une liste des 3 cotes
-        cotes = [self.points[0].distance(self.points[1]),
-                 self.points[0].distance(self.points[2]),
-                 self.points[1].distance(self.points[2])]
+        cotes = [
+            self.points[0].distance(self.points[1]),
+            self.points[0].distance(self.points[2]),
+            self.points[1].distance(self.points[2]),
+        ]
 
         # Classe les 3 cotes du plus petit au plus grand
         cotes.sort()
 
         # Theoreme de Pythagore
-        if cotes[2]**2 == cotes[0]**2 + cotes[1]**2:
+        if cotes[2] ** 2 == cotes[0] ** 2 + cotes[1] ** 2:
             res = True
 
         return res

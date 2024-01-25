@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class Polygone(ABC):
-
     def __init__(self, points):
         self.points = points
 

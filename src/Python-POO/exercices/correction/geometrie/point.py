@@ -10,7 +10,7 @@ class Point:
         return "({},{})".format(self.x, self.y)
 
     def distance(self, autre_point):
-        return math.sqrt((self.x - autre_point.x)**2 + (self.y - autre_point.y)**2)
+        return math.sqrt((self.x - autre_point.x) ** 2 + (self.y - autre_point.y) ** 2)
 
     def __eq__(self, autre_point):
         return self.x == autre_point.x and self.y == autre_point.y
