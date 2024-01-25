@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.538">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ludovic Deneuville">
 <meta name="description" content="Paramétrage et utilisation">
 
 <title>Remise à Niveau Informatique - DBeaver</title>
@@ -149,6 +150,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Outils</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/Git.html">
+ <span class="dropdown-text">Git</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
+ <span class="dropdown-text">Git TP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VSCode.html">
+ <span class="dropdown-text">Visual Studio Conde</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -172,10 +192,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration"><span class="emoji" data-emoji="gear">⚙️</span> Configuration</a></li>
-  <li><a href="#créer-la-connexion" id="toc-créer-la-connexion" class="nav-link" data-scroll-target="#créer-la-connexion"><span class="emoji" data-emoji="zap">⚡</span> Créer la connexion</a></li>
-  <li><a href="#exécuter-du-sql" id="toc-exécuter-du-sql" class="nav-link" data-scroll-target="#exécuter-du-sql"><span class="emoji" data-emoji="slot_machine">🎰</span> Exécuter du SQL</a></li>
-  <li><a href="#interface-pgadmin" id="toc-interface-pgadmin" class="nav-link" data-scroll-target="#interface-pgadmin"><span class="emoji" data-emoji="pill">💊</span> Interface pgAdmin</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration">Configuration</a></li>
+  <li><a href="#créer-la-connexion" id="toc-créer-la-connexion" class="nav-link" data-scroll-target="#créer-la-connexion">Créer la connexion</a></li>
+  <li><a href="#exécuter-du-sql" id="toc-exécuter-du-sql" class="nav-link" data-scroll-target="#exécuter-du-sql">Exécuter du SQL</a></li>
+  <li><a href="#interface-pgadmin" id="toc-interface-pgadmin" class="nav-link" data-scroll-target="#interface-pgadmin">Interface pgAdmin</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/DBeaver.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -200,6 +220,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
     
   
     
@@ -215,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.</p>
 <section id="configuration" class="level2">
-<h2 class="anchored" data-anchor-id="configuration"><span class="emoji" data-emoji="gear">⚙️</span> Configuration</h2>
+<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
 <ul>
 <li>Menu <code>Fenêtre</code> &gt; <code>Preference</code>
 <ul>
@@ -235,8 +261,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="optionnel" class="level5">
-<h5 class="anchored" data-anchor-id="optionnel">Optionnel</h5>
+<section id="optionnel" class="level4">
+<h4 class="anchored" data-anchor-id="optionnel">Optionnel</h4>
 <ul>
 <li>Templates
 <ul>
@@ -248,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="créer-la-connexion" class="level2">
-<h2 class="anchored" data-anchor-id="créer-la-connexion"><span class="emoji" data-emoji="zap">⚡</span> Créer la connexion</h2>
+<h2 class="anchored" data-anchor-id="créer-la-connexion">Créer la connexion</h2>
 <p>Pour créer une connexion vers la base de données ENSAI sur la VM :</p>
 <ul>
 <li>Cliquer sur l’icone <code>Nouvelle connexion</code> en haut à gauche sous fichier</li>
@@ -267,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="exécuter-du-sql" class="level2">
-<h2 class="anchored" data-anchor-id="exécuter-du-sql"><span class="emoji" data-emoji="slot_machine">🎰</span> Exécuter du SQL</h2>
+<h2 class="anchored" data-anchor-id="exécuter-du-sql">Exécuter du SQL</h2>
 <ul>
 <li>Cliquer sur l’icone <code>SQL</code></li>
 <li>Exécuter la requête courante (où est le curseur de la souris):
@@ -283,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="interface-pgadmin" class="level2">
-<h2 class="anchored" data-anchor-id="interface-pgadmin"><span class="emoji" data-emoji="pill">💊</span> Interface pgAdmin</h2>
+<h2 class="anchored" data-anchor-id="interface-pgadmin">Interface pgAdmin</h2>
 <p>En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank"> pgAdmin</a></p>
 <ul>
 <li>Utilisateur : idxxxx</li>
@@ -601,7 +627,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

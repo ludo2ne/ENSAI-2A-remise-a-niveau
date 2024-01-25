@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année (21h)">
+<meta name="description" content="Développer en Python avec Visual Studio Code">
 
-<title>Remise à Niveau Informatique - Remise à niveau informatique</title>
+<title>Remise à Niveau Informatique - Visual Studio Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,17 +106,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -93,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -102,11 +136,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="./docs/sql/sql.html">
+    <a class="dropdown-item" href="../../docs/sql/sql.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/sql/DBeaver.html">
+    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
     </ul>
@@ -117,37 +151,37 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="./docs/python/python.html">
+    <a class="dropdown-item" href="../../docs/python/python.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../docs/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../docs/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../docs/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../docs/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../docs/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./docs/POO/POO.html"> 
+    <a class="nav-link" href="../../docs/POO/POO.html"> 
 <span class="menu-text">POO</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/UML/UML.html"> 
+    <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -156,15 +190,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
-    <a class="dropdown-item" href="./docs/outils/Git.html">
+    <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/outils/Git TP.html">
+    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
  <span class="dropdown-text">Git TP</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/outils/VSCode.html">
+    <a class="dropdown-item" href="../../docs/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Conde</span></a>
   </li>  
     </ul>
@@ -187,19 +221,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#paramétrage" id="toc-paramétrage" class="nav-link active" data-scroll-target="#paramétrage">Paramétrage</a>
+  <ul class="collapse">
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  <li><a href="#formatage-et-linting" id="toc-formatage-et-linting" class="nav-link" data-scroll-target="#formatage-et-linting">Formatage et Linting</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a></li>
+  </ul></li>
+  <li><a href="#première-utilisation" id="toc-première-utilisation" class="nav-link" data-scroll-target="#première-utilisation">Première utilisation</a></li>
+  <li><a href="#le-terminal-python" id="toc-le-terminal-python" class="nav-link" data-scroll-target="#le-terminal-python">Le terminal python</a></li>
+  <li><a href="#python-vscode-et-les-packages" id="toc-python-vscode-et-les-packages" class="nav-link" data-scroll-target="#python-vscode-et-les-packages">Python, VSCode et les packages</a></li>
+  <li><a href="#afficher-les-variables-denvironnement" id="toc-afficher-les-variables-denvironnement" class="nav-link" data-scroll-target="#afficher-les-variables-denvironnement">Afficher les variables d’environnement</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/VSCode.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remise à niveau informatique</h1>
+<h1 class="title">Visual Studio Code</h1>
 </div>
 
 <div>
   <div class="description">
-    Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année (21h)
+    Développer en Python avec Visual Studio Code
   </div>
 </div>
 
@@ -222,85 +276,185 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level1">
-<h1><span class="emoji" data-emoji="construction">🚧</span></h1>
-<section id="programme" class="level2">
-<h2 class="anchored" data-anchor-id="programme">Programme</h2>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="./docs/sql/sql.html">Bases de données et SQL</a> (3h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/python/python.html">Python - initiation</a> (6h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/POO/POO.html">Programmation Orientée Objet (POO)</a> (9h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/UML/UML.html">UML</a> (3h)</label></li>
-<li><label><input type="checkbox">Divers outils utiles (git, markdown, R…)</label></li>
+<p>Visual Studio Code est un logiciel qui permet d’éditer du code et propose de nombreuses extensions.</p>
+<p>Le but de cette fiche est de :</p>
+<ul>
+<li>vous permettre d’exécuter un programme python avec VSCode</li>
+<li>donner quelques astuces pour faciliter votre utilisation</li>
+</ul>
+<section id="paramétrage" class="level2">
+<h2 class="anchored" data-anchor-id="paramétrage">Paramétrage</h2>
+<section id="extensions" class="level3">
+<h3 class="anchored" data-anchor-id="extensions">Extensions</h3>
+<p>De très nombreuses extensions permettent d’améliorer votre utilisation de VSCode. Sur la version utilisées à l’ENSAI, vous pouvez trouver déjà installé :</p>
+<ul>
+<li>Black Formatter</li>
+<li>Flake8</li>
+<li>isort</li>
+<li>Python Test Explorer</li>
+<li>…</li>
+<li><label><input type="checkbox">Désactiver l’extension <strong>Ruff</strong> (elle fait doublon avec <strong>Flake8</strong>)</label></li>
+</ul>
+<p>Autres extensions interessantes :</p>
+<ul>
+<li>Better Comments</li>
 </ul>
 </section>
-<section id="initiation-à-python" class="level2">
-<h2 class="anchored" data-anchor-id="initiation-à-python">2. Initiation à Python</h2>
-<p>Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :</p>
+<section id="formatage-et-linting" class="level3">
+<h3 class="anchored" data-anchor-id="formatage-et-linting">Formatage et Linting</h3>
 <ul>
-<li>Ouvrez <strong>Git Bash</strong>, puis coller les commandes suivantes</li>
-<li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
+<li>Un **formateur*- est un outil qui va mettre en forme votre code pour que ce soit joli et lisible</li>
+<li>un **linter*- est un outil qui va vous avertir si votre code n’est pas joli
+<ul>
+<li>ex : ligne trop longue, espace manquant ou en trop…</li>
+</ul></li>
+</ul>
+<p>Les extensions Black Formatter et Flake8 sont respectivement un formateur et un linter</p>
+</section>
+<section id="settings" class="level3">
+<h3 class="anchored" data-anchor-id="settings">Settings</h3>
+<p>Vous pouvez préciser le paramètrage à plusieurs niveaux :</p>
+<ul>
+<li>au niveau de l’application VSCode</li>
+<li>au niveau d’un dépôt</li>
+</ul>
+<p>Le fichier <code>.vscode/settings.json</code> contient du paramètrage qui va s’appliquer à tous les fichiers du dépôt.</p>
+<p>Ce fichier contient par exemple les propriétés ci-dessous :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"flake8.args":</span> <span class="ot">[</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--max-line-length=120"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="er">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="er">"</span><span class="ot">[</span><span class="er">python</span><span class="ot">]</span><span class="er">":</span> <span class="fu">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"ms-python.black-formatter"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.insertSpaces"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.tabSize"</span><span class="fu">:</span> <span class="dv">4</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="première-utilisation" class="level2">
+<h2 class="anchored" data-anchor-id="première-utilisation">Première utilisation</h2>
+<blockquote class="blockquote">
+<p>Nous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode</p>
+</blockquote>
+<ul>
+<li>Ouvrir Visual Studio Code</li>
+<li>Ouvrir un terminal
+<ul>
+<li>Menu Terminal &gt; New terminal (raccourci : CTRL + ù)</li>
+</ul></li>
+<li>Créer un dossier pour le Cours
+<ul>
+<li>Copier cette commande : <code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau</code></li>
+<li>Dans le terminal, faire clic droit (Coller) puis ENTREE</li>
+<li>Vérifier que les dossiers sont bien créés, sinon créer les dossiers à la main</li>
+</ul></li>
+<li>Cloner le dépôt
+<ul>
+<li>Se postionner dans le dossier créé : <code>cd /p/Cours2A/UE3_Remise_a_niveau</code></li>
 <li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</li>
-</ul>
-<hr>
-<ul class="task-list">
-<li><label><input type="checkbox">Lire et suivre les consignes données dans le fichier <code>Python-initiation/Python.md</code></label>
-<ul class="task-list">
-<li><label><input type="checkbox">Importer dans Jupyter les 5 notebooks, lire, puis faire les exercices</label></li>
 </ul></li>
-</ul>
-</section>
-<section id="programmation-orientée-objet" class="level2">
-<h2 class="anchored" data-anchor-id="programmation-orientée-objet">3. Programmation Orientée Objet</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Lire et suivre les consignes données dans le fichier <code>Python-POO/La POO.md</code></label></li>
-<li><label><input type="checkbox">Faire les exercices</label></li>
-</ul>
-</section>
-<section id="uml" class="level2">
-<h2 class="anchored" data-anchor-id="uml">4. UML</h2>
-<p>Lire dans cet ordre les fichiers du dossier <code>UML</code> :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>UML.md</code></label></li>
-<li><label><input type="checkbox"><code>Diag cas utilisation.md</code></label></li>
-<li><label><input type="checkbox"><code>Diag classe.md</code></label>
-<ul class="task-list">
-<li><label><input type="checkbox">faire l’exercice</label></li>
+<li>Ouvrir un espace de travail
+<ul>
+<li>Dans VSCode : File &gt; Open Folder</li>
+<li>Sélectionner le dossier <code>P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</code> créé précédemment</li>
+<li>Yes i trust…</li>
+</ul></li>
+<li>Ouvrir, puis exécuter un fichier Python
+<ul>
+<li>Ouvrir le fichier <code>Python-POO/exemple/src/__main__.py</code></li>
+<li>Executer le fichier
+<ul>
+<li>En haut à droite, cliquer sur l’icone en forme de triangle ▷</li>
+<li>Run python file in terminal</li>
+</ul></li>
+<li>Cela ouvre un terminal et exécute le fichier</li>
 </ul></li>
 </ul>
 <hr>
 </section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
-<section id="vidéos-de-la-session-2022-2023" class="level3">
-<h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">1. Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354</p>
-</section>
-<section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
-<h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">2. Cours en ligne pour apprendre Python et SQL</h3>
+<section id="le-terminal-python" class="level2">
+<h2 class="anchored" data-anchor-id="le-terminal-python">Le terminal python</h2>
+<p>2 modes :</p>
 <ul>
-<li>SQL
+<li><code>P:\Cours\Python\tp1&gt;</code>
 <ul>
-<li>https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql</li>
+<li>pour éxecuter en totalité un fichier python
+<ul>
+<li>en cliquant sur le triangle ▷</li>
+<li>en tapant la commande <code>python bacasable.py</code></li>
 </ul></li>
-<li>Python
-<ul>
-<li>https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content
-<ul>
-<li>parties 1 et 2</li>
+<li>taper <code>python</code> en ENTREE pour passer à l’autre mode</li>
 </ul></li>
-<li>https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
+<li><code>&gt;&gt;&gt;</code> pour exécuter directement du code python
 <ul>
-<li>parties 1 et 2</li>
+<li>permet d’exécuter uniquement certaines lignes du fichier
+<ul>
+<li>en cliquant sur une ligne puis SHIFT + ENTREE</li>
+<li>en sélectionnant plusieurs lignes puis SHIFT + ENTREE</li>
 </ul></li>
+<li>dans ce mode on peut aussi écrire directement du python dans le terminal</li>
+<li>taper <code>quit()</code> ou CTRL + Z pour retourner à l’autre mode</li>
 </ul></li>
 </ul>
+<hr>
+</section>
+<section id="python-vscode-et-les-packages" class="level2">
+<h2 class="anchored" data-anchor-id="python-vscode-et-les-packages">Python, VSCode et les packages</h2>
+<p>Imaginez que votre code est organisé de la manière ci-dessous</p>
+<pre><code>├───tp1
+│   └───code
+│   │   ├───vehicule
+│   │   │   ├───velo.py
+│   │   │   └───trottinette.py
+│   │   ├───animal
+│   │   │   ├───girafe.py
+│   │   │   └───ane.py</code></pre>
+<p>Si dans la classe <em>Girafe</em>, vous voulez créer un objet de la classe <em>Velo</em>, vous pouvez par exemple faire ceci dans le code de girafe.py :</p>
+<ul>
+<li>import de la classe Velo</li>
+<li>puis création d’un objet <em>Velo</em></li>
+</ul>
+<pre class="python="><code>from vehicule.velo import Velo
+
+class Girafe:
+    def __init__(self, nom, nom_moyen_transport):
+        self.nom = nom
+        vehicule = None
+        if nom_moyen_transport * "velo":
+            vehicule = Velo()
+        self.moyen_transport = vehicule</code></pre>
+<p><span class="emoji" data-emoji="rotating_light">🚨</span> Cependant, il se peut que que VSCode et/ou le compilateur python n’apprécient pas ce genre d’imports et que vous rencontriez des erreurs du type <strong>le module velo n’existe pas</strong></p>
+<p>Comme solution de contournement, vous pouvez :</p>
+<ul>
+<li>en reprenant l’arborescence ci-dessus,</li>
+<li>dans le dossier code créer un dossier <em>.vscode</em></li>
+<li>dans ce dossier .vscode, créer le fichier settings.json qui contient ceci :</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"python.analysis.extraPaths"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"./*"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"terminal.integrated.env.windows"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"PYTHONPATH"</span><span class="fu">:</span> <span class="st">"${workspaceFolder}/src"</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"terminal.integrated.env.linux"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"PYTHONPATH"</span><span class="fu">:</span> <span class="st">"${workspaceFolder}/src"</span><span class="fu">,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"python.languageServer"</span><span class="fu">:</span> <span class="st">"Jedi"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>puis fermer et redémarrer VSCode</li>
+<li>File &gt; Open Folder &gt; <code>C:/.../tp1/code</code></li>
+</ul>
+</section>
+<section id="afficher-les-variables-denvironnement" class="level2">
+<h2 class="anchored" data-anchor-id="afficher-les-variables-denvironnement">Afficher les variables d’environnement</h2>
+<pre class="bash="><code>printenv
+echo $PYTHONPATH
+echo $HOME</code></pre>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -843,7 +997,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/VSCode.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
 </div>

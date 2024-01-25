@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="POO avec Python">
 
-<title>Remise à Niveau Informatique - Programmation Orientée Objet</title>
+<title>Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -143,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="../../docs/POO/POO.html" aria-current="page"> 
+    <a class="nav-link" href="../../docs/POO/POO.html"> 
 <span class="menu-text">POO</span></a>
   </li>  
   <li class="nav-item">
@@ -187,292 +185,553 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#organisation-du-code" id="toc-organisation-du-code" class="nav-link" data-scroll-target="#organisation-du-code">Organisation du code</a>
-  <ul class="collapse">
-  <li><a href="#bonne-pratique" id="toc-bonne-pratique" class="nav-link" data-scroll-target="#bonne-pratique">bonne pratique</a></li>
-  </ul></li>
-  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage">Héritage</a>
-  <ul class="collapse">
-  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite">Classe Abstraite</a></li>
-  </ul></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
-  <ul class="collapse">
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer">Avant de commencer</a></li>
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points">Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones">Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino">Exercice 3 - Domino</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Programmation Orientée Objet</h1>
-</div>
-
-<div>
-  <div class="description">
-    POO avec Python
-  </div>
-</div>
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ludovic Deneuville </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Nous allons introduire les notions suivantes :</p>
+<section id="git-tp" class="level1">
+<h1>Git TP</h1>
+<p>Le but de ce TP est de :</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Principe de la POO</label></li>
-<li><label><input type="checkbox">L’organisation du code</label></li>
-<li><label><input type="checkbox">L’héritage</label></li>
-<li><label><input type="checkbox">Les classe abstraites</label></li>
+<li><label><input type="checkbox">vous présenter les fonctionnalités de base de Git</label></li>
+<li><label><input type="checkbox">vous faire manipuler les 5 commandes principales (status, add, commit, pull, push)</label></li>
+<li><label><input type="checkbox">vous montrer comment résoudre un conflit</label></li>
+<li><label><input type="checkbox">bonus : retour en arrière, branches…</label></li>
 </ul>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>La POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (<code>attributs</code>) et des actions (<code>méthodes</code>) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :</p>
+<section id="arrow_forward-1.-créer-un-projet" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-1.-créer-un-projet">:arrow_forward: 1. Créer un projet</h2>
+<p>:information_source: Ce projet permettra d’héberger le dépôt distant</p>
 <ul>
-<li><code>Encapsulation</code> : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet</li>
-<li><code>Héritage</code> : L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d’une hiérarchie de classes</li>
-<li><code>Polymorphisme</code> : Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action. Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes</li>
-</ul>
-<p>La POO permet :</p>
+<li>se connecter à <a href="https://gitlab.com/">GitLab</a></li>
+<li>En haut à gauche, Menu &gt; Projects &gt; <a href="https://gitlab.com/projects/new">Create new project</a></li>
+<li>Create blank project
 <ul>
-<li>d’organiser le code de manière plus structurée</li>
-<li>de favoriser la réutilisation et la maintenance du code</li>
-<li>de modéliser les concepts du domaine d’application de manière naturelle</li>
+<li>Project name : <strong>git-tp</strong></li>
+<li>Public</li>
+<li><label><input type="checkbox" checked="">Initialize repository with a README</label></li>
+<li>Create Project</li>
+</ul></li>
 </ul>
-<p>Elle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.</p>
+<hr>
+<section id="small_orange_diamond-création-du-fichier-.gitignore" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-création-du-fichier-.gitignore">:small_orange_diamond: Création du fichier .gitignore</h3>
+<blockquote class="blockquote">
+<p><strong>.gitignore</strong> est un fichier permettant de dire à Git quels fichiers il &gt; faut ignorer. Par exemple :</p>
+<ul>
+<li>si .gitignore contient <strong><code>*.csv</code></strong></li>
+<li>et sur votre dépôt local, vous avez un fichier <strong><code>resultats.csv</code></strong></li>
+<li>Git fera comme si ce fichier n’existe pas</li>
+<li>Ainsi, ce fichier ne sera jamais poussé vers le dépôt distant</li>
+</ul>
+</blockquote>
+<ul>
+<li>Dans GitLab, sur la page de votre projet</li>
+<li>Aller dans Repository &gt; Files</li>
+<li>Au milieu , à droite de <code>git-tp/</code> cliquer sur l’icone :heavy_plus_sign:</li>
+<li>New file</li>
+<li>Select a template type : .gitignore</li>
+<li>Apply a template : Python</li>
+<li>Modifier le Commit message</li>
+<li>Commit changes</li>
+</ul>
+<hr>
 </section>
-<section id="organisation-du-code" class="level2">
-<h2 class="anchored" data-anchor-id="organisation-du-code">Organisation du code</h2>
-<p>Dans la suite, nous allons organsier notre code de manière logique dans différents modules.</p>
-<blockquote class="blockquote">
-<p><code>module</code> : Les modules d’un programme Python sont ses fichiers sources.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><code>paquet</code> : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.</p>
-</blockquote>
-<section id="bonne-pratique" class="level3">
-<h3 class="anchored" data-anchor-id="bonne-pratique">bonne pratique</h3>
-<p>A la racine de votre projet, créez les 3 dossiers suivants :</p>
+<section id="small_orange_diamond-inviter-dautres-membres" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-inviter-dautres-membres">:small_orange_diamond: Inviter d’autres membres</h3>
+<p>Vous venez de créer un projet public donc visible par tous. Cependant, vous êtes seul à pouvoir modifier ce projet. Pour autoriser d’autres personnes à écrire sur ce projet (par exemple lors du projet info), il faut donner les droits en écriture :</p>
 <ul>
-<li><code>src</code> : pour stocker votre code source</li>
-<li><code>data</code> : pour vos fichiers de données</li>
-<li><code>doc</code> : pour votre documentation</li>
+<li>Project informations &gt; Members &gt; Invite members</li>
+<li>Role : Maintainer or Owner</li>
 </ul>
-<pre><code>.
-├── data
-│   └── temperatures.csv
-├── doc
-│   ├── suivi.md
-│   └── rapport.tex
-└── src
-    ├── __main__.py
-    ├── package1
-    │   ├── __init__.py
-    │   ├── module1.py
-    │   ├── module2.py
-    └── package2
-        ├── __init__.py
-        ├── module3.py
-        └── subpackage21
-            ├── __init__.py
-            ├── module4.py
-            ├── module5.py</code></pre>
-<p>Remarques importantes :</p>
-<ul>
-<li>le fichier <code>__main__.py</code> contient le code à exécuter quand le pacakge est exécuté</li>
-<li>les fichiers <code>__init__.py</code> sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)</li>
-</ul>
-<p>Voici un exemple plus concret :</p>
-<pre><code>.
-└── src
-    ├── __main__.py
-    ├── vehicules
-    │   ├── __init__.py
-    │   ├── deux_roues.py
-    │   ├── velo.py
-    │   └── trottinette.py
-    └── humain
-        ├── __init__.py
-        ├── personne.py
-        └── etudiant.py</code></pre>
+<p>Cependant ce n’est pas nécessaire dans le cadre de ce TP, vous pouvez donc passer à la suite.</p>
+<hr>
 </section>
 </section>
-<section id="héritage" class="level2">
-<h2 class="anchored" data-anchor-id="héritage">Héritage</h2>
-<p>Un des trois piliers de la POO est l’héritage.<br>
-Une classe enfant peut utiliser tous les attributs et méthode de sa classe parente.<br>
-Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
-<p>Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L’idée naïve est de créer une classe pour chacun.</p>
-<p>En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :</p>
+<section id="arrow_forward-2.-cloner-le-projet" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-2.-cloner-le-projet">:arrow_forward: 2. Cloner le projet</h2>
+<p>:information_source: Le but de cette étape est de créer votre dépôt local en faisant un clone du dépôt distant</p>
 <ul>
-<li>couleur</li>
-<li>vitesse</li>
-<li>accelerer()</li>
-<li>ralentir()</li>
-</ul>
-<p>Une idée est de regrouper ces caractéristiques communes dans une classe <code>DeuxRoues</code>. Puis de faire hériter <code>Vélo</code> et <code>Trottinette</code> de <code>DeuxRoues</code></p>
-<section id="classe-abstraite" class="level3">
-<h3 class="anchored" data-anchor-id="classe-abstraite">Classe Abstraite</h3>
-<p>Certaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe <code>DeuxRoues</code>. Nous allons directement créer des <code>Velo</code> et des <code>Trottinettes</code>.</p>
-<p>Nous pouvons donc définir la classe <code>DeuxRoues</code>comme <code>abstraite</code></p>
+<li>Ouvrir Visual Studio Code</li>
+<li>Ouvrir un Terminal</li>
+<li>Ouvrir un Terminal Git Bash
 <ul>
-<li>c’est à dire qui ne peut pas être instanciée</li>
-<li>dit autrement : on ne peut pas créer d’objets de cette classe</li>
+<li>En haut à droite du terminal, à coté du <strong>+</strong>, cliquer sur la flèche vers le bas <strong>˅</strong></li>
+</ul></li>
+<li>Créer le dossier ci-dessous s’il n’existe pas déjà
+<ul>
+<li><code>mkdir "P:\Cours\Python"</code></li>
+</ul></li>
+<li>Se positionner dans ce dossier
+<ul>
+<li><code>cd "P:\Cours\Python"</code></li>
+</ul></li>
+<li>Cloner le projet
+<ul>
+<li><code>git clone git@gitlab.com:???????/git-tp.git</code>
+<ul>
+<li>Remplacer les <code>??????</code> par votre nom d’utilisateur GitLab</li>
+<li>Ou sinon sur la page GitLab du projet
+<ul>
+<li>cliquer sur Clone</li>
+<li>copier la ligne qui commence par <code>git@gitlab...</code></li>
+</ul></li>
+</ul></li>
+<li><em>Are you sure you want to continue connecting (yes/no)?</em>
+<ul>
+<li>taper <code>yes</code> puis <code>ENTREE</code></li>
+</ul></li>
+<li>Votre dépôt local est maintenant créé</li>
+</ul></li>
+<li>Ouvrir ce dépôt dans l’explorateur VSCode
+<ul>
+<li>File &gt; Open Folder</li>
+<li>git-tp</li>
+</ul></li>
+<li>Réouvrir le terminal Git Bash
+<ul>
+<li>Si ce n’est pas le cas, se positionner dans le dossier suivant :
+<ul>
+<li><code>cd "P:\Cours\Python\git-tp"</code></li>
+</ul></li>
+<li>un <strong>(main)</strong> apparait dans le terminal, cela signifie bien que vous êtes dans un dépôt Git</li>
+</ul></li>
 </ul>
-<p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
+<hr>
+</section>
+<section id="arrow_forward-3.-ajouter-un-nouveau-fichier" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-3.-ajouter-un-nouveau-fichier">:arrow_forward: 3. Ajouter un nouveau fichier</h2>
+<p>:information_source: Nous allons ici voir comment :</p>
+<ul>
+<li>ajouter/modifier des fichiers dans le dépôt local</li>
+<li>envoyer ces mises à jour au dépôt distant</li>
+</ul>
+<p>Dans le dossier git-tp, créer un fichier <code>voiture.py</code> contenant le code suivant :</p>
+<pre class="python="><code>class Voiture:
+    
+    def __init__(self, nom, couleur):
+        self.couleur = couleur
+        self.nom = nom
+        self.vitesse = 0
+
+    def accelere(self, increment):
+        if increment &gt; 10:
+            increment = 10
+        self.vitesse = min(130, self.vitesse + increment)</code></pre>
+<ul>
+<li>Dans le terminal Git Bash, exécuter les commandes suivantes :</li>
+<li><code>git status</code>
+<ul>
+<li>Le fichier apparait dans les <em>Untracked files</em></li>
+<li>Cela siginifie que Git a repéré ce fichier mais pour le moment il ne le versionnera pas</li>
+</ul></li>
+<li><code>git add voiture.py</code>
+<ul>
+<li>pour dire à Git de suivre ce fichier</li>
+</ul></li>
+<li><code>git status</code>
+<ul>
+<li>maintenant le fichier est reconnu par Git</li>
+</ul></li>
+<li><code>git commit -m "creation classe voiture"</code>
+<ul>
+<li>pour créer un point de sauvegarde</li>
+<li>Entre les <code>" "</code>, mettre un message court et explicite</li>
+</ul></li>
+<li><code>git status</code>
+<ul>
+<li><em>Your branch is ahead of ‘origin/main’ by 1 commit</em></li>
+<li>Ce qui signifie que votre dépôt local est en avance d’un commit par rapport au dépôt distant</li>
+</ul></li>
+<li><code>git pull</code>
+<ul>
+<li><em>Already up to date</em></li>
+<li>Pour vérifier que le dépôt distant n’a pas été mis à jour</li>
+</ul></li>
+<li><code>git push</code>
+<ul>
+<li>Vérifier qu’il n’y a pas d’erreur</li>
+<li>Pour mettre à jour le dépôt distant avec mes modifications locales</li>
+</ul></li>
+</ul>
+<p>:bulb: <strong>Combiner les commandes add et commit</strong></p>
+<p>Dans le cas d’un nouveau fichier, il faut impérativement enchaîner les deux commandes suivantes pour que Git suive ce fichier :</p>
+<ul>
+<li><code>git add mon_fichier.py</code></li>
+<li><code>git commit -m "Creation mon_fichier"</code></li>
+</ul>
+<p>Si le fichier existait déjà, il est possible de combiner les deux commandes :</p>
+<ul>
+<li>en ajoutant au commit un <strong>-a</strong> qui signifie add</li>
+<li><code>git commit -am "Modification mon_fichier"</code></li>
+</ul>
+<p>:bulb: Si vous créez, non pas un mais plusieurs fichiers, vous pouvez utiliser la commande suivante pour tous les faire suivre par Git : <strong><code>git add .</code></strong></p>
+<p>:bulb: Il est fortement recommandé de créer des commits très fréquement, par exemple</p>
+<ul>
+<li>Vous venez de modifier une fonction</li>
+<li>Testez pour vérifier que votre code fonctionne bien</li>
+<li>Créez un commit</li>
+<li>Si jamais par la suite vous “cassez tout” et que plus rien ne marche, il est facile de revenir au dernier commit</li>
+</ul>
+<hr>
+</section>
+<section id="arrow_forward-4.-gérer-un-conflit" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-4.-gérer-un-conflit">:arrow_forward: 4. Gérer un conflit</h2>
 <blockquote class="blockquote">
-<p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <span class="citation" data-cites="abstractmethod">@abstractmethod</span> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
+<p>Dans le monde merveilleux de Git, tout se passe bien quand chacun &gt; travaille sur des fichiers différents. Lorsque deux personnes ont &gt; modifié le même fichier, ça peut se compliquer.</p>
+<p>Au moment de la synchronisation des dépôts, Git va tenter de faire un &gt; auto-merge. Celui-ci fonctionnera bien si par exemple l’une des deux &gt; personnes a modifié le début du fichier et l’autre la fin.</p>
+<p>Par contre, si les modifications concernent le même endroit, Git ne peut &gt; pas décider seul quelle est la bonne version et demande à l’utilisateur &gt; de choisir quelles lignes il souhaite conserver.</p>
 </blockquote>
-<p><span class="emoji" data-emoji="warning">⚠️</span> classe mère ne veut pas dire forcément classe abstraite</p>
-<p>Exemple :</p>
+<p>Nous allons créer artificiellement un conflit, c’est à dire faire comme si 2 personnes avaient modifié le même fichier. Ce cas de figure arrivera inévitablement lorsque vous travaillerez à plusieurs sur un projet.</p>
+<p>Il faut bien avoir en tête qu’un conflit :</p>
 <ul>
-<li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
-<li>Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
-<li>Or ici la classe <code>Velo</code> n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo</li>
+<li>ce n’est pas grave</li>
+<li>ce n’est pas une erreur</li>
+<li>vous n’avez pas tout cassé</li>
+<li>:scream: il ne faut pas paniquer, simplement savoir comment le résoudre</li>
+</ul>
+<hr>
+<ul>
+<li>Dans GitLab, cliquer sur le fichier <code>voiture.py</code></li>
+<li>Puis sur la petite flèche après <code>Open in web IDE</code> et <code>Edit</code></li>
+<li>Cliquer sur <code>Edit</code>
+<ul>
+<li>Remplacer à la dernière ligne 130 par 110</li>
+<li>Commit changes</li>
+<li><em>Le fichier a été modifié sur le dépôt distant</em></li>
+</ul></li>
+<li>Dans VSCode, éditer le fichier <code>voiture.py</code>
+<ul>
+<li>Remplacer à la dernière ligne 130 par 150 et enregistrer</li>
+<li><code>git status</code>
+<ul>
+<li>le fichier <code>voiture.py</code> est à l’état modifié</li>
+</ul></li>
+<li><code>git commit -am "Modif vitesse max"</code></li>
+<li><em>Le fichier a été modifié sur le dépôt local</em></li>
+</ul></li>
+<li><code>git push</code>
+<ul>
+<li>:warning: Error : petit piège, il faut toujours faire un pull avant de tenter un push</li>
+<li>Le dépôt distant a été modifié</li>
+<li>Je dois d’abord récupérer ces modifications sur mon dépôt local (pull)</li>
+<li>Ensuite seulement je pourrai mettre à jour le dépôt distant (push)</li>
+</ul></li>
+<li><code>git pull</code>
+<ul>
+<li>:rotating_light: <em>Conflict - Automatic merge failed</em></li>
+<li>Sur les 2 dépôts, la même ligne a été modifiée
+<ul>
+<li>Ainsi dans le cas présent, Git ne peut pas savoir quelle version choisir</li>
+</ul></li>
+<li>dans le terminal Git est au statut <strong><code>(main|MERGING)</code></strong></li>
+</ul></li>
+<li><code>git status</code>
+<ul>
+<li><em>both modified: <code>voiture.py</code></em></li>
+</ul></li>
+<li>Dans VSCode, ouvrir le fichier <code>voiture.py</code>, on voit s’afficher :</li>
+</ul>
+<pre class="python="><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+        self.vitesse = min(150, self.vitesse + increment)
+******=
+        self.vitesse = min(110, self.vitesse + increment)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; d29aa04e48e16d3648fd4ae9796b4a035e176f1c</code></pre>
+<ul>
+<li>Maintenant il faut choisir quelle ligne on garde
+<ul>
+<li>Celle du dessus est la notre (dépôt local)</li>
+<li>Celle du dessous est celle telle qu’elle a été modifiée sur le dépôt distant</li>
+</ul></li>
+<li>Supprimer la ligne avec le 110, ainsi que les lignes avec <code>&lt;&lt;&lt;&lt;&lt;</code>, <code>****=</code> et <code>&gt;&gt;&gt;&gt;&gt;</code>
+<ul>
+<li>Ou cliquer simplement sur le bouton VSCode <code>Accept Current Change</code></li>
+<li>Enregistrer</li>
+</ul></li>
+<li>:bulb: En théorie, à cet instant, il faut tester de nouveau que le programme fonctionne bien, cependant ce n’est pas l’objet de ce TP</li>
+<li><code>git commit -am "Resolve merge"</code>
+<ul>
+<li>cela crée un nouveau point de sauvegarde pour valider le merge</li>
+<li>dans le terminal Git repasse au statut <strong><code>(main)</code></strong></li>
+</ul></li>
+<li><code>git status</code></li>
+<li><code>git push</code>
+<ul>
+<li>cette fois ci, c’est ok, les modifications faites sur le dépôt local sont poussées vers le dépôt distant</li>
+</ul></li>
+<li>:tada: Félicitations, vous venez de résoudre votre 1er conflit :champagne:
+<ul>
+<li>c’était pas compliqué, hein ?</li>
+</ul></li>
+</ul>
+<hr>
+<p>Les parties 3 et 4 sont de très loin les plus importantes. Pour utiliser efficacement Git, il faut impérativement avoir bien compris comment utiliser les 5 commandes principales (status, add, commit ,pull, push) et savoir résoudre des conflits.</p>
+<p>La suite permet d’aller un peu plus loin si vous commencez à être à l’aise.</p>
+<hr>
+</section>
+<section id="arrow_forward-5.-revenir-en-arrière" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-5.-revenir-en-arrière">:arrow_forward: 5. Revenir en arrière</h2>
+<p>:information_source: L’intérêt de versionner est d’avoir la possibilité de revenir en arrière si besoin !</p>
+<p>Soyons clair, revenir en arrière n’est pas une action anodine et nécessite parfois une certaine maîtrise de Git. Nous nous contenterons donc ici de quelques outils de base.</p>
+<hr>
+<section id="small_orange_diamond-revenir-au-dernier-commit" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-revenir-au-dernier-commit">:small_orange_diamond: Revenir au dernier commit</h3>
+<p>Comme souvent avec Git, il y a plusieurs manières de faire, ici nous utiliserons la commande <code>stash</code></p>
+<ul>
+<li>Créer un fichier <code>vehicule.py</code></li>
+<li>Modifier le fichier <code>voiture.py</code>
+<ul>
+<li>par exemple en ajoutant <code>toto</code> sur la dernière ligne</li>
+</ul></li>
+<li><strong><code>git stash -u</code></strong>
+<ul>
+<li>Le fichier <code>vehicule.py</code> a été supprimé</li>
+<li>Le fichier <code>voiture.py</code> est revenu à l’état du dernier commit</li>
+</ul></li>
+<li>il est possible de retrouver les fichiers qui ont été “stashés” (voir commandes stash et pop)</li>
+</ul>
+<hr>
+</section>
+<section id="small_orange_diamond-consulter-lhistorique-dun-fichier" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-consulter-lhistorique-dun-fichier">:small_orange_diamond: Consulter l’historique d’un fichier</h3>
+<section id="dans-gitlab-aller-sur-le-fichier-voiture.py" class="level4">
+<h4 class="anchored" data-anchor-id="dans-gitlab-aller-sur-le-fichier-voiture.py">Dans GitLab, aller sur le fichier <code>voiture.py</code></h4>
+<ul>
+<li>Cliquer sur History</li>
+<li>Cela affiche la liste des commits qui ont mis à jour ce fichier</li>
+</ul>
+</section>
+<section id="dans-git-bash" class="level4">
+<h4 class="anchored" data-anchor-id="dans-git-bash">Dans Git Bash</h4>
+<ul>
+<li><code>git log voiture.py</code>
+<ul>
+<li>Cela affiche a peu près la même chose que dans GitLab
+<ul>
+<li>Faire <code>ENTREE</code> pour continuer à défiler</li>
+<li>Faire <code>q</code> comme quit pour sortir</li>
+</ul></li>
+<li>Mais ce n’est pas très lisible, voire très moche</li>
+<li>Heureusement la commande git log propose de nombreuses options</li>
+</ul></li>
+<li><code>git log</code> affiche une liste de commit
+<ul>
+<li>Pour la suite, nous ne limeterons pas aux commits impactant le fichier <code>voiture.py</code> mais nous afficherons tous les commits</li>
+<li>vous pouvez ajouter à la fin de chaque commande le nom d’un fichier pour se restreindre aux commits sur ce fichier</li>
+</ul></li>
+<li><code>git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative</code>
+<ul>
+<li>C’est joli, non ?</li>
+<li>Mais un peu pénible à retenir, et long à écrire</li>
+<li>C’est ici que l’on présente les alias</li>
+</ul></li>
+<li>Voici deux commandes pour créer les alias nommés arbitrairement <code>bb</code> et <code>cc</code> :
+<ul>
+<li><code>git config --global alias.bb "log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative"</code></li>
+<li><code>git config --global alias.cc "log --all --decorate --oneline --graph"</code></li>
+<li>ces 2 alias sont à créer une seule fois</li>
+<li>éventuellement vous pouvez en créer d’autres, ou les modifier</li>
+</ul></li>
+<li>Maintenant essayez <code>git bb</code> et <code>git cc</code>
+<ul>
+<li>C’est de toute beauté !</li>
+</ul></li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="exercices" class="level2">
-<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="avant-de-commencer" class="level3">
-<h3 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h3>
+<section id="small_orange_diamond-comparer-2-versions-dun-fichier" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-comparer-2-versions-dun-fichier">:small_orange_diamond: Comparer 2 versions d’un fichier</h3>
 <ul>
-<li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
-<li>Suivez les consignes données dans le fichier de <a href="../../docs/outils/VSCode.html">paramétrage et d’utilisation de VSCode</a></li>
-<li>Dans <code>Python-POO/exercices</code>, créez les 2 dossiers suivants :
+<li>Noter le numéro d’un commit où vous avez modifié <code>voiture.py</code>
 <ul>
-<li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
-<li><code>domino</code> pour l’exercice 3</li>
+<li><code>git bb voiture.py</code></li>
+<li>en jaune sur 7 caractères alphanumériques</li>
+<li>ne choisissez pas le plus récent, sinon il n’y aura aucune différence</li>
+</ul></li>
+<li><strong><code>git diff 7539cf7 voiture.py</code></strong>
+<ul>
+<li>remplacer <code>7539cf7</code> par votre numéro de commit</li>
+<li>vous voyez les différences la version actuelle et une ancienne version</li>
+</ul></li>
+<li><strong><code>git diff</code></strong>
+<ul>
+<li>pour lister toutes les modifications effectuées depuis le dernier commit</li>
+<li><strong><code>git diff voiture.py</code></strong> : pour se limiter aux modifications effectuée sur ce fichier</li>
 </ul></li>
 </ul>
+<hr>
 </section>
-<section id="exercice-1---points" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-1---points">Exercice 1 - Points</h3>
-<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
-<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
-<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
-<li><label><input type="checkbox"><code>distance(self, autre_point)</code> : distance avec un autre point</label></li>
-<li><label><input type="checkbox"><code>__eq__(self, autre_point)</code> : renvoi un booléen qui dit si les 2 points sont identiques</label></li>
-<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
-<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
-<li><label><input type="checkbox">(bonus) <code>rotation(self, a)</code> : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
+<section id="small_orange_diamond-retour-vers-le-passé" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-retour-vers-le-passé">:small_orange_diamond: Retour vers le passé</h3>
+<ul>
+<li>Toujours avec le numéro d’un ancien commit</li>
+<li><strong><code>git checkout 7539cf7</code></strong>
+<ul>
+<li><em>HEAD is now 7539cf7</em></li>
+<li>HEAD est un mot que l’on retrouve souvent dans Git
+<ul>
+<li>on peut le traduire par “tête de lecture”</li>
+</ul></li>
+<li>Au bout de la ligne de commande, ne s’affiche plus <code>(main)</code> mais <code>((7539cf7...))</code></li>
+<li>Vous voici revenu au code tel qu’il était à l’époque de ce commit</li>
+</ul></li>
+<li><code>git checkout main</code> pour revenir au présent</li>
 </ul>
+<hr>
 </section>
-<section id="exercice-2---polygones" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-2---polygones">Exercice 2 - Polygones</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Créer une classe <code>Polygones</code> composées d’objets de la classe <code>Point</code></label>
+<section id="small_orange_diamond-annuler-un-commit" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-annuler-un-commit">:small_orange_diamond: Annuler un commit</h3>
 <ul>
-<li>nous supposerons par la suite que les segments ne se croisent pas</li>
-</ul></li>
-<li><label><input type="checkbox">Ajouter à cette classe 2 méthodes abstraites <code>aire()</code> et <code>périmètre()</code> qui seront définies dans les classes filles</label></li>
-<li><label><input type="checkbox">Créer les classes <code>Segment</code>, <code>Triangle</code> et <code>Quadrilatere</code> qui héritent de la classe <code>Polygone</code></label>
-<ul>
-<li>vérifier à chaque fois le nombre de points</li>
-<li><label><input type="checkbox">Définir les méthodes <code>aire()</code> et <code>périmètre()</code> dans ces classes</label></li>
-</ul></li>
-<li><label><input type="checkbox">Créer la classe <code>Rectangle</code> qui hérite de <code>Quadrilatere</code></label>
-<ul>
-<li>vérifier que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit</li>
-</ul></li>
+<li>En fait non, on ne verra pas comment annuler un commit, ni sur le dépôt local, ni sur le dépôt distant. C’est possible mais à vos risques et périls.</li>
+<li>Préférez la méthode un peu archaïque qui consiste à retourner dans le passé pour copier ce qui fonctionnait bien avant.</li>
+<li>Et pour vous faciliter la vie, faites des commits réguliers et ne modifiez pas 50 fichiers dans un commit.</li>
 </ul>
-<p><a href="https://mermaid.js.org/syntax/classDiagram.html" class="external" target="_blank">Diagrammes de classe avec Mermaid</a></p>
-<pre class="mermaid"><code>classDiagram
-    Point --o Polygone
-    Polygone &lt;|-- Segment : 2
-    Polygone &lt;|-- Triangle : 3
-    Polygone &lt;|-- Quadrilatere : 4
-    Quadrilatere &lt;|-- Rectangle
-    class Point{
-        +float x
-        +float y
-        +distance(autre_point)
-    }
-    class Polygone{
-        +liste[Point] liste_points
-        +aire()
-        +perimetre()
-    }
-    class Quadrilatere{
-        +aire()
-        +perimetre()
-    }
-    class Segment{
-        +aire()
-        +perimetre()
-    }
-    class Triangle{
-        +aire()
-        +perimetre()
-    }</code></pre>
+<p>:bulb: Si à un moment vous avez peur de faire une bétise et de perdre tout votre code (par exemple si une commande Git ne se passe pas comme vous l’aviez prévu), il est tout a fait possible de copier votre dépôt. Votre dépôt local est un dossier, allez dans l’explorateur windows, faites <code>CTRL + C</code> <code>CTRL + V</code> et voila vous avez une copie que vous pouvez garder de coté au cas où ça tourne mal.<br>
+:bulb: Et surtout n’hésitez pas à demander de l’aide !</p>
+<hr>
 </section>
-<section id="exercice-3---domino" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-3---domino">Exercice 3 - Domino</h3>
-<p>Écrire une classe <code>Domino</code> avec :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
-<li><label><input type="checkbox"><code>__str__()</code> : qui affiche les points présents sur les deux extrémités</label></li>
-<li><label><input type="checkbox"><code>retourne()</code> qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).</label></li>
-<li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
-</ul>
-<p>Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n’y aura qu’un seul joueur et il n’est possible de poser que d’un seul côté, à la fin de la rangée de domino):</p>
+</section>
+<section id="arrow_forward-fonctionnalités-de-gitlab" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-fonctionnalités-de-gitlab">:arrow_forward: Fonctionnalités de GitLab</h2>
+<p>GitLab n’est pas seulement un dépôt distant, il y a de nombreuses fonctionnalités interessantes.</p>
 <ul>
-<li><label><input type="checkbox">Écrivez une fonction qui génère tous les dominos et renvoie la liste</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>pioche()</code> qui pioche au hasard un domino dans une liste et le retire de cette liste</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>affiche_dominos()</code> qui affiche une liste de dominos</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>domino_posables(dominos_en_main, dominos_poses)</code> qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste <code>dominos_poses</code>.</label></li>
-<li>Écrivez une fonction <code>jouer()</code> qui :
-<ul class="task-list">
-<li><label><input type="checkbox">génére la liste de tous les dominos</label></li>
-<li><label><input type="checkbox">tire un 1er domino au hasard et le place dans la liste dominos_poses</label></li>
-<li><label><input type="checkbox">distribue aléatoirement 6 dominos au joueur</label></li>
-<li><label><input type="checkbox">affiche les dominos qu’il peut jouer</label></li>
-<li><label><input type="checkbox">si aucun domino n’est jouable, lui proposer de piocher</label></li>
-<li><label><input type="checkbox">lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et <code>quit</code> pour arrêter de jouer)</label></li>
-<li><label><input type="checkbox">ajoute le domino joué à la liste <code>dominos_poses</code> et le retire de <code>dominos_en_main</code></label></li>
+<li>Issues : Pour lister et suivre les incidents ou les évolutions du programme</li>
+<li>Wiki : Pour créer facilement des pages de documentation en langage markdown</li>
+<li>CI/CD (Continuous Integration/Continuous Delivery) : Cela permet lorsque l’on met à jour le dépôt distant de lancer des tâches automatisées, par exemple pour : tester le code, évaluer la qualité du code, déployer le code sur une machine de production ou de développement…</li>
+</ul>
+<p>Voir un exemple avec <a href="https://gitlab.com/CalcProgrammer1/OpenRGB/-/wikis/home">ce projet</a></p>
+<hr>
+</section>
+<section id="arrow_forward-un-petit-exo-dapplication" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-un-petit-exo-dapplication">:arrow_forward: Un petit exo d’application</h2>
+<ol type="1">
+<li>Revenez dans VSCode, ouvrez un terminal Git Bash et positionnez votre terminal dans le dossier <code>P:\Cours\Python\git-tp</code> comme cela a été fait au début de la partie 2.</li>
+<li>Dans VSCode, sur le constructeur de la classe <code>voiture</code>, mettre la valeur par défaut de couleur à <code>verte</code> : <code>def __init__(self, nom, couleur=verte)</code></li>
+<li>Dans GitLab, faites la même modification sur la classe <code>voiture</code> mais en mettant cette fois-ci la couleur <code>jaune</code></li>
+<li>Créez un nouveau fichier <code>velo.py</code> en copiant le contenu du fichier <code>voiture.py</code></li>
+<li>Modifier la méthode <code>accelere()</code> de <code>velo.py</code> pour avoir une vitesse maximale de 80</li>
+<li>Créer un point de sauvegarde sur votre dépôt local (add et commit)</li>
+<li>Synchronisez vos dépôts et résolvez les conflits (pull et push)</li>
+</ol>
+<hr>
+</section>
+<section id="arrow_forward-les-branches" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-les-branches">:arrow_forward: Les branches</h2>
+<p>:information_source: Uniquement si vous êtes à l’aise</p>
+<section id="small_orange_diamond-a-quoi-sert-une-branche" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-a-quoi-sert-une-branche">:small_orange_diamond: A quoi sert une branche ?</h3>
+<p>Imaginez vous avez votre code qui fonctionne bien mais qui est tout moche (avec des duplications…). Comme vous êtes sérieux, vous voulez faire tout bien comme il faut et mettre tout au propre.</p>
+<p>Vous faites vos corrections, faites de commits, et puis à un moment vous en avez marre car plus rien ne fonctionne. Vous avez envie de retourner en arrière, ce qui est possible avec ce que l’on a vu précédemment mais pas trivial ni très propre.</p>
+<p>Si vous connaissiez les branches voici ce que vous auriez fait :</p>
+<ol type="1">
+<li>créer une branche nommée “refonte”</li>
+<li>Développer, Commiter sur cette branche</li>
+<li>Si à la fin ce que vous avez fait sur cette branche vous plait alors fusion de cette branche avec la branche principale <strong>main</strong></li>
+<li>Sinon vous pouvez simplement supprimer cette branche</li>
+</ol>
+<p>En gros une branche permet de coder et/ou tester une nouvelle fonctionnalité sans polluer la branche principale.</p>
+<hr>
+</section>
+<section id="small_orange_diamond-un-petit-exemple-pour-y-voir-plus-clair" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-un-petit-exemple-pour-y-voir-plus-clair">:small_orange_diamond: Un petit exemple pour y voir plus clair</h3>
+<ul>
+<li>imaginons que vous voulez ajouter une classe trottinette, mais vous n’êtes pas encore sûr, alors vous testez sur une branche</li>
+<li><code>git checkout -b trottinette</code>
+<ul>
+<li>création d’une branche trottinette</li>
+<li><em>Switched to a new branch ‘trottinette’</em>
+<ul>
+<li>et comme l’indique le message, avec cette commande vous êtes directement positionné sur cette branche</li>
+</ul></li>
+</ul></li>
+<li>Créez un fichier <code>trottinette.py</code></li>
+<li>Modifiez la vitesse de voiture à 210 parce que vous êtes un malade</li>
+<li>add puis commit</li>
+<li><code>git push</code> pour partager sur le dépôt distant
+<ul>
+<li>Git dit que cette branche n’est pas connue sur le dépôt distant</li>
+<li>Mais comme il est sympa, il donne la commande pour la créer</li>
+<li><code>git push --set-upstream origin trottinette</code></li>
+</ul></li>
+<li>Ensuite revenons sur la branche principale <code>main</code>
+<ul>
+<li><code>git checkout main</code></li>
+</ul></li>
+<li>Modifiez la vitesse maximale de voiture à 90 parce qu’en fait vous êtes très prudent puis commit</li>
+<li>Maintenant, après mûre réflexion, vous vous dites que la trottinette c’est trop bien et qu’il faut l’intégrer à la branche main</li>
+<li>Vous avec envie de fusionner directement les branches <code>trottinette</code> et <code>main</code>
+<ul>
+<li><code>git merge trottinette</code></li>
+<li>Seulement il y a un conflit et c’est fait exprés</li>
+<li>Il a été dit plus haut que la branche <strong>main</strong> doit rester le plus propre possible, ainsi on va éviter de la polluer avec des commits de gestion de conflit. Les conflits doivent être réglé sur les autres branches</li>
+<li>Annulons ce merge
+<ul>
+<li><code>git merge --abort</code></li>
+</ul></li>
+</ul></li>
+<li>Voici comment nous allons procéder pour faire cela proprement
+<ul>
+<li>On retourne sur la branche <code>trottinette</code>
+<ul>
+<li><code>git checkout trottinette</code></li>
+</ul></li>
+<li>Nous allons faire la fusion sur cette branche
+<ul>
+<li><code>git merge main</code></li>
+<li>nous résolvons le conflit puis commit</li>
+</ul></li>
+<li>Maintenant que les 2 branches sont synchronisées, retournons sur la branche <code>main</code>
+<ul>
+<li><code>git checkout main</code></li>
+<li><code>git merge --squash trottinette</code>
+<ul>
+<li>cette fois-ci pas de conflits car ils ont été résolu juste avant</li>
+</ul></li>
+<li><code>git commit -am "ajout fonctionnalité trottinette"</code></li>
+</ul></li>
+<li>L’option <code>--squash</code> permet de ne pas polluer le main avec tous les commits réalisés sur la branche <code>trottinette</code>. Si par la suite vous utilisez GitLab ou GitHub cette option se retrouve directement dans les merge ou les pull requests.</li>
 </ul></li>
 </ul>
-<pre class="mermaid"><code>classDiagram
-    class Domino{
-        +int sommet_A
-        +int sommet_B
-        +accepte(autre_domino)
-    }</code></pre>
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>
 
 
+</section>
 </section>
 </section>
 
@@ -1016,7 +1275,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git TP.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
 </div>

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année (21h)">
 
-<title>Remise à Niveau Informatique - Remise à niveau informatique</title>
+<title>Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -82,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -93,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -102,11 +134,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="./docs/sql/sql.html">
+    <a class="dropdown-item" href="../../docs/sql/sql.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/sql/DBeaver.html">
+    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
     </ul>
@@ -117,37 +149,37 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="./docs/python/python.html">
+    <a class="dropdown-item" href="../../docs/python/python.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../docs/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../docs/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../docs/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../docs/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../docs/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./docs/POO/POO.html"> 
+    <a class="nav-link" href="../../docs/POO/POO.html"> 
 <span class="menu-text">POO</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/UML/UML.html"> 
+    <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -156,15 +188,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
-    <a class="dropdown-item" href="./docs/outils/Git.html">
+    <a class="dropdown-item" href="../../docs/outils/Git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/outils/Git TP.html">
+    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
  <span class="dropdown-text">Git TP</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/outils/VSCode.html">
+    <a class="dropdown-item" href="../../docs/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Conde</span></a>
   </li>  
     </ul>
@@ -192,113 +224,268 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Remise à niveau informatique</h1>
-</div>
-
-<div>
-  <div class="description">
-    Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année (21h)
-  </div>
-</div>
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ludovic Deneuville </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="section" class="level1">
-<h1><span class="emoji" data-emoji="construction">🚧</span></h1>
-<section id="programme" class="level2">
-<h2 class="anchored" data-anchor-id="programme">Programme</h2>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="./docs/sql/sql.html">Bases de données et SQL</a> (3h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/python/python.html">Python - initiation</a> (6h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/POO/POO.html">Programmation Orientée Objet (POO)</a> (9h)</label></li>
-<li><label><input type="checkbox"><a href="./docs/UML/UML.html">UML</a> (3h)</label></li>
-<li><label><input type="checkbox">Divers outils utiles (git, markdown, R…)</label></li>
-</ul>
-</section>
-<section id="initiation-à-python" class="level2">
-<h2 class="anchored" data-anchor-id="initiation-à-python">2. Initiation à Python</h2>
-<p>Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :</p>
+<section id="introduction-à-git" class="level1">
+<h1>Introduction à Git</h1>
+<section id="arrow_forward-objectifs" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-objectifs">:arrow_forward: Objectifs</h2>
 <ul>
-<li>Ouvrez <strong>Git Bash</strong>, puis coller les commandes suivantes</li>
-<li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
-<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</li>
-</ul>
-<hr>
+<li><label><input type="checkbox">Comprendre le principe et l’utilité de Git</label></li>
+<li><label><input type="checkbox">Configurer Git</label></li>
+<li><label><input type="checkbox">Créer un compte GitLab</label></li>
+<li>puis dans le fichier Git TP :
 <ul class="task-list">
-<li><label><input type="checkbox">Lire et suivre les consignes données dans le fichier <code>Python-initiation/Python.md</code></label>
-<ul class="task-list">
-<li><label><input type="checkbox">Importer dans Jupyter les 5 notebooks, lire, puis faire les exercices</label></li>
-</ul></li>
-</ul>
-</section>
-<section id="programmation-orientée-objet" class="level2">
-<h2 class="anchored" data-anchor-id="programmation-orientée-objet">3. Programmation Orientée Objet</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Lire et suivre les consignes données dans le fichier <code>Python-POO/La POO.md</code></label></li>
-<li><label><input type="checkbox">Faire les exercices</label></li>
-</ul>
-</section>
-<section id="uml" class="level2">
-<h2 class="anchored" data-anchor-id="uml">4. UML</h2>
-<p>Lire dans cet ordre les fichiers du dossier <code>UML</code> :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>UML.md</code></label></li>
-<li><label><input type="checkbox"><code>Diag cas utilisation.md</code></label></li>
-<li><label><input type="checkbox"><code>Diag classe.md</code></label>
-<ul class="task-list">
-<li><label><input type="checkbox">faire l’exercice</label></li>
+<li><label><input type="checkbox">Manipuler avec les commandes de base (clone, status, add, commit, pull, push)</label></li>
+<li><label><input type="checkbox">Gérer un conflit</label></li>
 </ul></li>
 </ul>
 <hr>
+<section id="small_orange_diamond-ressources" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-ressources">:small_orange_diamond: Ressources</h3>
+<ul>
+<li><a href="https://github.com/InseeFrLab/formation-git" class="uri">https://github.com/InseeFrLab/formation-git</a></li>
+<li><a href="https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R" class="uri">https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R</a></li>
+</ul>
+<hr>
 </section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
-<section id="vidéos-de-la-session-2022-2023" class="level3">
-<h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">1. Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354</p>
 </section>
-<section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
-<h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">2. Cours en ligne pour apprendre Python et SQL</h3>
+<section id="arrow_forward-git-présentation" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-git-présentation">:arrow_forward: Git présentation</h2>
+<section id="small_orange_diamond-git-ça-sert-à-quoi" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-git-ça-sert-à-quoi">:small_orange_diamond: Git, ça sert à quoi ?</h3>
 <ul>
-<li>SQL
+<li>Git
 <ul>
-<li>https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql</li>
+<li>Logiciel de gestion de versions</li>
+<li>Logiciel libre</li>
+<li>créé par Linus Torvalds, qui n’est pas n’importe qui : également créateur du noyau Linux</li>
 </ul></li>
-<li>Python
+<li>Git Bash
 <ul>
-<li>https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content
-<ul>
-<li>parties 1 et 2</li>
+<li>Terminal pour écrire des commandes <strong>git</strong></li>
+<li>Possible d’ouvrir via le menu Démarrer, mais aussi inclus dans Visual Studio Code</li>
 </ul></li>
-<li>https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
+<li>GitLab / GitHub
 <ul>
-<li>parties 1 et 2</li>
-</ul></li>
+<li>Logiciel permettant de gérer des fichiers (dépôt)</li>
+<li>Partagé par plusieurs personnes</li>
+<li>S’utilise avec Git</li>
+<li>Propose d’autres fonctionnalités (wiki, gestion des incidents…)</li>
 </ul></li>
 </ul>
+</section>
+<section id="small_orange_diamond-pourquoi-utiliser-un-outil-de-gestion-de-version" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-pourquoi-utiliser-un-outil-de-gestion-de-version">:small_orange_diamond: Pourquoi utiliser un outil de gestion de version ?</h3>
+<p>Est-ce que vous préférez avoir ceci ?</p>
+<pre><code>├───Projet info
+│   ├───Livrables
+│   │   ├───Rapport.tex
+│   │   ├───Rapport_Ludo.tex
+│   │   ├───Rapport_v1.0.tex
+│   │   └───Rapport_v1.2.tex
+│   ├───Rapport_old.tex
+│   ├───Rapport_2022.05.15.tex
+│   └───Rapport_2022.05.15_new.tex</code></pre>
+<p>Ou un seul fichier avec accès à l’historique des modifications ?</p>
+<pre><code>├───Projet info
+│   └───Livrables
+│     └───Rapport.tex
+
+Historique des modifications de Rapport.tex
+Date         Heure   Auteur      Message commit
+----         -----   ------      --------------
+2022.05.29   23h58   bianca      "Version finale"
+2022.05.29   23h40   archibald   "j'avais oublié l'intro"
+2022.05.29   21h32   tryphon     "ajout partie 2"
+2022.05.29   20h25   bianca      "v1.1"
+2022.05.29   20h12   tryphon     "Création du rapport"</code></pre>
+<p>Git permet de créer des points de sauvegardes (<strong>commit</strong>). Ainsi pour chaque fichier il est possible de consulter une version précédente et éventuellement de revenir en arrière en cas d’erreur.</p>
+</section>
+<section id="small_orange_diamond-principe-général-de-git" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-principe-général-de-git">:small_orange_diamond: Principe général de Git</h3>
+<ul>
+<li>Avec Git, vous allez avoir plusieurs dépôts de fichiers
+<ul>
+<li>un dépôt commun (dépôt distant)</li>
+<li>un dépôt par contributeur (dépôts locaux)</li>
+</ul></li>
+<li>Git va aider synchroniser ces dépôts
+<ul>
+<li>la synchronisation n’est pas automatique</li>
+<li>c’est à vous de dire quand vous voulez le faire avec des commandes git</li>
+</ul></li>
+</ul>
+</section>
+<section id="small_orange_diamond-exemples" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-exemples">:small_orange_diamond: Exemples</h3>
+<section id="exemple-1" class="level4">
+<h4 class="anchored" data-anchor-id="exemple-1">Exemple 1</h4>
+<ul>
+<li>Si sur le dépôt distant, le fichier <code>soleil.txt</code> a été créé par une autre personne</li>
+<li>La commande <code>git pull</code> permet de mettre à jour son dépôt local</li>
+<li>Le fichier <code>soleil.txt</code> apparait sur votre dépôt local</li>
+</ul>
+</section>
+<section id="exemple-2" class="level4">
+<h4 class="anchored" data-anchor-id="exemple-2">Exemple 2</h4>
+<ul>
+<li>En local, vous avez créé le fichier <code>temple.py</code> et modifié le fichier <code>soleil.txt</code></li>
+<li>Faites <code>git add .</code> pour les faire reconnaitre par Git</li>
+<li>Créez un point de sauvegarde avec la commande <code>git commit</code></li>
+<li>Puis, la commande <code>git push</code> permet de partager cette nouvelle version sur le dépôt distant</li>
+<li>Sur le dépôt distant, les 2 fichiers seront créés ou mis à jour</li>
+</ul>
+<p>Pour gérer les versions, Git utilise des points de sauvegarde appelés <strong>commits</strong>. Grace à cela, il est possible de consulter les versions antérieures des fichiers.</p>
+</section>
+</section>
+<section id="small_orange_diamond-les-5-commandes-quil-faudra-retenir" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-les-5-commandes-quil-faudra-retenir">:small_orange_diamond: Les 5 commandes qu’il faudra retenir</h3>
+<ul>
+<li><strong>git status</strong> : voir où l’on en est</li>
+<li><strong>git add</strong> : ajouter de nouveaux fichiers dans le dépôt</li>
+<li><strong>git commit</strong> : créer un point de sauvegarde</li>
+<li><strong>git pull</strong> : mettre à jour son dépôt local en synchronisant avec le dépôt distant</li>
+<li><strong>git push</strong> : mettre à jour le dépôt distant avec les modifications faites en local</li>
+</ul>
+</section>
+<section id="small_orange_diamond-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant">:small_orange_diamond: Schéma simplifié des liens entre dépôt local et dépôt distant</h3>
+<p><img src="https://i.imgur.com/QsermR0.png" class="img-fluid"></p>
+<ul>
+<li>Git distingue plusieurs états de votre dépôt local mais vous pouvez considérer que les 3 dépôts de gauche forment votre dépôt local</li>
+<li>Comme visible sur le schéma la commande <code>git commit -a</code> permet de combiner les 2 commandes <code>add</code> et <code>commit</code> en une seule</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="arrow_forward-paramètrer-git" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-paramètrer-git">:arrow_forward: Paramètrer Git</h2>
+<p>:information_source: Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
+<section id="small_orange_diamond-1.-configuration-git-bash" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-1.-configuration-git-bash">:small_orange_diamond: 1. Configuration Git Bash</h3>
+<p>Git Bash est un Terminal où l’on peut écrire des commandes git.</p>
+<p>Ouvrir <strong>Git Bash</strong> et entrer une à une les commandes suivantes</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Prenom Nom"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email prenom.nom@eleve.ensai.fr</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La dernière commande permet de vérifier que les 2 attributs <code>user.name</code> et <code>user.email</code> sont bien renseignés</p>
+</section>
+<section id="small_orange_diamond-2.-clé-ssh" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-2.-clé-ssh">:small_orange_diamond: 2. Clé SSH</h3>
+<p>Afin de pouvoir faire des mises à jour sur le dépôt distant, il faut que votre machine (locale) soit reconnue. Vous devez donc fournir une clé d’authentification à GitLab.</p>
+<p>Toujours dans Git Bash, lancer une à une ces 2 commandes. La première commande permet de générer une clé publique SSH. La seconde permet de récupérer la valeur de cette clé.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">"prenom.nom@eleve.ensai.fr"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## tapez ENTREE à chaque question</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Récupérez le contenu de la clé avec l'une de ces 2 commandes</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">$HOME</span>/.ssh/id_rsa.pub </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">## ou avec</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /c/Users/idxxxx/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>La commande cat renvoie tout le contenu de ce fichier
+<ul>
+<li>En cas d’échec, vous pouvez aller dans le dossier caché <code>C:/Users/idxxxx/.ssh/</code> et ouvrir avec Notepad le fichier <code>id_rsa.pub</code></li>
+<li>si vous ne trouvez toujours pas le fichier <code>id_rsa.pub</code>, retournez voir le résultat de la commande <code>ssh-keygen</code>, il est écrit dans quel dossier la clé a été générée</li>
+</ul></li>
+<li>Sélectionner ce contenu et le copier dans notepad pour la prochaine étape</li>
+</ul>
+<section id="créez-une-copie-de-votre-clé" class="level4">
+<h4 class="anchored" data-anchor-id="créez-une-copie-de-votre-clé">Créez une copie de votre clé</h4>
+<p>Il arrive que le dossier <code>C:/Users/idxxxx/.ssh</code> soit supprimé.<br>
+Il est interessant d’avoir une copie de cette clé pour la restaurer si besoin.</p>
+<ul>
+<li><code>cp -r $HOME/.ssh /p</code> pour copier le dossier dans le disque P:</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="small_orange_diamond-3.-créer-un-compte-sur-gitlab-github-ou-autre" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-3.-créer-un-compte-sur-gitlab-github-ou-autre">:small_orange_diamond: 3. Créer un compte sur GitLab, GitHub ou autre</h3>
+<ul>
+<li><a href="https://gitlab.com/gitlab-org/gitlab">GitLab</a> est le site qui permet d’héberger le dépôt distant du code (<a href="https://gitlab.com/users/sign_up">Créer un compte</a>)</li>
+<li><a href="https://github.com/">GitHub</a></li>
+</ul>
+</section>
+<section id="small_orange_diamond-4.-déclarer-votre-clé-publique-ssh-à-gitlab" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-4.-déclarer-votre-clé-publique-ssh-à-gitlab">:small_orange_diamond: 4. Déclarer votre clé publique SSH à GitLab</h3>
+<ul>
+<li>Dans GitLab, aller dans <strong>Preferences</strong> (en haut à droite) puis dans <a href="(https://gitlab.com/-/profile/keys)">SSH Keys</a>
+<ul>
+<li>Key : coller le résultat de l’étape 2</li>
+<li>Add SSH Key</li>
+</ul></li>
+<li>Dans GitHub, aller dans Paramètres, puis <a href="(https://github.com/settings/keys)">SSH and GPG Keys</a>
+<ul>
+<li>New SSh key</li>
+<li>donnez un titre et coller dans <strong>Key</strong> le résultat de l’étape 2</li>
+</ul></li>
+</ul>
+<p>:rainbow: Bravo le paramètrage est terminé :confetti_ball:</p>
+</section>
+<section id="small_orange_diamond-5.-en-cas-derreurs" class="level3">
+<h3 class="anchored" data-anchor-id="small_orange_diamond-5.-en-cas-derreurs">:small_orange_diamond: 5. En cas d’erreurs</h3>
+<section id="the-authenticity-of-host-xxx-cant-be-established" class="level4">
+<h4 class="anchored" data-anchor-id="the-authenticity-of-host-xxx-cant-be-established">The authenticity of host xxx can’t be established</h4>
+<pre><code>The authenticity of host 'github.com (140.82.121.4)' can't be established.  
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.    
+
+Please make sure you have the correct access rights
+and the repository exists.</code></pre>
+<ol type="1">
+<li>Vérifiez que le dossier <code>C:/users/idxxxx/.ssh</code> existe et contient les fichiers <code>id_rsa</code> et <code>id_rsa.pub</code>. Si oui passer à l’étape 2.</li>
+</ol>
+<p>Si non, recopiez votre clé dans <code>C:/users/idxxxx/.ssh</code> à partir de la sauvegarde que vous avez faite dans <code>P:/.ssh</code> lors de la création de la clé. Pour automatiser ceci, vous pouvez créer un script <code>restore_ssh.bat</code> sur le bureau contenant le code ci-dessous :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="st">"source=P:\.ssh"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="st">"destination=%HOME%\.ssh"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">xcopy</span> /E /H /I /Y <span class="st">"%source%"</span> <span class="st">"%destination%"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pause</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Vérifiez que la clé <code>id_rsa.pub</code> est bien déclarée dans GitLab ou GitHub. Si le problème persiste, regénérez une nouvelle clé ssh et déclarez là dans GitHub ou GitLab.</li>
+</ol>
+<style>
+    h1{
+        color: darkblue;
+        font-family: "Calibri";
+        font-weight: bold;
+        background-color: seagreen;
+        padding-left: 10px;
+    }
+    h2{
+        color: darkblue;
+        background-color: mediumseagreen;
+        margin-right: 10%;
+        padding-left: 10px;
+    }
+    h3{
+        color: darkblue;
+        background-color: darkseagreen;
+        margin-right: 20%;
+        padding-left: 10px;
+    }
+    h4{
+        color: darkblue;
+        background-color: lightseagreen;
+        margin-right: 30%;
+        padding-left: 10px;
+    }
+    h5{
+        color: darkblue;
+        background-color: aquamarine;
+        margin-right: 40%;
+        padding-left: 10px;
+    }
+</style>
 
 
+</section>
 </section>
 </section>
 </section>
@@ -843,7 +1030,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
 </div>

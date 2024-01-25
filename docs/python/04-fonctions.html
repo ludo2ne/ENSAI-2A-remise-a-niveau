@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.538">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -212,6 +212,25 @@ window.Quarto = {
     <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Outils</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/Git.html">
+ <span class="dropdown-text">Git</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
+ <span class="dropdown-text">Git TP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/VSCode.html">
+ <span class="dropdown-text">Visual Studio Conde</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -969,7 +988,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
