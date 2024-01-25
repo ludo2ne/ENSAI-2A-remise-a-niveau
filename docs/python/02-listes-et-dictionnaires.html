@@ -6,7 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Python">
+<meta name="author" content="Ludovic Deneuville">
+<meta name="description" content="Téléchargez ce notebook en cliquant sur Jupyter (en dessous de la table des matières)Importez le fichier .ipynb dans Jupyter">
 
 <title>Remise à Niveau Informatique - Listes et Dictionnaires</title>
 <style>
@@ -221,6 +222,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -276,13 +282,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Python
+    <ul>
+    <li>Téléchargez ce notebook en cliquant sur <em>Jupyter</em> (en dessous de la table des matières)</li>
+    <li>Importez le fichier .ipynb dans <a href="https://jupyther.ensai.fr/" class="external" target="_blank">Jupyter</a></li>
+    </ul>
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ludovic Deneuville </p>
+          </div>
+  </div>
     
   
     
@@ -295,12 +310,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="conteneurs" class="level1">
 <h1>Conteneurs</h1>
-<p>Il existe plusieurs structures de données en Python : * Listes (list) : collection ordonnée et modifiable d’éléments * Dictionnaires (dict) : collection non ordonnée de paires <strong>clé-valeur</strong> * Ensembles (set) : collection non ordonnée d’éléments <strong>uniques</strong> * Tuples (tuple) : collection ordonnée et immuable d’éléments</p>
+<p>Il existe plusieurs structures de données en Python :</p>
+<ul>
+<li>Listes (list) : collection ordonnée et modifiable d’éléments</li>
+<li>Dictionnaires (dict) : collection non ordonnée de paires <strong>clé-valeur</strong></li>
+<li>Ensembles (set) : collection non ordonnée d’éléments <strong>uniques</strong></li>
+<li>Tuples (tuple) : collection ordonnée et immuable d’éléments</li>
+</ul>
 <p>Nous allons ici nous concentrer sur les deux structures les plus courantes : les <strong>listes</strong> et les <strong>dictionnaires</strong></p>
 </section>
 <section id="listes" class="level1">
 <h1>Listes</h1>
-<p>Propriétés des listes Python : * <strong>Indexation</strong> : Les éléments d’une liste sont indexés, ce qui signifie qu’ils peuvent être accédés en utilisant leur position dans la liste. L’index du premier élément est 0, et l’index du dernier élément est len(liste) - 1. * <strong>Mutable</strong> : Les listes sont des objets mutables, ce qui signifie que vous pouvez modifier leurs éléments. Vous pouvez ajouter, supprimer ou modifier des éléments. * <strong>Hétérogénéité</strong> : Les listes peuvent contenir des éléments de différents types de données : entiers, chaînes de caractères, booléens, voire d’autres listes. * <strong>Longueur variable</strong> : Les listes peuvent contenir un nombre variable d’éléments. Elles peuvent être vides (sans éléments) ou contenir un nombre illimité d’éléments.</p>
+<p>Propriétés des listes Python :</p>
+<ul>
+<li><strong>Indexation</strong> : Les éléments d’une liste sont indexés, ce qui signifie qu’ils peuvent être accédés en utilisant leur position dans la liste. L’index du premier élément est 0, et l’index du dernier élément est len(liste) - 1.</li>
+<li><strong>Mutable</strong> : Les listes sont des objets mutables, ce qui signifie que vous pouvez modifier leurs éléments. Vous pouvez ajouter, supprimer ou modifier des éléments.</li>
+<li><strong>Hétérogénéité</strong> : Les listes peuvent contenir des éléments de différents types de données : entiers, chaînes de caractères, booléens, voire d’autres listes.</li>
+<li><strong>Longueur variable</strong> : Les listes peuvent contenir un nombre variable d’éléments. Elles peuvent être vides (sans éléments) ou contenir un nombre illimité d’éléments.</li>
+</ul>
 <section id="créer-une-liste" class="level2">
 <h2 class="anchored" data-anchor-id="créer-une-liste">Créer une liste</h2>
 <div id="03322cfa" class="cell" data-execution_count="2">
@@ -492,7 +519,13 @@ Après : [22, 29, 35, 56]</code></pre>
 </section>
 <section id="copier-une-liste" class="level2">
 <h2 class="anchored" data-anchor-id="copier-une-liste">Copier une liste</h2>
-<p>Observez, puis exécutez le code ci-dessous, il contient les instructions suivantes : - création de la variable <strong>liste</strong> - création de la variable <strong>copie</strong> - suppression du dernier élément de <strong>copie</strong> - affichage de <strong>liste</strong></p>
+<p>Observez, puis exécutez le code ci-dessous, il contient les instructions suivantes :</p>
+<ul>
+<li>création de la variable <strong>liste</strong></li>
+<li>création de la variable <strong>copie</strong></li>
+<li>suppression du dernier élément de <strong>copie</strong></li>
+<li>affichage de <strong>liste</strong></li>
+</ul>
 <div id="7659abd5-e14c-4ae3-adf2-88b1fd953336" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste</span>
@@ -527,7 +560,14 @@ Pourtant la variable <strong>liste2</strong> n’est pas une copie de <strong>li
 </section>
 <section id="dictionnaires" class="level1">
 <h1>Dictionnaires</h1>
-<p>Propriétés importantes d’un dictionnaire en Python : * <strong>Indexation par clé</strong> : Les éléments d’un dictionnaire sont indexés par des clés plutôt que par des positions. <strong>Chaque clé doit être unique</strong> dans le dictionnaire, et elle est associée à une valeur correspondante. La recherche d’une valeur associée à une clé est très rapide. * <strong>Mutable</strong> : Les dictionnaires sont des objets mutables, ce qui signifie que vous pouvez ajouter, supprimer ou modifier des éléments du dictionnaire après sa création. * <strong>Hétérogénéité</strong> : Les dictionnaires peuvent contenir des paires clé-valeur avec des types de données différents. Les clés peuvent être de types immuables tels que les chaînes de caractères, les entiers… Les valeurs peuvent être de n’importe quel type de données valide en Python. * <strong>Longueur variable</strong> : Les dictionnaires peuvent contenir un nombre variable de paires clé-valeur. Ils peuvent être vides (sans paires clé-valeur) ou contenir un nombre illimité de paires. * <strong>Non ordonné</strong> : Contrairement aux listes, les éléments d’un dictionnaire n’ont pas d’ordre défini. L’ordre dans lequel les paires clé-valeur sont stockées n’est pas garanti et peut changer lors des opérations de modification du dictionnaire.</p>
+<p>Propriétés importantes d’un dictionnaire en Python :</p>
+<ul>
+<li><strong>Indexation par clé</strong> : Les éléments d’un dictionnaire sont indexés par des clés plutôt que par des positions. <strong>Chaque clé doit être unique</strong> dans le dictionnaire, et elle est associée à une valeur correspondante. La recherche d’une valeur associée à une clé est très rapide.</li>
+<li><strong>Mutable</strong> : Les dictionnaires sont des objets mutables, ce qui signifie que vous pouvez ajouter, supprimer ou modifier des éléments du dictionnaire après sa création.</li>
+<li><strong>Hétérogénéité</strong> : Les dictionnaires peuvent contenir des paires clé-valeur avec des types de données différents. Les clés peuvent être de types immuables tels que les chaînes de caractères, les entiers… Les valeurs peuvent être de n’importe quel type de données valide en Python.</li>
+<li><strong>Longueur variable</strong> : Les dictionnaires peuvent contenir un nombre variable de paires clé-valeur. Ils peuvent être vides (sans paires clé-valeur) ou contenir un nombre illimité de paires.</li>
+<li><strong>Non ordonné</strong> : Contrairement aux listes, les éléments d’un dictionnaire n’ont pas d’ordre défini. L’ordre dans lequel les paires clé-valeur sont stockées n’est pas garanti et peut changer lors des opérations de modification du dictionnaire.</li>
+</ul>
 <section id="créer-un-dictionnaire" class="level2">
 <h2 class="anchored" data-anchor-id="créer-un-dictionnaire">Créer un dictionnaire</h2>
 <div id="a3a5d37f-e699-4647-85ec-919dd76b9e18" class="cell" data-execution_count="44">
@@ -621,7 +661,12 @@ Pourtant la variable <strong>liste2</strong> n’est pas une copie de <strong>li
 <section id="les-types-vide" class="level1">
 <h1>Les types « vide »</h1>
 <p>Maintenant que nous avons vu les listes et les dictionnaires, nous pouvons parler des types <strong>vides</strong>.<br>
-Par exemple, il est possible de créer : * une variable qui ne contient rien : <code>None</code> * une liste vide <code>[]</code> * un dictionnaire vide <code>{}</code></p>
+Par exemple, il est possible de créer :</p>
+<ul>
+<li>une variable qui ne contient rien : <code>None</code></li>
+<li>une liste vide <code>[]</code></li>
+<li>un dictionnaire vide <code>{}</code></li>
+</ul>
 <div id="b8193ca2-1e4c-4dc3-9cda-7adfdf3af91f" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -671,7 +716,12 @@ Par exemple, testez <strong>pop()</strong> sans paramètres ou encore <strong>po
 </section>
 <section id="exercice-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
-<p>Testez le comportement des méthodes <strong>min</strong> et <strong>max</strong> sur : - sur une liste composée uniquement d’objets numériques (<code>int</code> et <code>float</code>) ; - sur une liste composée uniquement de chaînes de caractères ; - sur une liste composée d’un mélange d’objets numériques et textuels.</p>
+<p>Testez le comportement des méthodes <strong>min</strong> et <strong>max</strong> sur :</p>
+<ul>
+<li>sur une liste composée uniquement d’objets numériques (<code>int</code> et <code>float</code>) ;</li>
+<li>sur une liste composée uniquement de chaînes de caractères ;</li>
+<li>sur une liste composée d’un mélange d’objets numériques et textuels.</li>
+</ul>
 <div id="87af1e40" class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -684,8 +734,12 @@ Quel intérêt cela pourrait-il avoir ?</p>
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exercice Soit le dictionnaire suivant : <code>animaux = {'chats': 5, 'chiens': 12}</code></p>
-<p>Que vont retourner les tests d’appartenance suivants ? Vérifiez vos prédictions.<br>
-- <code>'chats' in animaux.keys()</code> - <code>'chats' in animaux.values()</code> - <code>'chats' in animaux</code></p>
+<p>Que vont retourner les tests d’appartenance suivants ? Vérifiez vos prédictions.</p>
+<ul>
+<li><code>'chats' in animaux.keys()</code></li>
+<li><code>'chats' in animaux.values()</code></li>
+<li><code>'chats' in animaux</code></li>
+</ul>
 <div id="409ba00e-f4f0-4196-a80c-66ac59db6903" class="cell">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -727,7 +781,10 @@ Affichez à l’aide d’opérations print :</p>
 </section>
 <section id="exercice-8" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-8">Exercice 8</h2>
-<p>Nettoyer cette liste pour retirer tous les doublons et ne conserver qu’une seule occurence de chaque fruit : * <code>fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']</code></p>
+<p>Nettoyer cette liste pour retirer tous les doublons et ne conserver qu’une seule occurence de chaque fruit :</p>
+<ul>
+<li><code>fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']</code></li>
+</ul>
 <p><strong>Indice</strong> : utiliser les set</p>
 <div id="9ca616d5-5292-4f68-a495-80c45c31898b" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1279,7 +1336,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ludo2ne/ENSAI-2A-Remise-a-niveau/blob/main/docs/python/02-listes-et-dictionnaires.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" class="external" target="_blank">Code source</a></p>
 </div>
   </div>
 </footer>

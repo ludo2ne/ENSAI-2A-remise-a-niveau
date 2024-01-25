@@ -188,6 +188,11 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -361,7 +366,19 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <blockquote class="blockquote">
 <p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <span class="citation" data-cites="abstractmethod">@abstractmethod</span> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
 </blockquote>
-<p><span class="emoji" data-emoji="warning">⚠️</span> classe mère ne veut pas dire forcément classe abstraite</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>classe mère ne veut pas dire forcément classe abstraite</p>
+</div>
+</div>
 <p>Exemple :</p>
 <ul>
 <li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
@@ -378,7 +395,7 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <ul>
 <li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
 <li>Suivez les consignes données dans le fichier de <a href="../../docs/outils/VSCode.html">paramétrage et d’utilisation de VSCode</a></li>
-<li>Dans <code>Python-POO/exercices</code>, créez les 2 dossiers suivants :
+<li>Dans <code>src/Python-POO/exercices</code>, créez les 2 dossiers suivants :
 <ul>
 <li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
 <li><code>domino</code> pour l’exercice 3</li>
@@ -1026,7 +1043,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" class="external" target="_blank">Code source</a></p>
 </div>
   </div>
 </footer>

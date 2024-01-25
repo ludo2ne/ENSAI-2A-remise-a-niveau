@@ -222,6 +222,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -418,7 +423,7 @@ Date         Heure   Auteur      Message commit
 </section>
 <section id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="level3" data-number="1.6">
 <h3 data-number="1.6" class="anchored" data-anchor-id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant"><span class="header-section-number">1.6</span> Schéma simplifié des liens entre dépôt local et dépôt distant</h3>
-<p><img src="https://i.imgur.com/QsermR0.png" class="img-fluid"></p>
+<p><img src="img/git-repo.png" class="img-fluid"></p>
 <ul>
 <li>Git distingue plusieurs états de votre dépôt local mais vous pouvez considérer que les 3 dépôts de gauche forment votre dépôt local</li>
 <li>Comme visible sur le schéma la commande <code>git commit -a</code> permet de combiner les 2 commandes <code>add</code> et <code>commit</code> en une seule</li>
@@ -428,7 +433,19 @@ Date         Heure   Auteur      Message commit
 </section>
 <section id="paramètrer-git" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="paramètrer-git"><span class="header-section-number">2</span> Paramètrer Git</h2>
-<p><span class="emoji" data-emoji="information_source">ℹ️</span> Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
+</div>
+</div>
 <section id="configuration-git-bash" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="configuration-git-bash"><span class="header-section-number">2.1</span> Configuration Git Bash</h3>
 <p>Git Bash est un Terminal où l’on peut écrire des commandes git.</p>
@@ -471,19 +488,19 @@ Il est interessant d’avoir une copie de cette clé pour la restaurer si besoin
 <section id="créer-un-compte-sur-gitlab-github-ou-autre" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="créer-un-compte-sur-gitlab-github-ou-autre"><span class="header-section-number">2.3</span> Créer un compte sur GitLab, GitHub ou autre</h3>
 <ul>
-<li><a href="https://gitlab.com/gitlab-org/gitlab">GitLab</a> est le site qui permet d’héberger le dépôt distant du code (<a href="https://gitlab.com/users/sign_up">Créer un compte</a>)</li>
-<li><a href="https://github.com/">GitHub</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab" class="external" target="blank">GitLab</a> est le site qui permet d’héberger le dépôt distant du code (<a href="https://gitlab.com/users/sign_up" class="external" target="blank">Créer un compte</a> )</li>
+<li><a href="https://github.com/" class="external" target="blank">GitHub</a></li>
 </ul>
 </section>
 <section id="déclarer-votre-clé-publique-ssh-à-gitlab" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="déclarer-votre-clé-publique-ssh-à-gitlab"><span class="header-section-number">2.4</span> Déclarer votre clé publique SSH à GitLab</h3>
 <ul>
-<li>Dans GitLab, aller dans <code>Preferences</code> (en haut à droite) puis dans <a href="(https://gitlab.com/-/profile/keys)">SSH Keys</a>
+<li>Dans GitLab, aller dans <code>Preferences</code> (en haut à droite) puis dans <a href="https://gitlab.com/-/profile/keys" class="external" target="blank">SSH Keys</a>
 <ul>
 <li>Key : coller le résultat de l’étape 2</li>
 <li>Add SSH Key</li>
 </ul></li>
-<li>Dans GitHub, aller dans Paramètres, puis <a href="(https://github.com/settings/keys)">SSH and GPG Keys</a>
+<li>Dans GitHub, aller dans Paramètres, puis <a href="https://github.com/settings/keys" class="external" target="blank">SSH and GPG Keys</a>
 <ul>
 <li>New SSh key</li>
 <li>donnez un titre et coller dans <code>Key</code> le résultat de l’étape 2</li>
@@ -1064,7 +1081,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" target="_blank">Quarto</a><br> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" target="_blank">Source code</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" class="external" target="_blank">Code source</a></p>
 </div>
   </div>
 </footer>
