@@ -1,0 +1,396 @@
+---
+title: Les fonctions
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Avant de commencer {.unnumbered}
+
+- Téléchargez ce [notebook Jupyter](04-fonctions.ipynb){target="_blank"}
+- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+
+
+## Fonctions
+
+L'idée d'une fonction est de regrouper ensemble des morceaux de codes qui pourraient être utilisés à plusieurs endroits de votre programme.  
+Utiliser des fonctions est une bonne pratique :
+
+- cela réduit la duplication du code
+- cela permet de mieux structurer le code et le rendre plus clair
+
+Une fonction est composée de : 
+
+- un ensemble de paramètres
+- des instructions qui utilisent les paramètres
+- retourne ou affiche un résultat
+
+Le mot clé **def** sert à définir une fonction.   
+Voici un exemple de fonction : 
+
+- Nom de la fonction : ma_fonction
+- Paramètres : 2 paramètres p1 et p2
+- Sortie : résultat de l'opération p1 x p2 + p1 + 5
+
+```{python}
+def ma_fonction(p1, p2):
+    resultat = p1 * p2 + p1 + 5
+    return resultat
+```
+
+Maintenant que notre fonction est définie, nous pouvons l'appeler autant de fois que nous le souhaitons
+
+```{python}
+ma_fonction(2, 6)
+```
+
+```{python}
+ma_fonction(5, 1) + ma_fonction(8, 2)
+```
+
+### Arguments
+
+Les **arguments** sont les paramètres de la fonction.  
+Lorsqu'on appelle une fonction en lui spécifiant des arguments, on dit qu'on lui  « passe » des arguments.  
+Ces arguments deviennent alors des **variables** qui peuvent être utilisées uniquement à l'intérieur de la fonction.  
+
+```{python}
+def maximum(a, b):
+    if a > b:
+        resultat = a
+    else:
+        resultat = b
+    return resultat
+```
+
+```{python}
+maximum(1, 5)
+```
+
+À l'extérieur des fonctions, les arguments n'existent plus et ne sont plus connus.
+
+```{python}
+a
+```
+
+#### Passage par position et passage par mot-clé
+
+En Python, les fonctions admettent deux modes de passage des arguments : 
+
+- le **passage par position** : les arguments sont passés dans l'ordre dans lequel ils ont été définis
+- le **passage par mot-clé** : on précise le nom du paramètre lors du passage de l'argument
+
+Illustrons cette différence à partir d'une fonction qui réalise simplement une division.
+
+```{python}
+def division(x, y):
+    if y == 0:
+        print("ERREUR : Division par 0 impossible")
+    else:
+        return x / y
+```
+
+```{python}
+# Passage par position
+division(8, 2)  
+```
+
+```{python}
+# Passage par mot-clé
+division(x=8, y=2)  
+```
+
+Dans le cas du passage par position, le respect de l'ordre est impératif.
+
+```{python}
+print(division(0, 5))
+print(division(5, 0))
+```
+
+Nous remarquons que s'affiche **None** ci-dessus.  
+L'explication est que lorsque l'on passe dans la partie de code `if y == 0`, il n'y a pas de **return**.  
+Donc par défaut la méthode renvoie **None**, ce qui représente l'absence de valeur.
+
+Dans le cas du passage par mot-clé, l'ordre n'a plus d'importance.
+
+```{python}
+print(division(x=0, y=5))
+print(division(y=5, x=0))
+```
+
+#### Arguments obligatoires et arguments optionnels
+
+Lorsqu'on définit une fonction, il est fréquent de vouloir faire cohabiter : 
+
+- des arguments que doit absolument spécifier l'utilisateur
+- des arguments optionnels qui spécifient un comportement par défaut de la fonction, mais peuvent également être modifiés si nécessaire
+
+Regardons par exemple comment on peut modifier le comportement de la fonction `print` à l'aide d'un argument optionnel.
+
+```{python}
+print("salut")
+print("salut")
+```
+
+```{python}
+print("salut", end=' ')
+print("salut")
+```
+
+Nous avons modifié le comportement du premier appel à **print** via le paramètre optionnel **end**.  
+Par défaut, cette valeur est fixée à `'\n'`, soit un retour à la ligne.  
+Nous l'avons modifié dans la deuxième cellule à un espace, d'où la différence de résultat.  
+  
+Nous allons maintenant créer une fonction avec un argument optionnel.  
+Pour expliquer le comportement de cette méthode, une documentation a été ajoutée entre les caractères `'''`.
+
+```{python}
+def note_finale(note1, note2, bonus=0):
+    '''Fonction d'ajout de 2 notes
+    Parameters
+    ----------
+        note1 : float
+            la première note
+        note2 : float
+            la deuxième note
+        bonus : float
+            un bonus (optionnel, par défaut égal à 0)
+    Returns
+    -------
+        float : sommes des 2 notes et du bonus
+    '''
+    return note1 + note2 + bonus
+```
+
+```{python}
+# Comportement par défaut (bonus=0)
+note_finale(8.5, 7)  
+```
+
+```{python}
+# Comportement modifié
+note_finale(8.5, 7, bonus = 2)  
+```
+
+#### Bonus : nombre d'arguments variable
+
+- La notation `*args` permet à une fonction de recevoir un nombre variable d'arguments positionnels
+- La notation `**kwargs` permet à une fonction de recevoir un nombre variable d'arguments clé-valeur
+
+```{python}
+# Exemple d'utilisation de args
+
+def moyenne(*args):
+    somme = 0
+    nb = 0
+    for a in args:
+        somme += a
+        nb += 1
+    print(f"Moyenne de {args} : {somme / nb}")
+
+moyenne(10, 15)
+moyenne(8, 20, 16, 12)
+```
+
+```{python}
+# Exemple d'utilisation de kwargs
+
+def recette(**kwargs):
+    for a in kwargs:
+        # get argument name
+        arg_name = a
+        # get argument value
+        arg_value = kwargs[arg_name]
+        print(arg_name, " = ", arg_value)
+    
+    
+recette(tomate=2, farine="100g", sel=True)
+```
+
+### Résultats
+
+#### Principe
+
+On a vu :
+
+- que toute fonction renvoie un résultat en sortie
+- que l'instruction `return` permet de spécifier ce résultat
+
+Lorsque la fonction est appelée, elle est évaluée à la valeur spécifiée par `return`, et cette valeur peut alors être récupérée dans une variable et utilisée dans des calculs ultérieurs, et ainsi de suite.
+
+```{python}
+def division(x, y):
+    return x / y
+```
+
+```{python}
+a = division(4, 2)
+b = division(9, 3)
+division(a, b)  # 2 / 3
+```
+
+**Remarque importante** : lorsqu'une instruction return est atteinte dans une fonction, le reste de la fonction n'est pas exécuté.
+
+```{python}
+def test(x):
+    return x
+    print("vais-je être affiché ?")
+    
+test(3)
+```
+
+#### Renvoyer plusieurs résultats
+
+Une fonction renvoie par définition **un** résultat, qui peut être tout objet Python. Comment faire si l'on souhaite renvoyer plusieurs résultats ? On peut simplement enregistrer les différents résultats dans un conteneur (liste, tuple, dictionnaire, etc.), qui peut lui contenir un grand nombre d'objets.
+
+```{python}
+def calculs_mathematiques(a, b):
+    somme = a + b
+    difference = a - b
+    produit = a * b
+    return somme, difference, produit
+
+resultats = calculs_mathematiques(10, 5)
+
+print(resultats)
+type(resultats)
+```
+
+Par défaut, les retours multiples sont des **tuples**.  
+Mais il est également possible de retourner une liste ou un dictionnaire.
+
+```{python}
+def puissance_liste(a):
+    return [a**2, a**3]
+
+puissance_liste(4)
+```
+
+```{python}
+def puissance_dico(nombre):
+    carre = nombre ** 2
+    cube = nombre ** 3
+    return {"carre": a**2, "cube": a**3}
+
+puissance_dico(4)
+```
+
+### Lambda fonctions
+
+Il existe une autre manière concise de définir une fonction simple, la **lambda** fonction.
+
+```{python}
+carre = lambda x: x**2
+
+carre(6)
+```
+
+---
+
+## Exercices
+
+### Exercice 1
+
+Créer une fonction `puissance` qui prend en entrée deux nombres `x` et `y` et renvoie la fonction puissance $x^y$.
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 2
+
+Écrire une fonction `statistiques_descriptives` qui :
+
+- prend en entrée une liste de nombre
+- renvoie la moyenne et la variance
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 3
+
+Écrire une fonction `est_pair` qui :
+
+- prend en entrée un paramètre
+- retourne un booléen pour dire si ce paramètre est pair
+
+Ajouter un test pour vérifier que le paramètre est un entier.
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 4
+
+Écrire une fonction qui :
+
+- prend en entrée une liste d'éléments quelconques
+- renvoie une nouvelle liste constituée des éléments uniques de la liste initiale
+- permet via un paramètre optionnel de trier ou non la liste finale par ordre alphanumérique (le comportement par défaut est de ne pas trier).
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 5
+
+Les fonctions récursives sont des fonctions qui s'appellent elles-mêmes dans le corps de la fonction, ce qui entraîne des appels infinis jusqu'à atteindre un critère d'arrêt (voir exemple du triangle de Pascal ci-dessous).
+
+Coder de manière récursive la fonction **factoriel**.
+
+```{python}
+def triangle_pascal(n):
+    if n == 0:
+        return [[1]]                                          # Condition d'arrêt
+    else:
+        triangle = triangle_pascal(n - 1)                     # Appel récursif pour obtenir les lignes précédentes
+        prev_row = triangle[-1]                               # Récupérer la dernière ligne générée
+        new_row = [1]                                         # Premier élément de la nouvelle ligne
+        # Calculer les éléments de la nouvelle ligne
+        for i in range(len(prev_row) - 1):
+            new_row.append(prev_row[i] + prev_row[i + 1])  
+        new_row.append(1)                                     # Dernier élément de la nouvelle ligne
+        triangle.append(new_row)                              # Ajouter la nouvelle ligne au triangle
+        return triangle
+
+print('\n'.join(['\t'.join(map(str, row)) for row in triangle_pascal(10)]))
+```
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 6
+
+Écrire une fonction `appliquer_fonction_liste` qui :
+
+- prend en paramètre :
+    - une liste d'entiers
+    - une fonction
+- retourne la liste à laquelle on a appliqué la fonction
+
+Exemple :  
+appliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2) -> [1, 4, 9, 16]
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+
+

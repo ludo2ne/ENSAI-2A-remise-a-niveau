@@ -1,0 +1,368 @@
+---
+title: Introduction à la POO
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Avant de commencer {.unnumbered}
+
+- Téléchargez ce [notebook Jupyter](05-POO-introduction.ipynb){target="_blank"}
+- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+
+
+## La programmation orientée objet
+
+La Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d'**objets**, qui contiennent :
+
+- des **attributs** (caractéristiques de l'objet)
+- des **méthodes** (fonctions propres à l'objet)
+
+En Python, il est possible mais pas obligatoire d'utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.
+
+### « Tout est objet »
+
+**En Python, tout est un objet** (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.
+
+```{python}
+print(type(1))
+print(type("bonjour"))
+print(type([]))
+print(type({}))          
+print(type(lambda x: x**2))
+```
+
+### Définir ses propres objets
+
+Pour créer un **objet**, nous avons besoin dans un premier temps d'un modèle : une **classe**.   
+Nous pouvons voir la classe comme un « *moule* » qui permettra ensuite de construire des objets.   
+Par exemple, nous créons une classe `Velo` dont voici la documentation :
+```python
+    """
+    Classe représentant un vélo.
+
+    Attributs:
+        couleur (str): La couleur du vélo.
+        vitesse (int): La vitesse actuelle du vélo.
+        porte_bagage (bool): Indique si le vélo a un porte-bagage.
+
+    Méthodes:
+        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo 
+        __str__(): représentation en chaîne de caractères d'un objet Velo
+        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.
+        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.
+        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.
+        est_arrete(): Vérifie si le vélo est complètement arrêté.
+
+    """
+```
+
+```{python}
+class Velo:
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self.vitesse = 0
+        self.porte_bagage = porte_bagage
+        
+    def __str__(self):
+        s = "Je suis un vélo " + self.couleur + "."
+        s += " Ma vitesse est de : " + str(self.vitesse) + "."
+        if self.porte_bagage:
+            s += " J'ai un porte-bagages."
+        return s
+
+    def accelerer(self, acceleration):
+        self.vitesse += acceleration
+
+    def ralentir(self, deceleration):
+        self.vitesse -= deceleration
+        if self.vitesse < 0:
+            self.vitesse = 0
+
+    def installer_porte_bagage(self):
+        self.porte_bagage = True
+            
+    def est_arrete(self):
+        return self.vitesse == 0
+```
+
+Avec cette classe nous pouvons maintenant créer des **instances** (objets) de type `Velo`
+
+```{python}
+v1 = Velo("bleu")
+print(v1)
+
+v2 = Velo("violet", True)
+print(v2)
+```
+
+```{python}
+## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo
+v1.accelerer(20)
+v1.installer_porte_bagage()
+print(v1)
+```
+
+Analysons la syntaxe de construction d'une classe d'objets :
+
+- l'instruction `class` définit la **classe d'objets**. Différents objets pourront être créés selon le modèle défini par cette classe.  
+  Par convention, le nom de la classe doit commencer par une majuscule.
+- la classe spécifie un certains nombres de fonctions que l'on appelle **méthodes** : ce sont des fonctions spécifiques à la classe d'objets définie.
+- la méthode `__init__`, est appelée le **constructeur**. Elle est **obligatoire**, sinon il est impossible d'instancier d'objets de la classe.  
+  Elle permet de définir les **attributs** attachés à cette classe d'objets.  
+  Il est possible de passer des paramètres au constructeur (ex : `couleur`) pour définir des attributs propres à une **instance** de l'objet.
+- le constructeur a un paramètre obligatoire : `self`. C'est une référence aux **instances** qui vont être créées à partir de cette classe.  
+  La syntaxe suivante définit un attribut : `self.attribut = valeur`.
+- La méthode `__str__` (facultative) permet de redéfinir la représentation en chaîne de caractères d'un objet.
+- les autres méthodes sont définies par l'utilisateur. Elles prennent également le `self` en paramètre, pour accéder aux attributs et méthodes.     
+  Comme ce sont des fonctions, elles peuvent également admettre d'autres paramètres.
+
+### Attributs
+
+Un attribut est une **variable associée à un objet**. Un attribut peut contenir n'importe quel objet Python.
+
+#### Accéder aux attributs
+
+Une fois que l'objet est instancié, il est possible d'accéder à ses attributs. La syntaxe est simple : `instance.attribut`.
+
+```{python}
+print(v1.couleur)
+print(v2.couleur)
+print()
+print(v1.vitesse)
+print(v2.vitesse)
+```
+
+On voit bien que les deux instances sont **autonomes** : bien qu'elles soient du même type, leurs attributs diffèrent.
+
+#### Modifier un attribut
+
+Modifier un attribut d'une instance est très simple, la syntaxe est : `instance.attribut = nouvelle_valeur`.
+
+```{python}
+v2.couleur = "jaune"
+print(v2.couleur)
+```
+
+#### Attributs de classe
+
+Chaque instance de `Velo` a ses propres attributs d'instance (couleur, vitesse, porte_bagage).   
+Il est possible d'avoir des attributs communs à tous les Velos : **les attributs de classe**.  
+  
+Créons la classe `VeloBis` pour illustrer avec un attribut comptant le nombre de `VeloBis` créés.
+
+```{python}
+class VeloBis:
+    nb_velos_bis = 0                                       # Attribut de classe pour compter le nombre de VeloBis
+
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self.vitesse = 0
+        self.porte_bagage = porte_bagage
+        VeloBis.nb_velos_bis += 1
+```
+
+```{python}
+print(VeloBis.nb_velos_bis)
+vb1 = VeloBis("rose")
+print(VeloBis.nb_velos_bis)
+vb2 = VeloBis("orange")
+print(VeloBis.nb_velos_bis)
+```
+
+### Méthodes
+
+Une méthode est une **fonction associée à un objet**. Elle peut utiliser ses attributs, les modifier, et faire intervenir d'autres méthodes de l'objet.
+
+#### Appeler une méthode
+
+La syntaxe pour appeler une méthode d'un objet instancié est la suivante : `instance.methode(parametres)`.
+
+```{python}
+v1.est_arrete()
+```
+
+**Remarque** : les méthodes n'ont pas d'existence propre en dehors de l'objet.  
+Nous ne pouvons pas appeler la méthode `est_arrete()` seule, cela n'a pas de sens.
+
+```{python}
+est_arrete()
+```
+
+**Remarque 2** : 
+
+- le 1er paramètre de chaque méthode d'instance est toujours `self` pour faire référence à l'objet lui même
+- lors des appels aux méthodes, on ne spécifie pas ce paramètre `self`
+
+#### Agir sur les attributs
+
+Tout l'intérêt des méthodes est qu'elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.  
+Par exemple :
+
+- si l'on n'utilise pas les méthodes `accelerer` et `decelerer`, il est possible de se retrouver avec une vitesse négative
+
+```{python}
+v1.vitesse = -10
+print(v1)
+```
+
+Modifier directement un attribut de cette manière est une mauvaise pratique car on n'effectue aucun contrôle sur ce qui est saisi.  
+Il est possible d'aller encore plus loin :
+
+```{python}
+v1.vitesse = "Jean-Michel"
+print(v1)
+```
+
+En utilisant les **méthodes**, cela évite de se retrouver dans des situations absurdes ou incohérentes.  
+
+```{python}
+v1 = Velo("Bleu")
+v1.accelerer(10)
+print(v1)
+v1.ralentir(20)
+print(v1)
+```
+
+### Bonus : la classe Property
+
+Pour écarter tout problème, une solution intéressante est d'utiliser la classe [**property**](https://python.sdv.univ-paris-diderot.fr/19_avoir_la_classe_avec_les_objets/#1952-la-solution-la-classe-property).  
+Cette classe property permet sans changer la syntaxe d'accès aux attributs d'appeler des mutateurs.
+
+```{python}
+class Velo:
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self._vitesse = 0                                    # Attribut privé pour stocker la vitesse
+        self.porte_bagage = porte_bagage
+
+    def __str__(self):
+        s = "Je suis un vélo " + self.couleur + "."
+        s += " Ma vitesse est de : " + str(self.vitesse) + "."
+        if self.porte_bagage:
+            s += " J'ai un porte-bagages."
+        return s
+
+    @property
+    def vitesse(self):
+        return self._vitesse
+
+    @vitesse.setter
+    def vitesse(self, nouvelle_vitesse):
+        if nouvelle_vitesse >= 0:
+            self._vitesse = nouvelle_vitesse
+        else:
+            raise ValueError("La vitesse doit être un nombre positif.")
+
+    def installer_porte_bagage(self):
+        self.porte_bagage = True
+
+    def est_arrete(self):
+        return self.vitesse == 0
+```
+
+```{python}
+v3 = Velo("noir")
+print(v3)
+v3.vitesse = 10
+print(v3)
+v3.vitesse = -20
+print(v3)
+```
+
+---
+
+## Bonnes pratiques
+
+Pour conclure cette introduction au langage Python, voici une liste de bonnes pratiques généralement suivies par les développeurs.  
+Le respect de ces pratiques est fortement recommandé et vous aidera à mieux coder.
+
+### Convention de nommage
+
+- variables
+  - donner des noms explicites (éviter les `toto`, `var1` ...)
+  - en minuscules avec des mots séparés par des underscores (snake_case)
+    - exception pour les variables **constantes** : utiliser des MAJUSCULES avec des mots séparés par des underscores
+  - cela permet d'avoir un code plus lisible pour vous même et pour les autres
+- fonctions et méthodes
+  - idem que pour les variables
+- classes
+  - utiliser le **camelCase** : chaque mot commence par une Majuscule.
+  - ex : `VeloElectrique`
+
+### Indenter correctement le code
+
+Utilisez une indentation de 4 espaces pour chaque niveau d'indentation.  
+L'indentation correcte est essentielle en Python, car elle détermine la structure du code.
+
+### Ajouter des commentaires pertinents
+
+Dès qu'il y a un peu de complexité, commentez votre code pour expliquer son fonctionnement.  
+Ajoutez des docstrings aux fonctions, classes et modules pour expliquer leur fonctionnement, leurs paramètres et leurs valeurs de retour.
+
+---
+
+## Exercices
+
+### Exercice 1
+
+Créez une classe `Etudiant` avec les attributs :
+
+- nom
+- age
+- liste_notes
+
+Avec les méthodes :
+
+- __init__() : constructeur
+- ajouter_note() : pour ajouter une nouvelle note à la liste
+- calculer_moyenne() : calculer la moyenne des notes
+
+```{python}
+## Testez votre réponse dans cette cellule
+```
+
+### Exercice 2
+
+Créer une classe `Point` qui représente les coordonnées d'un point en 2D.  
+Ajouter une méthode distance(autre_point) qui calcule la distance avec un autre point.  
+
+Créez une classe `Cercle` avec les attributs centre (de la classe Point) et rayon.   
+Ajoutez une méthode calculer_surface() qui renvoie la surface du cercle.
+
+```{python}
+## Testez votre réponse dans cette cellule
+```
+
+### Exercice 3
+
+Créez une classe CompteBancaire avec les attributs suivants :
+
+- titulaire : le nom du titulaire du compte (chaîne de caractères)
+- solde : le solde du compte (nombre réel)
+
+La classe devra avoir les méthodes suivantes :
+
+- `__init__(self, titulaire)` : le constructeur de la classe
+- `deposer(self, montant)` : une méthode qui permet de déposer un montant sur le compte. Le montant devra être ajouté au solde
+- `retirer(self, montant)` : une méthode qui permet de retirer un montant du compte. Le montant devra être soustrait du solde
+- `afficher_solde(self)` : une méthode qui affiche le solde du compte
+- `transferer(autreCompte, montant)` qui transfère de l'argent du compte vers l'autre si le solde est suffisant
+    
+Créer 2 Comptes et tester les différentes fonctionnalités.
+
+```{python}
+## Testez votre réponse dans cette cellule
+```
+

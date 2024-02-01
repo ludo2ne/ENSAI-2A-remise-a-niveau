@@ -11,14 +11,14 @@ class Triangle(Polygone):
         else:
             print("Vous n'avez pas le bon nombre de points")
 
-    def aire(self):
+    def aire(self) -> float:
         a = self.points[0].distance(self.points[1])
         b = self.points[0].distance(self.points[2])
         c = self.points[1].distance(self.points[2])
         p = (a + b + c) / 2
         return math.sqrt(p * (p - a) * (p - b) * (p - c))
 
-    def perimetre(self):
+    def perimetre(self) -> float:
         s = self.points[0].distance(self.points[1])
         s += self.points[0].distance(self.points[2])
         s += self.points[1].distance(self.points[2])

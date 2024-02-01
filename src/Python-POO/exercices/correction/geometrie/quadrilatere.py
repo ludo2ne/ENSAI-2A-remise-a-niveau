@@ -10,7 +10,7 @@ class Quadrilatere(Polygone):
         else:
             print("Vous n'avez pas le bon nombre de points")
 
-    def aire(self):
+    def aire(self) -> float:
         p0 = self.points[0]
         p1 = self.points[1]
         p2 = self.points[2]
@@ -18,7 +18,7 @@ class Quadrilatere(Polygone):
 
         return Triangle([p0, p1, p2]).aire() + Triangle([p0, p2, p3]).aire()
 
-    def perimetre(self):
+    def perimetre(self) -> float:
         s = self.points[0].distance(self.points[1])
         s += self.points[1].distance(self.points[2])
         s += self.points[2].distance(self.points[3])

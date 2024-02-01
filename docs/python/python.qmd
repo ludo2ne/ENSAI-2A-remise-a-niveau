@@ -64,11 +64,11 @@ python -c 'import platform; print(platform.python_implementation())'
 
 Pour découvrir Python, nous allons commencer par coder dans des Notebooks :
 
-- [ ] [Les types et variables](01-types-et-variables.ipynb)
-- [ ] [Les listes et dictionnaires](02-listes-et-dictionnaires.ipynb)
-- [ ] [Les boucles](03-tests-et-boucles.ipynb)
-- [ ] [Les fonctions](04-fonctions.ipynb)
-- [ ] [Introduction à la Programmation Orientée Objet](05-POO-introduction.ipynb)
+- [ ] [Les types et variables](01-types-et-variables.qmd)
+- [ ] [Les listes et dictionnaires](02-listes-et-dictionnaires.qmd)
+- [ ] [Les boucles](03-tests-et-boucles.qmd)
+- [ ] [Les fonctions](04-fonctions.qmd)
+- [ ] [Introduction à la Programmation Orientée Objet](05-POO-introduction.qmd)
 
 
 Pour utiliser les Notebooks :

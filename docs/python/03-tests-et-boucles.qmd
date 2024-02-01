@@ -1,0 +1,436 @@
+---
+title: Tests et Boucles
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Avant de commencer {.unnumbered}
+
+- Téléchargez ce [notebook Jupyter](03-tests-et-boucles.ipynb){target="_blank"}
+- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+
+
+## Structures condionnelles et boucles
+
+Dans ce Notebook, nous allons aborder les thèmes suivants : 
+
+- les structures **if, else**
+- la boucle **for**
+- la boucle **while**
+- les instructions **break** et **continue**
+
+
+---
+
+## Structures conditionnelles
+
+Nous allons tester différentes conditions booléennes (voir Notebook 1) en utilisant les mots clés : **if**, **else** et **elif**. 
+
+Le principe est le suivant :
+```
+if condition1:
+    # Bloc de code à exécuter si la condition1 est vraie
+elif condition2:
+    # Bloc de code à exécuter si la condition1 est fausse et condition2 est vraie
+else:
+    # Bloc de code à exécuter si la condition1 et 2 sont fausses
+```
+
+**Remarques** :
+
+- il peut y avoir autant de **elif** que nécessaire (entre 0 et infini)
+- le **else** est facultatif
+
+**Attention** : Il est important de respecter la syntaxe, en particulier l'indentation !
+
+```{python}
+a = 12
+
+# Simple if
+if a > 5:
+    print("la variable a({}) est strictement supérieure à 5".format(a))
+```
+
+```{python}
+a = 3
+
+# if else
+if a > 5:
+    print("la variable a({}) est strictement supérieure à 5".format(a))
+else:
+    print("la variable a({}) est inférieure ou égale à 5".format(a))
+```
+
+```{python}
+nb_habitants = 750
+
+if nb_habitants < 500:
+    print("village")
+elif nb_habitants < 10000:
+    print("ville")
+else:
+    print("grande ville")
+```
+
+```{python}
+# Conditions multiples
+
+note_maths = 14
+note_info = 20
+validation_anglais = True
+
+if note_maths > 10 and note_info > 10 and validation_anglais:
+    print("Année validée")
+```
+
+```{python}
+# Conditions en cascade
+if note_maths > 10:
+    if note_info > 10:
+        if validation_anglais:
+            print("Félicitation, continuez comme ça !")
+        else:
+            print("Work harder")
+    else:
+        print("il y a 10 types de personnes, ceux qui sont bons en info et les autres")
+else:
+    print("1+1=2")
+```
+
+---
+
+## Boucles
+
+Les boucles sont utiles pour répéter de nombreuses fois la même opération.  
+Par exemple si l'on souhaite afficher tous les éléments d'une liste, écrire autant de **print** qu'il y a d'éléments serait assez pénible.  
+  
+Comme pour les structures conditionnelles, il est très important de respecter l'indentation !
+
+### La boucle for
+
+Il y a plusieurs manières d'utiliser la boucle **for**, voici quelques exemples.  
+  
+Il est très fréquent d'utiliser avec les boucles la méthode **range(start, stop, step)** qui génére une suite d'entiers
+
+- start : Valeur de départ de la séquence (optionnelle). Par défaut, elle est définie à 0.
+- stop : Valeur de fin de la séquence (exclue).
+- step : Pas d'incrément (optionnel). Par défaut, il est défini à 1.
+
+```{python}
+# Afficher les entiers entre 1 et 6
+for i in range(1, 6):
+    print(i)
+```
+
+```{python}
+for i in range(6):
+    print(i, i ** 2, sep="\t")
+```
+
+```{python}
+# Parcours d'une liste
+personnages = ["Luke", "Leia", "Han", "Obi-Wan"]
+
+for p in personnages:
+    print("Hello " + p)
+```
+
+```{python}
+# Parcours d'une liste par indice
+for i in range(len(personnages)):
+    print("Personnage " + str(i) + " : " + personnages[i])
+```
+
+La fonction **enumerate()** est utilisée pour itérer simultanément sur les indices et les éléments.  
+Elle permet de générer un tuple(indice, élément)
+
+```{python}
+list(enumerate(personnages))
+```
+
+```{python}
+# Parcours d'une liste en utilisant enumerate
+for numero, nom in enumerate(personnages):
+    print("Personnage " + str(numero) + " : " + nom)
+```
+
+```{python}
+# Parcours d'une chaîne de caractères
+for char in "Dark Vador":
+    print(char, end=" - ")
+```
+
+```{python}
+import time
+
+message = "Salut les lapinous"
+for i in range(len(message)):
+    time.sleep(0.5)
+    print(message[i], end="")
+```
+
+```{python}
+ingredients = {'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True}
+
+# Parcours des clés d'un dictionnaire
+for cle in ingredients:
+    print(cle)
+```
+
+### La boucle while
+
+Le principe de la boucle **while** est le suivant :
+
+- une condition d'entrée dans la boucle est définie
+- tant que la condition est vérifiée, le code dans la boucle est exécuté
+- et ainsi de suite, jusqu'à ce que l'on sorte de la boucle (ou que l'on reste coincé dedans à tout jamais...)
+
+```{python}
+cpt = 5
+while cpt >= 0:
+    print(cpt, end="...")
+    cpt -= 1      # cpt = cpt - 1
+print("Boom")
+```
+
+```{python}
+user_input = input("Entrez un nombre pair : ")
+while int(user_input) % 2 != 0:
+    print("Ce n'est pas un nombre pair.")
+    user_input = input("Entrez un nombre pair : ")
+print("Merci, vous avez entré un nombre pair.")
+```
+
+#### Critère d'arrêt
+
+La différence principale avec la boucle **for** est le critère d'arrêt.  
+Dans une boucle **for**, ce critère est clair : la boucle itère sur les éléments d'un objet itérable, nécessairement de taille finie.  
+  
+Au contraire, dans la boucle **while**, ce critère peut ne jamais se réaliser et l'on se retrouve alors dans une boucle infinie...  
+
+Par exemple si l'on se trompe dans le nom des indices, voici le résultat :
+
+```{python}
+# Utilisez le bouton "Stop" (carré noir) de Jupyter pour arrêter le programme en cours
+i = 1
+j = 1
+while i <= 5:
+    j = j + 1
+```
+
+Comme `i = 1` et ne change jamais, la condition `i <= 5` est toujours égale à **True**
+
+```{python}
+print(i)
+print(j)
+```
+
+### L'instruction break
+
+Une autre possibilité pour sortir d'une boucle **for** ou **while** est d'utiliser l'instruction **break**.  
+
+Le code ci-dessous montre une utilisation de cette instruction :
+
+- On rentre dans une boucle infinie (`While true`)
+- Le seul moyen d'en sortir est de trouver le bon nombre, ce qui nous envoie vers le `break`
+
+Le code contient également des instructions `try` et `except` qui gérent le cas ou la valeur saisie n'est pas numérique.  
+  
+Remarque : en cas de boucles imbriquées, le **break** ne met fin qu'à la boucle de niveau supérieur.
+
+```{python}
+import random
+
+nombre_aleatoire = random.randint(1, 20)
+
+print("Entrez un nombre entre 1 et 20")
+while True:
+    nombre_saisi = input()
+    try:
+        nombre_saisi = int(nombre_saisi)
+        if nombre_saisi == nombre_aleatoire:
+            break
+        elif nombre_saisi < 1 or nombre_saisi > 20:
+            print("Entre 1 et 20 !!!")        
+        elif nombre_saisi > nombre_aleatoire:
+            print("c'est moins")
+        elif nombre_saisi < nombre_aleatoire:
+            print("c'est plus")
+    except ValueError:
+        print("Veuillez entrer un entier valide")
+        
+print("Félicitations, vous avez trouvé le nombre secret :", nombre_aleatoire)
+```
+
+### L'instruction continue
+
+L'instruction **continue** permet de passer à l'itération suivante de la boucle.  
+  
+Dans l'exemple ci-dessus :
+
+- on rentre dans une boucle infinie
+- tant que l'on ne rentre pas le bon prénom, on recommence au début de la boucle
+  - puis on ne sort de la boucle que lorsque l'on a rentré le bon mot de passe
+
+```{python}
+votre_prenom = "alice"
+
+while True:
+    print("Veuillez entrer votre prénom.")
+    prenom = input()
+    if prenom != votre_prenom:
+        continue
+    print("Veuillez entrer votre mot de passe.")
+    mdp = input()
+    if mdp == "123456":
+        break
+print("Bienvenue " + votre_prenom)
+```
+
+
+## Exercices
+
+### Exercice 1
+
+Ecrire un programme qui calcule la somme des 10 premiers entiers au carré.  
+Ecrire un programme qui calcule la somme des 5 premiers entiers impairs au carré.
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+```{python}
+# Remarque : avec Python il est possible parfois de condenser l'écriture
+sum(i**2 for i in range(1,11) if i%2 == 1)
+```
+
+### Exercice 2
+
+Ré-écrivez le code ci-dessous à l'aide d'une boucle **for**.  
+Indice : explorez les différentes utilisations de la méthode **range()**
+
+```{python}
+cpt = 5
+while cpt >= 0:
+    print(cpt)
+    cpt -= 1      # cpt = cpt - 1
+print("Boom")
+```
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 3
+
+Réécrivez la boucle `for` suivante à l'aide d'une boucle `while`.
+
+```{python}
+#| tags: []
+gamme = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
+
+for i, note in enumerate(gamme):
+    print("La note numéro " + str(i) + " de la gamme de do majeur est " + note)
+```
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 4
+
+Triez la liste ci-dessous à l'aide de 2 boucles **for** (sans utiliser de méthode toute faite de tri) :
+
+- `liste = [34, 7, 20, 12, 50, 23, 16, 28, 6, 11, 19, 13, 26, 8, 9]`
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 5
+
+Ecrivez un programme permettant de calculer les 10 premiers termes de la suite de Fibonacci à l'aide d'une boucle **for**.  
+Même question avec une boucle **while**.
+
+Rappel : La suite de Fibonacci se définit de la manière suivante : 
+
+- les deux premiers nombres sont 0 et 1
+- chaque autre nombre de la suite s'obtient en additionnant les deux nombres qui le précèdent
+
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 6
+
+Calculer le minimum et le maximum de la série de valeurs suivantes, sans utiliser les fonctions `min` et `max` de Python. 
+
+x = [8, 18, 6, 0, 15, 17.5, 9, 1]
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 7
+
+À l'aide de boucles **for** et **while**, parcourez ce dictionnaire et affichez la moyenne de chaque élève.
+
+```{python}
+#| tags: []
+notes = {
+    "Miranda"  : [16, 5, 8, 12],
+    "Celestin" : [19, 1, 7, 10],
+    "Hypolyte" : [18, 3, 12],
+    "Josephine": [12, 15, 14, 14]
+}
+```
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 8
+
+Calculer la moyenne et la variance de la série de valeurs suivantes, sans utiliser des fonctions déjà codées : 
+
+x = [8, 18, 6, 0, 15, 17.5, 9, 1]
+
+Pour rappel, les formules sont :
+
+- moyenne : $$\bar{x} = {\frac {1}{n}}\sum_{i=1}^{n}x_{i}$$
+- variance : $$\sigma^2 = {\frac {1}{n}}\sum_{i=1}^{n} (x_{i}-\bar{x})^2$$
+
+```{python}
+#| tags: []
+# Testez votre réponse dans cette cellule
+```
+
+```{python}
+# Pour vérifier vos résultats
+import numpy as np
+
+# Create an array of numbers
+x = [8, 18, 6, 0, 15, 17.5, 9, 1]
+
+print("Mean     : ", np.mean(x))
+print("Variance : ", np.var(x))
+```
+

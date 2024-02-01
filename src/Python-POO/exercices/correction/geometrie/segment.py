@@ -1,20 +1,18 @@
-from polygone import Polygone
 from point import Point
+from polygone import Polygone
 
 
 class Segment(Polygone):
-
     def __init__(self, points):
         if len(points) == 2:
             super().__init__(points)
-            # self.points = points
         else:
             print("Vous n'avez pas le bon nombre de points")
 
-    def aire(self):
+    def aire(self) -> float:
         return 0
 
-    def perimetre(self):
+    def perimetre(self) -> float:
         p1 = self.points[0]
         p2 = self.points[1]
         return p1.distance(p2)

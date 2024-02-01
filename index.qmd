@@ -69,3 +69,11 @@ si vous avez vos accès à l'ENT ENSAI, les vidéos de la session de l'année de
         * parties 1 et 2
     * https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
         * parties 1 et 2
+		
+
+## Ressources utiles
+
+* https://realpython.com/
+* https://refactoring.guru/
+* https://github.com/faif/python-patterns
+* https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/

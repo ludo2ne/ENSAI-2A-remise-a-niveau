@@ -1,0 +1,434 @@
+---
+title: Listes et Dictionnaires
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Avant de commencer {.unnumbered}
+
+- Téléchargez ce [notebook Jupyter](02-listes-et-dictionnaires.ipynb){target="_blank"}
+- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+
+
+## Conteneurs
+
+Il existe plusieurs structures de données en Python :
+
+- Listes (list) :  collection ordonnée et modifiable d'éléments
+- Dictionnaires (dict) : collection non ordonnée de paires **clé-valeur**
+- Ensembles (set) : collection non ordonnée d'éléments **uniques**
+- Tuples (tuple) : collection ordonnée et immuable d'éléments
+
+Nous allons ici nous concentrer sur les deux structures les plus courantes : les **listes** et les **dictionnaires**
+
+## Listes
+
+Propriétés des listes Python : 
+
+- **Indexation** : Les éléments d'une liste sont indexés, ce qui signifie qu'ils peuvent être accédés en utilisant leur position dans la liste. L'index du premier élément est 0, et l'index du dernier élément est len(liste) - 1.
+- **Mutable** : Les listes sont des objets mutables, ce qui signifie que vous pouvez modifier leurs éléments. Vous pouvez ajouter, supprimer ou modifier des éléments.
+- **Hétérogénéité** : Les listes peuvent contenir des éléments de différents types de données : entiers, chaînes de caractères, booléens, voire d'autres listes.
+- **Longueur variable** : Les listes peuvent contenir un nombre variable d'éléments. Elles peuvent être vides (sans éléments) ou contenir un nombre illimité d'éléments.
+
+### Créer une liste
+
+```{python}
+# Liste d'entiers
+a = [22, 29, 35, 56]
+a
+```
+
+```{python}
+type(a)
+```
+
+```{python}
+# Liste mixte
+b = ["bonjour", 20, True]
+print(b)
+```
+
+```{python}
+# Concaténation
+a + b
+```
+
+```{python}
+# Répétition
+a * 2
+```
+
+Il existe de nombreuses autres possibilités pour créer des listes.
+
+```{python}
+list(range(1, 7))
+```
+
+```{python}
+[x for x in range(1, 7)]
+```
+
+```{python}
+# En séparant une chaîne de caractères
+c = "bleu;blanc;rouge;vert;jaune"
+c.split(";")
+```
+
+### Méthodes utiles
+
+```{python}
+# Nombre d'éléments
+len(a)
+```
+
+```{python}
+# Premier élément
+a[0]
+```
+
+```{python}
+# Dernier élément
+a[-1]
+```
+
+```{python}
+# Tous les éléments à partir de la position 1
+a[1:]
+```
+
+```{python}
+# Tester si une valeur appartient à une liste
+22 in a
+```
+
+```{python}
+# Trouver la position d'un élément
+a.index(29)
+```
+
+```{python}
+# Inverser une liste (sans modifier la liste d'origine)
+print("a[::-1] : " + str(a[::-1]))
+print("a :       " + str(a))
+```
+
+```{python}
+# Inverser une liste (ici l'inversion est sauvegardée dans la variable **a** )
+a.reverse()
+a
+```
+
+```{python}
+# Trier une liste (sans modifier la liste d'origine)
+sorted(a)
+```
+
+```{python}
+# Order décroissant
+sorted(a, reverse=True)
+```
+
+```{python}
+# Trier une liste (en sauvegardant la modification dans la variable **a**)
+print("Avant : " + str(a))
+a.sort()
+print("Après : " + str(a))
+```
+
+### Ajouter, modifier et supprimer
+
+```{python}
+# Ajouter à la fin
+a.append(44)
+a
+```
+
+```{python}
+# Insérer à une position précise
+a.insert(2, 88)
+a
+```
+
+```{python}
+# Modifier
+a[0] = 99
+a
+```
+
+```{python}
+# Supprimer par position
+a.pop(3)
+a
+```
+
+```{python}
+# Supprimer par valeur
+a.remove(44)
+a
+```
+
+### Copier une liste
+
+Observez, puis exécutez le code ci-dessous, il contient les instructions suivantes :
+
+- création de la variable **liste**
+- création de la variable **copie**
+- suppression du dernier élément de **copie**
+- affichage de **liste**
+
+```{python}
+liste = [1, 2, 3, 4]
+liste2 = liste
+liste2.pop()
+liste
+```
+
+Nous pourrions nous attendre à ce que la variable **liste** ne soit pas modifiée et affiche `[1, 2, 3, 4]`.  
+Pourtant la variable **liste2** n'est pas une copie de **liste**, c'est simplement une autre manière d'appeler la même liste.  
+ 
+
+```{python}
+# Pour créer une vraie copie qui sera distinct de l'original
+copie = list(liste)
+copie.append(9)
+liste, copie
+```
+
+```{python}
+# Autre possibilité pour copier
+cp = liste.copy()
+cp.append(8)
+liste, cp
+```
+
+---
+
+## Dictionnaires
+
+Propriétés importantes d'un dictionnaire en Python :
+
+- **Indexation par clé** : Les éléments d'un dictionnaire sont indexés par des clés plutôt que par des positions. **Chaque clé doit être unique** dans le dictionnaire, et elle est associée à une valeur correspondante. La recherche d'une valeur associée à une clé est très rapide.
+- **Mutable** : Les dictionnaires sont des objets mutables, ce qui signifie que vous pouvez ajouter, supprimer ou modifier des éléments du dictionnaire après sa création.
+- **Hétérogénéité** : Les dictionnaires peuvent contenir des paires clé-valeur avec des types de données différents. Les clés peuvent être de types immuables tels que les chaînes de caractères, les entiers... Les valeurs peuvent être de n'importe quel type de données valide en Python.
+- **Longueur variable** : Les dictionnaires peuvent contenir un nombre variable de paires clé-valeur. Ils peuvent être vides (sans paires clé-valeur) ou contenir un nombre illimité de paires.
+- **Non ordonné** : Contrairement aux listes, les éléments d'un dictionnaire n'ont pas d'ordre défini. L'ordre dans lequel les paires clé-valeur sont stockées n'est pas garanti et peut changer lors des opérations de modification du dictionnaire.
+
+
+### Créer un dictionnaire
+
+```{python}
+ingredients = {'sucre': '100g', 'poire': 2, 'lait': '1L', 'sel': True}
+ingredients
+```
+
+```{python}
+type(ingredients)
+```
+
+```{python}
+# Nombre d'éléments
+len(ingredients)
+```
+
+```{python}
+# Recherche par clé
+ingredients['lait']
+```
+
+```{python}
+# Recherche par clé - autre possibilité
+ingredients.get('lait')
+```
+
+### Ajouter, modifier et supprimer
+
+```{python}
+# Ajouter un élément
+ingredients['fraise'] =  '200g'
+ingredients
+```
+
+```{python}
+# Modifier
+ingredients['sucre'] =  '35g'
+ingredients
+```
+
+```{python}
+# Supprimer 
+ingredients.pop('lait')
+ingredients
+```
+
+### Méthodes utiles
+
+```{python}
+# Liste des clés
+list(ingredients.keys())      # idem : list(ingredients)
+```
+
+```{python}
+# Liste des valeurs
+list(ingredients.values())
+```
+
+```{python}
+# Liste des items (liste de tuples)
+list(ingredients.items())
+```
+
+## Les types « vide »
+
+Maintenant que nous avons vu les listes et les dictionnaires, nous pouvons parler des types **vides**.  
+Par exemple, il est possible de créer :
+
+- une variable qui ne contient rien : `None`
+- une liste vide `[]`
+- un dictionnaire vide `{}`
+
+```{python}
+x = None
+type(x)
+```
+
+```{python}
+y = []
+type(y)
+```
+
+```{python}
+z = {}
+type(z)
+```
+
+
+## Exercices
+
+### Exercice 1
+
+En partant de la liste `notes = ["do", "re", "re", "re", "fa", "sol", "solsi", "la"]`, **ajoutez, supprimez et modifiez** des éléments pour qu'elle contienne les notes de musique "do re mi fa sol la si" dans le bon ordre.
+
+
+```{python}
+#| lines_to_next_cell: 2
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 2
+
+Proposez deux méthodes pour inverser la liste `["un", "deux", "trois", "quatre"]`. Quelle est la différence majeure entre les deux méthodes ?
+
+```{python}
+#| lines_to_next_cell: 2
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 3
+
+Testez le comportement de la méthode **pop** sur la liste des entiers de 1 à 9.  
+Par exemple, testez **pop()** sans paramètres ou encore **pop(-1)**.
+
+```{python}
+#| lines_to_next_cell: 2
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 4
+
+Testez le comportement des méthodes **min** et **max** sur :
+
+- sur une liste composée uniquement d'objets numériques (`int` et `float`) ;
+- sur une liste composée uniquement de chaînes de caractères ;
+- sur une liste composée d'un mélange d'objets numériques et textuels.
+
+```{python}
+#| lines_to_next_cell: 2
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 5
+
+Essayer de créer une liste vide puis vérifiez son type.  
+Quel intérêt cela pourrait-il avoir ?
+
+```{python}
+#| lines_to_next_cell: 2
+# Testez votre réponse dans cette cellule
+```
+
+Exercice
+Soit le dictionnaire suivant : `animaux = {'chats': 5, 'chiens': 12}`  
+  
+Que vont retourner les tests d'appartenance suivants ? Vérifiez vos prédictions.  
+
+- `'chats' in animaux.keys()`
+- `'chats' in animaux.values()`
+- `'chats' in animaux`
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 6
+
+Soit le dictionnaire défini dans la cellule ci-dessous.  
+Affichez à l'aide d'opérations print :
+
+- la liste des noms des différentes classes
+- la note de Miranda en histoire
+- la liste des notes obtenues par Hypolyte
+- la liste des noms des élèves de la 6emeB
+- la liste des matières enseignées en 6eme A
+- la liste de toutes les matières enseignées
+- la liste des notes obtenues par les filles des deux classes
+
+```{python}
+resultats = {
+    "6emeA": {"Miranda" : {"notes": {"physique": 16, "histoire": 12}},
+              "Celestin": {"notes": {"physique": "absent", "histoire": 18}}
+             },
+    "6emeB": {"Hypolyte": {"notes": {"maths": 11, "anglais": 0}},
+              "Josephine": {"notes": {"maths": 16, "anglais": 20}}
+             }
+}
+```
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 7
+
+À l'aide d'un dictionnaire, comptez puis affichez le nombre d'occurences de chaque caractère dans la phrase suivante :
+
+- `Je compte le nombre d'occurences de chaque caractère de la phrase courante.`  
+
+**Astuce** : au préalable, faites un test sur une chaine plus petite.
+
+```{python}
+# Testez votre réponse dans cette cellule
+```
+
+### Exercice 8
+
+Nettoyer cette liste pour retirer tous les doublons et ne conserver qu'une seule occurence de chaque fruit :
+
+- `fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']`
+
+**Indice** : utiliser les set
+
+```{python}
+# Testez votre réponse dans cette cellule
+```

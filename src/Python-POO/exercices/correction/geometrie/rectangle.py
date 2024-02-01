@@ -12,7 +12,7 @@ class Rectangle(Quadrilatere):
         else:
             super().__init__(points)
 
-    def verif_rectangle(self, points):
+    def verif_rectangle(self, points) -> bool:
         res = True
 
         # verif cotes opposes de meme longueur

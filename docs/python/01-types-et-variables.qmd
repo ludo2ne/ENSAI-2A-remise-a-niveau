@@ -1,0 +1,584 @@
+---
+title: Types et variables
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Avant de commencer {.unnumbered}
+
+- Téléchargez ce [notebook Jupyter](01-types-et-variables.ipynb){target="_blank"}
+- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+
+
+## Avant propos {.unnumbered}
+
+Pour réaliser ce Notebook, je me suis inspiré de : 
+
+- la formation [**Initiation à Python**](https://github.com/InseeFrLab/formation-python-initiation) du SSP Cloud INSEE, 
+- cours de Python dispensés à l'ENSAE par [Lino Galiana](https://pythonds.linogaliana.fr/rappels2a/) et [Xavier Dupré](http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html)
+- https://python.sdv.univ-paris-diderot.fr/
+
+
+Dans ce chapitre, nous allons découvrir les types de base en python :
+
+- numériques
+  - **int** : entiers
+  - **float** : décimaux
+- chaines de caractères : **str**
+- booléens : **bool**
+
+
+## Affectation de variables
+
+```{python}
+#| vscode: {languageId: python}
+# Créer la variable a et lui affecter la valeur 8
+a = 8
+
+# Créer la variable b et lui affecter la chaîne de caractère "texte"
+b = "texte"
+
+# Créer la variable c et lui affecter le booléen True
+c = True
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Afficher le contenu de a
+a
+```
+
+Remarque : Un notebook n'affiche que la dernière valeur qui lui est demandé.  
+Pour réaliser plusieurs affichage, il faut utiliser la méthode **print**
+
+```{python}
+#| vscode: {languageId: python}
+print(a+1)
+print(b)
+print(c)
+```
+
+Python est **langage typé dynamiquement**.  
+Cela siginifie qu'il est possible de modifier le type d'une variable sans contrainte.  
+Si la variable **a** contient du texte, il est possible de lui affecter ensuite un entier.
+
+```{python}
+#| vscode: {languageId: python}
+print(a)
+a = "abcd"
+print(a)
+a = False
+print(a)
+```
+
+**Astuce** : Pour afficher toutes les variables créées et leurs valeurs, vous pouvez utiliser la commande `%whos`
+
+```{python}
+#| vscode: {languageId: python}
+%whos
+```
+
+---
+
+## Nombres
+
+La fonction `type` permet de connaitre le type
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+a = 8
+type(a)
+```
+
+```{python}
+#| vscode: {languageId: python}
+b = 33.5
+type(b)
+```
+
+```{python}
+#| vscode: {languageId: python}
+float('inf')
+```
+
+### Convertions
+
+Les fonctions `float` et `int` peuvent être utilisées pour passer d'un type à l'autre.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Conversion en float
+float(a)
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Conversion en int (partie entière)
+int(b)
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Notation scientifique
+2.1e3
+```
+
+### Opérations arithmétiques de base
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Addition
+1 + 1
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Soustraction
+6 - 2
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Multiplication
+3 * 4
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Division
+11 / 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Division euclidienne : quotient
+11 // 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Division euclidienne : reste (modulo)
+11 % 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Puissance
+2 ** 10
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Racine carrée
+36 ** 0.5
+```
+
+---
+
+## Chaînes de charactères
+
+Les chaînes de caractères (strings) sont utilisées pour stocker de l'information textuelle.
+
+Un *string* se définit en mettant l'information entre apostrophes `'` ou entre guillemets `"`. 
+
+### Définition
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+a = 'une chaine de caractères définie avec des apostrophes'
+a
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+b = "une chaine de caractères définie avec des guillemets"
+b
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Pour inclure une apostrophe à l'intérieur de la chaine
+"j'inclus l'apostrophe"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Pour inclure des guillemets à l'intérieur de la chaine
+'les "guillemets" sont là'
+```
+
+### Métodes utiles
+
+Voici un aperçu de quelques méthodes utiles. De nombreuses autres existent (voir [documentation officielle](https://docs.python.org/3/library/stdtypes.html#string-methods))
+
+```{python}
+#| vscode: {languageId: python}
+# Longueur d'une chaîne (nombre de caractères)
+len("J'ai 18 caractères")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Concaténation
+"I am" + "your father"
+" ".join("I am", "your father")
+```
+
+
+```{python}
+#| vscode: {languageId: python}
+# Concaténation avec un nombre
+annee = 2
+"je suis en " + annee + "ème année"
+```
+
+Problème, il faut au préalable convertir le nombre en chaîne de caractères.  
+La méthode **str** fait le travail.
+
+```{python}
+#| vscode: {languageId: python}
+# Concaténation avec un nombre - après convertion du nombre en string
+annee = 2
+"je suis en " + str(annee) + "ème année"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Répétition
+"hop " * 5
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Mettre en majuscules
+"C'est OK".upper()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Mettre en minuscules
+"C'est OK".lower()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Compter le nombre d'occurences
+"Mangez cinq fruits et légumes par jour".count("a")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Créer une liste de mots
+"Mangez cinq fruits et légumes par jour".split()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Séparer les mots selon un caractère spécifique
+"un-deux-trois-soleil".split("-")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Utiliser les strings comme templates
+"mon numéro est : {}".format("06 12 34 56 78")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Commence par ?
+"vélo".startswith("vé")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Se termine par ?
+"vélo".endswith("lo")
+```
+
+### Extraire des sous-chaînes
+
+Une chaîne de caractères est considérée en Python comme une liste de caractères.  
+Il est donc possible d'extraire différents éléments de cette liste
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Premier élémént
+"c'est de toute beauté"[0]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Deuxième élémént
+"c'est de toute beauté"[1]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Dernier élémént
+"c'est de toute beauté"[-1]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# À partir d'un certain caractère
+"c'est de toute beauté"[6:]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Jusqu'à un certain caractère
+"c'est de toute beauté"[:8]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Extraire une sous-chaîne
+"c'est de toute beauté"[9:14]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Extraire tous les 2 caractères, à partir de la 4 ème position
+"c'est de toute beauté"[4::2]
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Inverser une chaîne
+"c'est de toute beauté"[::-1]
+```
+
+#### Caractères spéciaux
+
+Pour insérer des caractères spéciaux au sein d'une chaîne de caractère, il faut utiliser le caractère d'échappement `\`.
+
+| Caractère  | Description                   |
+|------------|-------------------------------|
+| \          | Caractère d'échappement       |
+| \\'        | Apostrophe                    |
+| \\"        | Guillemets doubles            |
+| \\n        | Retour à la ligne             |
+| \\t        | Tabulation horizontale        |
+| \\r        | Retour chariot                |
+
+```{python}
+#| vscode: {languageId: python}
+c = "une chaîne\nsur 2 lignes"
+print(c)
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Définir une chaîne de caractères sur plusieurs lignes
+d = """une autre \"possibilité\" pour
+avoir une chaîne sur 2 lignes"""
+print(d)
+```
+
+---
+
+## Boléens
+
+Les Booléens ne peuvent prendre que deux valeurs : `True` et `False`  
+Attention à bien respecter la notation avec la première lettre en majuscule et les autres en minuscule.  
+
+```{python}
+#| vscode: {languageId: python}
+type(True)
+```
+
+### Opérateurs de comparaison
+
+| Opérateur | Signification |
+| --- | --- |
+| == | Egal à  |
+| != | Non égal à  |
+| < | Strictement inférieur à  |
+| > | Strictement supérieur à  |
+| <= | Inférieur ou égal à  |
+| >= | Supérieur ou égal à  |
+
+```{python}
+#| vscode: {languageId: python}
+8 > 5
+```
+
+```{python}
+#| vscode: {languageId: python}
+1+1 == 2
+```
+
+```{python}
+#| vscode: {languageId: python}
+[1, 2, 3] == [1, 2, 3]
+```
+
+```{python}
+#| vscode: {languageId: python}
+"girafe" != "gnou"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Enchainement d'opérateurs
+1 < 2 == 2 >= 1 != 2
+```
+
+### Opérateurs and, or, not
+
+```{python}
+#| vscode: {languageId: python}
+a = True
+b = False
+
+a and b
+```
+
+```{python}
+#| vscode: {languageId: python}
+a or b
+```
+
+```{python}
+#| vscode: {languageId: python}
+not a
+```
+
+```{python}
+#| vscode: {languageId: python}
+(a or b) and (a and not b)
+```
+
+---
+
+## Exercices
+
+### Exercice 1
+
+Calculer la somme des longueurs des trois chaînes de caractères suivantes : 
+
+- "une première chaîne"
+- "et une deuxième"
+- "jamais deux sans trois"
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+
+### Exercice 2
+
+Quel est le type adapté pour définir un code postal ?
+
+Essayer de définir les codes postaux suivants au format `int` et au format `string` :
+
+- 92120
+- 02350
+
+Que concluez-vous ?
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+
+### Exercice 3
+
+Compter le nombre de fois où la lettre e est présente dans la chaîne suivante :
+`Je compte le nombre de e dans cette chaîne de caractères`
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+
+### Exercice 4
+
+Repérer la première position où la lettre e est présente dans la chaîne suivante : "Je fais un comptage des e."
+
+**Indice** : on peut utiliser la méthode *built-in* [find](https://docs.python.org/fr/3/library/stdtypes.html#str.find).
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+
+### Exercice 5
+
+Supprimer les espaces superflus au début et à la fin de la chaîne suivante :
+
+**Indice** : on peut utiliser la méthode *built-in* [strip](https://docs.python.org/fr/3/library/stdtypes.html#str.strip).
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+a = "    Un string très mal formatté.         "
+```
+
+### Exercice 6
+
+Réaliser la suite d'opérations suivantes à l'aide des opérateurs d'incrémentation, et imprimer la valeur finale :
+
+- initialiser une variable à 1
+- lui soustraire 5
+- la multiplier par 4
+- lui ajouter 22
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+
+### Exercice 7
+
+Considérons les deux séquences suivantes :
+
+- "nous sommes en"
+- "2022"
+
+Trouvez à partir du tutoriel deux manières différentes de les utiliser pour composer la séquence "nous sommes en 2022".
+
+```{python}
+#| vscode: {languageId: python}
+# Tapez votre réponse dans cette cellule
+```
+

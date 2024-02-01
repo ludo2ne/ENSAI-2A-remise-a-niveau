@@ -22,15 +22,15 @@ website:
         menu: 
           - href: docs/python/python.qmd
             text: "Introduction à Python"
-          - href: docs/python/01-types-et-variables.ipynb
+          - href: docs/python/01-types-et-variables.qmd
             text: "Types et Variables"
-          - href: docs/python/02-listes-et-dictionnaires.ipynb
+          - href: docs/python/02-listes-et-dictionnaires.qmd
             text: "Listes et Dictionnaires"
-          - href: docs/python/03-tests-et-boucles.ipynb
+          - href: docs/python/03-tests-et-boucles.qmd
             text: "Tests et Boucles"
-          - href: docs/python/04-fonctions.ipynb
+          - href: docs/python/04-fonctions.qmd
             text: "Fonctions"
-          - href: docs/python/05-POO-introduction.ipynb
+          - href: docs/python/05-POO-introduction.qmd
             text: "Introduction à la POO"
       - href: docs/POO/POO.qmd
         text: POO
@@ -51,12 +51,12 @@ website:
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
-        target: "_blank"  
+        target: "_blank"
   reader-mode: true      
   page-footer:
     right: |
       Website built with [Quarto](https://quarto.org/){.external target="_blank"}
-      [Code source](https://github.com/ludo2ne/ENSAI-2A-Big-Data){.external target="_blank"}
+      [Code source](https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau){.external target="_blank"}
   repo-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
   repo-branch: main
   issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new
