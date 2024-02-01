@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Téléchargez ce notebook en cliquant sur Jupyter (en dessous de la table des matières)Importez le fichier .ipynb dans Jupyter">
 
 <title>Remise à Niveau Informatique - Introduction à la POO</title>
 <style>
@@ -239,28 +238,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#la-programmation-orientée-objet" id="toc-la-programmation-orientée-objet" class="nav-link active" data-scroll-target="#la-programmation-orientée-objet">La programmation orientée objet</a>
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer">Avant de commencer</a></li>
+  <li><a href="#la-programmation-orientée-objet" id="toc-la-programmation-orientée-objet" class="nav-link" data-scroll-target="#la-programmation-orientée-objet"><span class="header-section-number">1</span> La programmation orientée objet</a>
   <ul class="collapse">
-  <li><a href="#tout-est-objet" id="toc-tout-est-objet" class="nav-link" data-scroll-target="#tout-est-objet">« Tout est objet »</a></li>
-  <li><a href="#définir-ses-propres-objets" id="toc-définir-ses-propres-objets" class="nav-link" data-scroll-target="#définir-ses-propres-objets">Définir ses propres objets</a></li>
-  <li><a href="#attributs" id="toc-attributs" class="nav-link" data-scroll-target="#attributs">Attributs</a></li>
-  <li><a href="#méthodes" id="toc-méthodes" class="nav-link" data-scroll-target="#méthodes">Méthodes</a></li>
-  <li><a href="#bonus-la-classe-property" id="toc-bonus-la-classe-property" class="nav-link" data-scroll-target="#bonus-la-classe-property">Bonus : la classe Property</a></li>
+  <li><a href="#tout-est-objet" id="toc-tout-est-objet" class="nav-link" data-scroll-target="#tout-est-objet"><span class="header-section-number">1.1</span> « Tout est objet »</a></li>
+  <li><a href="#définir-ses-propres-objets" id="toc-définir-ses-propres-objets" class="nav-link" data-scroll-target="#définir-ses-propres-objets"><span class="header-section-number">1.2</span> Définir ses propres objets</a></li>
+  <li><a href="#attributs" id="toc-attributs" class="nav-link" data-scroll-target="#attributs"><span class="header-section-number">1.3</span> Attributs</a></li>
+  <li><a href="#méthodes" id="toc-méthodes" class="nav-link" data-scroll-target="#méthodes"><span class="header-section-number">1.4</span> Méthodes</a></li>
+  <li><a href="#bonus-la-classe-property" id="toc-bonus-la-classe-property" class="nav-link" data-scroll-target="#bonus-la-classe-property"><span class="header-section-number">1.5</span> Bonus : la classe Property</a></li>
   </ul></li>
-  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques">Bonnes pratiques</a>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques"><span class="header-section-number">2</span> Bonnes pratiques</a>
   <ul class="collapse">
-  <li><a href="#convention-de-nommage" id="toc-convention-de-nommage" class="nav-link" data-scroll-target="#convention-de-nommage">Convention de nommage</a></li>
-  <li><a href="#indenter-correctement-le-code" id="toc-indenter-correctement-le-code" class="nav-link" data-scroll-target="#indenter-correctement-le-code">Indenter correctement le code</a></li>
-  <li><a href="#ajouter-des-commentaires-pertinents" id="toc-ajouter-des-commentaires-pertinents" class="nav-link" data-scroll-target="#ajouter-des-commentaires-pertinents">Ajouter des commentaires pertinents</a></li>
+  <li><a href="#convention-de-nommage" id="toc-convention-de-nommage" class="nav-link" data-scroll-target="#convention-de-nommage"><span class="header-section-number">2.1</span> Convention de nommage</a></li>
+  <li><a href="#indenter-correctement-le-code" id="toc-indenter-correctement-le-code" class="nav-link" data-scroll-target="#indenter-correctement-le-code"><span class="header-section-number">2.2</span> Indenter correctement le code</a></li>
+  <li><a href="#ajouter-des-commentaires-pertinents" id="toc-ajouter-des-commentaires-pertinents" class="nav-link" data-scroll-target="#ajouter-des-commentaires-pertinents"><span class="header-section-number">2.3</span> Ajouter des commentaires pertinents</a></li>
   </ul></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a>
   <ul class="collapse">
-  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
-  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
-  <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1"><span class="header-section-number">3.1</span> Exercice 1</a></li>
+  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2"><span class="header-section-number">3.2</span> Exercice 2</a></li>
+  <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3"><span class="header-section-number">3.3</span> Exercice 3</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.dev/ludo2ne/ENSAI-2A-Remise-a-niveau/blob/main/docs/python/05-POO-introduction.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05-POO-introduction.out.ipynb" download="05-POO-introduction.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/05-POO-introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05-POO-introduction.ipynb" download="05-POO-introduction.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -274,14 +274,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Introduction à la POO</h1>
 </div>
 
-<div>
-  <div class="description">
-    <ul>
-    <li>Téléchargez ce notebook en cliquant sur <em>Jupyter</em> (en dessous de la table des matières)</li>
-    <li>Importez le fichier .ipynb dans <a href="https://jupyther.ensai.fr/" class="external" target="_blank">Jupyter</a></li>
-    </ul>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -302,144 +294,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="la-programmation-orientée-objet" class="level2">
-<h2 class="anchored" data-anchor-id="la-programmation-orientée-objet">La programmation orientée objet</h2>
+<section id="avant-de-commencer" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h2>
+<ul>
+<li>Téléchargez ce <a href="05-POO-introduction.ipynb" target="_blank">notebook Jupyter</a></li>
+<li>Importez le fichier .ipynb dans <a href="https://jupyther.ensai.fr/" class="external" target="_blank">Jupyter</a></li>
+</ul>
+</section>
+<section id="la-programmation-orientée-objet" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="la-programmation-orientée-objet"><span class="header-section-number">1</span> La programmation orientée objet</h2>
 <p>La Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d’<strong>objets</strong>, qui contiennent :</p>
 <ul>
 <li>des <strong>attributs</strong> (caractéristiques de l’objet)</li>
 <li>des <strong>méthodes</strong> (fonctions propres à l’objet)</li>
 </ul>
 <p>En Python, il est possible mais pas obligatoire d’utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.</p>
-<section id="tout-est-objet" class="level3">
-<h3 class="anchored" data-anchor-id="tout-est-objet">« Tout est objet »</h3>
+<section id="tout-est-objet" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="tout-est-objet"><span class="header-section-number">1.1</span> « Tout est objet »</h3>
 <p><strong>En Python, tout est un objet</strong> (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.</p>
-<div id="4da9ffb9-24be-4f8b-9806-f5ea234342f3" class="cell" data-execution_count="24">
+<div id="8758ad8a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">1</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"bonjour"</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([]))</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>({}))          </span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'str'&gt;
-&lt;class 'list'&gt;
-&lt;class 'dict'&gt;
-&lt;class 'function'&gt;</code></pre>
-</div>
 </div>
 </section>
-<section id="définir-ses-propres-objets" class="level3">
-<h3 class="anchored" data-anchor-id="définir-ses-propres-objets">Définir ses propres objets</h3>
+<section id="définir-ses-propres-objets" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="définir-ses-propres-objets"><span class="header-section-number">1.2</span> Définir ses propres objets</h3>
 <p>Pour créer un <strong>objet</strong>, nous avons besoin dans un premier temps d’un modèle : une <strong>classe</strong>.<br>
 Nous pouvons voir la classe comme un « <em>moule</em> » qui permettra ensuite de construire des objets.<br>
 Par exemple, nous créons une classe <code>Velo</code> dont voici la documentation :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Classe représentant un vélo.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Attributs:</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">        couleur (str): La couleur du vélo.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">        vitesse (int): La vitesse actuelle du vélo.</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">        porte_bagage (bool): Indique si le vélo a un porte-bagage.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Méthodes:</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">        __str__(): représentation en chaîne de caractères d'un objet Velo</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">        est_arrete(): Vérifie si le vélo est complètement arrêté.</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Classe représentant un vélo.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Attributs:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        couleur (str): La couleur du vélo.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        vitesse (int): La vitesse actuelle du vélo.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        porte_bagage (bool): Indique si le vélo a un porte-bagage.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Méthodes:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">        __str__(): représentation en chaîne de caractères d'un objet Velo</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">        est_arrete(): Vérifie si le vélo est complètement arrêté.</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="73a4e824" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="st">"Je suis un vélo "</span> <span class="op">+</span> <span class="va">self</span>.couleur <span class="op">+</span> <span class="st">"."</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        s <span class="op">+=</span> <span class="st">" Ma vitesse est de : "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.vitesse) <span class="op">+</span> <span class="st">"."</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.porte_bagage:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            s <span class="op">+=</span> <span class="st">" J'ai un porte-bagages."</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> s</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, acceleration):</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> acceleration</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="d6a421fd-e6ee-4a99-ab89-4f1dcddbd808" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="st">"Je suis un vélo "</span> <span class="op">+</span> <span class="va">self</span>.couleur <span class="op">+</span> <span class="st">"."</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        s <span class="op">+=</span> <span class="st">" Ma vitesse est de : "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.vitesse) <span class="op">+</span> <span class="st">"."</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.porte_bagage:</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            s <span class="op">+=</span> <span class="st">" J'ai un porte-bagages."</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> s</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, acceleration):</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> acceleration</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, deceleration):</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> deceleration</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> installer_porte_bagage(<span class="va">self</span>):</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_arrete(<span class="va">self</span>):</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>: </code></pre>
-</div>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, deceleration):</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> deceleration</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> installer_porte_bagage(<span class="va">self</span>):</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_arrete(<span class="va">self</span>):</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Avec cette classe nous pouvons maintenant créer des <strong>instances</strong> (objets) de type <code>Velo</code></p>
-<div id="63528705-e731-4739-bd0f-59cc41cad1e8" class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"bleu"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> Velo(<span class="st">"violet"</span>, <span class="va">True</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo bleu. Ma vitesse est de : 0.
-Je suis un vélo violet. Ma vitesse est de : 0. J'ai un porte-bagages.</code></pre>
+<div id="a3e1cabe" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"bleu"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> Velo(<span class="st">"violet"</span>, <span class="va">True</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="fa956a7e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">20</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>v1.installer_porte_bagage()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="077e2777-3a3e-40b5-ba12-d14d1df946f8" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">20</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>v1.installer_porte_bagage()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo bleu. Ma vitesse est de : 20. J'ai un porte-bagages.</code></pre>
-</div>
-</div>
-<p>Analysons la syntaxe de construction d’une classe d’objets : - l’instruction <code>class</code> définit la <strong>classe d’objets</strong>. Différents objets pourront être créés selon le modèle défini par cette classe.<br>
-Par convention, le nom de la classe doit commencer par une majuscule. - la classe spécifie un certains nombres de fonctions que l’on appelle <strong>méthodes</strong> : ce sont des fonctions spécifiques à la classe d’objets définie. - la méthode <code>__init__</code>, est appelée le <strong>constructeur</strong>. Elle est <strong>obligatoire</strong>, sinon il est impossible d’instancier d’objets de la classe.<br>
+<p>Analysons la syntaxe de construction d’une classe d’objets :</p>
+<ul>
+<li>l’instruction <code>class</code> définit la <strong>classe d’objets</strong>. Différents objets pourront être créés selon le modèle défini par cette classe.<br>
+Par convention, le nom de la classe doit commencer par une majuscule.</li>
+<li>la classe spécifie un certains nombres de fonctions que l’on appelle <strong>méthodes</strong> : ce sont des fonctions spécifiques à la classe d’objets définie.</li>
+<li>la méthode <code>__init__</code>, est appelée le <strong>constructeur</strong>. Elle est <strong>obligatoire</strong>, sinon il est impossible d’instancier d’objets de la classe.<br>
 Elle permet de définir les <strong>attributs</strong> attachés à cette classe d’objets.<br>
-Il est possible de passer des paramètres au constructeur (ex : <code>couleur</code>) pour définir des attributs propres à une <strong>instance</strong> de l’objet. - le constructeur a un paramètre obligatoire : <code>self</code>. C’est une référence aux <strong>instances</strong> qui vont être créées à partir de cette classe.<br>
-La syntaxe suivante définit un attribut : <code>self.attribut = valeur</code>. - La méthode <code>__str__</code> (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet. - les autres méthodes sont définies par l’utilisateur. Elles prennent également le <code>self</code> en paramètre, pour accéder aux attributs et méthodes.<br>
-Comme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.</p>
+Il est possible de passer des paramètres au constructeur (ex : <code>couleur</code>) pour définir des attributs propres à une <strong>instance</strong> de l’objet.</li>
+<li>le constructeur a un paramètre obligatoire : <code>self</code>. C’est une référence aux <strong>instances</strong> qui vont être créées à partir de cette classe.<br>
+La syntaxe suivante définit un attribut : <code>self.attribut = valeur</code>.</li>
+<li>La méthode <code>__str__</code> (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet.</li>
+<li>les autres méthodes sont définies par l’utilisateur. Elles prennent également le <code>self</code> en paramètre, pour accéder aux attributs et méthodes.<br>
+Comme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.</li>
+</ul>
 </section>
-<section id="attributs" class="level3">
-<h3 class="anchored" data-anchor-id="attributs">Attributs</h3>
+<section id="attributs" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="attributs"><span class="header-section-number">1.3</span> Attributs</h3>
 <p>Un attribut est une <strong>variable associée à un objet</strong>. Un attribut peut contenir n’importe quel objet Python.</p>
 <section id="accéder-aux-attributs" class="level4">
 <h4 class="anchored" data-anchor-id="accéder-aux-attributs">Accéder aux attributs</h4>
 <p>Une fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : <code>instance.attribut</code>.</p>
-<div id="79251c45" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1.couleur)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1.vitesse)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.vitesse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>bleu
-violet
-
-40
-0</code></pre>
-</div>
+<div id="919dd464" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1.couleur)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1.vitesse)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.vitesse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>On voit bien que les deux instances sont <strong>autonomes</strong> : bien qu’elles soient du même type, leurs attributs diffèrent.</p>
 </section>
 <section id="modifier-un-attribut" class="level4">
 <h4 class="anchored" data-anchor-id="modifier-un-attribut">Modifier un attribut</h4>
 <p>Modifier un attribut d’une instance est très simple, la syntaxe est : <code>instance.attribut = nouvelle_valeur</code>.</p>
-<div id="4152011a" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>v2.couleur <span class="op">=</span> <span class="st">"jaune"</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>jaune</code></pre>
-</div>
+<div id="dc090c0b" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v2.couleur <span class="op">=</span> <span class="st">"jaune"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="attributs-de-classe" class="level4">
@@ -447,145 +427,124 @@ violet
 <p>Chaque instance de <code>Velo</code> a ses propres attributs d’instance (couleur, vitesse, porte_bagage).<br>
 Il est possible d’avoir des attributs communs à tous les Velos : <strong>les attributs de classe</strong>.</p>
 <p>Créons la classe <code>VeloBis</code> pour illustrer avec un attribut comptant le nombre de <code>VeloBis</code> créés.</p>
-<div id="21505063-7ffd-474d-b12a-08458cd43ade" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> VeloBis:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    nb_velos_bis <span class="op">=</span> <span class="dv">0</span>                                       <span class="co"># Attribut de classe pour compter le nombre de VeloBis</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        VeloBis.nb_velos_bis <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b0766c66" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> VeloBis:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    nb_velos_bis <span class="op">=</span> <span class="dv">0</span>                                       <span class="co"># Attribut de classe pour compter le nombre de VeloBis</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        VeloBis.nb_velos_bis <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e2f0e946-f515-4adf-8dc4-4f4cb7094229" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>vb1 <span class="op">=</span> VeloBis(<span class="st">"rose"</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>vb2 <span class="op">=</span> VeloBis(<span class="st">"orange"</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4
-5
-6</code></pre>
-</div>
+<div id="2064563b" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vb1 <span class="op">=</span> VeloBis(<span class="st">"rose"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>vb2 <span class="op">=</span> VeloBis(<span class="st">"orange"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="méthodes" class="level3">
-<h3 class="anchored" data-anchor-id="méthodes">Méthodes</h3>
+<section id="méthodes" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="méthodes"><span class="header-section-number">1.4</span> Méthodes</h3>
 <p>Une méthode est une <strong>fonction associée à un objet</strong>. Elle peut utiliser ses attributs, les modifier, et faire intervenir d’autres méthodes de l’objet.</p>
 <section id="appeler-une-méthode" class="level4">
 <h4 class="anchored" data-anchor-id="appeler-une-méthode">Appeler une méthode</h4>
 <p>La syntaxe pour appeler une méthode d’un objet instancié est la suivante : <code>instance.methode(parametres)</code>.</p>
-<div id="eb41e4fb" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>v1.est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
-<pre><code>False</code></pre>
-</div>
+<div id="b7e3b98b" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>v1.est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Remarque</strong> : les méthodes n’ont pas d’existence propre en dehors de l’objet.<br>
 Nous ne pouvons pas appeler la méthode <code>est_arrete()</code> seule, cela n’a pas de sens.</p>
-<div id="b57b780b" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'est_arrete' is not defined</code></pre>
+<div id="0f69b280" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p><strong>Remarque 2</strong> : * le 1er paramètre de chaque méthode d’instance est toujours <code>self</code> pour faire référence à l’objet lui même * lors des appels aux méthodes, on ne spécifie pas ce paramètre <code>self</code></p>
+<p><strong>Remarque 2</strong> :</p>
+<ul>
+<li>le 1er paramètre de chaque méthode d’instance est toujours <code>self</code> pour faire référence à l’objet lui même</li>
+<li>lors des appels aux méthodes, on ne spécifie pas ce paramètre <code>self</code></li>
+</ul>
 </section>
 <section id="agir-sur-les-attributs" class="level4">
 <h4 class="anchored" data-anchor-id="agir-sur-les-attributs">Agir sur les attributs</h4>
 <p>Tout l’intérêt des méthodes est qu’elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.<br>
-Par exemple : - si l’on n’utilise pas les méthodes <code>accelerer</code> et <code>decelerer</code>, il est possible de se retrouver avec une vitesse négative</p>
-<div id="bef86587" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo bleu. Ma vitesse est de : -10. J'ai un porte-bagages.</code></pre>
-</div>
+Par exemple :</p>
+<ul>
+<li>si l’on n’utilise pas les méthodes <code>accelerer</code> et <code>decelerer</code>, il est possible de se retrouver avec une vitesse négative</li>
+</ul>
+<div id="3331c1ff" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Modifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.<br>
 Il est possible d’aller encore plus loin :</p>
-<div id="6d791364-cf84-49ab-9e77-3eebadfc7610" class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="st">"Jean-Michel"</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo Sieste. Ma vitesse est de : Jean-Michel. J'ai un porte-bagages.</code></pre>
-</div>
+<div id="8fc6a948" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="st">"Jean-Michel"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En utilisant les <strong>méthodes</strong>, cela évite de se retrouver dans des situations absurdes ou incohérentes.</p>
-<div id="11fdcdde-5439-4b36-b0f6-0408ba35a267" class="cell" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"Bleu"</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">10</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>v1.ralentir(<span class="dv">20</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo Bleu. Ma vitesse est de : 10.
-Je suis un vélo Bleu. Ma vitesse est de : 0.</code></pre>
-</div>
+<div id="53aad0ee" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"Bleu"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">10</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>v1.ralentir(<span class="dv">20</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="bonus-la-classe-property" class="level3">
-<h3 class="anchored" data-anchor-id="bonus-la-classe-property">Bonus : la classe Property</h3>
+<section id="bonus-la-classe-property" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="bonus-la-classe-property"><span class="header-section-number">1.5</span> Bonus : la classe Property</h3>
 <p>Pour écarter tout problème, une solution intéressante est d’utiliser la classe <a href="https://python.sdv.univ-paris-diderot.fr/19_avoir_la_classe_avec_les_objets/#1952-la-solution-la-classe-property"><strong>property</strong></a>.<br>
 Cette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.</p>
-<div id="56c4cb9b-e54a-4fb9-9028-061d82b62ede" class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._vitesse <span class="op">=</span> <span class="dv">0</span>                                    <span class="co"># Attribut privé pour stocker la vitesse</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="st">"Je suis un vélo "</span> <span class="op">+</span> <span class="va">self</span>.couleur <span class="op">+</span> <span class="st">"."</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        s <span class="op">+=</span> <span class="st">" Ma vitesse est de : "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.vitesse) <span class="op">+</span> <span class="st">"."</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.porte_bagage:</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>            s <span class="op">+=</span> <span class="st">" J'ai un porte-bagages."</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> s</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vitesse(<span class="va">self</span>):</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._vitesse</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">@vitesse.setter</span></span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vitesse(<span class="va">self</span>, nouvelle_vitesse):</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> nouvelle_vitesse <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._vitesse <span class="op">=</span> nouvelle_vitesse</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"La vitesse doit être un nombre positif."</span>)</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> installer_porte_bagage(<span class="va">self</span>):</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_arrete(<span class="va">self</span>):</span>
-<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f4137dbe" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._vitesse <span class="op">=</span> <span class="dv">0</span>                                    <span class="co"># Attribut privé pour stocker la vitesse</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="st">"Je suis un vélo "</span> <span class="op">+</span> <span class="va">self</span>.couleur <span class="op">+</span> <span class="st">"."</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        s <span class="op">+=</span> <span class="st">" Ma vitesse est de : "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.vitesse) <span class="op">+</span> <span class="st">"."</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.porte_bagage:</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>            s <span class="op">+=</span> <span class="st">" J'ai un porte-bagages."</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> s</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vitesse(<span class="va">self</span>):</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._vitesse</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">@vitesse.setter</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vitesse(<span class="va">self</span>, nouvelle_vitesse):</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> nouvelle_vitesse <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._vitesse <span class="op">=</span> nouvelle_vitesse</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"La vitesse doit être un nombre positif."</span>)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> installer_porte_bagage(<span class="va">self</span>):</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_arrete(<span class="va">self</span>):</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8afe08f4-659c-4541-b5fa-0e6a302d4728" class="cell" data-execution_count="83">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> Velo(<span class="st">"noir"</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>v3.vitesse <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>v3.vitesse <span class="op">=</span> <span class="op">-</span><span class="dv">20</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je suis un vélo noir. Ma vitesse est de : 0.
-Je suis un vélo noir. Ma vitesse est de : 10.</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>ValueError: La vitesse doit être un nombre positif.</code></pre>
-</div>
+<div id="726f04eb" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> Velo(<span class="st">"noir"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>v3.vitesse <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>v3.vitesse <span class="op">=</span> <span class="op">-</span><span class="dv">20</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
 </section>
-<section id="bonnes-pratiques" class="level2">
-<h2 class="anchored" data-anchor-id="bonnes-pratiques">Bonnes pratiques</h2>
+<section id="bonnes-pratiques" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="bonnes-pratiques"><span class="header-section-number">2</span> Bonnes pratiques</h2>
 <p>Pour conclure cette introduction au langage Python, voici une liste de bonnes pratiques généralement suivies par les développeurs.<br>
 Le respect de ces pratiques est fortement recommandé et vous aidera à mieux coder.</p>
-<section id="convention-de-nommage" class="level3">
-<h3 class="anchored" data-anchor-id="convention-de-nommage">Convention de nommage</h3>
+<section id="convention-de-nommage" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="convention-de-nommage"><span class="header-section-number">2.1</span> Convention de nommage</h3>
 <ul>
 <li>variables
 <ul>
@@ -607,41 +566,55 @@ Le respect de ces pratiques est fortement recommandé et vous aidera à mieux co
 </ul></li>
 </ul>
 </section>
-<section id="indenter-correctement-le-code" class="level3">
-<h3 class="anchored" data-anchor-id="indenter-correctement-le-code">Indenter correctement le code</h3>
+<section id="indenter-correctement-le-code" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="indenter-correctement-le-code"><span class="header-section-number">2.2</span> Indenter correctement le code</h3>
 <p>Utilisez une indentation de 4 espaces pour chaque niveau d’indentation.<br>
 L’indentation correcte est essentielle en Python, car elle détermine la structure du code.</p>
 </section>
-<section id="ajouter-des-commentaires-pertinents" class="level3">
-<h3 class="anchored" data-anchor-id="ajouter-des-commentaires-pertinents">Ajouter des commentaires pertinents</h3>
+<section id="ajouter-des-commentaires-pertinents" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="ajouter-des-commentaires-pertinents"><span class="header-section-number">2.3</span> Ajouter des commentaires pertinents</h3>
 <p>Dès qu’il y a un peu de complexité, commentez votre code pour expliquer son fonctionnement.<br>
 Ajoutez des docstrings aux fonctions, classes et modules pour expliquer leur fonctionnement, leurs paramètres et leurs valeurs de retour.</p>
 <hr>
 </section>
 </section>
-<section id="exercices" class="level2">
-<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
-<section id="exercice-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
-<p>Créez une classe <code>Etudiant</code> avec les attributs : * nom * age * liste_notes</p>
-<p>Avec les méthodes : * <strong>init</strong>() : constructeur * ajouter_note() : pour ajouter une nouvelle note à la liste * calculer_moyenne() : calculer la moyenne des notes</p>
-<div id="38b19a85" class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercices" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
+<section id="exercice-1" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="exercice-1"><span class="header-section-number">3.1</span> Exercice 1</h3>
+<p>Créez une classe <code>Etudiant</code> avec les attributs :</p>
+<ul>
+<li>nom</li>
+<li>age</li>
+<li>liste_notes</li>
+</ul>
+<p>Avec les méthodes :</p>
+<ul>
+<li><strong>init</strong>() : constructeur</li>
+<li>ajouter_note() : pour ajouter une nouvelle note à la liste</li>
+<li>calculer_moyenne() : calculer la moyenne des notes</li>
+</ul>
+<div id="76685a7e" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercice-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
+<section id="exercice-2" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="exercice-2"><span class="header-section-number">3.2</span> Exercice 2</h3>
 <p>Créer une classe <code>Point</code> qui représente les coordonnées d’un point en 2D.<br>
 Ajouter une méthode distance(autre_point) qui calcule la distance avec un autre point.</p>
 <p>Créez une classe <code>Cercle</code> avec les attributs centre (de la classe Point) et rayon.<br>
 Ajoutez une méthode calculer_surface() qui renvoie la surface du cercle.</p>
-<div id="a0976a71-34b6-4a56-8df5-3e98f43d5408" class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1dce7e9f" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercice-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercice-3">Exercice 3</h3>
-<p>Créez une classe CompteBancaire avec les attributs suivants : * titulaire : le nom du titulaire du compte (chaîne de caractères) * solde : le solde du compte (nombre réel)</p>
+<section id="exercice-3" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="exercice-3"><span class="header-section-number">3.3</span> Exercice 3</h3>
+<p>Créez une classe CompteBancaire avec les attributs suivants :</p>
+<ul>
+<li>titulaire : le nom du titulaire du compte (chaîne de caractères)</li>
+<li>solde : le solde du compte (nombre réel)</li>
+</ul>
 <p>La classe devra avoir les méthodes suivantes :</p>
 <ul>
 <li><code>__init__(self, titulaire)</code> : le constructeur de la classe</li>
@@ -651,8 +624,8 @@ Ajoutez une méthode calculer_surface() qui renvoie la surface du cercle.</p>
 <li><code>transferer(autreCompte, montant)</code> qui transfère de l’argent du compte vers l’autre si le solde est suffisant</li>
 </ul>
 <p>Créer 2 Comptes et tester les différentes fonctionnalités.</p>
-<div id="dd2f9739" class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="669f26d8" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -1199,9 +1172,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ludo2ne/ENSAI-2A-Remise-a-niveau/blob/main/docs/python/05-POO-introduction.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/05-POO-introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Big-Data" class="external" target="_blank">Code source</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Code source</a></p>
 </div>
   </div>
 </footer>
