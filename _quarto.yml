@@ -55,8 +55,8 @@ website:
   reader-mode: true      
   page-footer:
     right: |
-      Website built with [Quarto](https://quarto.org/){.external target="_blank"}
-      [Code source](https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau){.external target="_blank"}
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
+      [Source code](https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau){.external target="_blank"}
   repo-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
   repo-branch: main
   issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new

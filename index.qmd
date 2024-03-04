@@ -7,46 +7,49 @@ from: markdown+emoji
 ---
 
 
-# :construction: 
-
-
-
 ## Programme
 
-* [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
-* [ ] [Python - initiation](docs/python/python.qmd) (6h)
-* [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
-* [ ] [UML](docs/UML/UML.qmd) (3h)
-* [ ] Divers outils utiles (git, markdown, R...)
+- [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
+- [ ] [Python - initiation](docs/python/python.qmd) (6h)
+- [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
+- [ ] [UML](docs/UML/UML.qmd) (3h)
+- [ ] Divers outils utiles (git, markdown, R...)
+
+
+## 1. Initiation à SQL
+
+- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql.qmd)
+- [ ] Effectuez le paramètrage pour utiliser DBeaver
+- [ ] Faite l'exercice
 
 
 ## 2. Initiation à Python
 
-Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :
+- [ ] Lisez le [cours d'introduction à Python](docs/python/python.qmd)
+- [ ] Lisez et faites les exercices des 5 notebooks
 
-* Ouvrez **Git Bash**, puis coller les commandes suivantes
-* `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
-* `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-* cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau
-
----
-
-* [ ] Lire et suivre les consignes données dans le fichier `Python-initiation/Python.md`
-  * [ ] Importer dans Jupyter les 5 notebooks, lire, puis faire les exercices
 
 ## 3. Programmation Orientée Objet
 
-* [ ] Lire et suivre les consignes données dans le fichier `Python-POO/La POO.md`
-* [ ] Faire les exercices
+
+Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
+
+- [ ] Ouvrez **Git Bash**, puis coller les commandes suivantes
+  - `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
+  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
+  - cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau
+
+--
+
+- [ ] Lisez le [cours d'introduction à la POO](docs/POO/POO.qmd)
+- [ ] Suivez les consignes pour le paramètrage de VSCode
+- [ ] Faites les exercices
+
 
 ## 4. UML
 
-Lire dans cet ordre les fichiers du dossier `UML` :
-
-* [ ] `UML.md`
-* [ ] `Diag cas utilisation.md`
-* [ ] `Diag classe.md`
-  * [ ] faire l'exercice
+- [ ] Lisez le [cours d'introduction à UML](docs/UML/UML.qmd)
+- Faites l'exercice
 
 ---
 
@@ -54,26 +57,21 @@ Lire dans cet ordre les fichiers du dossier `UML` :
 
 Voici d'autres possibilités pour se mettre à niveau en Python, POO et SQL
 
-### 1. Vidéos de la session 2022-2023
+### Vidéos de la session 2022-2023
 
-si vous avez vos accès à l'ENT ENSAI, les vidéos de la session de l'année dernière sont disponibles ici : 
-* https://foad-moodle.ensai.fr/mod/url/view.php?id=11354
+si vous avez vos accès à MyENSAI, les vidéos de la session de l'année 2022-2023 sont disponibles [ici](https://foad-moodle.ensai.fr/mod/url/view.php?id=11354){.external target="_blank"}
 
 
-### 2. Cours en ligne pour apprendre Python et SQL
+### Cours en ligne pour apprendre Python et SQL
 
-* SQL
-    * https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql
-* Python
-    * https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content
-        * parties 1 et 2
-    * https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
-        * parties 1 et 2
+- [SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){.external target="_blank"}
+- [Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){.external target="_blank"} (parties 1 et 2)
+- [POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){.external target="_blank"} (parties 1 et 2)
 		
 
-## Ressources utiles
+### Ressources utiles
 
-* https://realpython.com/
-* https://refactoring.guru/
-* https://github.com/faif/python-patterns
-* https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/
+- https://realpython.com/
+- https://refactoring.guru/
+- https://github.com/faif/python-patterns
+- https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/

@@ -62,6 +62,8 @@ python -c 'import platform; print(platform.python_implementation())'
 
 ## Utilisation des Notebooks
 
+Pour plus d'informations sur les notebooks, voir le [site de la formation INSEE d'initiation à Python](https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter){.external target="_blank"}
+
 Pour découvrir Python, nous allons commencer par coder dans des Notebooks :
 
 - [ ] [Les types et variables](01-types-et-variables.qmd)
