@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Remise à niveau informatique",
     "section": "",
-    "text": "Bases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (git, markdown, R…)\n\n\n\n\nVous pouvez commencer par créer un clone de ce dépôt sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\nLire et suivre les consignes données dans le fichier Python-initiation/Python.md\n\nImporter dans Jupyter les 5 notebooks, lire, puis faire les exercices\n\n\n\n\n\n\nLire et suivre les consignes données dans le fichier Python-POO/La POO.md\nFaire les exercices\n\n\n\n\nLire dans cet ordre les fichiers du dossier UML :\n\nUML.md\nDiag cas utilisation.md\nDiag classe.md\n\nfaire l’exercice\n\n\n\n\n\n\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\n\nsi vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354\n\n\n\n\nSQL\n\nhttps://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql\n\nPython\n\nhttps://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content\n\nparties 1 et 2\n\nhttps://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python\n\nparties 1 et 2\n\n\n\n\n\n\n\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/"
+    "text": "Bases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (git, markdown, R…)"
   },
   {
     "objectID": "index.html#programme",
@@ -14,39 +14,39 @@
     "text": "Bases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (git, markdown, R…)"
   },
   {
+    "objectID": "index.html#initiation-à-sql",
+    "href": "index.html#initiation-à-sql",
+    "title": "Remise à niveau informatique",
+    "section": "1. Initiation à SQL",
+    "text": "1. Initiation à SQL\n\nLisez le cours d’introduction aux bases de données et à SQL\nEffectuez le paramètrage pour utiliser DBeaver\nFaite l’exercice"
+  },
+  {
     "objectID": "index.html#initiation-à-python",
     "href": "index.html#initiation-à-python",
     "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "Vous pouvez commencer par créer un clone de ce dépôt sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\nLire et suivre les consignes données dans le fichier Python-initiation/Python.md\n\nImporter dans Jupyter les 5 notebooks, lire, puis faire les exercices"
+    "section": "2. Initiation à Python",
+    "text": "2. Initiation à Python\n\nLisez le cours d’introduction à Python\nLisez et faites les exercices des 5 notebooks"
   },
   {
     "objectID": "index.html#programmation-orientée-objet",
     "href": "index.html#programmation-orientée-objet",
     "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "Lire et suivre les consignes données dans le fichier Python-POO/La POO.md\nFaire les exercices"
+    "section": "3. Programmation Orientée Objet",
+    "text": "3. Programmation Orientée Objet\nVous pouvez commencer par créer un clone du dépôt Git sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n–\n\nLisez le cours d’introduction à la POO\nSuivez les consignes pour le paramètrage de VSCode\nFaites les exercices"
   },
   {
     "objectID": "index.html#uml",
     "href": "index.html#uml",
     "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "Lire dans cet ordre les fichiers du dossier UML :\n\nUML.md\nDiag cas utilisation.md\nDiag classe.md\n\nfaire l’exercice"
+    "section": "4. UML",
+    "text": "4. UML\n\nLisez le cours d’introduction à UML\nFaites l’exercice"
   },
   {
     "objectID": "index.html#alternatives",
     "href": "index.html#alternatives",
     "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\n\nsi vous avez vos accès à l’ENT ENSAI, les vidéos de la session de l’année dernière sont disponibles ici : * https://foad-moodle.ensai.fr/mod/url/view.php?id=11354\n\n\n\n\nSQL\n\nhttps://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql\n\nPython\n\nhttps://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content\n\nparties 1 et 2\n\nhttps://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python\n\nparties 1 et 2"
-  },
-  {
-    "objectID": "index.html#ressources-utiles",
-    "href": "index.html#ressources-utiles",
-    "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "https://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/"
+    "section": "Alternatives",
+    "text": "Alternatives\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\nVidéos de la session 2022-2023\nsi vous avez vos accès à MyENSAI, les vidéos de la session de l’année 2022-2023 sont disponibles ici\n\n\nCours en ligne pour apprendre Python et SQL\n\nSQL\nPython (parties 1 et 2)\nPOO avec Python (parties 1 et 2)\n\n\n\nRessources utiles\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/"
   },
   {
     "objectID": "docs/sql/DBeaver.html",
@@ -578,7 +578,7 @@
     "href": "docs/python/python.html#utilisation-des-notebooks",
     "title": "Python",
     "section": "1 Utilisation des Notebooks",
-    "text": "1 Utilisation des Notebooks\nPour découvrir Python, nous allons commencer par coder dans des Notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour utiliser les Notebooks :\n\nTélécharger les notebooks (plusieurs solutions)\n\ntélécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python\nsur chacune des notebooks, il y a en bas de la table des matières, un lien Jupyter pour télécharger le fichier .ipynb\nsi vous avez cloné le dépôt Git, allez dans docs/python/\n\nSe connecter à Jupyter avec idxxxx et mot de passe\nImporter dans Jupyter les 5 fichiers .ipynb\n\npour importer, utiliser la flèche ⬆️ en haut à gauche\n\nOuvrir le premier notebook 01. types et variables.ipynb\nSuivre les consignes et faire les exercices\nFaire de même avec les 4 autres notebooks\n\nAutres possibilités pour utiliser des Notebooks :\n\nGoogle Colab\nSSPCloud\n\n\n1.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\nLe type de cellule souhaité est modifiable dans la barre d’outils.\n\n\n1.2 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
+    "text": "1 Utilisation des Notebooks\nPour plus d’informations sur les notebooks, voir le site de la formation INSEE d’initiation à Python\nPour découvrir Python, nous allons commencer par coder dans des Notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour utiliser les Notebooks :\n\nTélécharger les notebooks (plusieurs solutions)\n\ntélécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python\nsur chacune des notebooks, il y a en bas de la table des matières, un lien Jupyter pour télécharger le fichier .ipynb\nsi vous avez cloné le dépôt Git, allez dans docs/python/\n\nSe connecter à Jupyter avec idxxxx et mot de passe\nImporter dans Jupyter les 5 fichiers .ipynb\n\npour importer, utiliser la flèche ⬆️ en haut à gauche\n\nOuvrir le premier notebook 01. types et variables.ipynb\nSuivre les consignes et faire les exercices\nFaire de même avec les 4 autres notebooks\n\nAutres possibilités pour utiliser des Notebooks :\n\nGoogle Colab\nSSPCloud\n\n\n1.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\nLe type de cellule souhaité est modifiable dans la barre d’outils.\n\n\n1.2 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
   },
   {
     "objectID": "docs/python/python.html#ressources-utiles",

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tout-est-objet" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="tout-est-objet"><span class="header-section-number">1.1</span> « Tout est objet »</h3>
 <p><strong>En Python, tout est un objet</strong> (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.</p>
-<div id="8758ad8a" class="cell" data-execution_count="1">
+<div id="f7a491d4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">1</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"bonjour"</span>))</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([]))</span>
@@ -342,7 +342,7 @@ Par exemple, nous créons une classe <code>Velo</code> dont voici la documentati
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">        est_arrete(): Vérifie si le vélo est complètement arrêté.</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="73a4e824" class="cell" data-execution_count="2">
+<div id="c5deb9b6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
@@ -371,14 +371,14 @@ Par exemple, nous créons une classe <code>Velo</code> dont voici la documentati
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Avec cette classe nous pouvons maintenant créer des <strong>instances</strong> (objets) de type <code>Velo</code></p>
-<div id="a3e1cabe" class="cell" data-execution_count="3">
+<div id="cfd7d57c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"bleu"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> Velo(<span class="st">"violet"</span>, <span class="va">True</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fa956a7e" class="cell" data-execution_count="4">
+<div id="6e451250" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">20</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>v1.installer_porte_bagage()</span>
@@ -405,7 +405,7 @@ Comme ce sont des fonctions, elles peuvent également admettre d’autres param�
 <section id="accéder-aux-attributs" class="level4">
 <h4 class="anchored" data-anchor-id="accéder-aux-attributs">Accéder aux attributs</h4>
 <p>Une fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : <code>instance.attribut</code>.</p>
-<div id="919dd464" class="cell" data-execution_count="5">
+<div id="368df08e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1.couleur)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
@@ -417,7 +417,7 @@ Comme ce sont des fonctions, elles peuvent également admettre d’autres param�
 <section id="modifier-un-attribut" class="level4">
 <h4 class="anchored" data-anchor-id="modifier-un-attribut">Modifier un attribut</h4>
 <p>Modifier un attribut d’une instance est très simple, la syntaxe est : <code>instance.attribut = nouvelle_valeur</code>.</p>
-<div id="dc090c0b" class="cell" data-execution_count="6">
+<div id="1ecfb9fc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v2.couleur <span class="op">=</span> <span class="st">"jaune"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v2.couleur)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -427,7 +427,7 @@ Comme ce sont des fonctions, elles peuvent également admettre d’autres param�
 <p>Chaque instance de <code>Velo</code> a ses propres attributs d’instance (couleur, vitesse, porte_bagage).<br>
 Il est possible d’avoir des attributs communs à tous les Velos : <strong>les attributs de classe</strong>.</p>
 <p>Créons la classe <code>VeloBis</code> pour illustrer avec un attribut comptant le nombre de <code>VeloBis</code> créés.</p>
-<div id="b0766c66" class="cell" data-execution_count="7">
+<div id="8d20e045" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> VeloBis:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    nb_velos_bis <span class="op">=</span> <span class="dv">0</span>                                       <span class="co"># Attribut de classe pour compter le nombre de VeloBis</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -437,7 +437,7 @@ Il est possible d’avoir des attributs communs à tous les Velos : <strong>les 
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        VeloBis.nb_velos_bis <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2064563b" class="cell" data-execution_count="8">
+<div id="56f8c626" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vb1 <span class="op">=</span> VeloBis(<span class="st">"rose"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VeloBis.nb_velos_bis)</span>
@@ -452,12 +452,12 @@ Il est possible d’avoir des attributs communs à tous les Velos : <strong>les 
 <section id="appeler-une-méthode" class="level4">
 <h4 class="anchored" data-anchor-id="appeler-une-méthode">Appeler une méthode</h4>
 <p>La syntaxe pour appeler une méthode d’un objet instancié est la suivante : <code>instance.methode(parametres)</code>.</p>
-<div id="b7e3b98b" class="cell" data-execution_count="9">
+<div id="75993eef" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>v1.est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Remarque</strong> : les méthodes n’ont pas d’existence propre en dehors de l’objet.<br>
 Nous ne pouvons pas appeler la méthode <code>est_arrete()</code> seule, cela n’a pas de sens.</p>
-<div id="0f69b280" class="cell" data-execution_count="10">
+<div id="343a0235" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>est_arrete()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Remarque 2</strong> :</p>
@@ -473,18 +473,18 @@ Par exemple :</p>
 <ul>
 <li>si l’on n’utilise pas les méthodes <code>accelerer</code> et <code>decelerer</code>, il est possible de se retrouver avec une vitesse négative</li>
 </ul>
-<div id="3331c1ff" class="cell" data-execution_count="11">
+<div id="f542a730" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Modifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.<br>
 Il est possible d’aller encore plus loin :</p>
-<div id="8fc6a948" class="cell" data-execution_count="12">
+<div id="17258f3f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>v1.vitesse <span class="op">=</span> <span class="st">"Jean-Michel"</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En utilisant les <strong>méthodes</strong>, cela évite de se retrouver dans des situations absurdes ou incohérentes.</p>
-<div id="53aad0ee" class="cell" data-execution_count="13">
+<div id="b3071449" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Velo(<span class="st">"Bleu"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>v1.accelerer(<span class="dv">10</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1)</span>
@@ -497,7 +497,7 @@ Il est possible d’aller encore plus loin :</p>
 <h3 data-number="1.5" class="anchored" data-anchor-id="bonus-la-classe-property"><span class="header-section-number">1.5</span> Bonus : la classe Property</h3>
 <p>Pour écarter tout problème, une solution intéressante est d’utiliser la classe <a href="https://python.sdv.univ-paris-diderot.fr/19_avoir_la_classe_avec_les_objets/#1952-la-solution-la-classe-property"><strong>property</strong></a>.<br>
 Cette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.</p>
-<div id="f4137dbe" class="cell" data-execution_count="14">
+<div id="2b7d2e21" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
@@ -528,7 +528,7 @@ Cette classe property permet sans changer la syntaxe d’accès aux attributs d�
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> est_arrete(<span class="va">self</span>):</span>
 <span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.vitesse <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="726f04eb" class="cell" data-execution_count="15">
+<div id="f8f8f18a" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> Velo(<span class="st">"noir"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>v3.vitesse <span class="op">=</span> <span class="dv">10</span></span>
@@ -594,7 +594,7 @@ Ajoutez des docstrings aux fonctions, classes et modules pour expliquer leur fon
 <li>ajouter_note() : pour ajouter une nouvelle note à la liste</li>
 <li>calculer_moyenne() : calculer la moyenne des notes</li>
 </ul>
-<div id="76685a7e" class="cell" data-execution_count="16">
+<div id="c3c192d3" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -604,7 +604,7 @@ Ajoutez des docstrings aux fonctions, classes et modules pour expliquer leur fon
 Ajouter une méthode distance(autre_point) qui calcule la distance avec un autre point.</p>
 <p>Créez une classe <code>Cercle</code> avec les attributs centre (de la classe Point) et rayon.<br>
 Ajoutez une méthode calculer_surface() qui renvoie la surface du cercle.</p>
-<div id="1dce7e9f" class="cell" data-execution_count="17">
+<div id="c384c496" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -624,7 +624,7 @@ Ajoutez une méthode calculer_surface() qui renvoie la surface du cercle.</p>
 <li><code>transferer(autreCompte, montant)</code> qui transfère de l’argent du compte vers l’autre si le solde est suffisant</li>
 </ul>
 <p>Créer 2 Comptes et tester les différentes fonctionnalités.</p>
-<div id="669f26d8" class="cell" data-execution_count="18">
+<div id="2eb4e11d" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
@@ -1174,7 +1174,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/05-POO-introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Code source</a></p>
+<p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
   </div>
 </footer>
