@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -250,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 <ul class="task-list">
 <li><label><input type="checkbox">Lisez le <a href="./docs/sql/sql.html">cours d’introduction aux bases de données et à SQL</a></label></li>
 <li><label><input type="checkbox">Effectuez le paramètrage pour utiliser DBeaver</label></li>
-<li><label><input type="checkbox">Faite l’exercice</label></li>
+<li><label><input type="checkbox">Faites l’exercice</label></li>
 </ul>
 </section>
 <section id="initiation-à-python" class="level2">
@@ -268,10 +268,10 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
 <li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</li>
+<li>cela crée une copie du dépôt dans <em>P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</em></li>
 </ul></li>
 </ul>
-<p>–</p>
+<hr>
 <ul class="task-list">
 <li><label><input type="checkbox">Lisez le <a href="./docs/POO/POO.html">cours d’introduction à la POO</a></label></li>
 <li><label><input type="checkbox">Suivez les consignes pour le paramètrage de VSCode</label></li>
@@ -280,9 +280,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="uml" class="level2">
 <h2 class="anchored" data-anchor-id="uml">4. UML</h2>
-<ul>
+<ul class="task-list">
 <li><label><input type="checkbox">Lisez le <a href="./docs/UML/UML.html">cours d’introduction à UML</a></label></li>
-<li>Faites l’exercice</li>
+<li><label><input type="checkbox">Faites l’exercice</label></li>
 </ul>
 <hr>
 </section>
@@ -291,14 +291,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
 <section id="vidéos-de-la-session-2022-2023" class="level3">
 <h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à MyENSAI, les vidéos de la session de l’année 2022-2023 sont disponibles <a href="https://foad-moodle.ensai.fr/mod/url/view.php?id=11354" class="external" target="_blank">ici</a></p>
+<p>si vous avez vos accès à <em>MyENSAI</em>, les vidéos de la session de l’année 2022-2023 sont disponibles <a href="https://foad-moodle.ensai.fr/mod/url/view.php?id=11354" target="_blank">ici</a></p>
 </section>
 <section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
 <h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">Cours en ligne pour apprendre Python et SQL</h3>
 <ul>
-<li><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" class="external" target="_blank">SQL</a></li>
-<li><a href="https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content" class="external" target="_blank">Python</a> (parties 1 et 2)</li>
-<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" class="external" target="_blank">POO avec Python</a> (parties 1 et 2)</li>
+<li><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" target="_blank">SQL</a></li>
+<li><a href="https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content" target="_blank">Python</a> (parties 1 et 2)</li>
+<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">POO avec Python</a> (parties 1 et 2)</li>
 </ul>
 </section>
 <section id="ressources-utiles" class="level3">
@@ -538,6 +538,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ludo2ne\.github\.io\/ENSAI-2A-remise-a-niveau\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -572,7 +590,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

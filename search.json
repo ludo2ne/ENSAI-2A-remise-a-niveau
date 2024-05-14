@@ -18,7 +18,7 @@
     "href": "index.html#initiation-à-sql",
     "title": "Remise à niveau informatique",
     "section": "1. Initiation à SQL",
-    "text": "1. Initiation à SQL\n\nLisez le cours d’introduction aux bases de données et à SQL\nEffectuez le paramètrage pour utiliser DBeaver\nFaite l’exercice"
+    "text": "1. Initiation à SQL\n\nLisez le cours d’introduction aux bases de données et à SQL\nEffectuez le paramètrage pour utiliser DBeaver\nFaites l’exercice"
   },
   {
     "objectID": "index.html#initiation-à-python",
@@ -32,7 +32,7 @@
     "href": "index.html#programmation-orientée-objet",
     "title": "Remise à niveau informatique",
     "section": "3. Programmation Orientée Objet",
-    "text": "3. Programmation Orientée Objet\nVous pouvez commencer par créer un clone du dépôt Git sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n–\n\nLisez le cours d’introduction à la POO\nSuivez les consignes pour le paramètrage de VSCode\nFaites les exercices"
+    "text": "3. Programmation Orientée Objet\nVous pouvez commencer par créer un clone du dépôt Git sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\n\nLisez le cours d’introduction à la POO\nSuivez les consignes pour le paramètrage de VSCode\nFaites les exercices"
   },
   {
     "objectID": "index.html#uml",
