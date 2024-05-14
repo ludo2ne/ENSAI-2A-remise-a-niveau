@@ -20,7 +20,7 @@ from: markdown+emoji
 
 - [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql.qmd)
 - [ ] Effectuez le paramètrage pour utiliser DBeaver
-- [ ] Faite l'exercice
+- [ ] Faites l'exercice
 
 
 ## 2. Initiation à Python
@@ -37,9 +37,9 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 - [ ] Ouvrez **Git Bash**, puis coller les commandes suivantes
   - `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
   - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-  - cela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau
+  - cela crée une copie du dépôt dans *P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau*
 
---
+---
 
 - [ ] Lisez le [cours d'introduction à la POO](docs/POO/POO.qmd)
 - [ ] Suivez les consignes pour le paramètrage de VSCode
@@ -49,7 +49,7 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 ## 4. UML
 
 - [ ] Lisez le [cours d'introduction à UML](docs/UML/UML.qmd)
-- Faites l'exercice
+- [ ] Faites l'exercice
 
 ---
 
@@ -59,14 +59,14 @@ Voici d'autres possibilités pour se mettre à niveau en Python, POO et SQL
 
 ### Vidéos de la session 2022-2023
 
-si vous avez vos accès à MyENSAI, les vidéos de la session de l'année 2022-2023 sont disponibles [ici](https://foad-moodle.ensai.fr/mod/url/view.php?id=11354){.external target="_blank"}
+si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022-2023 sont disponibles [ici](https://foad-moodle.ensai.fr/mod/url/view.php?id=11354){target="_blank"}
 
 
 ### Cours en ligne pour apprendre Python et SQL
 
-- [SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){.external target="_blank"}
-- [Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){.external target="_blank"} (parties 1 et 2)
-- [POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){.external target="_blank"} (parties 1 et 2)
+- [SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
+- [Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parties 1 et 2)
+- [POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parties 1 et 2)
 		
 
 ### Ressources utiles
