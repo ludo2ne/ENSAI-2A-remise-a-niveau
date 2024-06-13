@@ -26,6 +26,7 @@ Une `Base de données` (BDD) est une collection organisée de données structur�
 
 
 Une `Table` est composée de lignes et de colonnes :
+
 - une `ligne` représente un enregistrement spécifique
 - une `colonne` représente un attribut particulier de ces enregistrements
 - `Clé primaire` (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table
@@ -42,6 +43,7 @@ Les tables seront liées entre elle grace à des `clés étrangères` (FK). Il y
   - il faut créer une table d'association entre *Etudiant* et *Cours*
 
 Un `SGBD` (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée
+
 - exemples (Bases de données relationnelles) : `PostgreSQL`, MySQL, Oracle Database
 - exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra 
 
@@ -165,7 +167,7 @@ Il permet d'effectuer les opérations du CRUD (Create, Read, Upadate, Delete)
 
 :bulb: le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables
 
-```sql
+```{.sql}
 -- Création de la table personne (ceci est un commentaire)
 CREATE TABLE ran.personnes (
     id               INT         PRIMARY KEY,
@@ -185,7 +187,7 @@ CREATE TABLE ran.personnes (
 
 ###  Insérer des données
 
-```sql
+```{.sql}
 INSERT INTO ran.personnes (id, nom, prenom, dnais, adresse)
 VALUES
     (1, 'Dupont', 'Jean', '1990-05-15', 'Paris'),
@@ -203,7 +205,7 @@ VALUES
 
 ###  Renommer une colonne
 
-```sql
+```{.sql}
 ALTER TABLE ran.personnes
 RENAME COLUMN date_naissance TO dnais;
 ```
@@ -218,7 +220,7 @@ RENAME COLUMN date_naissance TO dnais;
 
 ###  Ajouter un attribut
 
-```sql
+```{.sql}
 ALTER TABLE ran.personnes
 ADD joue_aux_echecs BOOLEAN;
 ```
@@ -233,7 +235,7 @@ ADD joue_aux_echecs BOOLEAN;
 
 ###  Supprimer une colonne
 
-```sql
+```{.sql}
 ALTER TABLE ran.personnes
 DROP COLUMN adresse;
 ```
@@ -248,7 +250,7 @@ DROP COLUMN adresse;
 
 ###  Supprimer une table
 
-```sql
+```{.sql}
 DROP TABLE ran.personnes;
 ```
 
@@ -266,7 +268,7 @@ DROP TABLE ran.personnes;
 
 ###  Insérer des lignes
 
-```sql
+```{.sql}
 INSERT INTO ran.personnes 
 (id, nom,     prenom,     date_naissance,  adresse)
 VALUES
@@ -286,7 +288,7 @@ VALUES
 
 ###  Sélectionner des lignes
 
-```sql
+```{.sql}
 SELECT *
   FROM ran.personnes
  WHERE adresse LIKE 'L%'
@@ -307,7 +309,7 @@ SELECT *
 |----|---------|----------|-------------|---------------|
 | 1  | livre   | 1        | 2           | 3             |
 
-```sql
+```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
@@ -319,7 +321,7 @@ SELECT p.prenom,
 > :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont **le même nom**.  
 > exemple : si dans la table `personnes` nous avons `id_personne` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
 
-```sql
+```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
@@ -334,7 +336,7 @@ SELECT p.prenom,
 
 > Que se passe t'il si nous exécutons la requête ci-dessous et qu'Ali n'a passé aucune commande ?
 
-```sql
+```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
@@ -344,7 +346,7 @@ SELECT p.prenom,
 
 Pour afficher toutes les personnes, même celles qui n'ont pas réalisé de commande, nous allons utiliser les **jointures externees** : `LEFT JOIN` ou `RIGHT JOIN`
 
-```sql
+```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
@@ -360,7 +362,7 @@ Ici le `LEFT JOIN` indique que nous affichons :
 
 ###  Mettre à jour des lignes
 
-```sql
+```{.sql}
 UPDATE ran.personnes
    SET adresse = 'Rennes'
  WHERE id = 2;
@@ -376,7 +378,7 @@ UPDATE ran.personnes
 
 ###  Supprimer des lignes
 
-```sql
+```{.sql}
 DELETE FROM ran.personnes
  WHERE prenom = 'Ali';
 ```
@@ -409,7 +411,7 @@ Par défaut toutes les tables que nous allons créer iraient dans le schéma pub
 - `ci` : schéma utilisé en compléments d'informatique
 - `projet` : schéma du projet info 2A
 
-```sql
+```{.sql}
 CREATE schema ran;
 CREATE schema ci;
 CREATE schema projet;
@@ -423,7 +425,7 @@ CREATE schema projet;
 
 > Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne
 
-```sql
+```{.sql}
 -- toutes les personnes ayant un prénom contenant "au"
 SELECT 
   FROM ran.personnes
@@ -434,7 +436,7 @@ SELECT
 
 > Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
 
-```sql
+```{.sql}
 SELECT adresse,
        COUNT(1)
   FROM ran.personnes
@@ -446,7 +448,7 @@ SELECT adresse,
 > Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d'une condition après le GROUP BY.  
 > :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
 
-```sql
+```{.sql}
 SELECT adresse,
        COUNT(1)
   FROM ran.personnes
@@ -456,7 +458,7 @@ HAVING COUNT(1) >= 5;
 
 #### ORDER BY
 
-```sql
+```{.sql}
 SELECT *
   FROM ran.personnes
  ORDER BY adresse DESC
@@ -466,7 +468,7 @@ SELECT *
 
 > Permet de renommer une colonne dans l'affichage
 
-```sql
+```{.sql}
 SELECT adresse AS Ville
   FROM ran.personnes
 ```
@@ -475,7 +477,7 @@ SELECT adresse AS Ville
 
 ####  Quelques possibilités d'utilisation sans table
 
-```sql
+```{.sql}
 SELECT CURRENT_DATE;
 SELECT 1+2;
 SELECT 1 > 2;
