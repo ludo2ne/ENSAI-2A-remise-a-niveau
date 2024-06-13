@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -323,7 +323,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Une <code>Base de données</code> (BDD) est une collection organisée de données structurées stockées dans des <code>Tables</code></p>
-<p>Une <code>Table</code> est composée de lignes et de colonnes : - une <code>ligne</code> représente un enregistrement spécifique - une <code>colonne</code> représente un attribut particulier de ces enregistrements - <code>Clé primaire</code> (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table</p>
+<p>Une <code>Table</code> est composée de lignes et de colonnes :</p>
+<ul>
+<li>une <code>ligne</code> représente un enregistrement spécifique</li>
+<li>une <code>colonne</code> représente un attribut particulier de ces enregistrements</li>
+<li><code>Clé primaire</code> (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table</li>
+</ul>
 <p>Une base de données relationnelle (BDDR) organise les données sous forme de tables interconnectées. Les tables seront liées entre elle grace à des <code>clés étrangères</code> (FK). Il y a trois principaux types d’associations :</p>
 <ul>
 <li><code>1..1</code> : Une <em>Personne</em> a un <em>Passport</em> et un <em>Passport</em> appartient à une seule <em>Personne</em>
@@ -339,7 +344,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>il faut créer une table d’association entre <em>Etudiant</em> et <em>Cours</em></li>
 </ul></li>
 </ul>
-<p>Un <code>SGBD</code> (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée - exemples (Bases de données relationnelles) : <code>PostgreSQL</code>, MySQL, Oracle Database - exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra</p>
+<p>Un <code>SGBD</code> (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée</p>
+<ul>
+<li>exemples (Bases de données relationnelles) : <code>PostgreSQL</code>, MySQL, Oracle Database</li>
+<li>exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra</li>
+</ul>
 <p><code>SQL</code> (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.</p>
 <p><code>DBeaver</code> est un outil client qui permet de se connecter à un SGBD.</p>
 </section>
@@ -366,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id_joueuse</th>
@@ -445,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>Joueuse</code></p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id_joueuse</th>
@@ -494,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p><code>Pays</code></p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>code_pays</th>
@@ -585,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    adresse          TEXT</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -610,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">'Dupont'</span>, <span class="st">'Jean'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Paris'</span>),</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">'Martin'</span>, <span class="st">'Emma'</span>, <span class="st">'1985-09-22'</span>, <span class="st">'Lyon'</span>),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">'Leroy'</span>, <span class="st">'Paul'</span>, <span class="st">'1995-03-10'</span>, <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -650,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="4.3" class="anchored" data-anchor-id="renommer-une-colonne"><span class="header-section-number">4.3</span> Renommer une colonne</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">COLUMN</span> date_naissance <span class="kw">TO</span> dnais;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -690,7 +699,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="4.4" class="anchored" data-anchor-id="ajouter-un-attribut"><span class="header-section-number">4.4</span> Ajouter un attribut</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_aux_echecs <span class="dt">BOOLEAN</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -734,7 +743,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="4.5" class="anchored" data-anchor-id="supprimer-une-colonne"><span class="header-section-number">4.5</span> Supprimer une colonne</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -779,7 +788,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="actions-sur-les-lignes" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="actions-sur-les-lignes"><span class="header-section-number">5</span> Actions sur les lignes</h2>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -807,7 +816,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="st">'Ali'</span>,    <span class="st">'Gatore'</span>,   <span class="st">'1990-05-15'</span>,    <span class="st">'Paris'</span>),</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="st">'Laure'</span>,  <span class="st">'Dure'</span>,     <span class="st">'1985-09-22'</span>,    <span class="st">'Lyon'</span> ),</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="st">'Maud'</span>,   <span class="st">'Erateur'</span>,  <span class="st">'1995-03-10'</span>,    <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -849,7 +858,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> adresse <span class="kw">LIKE</span> <span class="st">'L%'</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -876,7 +885,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>Table <code>commande</code></p>
 </blockquote>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -938,7 +947,7 @@ exemple : si dans la table <code>personnes</code> nous avons <code>id_personne</
 <div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> ran.personnes</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> adresse <span class="op">=</span> <span class="st">'Rennes'</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">2</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
@@ -978,7 +987,7 @@ exemple : si dans la table <code>personnes</code> nous avons <code>id_personne</
 <h3 data-number="5.6" class="anchored" data-anchor-id="supprimer-des-lignes"><span class="header-section-number">5.6</span> Supprimer des lignes</h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ran.personnes</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Ali'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>id</th>
