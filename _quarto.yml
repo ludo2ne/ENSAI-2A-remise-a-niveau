@@ -20,7 +20,7 @@ website:
             text: "DBeaver"
       - text: Python
         menu: 
-          - href: docs/python/python.qmd
+          - href: docs/python/python-cours.qmd
             text: "Introduction à Python"
           - href: docs/python/01-types-et-variables.qmd
             text: "Types et Variables"

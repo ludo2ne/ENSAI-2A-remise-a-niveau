@@ -79,8 +79,16 @@ Gestionnnaire de packages **pip**, à lancer dans un terminal
 
 - Variables et types de données (int, float, str, bool, list, dict)
 - Opérations de base
-- Manipulation de données
+- Sensible à l'indentation
 - Structures de contrôle (if, for, while)
+
+```{.python}
+cpt = 10
+while cpt > 0:
+    print(cpt, end = " ")
+    cpt -= 1    
+print("boom")
+```
 
 ::: {.notes}
 - Présenter un exemple simple combinant variables, opérations et structures de contrôle.
