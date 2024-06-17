@@ -1,0 +1,123 @@
+---
+title: "Introduction à Python"
+description: "[Slides](python-cours-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../index.html) --- [Introduction à Git](python-cours.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: python-cours-slides.html
+from: markdown+emoji
+lightbox: true
+---
+
+
+## Historique
+
+- Créé par [Guido van Rossum](https://fr.wikipedia.org/wiki/Python_(langage)#/media/Fichier:Guido_van_Rossum_OSCON_2006.jpg){target="_blank"} (Pays-Bas)
+- 1ère version en 1991
+- Géré par la *Python Software Foundation* depuis 2001
+- [Python](https://www.python.org/){target="_blank"} 3.12
+
+
+::: {.notes}
+- Créé fin 1989 pendant les vacances de Noël
+- Python Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d'étendre la communauté
+:::
+
+## Pourquoi Apprendre Python ?
+
+- Langage polyvalent et populaire
+- Facilité d'apprentissage et de lecture
+- Large communauté et nombreuses ressources
+- Nombreux packages
+
+::: {.notes}
+- Important dans le monde de la data science et de l'ingénierie.
+:::
+
+## Python à l'ENSAI
+
+- Distribution CPython
+- Version 3.10
+- Vous allez coder dans :
+  - des [notebook Jupyter](https://jupyter.org/){target="_blank"}
+  - [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
+- Packages pré-installés : `pip list`
+
+::: {.notes}
+Distribution : version pré-packagée de l'interpréteur Python accompagnée de nombreux modules, bibliothèques et outils
+- Anaconda (datascience et machine learning)
+- Miniconda (plus léger)
+
+Autre IDE : IDE: PyCharm
+
+Gestionnnaire de packages **pip**, à lancer dans un terminal
+:::
+
+
+## Les Fondamentaux de Python
+
+- Langage interprété et interactif
+- Typage faible
+- Syntaxe claire et concise
+- Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)
+
+::: {.notes}
+- Expliquer la différence entre un langage interprété et compilé.
+- interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)
+:::
+
+## Écrire votre Premier Code en Python
+
+- Variables et types de données (int, float, str, bool, list, dict)
+- Opérations de base
+- Manipulation de données
+- Structures de contrôle (if, for, while)
+
+::: {.notes}
+- Présenter un exemple simple combinant variables, opérations et structures de contrôle.
+- Insister sur la simplicité et la lisibilité du code Python.
+- Utiliser des exemples concrets liés aux statistiques.
+:::
+
+## Collections
+
+- **Liste** : collection ordonnée de valeurs modifiables
+  ```{.python} 
+  list = ["pomme", "poire", 2, True]
+  ```
+- **Dictionnaire** : collection de paires clé-valeur non ordonnées
+  ```{.python} 
+  recette = {"fraise": 5, "Moutarde": "5g"}
+  ```
+- **Set** : collection non ordonnée de valeurs uniques
+  ```{.python} 
+  premiers = {2, 3, 5, 7, 11, 13}
+  ```
+- **Tuple** : collection ordonnée de valeurs immuables
+  ```{.python} 
+  coord = (-1, 5, 4)
+  ```
+
+::: {.notes}
+D'autres types de collections existent
+:::
+
+## Collections - résumé
+
+| Type de Donnée | Ordonné | Mutable | Doublon |
+|----------------|:-------:|:-------:|:-------:|
+| list           | ✔       | ✔       |        |
+| dict           |         | ✔       |         |
+| tuple          | ✔       |         | ✔      |
+| set            |         | ✔       |         |
+
+

@@ -40,3 +40,17 @@ h4::before {
 img{
 max-width: 100%
 } 
+
+p{
+  text-align: justify
+}
+
+/************************************************************/
+/* Render                                                   */
+/************************************************************/
+
+/* Hide revealJS speaker notes in the html*/
+.notes,
+.hide-html-render{
+  display: none;
+}

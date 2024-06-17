@@ -10,7 +10,7 @@ from: markdown+emoji
 ## Programme
 
 - [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
-- [ ] [Python - initiation](docs/python/python.qmd) (6h)
+- [ ] [Python - initiation](docs/python/python-cours.qmd) (6h)
 - [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
 - [ ] [UML](docs/UML/UML.qmd) (3h)
 - [ ] Divers outils utiles (git, markdown, R...)
@@ -25,7 +25,7 @@ from: markdown+emoji
 
 ## 2. Initiation à Python
 
-- [ ] Lisez le [cours d'introduction à Python](docs/python/python.qmd)
+- [ ] Lisez le [cours d'introduction à Python](docs/python/python-cours.qmd)
 - [ ] Lisez et faites les exercices des 5 notebooks
 
 
