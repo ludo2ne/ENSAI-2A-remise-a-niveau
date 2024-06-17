@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Python">
+<meta name="description" content="Slides">
 
-<title>Remise à Niveau Informatique - Python</title>
+<title>Remise à Niveau Informatique - Introduction à Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="../../docs/python/python.html">
+    <a class="dropdown-item" href="../../docs/python/python.qmd">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
@@ -235,20 +235,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#utilisation-des-notebooks" id="toc-utilisation-des-notebooks" class="nav-link" data-scroll-target="#utilisation-des-notebooks"><span class="header-section-number">1</span> Utilisation des Notebooks</a>
   <ul class="collapse">
-  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">1.1</span> Types de cellules</a></li>
-  <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">1.2</span> Commandes utiles</a></li>
-  </ul></li>
-  <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">2</span> Ressources utiles</a></li>
-  <li><a href="#for-fun" id="toc-for-fun" class="nav-link" data-scroll-target="#for-fun"><span class="header-section-number">3</span> For fun</a></li>
+  <li><a href="#historique" id="toc-historique" class="nav-link active" data-scroll-target="#historique">Historique</a></li>
+  <li><a href="#pourquoi-apprendre-python" id="toc-pourquoi-apprendre-python" class="nav-link" data-scroll-target="#pourquoi-apprendre-python">Pourquoi Apprendre Python ?</a></li>
+  <li><a href="#python-à-lensai" id="toc-python-à-lensai" class="nav-link" data-scroll-target="#python-à-lensai">Python à l’ENSAI</a></li>
+  <li><a href="#les-fondamentaux-de-python" id="toc-les-fondamentaux-de-python" class="nav-link" data-scroll-target="#les-fondamentaux-de-python">Les Fondamentaux de Python</a></li>
+  <li><a href="#écrire-votre-premier-code-en-python" id="toc-écrire-votre-premier-code-en-python" class="nav-link" data-scroll-target="#écrire-votre-premier-code-en-python">Écrire votre Premier Code en Python</a></li>
+  <li><a href="#collections" id="toc-collections" class="nav-link" data-scroll-target="#collections">Collections</a></li>
+  <li><a href="#collections---résumé" id="toc-collections---résumé" class="nav-link" data-scroll-target="#collections---résumé">Collections - résumé</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="python-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -259,12 +258,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python</h1>
+<h1 class="title">Introduction à Python</h1>
 </div>
 
 <div>
   <div class="description">
-    Introduction à Python
+    <a href="python-cours-slides.html">Slides</a>
   </div>
 </div>
 
@@ -287,178 +286,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<!-- TODO : mettre au propre -->
-<p>Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.</p>
+<section id="historique" class="level2">
+<h2 class="anchored" data-anchor-id="historique">Historique</h2>
 <ul>
-<li>Python
-<ul>
+<li>Créé par <a href="https://fr.wikipedia.org/wiki/Python_(langage)#/media/Fichier:Guido_van_Rossum_OSCON_2006.jpg" target="_blank">Guido van Rossum</a> (Pays-Bas)</li>
 <li>1ère version en 1991</li>
-<li>gratuit</li>
-<li>multiplateforme (Linux, Windows…)</li>
-<li>langage interprété
-<ul>
-<li>le script python est directement exécuté</li>
-<li>pas de compilation</li>
-</ul></li>
-<li>langage orienté objet</li>
-<li>sensible à l’indentation (généralement 4 espaces)
-<ul>
-<li>utiliser un formatage automatique (autopep8)</li>
-</ul></li>
-</ul></li>
-<li>Version utilisée à l’ENSAI : 3.10.4
-<ul>
-<li>dernière version : 3.11.3</li>
-</ul></li>
-<li>Distribution utilisée à l’ENSAI
-<ul>
-<li>CPython</li>
-<li>Autre distribution populaire : Anaconda</li>
-</ul></li>
-<li>IDE (Integrated Development Environment) utilisé à l’ENSAI
-<ul>
-<li>Visual Studio Code</li>
-<li>Autres IDE : PyCharm, Jupyter, Atom, Spyder…</li>
-</ul></li>
-<li>Packages
-<ul>
-<li>Informatique
-<ul>
-<li>inquirerPy</li>
-<li>requests</li>
-<li>psycopg2-binary</li>
-<li>tabulate</li>
-</ul></li>
-<li>Datascience
-<ul>
-<li>NumPy</li>
-<li>Pandas (manipulation et analyse des données, dataframe)</li>
-<li>Matplotlib (graphiques 2D et 3D), Seaborn</li>
-</ul></li>
-</ul></li>
+<li>Géré par la <em>Python Software Foundation</em> depuis 2001</li>
+<li><a href="https://www.python.org/" target="_blank">Python</a> 3.12</li>
 </ul>
-<hr>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrir une invite de commandes <strong>Git Bash</strong></label></li>
+<div class="notes">
+<ul>
+<li>Créé fin 1989 pendant les vacances de Noël</li>
+<li>Python Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span>              <span class="co"># Python 3.10.4 </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> list                      <span class="co"># Packages installés</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package_name<span class="op">&gt;</span>    <span class="co"># installer un package</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution utilisée</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="utilisation-des-notebooks" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="utilisation-des-notebooks"><span class="header-section-number">1</span> Utilisation des Notebooks</h2>
-<p>Pour plus d’informations sur les notebooks, voir le <a href="https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter" class="external" target="_blank">site de la formation INSEE d’initiation à Python</a></p>
-<p>Pour découvrir Python, nous allons commencer par coder dans des Notebooks :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="../../docs/python/01-types-et-variables.html">Les types et variables</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/02-listes-et-dictionnaires.html">Les listes et dictionnaires</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/03-tests-et-boucles.html">Les boucles</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/04-fonctions.html">Les fonctions</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/05-POO-introduction.html">Introduction à la Programmation Orientée Objet</a></label></li>
+<section id="pourquoi-apprendre-python" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-apprendre-python">Pourquoi Apprendre Python ?</h2>
+<ul>
+<li>Langage polyvalent et populaire</li>
+<li>Facilité d’apprentissage et de lecture</li>
+<li>Large communauté et nombreuses ressources</li>
+<li>Nombreux packages</li>
 </ul>
-<p>Pour utiliser les Notebooks :</p>
+<div class="notes">
 <ul>
-<li>Télécharger les notebooks (plusieurs solutions)
-<ul>
-<li>télécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python</li>
-<li>sur chacune des notebooks, il y a en bas de la table des matières, un lien <code>Jupyter</code> pour télécharger le fichier <em>.ipynb</em></li>
-<li>si vous avez cloné le dépôt Git, allez dans <em>docs/python/</em></li>
-</ul></li>
-<li>Se connecter à <a href="https://clust-n4.ensai.fr/" class="external" target="_blank">Jupyter</a> avec idxxxx et mot de passe</li>
-<li>Importer dans Jupyter les 5 fichiers <code>.ipynb</code>
-<ul>
-<li>pour importer, utiliser la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span> en haut à gauche</li>
-</ul></li>
-<li>Ouvrir le premier notebook <code>01. types et variables.ipynb</code></li>
-<li>Suivre les consignes et faire les exercices</li>
-<li>Faire de même avec les 4 autres notebooks</li>
+<li>Important dans le monde de la data science et de l’ingénierie.</li>
 </ul>
-<p>Autres possibilités pour utiliser des Notebooks :</p>
-<ul>
-<li><a href="https://colab.research.google.com/" class="external" target="_blank">Google Colab</a></li>
-<li><a href="https://datalab.sspcloud.fr/" class="external" target="_blank">SSPCloud</a></li>
-</ul>
-<section id="types-de-cellules" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">1.1</span> Types de cellules</h3>
-<p>Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton <code>+</code> dans la barre d’outils.<br>
-Il existe deux types de cellules principaux :</p>
-<ul>
-<li>les cellules de code (où vous écrivez et exécutez du code Python)</li>
-<li>les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)</li>
-</ul>
-<p>Le type de cellule souhaité est modifiable dans la barre d’outils.</p>
+</div>
 </section>
-<section id="commandes-utiles" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="commandes-utiles"><span class="header-section-number">1.2</span> Commandes utiles</h3>
+<section id="python-à-lensai" class="level2">
+<h2 class="anchored" data-anchor-id="python-à-lensai">Python à l’ENSAI</h2>
+<ul>
+<li>Distribution CPython</li>
+<li>Version 3.10</li>
+<li>Vous allez coder dans :
+<ul>
+<li>des <a href="https://jupyter.org/" target="_blank">notebook Jupyter</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+</ul></li>
+<li>Packages pré-installés : <code>pip list</code></li>
+</ul>
+<div class="notes">
+<p>Distribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils - Anaconda (datascience et machine learning) - Miniconda (plus léger)</p>
+<p>Autre IDE : IDE: PyCharm</p>
+<p>Gestionnnaire de packages <strong>pip</strong>, à lancer dans un terminal</p>
+</div>
+</section>
+<section id="les-fondamentaux-de-python" class="level2">
+<h2 class="anchored" data-anchor-id="les-fondamentaux-de-python">Les Fondamentaux de Python</h2>
+<ul>
+<li>Langage interprété et interactif</li>
+<li>Typage faible</li>
+<li>Syntaxe claire et concise</li>
+<li>Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)</li>
+</ul>
+<div class="notes">
+<ul>
+<li>Expliquer la différence entre un langage interprété et compilé.</li>
+<li>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</li>
+</ul>
+</div>
+</section>
+<section id="écrire-votre-premier-code-en-python" class="level2">
+<h2 class="anchored" data-anchor-id="écrire-votre-premier-code-en-python">Écrire votre Premier Code en Python</h2>
+<ul>
+<li>Variables et types de données (int, float, str, bool, list, dict)</li>
+<li>Opérations de base</li>
+<li>Manipulation de données</li>
+<li>Structures de contrôle (if, for, while)</li>
+</ul>
+<div class="notes">
+<ul>
+<li>Présenter un exemple simple combinant variables, opérations et structures de contrôle.</li>
+<li>Insister sur la simplicité et la lisibilité du code Python.</li>
+<li>Utiliser des exemples concrets liés aux statistiques.</li>
+</ul>
+</div>
+</section>
+<section id="collections" class="level2">
+<h2 class="anchored" data-anchor-id="collections">Collections</h2>
+<ul>
+<li><p><strong>Liste</strong> : collection ordonnée de valeurs modifiables</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Dictionnaire</strong> : collection de paires clé-valeur non ordonnées</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<div class="notes">
+<p>D’autres types de collections existent</p>
+</div>
+</section>
+<section id="collections---résumé" class="level2">
+<h2 class="anchored" data-anchor-id="collections---résumé">Collections - résumé</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 75%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Commande</th>
-<th>Description</th>
+<th>Type de Donnée</th>
+<th style="text-align: center;">Ordonné</th>
+<th style="text-align: center;">Mutable</th>
+<th style="text-align: center;">Doublon</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>SHIFT + ENTER</code></td>
-<td>Exécuter une cellule et passer à la suivante.</td>
+<td>list</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td><code>CTRL + ENTER</code></td>
-<td>Exécuter une cellule sans passer à la suivante.</td>
+<td>dict</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td><code>ESC</code></td>
-<td>Passer en mode commande (les bordures de cellule deviennent bleues).</td>
+<td>tuple</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
 </tr>
 <tr class="even">
-<td><code>ENTER</code></td>
-<td>Passer en mode édition (vous pouvez modifier le contenu de la cellule).</td>
-</tr>
-<tr class="odd">
-<td><code>A</code></td>
-<td>Insérer une cellule au-dessus de la cellule courante.</td>
-</tr>
-<tr class="even">
-<td><code>B</code></td>
-<td>Insérer une cellule en dessous de la cellule courante.</td>
-</tr>
-<tr class="odd">
-<td><code>D + D</code></td>
-<td>Supprimer une cellule.</td>
+<td>set</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="ressources-utiles" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="ressources-utiles"><span class="header-section-number">2</span> Ressources utiles</h2>
-<!-- TODO : mettre à jour -->
-<ul>
-<li><a href="https://www.data-transitionnumerique.com/anaconda-python/" class="uri">https://www.data-transitionnumerique.com/anaconda-python/</a></li>
-<li><a href="https://github.com/ludo2ne/projet-info-2A" class="uri">https://github.com/ludo2ne/projet-info-2A</a></li>
-<li>SSPCloud
-<ul>
-<li>initiation à Python</li>
-<li>Python pour la datascience</li>
-<li>initiation à Spark</li>
-<li>initiation au Machine Learning</li>
-<li>analyse textuelle</li>
-</ul></li>
-<li><a href="https://pythonds.linogaliana.fr/" class="external" target="_blank">Python pour la data science</a></li>
-</ul>
-</section>
-<section id="for-fun" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="for-fun"><span class="header-section-number">3</span> For fun</h2>
-<p>Chaque année en décembre, l’<a href="https://adventofcode.com/" target="_blank">AdventOfCode</a> occupe les développeurs</p>
 
 
 </section>
@@ -1025,7 +984,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
