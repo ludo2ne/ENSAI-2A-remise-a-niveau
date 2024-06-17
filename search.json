@@ -123,7 +123,7 @@
     "href": "docs/python/python-cours.html#écrire-votre-premier-code-en-python",
     "title": "Introduction à Python",
     "section": "Écrire votre Premier Code en Python",
-    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nManipulation de données\nStructures de contrôle (if, for, while)\n\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
+    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\ncpt = 10\nwhile cpt &gt; 0:\n    print(cpt, end = \" \")\n    cpt -= 1    \nprint(\"boom\")\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
   },
   {
     "objectID": "docs/python/python-cours.html#collections",
@@ -172,7 +172,7 @@
     "href": "docs/python/python-cours-slides.html#écrire-votre-premier-code-en-python",
     "title": "Introduction à Python",
     "section": "Écrire votre Premier Code en Python",
-    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nManipulation de données\nStructures de contrôle (if, for, while)\n\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
+    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\ncpt = 10\nwhile cpt &gt; 0:\n    print(cpt, end = \" \")\n    cpt -= 1    \nprint(\"boom\")\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
   },
   {
     "objectID": "docs/python/python-cours-slides.html#collections",
