@@ -105,39 +105,53 @@
     "text": "Pourquoi Apprendre Python ?\n\nLangage polyvalent et populaire\nFacilité d’apprentissage et de lecture\nLarge communauté et nombreuses ressources\nNombreux packages\n\n\n\nImportant dans le monde de la data science et de l’ingénierie."
   },
   {
-    "objectID": "docs/python/python-cours.html#python-à-lensai",
-    "href": "docs/python/python-cours.html#python-à-lensai",
-    "title": "Introduction à Python",
-    "section": "Python à l’ENSAI",
-    "text": "Python à l’ENSAI\n\nDistribution CPython\nVersion 3.10\nVous allez coder dans :\n\ndes notebook Jupyter\nVisual Studio Code\n\nPackages pré-installés : pip list\n\n\nDistribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils - Anaconda (datascience et machine learning) - Miniconda (plus léger)\nAutre IDE : IDE: PyCharm\nGestionnnaire de packages pip, à lancer dans un terminal"
-  },
-  {
     "objectID": "docs/python/python-cours.html#les-fondamentaux-de-python",
     "href": "docs/python/python-cours.html#les-fondamentaux-de-python",
     "title": "Introduction à Python",
     "section": "Les Fondamentaux de Python",
-    "text": "Les Fondamentaux de Python\n\nLangage interprété et interactif\nTypage faible\nSyntaxe claire et concise\nSupporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)\n\n\n\nExpliquer la différence entre un langage interprété et compilé.\ninteractif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)"
+    "text": "Les Fondamentaux de Python\n\nLangage interprété et interactif\nTypage Dynamique\nSyntaxe claire et concise\nSupporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)\n\n\n\nExpliquer la différence entre un langage interprété et compilé.\ninteractif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)\nTypage Dynamique (vérification des types au moment de l’exécution)\na = 5\na = \"toto\""
+  },
+  {
+    "objectID": "docs/python/python-cours.html#python-à-lensai",
+    "href": "docs/python/python-cours.html#python-à-lensai",
+    "title": "Introduction à Python",
+    "section": "Python à l’ENSAI",
+    "text": "Python à l’ENSAI\n\nDistribution CPython\nVersion 3.10 (python --version)\nVous allez coder dans :\n\ndes notebooks Jupyter\nVisual Studio Code\n\nPackages pré-installés\n\n\nDistribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils\n\nAnaconda (datascience et machine learning)\nMiniconda (plus léger)\n\nAutre IDE : PyCharm, Atom\nGestionnnaire de packages pip, à lancer dans un terminal"
+  },
+  {
+    "objectID": "docs/python/python-cours.html#packages",
+    "href": "docs/python/python-cours.html#packages",
+    "title": "Introduction à Python",
+    "section": "Packages",
+    "text": "Packages\nDans un terminal (par exemple : Git Bash)\npip list                            # Packages installés\npip install &lt;package&gt;               # Installer un package\npip install &lt;package&gt;==&lt;version&gt;    # Version spécifique\npip uninstall &lt;package&gt;\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'\n\nEn projet :\n\nliste des packages dans un fichier texte à la racine\npip install - r requirements.txt\n\nDémo : lancer python dans le terminal\n\n\nPackages populaires\nDatascience :\n\nNumPy\nPandas, Polars\nMatplotlib, Seaborn\n\n\n\nNumPy\n\nCalcul numérique\nndarray, perf, stats, manipulation des tableaux\n\nPandas\n\ndataframe, analyse de données\n\nMatplotlib : graphiques"
   },
   {
     "objectID": "docs/python/python-cours.html#écrire-votre-premier-code-en-python",
     "href": "docs/python/python-cours.html#écrire-votre-premier-code-en-python",
     "title": "Introduction à Python",
     "section": "Écrire votre Premier Code en Python",
-    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\ncpt = 10\nwhile cpt &gt; 0:\n    print(cpt, end = \" \")\n    cpt -= 1    \nprint(\"boom\")\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
+    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\n\n\n= : affectation\n== : test d’égalité / != différence\n\nindentation : utiliser un formateur dans VSCode\n\n\nStructures de contrôle\n\nIfForWhileEnumerate\n\n\n\nnote = 18\n\nif note &gt; 16:\n    print(\"Validé avec mention\")\nelif note &gt; 10:\n    print(\"Validé\")\nelse:\n    print(\"Non validé\")\n\nValidé avec mention\n\n\n\n\n\nfor i in range(1, 5):\n    print(i)\n\n1\n2\n3\n4\n\n\n\n\n\ncpt = 10\nwhile cpt &gt; 0:\n    print(cpt, end = \" \")\n    cpt -= 1    \nprint(\"boom\")\n\n10 9 8 7 6 5 4 3 2 1 boom\n\n\n\n\n\nliste = [\"Alban\", \"Bertille\", \"Corine\"]\n\nfor i, v in enumerate(liste):\n    print(f\"index {i} : valeur {v}\")\n\nindex 0 : valeur Alban\nindex 1 : valeur Bertille\nindex 2 : valeur Corine"
   },
   {
-    "objectID": "docs/python/python-cours.html#collections",
-    "href": "docs/python/python-cours.html#collections",
+    "objectID": "docs/python/python-cours.html#collections---les-2-principales",
+    "href": "docs/python/python-cours.html#collections---les-2-principales",
     "title": "Introduction à Python",
-    "section": "Collections",
-    "text": "Collections\n\nListe : collection ordonnée de valeurs modifiables\nlist = [\"pomme\", \"poire\", 2, True]\nDictionnaire : collection de paires clé-valeur non ordonnées\nrecette = {\"fraise\": 5, \"Moutarde\": \"5g\"}\nSet : collection non ordonnée de valeurs uniques\npremiers = {2, 3, 5, 7, 11, 13}\nTuple : collection ordonnée de valeurs immuables\ncoord = (-1, 5, 4)\n\n\nD’autres types de collections existent"
+    "section": "Collections - les 2 principales",
+    "text": "Collections - les 2 principales\n\nListe : collection ordonnée de valeurs modifiables\nlist = [\"pomme\", \"poire\", 2, True]\nDictionnaire : collection de paires clé-valeur non ordonnées\nrecette = {\"fraise\": 5, \"Moutarde\": \"5g\"}\n\n\nAutres Collections utiles\n\nSet : collection non ordonnée de valeurs uniques\npremiers = {2, 3, 5, 7, 11, 13}\nTuple : collection ordonnée de valeurs immuables\ncoord = (-1, 5, 4)\n\n\n\n\n\n\n\nNote\n\n\n\nDe nombreux autres types de collections existent (Arbre, Liste chainée…).\n\n\n\n\nCollections principales - résumé\n\n\n\nType de Donnée\nOrdonné\nMutable\nDoublon\n\n\n\n\nlist\n✔\n✔\n\n\n\ndict\n\n✔\n\n\n\ntuple\n✔\n\n✔\n\n\nset\n\n✔"
   },
   {
-    "objectID": "docs/python/python-cours.html#collections---résumé",
-    "href": "docs/python/python-cours.html#collections---résumé",
+    "objectID": "docs/python/python-cours.html#aide-au-développement",
+    "href": "docs/python/python-cours.html#aide-au-développement",
     "title": "Introduction à Python",
-    "section": "Collections - résumé",
-    "text": "Collections - résumé\n\n\n\nType de Donnée\nOrdonné\nMutable\nDoublon\n\n\n\n\nlist\n✔\n✔\n\n\n\ndict\n\n✔\n\n\n\ntuple\n✔\n\n✔\n\n\nset\n\n✔"
+    "section": "Aide au développement",
+    "text": "Aide au développement\nPour apprendre le langage, évitez de foncer vers les LLM.\nPréférez :\n\nAide en ligne\nVotre moteur de recherche favori\nStack Overflow\n\n\nRessources utiles\n\nReal Python\nPython pour la datascience\nAutomate the Boring Stuff with Python\n\n\nLLM pas adapté pour retenir mais pratique pour :\n\ndéboguer\ndocumenter"
+  },
+  {
+    "objectID": "docs/python/python-cours.html#au-travail",
+    "href": "docs/python/python-cours.html#au-travail",
+    "title": "Introduction à Python",
+    "section": "Au travail",
+    "text": "Au travail\n5 notebooks sont à votre disposition pour apprendre les bases du langage :\nComment utiliser les notebooks"
   },
   {
     "objectID": "docs/python/python-cours-slides.html#historique",
@@ -154,53 +168,67 @@
     "text": "Pourquoi Apprendre Python ?\n\nLangage polyvalent et populaire\nFacilité d’apprentissage et de lecture\nLarge communauté et nombreuses ressources\nNombreux packages\n\n\n\nImportant dans le monde de la data science et de l’ingénierie."
   },
   {
-    "objectID": "docs/python/python-cours-slides.html#python-à-lensai",
-    "href": "docs/python/python-cours-slides.html#python-à-lensai",
-    "title": "Introduction à Python",
-    "section": "Python à l’ENSAI",
-    "text": "Python à l’ENSAI\n\nDistribution CPython\nVersion 3.10\nVous allez coder dans :\n\ndes notebook Jupyter\nVisual Studio Code\n\nPackages pré-installés : pip list\n\n\nDistribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils - Anaconda (datascience et machine learning) - Miniconda (plus léger)\nAutre IDE : IDE: PyCharm\nGestionnnaire de packages pip, à lancer dans un terminal"
-  },
-  {
     "objectID": "docs/python/python-cours-slides.html#les-fondamentaux-de-python",
     "href": "docs/python/python-cours-slides.html#les-fondamentaux-de-python",
     "title": "Introduction à Python",
     "section": "Les Fondamentaux de Python",
-    "text": "Les Fondamentaux de Python\n\nLangage interprété et interactif\nTypage faible\nSyntaxe claire et concise\nSupporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)\n\n\n\nExpliquer la différence entre un langage interprété et compilé.\ninteractif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)"
+    "text": "Les Fondamentaux de Python\n\nLangage interprété et interactif\nTypage Dynamique\nSyntaxe claire et concise\nSupporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)\n\n\n\nExpliquer la différence entre un langage interprété et compilé.\ninteractif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)\nTypage Dynamique (vérification des types au moment de l’exécution)\na = 5\na = \"toto\""
+  },
+  {
+    "objectID": "docs/python/python-cours-slides.html#python-à-lensai",
+    "href": "docs/python/python-cours-slides.html#python-à-lensai",
+    "title": "Introduction à Python",
+    "section": "Python à l’ENSAI",
+    "text": "Python à l’ENSAI\n\nDistribution CPython\nVersion 3.10 (python --version)\nVous allez coder dans :\n\ndes notebooks Jupyter\nVisual Studio Code\n\nPackages pré-installés\n\n\nDistribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils\n\nAnaconda (datascience et machine learning)\nMiniconda (plus léger)\n\nAutre IDE : PyCharm, Atom\nGestionnnaire de packages pip, à lancer dans un terminal"
+  },
+  {
+    "objectID": "docs/python/python-cours-slides.html#packages",
+    "href": "docs/python/python-cours-slides.html#packages",
+    "title": "Introduction à Python",
+    "section": "Packages",
+    "text": "Packages\nDans un terminal (par exemple : Git Bash)\npip list                            # Packages installés\npip install &lt;package&gt;               # Installer un package\npip install &lt;package&gt;==&lt;version&gt;    # Version spécifique\npip uninstall &lt;package&gt;\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'\n\nEn projet :\n\nliste des packages dans un fichier texte à la racine\npip install - r requirements.txt\n\nDémo : lancer python dans le terminal"
   },
   {
     "objectID": "docs/python/python-cours-slides.html#écrire-votre-premier-code-en-python",
     "href": "docs/python/python-cours-slides.html#écrire-votre-premier-code-en-python",
     "title": "Introduction à Python",
     "section": "Écrire votre Premier Code en Python",
-    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\ncpt = 10\nwhile cpt &gt; 0:\n    print(cpt, end = \" \")\n    cpt -= 1    \nprint(\"boom\")\n\n\nPrésenter un exemple simple combinant variables, opérations et structures de contrôle.\nInsister sur la simplicité et la lisibilité du code Python.\nUtiliser des exemples concrets liés aux statistiques."
+    "text": "Écrire votre Premier Code en Python\n\nVariables et types de données (int, float, str, bool, list, dict)\nOpérations de base\nSensible à l’indentation\nStructures de contrôle (if, for, while)\n\n\n\n= : affectation\n== : test d’égalité / != différence\n\nindentation : utiliser un formateur dans VSCode"
   },
   {
-    "objectID": "docs/python/python-cours-slides.html#collections",
-    "href": "docs/python/python-cours-slides.html#collections",
+    "objectID": "docs/python/python-cours-slides.html#collections---les-2-principales",
+    "href": "docs/python/python-cours-slides.html#collections---les-2-principales",
     "title": "Introduction à Python",
-    "section": "Collections",
-    "text": "Collections\n\nListe : collection ordonnée de valeurs modifiables\nlist = [\"pomme\", \"poire\", 2, True]\nDictionnaire : collection de paires clé-valeur non ordonnées\nrecette = {\"fraise\": 5, \"Moutarde\": \"5g\"}\nSet : collection non ordonnée de valeurs uniques\npremiers = {2, 3, 5, 7, 11, 13}\nTuple : collection ordonnée de valeurs immuables\ncoord = (-1, 5, 4)\n\n\nD’autres types de collections existent"
+    "section": "Collections - les 2 principales",
+    "text": "Collections - les 2 principales\n\nListe : collection ordonnée de valeurs modifiables\nlist = [\"pomme\", \"poire\", 2, True]\nDictionnaire : collection de paires clé-valeur non ordonnées\nrecette = {\"fraise\": 5, \"Moutarde\": \"5g\"}"
   },
   {
-    "objectID": "docs/python/python-cours-slides.html#collections---résumé",
-    "href": "docs/python/python-cours-slides.html#collections---résumé",
+    "objectID": "docs/python/python-cours-slides.html#aide-au-développement",
+    "href": "docs/python/python-cours-slides.html#aide-au-développement",
     "title": "Introduction à Python",
-    "section": "Collections - résumé",
-    "text": "Collections - résumé\n\n\n\nType de Donnée\nOrdonné\nMutable\nDoublon\n\n\n\n\nlist\n✔\n✔\n\n\n\ndict\n\n✔\n\n\n\ntuple\n✔\n\n✔\n\n\nset\n\n✔\n\n\n\n\n\n\n\nHome — Introduction à Git"
+    "section": "Aide au développement",
+    "text": "Aide au développement\nPour apprendre le langage, évitez de foncer vers les LLM.\nPréférez :\n\nAide en ligne\nVotre moteur de recherche favori\nStack Overflow"
+  },
+  {
+    "objectID": "docs/python/python-cours-slides.html#au-travail",
+    "href": "docs/python/python-cours-slides.html#au-travail",
+    "title": "Introduction à Python",
+    "section": "Au travail",
+    "text": "Au travail\n5 notebooks sont à votre disposition pour apprendre les bases du langage :\nComment utiliser les notebooks\n\n\n\nHome — Introduction à Python"
   },
   {
     "objectID": "docs/python/04-fonctions.html",
     "href": "docs/python/04-fonctions.html",
     "title": "Les fonctions",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/04-fonctions.html#avant-de-commencer",
     "href": "docs/python/04-fonctions.html#avant-de-commencer",
     "title": "Les fonctions",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/04-fonctions.html#fonctions",
@@ -221,14 +249,14 @@
     "href": "docs/python/02-listes-et-dictionnaires.html",
     "title": "Listes et Dictionnaires",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/02-listes-et-dictionnaires.html#avant-de-commencer",
     "href": "docs/python/02-listes-et-dictionnaires.html#avant-de-commencer",
     "title": "Listes et Dictionnaires",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/02-listes-et-dictionnaires.html#conteneurs",
@@ -536,21 +564,21 @@
     "href": "docs/python/01-types-et-variables.html",
     "title": "Types et variables",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/01-types-et-variables.html#avant-de-commencer",
     "href": "docs/python/01-types-et-variables.html#avant-de-commencer",
     "title": "Types et variables",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
-    "objectID": "docs/python/01-types-et-variables.html#avant-propos",
-    "href": "docs/python/01-types-et-variables.html#avant-propos",
+    "objectID": "docs/python/01-types-et-variables.html#introduction",
+    "href": "docs/python/01-types-et-variables.html#introduction",
     "title": "Types et variables",
-    "section": "Avant propos",
-    "text": "Avant propos\nPour réaliser ce Notebook, je me suis inspiré de :\n\nla formation Initiation à Python du SSP Cloud INSEE,\ncours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nhttps://python.sdv.univ-paris-diderot.fr/\n\nDans ce chapitre, nous allons découvrir les types de base en python :\n\nnumériques\n\nint : entiers\nfloat : décimaux\n\nchaines de caractères : str\nbooléens : bool"
+    "section": "Introduction",
+    "text": "Introduction\nDans ce notebook, nous allons découvrir les types de base en python :\n\nnumériques\n\nint : entiers\nfloat : décimaux\n\nchaines de caractères : str\nbooléens : bool"
   },
   {
     "objectID": "docs/python/01-types-et-variables.html#affectation-de-variables",
@@ -592,14 +620,14 @@
     "href": "docs/python/03-tests-et-boucles.html",
     "title": "Tests et Boucles",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/03-tests-et-boucles.html#avant-de-commencer",
     "href": "docs/python/03-tests-et-boucles.html#avant-de-commencer",
     "title": "Tests et Boucles",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/03-tests-et-boucles.html#structures-condionnelles-et-boucles",
@@ -634,14 +662,14 @@
     "href": "docs/python/05-POO-introduction.html",
     "title": "Introduction à la POO",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/05-POO-introduction.html#avant-de-commencer",
     "href": "docs/python/05-POO-introduction.html#avant-de-commencer",
     "title": "Introduction à la POO",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nImportez le fichier .ipynb dans Jupyter"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "docs/python/05-POO-introduction.html#la-programmation-orientée-objet",
@@ -665,39 +693,39 @@
     "text": "3 Exercices\n\n3.1 Exercice 1\nCréez une classe Etudiant avec les attributs :\n\nnom\nage\nliste_notes\n\nAvec les méthodes :\n\ninit() : constructeur\najouter_note() : pour ajouter une nouvelle note à la liste\ncalculer_moyenne() : calculer la moyenne des notes\n\n\n## Testez votre réponse dans cette cellule\n\n\n\n3.2 Exercice 2\nCréer une classe Point qui représente les coordonnées d’un point en 2D.\nAjouter une méthode distance(autre_point) qui calcule la distance avec un autre point.\nCréez une classe Cercle avec les attributs centre (de la classe Point) et rayon.\nAjoutez une méthode calculer_surface() qui renvoie la surface du cercle.\n\n## Testez votre réponse dans cette cellule\n\n\n\n3.3 Exercice 3\nCréez une classe CompteBancaire avec les attributs suivants :\n\ntitulaire : le nom du titulaire du compte (chaîne de caractères)\nsolde : le solde du compte (nombre réel)\n\nLa classe devra avoir les méthodes suivantes :\n\n__init__(self, titulaire) : le constructeur de la classe\ndeposer(self, montant) : une méthode qui permet de déposer un montant sur le compte. Le montant devra être ajouté au solde\nretirer(self, montant) : une méthode qui permet de retirer un montant du compte. Le montant devra être soustrait du solde\nafficher_solde(self) : une méthode qui affiche le solde du compte\ntransferer(autreCompte, montant) qui transfère de l’argent du compte vers l’autre si le solde est suffisant\n\nCréer 2 Comptes et tester les différentes fonctionnalités.\n\n## Testez votre réponse dans cette cellule"
   },
   {
-    "objectID": "docs/python/python-old.html",
-    "href": "docs/python/python-old.html",
-    "title": "Python",
+    "objectID": "docs/python/python-notebooks.html",
+    "href": "docs/python/python-notebooks.html",
+    "title": "Notebooks Python",
     "section": "",
-    "text": "Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.\n\nPython\n\n1ère version en 1991\ngratuit\nmultiplateforme (Linux, Windows…)\nlangage interprété\n\nle script python est directement exécuté\npas de compilation\n\nlangage orienté objet\nsensible à l’indentation (généralement 4 espaces)\n\nutiliser un formatage automatique (autopep8)\n\n\nVersion utilisée à l’ENSAI : 3.10.4\n\ndernière version : 3.11.3\n\nDistribution utilisée à l’ENSAI\n\nCPython\nAutre distribution populaire : Anaconda\n\nIDE (Integrated Development Environment) utilisé à l’ENSAI\n\nVisual Studio Code\nAutres IDE : PyCharm, Jupyter, Atom, Spyder…\n\nPackages\n\nInformatique\n\ninquirerPy\nrequests\npsycopg2-binary\ntabulate\n\nDatascience\n\nNumPy\nPandas (manipulation et analyse des données, dataframe)\nMatplotlib (graphiques 2D et 3D), Seaborn\n\n\n\n\n\nOuvrir une invite de commandes Git Bash\n\npython --version              # Python 3.10.4 \npip list                      # Packages installés\npip install &lt;package_name&gt;    # installer un package\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'"
+    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
   },
   {
-    "objectID": "docs/python/python-old.html#introduction",
-    "href": "docs/python/python-old.html#introduction",
-    "title": "Python",
+    "objectID": "docs/python/python-notebooks.html#les-notebooks",
+    "href": "docs/python/python-notebooks.html#les-notebooks",
+    "title": "Notebooks Python",
     "section": "",
-    "text": "Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.\n\nPython\n\n1ère version en 1991\ngratuit\nmultiplateforme (Linux, Windows…)\nlangage interprété\n\nle script python est directement exécuté\npas de compilation\n\nlangage orienté objet\nsensible à l’indentation (généralement 4 espaces)\n\nutiliser un formatage automatique (autopep8)\n\n\nVersion utilisée à l’ENSAI : 3.10.4\n\ndernière version : 3.11.3\n\nDistribution utilisée à l’ENSAI\n\nCPython\nAutre distribution populaire : Anaconda\n\nIDE (Integrated Development Environment) utilisé à l’ENSAI\n\nVisual Studio Code\nAutres IDE : PyCharm, Jupyter, Atom, Spyder…\n\nPackages\n\nInformatique\n\ninquirerPy\nrequests\npsycopg2-binary\ntabulate\n\nDatascience\n\nNumPy\nPandas (manipulation et analyse des données, dataframe)\nMatplotlib (graphiques 2D et 3D), Seaborn\n\n\n\n\n\nOuvrir une invite de commandes Git Bash\n\npython --version              # Python 3.10.4 \npip list                      # Packages installés\npip install &lt;package_name&gt;    # installer un package\n\n# Distribution utilisée\npython -c 'import platform; print(platform.python_implementation())'"
+    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
   },
   {
-    "objectID": "docs/python/python-old.html#utilisation-des-notebooks",
-    "href": "docs/python/python-old.html#utilisation-des-notebooks",
-    "title": "Python",
-    "section": "1 Utilisation des Notebooks",
-    "text": "1 Utilisation des Notebooks\nPour plus d’informations sur les notebooks, voir le site de la formation INSEE d’initiation à Python\nPour découvrir Python, nous allons commencer par coder dans des Notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour utiliser les Notebooks :\n\nTélécharger les notebooks (plusieurs solutions)\n\ntélécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python\nsur chacune des notebooks, il y a en bas de la table des matières, un lien Jupyter pour télécharger le fichier .ipynb\nsi vous avez cloné le dépôt Git, allez dans docs/python/\n\nSe connecter à Jupyter avec idxxxx et mot de passe\nImporter dans Jupyter les 5 fichiers .ipynb\n\npour importer, utiliser la flèche ⬆️ en haut à gauche\n\nOuvrir le premier notebook 01. types et variables.ipynb\nSuivre les consignes et faire les exercices\nFaire de même avec les 4 autres notebooks\n\nAutres possibilités pour utiliser des Notebooks :\n\nGoogle Colab\nSSPCloud\n\n\n1.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\nLe type de cellule souhaité est modifiable dans la barre d’outils.\n\n\n1.2 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
+    "objectID": "docs/python/python-notebooks.html#utiliser-un-notebook",
+    "href": "docs/python/python-notebooks.html#utiliser-un-notebook",
+    "title": "Notebooks Python",
+    "section": "2 Utiliser un notebook",
+    "text": "2 Utiliser un notebook\n\n\n\n\n\n\nMode opératoire\n\n\n\n\nCommencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus\nTéléchargez sur votre machine le fichier .ipynb\nConnectez-vous à l’un des services proposés ci-dessous\nUploadez sur ce service le fichier .ipynb\n\n\n\nVous avez plusieurs possibilités pour lancer les notebooks :\n\nUn cluster Jupyter de l’ENSAI ➡️ si vous avez vos idep et mot de passe\nle datalab SSPCloud ➡️ vous pouvez créer un compte avec votre mail ENSAI\n\nSi vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :\n\nJupyter Lab online\nKaggle notebooks\nGoogle Colab\n\n\nCluster ENSAISSPCloudJupyter Lab onlineColab et Kaggle\n\n\n\nConnectez-vous au cluster Jupyter avec id et mot de passe\nImportez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche ⬆️\nDans la colonne de gauche :\n\nl’icone en forme de dossier permet d’explorer les fichiers\nl’icone en forme de liste permet d’afficher la table des matières\n\nLe champ Code permet d’indiquer si la cellule attend du code python ou du texte (Markdown)\n\n\n\n\n\nConnectez-vous au SSPCloud\nAllez dans le menu Catalogue de services\nLancer Jupyter-python\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nAllez sur la page Jupyter Lab online\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nConnectez-vous au service\nImportez le notebook (Fichier &gt; Importer le notebook)\n\n\n\n\n\n2.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\n\n\n\n\n\n\nLe langage Mardown\n\n\n\n\n\nC’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).\nDe très nombreuses ressources sont disponibles sur internet.\nQuelques exemples :\n\n\n\nCode\nMise en forme\n\n\n\n\n**texte en gras**\ntexte en gras\n\n\n*texte en italique*\ntexte en italique\n\n\n# Titre de niveau 1\n\n\n\n## Titre de niveau 2\n\n\n\n- Élement de liste à puces\n- Élement de liste à puces\n\n\n\n\n\n\nLe type de cellule souhaité est modifiable dans la barre d’outils."
   },
   {
-    "objectID": "docs/python/python-old.html#ressources-utiles",
-    "href": "docs/python/python-old.html#ressources-utiles",
-    "title": "Python",
-    "section": "2 Ressources utiles",
-    "text": "2 Ressources utiles\n\n\nhttps://www.data-transitionnumerique.com/anaconda-python/\nhttps://github.com/ludo2ne/projet-info-2A\nSSPCloud\n\ninitiation à Python\nPython pour la datascience\ninitiation à Spark\ninitiation au Machine Learning\nanalyse textuelle\n\nPython pour la data science"
+    "objectID": "docs/python/python-notebooks.html#commandes-utiles",
+    "href": "docs/python/python-notebooks.html#commandes-utiles",
+    "title": "Notebooks Python",
+    "section": "3 Commandes utiles",
+    "text": "3 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
   },
   {
-    "objectID": "docs/python/python-old.html#for-fun",
-    "href": "docs/python/python-old.html#for-fun",
-    "title": "Python",
-    "section": "3 For fun",
-    "text": "3 For fun\nChaque année en décembre, l’AdventOfCode occupe les développeurs"
+    "objectID": "docs/python/python-notebooks.html#ressources-utiles",
+    "href": "docs/python/python-notebooks.html#ressources-utiles",
+    "title": "Notebooks Python",
+    "section": "4 Ressources utiles",
+    "text": "4 Ressources utiles\nVous trouverez plus d’informations sur les notebooks, sur le site de la formation INSEE d’initiation à Python."
   },
   {
     "objectID": "docs/sql/sql.html",

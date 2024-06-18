@@ -453,21 +453,54 @@ Ludovic Deneuville
       }</style></aside>
 </section>
 
+<section id="les-fondamentaux-de-python" class="title-slide slide level2 center">
+<h2>Les Fondamentaux de Python</h2>
+<ul>
+<li>Langage interprété et interactif</li>
+<li>Typage Dynamique</li>
+<li>Syntaxe claire et concise</li>
+<li>Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)</li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>Expliquer la différence entre un langage interprété et compilé.</p></li>
+<li><p>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</p></li>
+<li><p>Typage Dynamique (vérification des types au moment de l’exécution)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-2"><a></a>a <span class="op">=</span> <span class="st">"toto"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
 <section id="python-à-lensai" class="title-slide slide level2 center">
 <h2>Python à l’ENSAI</h2>
 <ul>
 <li>Distribution CPython</li>
-<li>Version 3.10</li>
+<li>Version 3.10 (<code>python --version</code>)</li>
 <li>Vous allez coder dans :
 <ul>
-<li>des <a href="https://jupyter.org/" target="_blank">notebook Jupyter</a></li>
+<li>des <a href="https://jupyter.org/" target="_blank">notebooks Jupyter</a></li>
 <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
 </ul></li>
-<li>Packages pré-installés : <code>pip list</code></li>
+<li>Packages pré-installés</li>
 </ul>
 <aside class="notes">
-<p>Distribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils - Anaconda (datascience et machine learning) - Miniconda (plus léger)</p>
-<p>Autre IDE : IDE: PyCharm</p>
+<p>Distribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils</p>
+<ul>
+<li>Anaconda (datascience et machine learning)</li>
+<li>Miniconda (plus léger)</li>
+</ul>
+<p>Autre IDE : PyCharm, Atom</p>
 <p>Gestionnnaire de packages <strong>pip</strong>, à lancer dans un terminal</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -482,19 +515,24 @@ Ludovic Deneuville
       }</style></aside>
 </section>
 
-<section id="les-fondamentaux-de-python" class="title-slide slide level2 center">
-<h2>Les Fondamentaux de Python</h2>
-<ul>
-<li>Langage interprété et interactif</li>
-<li>Typage faible</li>
-<li>Syntaxe claire et concise</li>
-<li>Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)</li>
-</ul>
+<section>
+<section id="packages" class="title-slide slide level2 center">
+<h2>Packages</h2>
+<p>Dans un terminal (par exemple : <strong>Git Bash</strong>)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">pip</span> list                            <span class="co"># Packages installés</span></span>
+<span id="cb2-2"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>               <span class="co"># Installer un package</span></span>
+<span id="cb2-3"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>==<span class="op">&lt;</span>version<span class="op">&gt;</span>    <span class="co"># Version spécifique</span></span>
+<span id="cb2-4"><a></a><span class="ex">pip</span> uninstall <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Distribution utilisée</span></span>
+<span id="cb2-7"><a></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
+<p>En projet :</p>
 <ul>
-<li>Expliquer la différence entre un langage interprété et compilé.</li>
-<li>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</li>
+<li>liste des packages dans un fichier texte à la racine</li>
+<li><code>pip install - r requirements.txt</code></li>
 </ul>
+<p><strong>Démo</strong> : lancer python dans le terminal</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -507,7 +545,40 @@ Ludovic Deneuville
           display:block!important;
       }</style></aside>
 </section>
-
+<section id="packages-populaires" class="slide level3">
+<h3>Packages populaires</h3>
+<p>Datascience :</p>
+<ul>
+<li>NumPy</li>
+<li>Pandas, Polars</li>
+<li>Matplotlib, Seaborn</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>NumPy
+<ul>
+<li>Calcul numérique</li>
+<li>ndarray, perf, stats, manipulation des tableaux</li>
+</ul></li>
+<li>Pandas
+<ul>
+<li>dataframe, analyse de données</li>
+</ul></li>
+<li>Matplotlib : graphiques</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
 <section id="écrire-votre-premier-code-en-python" class="title-slide slide level2 center">
 <h2>Écrire votre Premier Code en Python</h2>
 <ul>
@@ -516,17 +587,12 @@ Ludovic Deneuville
 <li>Sensible à l’indentation</li>
 <li>Structures de contrôle (if, for, while)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb1-2"><a></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-3"><a></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
-<span id="cb1-4"><a></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
-<span id="cb1-5"><a></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
-<li>Présenter un exemple simple combinant variables, opérations et structures de contrôle.</li>
-<li>Insister sur la simplicité et la lisibilité du code Python.</li>
-<li>Utiliser des exemples concrets liés aux statistiques.</li>
+<li>= : affectation</li>
+<li>== : test d’égalité / != différence</li>
 </ul>
+<p>indentation : utiliser un formateur dans VSCode</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -539,36 +605,100 @@ Ludovic Deneuville
           display:block!important;
       }</style></aside>
 </section>
-
-<section id="collections" class="title-slide slide level2 center">
-<h2>Collections</h2>
+<section id="structures-de-contrôle" class="slide level3">
+<h3>Structures de contrôle</h3>
+<div class="panel-tabset nav-pills">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">If</a></li><li><a href="#tabset-1-2">For</a></li><li><a href="#tabset-1-3">While</a></li><li><a href="#tabset-1-4">Enumerate</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1">
+<div id="d063fca6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>note <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a><span class="cf">if</span> note <span class="op">&gt;</span> <span class="dv">16</span>:</span>
+<span id="cb3-4"><a></a>    <span class="bu">print</span>(<span class="st">"Validé avec mention"</span>)</span>
+<span id="cb3-5"><a></a><span class="cf">elif</span> note <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb3-6"><a></a>    <span class="bu">print</span>(<span class="st">"Validé"</span>)</span>
+<span id="cb3-7"><a></a><span class="cf">else</span>:</span>
+<span id="cb3-8"><a></a>    <span class="bu">print</span>(<span class="st">"Non validé"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Validé avec mention</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div id="e2a87345" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
+<span id="cb5-2"><a></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+2
+3
+4</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div id="f0ab813e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-3"><a></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb7-4"><a></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
+<span id="cb7-5"><a></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 9 8 7 6 5 4 3 2 1 boom</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div id="f1eb82fd" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>liste <span class="op">=</span> [<span class="st">"Alban"</span>, <span class="st">"Bertille"</span>, <span class="st">"Corine"</span>]</span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
+<span id="cb9-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> : valeur </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>index 0 : valeur Alban
+index 1 : valeur Bertille
+index 2 : valeur Corine</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="collections---les-2-principales" class="title-slide slide level2 center">
+<h2>Collections - les 2 principales</h2>
 <ul>
 <li><p><strong>Liste</strong> : collection ordonnée de valeurs modifiables</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Dictionnaire</strong> : collection de paires clé-valeur non ordonnées</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<aside class="notes">
-<p>D’autres types de collections existent</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-
-<section id="collections---résumé" class="title-slide slide level2 center">
-<h2>Collections - résumé</h2>
+<section id="autres-collections-utiles" class="slide level3">
+<h3>Autres Collections utiles</h3>
+<ul>
+<li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>De nombreux autres types de collections existent (Arbre, Liste chainée…).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="collections-principales---résumé" class="slide level3">
+<h3>Collections principales - résumé</h3>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -605,10 +735,51 @@ Ludovic Deneuville
 </tr>
 </tbody>
 </table>
+</section></section>
+<section>
+<section id="aide-au-développement" class="title-slide slide level2 center">
+<h2>Aide au développement</h2>
+<p>Pour apprendre le langage, évitez de foncer vers les LLM.</p>
+<p>Préférez :</p>
+<ul>
+<li><a href="https://docs.python.org/fr/3.10/tutorial/" target="_blank">Aide en ligne</a></li>
+<li>Votre moteur de recherche favori</li>
+<li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+</ul>
+</section>
+<section id="ressources-utiles" class="slide level3">
+<h3>Ressources utiles</h3>
+<ul>
+<li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la datascience</a></li>
+<li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+</ul>
+<aside class="notes">
+<p>LLM pas adapté pour retenir mais pratique pour :</p>
+<ul>
+<li>déboguer</li>
+<li>documenter</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="au-travail" class="title-slide slide level2 center">
+<h2>Au travail</h2>
+<p>5 notebooks sont à votre disposition pour apprendre les bases du langage :</p>
+<p><a href="../../docs/python/python-notebooks.html">Comment utiliser les notebooks</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p><a href="../index.html">Home</a> — <a href="python-cours.html">Introduction à Git</a></p>
+<p><a href="../../index.html">Home</a> — <a href="python-cours.html">Introduction à Python</a></p>
 </div>
 </div>
 </section>

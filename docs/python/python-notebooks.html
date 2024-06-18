@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Python">
+<meta name="description" content="Notebooks pour découvrir et apprendre Python">
 
-<title>Remise à Niveau Informatique - Python</title>
+<title>Remise à Niveau Informatique - Notebooks Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,6 +121,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/python/python-notebooks.html">
+ <span class="dropdown-text">Notebooks Python</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
@@ -239,16 +209,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#utilisation-des-notebooks" id="toc-utilisation-des-notebooks" class="nav-link" data-scroll-target="#utilisation-des-notebooks"><span class="header-section-number">1</span> Utilisation des Notebooks</a>
+  <li><a href="#les-notebooks" id="toc-les-notebooks" class="nav-link active" data-scroll-target="#les-notebooks"><span class="header-section-number">1</span> Les Notebooks</a></li>
+  <li><a href="#utiliser-un-notebook" id="toc-utiliser-un-notebook" class="nav-link" data-scroll-target="#utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</a>
   <ul class="collapse">
-  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">1.1</span> Types de cellules</a></li>
-  <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">1.2</span> Commandes utiles</a></li>
+  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</a></li>
   </ul></li>
-  <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">2</span> Ressources utiles</a></li>
-  <li><a href="#for-fun" id="toc-for-fun" class="nav-link" data-scroll-target="#for-fun"><span class="header-section-number">3</span> For fun</a></li>
+  <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</a></li>
+  <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-old.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -259,12 +228,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python</h1>
+<h1 class="title">Notebooks Python</h1>
 </div>
 
 <div>
   <div class="description">
-    Introduction à Python
+    Notebooks pour découvrir et apprendre Python
   </div>
 </div>
 
@@ -287,114 +256,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<!-- TODO : mettre au propre -->
-<p>Python est un langage de programmation. Connu pour sa simplicité et sa lisibilité, il est largement utilisé pour le développement web, la datascience, l’intelligence artificielle… Sa syntaxe claire facilite l’apprentissage, tandis que sa vaste communauté et ses bibliothèques robustes en font un choix populaire.</p>
-<ul>
-<li>Python
-<ul>
-<li>1ère version en 1991</li>
-<li>gratuit</li>
-<li>multiplateforme (Linux, Windows…)</li>
-<li>langage interprété
-<ul>
-<li>le script python est directement exécuté</li>
-<li>pas de compilation</li>
-</ul></li>
-<li>langage orienté objet</li>
-<li>sensible à l’indentation (généralement 4 espaces)
-<ul>
-<li>utiliser un formatage automatique (autopep8)</li>
-</ul></li>
-</ul></li>
-<li>Version utilisée à l’ENSAI : 3.10.4
-<ul>
-<li>dernière version : 3.11.3</li>
-</ul></li>
-<li>Distribution utilisée à l’ENSAI
-<ul>
-<li>CPython</li>
-<li>Autre distribution populaire : Anaconda</li>
-</ul></li>
-<li>IDE (Integrated Development Environment) utilisé à l’ENSAI
-<ul>
-<li>Visual Studio Code</li>
-<li>Autres IDE : PyCharm, Jupyter, Atom, Spyder…</li>
-</ul></li>
-<li>Packages
-<ul>
-<li>Informatique
-<ul>
-<li>inquirerPy</li>
-<li>requests</li>
-<li>psycopg2-binary</li>
-<li>tabulate</li>
-</ul></li>
-<li>Datascience
-<ul>
-<li>NumPy</li>
-<li>Pandas (manipulation et analyse des données, dataframe)</li>
-<li>Matplotlib (graphiques 2D et 3D), Seaborn</li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
+<section id="les-notebooks" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="les-notebooks"><span class="header-section-number">1</span> Les Notebooks</h2>
+<p>Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Ouvrir une invite de commandes <strong>Git Bash</strong></label></li>
+<li><label><input type="checkbox"><a href="../../docs/python/01-types-et-variables.html" target="_blank">Les types et variables</a></label></li>
+<li><label><input type="checkbox"><a href="../../docs/python/02-listes-et-dictionnaires.html" target="_blank">Les listes et dictionnaires</a></label></li>
+<li><label><input type="checkbox"><a href="../../docs/python/03-tests-et-boucles.html" target="_blank">Les boucles</a></label></li>
+<li><label><input type="checkbox"><a href="../../docs/python/04-fonctions.html" target="_blank">Les fonctions</a></label></li>
+<li><label><input type="checkbox"><a href="../../docs/python/05-POO-introduction.html" target="_blank">Introduction à la Programmation Orientée Objet</a></label></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span>              <span class="co"># Python 3.10.4 </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> list                      <span class="co"># Packages installés</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package_name<span class="op">&gt;</span>    <span class="co"># installer un package</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution utilisée</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :</p>
+<ul>
+<li>Formation <a href="https://github.com/InseeFrLab/formation-python-initiation"><strong>Initiation à Python</strong></a> du SSP Cloud INSEE</li>
+<li>Cours de Python dispensés à l’ENSAE par <a href="https://pythonds.linogaliana.fr/rappels2a/">Lino Galiana</a> et <a href="http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html">Xavier Dupré</a></li>
+<li><a href="https://python.sdv.univ-paris-diderot.fr/">Cours de Python</a> de l’Université Paris Cité</li>
+</ul>
 </section>
-<section id="utilisation-des-notebooks" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="utilisation-des-notebooks"><span class="header-section-number">1</span> Utilisation des Notebooks</h2>
-<p>Pour plus d’informations sur les notebooks, voir le <a href="https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter" class="external" target="_blank">site de la formation INSEE d’initiation à Python</a></p>
-<p>Pour découvrir Python, nous allons commencer par coder dans des Notebooks :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="../../docs/python/01-types-et-variables.html">Les types et variables</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/02-listes-et-dictionnaires.html">Les listes et dictionnaires</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/03-tests-et-boucles.html">Les boucles</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/04-fonctions.html">Les fonctions</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/05-POO-introduction.html">Introduction à la Programmation Orientée Objet</a></label></li>
+<section id="utiliser-un-notebook" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Mode opératoire">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mode opératoire
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Commencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus</li>
+<li>Téléchargez sur votre machine le fichier <code>.ipynb</code></li>
+<li>Connectez-vous à l’un des services proposés ci-dessous</li>
+<li>Uploadez sur ce service le fichier <code>.ipynb</code></li>
+</ol>
+</div>
+</div>
+<p>Vous avez plusieurs possibilités pour lancer les notebooks :</p>
+<ul>
+<li><a href="https://jupyther.ensai.fr/" target="_blank">Un cluster Jupyter</a> de l’ENSAI <span class="emoji" data-emoji="arrow_right">➡️</span> si vous avez vos idep et mot de passe</li>
+<li>le datalab <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a> <span class="emoji" data-emoji="arrow_right">➡️</span> vous pouvez créer un compte avec votre mail ENSAI</li>
 </ul>
-<p>Pour utiliser les Notebooks :</p>
+<p>Si vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :</p>
 <ul>
-<li>Télécharger les notebooks (plusieurs solutions)
+<li><a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
+<li><a href="https://www.kaggle.com/code" target="_blank">Kaggle notebooks</a></li>
+<li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Cluster ENSAI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">SSPCloud</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Jupyter Lab online</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Colab et Kaggle</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
-<li>télécharger ici : https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/python</li>
-<li>sur chacune des notebooks, il y a en bas de la table des matières, un lien <code>Jupyter</code> pour télécharger le fichier <em>.ipynb</em></li>
-<li>si vous avez cloné le dépôt Git, allez dans <em>docs/python/</em></li>
+<li>Connectez-vous au <a href="https://jupyther.ensai.fr/" target="_blank">cluster Jupyter</a> avec id et mot de passe</li>
+<li>Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span></li>
+<li>Dans la colonne de gauche :
+<ul>
+<li>l’icone en forme de dossier permet d’explorer les fichiers</li>
+<li>l’icone en forme de liste permet d’afficher la table des matières</li>
 </ul></li>
-<li>Se connecter à <a href="https://clust-n4.ensai.fr/" class="external" target="_blank">Jupyter</a> avec idxxxx et mot de passe</li>
-<li>Importer dans Jupyter les 5 fichiers <code>.ipynb</code>
-<ul>
-<li>pour importer, utiliser la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span> en haut à gauche</li>
-</ul></li>
-<li>Ouvrir le premier notebook <code>01. types et variables.ipynb</code></li>
-<li>Suivre les consignes et faire les exercices</li>
-<li>Faire de même avec les 4 autres notebooks</li>
+<li>Le champ <code>Code</code> permet d’indiquer si la cellule attend du code python ou du texte (Markdown)</li>
 </ul>
-<p>Autres possibilités pour utiliser des Notebooks :</p>
+<p><img src="img/jupyter.PNG" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ul>
-<li><a href="https://colab.research.google.com/" class="external" target="_blank">Google Colab</a></li>
-<li><a href="https://datalab.sspcloud.fr/" class="external" target="_blank">SSPCloud</a></li>
+<li>Connectez-vous au <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a></li>
+<li>Allez dans le menu <em>Catalogue de services</em></li>
+<li>Lancer <code>Jupyter-python</code></li>
+<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
 </ul>
-<section id="types-de-cellules" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">1.1</span> Types de cellules</h3>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li>Allez sur la page <a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
+<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
+</ul>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ul>
+<li>Connectez-vous au service</li>
+<li>Importez le notebook (Fichier &gt; Importer le notebook)</li>
+</ul>
+</div>
+</div>
+</div>
+<section id="types-de-cellules" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</h3>
 <p>Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton <code>+</code> dans la barre d’outils.<br>
 Il existe deux types de cellules principaux :</p>
 <ul>
 <li>les cellules de code (où vous écrivez et exécutez du code Python)</li>
 <li>les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Le langage Mardown">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Le langage Mardown
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>C’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).</p>
+<p>De très nombreuses ressources sont disponibles sur internet.</p>
+<p>Quelques exemples :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Mise en forme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>**texte en gras**</code></td>
+<td><strong>texte en gras</strong></td>
+</tr>
+<tr class="even">
+<td><code>*texte en italique*</code></td>
+<td><em>texte en italique</em></td>
+</tr>
+<tr class="odd">
+<td><code># Titre de niveau 1</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>## Titre de niveau 2</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>- Élement de liste à puces</code></td>
+<td>- Élement de liste à puces</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <p>Le type de cellule souhaité est modifiable dans la barre d’outils.</p>
 </section>
-<section id="commandes-utiles" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="commandes-utiles"><span class="header-section-number">1.2</span> Commandes utiles</h3>
+</section>
+<section id="commandes-utiles" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 24%">
@@ -438,27 +446,9 @@ Il existe deux types de cellules principaux :</p>
 </tbody>
 </table>
 </section>
-</section>
-<section id="ressources-utiles" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="ressources-utiles"><span class="header-section-number">2</span> Ressources utiles</h2>
-<!-- TODO : mettre à jour -->
-<ul>
-<li><a href="https://www.data-transitionnumerique.com/anaconda-python/" class="uri">https://www.data-transitionnumerique.com/anaconda-python/</a></li>
-<li><a href="https://github.com/ludo2ne/projet-info-2A" class="uri">https://github.com/ludo2ne/projet-info-2A</a></li>
-<li>SSPCloud
-<ul>
-<li>initiation à Python</li>
-<li>Python pour la datascience</li>
-<li>initiation à Spark</li>
-<li>initiation au Machine Learning</li>
-<li>analyse textuelle</li>
-</ul></li>
-<li><a href="https://pythonds.linogaliana.fr/" class="external" target="_blank">Python pour la data science</a></li>
-</ul>
-</section>
-<section id="for-fun" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="for-fun"><span class="header-section-number">3</span> For fun</h2>
-<p>Chaque année en décembre, l’<a href="https://adventofcode.com/" target="_blank">AdventOfCode</a> occupe les développeurs</p>
+<section id="ressources-utiles" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</h2>
+<p>Vous trouverez plus d’informations sur les notebooks, sur le <a href="https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter" target="_blank">site de la formation INSEE d’initiation à Python</a>.</p>
 
 
 </section>
@@ -1025,7 +1015,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-old.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
