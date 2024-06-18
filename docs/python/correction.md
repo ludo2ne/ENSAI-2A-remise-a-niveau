@@ -9,7 +9,7 @@
 
 ```python
 somme = 0
-for i in range(1,11):
+for i in range(1, 11):
     somme += i**2
 somme
 ```

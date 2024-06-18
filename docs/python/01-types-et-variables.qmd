@@ -19,19 +19,14 @@ lightbox: true
 ## Avant de commencer {.unnumbered}
 
 - Téléchargez ce [notebook Jupyter](01-types-et-variables.ipynb){target="_blank"}
-- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+- Connectez-vous au [Jupyter](https://jupyther.ensai.fr/){target="_blank"} ENSAI avec id et mot de passe
+  - ou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Importez le fichier .ipynb 
 
 
-## Avant propos {.unnumbered}
+## Introduction {.unnumbered}
 
-Pour réaliser ce Notebook, je me suis inspiré de : 
-
-- la formation [**Initiation à Python**](https://github.com/InseeFrLab/formation-python-initiation) du SSP Cloud INSEE, 
-- cours de Python dispensés à l'ENSAE par [Lino Galiana](https://pythonds.linogaliana.fr/rappels2a/) et [Xavier Dupré](http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html)
-- https://python.sdv.univ-paris-diderot.fr/
-
-
-Dans ce chapitre, nous allons découvrir les types de base en python :
+Dans ce notebook, nous allons découvrir les types de base en python :
 
 - numériques
   - **int** : entiers

@@ -1,0 +1,132 @@
+---
+title: "Notebooks Python"
+description: "Notebooks pour découvrir et apprendre Python"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+## Les Notebooks
+
+Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :
+
+- [ ] [Les types et variables](01-types-et-variables.qmd){target="_blank"}
+- [ ] [Les listes et dictionnaires](02-listes-et-dictionnaires.qmd){target="_blank"}
+- [ ] [Les boucles](03-tests-et-boucles.qmd){target="_blank"}
+- [ ] [Les fonctions](04-fonctions.qmd){target="_blank"}
+- [ ] [Introduction à la Programmation Orientée Objet](05-POO-introduction.qmd){target="_blank"}
+
+Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous : 
+
+- Formation [**Initiation à Python**](https://github.com/InseeFrLab/formation-python-initiation) du SSP Cloud INSEE
+- Cours de Python dispensés à l'ENSAE par [Lino Galiana](https://pythonds.linogaliana.fr/rappels2a/) et [Xavier Dupré](http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html)
+- [Cours de Python](https://python.sdv.univ-paris-diderot.fr/) de l'Université Paris Cité
+
+
+
+## Utiliser un notebook
+
+::: {.callout-important title="Mode opératoire"}
+1. Commencez par vous rendre sur la page de l'un des 5 notebooks cités ci-dessus
+2. Téléchargez sur votre machine le fichier `.ipynb`
+3. Connectez-vous à l'un des services proposés ci-dessous
+4. Uploadez sur ce service le fichier `.ipynb`
+:::
+
+Vous avez plusieurs possibilités pour lancer les notebooks :
+
+- [Un cluster Jupyter](https://jupyther.ensai.fr/){target="_blank"} de l'ENSAI :arrow_right: si vous avez vos idep et mot de passe
+- le datalab [SSPCloud](https://datalab.sspcloud.fr/){target="_blank"} :arrow_right: vous pouvez créer un compte avec votre mail ENSAI
+
+Si vous n'avez, ni identifiants, ni mail ENSAI, d'autres solutions existent :
+
+- [Jupyter Lab online](https://jupyter.org/try-jupyter/lab/){target="_blank"}
+- [Kaggle notebooks](https://www.kaggle.com/code){target="_blank"}
+- [Google Colab](https://colab.research.google.com/){target="_blank"}
+
+
+::: {.panel-tabset .nav-pills}
+
+#### Cluster ENSAI
+
+- Connectez-vous au [cluster Jupyter](https://jupyther.ensai.fr/){target="_blank"} avec id et mot de passe
+- Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche :arrow_up:
+- Dans la colonne de gauche :
+  - l'icone en forme de dossier permet d'explorer les fichiers
+  - l'icone en forme de liste permet d'afficher la table des matières
+- Le champ `Code` permet d'indiquer si la cellule attend du code python ou du texte (Markdown)
+
+![](img/jupyter.PNG)
+
+#### SSPCloud
+
+- Connectez-vous au [SSPCloud](https://datalab.sspcloud.fr/){target="_blank"}
+- Allez dans le menu *Catalogue de services*
+- Lancer `Jupyter-python`
+- Suivez les mêmes instructions que pour le Cluster ENSAI
+
+#### Jupyter Lab online
+
+- Allez sur la page [Jupyter Lab online](https://jupyter.org/try-jupyter/lab/){target="_blank"}
+- Suivez les mêmes instructions que pour le Cluster ENSAI
+
+#### Colab et Kaggle
+
+- Connectez-vous au service
+- Importez le notebook (Fichier > Importer le notebook)
+
+:::
+
+
+
+### Types de cellules
+
+Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton `+` dans la barre d'outils.  
+Il existe deux types de cellules principaux :
+
+- les cellules de code (où vous écrivez et exécutez du code Python)
+- les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)
+
+::: {.callout-tip title="Le langage Mardown" collapse="true"}
+C'est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).
+
+De très nombreuses ressources sont disponibles sur internet.
+
+Quelques exemples :
+
+| Code                           | Mise en forme                   |
+|--------------------------------|---------------------------------|
+| `**texte en gras**`            | **texte en gras**               |
+| `*texte en italique*`          | *texte en italique*             |
+| `# Titre de niveau 1`          |                                 |
+| `## Titre de niveau 2`         |                                 |
+| `- Élement de liste à puces`   | - Élement de liste à puces      |
+:::
+
+Le type de cellule souhaité est modifiable dans la barre d'outils.  
+
+## Commandes utiles
+
+| Commande                   | Description                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------- |
+| `SHIFT + ENTER`            | Exécuter une cellule et passer à la suivante.                                     |
+| `CTRL + ENTER`             | Exécuter une cellule sans passer à la suivante.                                   |
+| `ESC`                      | Passer en mode commande (les bordures de cellule deviennent bleues).              |
+| `ENTER`                    | Passer en mode édition (vous pouvez modifier le contenu de la cellule).           |
+| `A`                        | Insérer une cellule au-dessus de la cellule courante.                             |
+| `B`                        | Insérer une cellule en dessous de la cellule courante.                            |
+| `D + D`                    | Supprimer une cellule.                                                            |
+
+
+## Ressources utiles
+
+Vous trouverez plus d'informations sur les notebooks, sur le [site de la formation INSEE d'initiation à Python](https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter){target="_blank"}.
+
+

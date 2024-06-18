@@ -19,7 +19,9 @@ lightbox: true
 ## Avant de commencer {.unnumbered}
 
 - Téléchargez ce [notebook Jupyter](05-POO-introduction.ipynb){target="_blank"}
-- Importez le fichier .ipynb dans [Jupyter](https://jupyther.ensai.fr/){.external target="_blank"}
+- Connectez-vous au [Jupyter](https://jupyther.ensai.fr/){target="_blank"} ENSAI avec id et mot de passe
+  - ou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Importez le fichier .ipynb 
 
 
 ## La programmation orientée objet

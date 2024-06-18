@@ -9,7 +9,7 @@ format:
     toc-depth: 2
   revealjs:
     theme: moon
-    footer: "[Home](../index.html) --- [Introduction à Git](python-cours.html)"
+    footer: "[Home](../../index.html) --- [Introduction à Python](python-cours.html)"
     slide-number: c/t                    # collapsed/total
     slide-level: 3
     controls: true
@@ -43,37 +43,85 @@ lightbox: true
 - Important dans le monde de la data science et de l'ingénierie.
 :::
 
-## Python à l'ENSAI
-
-- Distribution CPython
-- Version 3.10
-- Vous allez coder dans :
-  - des [notebook Jupyter](https://jupyter.org/){target="_blank"}
-  - [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
-- Packages pré-installés : `pip list`
-
-::: {.notes}
-Distribution : version pré-packagée de l'interpréteur Python accompagnée de nombreux modules, bibliothèques et outils
-- Anaconda (datascience et machine learning)
-- Miniconda (plus léger)
-
-Autre IDE : IDE: PyCharm
-
-Gestionnnaire de packages **pip**, à lancer dans un terminal
-:::
-
 
 ## Les Fondamentaux de Python
 
 - Langage interprété et interactif
-- Typage faible
+- Typage Dynamique
 - Syntaxe claire et concise
 - Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)
 
 ::: {.notes}
 - Expliquer la différence entre un langage interprété et compilé.
 - interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)
+- Typage Dynamique (vérification des types au moment de l'exécution) 
+  ```{.python}
+  a = 5
+  a = "toto"
+  ```
 :::
+
+
+## Python à l'ENSAI
+
+- Distribution CPython
+- Version 3.10 (`python --version`)
+- Vous allez coder dans :
+  - des [notebooks Jupyter](https://jupyter.org/){target="_blank"}
+  - [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
+- Packages pré-installés
+
+::: {.notes}
+Distribution : version pré-packagée de l'interpréteur Python accompagnée de nombreux modules, bibliothèques et outils
+
+- Anaconda (datascience et machine learning)
+- Miniconda (plus léger)
+
+Autre IDE : PyCharm, Atom
+
+Gestionnnaire de packages **pip**, à lancer dans un terminal
+:::
+
+## Packages
+
+Dans un terminal (par exemple : **Git Bash**)
+
+```{.bash}
+pip list                            # Packages installés
+pip install <package>               # Installer un package
+pip install <package>==<version>    # Version spécifique
+pip uninstall <package>
+
+# Distribution utilisée
+python -c 'import platform; print(platform.python_implementation())'
+```
+
+::: {.notes}
+En projet :
+
+- liste des packages dans un fichier texte à la racine
+- `pip install - r requirements.txt`
+
+**Démo** : lancer python dans le terminal
+:::
+
+### Packages populaires
+
+Datascience :
+
+- NumPy
+- Pandas, Polars
+- Matplotlib, Seaborn
+
+::: {.notes}
+- NumPy
+  - Calcul numérique
+  - ndarray, perf, stats, manipulation des tableaux
+- Pandas
+  - dataframe, analyse de données
+- Matplotlib : graphiques
+:::
+
 
 ## Écrire votre Premier Code en Python
 
@@ -82,7 +130,47 @@ Gestionnnaire de packages **pip**, à lancer dans un terminal
 - Sensible à l'indentation
 - Structures de contrôle (if, for, while)
 
-```{.python}
+
+::: {.notes}
+- = : affectation
+- == : test d'égalité / != différence
+
+indentation : utiliser un formateur dans VSCode
+:::
+
+### Structures de contrôle
+
+::: {.panel-tabset .nav-pills}
+
+#### If
+
+```{python}
+#| eval: true
+#| echo: true
+note = 18
+
+if note > 16:
+    print("Validé avec mention")
+elif note > 10:
+    print("Validé")
+else:
+    print("Non validé")
+```
+
+#### For
+
+```{python}
+#| eval: true
+#| echo: true
+for i in range(1, 5):
+    print(i)
+```
+
+#### While
+
+```{python}
+#| eval: true
+#| echo: true
 cpt = 10
 while cpt > 0:
     print(cpt, end = " ")
@@ -90,13 +178,22 @@ while cpt > 0:
 print("boom")
 ```
 
-::: {.notes}
-- Présenter un exemple simple combinant variables, opérations et structures de contrôle.
-- Insister sur la simplicité et la lisibilité du code Python.
-- Utiliser des exemples concrets liés aux statistiques.
+#### Enumerate
+
+```{python}
+#| eval: true
+#| echo: true
+liste = ["Alban", "Bertille", "Corine"]
+
+for i, v in enumerate(liste):
+    print(f"index {i} : valeur {v}")
+```
+
 :::
 
-## Collections
+
+
+## Collections - les 2 principales
 
 - **Liste** : collection ordonnée de valeurs modifiables
   ```{.python} 
@@ -106,6 +203,9 @@ print("boom")
   ```{.python} 
   recette = {"fraise": 5, "Moutarde": "5g"}
   ```
+
+### Autres Collections utiles
+
 - **Set** : collection non ordonnée de valeurs uniques
   ```{.python} 
   premiers = {2, 3, 5, 7, 11, 13}
@@ -115,11 +215,11 @@ print("boom")
   coord = (-1, 5, 4)
   ```
 
-::: {.notes}
-D'autres types de collections existent
+::: {.callout-note}
+De nombreux autres types de collections existent (Arbre, Liste chainée...).
 :::
 
-## Collections - résumé
+### Collections principales - résumé
 
 | Type de Donnée | Ordonné | Mutable | Doublon |
 |----------------|:-------:|:-------:|:-------:|
@@ -129,3 +229,31 @@ D'autres types de collections existent
 | set            |         | ✔       |         |
 
 
+## Aide au développement
+
+Pour apprendre le langage, évitez de foncer vers les LLM.
+
+Préférez :
+
+- [Aide en ligne](https://docs.python.org/fr/3.10/tutorial/){target="_blank"}
+- Votre moteur de recherche favori
+- [Stack Overflow](https://stackoverflow.com/){target="_blank"}
+
+### Ressources utiles 
+
+- [Real Python](https://realpython.com/){target="_blank"}
+- [Python pour la datascience](https://pythonds.linogaliana.fr/){target="_blank"}
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/){target="_blank"}
+
+::: {.notes}
+LLM pas adapté pour retenir mais pratique pour :
+
+- déboguer
+- documenter
+::: 
+
+## Au travail
+
+5 notebooks sont à votre disposition pour apprendre les bases du langage :
+
+[Comment utiliser les notebooks](./python-notebooks.qmd)

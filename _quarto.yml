@@ -22,6 +22,8 @@ website:
         menu: 
           - href: docs/python/python-cours.qmd
             text: "Introduction à Python"
+          - href: docs/python/python-notebooks.qmd
+            text: "Notebooks Python"
           - href: docs/python/01-types-et-variables.qmd
             text: "Types et Variables"
           - href: docs/python/02-listes-et-dictionnaires.qmd
