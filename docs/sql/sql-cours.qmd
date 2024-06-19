@@ -52,7 +52,7 @@ Un Système de Gestion de Base de Données (SGBD) est un logiciel qui permet de 
 
 Exemples de SGBD :
 
-- relationnelles : `PostgreSQL`, MySQL, Oracle Database
+- relationnelles : [PostgreSQL](https://www.postgresql.org/){target="_blank"}, MySQL, Oracle Database
 - NoSQL : MongoDB, Cassandra 
 
 ::: {.notes}
@@ -123,7 +123,7 @@ classDiagram
 :::
 
 
-## Associations entre tables
+## Associations entre tables {.smaller}
 
 - `1..1` : Une *Personne* a un *Passeport* et un *Passeport* appartient à une seule *Personne*
   - la clé étrangère pourra être placée dans l'une des deux tables
@@ -278,7 +278,7 @@ classDiagram
 
 ### Opérations CRUD
 
-SQL permet d'effectuer les opérations du CRUD (Create, Read, Upadate, Delete)
+SQL permet d'effectuer les opérations du CRUD :
 
 - `SELECT` : récupérer des données depuis une table
 - `INSERT` : insérer de nouvelles données dans une table
@@ -296,8 +296,9 @@ SQL permet d'effectuer les opérations du CRUD (Create, Read, Upadate, Delete)
 
 ```{.sql}
 -- Création de la table personne (ceci est un commentaire)
+
 CREATE TABLE ran.personne (
-    id               INT         PRIMARY KEY,
+    id_personne      INT         PRIMARY KEY,
     nom              VARCHAR(30) NOT NULL,
     prenom           VARCHAR(40),
     date_naissance   DATE,
@@ -309,9 +310,9 @@ CREATE TABLE ran.personne (
 
 La table est créée mais vide
 
-| id  | nom | prenom | date_naissance | adresse |
-| --- | --- | ------ | -------------- | ------- |
-|     |     |        |                |         |
+| id_personne | nom | prenom | date_naissance | adresse |
+| ----------- | --- | ------ | -------------- | ------- |
+|             |     |        |                |         |
 
 
 ::: {.callout-tip}
@@ -328,25 +329,24 @@ Le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangeron
 #### Requête
 
 ```{.sql}
-INSERT INTO ran.personne (id, nom, prenom, dnais, adresse)
+INSERT INTO ran.personne (id_personne, nom, prenom, date_naissance, adresse)
 VALUES
     (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens'),
-    (2, 'Dure', 'Laure', '1985-09-22', 'Lyon'),
+    (2, 'Dure', 'Laure', '1985-09-22', 'Auxerre'),
     (3, 'Erateur', 'Maud', '1995-03-10', 'Lille');
 ```
 
 #### Résultat
 
-| id  | nom     | prenom | date_naissance | adresse |
-| --- | ------- | ------ | -------------- | ------- |
-| 1   | Gatore  | Ali    | 1990-05-15     | Amiens  |
-| 2   | Dure    | Laure  | 1985-09-22     | Lyon    |
-| 3   | Erateur | Maud   | 1995-03-10     | Lille   |
+| id_personne | nom     | prenom | date_naissance | adresse |
+| ----------- | ------- | ------ | -------------- | ------- |
+| 1           | Gatore  | Ali    | 1990-05-15     | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22     | Auxerre |
+| 3           | Erateur | Maud   | 1995-03-10     | Lille   |
 
 :::
 
 ### Supprimer une table
-
 
 ```{.sql}
 DROP TABLE ran.personne;
@@ -364,7 +364,15 @@ SELECT *
 
 ##  Actions sur les lignes
 
-###  Sélectionner des lignes
+
+###  Sélectionner toutes les lignes
+
+```{.sql}
+SELECT *
+  FROM ran.personne
+```
+
+###  Sélectionner certaines lignes
 
 ::: {.panel-tabset .nav-pills}
 
@@ -373,62 +381,147 @@ SELECT *
 ```{.sql}
 SELECT *
   FROM ran.personne
- WHERE adresse LIKE 'L%'
+ WHERE adresse LIKE 'A%'
    AND prenom = 'Laure';
 ```
 
+::: {.callout-tip}
+Pour une meilleure lisibilité, alignez votre code !
+:::
+
 #### Résultat
 
-| id  | prenom | nom  | date_naissance | adresse |
-| --- | ------ | ---- | -------------- | ------- |
-| 2   | Laure  | Dure | 1985-09-22     | Lyon    |
+| id_personne | prenom | nom  | date_naissance | adresse |
+| ----------- | ------ | ---- | -------------- | ------- |
+| 2           | Laure  | Dure | 1985-09-22     | Auxerre |
 
 :::
- 
 
 ###  Mettre à jour des lignes
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
 
 ```{.sql}
 UPDATE ran.personne
    SET adresse = 'Rennes'
- WHERE id = 2;
+ WHERE id_personne = 2;
 ```
 
-| id  | prenom | nom     | date_naissance | adresse |
-| --- | ------ | ------- | -------------- | ------- |
-| 1   | Ali    | Gatore  | 1990-05-15     | Paris   |
-| 2   | Laure  | Dure    | 1985-09-22     | Rennes  |
-| 3   | Maud   | Erateur | 1995-03-10     | Lille   |
+#### Résultat
 
----
+| id_personne | prenom | nom     | date_naissance | adresse |
+| ----------- | ------ | ------- | -------------- | ------- |
+| 1           | Ali    | Gatore  | 1990-05-15     | Amiens  |
+| 2           | Laure  | Dure    | 1985-09-22     | Rennes  |
+| 3           | Maud   | Erateur | 1995-03-10     | Lille   |
+
+:::
+
+:::{.notes}
+- simples quotes en SQL
+- pas de double
+:::
 
 ###  Supprimer des lignes
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
 
 ```{.sql}
 DELETE FROM ran.personne
  WHERE prenom = 'Ali';
 ```
 
-| id  | prenom | nom     | date_naissance | adresse |
-| --- | ------ | ------- | -------------- | ------- |
-| 2   | Laure  | Dure    | 1985-09-22     | Rennes  |
-| 3   | Maud   | Erateur | 1995-03-10     | Lille   |
+#### Résultat
+
+| id_personne | prenom | nom     | date_naissance | adresse |
+| ----------- | ------ | ------- | -------------- | ------- |
+| 2           | Laure  | Dure    | 1985-09-22     | Rennes  |
+| 3           | Maud   | Erateur | 1995-03-10     | Lille   |
+
+:::
+
+##  Actions sur les colonnes
+
+###  Renommer une colonne
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+RENAME COLUMN date_naissance TO dnais;
+```
+
+#### Résultat
+
+| id_personne | nom     | prenom | dnais      | adresse |
+| ----------- | ------- | ------ | ---------- | ------- |
+| 2           | Dure    | Laure  | 1985-09-22 | Rennes  |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   |
+
+:::
+
+
+###  Ajouter un attribut
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+ADD joue_aux_echecs BOOLEAN DEFAULT true;
+```
+
+#### Résultat
+
+| id_personne | nom     | prenom | dnais      | adresse | joue_aux_echecs |
+| ----------- | ------- | ------ | ---------- | ------- | --------------- |
+| 2           | Dure    | Laure  | 1985-09-22 | Rennes  | true            |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   | true            |
+
+:::
+
+###  Supprimer une colonne
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+DROP COLUMN adresse;
+```
+
+#### Résultat
+
+| id_personne | nom     | prenom | dnais      | echecs |
+| ----------- | ------- | ------ | ---------- | ------ |
+| 2           | Dure    | Laure  | 1985-09-22 | true   |
+| 3           | Erateur | Maud   | 1995-03-10 | true   |
+
+:::
 
 
 ##  Jointures
 
 > Table `commande`
 
-| id  | produit | quantite | id_personne | prix_unitaire |
-| --- | ------- | -------- | ----------- | ------------- |
-| 1   | livre   | 1        | 2           | 3             |
+| id_personne | produit | quantite | id_personne | prix_unitaire |
+| ----------- | ------- | -------- | ----------- | ------------- |
+| 2           | livre   | 1        | 2           | 3             |
 
 ```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personne p
-  JOIN ran.commande c ON p.id = c.id_personne
+  JOIN ran.commande c ON p.id_personne = c.id_personne
  WHERE prenom = 'Laure';
 ```
 
@@ -454,7 +547,7 @@ SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personne p
-  JOIN ran.commande c ON p.id = c.id_client
+  JOIN ran.commande c ON p.id_personne = c.id_client
 ```
 
 Pour afficher toutes les personnes, même celles qui n'ont pas réalisé de commande, nous allons utiliser les **jointures externees** : `LEFT JOIN` ou `RIGHT JOIN`
@@ -464,84 +557,12 @@ SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personne p
-  LEFT JOIN ran.commande c ON p.id = c.id_client
+  LEFT JOIN ran.commande c ON p.id_personne = c.id_client
 ```
 
 Ici le `LEFT JOIN` indique que nous affichons :
 - les données provenant de la table **personnes**
 - complétées par les données de la table **commandes** pour les lignes où le lien est établi
-
-
-##  Actions sur les colonnes
-
-###  Renommer une colonne
-
-::: {.panel-tabset .nav-pills}
-
-#### Requête
-
-```{.sql}
-ALTER TABLE ran.personne
-RENAME COLUMN date_naissance TO dnais;
-```
-
-#### Résultat
-
-| id  | nom     | prenom | dnais      | adresse |
-| --- | ------- | ------ | ---------- | ------- |
-| 1   | Gatore  | Ali    | 1990-05-15 | Amiens  |
-| 2   | Dure    | Laure  | 1985-09-22 | Lyon    |
-| 3   | Erateur | Maud   | 1995-03-10 | Lille   |
-
-:::
-
-
-###  Ajouter un attribut
-
-::: {.panel-tabset .nav-pills}
-
-#### Requête
-
-```{.sql}
-ALTER TABLE ran.personne
-ADD echecs BOOLEAN;
-```
-
-#### Résultat
-
-| id  | nom     | prenom | dnais      | adresse | joue_aux_echecs |
-| --- | ------- | ------ | ---------- | ------- | --------------- |
-| 1   | Gatore  | Ali    | 1990-05-15 | Amiens  | true            |
-| 2   | Dure    | Laure  | 1985-09-22 | Lyon    | false           |
-| 3   | Erateur | Maud   | 1995-03-10 | Lille   | true            |
-
-:::
-
-###  Supprimer une colonne
-
-::: {.panel-tabset .nav-pills}
-
-#### Requête
-
-```{.sql}
-ALTER TABLE ran.personne
-DROP COLUMN adresse;
-```
-
-#### Résultat
-
-| id  | nom     | prenom | dnais      | echecs |
-| --- | ------- | ------ | ---------- | ------ |
-| 1   | Gatore  | Ali    | 1990-05-15 | true   |
-| 2   | Dure    | Laure  | 1985-09-22 | false  |
-| 3   | Erateur | Maud   | 1995-03-10 | true   |
-
-:::
-
-
-
-
----
 
 ##  Formes normales
 
@@ -551,8 +572,6 @@ DROP COLUMN adresse;
 - 2NF : 1NF + tout attribut non clé dépend de la clé
 - 3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé
 
----
-
 ##  Premières manipulations
 
 ### Les schémas
@@ -561,20 +580,17 @@ Par défaut toutes les tables que nous allons créer iraient dans le schéma pub
 :bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
 
 - `ran` : schéma utilisé pour la remise à niveau
-- `ci` : schéma utilisé en compléments d'informatique
 - `projet` : schéma du projet info 2A
 
 ```{.sql}
 CREATE schema ran;
-CREATE schema ci;
 CREATE schema projet;
 ```
 
----
 
-### Mots clés utiles
+## Mots clés utiles
 
-#### LIKE
+### LIKE
 
 > Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne
 
@@ -585,7 +601,7 @@ SELECT
  WHERE prenom LIKE '%au%';
 ```
 
-#### GROUP BY
+### GROUP BY
 
 > Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
 
@@ -596,7 +612,7 @@ SELECT adresse,
  GROUP BY adresse;
 ```
 
-#### HAVING
+### HAVING
 
 > Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d'une condition après le GROUP BY.  
 > :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
@@ -609,7 +625,7 @@ SELECT adresse,
 HAVING COUNT(1) >= 5;
 ```
 
-#### ORDER BY
+### ORDER BY
 
 ```{.sql}
 SELECT *
@@ -617,7 +633,7 @@ SELECT *
  ORDER BY adresse DESC
 ```
 
-#### AS
+### AS
 
 > Permet de renommer une colonne dans l'affichage
 
@@ -628,7 +644,7 @@ SELECT adresse AS Ville
 
 ---
 
-####  Quelques possibilités d'utilisation sans table
+##  Quelques possibilités d'utilisation sans table
 
 ```{.sql}
 SELECT CURRENT_DATE;
