@@ -1,0 +1,97 @@
+---
+title: "Bases de Données Relationnelles et SQL"
+description: "Exercice d'apprentissage du SQL"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+## Avant de commencer
+
+- consultez le fichier d'utilisation de [DBeaver](DBeaver.qmd)
+- [ ] Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>, 
+- [ ] Collez dans DBeaver
+- [ ] Exécuter le script.
+
+## Description des données
+
+- Nous avons des joueurs, des tournois
+- Certains joueurs sont aussi arbitres et ont un grade d'arbitre
+- Les tournois ont une cadence. Ils sont arbitrés par un arbitre
+
+```{mermaid}
+classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -> arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -> joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -> cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -> tournoi)
+    id_joueur: INT(FK -> joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
+
+```
+
+## Questions
+
+- [ ] Listez tous les joueurs
+  - [ ] Faîtes de même sur les autres tables pour observer leur contenu
+- [ ] Listez tous les joueurs ordonnés par elo descroissant
+- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000
+- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un "e" (majuscule ou minuscule) :bulb: *tip : voir méthode UPPER*
+- [ ] Créez la joueuse : *Martine Dupont, elo : 1999, Arbitre Elite*
+- [ ] Supprimez le joueur de pseudo *marc78*
+- [ ] Essayez de supprimer le joueur ayant pour id : 20
+  - Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?
+- [ ] Listez les joueurs qui sont arbitres :bulb: *voir IS NOT NULL*
+- [ ] Ajoutez à la table joueur la colonne de type booléen *est_arbitre*
+- [ ] Remplissez cette nouvelle colonne pour tous les joueurs
+- [ ] Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d'arbitre
+- [ ] Listez tous les joueurs (nom, prénom) ainsi que leur grade d'arbitre s'ils le sont
+- [ ] Comptez le nombre de joueurs qui sont arbitre
+- [ ] Comptez le nombre d'arbitres par grade
+- [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
+- [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
+- [ ] Ajouter le nombre de joueurs et le elo max des joueurs
+
+---
+
+La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.

@@ -9,7 +9,7 @@ from: markdown+emoji
 
 ## Programme
 
-- [ ] [Bases de données et SQL](docs/sql/sql.qmd) (3h)
+- [ ] [Bases de données et SQL](docs/sql/sql-cours.qmd) (3h)
 - [ ] [Python - initiation](docs/python/python-cours.qmd) (6h)
 - [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
 - [ ] [UML](docs/UML/UML.qmd) (3h)
@@ -18,7 +18,7 @@ from: markdown+emoji
 
 ## 1. Initiation à SQL
 
-- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql.qmd)
+- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql-cours.qmd)
 - [ ] Effectuez le paramètrage pour utiliser DBeaver
 - [ ] Faites l'exercice
 

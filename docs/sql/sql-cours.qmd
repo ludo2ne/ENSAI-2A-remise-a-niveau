@@ -1,0 +1,644 @@
+---
+title: "Bases de Données Relationnelles et SQL"
+description: "[Slides](sql-cours-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Introduction à SQL](sql-cours.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: sql-cours-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: false
+from: markdown+emoji
+---
+
+## Objectifs {.unnumbered}
+
+- [ ] Qu'est ce qu'une base de données relationnelle ?
+- [ ] Comment sont construites les tables ?
+- [ ] Savoir écrire des requêtes SQL
+- [ ] Utiliser le logiciel [DBeaver](https://dbeaver.io/){target="_blank"}
+
+
+## Qu'est-ce qu'une base de données ?
+
+- Ensemble de données stockées dans des `Tables`
+- Tables liées entre elles
+- Tables Structurées
+- Éviter la redondance
+
+::: {.notes}
+- stockées numériquement
+- peut être utilisée par des applications
+- interrogeables, modifiables par les utilisateurs
+:::
+
+
+### SGBD
+
+Un Système de Gestion de Base de Données (SGBD) est un logiciel qui permet de :
+
+- stocker
+- organiser
+- gérer des données de manière structurée
+
+Exemples de SGBD :
+
+- relationnelles : `PostgreSQL`, MySQL, Oracle Database
+- NoSQL : MongoDB, Cassandra 
+
+::: {.notes}
+
+:::
+
+
+### Base de données relationnelles
+
+- Organise les données sous forme de tables interconnectées.
+- Les tables seront liées entre elle grace à des `clés étrangères` (FK). 
+
+
+### Kesako
+
+- **PostgreSQL** : SGBD
+- **DBeaver** : outil client qui permet de se connecter à un SGBD
+- **SQL** : langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.
+
+:::{.notes}
+On parle de SQL ensuite
+:::
+
+
+## Table
+
+Une `Table` est composée de lignes et de colonnes :
+
+- une `ligne` représente un enregistrement spécifique
+- une `colonne` représente un attribut particulier de ces enregistrements
+- `Clé primaire` (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table
+
+
+### Table - exemple {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Diagramme UML 
+
+:::{style="background-color: #199edd;"}
+
+```{mermaid}
+classDiagram
+  class Joueuse {
+    id_joueuse: INT(PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    pays: VARCHAR
+  }
+```
+
+:::
+
+
+#### Données
+
+| id_joueuse (PK) | nom       | prenom    | date_naissance | pays    |
+| --------------- | --------- | --------- | -------------- | ------- |
+| 1               | Sebag     | Marie     | 1986-10-15     | France  |
+| 2               | Polgar    | Judit     | 1976-07-23     | Hongrie |
+| 3               | Hou       | Yifan     | 1994-02-27     | Chine   |
+| 4               | Kosteniuk | Alexandra | 1984-04-23     | Suisse  |
+| 5               | Ju        | Wenjun    | 1991-01-31     | Chine   |
+
+: Joueuse {.striped .hover .bordered}
+
+:::
+
+
+## Associations entre tables
+
+- `1..1` : Une *Personne* a un *Passeport* et un *Passeport* appartient à une seule *Personne*
+  - la clé étrangère pourra être placée dans l'une des deux tables
+- `1..` : Une *Joueuse* joue pour une seule équipe *Equipe*. Une *Equipe* est composée de plusieurs *Joueuses*
+  - la clé étrangère devra être placée dans la table *Joueuse*
+- `..*` : Un *Etudiant* suit plusieurs *Cours* et un *Cours* et suivi par plusieurs *Etudiants*
+  - il faut créer une table d'association entre *Etudiant* et *Cours*
+
+
+### Lien entre 2 tables via une clé étrangère {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Diagramme
+
+:::{style="background-color: #199edd;"}
+
+```{mermaid}
+classDiagram
+  direction LR
+  
+  class Joueuse {
+    id_joueuse: INT (PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR (FK)
+  }
+  
+  class Pays {
+    code_pays: VARCHAR (PK)
+    nom: VARCHAR
+  }
+
+  Joueuse "*" -- "1" Pays : Appartient
+```
+
+:::
+
+#### Table joueuse
+
+| id_joueuse | nom       | prenom    | date_naissance | code_pays |
+| ---------- | --------- | --------- | -------------- | --------- |
+| 1          | Sebag     | Marie     | 1986-10-15     | FR        |
+| 2          | Polgar    | Judit     | 1976-07-23     | HU        |
+| 3          | Hou       | Yifan     | 1994-02-27     | CN        |
+| 4          | Kosteniuk | Alexandra | 1984-04-23     | CH        |
+| 5          | Ju        | Wenjun    | 1991-01-31     | CN        |
+
+: {.striped .hover .bordered}
+
+
+#### Table pays
+
+| code_pays | nom     |
+| --------- | ------- |
+| CH        | Suisse  |
+| CN        | Chine   |
+| FR        | France  |
+| HU        | Hongrie |
+
+: {.striped .hover .bordered}
+
+:::
+
+
+### Lien entre 2 tables via une table d'association {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Diagramme
+
+:::{style="background-color: #199edd;"}
+
+```{mermaid}
+classDiagram
+  direction LR
+
+  class Joueuse {
+    id_joueuse: INT (PK)
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR (FK)
+  }
+  
+  class Tournoi {
+    id_tournoi: INT (PK)
+    nom: VARCHAR
+    ville: VARCHAR
+  }
+
+  
+  class Participation {
+    id_joueuse: INT (FK)
+    id_tournoi: INT (FK)
+  }
+
+  Joueuse "*" .. "1" Participation
+  Participation "1" .. "*" Tournoi
+```
+
+:::
+
+#### Table joueuse
+
+| id_joueuse | nom       | prenom    | date_naissance | code_pays |
+| ---------- | --------- | --------- | -------------- | --------- |
+| 1          | Sebag     | Marie     | 1986-10-15     | FR        |
+| 2          | Polgar    | Judit     | 1976-07-23     | HU        |
+| 3          | Hou       | Yifan     | 1994-02-27     | CN        |
+| 4          | Kosteniuk | Alexandra | 1984-04-23     | CH        |
+| 5          | Ju        | Wenjun    | 1991-01-31     | CN        |
+
+: {.striped .hover .bordered}
+
+#### Table participation
+
+| id_joueuse | id_tournoi |
+| ---------- | ---------- |
+| 1          | 1          |
+| 1          | 2          |
+| 3          | 2          |
+| 4          | 1          |
+| 4          | 2          |
+
+: {.striped .hover .bordered}
+
+#### table tournoi
+
+| id_tournoi | nom          | ville        |
+| ---------- | ------------ | ------------ |
+| 1          | Norway Chess | Oslo         |
+| 2          | Tata Steel   | Wijk aan Zee |
+
+: {.striped .hover .bordered}
+
+:::
+
+
+## SQL
+
+- SQL : Structured Query Language
+- Inventé en 1970 par Edgar F. Codd
+- Langage de programmation 
+- Utilisé pour gérer et manipuler des bases de données relationnelles
+
+:::{.notes}
+- très très très utilisé
+- tous les langages qui traitent de la data peuvent encapsuler du SQL
+:::
+
+### Opérations CRUD
+
+SQL permet d'effectuer les opérations du CRUD (Create, Read, Upadate, Delete)
+
+- `SELECT` : récupérer des données depuis une table
+- `INSERT` : insérer de nouvelles données dans une table
+- `UPDATE` : mettre à jour des données existantes dans une table
+- `DELETE` : supprimer des données d'une table
+
+
+##  Actions sur une table
+
+### Créer une Table
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+-- Création de la table personne (ceci est un commentaire)
+CREATE TABLE ran.personne (
+    id               INT         PRIMARY KEY,
+    nom              VARCHAR(30) NOT NULL,
+    prenom           VARCHAR(40),
+    date_naissance   DATE,
+    adresse          TEXT
+);
+```
+
+#### Résultat
+
+La table est créée mais vide
+
+| id  | nom | prenom | date_naissance | adresse |
+| --- | --- | ------ | -------------- | ------- |
+|     |     |        |                |         |
+
+
+::: {.callout-tip}
+Le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables.
+:::
+
+:::
+
+
+### Insérer des données
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+INSERT INTO ran.personne (id, nom, prenom, dnais, adresse)
+VALUES
+    (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens'),
+    (2, 'Dure', 'Laure', '1985-09-22', 'Lyon'),
+    (3, 'Erateur', 'Maud', '1995-03-10', 'Lille');
+```
+
+#### Résultat
+
+| id  | nom     | prenom | date_naissance | adresse |
+| --- | ------- | ------ | -------------- | ------- |
+| 1   | Gatore  | Ali    | 1990-05-15     | Amiens  |
+| 2   | Dure    | Laure  | 1985-09-22     | Lyon    |
+| 3   | Erateur | Maud   | 1995-03-10     | Lille   |
+
+:::
+
+### Supprimer une table
+
+
+```{.sql}
+DROP TABLE ran.personne;
+```
+
+Si ensuite, vous essayez :
+
+```{.sql}
+SELECT *
+  FROM ran.personne;
+```
+
+> ERREUR: la relation « ran.personne » n'existe pas
+
+
+##  Actions sur les lignes
+
+###  Sélectionner des lignes
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+SELECT *
+  FROM ran.personne
+ WHERE adresse LIKE 'L%'
+   AND prenom = 'Laure';
+```
+
+#### Résultat
+
+| id  | prenom | nom  | date_naissance | adresse |
+| --- | ------ | ---- | -------------- | ------- |
+| 2   | Laure  | Dure | 1985-09-22     | Lyon    |
+
+:::
+ 
+
+###  Mettre à jour des lignes
+
+```{.sql}
+UPDATE ran.personne
+   SET adresse = 'Rennes'
+ WHERE id = 2;
+```
+
+| id  | prenom | nom     | date_naissance | adresse |
+| --- | ------ | ------- | -------------- | ------- |
+| 1   | Ali    | Gatore  | 1990-05-15     | Paris   |
+| 2   | Laure  | Dure    | 1985-09-22     | Rennes  |
+| 3   | Maud   | Erateur | 1995-03-10     | Lille   |
+
+---
+
+###  Supprimer des lignes
+
+```{.sql}
+DELETE FROM ran.personne
+ WHERE prenom = 'Ali';
+```
+
+| id  | prenom | nom     | date_naissance | adresse |
+| --- | ------ | ------- | -------------- | ------- |
+| 2   | Laure  | Dure    | 1985-09-22     | Rennes  |
+| 3   | Maud   | Erateur | 1995-03-10     | Lille   |
+
+
+##  Jointures
+
+> Table `commande`
+
+| id  | produit | quantite | id_personne | prix_unitaire |
+| --- | ------- | -------- | ----------- | ------------- |
+| 1   | livre   | 1        | 2           | 3             |
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personne p
+  JOIN ran.commande c ON p.id = c.id_personne
+ WHERE prenom = 'Laure';
+```
+
+> :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont **le même nom**.  
+> exemple : si dans la table `personnes` nous avons `id_personne` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personne p
+  JOIN ran.commande c USING(id_personne) -- <--
+ WHERE prenom = 'Laure';
+```
+
+
+### Jointures externes
+
+> Que se passe t'il si nous exécutons la requête ci-dessous et qu'Ali n'a passé aucune commande ?
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personne p
+  JOIN ran.commande c ON p.id = c.id_client
+```
+
+Pour afficher toutes les personnes, même celles qui n'ont pas réalisé de commande, nous allons utiliser les **jointures externees** : `LEFT JOIN` ou `RIGHT JOIN`
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM ran.personne p
+  LEFT JOIN ran.commande c ON p.id = c.id_client
+```
+
+Ici le `LEFT JOIN` indique que nous affichons :
+- les données provenant de la table **personnes**
+- complétées par les données de la table **commandes** pour les lignes où le lien est établi
+
+
+##  Actions sur les colonnes
+
+###  Renommer une colonne
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+RENAME COLUMN date_naissance TO dnais;
+```
+
+#### Résultat
+
+| id  | nom     | prenom | dnais      | adresse |
+| --- | ------- | ------ | ---------- | ------- |
+| 1   | Gatore  | Ali    | 1990-05-15 | Amiens  |
+| 2   | Dure    | Laure  | 1985-09-22 | Lyon    |
+| 3   | Erateur | Maud   | 1995-03-10 | Lille   |
+
+:::
+
+
+###  Ajouter un attribut
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+ADD echecs BOOLEAN;
+```
+
+#### Résultat
+
+| id  | nom     | prenom | dnais      | adresse | joue_aux_echecs |
+| --- | ------- | ------ | ---------- | ------- | --------------- |
+| 1   | Gatore  | Ali    | 1990-05-15 | Amiens  | true            |
+| 2   | Dure    | Laure  | 1985-09-22 | Lyon    | false           |
+| 3   | Erateur | Maud   | 1995-03-10 | Lille   | true            |
+
+:::
+
+###  Supprimer une colonne
+
+::: {.panel-tabset .nav-pills}
+
+#### Requête
+
+```{.sql}
+ALTER TABLE ran.personne
+DROP COLUMN adresse;
+```
+
+#### Résultat
+
+| id  | nom     | prenom | dnais      | echecs |
+| --- | ------- | ------ | ---------- | ------ |
+| 1   | Gatore  | Ali    | 1990-05-15 | true   |
+| 2   | Dure    | Laure  | 1985-09-22 | false  |
+| 3   | Erateur | Maud   | 1995-03-10 | true   |
+
+:::
+
+
+
+
+---
+
+##  Formes normales
+
+- `1ere forme normale` (1NF) : Une relation est 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
+  - Un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné, et donc s'il ne regroupe pas un ensemble de plusieurs valeurs.
+  - Par exemple, une adresse du type `20 rue du Général de Gaulle 35170 BRUZ` n'est pas atomique
+- 2NF : 1NF + tout attribut non clé dépend de la clé
+- 3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé
+
+---
+
+##  Premières manipulations
+
+### Les schémas
+
+Par défaut toutes les tables que nous allons créer iraient dans le schéma public.  
+:bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
+
+- `ran` : schéma utilisé pour la remise à niveau
+- `ci` : schéma utilisé en compléments d'informatique
+- `projet` : schéma du projet info 2A
+
+```{.sql}
+CREATE schema ran;
+CREATE schema ci;
+CREATE schema projet;
+```
+
+---
+
+### Mots clés utiles
+
+#### LIKE
+
+> Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne
+
+```{.sql}
+-- toutes les personnes ayant un prénom contenant "au"
+SELECT 
+  FROM ran.personne
+ WHERE prenom LIKE '%au%';
+```
+
+#### GROUP BY
+
+> Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
+
+```{.sql}
+SELECT adresse,
+       COUNT(1)
+  FROM ran.personne
+ GROUP BY adresse;
+```
+
+#### HAVING
+
+> Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d'une condition après le GROUP BY.  
+> :warning: ne pas confondre avec `WHERE` qui s'appliquerait avant le `GROUP BY`
+
+```{.sql}
+SELECT adresse,
+       COUNT(1)
+  FROM ran.personne
+ GROUP BY adresse
+HAVING COUNT(1) >= 5;
+```
+
+#### ORDER BY
+
+```{.sql}
+SELECT *
+  FROM ran.personne
+ ORDER BY adresse DESC
+```
+
+#### AS
+
+> Permet de renommer une colonne dans l'affichage
+
+```{.sql}
+SELECT adresse AS Ville
+  FROM ran.personne
+```
+
+---
+
+####  Quelques possibilités d'utilisation sans table
+
+```{.sql}
+SELECT CURRENT_DATE;
+SELECT 1+2;
+SELECT 1 > 2;
+SELECT 'Salut';
+```
+
+
+## Bibliographie
+
+<https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>
+<https://sql.sh/>

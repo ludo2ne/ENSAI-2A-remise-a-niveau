@@ -14,7 +14,7 @@ website:
         text: Home
       - text: SQL
         menu: 
-          - href: docs/sql/sql.qmd
+          - href: docs/sql/sql-cours.qmd
             text: "Introduction à SQL"
           - href: docs/sql/DBeaver.qmd
             text: "DBeaver"
