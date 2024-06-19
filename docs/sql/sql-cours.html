@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction aux Bases de Données Relationnelles et SQL">
+<meta name="description" content="Slides">
 
 <title>Remise à Niveau Informatique - Bases de Données Relationnelles et SQL</title>
 <style>
@@ -104,6 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="forest">
 <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -139,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="../../docs/sql/sql.html">
+    <a class="dropdown-item" href="../../docs/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
@@ -247,36 +248,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples"><span class="header-section-number">2</span> Exemples</a></li>
-  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql"><span class="header-section-number">3</span> SQL</a></li>
-  <li><a href="#actions-sur-les-colonnes" id="toc-actions-sur-les-colonnes" class="nav-link" data-scroll-target="#actions-sur-les-colonnes"><span class="header-section-number">4</span> Actions sur les colonnes</a>
+  <li><a href="#quest-ce-quune-base-de-données" id="toc-quest-ce-quune-base-de-données" class="nav-link" data-scroll-target="#quest-ce-quune-base-de-données">Qu’est-ce qu’une base de données ?</a>
   <ul class="collapse">
-  <li><a href="#créer-une-table" id="toc-créer-une-table" class="nav-link" data-scroll-target="#créer-une-table"><span class="header-section-number">4.1</span> Créer une Table</a></li>
-  <li><a href="#insérer-des-données" id="toc-insérer-des-données" class="nav-link" data-scroll-target="#insérer-des-données"><span class="header-section-number">4.2</span> Insérer des données</a></li>
-  <li><a href="#renommer-une-colonne" id="toc-renommer-une-colonne" class="nav-link" data-scroll-target="#renommer-une-colonne"><span class="header-section-number">4.3</span> Renommer une colonne</a></li>
-  <li><a href="#ajouter-un-attribut" id="toc-ajouter-un-attribut" class="nav-link" data-scroll-target="#ajouter-un-attribut"><span class="header-section-number">4.4</span> Ajouter un attribut</a></li>
-  <li><a href="#supprimer-une-colonne" id="toc-supprimer-une-colonne" class="nav-link" data-scroll-target="#supprimer-une-colonne"><span class="header-section-number">4.5</span> Supprimer une colonne</a></li>
-  <li><a href="#supprimer-une-table" id="toc-supprimer-une-table" class="nav-link" data-scroll-target="#supprimer-une-table"><span class="header-section-number">4.6</span> Supprimer une table</a></li>
+  <li><a href="#sgbd" id="toc-sgbd" class="nav-link" data-scroll-target="#sgbd">SGBD</a></li>
+  <li><a href="#base-de-données-relationnelles" id="toc-base-de-données-relationnelles" class="nav-link" data-scroll-target="#base-de-données-relationnelles">Base de données relationnelles</a></li>
+  <li><a href="#kesako" id="toc-kesako" class="nav-link" data-scroll-target="#kesako">Kesako</a></li>
   </ul></li>
-  <li><a href="#actions-sur-les-lignes" id="toc-actions-sur-les-lignes" class="nav-link" data-scroll-target="#actions-sur-les-lignes"><span class="header-section-number">5</span> Actions sur les lignes</a>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a>
   <ul class="collapse">
-  <li><a href="#insérer-des-lignes" id="toc-insérer-des-lignes" class="nav-link" data-scroll-target="#insérer-des-lignes"><span class="header-section-number">5.1</span> Insérer des lignes</a></li>
-  <li><a href="#sélectionner-des-lignes" id="toc-sélectionner-des-lignes" class="nav-link" data-scroll-target="#sélectionner-des-lignes"><span class="header-section-number">5.2</span> Sélectionner des lignes</a></li>
-  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">5.3</span> Jointures</a></li>
-  <li><a href="#jointures-externes" id="toc-jointures-externes" class="nav-link" data-scroll-target="#jointures-externes"><span class="header-section-number">5.4</span> Jointures externes</a></li>
-  <li><a href="#mettre-à-jour-des-lignes" id="toc-mettre-à-jour-des-lignes" class="nav-link" data-scroll-target="#mettre-à-jour-des-lignes"><span class="header-section-number">5.5</span> Mettre à jour des lignes</a></li>
-  <li><a href="#supprimer-des-lignes" id="toc-supprimer-des-lignes" class="nav-link" data-scroll-target="#supprimer-des-lignes"><span class="header-section-number">5.6</span> Supprimer des lignes</a></li>
+  <li><a href="#table---exemple" id="toc-table---exemple" class="nav-link" data-scroll-target="#table---exemple">Table - exemple</a></li>
   </ul></li>
-  <li><a href="#formes-normales" id="toc-formes-normales" class="nav-link" data-scroll-target="#formes-normales"><span class="header-section-number">6</span> Formes normales</a></li>
-  <li><a href="#premières-manipulations" id="toc-premières-manipulations" class="nav-link" data-scroll-target="#premières-manipulations"><span class="header-section-number">7</span> Premières manipulations</a>
+  <li><a href="#associations-entre-tables" id="toc-associations-entre-tables" class="nav-link" data-scroll-target="#associations-entre-tables">Associations entre tables</a>
   <ul class="collapse">
-  <li><a href="#les-schémas" id="toc-les-schémas" class="nav-link" data-scroll-target="#les-schémas"><span class="header-section-number">7.1</span> Les schémas</a></li>
-  <li><a href="#mots-clés-utiles" id="toc-mots-clés-utiles" class="nav-link" data-scroll-target="#mots-clés-utiles"><span class="header-section-number">7.2</span> Mots clés utiles</a></li>
+  <li><a href="#lien-entre-2-tables-via-une-clé-étrangère" id="toc-lien-entre-2-tables-via-une-clé-étrangère" class="nav-link" data-scroll-target="#lien-entre-2-tables-via-une-clé-étrangère">Lien entre 2 tables via une clé étrangère</a></li>
+  <li><a href="#lien-entre-2-tables-via-une-table-dassociation" id="toc-lien-entre-2-tables-via-une-table-dassociation" class="nav-link" data-scroll-target="#lien-entre-2-tables-via-une-table-dassociation">Lien entre 2 tables via une table d’association</a></li>
   </ul></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">8</span> Exercice</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a>
+  <ul class="collapse">
+  <li><a href="#opérations-crud" id="toc-opérations-crud" class="nav-link" data-scroll-target="#opérations-crud">Opérations CRUD</a></li>
+  </ul></li>
+  <li><a href="#actions-sur-une-table" id="toc-actions-sur-une-table" class="nav-link" data-scroll-target="#actions-sur-une-table">Actions sur une table</a>
+  <ul class="collapse">
+  <li><a href="#créer-une-table" id="toc-créer-une-table" class="nav-link" data-scroll-target="#créer-une-table">Créer une Table</a></li>
+  <li><a href="#insérer-des-données" id="toc-insérer-des-données" class="nav-link" data-scroll-target="#insérer-des-données">Insérer des données</a></li>
+  <li><a href="#supprimer-une-table" id="toc-supprimer-une-table" class="nav-link" data-scroll-target="#supprimer-une-table">Supprimer une table</a></li>
+  </ul></li>
+  <li><a href="#actions-sur-les-lignes" id="toc-actions-sur-les-lignes" class="nav-link" data-scroll-target="#actions-sur-les-lignes">Actions sur les lignes</a>
+  <ul class="collapse">
+  <li><a href="#sélectionner-toutes-les-lignes" id="toc-sélectionner-toutes-les-lignes" class="nav-link" data-scroll-target="#sélectionner-toutes-les-lignes">Sélectionner toutes les lignes</a></li>
+  <li><a href="#sélectionner-certaines-lignes" id="toc-sélectionner-certaines-lignes" class="nav-link" data-scroll-target="#sélectionner-certaines-lignes">Sélectionner certaines lignes</a></li>
+  <li><a href="#mettre-à-jour-des-lignes" id="toc-mettre-à-jour-des-lignes" class="nav-link" data-scroll-target="#mettre-à-jour-des-lignes">Mettre à jour des lignes</a></li>
+  <li><a href="#supprimer-des-lignes" id="toc-supprimer-des-lignes" class="nav-link" data-scroll-target="#supprimer-des-lignes">Supprimer des lignes</a></li>
+  </ul></li>
+  <li><a href="#actions-sur-les-colonnes" id="toc-actions-sur-les-colonnes" class="nav-link" data-scroll-target="#actions-sur-les-colonnes">Actions sur les colonnes</a>
+  <ul class="collapse">
+  <li><a href="#renommer-une-colonne" id="toc-renommer-une-colonne" class="nav-link" data-scroll-target="#renommer-une-colonne">Renommer une colonne</a></li>
+  <li><a href="#ajouter-un-attribut" id="toc-ajouter-un-attribut" class="nav-link" data-scroll-target="#ajouter-un-attribut">Ajouter un attribut</a></li>
+  <li><a href="#supprimer-une-colonne" id="toc-supprimer-une-colonne" class="nav-link" data-scroll-target="#supprimer-une-colonne">Supprimer une colonne</a></li>
+  </ul></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures">Jointures</a>
+  <ul class="collapse">
+  <li><a href="#jointures-externes" id="toc-jointures-externes" class="nav-link" data-scroll-target="#jointures-externes">Jointures externes</a></li>
+  </ul></li>
+  <li><a href="#formes-normales" id="toc-formes-normales" class="nav-link" data-scroll-target="#formes-normales">Formes normales</a></li>
+  <li><a href="#premières-manipulations" id="toc-premières-manipulations" class="nav-link" data-scroll-target="#premières-manipulations">Premières manipulations</a>
+  <ul class="collapse">
+  <li><a href="#les-schémas" id="toc-les-schémas" class="nav-link" data-scroll-target="#les-schémas">Les schémas</a></li>
+  </ul></li>
+  <li><a href="#mots-clés-utiles" id="toc-mots-clés-utiles" class="nav-link" data-scroll-target="#mots-clés-utiles">Mots clés utiles</a>
+  <ul class="collapse">
+  <li><a href="#like" id="toc-like" class="nav-link" data-scroll-target="#like">LIKE</a></li>
+  <li><a href="#group-by" id="toc-group-by" class="nav-link" data-scroll-target="#group-by">GROUP BY</a></li>
+  <li><a href="#having" id="toc-having" class="nav-link" data-scroll-target="#having">HAVING</a></li>
+  <li><a href="#order-by" id="toc-order-by" class="nav-link" data-scroll-target="#order-by">ORDER BY</a></li>
+  <li><a href="#as" id="toc-as" class="nav-link" data-scroll-target="#as">AS</a></li>
+  </ul></li>
+  <li><a href="#quelques-possibilités-dutilisation-sans-table" id="toc-quelques-possibilités-dutilisation-sans-table" class="nav-link" data-scroll-target="#quelques-possibilités-dutilisation-sans-table">Quelques possibilités d’utilisation sans table</a></li>
+  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sql-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -292,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Introduction aux Bases de Données Relationnelles et SQL
+    <a href="sql-cours-slides.html">Slides</a>
   </div>
 </div>
 
@@ -319,47 +349,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Qu’est ce qu’une base de données relationnelle ?</label></li>
-<li><label><input type="checkbox">Comment sont construits les tables ?</label></li>
+<li><label><input type="checkbox">Comment sont construites les tables ?</label></li>
 <li><label><input type="checkbox">Savoir écrire des requêtes SQL</label></li>
-<li><label><input type="checkbox">Utiliser <a href="../../docs/sql/DBeaver.html">DBeaver</a></label></li>
+<li><label><input type="checkbox">Utiliser le logiciel <a href="https://dbeaver.io/" target="_blank">DBeaver</a></label></li>
 </ul>
 </section>
-<section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>Une <code>Base de données</code> (BDD) est une collection organisée de données structurées stockées dans des <code>Tables</code></p>
+<section id="quest-ce-quune-base-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-quune-base-de-données">Qu’est-ce qu’une base de données ?</h2>
+<ul>
+<li>Ensemble de données stockées dans des <code>Tables</code></li>
+<li>Tables liées entre elles</li>
+<li>Tables Structurées</li>
+<li>Éviter la redondance</li>
+</ul>
+<div class="notes">
+<ul>
+<li>stockées numériquement</li>
+<li>peut être utilisée par des applications</li>
+<li>interrogeables, modifiables par les utilisateurs</li>
+</ul>
+</div>
+<section id="sgbd" class="level3">
+<h3 class="anchored" data-anchor-id="sgbd">SGBD</h3>
+<p>Un Système de Gestion de Base de Données (SGBD) est un logiciel qui permet de :</p>
+<ul>
+<li>stocker</li>
+<li>organiser</li>
+<li>gérer des données de manière structurée</li>
+</ul>
+<p>Exemples de SGBD :</p>
+<ul>
+<li>relationnelles : <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>, MySQL, Oracle Database</li>
+<li>NoSQL : MongoDB, Cassandra</li>
+</ul>
+<div class="notes">
+
+</div>
+</section>
+<section id="base-de-données-relationnelles" class="level3">
+<h3 class="anchored" data-anchor-id="base-de-données-relationnelles">Base de données relationnelles</h3>
+<ul>
+<li>Organise les données sous forme de tables interconnectées.</li>
+<li>Les tables seront liées entre elle grace à des <code>clés étrangères</code> (FK).</li>
+</ul>
+</section>
+<section id="kesako" class="level3">
+<h3 class="anchored" data-anchor-id="kesako">Kesako</h3>
+<ul>
+<li><strong>PostgreSQL</strong> : SGBD</li>
+<li><strong>DBeaver</strong> : outil client qui permet de se connecter à un SGBD</li>
+<li><strong>SQL</strong> : langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.</li>
+</ul>
+<div class="notes">
+<p>On parle de SQL ensuite</p>
+</div>
+</section>
+</section>
+<section id="table" class="level2">
+<h2 class="anchored" data-anchor-id="table">Table</h2>
 <p>Une <code>Table</code> est composée de lignes et de colonnes :</p>
 <ul>
 <li>une <code>ligne</code> représente un enregistrement spécifique</li>
 <li>une <code>colonne</code> représente un attribut particulier de ces enregistrements</li>
 <li><code>Clé primaire</code> (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table</li>
 </ul>
-<p>Une base de données relationnelle (BDDR) organise les données sous forme de tables interconnectées. Les tables seront liées entre elle grace à des <code>clés étrangères</code> (FK). Il y a trois principaux types d’associations :</p>
-<ul>
-<li><code>1..1</code> : Une <em>Personne</em> a un <em>Passport</em> et un <em>Passport</em> appartient à une seule <em>Personne</em>
-<ul>
-<li>la clé étrangère pourra être placée dans l’une des deux tables</li>
-</ul></li>
-<li><code>1..</code> : Une <em>Joueuse</em> joue pour une seule équipe <em>Equipe</em>. Une <em>Equipe</em> est composée de plusieurs <em>Joueuses</em>
-<ul>
-<li>la clé étrangère devra être placée dans la table <em>Joueuse</em></li>
-</ul></li>
-<li><code>..</code>* : Un <em>Etudiant</em> suit plusieurs <em>Cours</em> et un <em>Cours</em> et suivi par plusieurs <em>Etudiants</em>
-<ul>
-<li>il faut créer une table d’association entre <em>Etudiant</em> et <em>Cours</em></li>
-</ul></li>
-</ul>
-<p>Un <code>SGBD</code> (Système de Gestion de Base de Données) est un logiciel qui permet de stocker, organiser et gérer des données de manière structurée</p>
-<ul>
-<li>exemples (Bases de données relationnelles) : <code>PostgreSQL</code>, MySQL, Oracle Database</li>
-<li>exemples (Bases de données NoSQL pour le Big Data) : MongoDB, Cassandra</li>
-</ul>
-<p><code>SQL</code> (Structured Query Language) est un langage de programmation conçu pour gérer et manipuler des bases de données relationnelles.</p>
-<p><code>DBeaver</code> est un outil client qui permet de se connecter à un SGBD.</p>
-</section>
-<section id="exemples" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exemples"><span class="header-section-number">2</span> Exemples</h2>
-<section id="une-simple-table" class="level4">
-<h4 class="anchored" data-anchor-id="une-simple-table">Une simple table</h4>
+<section id="table---exemple" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="table---exemple">Table - exemple</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Diagramme UML</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Données</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div style="background-color: #199edd;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -370,8 +430,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     id_joueuse: INT(PK)
     nom: VARCHAR
     prenom: VARCHAR
-    pays: VARCHAR
     date_naissance: DATE
+    pays: VARCHAR
   }
 </pre>
 </div>
@@ -379,10 +439,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<table class="caption-top table">
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
+<caption>Joueuse</caption>
 <thead>
 <tr class="header">
-<th>id_joueuse</th>
+<th>id_joueuse (PK)</th>
 <th>nom</th>
 <th>prenom</th>
 <th>date_naissance</th>
@@ -427,16 +491,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
+</div>
+</div>
 </section>
-<section id="lien-entre-2-tables-via-une-clé-étrangère" class="level4">
-<h4 class="anchored" data-anchor-id="lien-entre-2-tables-via-une-clé-étrangère">Lien entre 2 tables via une clé étrangère</h4>
+</section>
+<section id="associations-entre-tables" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="associations-entre-tables">Associations entre tables</h2>
+<ul>
+<li><code>1..1</code> : Une <em>Personne</em> a un <em>Passeport</em> et un <em>Passeport</em> appartient à une seule <em>Personne</em>
+<ul>
+<li>la clé étrangère pourra être placée dans l’une des deux tables</li>
+</ul></li>
+<li><code>1..</code> : Une <em>Joueuse</em> joue pour une seule équipe <em>Equipe</em>. Une <em>Equipe</em> est composée de plusieurs <em>Joueuses</em>
+<ul>
+<li>la clé étrangère devra être placée dans la table <em>Joueuse</em></li>
+</ul></li>
+<li><code>..*</code> : Un <em>Etudiant</em> suit plusieurs <em>Cours</em> et un <em>Cours</em> et suivi par plusieurs <em>Etudiants</em>
+<ul>
+<li>il faut créer une table d’association entre <em>Etudiant</em> et <em>Cours</em></li>
+</ul></li>
+</ul>
+<section id="lien-entre-2-tables-via-une-clé-étrangère" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="lien-entre-2-tables-via-une-clé-étrangère">Lien entre 2 tables via une clé étrangère</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Diagramme</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Table joueuse</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Table pays</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div style="background-color: #199edd;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">classDiagram
+  direction LR
+  
   class Joueuse {
     id_joueuse: INT (PK)
     nom: VARCHAR
@@ -457,8 +547,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><code>Joueuse</code></p>
-<table class="caption-top table">
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>id_joueuse</th>
@@ -506,8 +598,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p><code>Pays</code></p>
-<table class="caption-top table">
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>code_pays</th>
@@ -533,16 +626,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
+</div>
+</div>
 </section>
-<section id="lien-entre-2-tables-via-une-table-dassociation" class="level4">
-<h4 class="anchored" data-anchor-id="lien-entre-2-tables-via-une-table-dassociation">Lien entre 2 tables via une table d’association</h4>
+<section id="lien-entre-2-tables-via-une-table-dassociation" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="lien-entre-2-tables-via-une-table-dassociation">Lien entre 2 tables via une table d’association</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Diagramme</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Table joueuse</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Table participation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">table tournoi</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div style="background-color: #199edd;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">classDiagram
+  direction LR
 
   class Joueuse {
     id_joueuse: INT (PK)
@@ -560,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   
   class Participation {
-    id_joueuse: INT (PK)
+    id_joueuse: INT (FK)
     id_tournoi: INT (FK)
   }
 
@@ -572,61 +673,216 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
+<thead>
+<tr class="header">
+<th>id_joueuse</th>
+<th>nom</th>
+<th>prenom</th>
+<th>date_naissance</th>
+<th>code_pays</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Sebag</td>
+<td>Marie</td>
+<td>1986-10-15</td>
+<td>FR</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Polgar</td>
+<td>Judit</td>
+<td>1976-07-23</td>
+<td>HU</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Hou</td>
+<td>Yifan</td>
+<td>1994-02-27</td>
+<td>CN</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Kosteniuk</td>
+<td>Alexandra</td>
+<td>1984-04-23</td>
+<td>CH</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Ju</td>
+<td>Wenjun</td>
+<td>1991-01-31</td>
+<td>CN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
+<thead>
+<tr class="header">
+<th>id_joueuse</th>
+<th>id_tournoi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<table class="table-striped table-hover table-bordered caption-top table">
+<thead>
+<tr class="header">
+<th>id_tournoi</th>
+<th>nom</th>
+<th>ville</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Norway Chess</td>
+<td>Oslo</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Tata Steel</td>
+<td>Wijk aan Zee</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="sql" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="sql"><span class="header-section-number">3</span> SQL</h2>
-<p>SQL (Structured Query Language) est un langage de programmation utilisé pour gérer et manipuler des bases de données relationnelles.</p>
-<p>Il permet d’effectuer les opérations du CRUD (Create, Read, Upadate, Delete)</p>
+<section id="sql" class="level2">
+<h2 class="anchored" data-anchor-id="sql">SQL</h2>
 <ul>
-<li><code>SELECT</code> : récupérer des données depuis une table.</li>
-<li><code>INSERT</code> : insérer de nouvelles données dans une table.</li>
-<li><code>UPDATE</code> : mettre à jour des données existantes dans une table.</li>
-<li><code>DELETE</code> : supprimer des données d’une table.</li>
+<li>SQL : Structured Query Language</li>
+<li>Inventé en 1970 par Edgar F. Codd</li>
+<li>Langage de programmation</li>
+<li>Utilisé pour gérer et manipuler des bases de données relationnelles</li>
+</ul>
+<div class="notes">
+<ul>
+<li>très très très utilisé</li>
+<li>tous les langages qui traitent de la data peuvent encapsuler du SQL</li>
+</ul>
+</div>
+<section id="opérations-crud" class="level3">
+<h3 class="anchored" data-anchor-id="opérations-crud">Opérations CRUD</h3>
+<p>SQL permet d’effectuer les opérations du CRUD :</p>
+<ul>
+<li><code>SELECT</code> : récupérer des données depuis une table</li>
+<li><code>INSERT</code> : insérer de nouvelles données dans une table</li>
+<li><code>UPDATE</code> : mettre à jour des données existantes dans une table</li>
+<li><code>DELETE</code> : supprimer des données d’une table</li>
 </ul>
 </section>
-<section id="actions-sur-les-colonnes" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="actions-sur-les-colonnes"><span class="header-section-number">4</span> Actions sur les colonnes</h2>
-<section id="créer-une-table" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="créer-une-table"><span class="header-section-number">4.1</span> Créer une Table</h3>
-<p><span class="emoji" data-emoji="bulb">💡</span> le <code>ran.</code> correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables</p>
+</section>
+<section id="actions-sur-une-table" class="level2">
+<h2 class="anchored" data-anchor-id="actions-sur-une-table">Actions sur une table</h2>
+<section id="créer-une-table" class="level3">
+<h3 class="anchored" data-anchor-id="créer-une-table">Créer une Table</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Création de la table personne (ceci est un commentaire)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> ran.personnes (</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span>               <span class="dt">INT</span>         <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    nom              <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    prenom           <span class="dt">VARCHAR</span>(<span class="dv">40</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    adresse          TEXT</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>nom</th>
-<th>prenom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<blockquote class="blockquote">
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> ran.personne (</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    id_personne      <span class="dt">INT</span>         <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    nom              <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    prenom           <span class="dt">VARCHAR</span>(<span class="dv">40</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    adresse          TEXT</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <p>La table est créée mais vide</p>
-</blockquote>
-<hr>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_personne</th>
+<th>nom</th>
+<th>prenom</th>
+<th>date_naissance</th>
+<th>adresse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le <code>ran.</code> correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="insérer-des-données" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="insérer-des-données"><span class="header-section-number">4.2</span> Insérer des données</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> ran.personnes (<span class="kw">id</span>, nom, prenom, dnais, adresse)</span>
+<section id="insérer-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="insérer-des-données">Insérer des données</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> ran.personne (id_personne, nom, prenom, date_naissance, adresse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">'Dupont'</span>, <span class="st">'Jean'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Paris'</span>),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">'Martin'</span>, <span class="st">'Emma'</span>, <span class="st">'1985-09-22'</span>, <span class="st">'Lyon'</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">'Leroy'</span>, <span class="st">'Paul'</span>, <span class="st">'1995-03-10'</span>, <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">'Gatore'</span>, <span class="st">'Ali'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Amiens'</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">'Dure'</span>, <span class="st">'Laure'</span>, <span class="st">'1985-09-22'</span>, <span class="st">'Auxerre'</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">'Erateur'</span>, <span class="st">'Maud'</span>, <span class="st">'1995-03-10'</span>, <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>id</th>
+<th>id_personne</th>
 <th>nom</th>
 <th>prenom</th>
 <th>date_naissance</th>
@@ -639,14 +895,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Gatore</td>
 <td>Ali</td>
 <td>1990-05-15</td>
-<td>Paris</td>
+<td>Amiens</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Dure</td>
 <td>Laure</td>
 <td>1985-09-22</td>
-<td>Lyon</td>
+<td>Auxerre</td>
 </tr>
 <tr class="odd">
 <td>3</td>
@@ -657,16 +913,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
+</div>
+</div>
 </section>
-<section id="renommer-une-colonne" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="renommer-une-colonne"><span class="header-section-number">4.3</span> Renommer une colonne</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">COLUMN</span> date_naissance <span class="kw">TO</span> dnais;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="supprimer-une-table" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-une-table">Supprimer une table</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> ran.personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si ensuite, vous essayez :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>ERREUR: la relation « ran.personne » n’existe pas</p>
+</blockquote>
+</section>
+</section>
+<section id="actions-sur-les-lignes" class="level2">
+<h2 class="anchored" data-anchor-id="actions-sur-les-lignes">Actions sur les lignes</h2>
+<section id="sélectionner-toutes-les-lignes" class="level3">
+<h3 class="anchored" data-anchor-id="sélectionner-toutes-les-lignes">Sélectionner toutes les lignes</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sélectionner-certaines-lignes" class="level3">
+<h3 class="anchored" data-anchor-id="sélectionner-certaines-lignes">Sélectionner certaines lignes</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> adresse <span class="kw">LIKE</span> <span class="st">'A%'</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour une meilleure lisibilité, alignez votre code !</p>
+</div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>id</th>
+<th>id_personne</th>
+<th>prenom</th>
+<th>nom</th>
+<th>date_naissance</th>
+<th>adresse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>Laure</td>
+<td>Dure</td>
+<td>1985-09-22</td>
+<td>Auxerre</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="mettre-à-jour-des-lignes" class="level3">
+<h3 class="anchored" data-anchor-id="mettre-à-jour-des-lignes">Mettre à jour des lignes</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> ran.personne</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> adresse <span class="op">=</span> <span class="st">'Rennes'</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_personne <span class="op">=</span> <span class="dv">2</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_personne</th>
+<th>prenom</th>
+<th>nom</th>
+<th>date_naissance</th>
+<th>adresse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Ali</td>
+<td>Gatore</td>
+<td>1990-05-15</td>
+<td>Amiens</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Laure</td>
+<td>Dure</td>
+<td>1985-09-22</td>
+<td>Rennes</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Maud</td>
+<td>Erateur</td>
+<td>1995-03-10</td>
+<td>Lille</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="notes">
+<ul>
+<li>simples quotes en SQL</li>
+<li>pas de double</li>
+</ul>
+</div>
+</section>
+<section id="supprimer-des-lignes" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-des-lignes">Supprimer des lignes</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ran.personne</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Ali'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_personne</th>
+<th>prenom</th>
+<th>nom</th>
+<th>date_naissance</th>
+<th>adresse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>Laure</td>
+<td>Dure</td>
+<td>1985-09-22</td>
+<td>Rennes</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Maud</td>
+<td>Erateur</td>
+<td>1995-03-10</td>
+<td>Lille</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="actions-sur-les-colonnes" class="level2">
+<h2 class="anchored" data-anchor-id="actions-sur-les-colonnes">Actions sur les colonnes</h2>
+<section id="renommer-une-colonne" class="level3">
+<h3 class="anchored" data-anchor-id="renommer-une-colonne">Renommer une colonne</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personne</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">COLUMN</span> date_naissance <span class="kw">TO</span> dnais;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_personne</th>
 <th>nom</th>
 <th>prenom</th>
 <th>dnais</th>
@@ -675,20 +1105,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Gatore</td>
-<td>Ali</td>
-<td>1990-05-15</td>
-<td>Paris</td>
-</tr>
-<tr class="even">
 <td>2</td>
 <td>Dure</td>
 <td>Laure</td>
 <td>1985-09-22</td>
-<td>Lyon</td>
+<td>Rennes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>3</td>
 <td>Erateur</td>
 <td>Maud</td>
@@ -697,82 +1120,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
+</div>
+</div>
 </section>
-<section id="ajouter-un-attribut" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="ajouter-un-attribut"><span class="header-section-number">4.4</span> Ajouter un attribut</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_aux_echecs <span class="dt">BOOLEAN</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ajouter-un-attribut" class="level3">
+<h3 class="anchored" data-anchor-id="ajouter-un-attribut">Ajouter un attribut</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personne</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_aux_echecs <span class="dt">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">true</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 26%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>id</th>
+<th>id_personne</th>
 <th>nom</th>
 <th>prenom</th>
 <th>dnais</th>
 <th>adresse</th>
+<th>joue_aux_echecs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>Dure</td>
+<td>Laure</td>
+<td>1985-09-22</td>
+<td>Rennes</td>
+<td>true</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Erateur</td>
+<td>Maud</td>
+<td>1995-03-10</td>
+<td>Lille</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="supprimer-une-colonne" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-une-colonne">Supprimer une colonne</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Résultat</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personne</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>id_personne</th>
+<th>nom</th>
+<th>prenom</th>
+<th>dnais</th>
 <th>echecs</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Gatore</td>
-<td>Ali</td>
-<td>1990-05-15</td>
-<td>Paris</td>
-<td>true</td>
-</tr>
-<tr class="even">
 <td>2</td>
 <td>Dure</td>
 <td>Laure</td>
 <td>1985-09-22</td>
-<td>Lyon</td>
-<td>false</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Erateur</td>
-<td>Maud</td>
-<td>1995-03-10</td>
-<td>Lille</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="supprimer-une-colonne" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="supprimer-une-colonne"><span class="header-section-number">4.5</span> Supprimer une colonne</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> ran.personnes</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>nom</th>
-<th>prenom</th>
-<th>dnais</th>
-<th>echecs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Gatore</td>
-<td>Ali</td>
-<td>1990-05-15</td>
 <td>true</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Dure</td>
-<td>Laure</td>
-<td>1985-09-22</td>
-<td>false</td>
-</tr>
-<tr class="odd">
 <td>3</td>
 <td>Erateur</td>
 <td>Maud</td>
@@ -781,118 +1213,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<hr>
-</section>
-<section id="supprimer-une-table" class="level3" data-number="4.6">
-<h3 data-number="4.6" class="anchored" data-anchor-id="supprimer-une-table"><span class="header-section-number">4.6</span> Supprimer une table</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> ran.personnes;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>&gt; ERREUR: la relation « ran.personnes » n'existe pas</code></pre>
-<hr>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="actions-sur-les-lignes" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="actions-sur-les-lignes"><span class="header-section-number">5</span> Actions sur les lignes</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>prenom</th>
-<th>nom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<section id="insérer-des-lignes" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="insérer-des-lignes"><span class="header-section-number">5.1</span> Insérer des lignes</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> ran.personnes </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">id</span>, nom,     prenom,     date_naissance,  adresse)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="st">'Ali'</span>,    <span class="st">'Gatore'</span>,   <span class="st">'1990-05-15'</span>,    <span class="st">'Paris'</span>),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="st">'Laure'</span>,  <span class="st">'Dure'</span>,     <span class="st">'1985-09-22'</span>,    <span class="st">'Lyon'</span> ),</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="st">'Maud'</span>,   <span class="st">'Erateur'</span>,  <span class="st">'1995-03-10'</span>,    <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>prenom</th>
-<th>nom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Ali</td>
-<td>Gatore</td>
-<td>1990-05-15</td>
-<td>Paris</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Laure</td>
-<td>Dure</td>
-<td>1985-09-22</td>
-<td>Lyon</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Maud</td>
-<td>Erateur</td>
-<td>1995-03-10</td>
-<td>Lille</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="sélectionner-des-lignes" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="sélectionner-des-lignes"><span class="header-section-number">5.2</span> Sélectionner des lignes</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> adresse <span class="kw">LIKE</span> <span class="st">'L%'</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>prenom</th>
-<th>nom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2</td>
-<td>Laure</td>
-<td>Dure</td>
-<td>1985-09-22</td>
-<td>Lyon</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="jointures" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">5.3</span> Jointures</h3>
+<section id="jointures" class="level2">
+<h2 class="anchored" data-anchor-id="jointures">Jointures</h2>
 <blockquote class="blockquote">
 <p>Table <code>commande</code></p>
 </blockquote>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>id</th>
+<th>id_personne</th>
 <th>produit</th>
 <th>quantite</th>
 <th>id_personne</th>
@@ -901,7 +1235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>2</td>
 <td>livre</td>
 <td>1</td>
 <td>2</td>
@@ -909,120 +1243,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes p</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commandes c <span class="kw">ON</span> p.<span class="kw">id</span> <span class="op">=</span> c.id_personne</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne p</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commande c <span class="kw">ON</span> p.id_personne <span class="op">=</span> c.id_personne</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><span class="emoji" data-emoji="bulb">💡</span> il est possible d’utiliser le mot clé <code>USING</code> à la place de <code>ON</code> si les 2 colonnes permettant la jointure ont <strong>le même nom</strong>.<br>
 exemple : si dans la table <code>personnes</code> nous avons <code>id_personne</code> au lieu de <code>id</code>, la requête ci-dessous peut-être modifiée en :</p>
 </blockquote>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes p</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commandes c <span class="kw">USING</span>(id_personne) <span class="co">-- &lt;--</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="jointures-externes" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="jointures-externes"><span class="header-section-number">5.4</span> Jointures externes</h3>
-<blockquote class="blockquote">
-<p>Que se passe t’il si nous exécutons la requête ci-dessous et qu’Ali n’a passé aucune commande ?</p>
-</blockquote>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes p</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commandes c <span class="kw">ON</span> p.<span class="kw">id</span> <span class="op">=</span> c.id_client</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pour afficher toutes les personnes, même celles qui n’ont pas réalisé de commande, nous allons utiliser les <strong>jointures externees</strong> : <code>LEFT JOIN</code> ou <code>RIGHT JOIN</code></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes p</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> ran.commandes c <span class="kw">ON</span> p.<span class="kw">id</span> <span class="op">=</span> c.id_client</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne p</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commande c <span class="kw">USING</span>(id_personne) <span class="co">-- &lt;--</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="jointures-externes" class="level3">
+<h3 class="anchored" data-anchor-id="jointures-externes">Jointures externes</h3>
+<blockquote class="blockquote">
+<p>Que se passe t’il si nous exécutons la requête ci-dessous et qu’Ali n’a passé aucune commande ?</p>
+</blockquote>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne p</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> ran.commande c <span class="kw">ON</span> p.id_personne <span class="op">=</span> c.id_client</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour afficher toutes les personnes, même celles qui n’ont pas réalisé de commande, nous allons utiliser les <strong>jointures externees</strong> : <code>LEFT JOIN</code> ou <code>RIGHT JOIN</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne p</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> ran.commande c <span class="kw">ON</span> p.id_personne <span class="op">=</span> c.id_client</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ici le <code>LEFT JOIN</code> indique que nous affichons : - les données provenant de la table <strong>personnes</strong> - complétées par les données de la table <strong>commandes</strong> pour les lignes où le lien est établi</p>
-<hr>
-</section>
-<section id="mettre-à-jour-des-lignes" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="mettre-à-jour-des-lignes"><span class="header-section-number">5.5</span> Mettre à jour des lignes</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> ran.personnes</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> adresse <span class="op">=</span> <span class="st">'Rennes'</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">2</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>prenom</th>
-<th>nom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Ali</td>
-<td>Gatore</td>
-<td>1990-05-15</td>
-<td>Paris</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Laure</td>
-<td>Dure</td>
-<td>1985-09-22</td>
-<td>Rennes</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Maud</td>
-<td>Erateur</td>
-<td>1995-03-10</td>
-<td>Lille</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="supprimer-des-lignes" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="supprimer-des-lignes"><span class="header-section-number">5.6</span> Supprimer des lignes</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ran.personnes</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Ali'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>id</th>
-<th>prenom</th>
-<th>nom</th>
-<th>date_naissance</th>
-<th>adresse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2</td>
-<td>Laure</td>
-<td>Dure</td>
-<td>1985-09-22</td>
-<td>Rennes</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>Maud</td>
-<td>Erateur</td>
-<td>1995-03-10</td>
-<td>Lille</td>
-</tr>
-</tbody>
-</table>
-<hr>
 </section>
 </section>
-<section id="formes-normales" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="formes-normales"><span class="header-section-number">6</span> Formes normales</h2>
+<section id="formes-normales" class="level2">
+<h2 class="anchored" data-anchor-id="formes-normales">Formes normales</h2>
 <ul>
 <li><code>1ere forme normale</code> (1NF) : Une relation est 1NF si elle possède au moins une clé et si tous ses attributs sont atomiques.
 <ul>
@@ -1032,186 +1289,83 @@ exemple : si dans la table <code>personnes</code> nous avons <code>id_personne</
 <li>2NF : 1NF + tout attribut non clé dépend de la clé</li>
 <li>3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé</li>
 </ul>
-<hr>
 </section>
-<section id="premières-manipulations" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="premières-manipulations"><span class="header-section-number">7</span> Premières manipulations</h2>
-<section id="les-schémas" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="les-schémas"><span class="header-section-number">7.1</span> Les schémas</h3>
+<section id="premières-manipulations" class="level2">
+<h2 class="anchored" data-anchor-id="premières-manipulations">Premières manipulations</h2>
+<section id="les-schémas" class="level3">
+<h3 class="anchored" data-anchor-id="les-schémas">Les schémas</h3>
 <p>Par défaut toutes les tables que nous allons créer iraient dans le schéma public.<br>
 <span class="emoji" data-emoji="bulb">💡</span> pour une meilleure organisation, nous allons classer nos tables dans différents schémas :</p>
 <ul>
 <li><code>ran</code> : schéma utilisé pour la remise à niveau</li>
-<li><code>ci</code> : schéma utilisé en compléments d’informatique</li>
 <li><code>projet</code> : schéma du projet info 2A</li>
 </ul>
 <div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> ran;</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> ci;</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> projet;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> projet;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="mots-clés-utiles" class="level3" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="mots-clés-utiles"><span class="header-section-number">7.2</span> Mots clés utiles</h3>
-<section id="like" class="level4">
-<h4 class="anchored" data-anchor-id="like">LIKE</h4>
+</section>
+<section id="mots-clés-utiles" class="level2">
+<h2 class="anchored" data-anchor-id="mots-clés-utiles">Mots clés utiles</h2>
+<section id="like" class="level3">
+<h3 class="anchored" data-anchor-id="like">LIKE</h3>
 <blockquote class="blockquote">
 <p>Utilisé dans une clause WHERE pour effectuer des recherches de motif dans une colonne</p>
 </blockquote>
 <div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- toutes les personnes ayant un prénom contenant "au"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="kw">LIKE</span> <span class="st">'%au%'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="group-by" class="level4">
-<h4 class="anchored" data-anchor-id="group-by">GROUP BY</h4>
+<section id="group-by" class="level3">
+<h3 class="anchored" data-anchor-id="group-by">GROUP BY</h3>
 <blockquote class="blockquote">
 <p>Utilisé pour regrouper les résultats en fonction d’une ou plusieurs colonnes et permettre l’utilisation de fonctions d’agrégation telles que COUNT, SUM, AVG</p>
 </blockquote>
 <div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="having" class="level4">
-<h4 class="anchored" data-anchor-id="having">HAVING</h4>
+<section id="having" class="level3">
+<h3 class="anchored" data-anchor-id="having">HAVING</h3>
 <blockquote class="blockquote">
 <p>Utilisé après la clause GROUP BY pour filtrer les résultats en fonction d’une condition après le GROUP BY.<br>
 <span class="emoji" data-emoji="warning">⚠️</span> ne pas confondre avec <code>WHERE</code> qui s’appliquerait avant le <code>GROUP BY</code></p>
 </blockquote>
 <div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="dv">1</span>) <span class="op">&gt;=</span> <span class="dv">5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="order-by" class="level4">
-<h4 class="anchored" data-anchor-id="order-by">ORDER BY</h4>
+<section id="order-by" class="level3">
+<h3 class="anchored" data-anchor-id="order-by">ORDER BY</h3>
 <div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> adresse <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="as" class="level4">
-<h4 class="anchored" data-anchor-id="as">AS</h4>
+<section id="as" class="level3">
+<h3 class="anchored" data-anchor-id="as">AS</h3>
 <blockquote class="blockquote">
 <p>Permet de renommer une colonne dans l’affichage</p>
 </blockquote>
 <div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse <span class="kw">AS</span> Ville</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personnes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ran.personne</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
-<section id="quelques-possibilités-dutilisation-sans-table" class="level4">
-<h4 class="anchored" data-anchor-id="quelques-possibilités-dutilisation-sans-table">Quelques possibilités d’utilisation sans table</h4>
+</section>
+<section id="quelques-possibilités-dutilisation-sans-table" class="level2">
+<h2 class="anchored" data-anchor-id="quelques-possibilités-dutilisation-sans-table">Quelques possibilités d’utilisation sans table</h2>
 <div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">CURRENT_DATE</span>;</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span><span class="op">+</span><span class="dv">2</span>;</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">2</span>;</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="st">'Salut'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
 </section>
-</section>
-</section>
-<section id="exercice" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="exercice"><span class="header-section-number">8</span> Exercice</h2>
-<section id="avant-de-commencer" class="level4">
-<h4 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h4>
-<ul>
-<li>consultez le fichier d’utilisation de <a href="../../docs/sql/DBeaver.html">DBeaver</a></li>
-<li><label><input type="checkbox">Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>,</label></li>
-<li><label><input type="checkbox">Collez dans DBeaver</label></li>
-<li><label><input type="checkbox">Exécuter le script.</label></li>
-</ul>
-</section>
-<section id="description-des-données" class="level4">
-<h4 class="anchored" data-anchor-id="description-des-données">Description des données</h4>
-<ul>
-<li>Nous avons des joueurs, des tournois</li>
-<li>Certains joueurs sont aussi arbitres et ont un grade d’arbitre</li>
-<li>Les tournois ont une cadence. Ils sont arbitrés par un arbitre</li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">classDiagram
-  class arbitre_grade {
-    id_arbitre_grade: INT(PK)
-    nom: VARCHAR
-  }
-
-  class joueur {
-    id_joueur: INT(PK)
-    pseudo: VARCHAR
-    nom: VARCHAR
-    prenom: VARCHAR
-    elo: INT
-    mail: VARCHAR
-    id_arbitre_grade: INT(FK -&gt; arbitre_grade)
-  }
-
-  class cadence {
-    id_cadence: INT(PK)
-    nom: VARCHAR
-  }
-
-  class tournoi {
-    id_tournoi: INT(PK)
-    id_arbitre: INT(FK -&gt; joueur)
-    nom: VARCHAR
-    debut: DATE
-    fin: DATE
-    nb_rondes: INT
-    id_cadence: INT(FK -&gt; cadence)
-  }
-
-  class participant {
-    id_tournoi: INT(FK -&gt; tournoi)
-    id_joueur: INT(FK -&gt; joueur)
-  }
-
-  arbitre_grade -- joueur
-  cadence -- tournoi
-  tournoi -- participant
-  joueur -- participant
-
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="questions" class="level4">
-<h4 class="anchored" data-anchor-id="questions">Questions</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Listez tous les joueurs</label>
-<ul class="task-list">
-<li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
-</ul></li>
-<li><label><input type="checkbox">Listez tous les joueurs ordonnés par elo descroissant</label></li>
-<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000</label></li>
-<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule) <span class="emoji" data-emoji="bulb">💡</span> <em>tip : voir méthode UPPER</em></label></li>
-<li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
-<li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
-<li><label><input type="checkbox">Essayez de supprimer le joueur ayant pour id : 20</label>
-<ul>
-<li>Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?</li>
-</ul></li>
-<li><label><input type="checkbox">Listez les joueurs qui sont arbitres <span class="emoji" data-emoji="bulb">💡</span> <em>voir IS NOT NULL</em></label></li>
-<li><label><input type="checkbox">Ajoutez à la table joueur la colonne de type booléen <em>est_arbitre</em></label></li>
-<li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
-<li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
-<li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
-<li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitre</label></li>
-<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
-<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000</label></li>
-<li><label><input type="checkbox">Affichez la liste des tournois (nom du tournoi, cadence, arbitre)</label></li>
-<li><label><input type="checkbox">Ajouter le nombre de joueurs et le elo max des joueurs</label></li>
-</ul>
-<hr>
-<p>La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.</p>
+<section id="bibliographie" class="level2">
+<h2 class="anchored" data-anchor-id="bibliographie">Bibliographie</h2>
+<p><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" class="uri">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a> <a href="https://sql.sh/" class="uri">https://sql.sh/</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1776,7 +1930,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

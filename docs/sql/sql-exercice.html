@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Notebooks pour découvrir et apprendre Python">
+<meta name="description" content="Exercice d’apprentissage du SQL">
 
-<title>Remise à Niveau Informatique - Notebooks Python</title>
+<title>Remise à Niveau Informatique - Bases de Données Relationnelles et SQL</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -209,15 +212,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#les-notebooks" id="toc-les-notebooks" class="nav-link active" data-scroll-target="#les-notebooks"><span class="header-section-number">1</span> Les Notebooks</a></li>
-  <li><a href="#utiliser-un-notebook" id="toc-utiliser-un-notebook" class="nav-link" data-scroll-target="#utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</a>
-  <ul class="collapse">
-  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</a></li>
-  </ul></li>
-  <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</a></li>
-  <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</a></li>
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</a></li>
+  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">2</span> Description des données</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -228,12 +227,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notebooks Python</h1>
+<h1 class="title">Bases de Données Relationnelles et SQL</h1>
 </div>
 
 <div>
   <div class="description">
-    Notebooks pour découvrir et apprendre Python
+    Exercice d’apprentissage du SQL
   </div>
 </div>
 
@@ -256,199 +255,104 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="les-notebooks" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="les-notebooks"><span class="header-section-number">1</span> Les Notebooks</h2>
-<p>Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :</p>
+<section id="avant-de-commencer" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</h2>
+<ul>
+<li>consultez le fichier d’utilisation de <a href="../../docs/sql/DBeaver.html">DBeaver</a></li>
+<li><label><input type="checkbox">Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>,</label></li>
+<li><label><input type="checkbox">Collez dans DBeaver</label></li>
+<li><label><input type="checkbox">Exécuter le script.</label></li>
+</ul>
+</section>
+<section id="description-des-données" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">2</span> Description des données</h2>
+<ul>
+<li>Nous avons des joueurs, des tournois</li>
+<li>Certains joueurs sont aussi arbitres et ont un grade d’arbitre</li>
+<li>Les tournois ont une cadence. Ils sont arbitrés par un arbitre</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -&gt; arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -&gt; joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -&gt; cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -&gt; tournoi)
+    id_joueur: INT(FK -&gt; joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="questions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions"><span class="header-section-number">3</span> Questions</h2>
 <ul class="task-list">
-<li><label><input type="checkbox"><a href="../../docs/python/01-types-et-variables.html" target="_blank">Les types et variables</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/02-listes-et-dictionnaires.html" target="_blank">Les listes et dictionnaires</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/03-tests-et-boucles.html" target="_blank">Les boucles</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/04-fonctions.html" target="_blank">Les fonctions</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/05-POO-introduction.html" target="_blank">Introduction à la Programmation Orientée Objet</a></label></li>
-</ul>
-<p>Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :</p>
-<ul>
-<li>Formation <a href="https://github.com/InseeFrLab/formation-python-initiation"><strong>Initiation à Python</strong></a> du SSP Cloud INSEE</li>
-<li>Cours de Python dispensés à l’ENSAE par <a href="https://pythonds.linogaliana.fr/rappels2a/">Lino Galiana</a> et <a href="http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html">Xavier Dupré</a></li>
-<li><a href="https://python.sdv.univ-paris-diderot.fr/">Cours de Python</a> de l’Université Paris Cité</li>
-</ul>
-</section>
-<section id="utiliser-un-notebook" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</h2>
-<div class="callout callout-style-default callout-important callout-titled" title="Mode opératoire">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mode opératoire
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Commencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus</li>
-<li>Téléchargez sur votre machine le fichier <code>.ipynb</code></li>
-<li>Connectez-vous à l’un des services proposés ci-dessous</li>
-<li>Uploadez sur ce service le fichier <code>.ipynb</code></li>
-</ol>
-</div>
-</div>
-<p>Vous avez plusieurs possibilités pour lancer les notebooks :</p>
-<ul>
-<li><a href="https://jupyther.ensai.fr/" target="_blank">Un cluster Jupyter</a> de l’ENSAI <span class="emoji" data-emoji="arrow_right">➡️</span> si vous avez vos idep et mot de passe</li>
-<li>le datalab <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a> <span class="emoji" data-emoji="arrow_right">➡️</span> vous pouvez créer un compte avec votre mail ENSAI</li>
-</ul>
-<p>Si vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :</p>
-<ul>
-<li><a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
-<li><a href="https://www.kaggle.com/code" target="_blank">Kaggle notebooks</a></li>
-<li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
-</ul>
-<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Cluster ENSAI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">SSPCloud</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Jupyter Lab online</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Colab et Kaggle</a></li></ul>
-<div class="tab-content nav-pills">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ul>
-<li>Connectez-vous au <a href="https://jupyther.ensai.fr/" target="_blank">cluster Jupyter</a> avec id et mot de passe</li>
-<li>Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span></li>
-<li>Dans la colonne de gauche :
-<ul>
-<li>l’icone en forme de dossier permet d’explorer les fichiers</li>
-<li>l’icone en forme de liste permet d’afficher la table des matières</li>
+<li><label><input type="checkbox">Listez tous les joueurs</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
 </ul></li>
-<li>Le champ <code>Code</code> permet d’indiquer si la cellule attend du code python ou du texte (Markdown)</li>
-</ul>
-<p><img src="img/jupyter.PNG" class="img-fluid"></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<li><label><input type="checkbox">Listez tous les joueurs ordonnés par elo descroissant</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule) <span class="emoji" data-emoji="bulb">💡</span> <em>tip : voir méthode UPPER</em></label></li>
+<li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
+<li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
+<li><label><input type="checkbox">Essayez de supprimer le joueur ayant pour id : 20</label>
 <ul>
-<li>Connectez-vous au <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a></li>
-<li>Allez dans le menu <em>Catalogue de services</em></li>
-<li>Lancer <code>Jupyter-python</code></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
+<li>Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?</li>
+</ul></li>
+<li><label><input type="checkbox">Listez les joueurs qui sont arbitres <span class="emoji" data-emoji="bulb">💡</span> <em>voir IS NOT NULL</em></label></li>
+<li><label><input type="checkbox">Ajoutez à la table joueur la colonne de type booléen <em>est_arbitre</em></label></li>
+<li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
+<li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
+<li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitre</label></li>
+<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
+<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000</label></li>
+<li><label><input type="checkbox">Affichez la liste des tournois (nom du tournoi, cadence, arbitre)</label></li>
+<li><label><input type="checkbox">Ajouter le nombre de joueurs et le elo max des joueurs</label></li>
 </ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li>Allez sur la page <a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
-</ul>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<ul>
-<li>Connectez-vous au service</li>
-<li>Importez le notebook (Fichier &gt; Importer le notebook)</li>
-</ul>
-</div>
-</div>
-</div>
-<section id="types-de-cellules" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</h3>
-<p>Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton <code>+</code> dans la barre d’outils.<br>
-Il existe deux types de cellules principaux :</p>
-<ul>
-<li>les cellules de code (où vous écrivez et exécutez du code Python)</li>
-<li>les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Le langage Mardown">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Le langage Mardown
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>C’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).</p>
-<p>De très nombreuses ressources sont disponibles sur internet.</p>
-<p>Quelques exemples :</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Code</th>
-<th>Mise en forme</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>**texte en gras**</code></td>
-<td><strong>texte en gras</strong></td>
-</tr>
-<tr class="even">
-<td><code>*texte en italique*</code></td>
-<td><em>texte en italique</em></td>
-</tr>
-<tr class="odd">
-<td><code># Titre de niveau 1</code></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>## Titre de niveau 2</code></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>- Élement de liste à puces</code></td>
-<td>- Élement de liste à puces</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<p>Le type de cellule souhaité est modifiable dans la barre d’outils.</p>
-</section>
-</section>
-<section id="commandes-utiles" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Commande</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>SHIFT + ENTER</code></td>
-<td>Exécuter une cellule et passer à la suivante.</td>
-</tr>
-<tr class="even">
-<td><code>CTRL + ENTER</code></td>
-<td>Exécuter une cellule sans passer à la suivante.</td>
-</tr>
-<tr class="odd">
-<td><code>ESC</code></td>
-<td>Passer en mode commande (les bordures de cellule deviennent bleues).</td>
-</tr>
-<tr class="even">
-<td><code>ENTER</code></td>
-<td>Passer en mode édition (vous pouvez modifier le contenu de la cellule).</td>
-</tr>
-<tr class="odd">
-<td><code>A</code></td>
-<td>Insérer une cellule au-dessus de la cellule courante.</td>
-</tr>
-<tr class="even">
-<td><code>B</code></td>
-<td>Insérer une cellule en dessous de la cellule courante.</td>
-</tr>
-<tr class="odd">
-<td><code>D + D</code></td>
-<td>Supprimer une cellule.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="ressources-utiles" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</h2>
-<p>Vous trouverez plus d’informations sur les notebooks, sur le <a href="https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter" target="_blank">site de la formation INSEE d’initiation à Python</a>.</p>
+<hr>
+<p>La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.</p>
 
 
 </section>
@@ -1015,7 +919,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
