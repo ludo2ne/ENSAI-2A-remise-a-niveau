@@ -1,5 +1,5 @@
 ---
-title: "Bases de Données Relationnelles et SQL"
+title: "Exercice BDR et SQL"
 description: "Exercice d'apprentissage du SQL"
 author: "Ludovic Deneuville"
 format: 
@@ -15,10 +15,10 @@ number-depth: 3
 
 ## Avant de commencer
 
-- consultez le fichier d'utilisation de [DBeaver](DBeaver.qmd)
-- [ ] Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>, 
+- [ ] Paramétrez [DBeaver](./DBeaver.qmd)
+- [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
 - [ ] Collez dans DBeaver
-- [ ] Exécuter le script.
+- [ ] Exécuter le script
 
 ## Description des données
 
@@ -72,26 +72,39 @@ classDiagram
 
 ## Questions
 
+### Découverte des tables
+
 - [ ] Listez tous les joueurs
-  - [ ] Faîtes de même sur les autres tables pour observer leur contenu
+- [ ] Faîtes de même sur les autres tables pour observer leur contenu
 - [ ] Listez tous les joueurs ordonnés par elo descroissant
 - [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000
-- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un "e" (majuscule ou minuscule) :bulb: *tip : voir méthode UPPER*
+- [ ] Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un "e" (majuscule ou minuscule) 
+  - :bulb: voir méthode UPPER
+
+### Mise à jour
+
 - [ ] Créez la joueuse : *Martine Dupont, elo : 1999, Arbitre Elite*
 - [ ] Supprimez le joueur de pseudo *marc78*
 - [ ] Essayez de supprimer le joueur ayant pour id : 20
   - Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?
-- [ ] Listez les joueurs qui sont arbitres :bulb: *voir IS NOT NULL*
+- [ ] Listez les joueurs qui sont arbitres 
+  - :bulb: *voir IS NOT NULL*
 - [ ] Ajoutez à la table joueur la colonne de type booléen *est_arbitre*
 - [ ] Remplissez cette nouvelle colonne pour tous les joueurs
+
+### Jointures 
+
 - [ ] Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d'arbitre
 - [ ] Listez tous les joueurs (nom, prénom) ainsi que leur grade d'arbitre s'ils le sont
+
+### Agrégations
+
 - [ ] Comptez le nombre de joueurs qui sont arbitre
 - [ ] Comptez le nombre d'arbitres par grade
 - [ ] Comptez le nombre d'arbitres par grade et n'afficher que si la moyenne elo des arbitres du grade est supérieure à 2000
 - [ ] Affichez la liste des tournois (nom du tournoi, cadence, arbitre)
 - [ ] Ajouter le nombre de joueurs et le elo max des joueurs
 
----
-
-La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.
+::: {.callout-tip title="Correction" collapse="true"}
+Lien vers la [correction](./exercice/correction.sql)
+:::

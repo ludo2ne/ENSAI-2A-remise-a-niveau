@@ -30,47 +30,26 @@ from: markdown+emoji
 
 ## Qu'est-ce qu'une base de données ?
 
-- Ensemble de données stockées dans des `Tables`
-- Tables liées entre elles
-- Tables Structurées
-- Éviter la redondance
+- Collection organisée de données
+- Stockée électroniquement
+- Structurée pour faciliter l'accès et la gestion
+- Conçue pour minimiser la redondance
 
 ::: {.notes}
-- stockées numériquement
 - peut être utilisée par des applications
 - interrogeables, modifiables par les utilisateurs
 :::
 
 
-### Types de données {.smaller}
+### Base de données relationnelles
 
-Il existe de très nombreux type de données que l'on peut stocker, les principaux :
+- Organise les données dans des `Tables` 
+- Tables interconnectées
+- Tables structurées
 
-- Chaînes de caractères
-- Numérique
-- Booléen
-- Date, Temps
-- Géométriques 
-
-Pour plus d'informations, consultez la [documentation PostgreSQL](https://www.postgresql.org/docs/current/datatype.html){target="_blank"}.
-
-
-### Types de données - Exemple {.smaller}
-
-
-```{.sql}
-CREATE TABLE personne (
-    id_personne      SERIAL PRIMARY KEY,
-    nom              VARCHAR(100) NOT NULL,
-    prenom           VARCHAR(100) NOT NULL,
-    date_naissance   DATE,
-    email            VARCHAR(255) UNIQUE,
-    nb_enfants       INT,
-    taille_m         DECIMAL(5, 2)
-    est_actif        BOOLEAN DEFAULT TRUE,
-    last_updated     TIMESTAMPTZ DEFAULT NOW() 
-);
-```
+::: {.notes}
+- Table = tableau
+:::
 
 ### SGBD
 
@@ -85,15 +64,12 @@ Exemples de SGBD :
 - relationnelles : [PostgreSQL](https://www.postgresql.org/){target="_blank"}, MySQL, Oracle Database
 - NoSQL : MongoDB, Cassandra 
 
+
 ::: {.notes}
-
+- SGBD : interface principale avec les données
+- Pour nous PostgreSQL, gratuit, libre, installé VM
+- NoSQL : Not Only SQL
 :::
-
-
-### Base de données relationnelles
-
-- Organise les données sous forme de tables interconnectées
-- Les tables seront liées entre elle 
 
 
 ### Kesako
@@ -106,6 +82,45 @@ Exemples de SGBD :
 On parle de SQL ensuite
 :::
 
+### Types de données
+
+Il existe de très nombreux types de données que l'on peut stocker, les principaux :
+
+- Chaîne de caractères
+- Numérique
+- Booléen
+- Date, Temps
+- Géométrique
+
+Plus de détails sur la [documentation PostgreSQL](https://www.postgresql.org/docs/current/datatype.html){target="_blank"}.
+
+:::{.notes}
+- Date, Temps -> plein de fonctions
+- Géométrique -> contours géographiques
+:::
+
+### Types - exemple
+
+```{.sql}
+CREATE TABLE personne (
+    id_personne      SERIAL PRIMARY KEY,
+    nom              VARCHAR(100) NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    date_naissance   DATE,
+    email            VARCHAR(255) UNIQUE,
+    nb_enfants       INT CHECK (nb_enfants >= 0),
+    taille_m         DECIMAL(5, 2)
+    est_actif        BOOLEAN,
+    last_updated     TIMESTAMPTZ DEFAULT NOW() 
+);
+```
+
+:::{.notes}
+- SERIAL : séquence
+- NOT NULL : obligatoire
+- UNIQUE : distinctes, mais n'empêche pas les NULL
+:::
+
 
 ## Table
 
@@ -114,13 +129,23 @@ Une `Table` est composée de lignes et de colonnes :
 - une `ligne` représente un enregistrement spécifique
 - une `colonne` représente un attribut particulier de ces enregistrements
 - `Clé primaire` (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table
+  - permet d'identifier une ligne sans ambiguïté
+
+:::{.notes}
+PK :
+
+- obligatoire (non null)
+- unique
+:::
 
 
 ### Table - exemple {.smaller}
 
 ::: {.panel-tabset .nav-pills}
 
-#### Diagramme UML 
+#### MCD
+
+Modèle Conceptuel de Données (UML)
 
 :::{style="background-color: #199edd;"}
 
@@ -167,11 +192,11 @@ Une clé étrangère (FK) :
 ### Types d'associations
 
 - `1..1` : Une *Personne* a un *Passeport* et un *Passeport* appartient à une seule *Personne*
-  - la clé étrangère pourra être placée dans l'une des deux tables
-- `1..` : Une *Joueuse* joue pour une seule équipe *Equipe*. Une *Equipe* est composée de plusieurs *Joueuses*
-  - la clé étrangère devra être placée dans la table *Joueuse*
-- `..*` : Un *Etudiant* suit plusieurs *Cours* et un *Cours* et suivi par plusieurs *Etudiants*
-  - il faut créer une table d'association entre *Etudiant* et *Cours*
+  - clé étrangère dans l'une des 2 tables
+- `1..*` : Une *Joueuse* joue pour une seule équipe *Equipe*. Une *Equipe* est composée de plusieurs *Joueuses*
+  - clé étrangère dans la table *Joueuse*
+- `*..*` : Un *Etudiant* suit plusieurs *Cours* et un *Cours* et suivi par plusieurs *Etudiants*
+  - table d'association entre *Etudiant* et *Cours*
 
 
 ### Lien entre 2 tables via une clé étrangère {.smaller}
@@ -293,7 +318,7 @@ classDiagram
 
 
 
-#### table tournoi
+#### Table tournoi
 
 | id_tournoi | nom          | ville        |
 | ---------- | ------------ | ------------ |
@@ -323,7 +348,7 @@ SQL permet d'effectuer les opérations du CRUD :
 
 - `SELECT` : récupérer des données depuis une table
 - `INSERT` : insérer de nouvelles données dans une table
-- `UPDATE` : mettre à jour des données existantes dans une table
+- `UPDATE` : mettre à jour des données existantes
 - `DELETE` : supprimer des données d'une table
 
 
@@ -356,8 +381,17 @@ La table est créée mais vide.
 |             |     |        |                |         |
 
 
-::: {.callout-tip}
-Le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables.
+::: {.callout-tip title="Bonne pratique" collapse="true"}
+Une bonne pratique est de stocker les tables dans un schéma pour bien organiser votre base de données.
+
+```{.sql}
+CREATE SCHEMA ran;
+
+CREATE TABLE ran.personne (
+    id_personne      INT         PRIMARY KEY,
+    ...
+);
+```
 :::
 
 :::
@@ -372,9 +406,9 @@ Le `ran.` correspond au schéma de la remise à niveau dans lequel nous rangeron
 ```{.sql}
 INSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)
 VALUES
-    (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens'),
-    (2, 'Dure', 'Laure', '1985-09-22', 'Auxerre'),
-    (3, 'Erateur', 'Maud', '1995-03-10', 'Lille');
+    (1, 'Gatore' , 'Ali'  , '1990-05-15', 'Amiens'),
+    (2, 'Dure'   , 'Laure', '1985-09-22', 'Auxerre'),
+    (3, 'Erateur', 'Maud' , '1995-03-10', 'Lille');
 ```
 
 #### Résultat
@@ -431,7 +465,11 @@ SELECT *
 SELECT *
   FROM personne
  WHERE adresse LIKE 'A%'
-   AND prenom = 'Laure';
+   AND prenom = 'Laure'
+   AND adresse IN ('Amiens', 'Auxerre')
+   AND adresse IS NOT NULL
+   AND adresse != 'Lille'
+   AND id_personne BETWEEN 2 AND 3;
 ```
 
 ::: {.callout-tip}
@@ -468,18 +506,13 @@ UPDATE personne
 
 #### Résultat
 
+Si vous refaites un `SELECT * FROM personne;`
+
 | id_personne | prenom | nom     | date_naissance | adresse |
 | ----------- | ------ | ------- | -------------- | ------- |
 | 1           | Ali    | Gatore  | 1990-05-15     | Amiens  |
 | 2           | Laure  | Dure    | 1985-09-22     | Amiens  |
 | 3           | Maud   | Erateur | 1995-03-10     | Lille   |
-
-::: {.callout-note title="Résultat du SELECT" collapse="true"}
-```{.sql}
-SELECT * 
-  FROM personne;
-```
-:::
 
 :::
 
@@ -499,19 +532,21 @@ DELETE FROM personne
  WHERE prenom = 'Ali';
 ```
 
+<br>
+
+Pour ensuite faire revivre Ali :
+
+```{.sql}
+INSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)
+VALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');
+```
+
 #### Résultat
 
 | id_personne | prenom | nom     | date_naissance | adresse |
 | ----------- | ------ | ------- | -------------- | ------- |
 | 2           | Laure  | Dure    | 1985-09-22     | Amiens  |
 | 3           | Maud   | Erateur | 1995-03-10     | Lille   |
-
-::: {.callout-note title="Pour faire revivre Ali" collapse="true"}
-```{.sql}
-INSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)
-VALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');
-```
-:::
 
 :::
 
@@ -570,23 +605,25 @@ RENAME COLUMN date_naissance TO dnais;
 
 ```{.sql}
 ALTER TABLE personne
-ADD joue_aux_echecs BOOLEAN;
+ADD joue_echecs BOOLEAN;
 ```
+
+<br>
 
 Vous pouvez ajouter une valeur par défaut.
 
 ```{.sql}
 ALTER TABLE personne
-ADD joue_aux_echecs BOOLEAN DEFAULT true;
+ADD joue_echecs BOOLEAN DEFAULT true;
 ```
 
 #### Résultat
 
-| id_personne | nom     | prenom | dnais      | adresse | joue_aux_echecs |
-| ----------- | ------- | ------ | ---------- | ------- | --------------- |
-| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  | true            |
-| 2           | Dure    | Laure  | 1985-09-22 | Amiens  | true            |
-| 3           | Erateur | Maud   | 1995-03-10 | Lille   | true            |
+| id_personne | nom     | prenom | dnais      | adresse | joue_echecs |
+| ----------- | ------- | ------ | ---------- | ------- | ----------- |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  | true        |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  | true        |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   | true        |
 
 :::
 
@@ -598,7 +635,7 @@ ADD joue_aux_echecs BOOLEAN DEFAULT true;
 
 ```{.sql}
 ALTER TABLE personne
-DROP COLUMN joue_aux_echecs;
+DROP COLUMN joue_echecs;
 ```
 
 #### Résultat
@@ -613,7 +650,9 @@ DROP COLUMN joue_aux_echecs;
 
 ### Renommer à l'affichage
 
-Le mot clé `AS` permet de renommer une colonne à l'affichage. Il ne change pas le nom de la colonne.
+Le mot clé `AS` permet de renommer une colonne à l'affichage. 
+
+:warning: Il ne change pas le nom de la colonne.
 
 ::: {.panel-tabset .nav-pills}
 
@@ -638,9 +677,20 @@ SELECT prenom,
 
 ## Jointures
 
-::: {.callout-important}
-Jusqu'à maintenant, nous n'avions qu'une seule table
-:::
+### Alias
+
+Jusqu'à maintenant, nous n'avions qu'une seule table.
+
+Nous savions donc que le champ *nom* venait de la table *personne*.
+
+Comment faire si nous faisons une jointure avec une table qui a également une colonne nommée *nom* ?
+
+
+```{.sql}
+SELECT p.nom       -- 2. p.nom : attribut nom de la table d'alias p i.e. personne
+  FROM personne p  -- 1. nous déclarons p comme alias de la table personne
+```
+
 
 ### Jointure totale {.smaller}
 
@@ -692,7 +742,8 @@ CREATE TABLE commande (
     produit VARCHAR(50),
     quantite INT,
     prix_unitaire DECIMAL(10, 2),
-    id_personne INT
+    id_personne INT,
+    FOREIGN KEY (id_personne) REFERENCES personne(id_personne)
 );
 
 INSERT INTO commande (id_commande, produit, quantite, prix_unitaire, id_personne) VALUES
@@ -749,6 +800,10 @@ SELECT p.prenom,
   LEFT JOIN commande c USING(id_personne);
 ```
 
+- `LEFT JOIN` signifie que l'on garde tout le contenu provenant de la table précédente
+- et que l'on complète avec le contenu de la table qui suit
+- `RIGHT JOIN` pour faire l'inverse
+
 #### Résultat
 
 | prenom | produit | quantite |
@@ -774,7 +829,7 @@ La **jointure externe** effectuée avec le mot clé `LEFT JOIN` indique que nous
 ### GROUP BY
 
 - Utilisé pour regrouper les résultats en fonction d'une ou plusieurs colonnes 
-- et permettre l'utilisation de fonctions d'agrégation telles que COUNT, SUM, AVG
+- Permet l'utilisation de fonctions d'agrégation telles COUNT, SUM, AVG...
 
 ::: {.panel-tabset .nav-pills}
 
@@ -794,13 +849,11 @@ SELECT adresse,
 | Amiens  | 2     |
 | Lille   | 1     |
 
-#### Remarque
-
-Tous les champs 
-
 :::
 
 ### HAVING
+
+Pour filter après un *GROUP BY*
 
 ::: {.panel-tabset .nav-pills}
 
@@ -834,9 +887,6 @@ HAVING COUNT(1) > 1;
 
 ## Ordonner les lignes
 
-Pour ordonner les résultats (ajouter éventuellement *DESC* pour décroissant).
-
-
 ::: {.panel-tabset .nav-pills}
 
 #### Requête
@@ -846,6 +896,9 @@ SELECT *
   FROM personne
  ORDER BY dnais DESC
 ```
+
+- Pour ordonner les résultats 
+  - Ajouter éventuellement *DESC* pour décroissant
 
 #### Résultat
 
@@ -866,7 +919,6 @@ Possible d'ordonner selon plusieurs colonnes
 
 ### 1ere forme normale
 
-
 ::: {.panel-tabset .nav-pills}
 
 #### Énoncé
@@ -875,18 +927,24 @@ Une relation est de première forme normale (1NF) si
 
 - elle possède au moins une clé 
 - et si tous ses attributs sont atomiques
-  - un attribut est **atomique** si il ne contient qu'une seule valeur pour un tuple donné
-  - donc s'il ne regroupe pas un ensemble de plusieurs valeurs
+
+::: {.callout-note title="Attribut atomique"}
+- Ne contient qu'une seule valeur pour un tuple donné
+- Donc ne regroupe pas un ensemble de plusieurs valeurs
+:::
+
 
 #### Exemples
 
-| id    | nom          |
-| ----- | ------------ |
-| Maud  | Maud Erateur |
-| Ali   | Ali Gator    |
-| Laure | Laure Dure   |
+| id  | nom          |
+| --- | ------------ |
+| 1   | Ali Gator    |
+| 2   | Laure Dure   |
+| 3   | Maud Erateur |
 
-ne respecte pas la 1NF car son attribut *nom* n'est pas atomique.
+Cette table ne respecte pas la 1NF car son attribut *nom* n'est pas atomique.
+
+:::
 
 
 ### Autres formes normales
@@ -897,15 +955,37 @@ ne respecte pas la 1NF car son attribut *nom* n'est pas atomique.
 
 ## Les schémas
 
-Par défaut toutes les tables que nous allons créer iraient dans le schéma *public*.  
-:bulb: pour une meilleure organisation, nous allons classer nos tables dans différents schémas :
+Une bonne pratique (non appliquée ici) est de classer nos tables dans différents schémas.
 
-- `ran` : schéma utilisé pour la remise à niveau
-- `projet` : schéma du projet info 2A
+De la même manière que vous rangez des fichiers dans des dossiers, vous vous y retrouverez plus facilement en rangeant les tables dans des `schémas`.
+
+Si vous ne déclarez pas de shéma lors de la création d'une table, elle va dans le schéma *public*.  
+
+### Schémas - exemple
+
+Créer un schéma pour le projet info
 
 ```{.sql}
-CREATE schema ran;
 CREATE schema projet;
+```
+
+<br>
+
+À la création, stocker la table dans le schéma
+
+```{.sql}
+CREATE table projet.joueuse(
+  ...
+);
+```
+
+<br>
+
+Préciser le schéma lors des requêtes
+
+```{.sql}
+SELECT *
+  FROM projet.joueuse;
 ```
 
 ## SQL sans table
@@ -920,9 +1000,18 @@ SELECT 'Salut';
 
 ## Bibliographie
 
-<https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>
-<https://sql.sh/>
+- <https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>
+- <https://sql.sh/>
 
-- DBeaver 
-- <https://www.programiz.com/sql/online-compiler/>
-- <https://www.mycompiler.io/fr/new/sql>
+
+## Exercice {.smaller}
+
+- [ ] Commencez par configurer [DBeaver](./DBeaver.qmd){target="_blank"}
+- [ ] Faîtes l'[exercice](./sql-exercice.qmd){target="_blank"}
+
+Autres possibilités pour faire l'exercice :
+
+- <https://www.programiz.com/sql/online-compiler/>{target="_blank"}
+  - `DROP table customers; DROP table orders; DROP table shippings;`
+  - pour supprimer les tables par défaut
+- <https://www.mycompiler.io/fr/new/sql>{target="_blank"}

@@ -18,6 +18,8 @@ website:
             text: "Introduction à SQL"
           - href: docs/sql/DBeaver.qmd
             text: "DBeaver"
+          - href: docs/sql/sql-exercice.qmd
+            text: "Exercice SQL"
       - text: Python
         menu: 
           - href: docs/python/python-cours.qmd
