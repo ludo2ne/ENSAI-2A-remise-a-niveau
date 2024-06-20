@@ -295,7 +295,7 @@ SQL permet d'effectuer les opérations du CRUD :
 #### Requête
 
 ```{.sql}
--- Création de la table personne (ceci est un commentaire)
+-- Création de la table personne (cette ligne est un commentaire)
 
 CREATE TABLE ran.personne (
     id_personne      INT         PRIMARY KEY,
@@ -308,7 +308,7 @@ CREATE TABLE ran.personne (
 
 #### Résultat
 
-La table est créée mais vide
+La table est créée mais vide.
 
 | id_personne | nom | prenom | date_naissance | adresse |
 | ----------- | --- | ------ | -------------- | ------- |
@@ -365,14 +365,22 @@ SELECT *
 ##  Actions sur les lignes
 
 
-###  Sélectionner toutes les lignes
+###  Sélectionner tout
+
+Pour afficher tout le contenu d'une table.
 
 ```{.sql}
 SELECT *
-  FROM ran.personne
+  FROM ran.personne;
 ```
 
-###  Sélectionner certaines lignes
+:::{.notes}
+- Une requête se termine par un ;
+- Possible de limiter le nombre de lignes affichées
+  - LIMIT 5
+:::
+
+###  Filter les lignes
 
 ::: {.panel-tabset .nav-pills}
 
@@ -442,6 +450,13 @@ DELETE FROM ran.personne
 | 2           | Laure  | Dure    | 1985-09-22     | Rennes  |
 | 3           | Maud   | Erateur | 1995-03-10     | Lille   |
 
+::: {.callout-note title="Pour faire revivre Ali", collapse="true"}
+```{.sql}
+INSERT INTO ran.personne (id_personne, nom, prenom, date_naissance, adresse)
+VALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');
+```
+:::
+
 :::
 
 ##  Actions sur les colonnes
@@ -461,6 +476,7 @@ RENAME COLUMN date_naissance TO dnais;
 
 | id_personne | nom     | prenom | dnais      | adresse |
 | ----------- | ------- | ------ | ---------- | ------- |
+| 1           | Ali     | Gatore | 1990-05-15 | Amiens  |
 | 2           | Dure    | Laure  | 1985-09-22 | Rennes  |
 | 3           | Erateur | Maud   | 1995-03-10 | Lille   |
 
@@ -482,6 +498,7 @@ ADD joue_aux_echecs BOOLEAN DEFAULT true;
 
 | id_personne | nom     | prenom | dnais      | adresse | joue_aux_echecs |
 | ----------- | ------- | ------ | ---------- | ------- | --------------- |
+| 1           | Ali     | Gatore | 1990-05-15 | Amiens  | true            |
 | 2           | Dure    | Laure  | 1985-09-22 | Rennes  | true            |
 | 3           | Erateur | Maud   | 1995-03-10 | Lille   | true            |
 
@@ -500,21 +517,22 @@ DROP COLUMN adresse;
 
 #### Résultat
 
-| id_personne | nom     | prenom | dnais      | echecs |
-| ----------- | ------- | ------ | ---------- | ------ |
-| 2           | Dure    | Laure  | 1985-09-22 | true   |
-| 3           | Erateur | Maud   | 1995-03-10 | true   |
+| id_personne | nom     | prenom | dnais      | joue_aux_echecs |
+| ----------- | ------- | ------ | ---------- | --------------- |
+| 1           | Ali     | Gatore | 1990-05-15 | true            |
+| 2           | Dure    | Laure  | 1985-09-22 | true            |
+| 3           | Erateur | Maud   | 1995-03-10 | true            |
 
 :::
 
 
-##  Jointures
+## Jointures
 
-> Table `commande`
+### Jointure totale {.smaller}
 
-| id_personne | produit | quantite | id_personne | prix_unitaire |
-| ----------- | ------- | -------- | ----------- | ------------- |
-| 2           | livre   | 1        | 2           | 3             |
+::: {.panel-tabset .nav-pills}
+
+#### Requête
 
 ```{.sql}
 SELECT p.prenom,
@@ -525,44 +543,101 @@ SELECT p.prenom,
  WHERE prenom = 'Laure';
 ```
 
-> :bulb: il est possible d'utiliser le mot clé `USING` à la place de `ON` si les 2 colonnes permettant la jointure ont **le même nom**.  
-> exemple : si dans la table `personnes` nous avons `id_personne` au lieu de `id`, la requête ci-dessous peut-être modifiée en :
+#### Requête bis
 
 ```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personne p
-  JOIN ran.commande c USING(id_personne) -- <--
- WHERE prenom = 'Laure';
+  JOIN ran.commande c USING(id_personne);
 ```
 
+::: {.callout-tip title="USING"}
+Si et seulement si les 2 colonnes qui permettent de faire la jointure ont le même nom.
+
+:arrow_right_hook: Alors vous pouvez utiliser cette syntaxe avec USING.
+:::
+
+
+#### Personne
+
+| id_personne | nom     | prenom | dnais      | joue_aux_echecs |
+| ----------- | ------- | ------ | ---------- | --------------- |
+| 1           | Ali     | Gatore | 1990-05-15 | true            |
+| 2           | Dure    | Laure  | 1985-09-22 | true            |
+| 3           | Erateur | Maud   | 1995-03-10 | true            |
+
+
+#### Commande
+
+| id_commande | produit | quantite | prix_unitaire | id_personne |
+| ----------- | ------- | -------- | ------------- | ----------- |
+| 1           | livre   | 1        | 10            | 2           |
+| 2           | pain    | 3        | 2             | 3           |
+| 3           | pomme   | 10       | 0.5           | 2           |
+
+
+#### Résultat
+
+| prenom | produit | quantite |
+| ------ | ------- | -------- |
+| Laure  | livre   | 1        |
+| Laure  | pomme   | 10       |
+| Maud   | pain    | 3        |
+
+:::
+
+### Types de jointures
+
+Dans la jointure précédente :
+
+- Laure apparait 2 fois car elle a 2 commandes
+- Maud apparait une fois
+- Ali n'apparait pas
+
+Comment faire pour inclure Ali dans le tableau même sans commande ?
+
+:::{.notes}
+- jointure interne (INNER JOIN)
+  - la valeur de *id_personne* doit être présente dans les 2 tables
+  - sinon *id_personne* est dans une seule, alors rien n'est affiché la concernant
+:::
 
 ### Jointures externes
 
-> Que se passe t'il si nous exécutons la requête ci-dessous et qu'Ali n'a passé aucune commande ?
+::: {.panel-tabset .nav-pills}
+
+#### Requête
 
 ```{.sql}
 SELECT p.prenom,
        c.produit,
        c.quantite
   FROM ran.personne p
-  JOIN ran.commande c ON p.id_personne = c.id_client
+  LEFT JOIN ran.commande c USING(p.id_personne);
 ```
 
-Pour afficher toutes les personnes, même celles qui n'ont pas réalisé de commande, nous allons utiliser les **jointures externees** : `LEFT JOIN` ou `RIGHT JOIN`
+#### Résultat
 
-```{.sql}
-SELECT p.prenom,
-       c.produit,
-       c.quantite
-  FROM ran.personne p
-  LEFT JOIN ran.commande c ON p.id_personne = c.id_client
-```
+| prenom | produit | quantite |
+| ------ | ------- | -------- |
+| Laure  | livre   | 1        |
+| Laure  | pomme   | 10       |
+| Maud   | pain    | 3        |
+| Ali    |         |          |
 
-Ici le `LEFT JOIN` indique que nous affichons :
-- les données provenant de la table **personnes**
-- complétées par les données de la table **commandes** pour les lignes où le lien est établi
+
+#### Explication
+
+La **jointure externe** effectuée avec le mot clé `LEFT JOIN` indique que nous affichons :
+
+- toutes les données provenant de la table **personnes**
+- complétées par les données de la table **commandes** 
+  - pour les lignes où le lien est établi
+
+:::
+
 
 ##  Formes normales
 
@@ -596,7 +671,7 @@ CREATE schema projet;
 
 ```{.sql}
 -- toutes les personnes ayant un prénom contenant "au"
-SELECT 
+SELECT prenom
   FROM ran.personne
  WHERE prenom LIKE '%au%';
 ```
