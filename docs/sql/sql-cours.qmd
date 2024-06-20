@@ -42,6 +42,36 @@ from: markdown+emoji
 :::
 
 
+### Types de données {.smaller}
+
+Il existe de très nombreux type de données que l'on peut stocker, les principaux :
+
+- Chaînes de caractères
+- Numérique
+- Booléen
+- Date, Temps
+- Géométriques 
+
+Pour plus d'informations, consultez la [documentation PostgreSQL](https://www.postgresql.org/docs/current/datatype.html){target="_blank"}.
+
+
+### Types de données - Exemple {.smaller}
+
+
+```{.sql}
+CREATE TABLE personne (
+    id_personne      SERIAL PRIMARY KEY,
+    nom              VARCHAR(100) NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    date_naissance   DATE,
+    email            VARCHAR(255) UNIQUE,
+    nb_enfants       INT,
+    taille_m         DECIMAL(5, 2)
+    est_actif        BOOLEAN DEFAULT TRUE,
+    last_updated     TIMESTAMPTZ DEFAULT NOW() 
+);
+```
+
 ### SGBD
 
 Un Système de Gestion de Base de Données (SGBD) est un logiciel qui permet de :
@@ -716,7 +746,7 @@ SELECT p.prenom,
        c.produit,
        c.quantite
   FROM personne p
-  LEFT JOIN commande c USING(p.id_personne);
+  LEFT JOIN commande c USING(id_personne);
 ```
 
 #### Résultat
@@ -764,6 +794,10 @@ SELECT adresse,
 | Amiens  | 2     |
 | Lille   | 1     |
 
+#### Remarque
+
+Tous les champs 
+
 :::
 
 ### HAVING
@@ -779,10 +813,10 @@ SELECT adresse,
        COUNT(1)
   FROM personne
  GROUP BY adresse
-HAVING COUNT(1) >= 1;
+HAVING COUNT(1) > 1;
 ```
 
-#### résultat
+#### Résultat
 
 | adresse | count |
 | ------- | ----- |
