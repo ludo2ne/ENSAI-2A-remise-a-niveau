@@ -9,7 +9,7 @@
 <meta name="author" content="Ludovic Deneuville">
 <meta name="description" content="Exercice d’apprentissage du SQL">
 
-<title>Remise à Niveau Informatique - Bases de Données Relationnelles et SQL</title>
+<title>Remise à Niveau Informatique - Exercice BDR et SQL</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,6 +111,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/sql/sql-exercice.html">
+ <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
   </li>
@@ -214,7 +218,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</a></li>
   <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">2</span> Description des données</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a>
+  <ul class="collapse">
+  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</a></li>
+  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</a></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">3.3</span> Jointures</a></li>
+  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">3.4</span> Agrégations</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -227,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bases de Données Relationnelles et SQL</h1>
+<h1 class="title">Exercice BDR et SQL</h1>
 </div>
 
 <div>
@@ -257,11 +267,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="avant-de-commencer" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</h2>
-<ul>
-<li>consultez le fichier d’utilisation de <a href="../../docs/sql/DBeaver.html">DBeaver</a></li>
-<li><label><input type="checkbox">Copiez le contenu du fichier <a href="exercice/echecs.sql" target="_blank">echecs.sql</a>,</label></li>
+<ul class="task-list">
+<li><label><input type="checkbox">Paramétrez <a href="../../docs/sql/DBeaver.html">DBeaver</a></label></li>
+<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
 <li><label><input type="checkbox">Collez dans DBeaver</label></li>
-<li><label><input type="checkbox">Exécuter le script.</label></li>
+<li><label><input type="checkbox">Exécuter le script</label></li>
 </ul>
 </section>
 <section id="description-des-données" class="level2" data-number="2">
@@ -326,35 +336,71 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="questions" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="questions"><span class="header-section-number">3</span> Questions</h2>
+<section id="découverte-des-tables" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Listez tous les joueurs</label>
-<ul class="task-list">
+<li><label><input type="checkbox">Listez tous les joueurs</label></li>
 <li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
-</ul></li>
 <li><label><input type="checkbox">Listez tous les joueurs ordonnés par elo descroissant</label></li>
 <li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000</label></li>
-<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule) <span class="emoji" data-emoji="bulb">💡</span> <em>tip : voir méthode UPPER</em></label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule)</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> voir méthode UPPER</li>
+</ul></li>
+</ul>
+</section>
+<section id="mise-à-jour" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</h3>
+<ul class="task-list">
 <li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
 <li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
 <li><label><input type="checkbox">Essayez de supprimer le joueur ayant pour id : 20</label>
 <ul>
 <li>Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?</li>
 </ul></li>
-<li><label><input type="checkbox">Listez les joueurs qui sont arbitres <span class="emoji" data-emoji="bulb">💡</span> <em>voir IS NOT NULL</em></label></li>
+<li><label><input type="checkbox">Listez les joueurs qui sont arbitres</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> <em>voir IS NOT NULL</em></li>
+</ul></li>
 <li><label><input type="checkbox">Ajoutez à la table joueur la colonne de type booléen <em>est_arbitre</em></label></li>
 <li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
+</ul>
+</section>
+<section id="jointures" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">3.3</span> Jointures</h3>
+<ul class="task-list">
 <li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
 <li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
+</ul>
+</section>
+<section id="agrégations" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">3.4</span> Agrégations</h3>
+<ul class="task-list">
 <li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitre</label></li>
 <li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
 <li><label><input type="checkbox">Comptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000</label></li>
 <li><label><input type="checkbox">Affichez la liste des tournois (nom du tournoi, cadence, arbitre)</label></li>
 <li><label><input type="checkbox">Ajouter le nombre de joueurs et le elo max des joueurs</label></li>
 </ul>
-<hr>
-<p>La correction est disponible <a href="exercice/correction.sql" target="_blank">ici</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Correction">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Correction
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lien vers la <a href="./exercice/correction.sql">correction</a></p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

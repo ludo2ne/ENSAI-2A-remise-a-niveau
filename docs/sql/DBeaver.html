@@ -109,6 +109,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/sql/sql-exercice.html">
+ <span class="dropdown-text">Exercice SQL</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -209,7 +213,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration"><span class="header-section-number">1</span> Configuration</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration"><span class="header-section-number">1</span> Configuration</a>
+  <ul class="collapse">
+  <li><a href="#optionnel" id="toc-optionnel" class="nav-link" data-scroll-target="#optionnel"><span class="header-section-number">1.1</span> Optionnel</a></li>
+  </ul></li>
   <li><a href="#créer-la-connexion" id="toc-créer-la-connexion" class="nav-link" data-scroll-target="#créer-la-connexion"><span class="header-section-number">2</span> Créer la connexion</a></li>
   <li><a href="#exécuter-du-sql" id="toc-exécuter-du-sql" class="nav-link" data-scroll-target="#exécuter-du-sql"><span class="header-section-number">3</span> Exécuter du SQL</a></li>
   <li><a href="#interface-pgadmin" id="toc-interface-pgadmin" class="nav-link" data-scroll-target="#interface-pgadmin"><span class="header-section-number">4</span> Interface pgAdmin</a></li>
@@ -253,9 +260,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>DBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d’autres encore.</p>
-</blockquote>
+</div>
+</div>
 <p>Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.</p>
 <section id="configuration" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="configuration"><span class="header-section-number">1</span> Configuration</h2>
@@ -278,8 +295,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="optionnel" class="level4">
-<h4 class="anchored" data-anchor-id="optionnel">Optionnel</h4>
+<section id="optionnel" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="optionnel"><span class="header-section-number">1.1</span> Optionnel</h3>
 <ul>
 <li>Templates
 <ul>
@@ -307,7 +324,6 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Terminer</code></li>
 </ul></li>
 </ul>
-<hr>
 </section>
 <section id="exécuter-du-sql" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="exécuter-du-sql"><span class="header-section-number">3</span> Exécuter du SQL</h2>
@@ -320,14 +336,13 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Exécuter toutes les requêtes
 <ul>
-<li>le triangle orange à l’intérieur d’un parachemin</li>
+<li>le triangle orange à l’intérieur d’un parchemin</li>
 </ul></li>
 </ul>
-<hr>
 </section>
 <section id="interface-pgadmin" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="interface-pgadmin"><span class="header-section-number">4</span> Interface pgAdmin</h2>
-<p>En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank"> pgAdmin</a></p>
+<p>En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank">pgAdmin</a></p>
 <ul>
 <li>Utilisateur : idxxxx</li>
 <li>Mot de passe : idxxxx</li>

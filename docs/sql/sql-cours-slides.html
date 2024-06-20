@@ -420,14 +420,13 @@ Ludovic Deneuville
 <section id="quest-ce-quune-base-de-données" class="title-slide slide level2 center">
 <h2>Qu’est-ce qu’une base de données ?</h2>
 <ul>
-<li>Ensemble de données stockées dans des <code>Tables</code></li>
-<li>Tables liées entre elles</li>
-<li>Tables Structurées</li>
-<li>Éviter la redondance</li>
+<li>Collection organisée de données</li>
+<li>Stockée électroniquement</li>
+<li>Structurée pour faciliter l’accès et la gestion</li>
+<li>Conçue pour minimiser la redondance</li>
 </ul>
 <aside class="notes">
 <ul>
-<li>stockées numériquement</li>
 <li>peut être utilisée par des applications</li>
 <li>interrogeables, modifiables par les utilisateurs</li>
 </ul>
@@ -443,31 +442,28 @@ Ludovic Deneuville
           display:block!important;
       }</style></aside>
 </section>
-<section id="types-de-données" class="slide level3 smaller">
-<h3>Types de données</h3>
-<p>Il existe de très nombreux type de données que l’on peut stocker, les principaux :</p>
+<section id="base-de-données-relationnelles" class="slide level3">
+<h3>Base de données relationnelles</h3>
 <ul>
-<li>Chaînes de caractères</li>
-<li>Numérique</li>
-<li>Booléen</li>
-<li>Date, Temps</li>
-<li>Géométriques</li>
+<li>Organise les données dans des <code>Tables</code></li>
+<li>Tables interconnectées</li>
+<li>Tables structurées</li>
 </ul>
-<p>Pour plus d’informations, consultez la <a href="https://www.postgresql.org/docs/current/datatype.html" target="_blank">documentation PostgreSQL</a>.</p>
-</section>
-<section id="types-de-données---exemple" class="slide level3 smaller">
-<h3>Types de données - Exemple</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> personne (</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    id_personne      SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    nom              <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    prenom           <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    email            <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">UNIQUE</span>,</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    nb_enfants       <span class="dt">INT</span>,</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    est_actif        <span class="dt">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">TRUE</span>,</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    last_updated     TIMESTAMPTZ <span class="kw">DEFAULT</span> NOW() </span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<ul>
+<li>Table = tableau</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="sgbd" class="slide level3">
 <h3>SGBD</h3>
@@ -483,7 +479,11 @@ Ludovic Deneuville
 <li>NoSQL : MongoDB, Cassandra</li>
 </ul>
 <aside class="notes">
-
+<ul>
+<li>SGBD : interface principale avec les données</li>
+<li>Pour nous PostgreSQL, gratuit, libre, installé VM</li>
+<li>NoSQL : Not Only SQL</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -495,13 +495,6 @@ Ludovic Deneuville
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="base-de-données-relationnelles" class="slide level3">
-<h3>Base de données relationnelles</h3>
-<ul>
-<li>Organise les données sous forme de tables interconnectées</li>
-<li>Les tables seront liées entre elle</li>
-</ul>
 </section>
 <section id="kesako" class="slide level3">
 <h3>Kesako</h3>
@@ -523,6 +516,65 @@ Ludovic Deneuville
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="types-de-données" class="slide level3">
+<h3>Types de données</h3>
+<p>Il existe de très nombreux types de données que l’on peut stocker, les principaux :</p>
+<ul>
+<li>Chaîne de caractères</li>
+<li>Numérique</li>
+<li>Booléen</li>
+<li>Date, Temps</li>
+<li>Géométrique</li>
+</ul>
+<p>Plus de détails sur la <a href="https://www.postgresql.org/docs/current/datatype.html" target="_blank">documentation PostgreSQL</a>.</p>
+<aside class="notes">
+<ul>
+<li>Date, Temps -&gt; plein de fonctions</li>
+<li>Géométrique -&gt; contours géographiques</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="types---exemple" class="slide level3">
+<h3>Types - exemple</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> personne (</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    id_personne      SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    nom              <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    prenom           <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    email            <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">UNIQUE</span>,</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    nb_enfants       <span class="dt">INT</span> <span class="kw">CHECK</span> (nb_enfants <span class="op">&gt;=</span> <span class="dv">0</span>),</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    est_actif        <span class="dt">BOOLEAN</span>,</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    last_updated     TIMESTAMPTZ <span class="kw">DEFAULT</span> NOW() </span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<ul>
+<li>SERIAL : séquence</li>
+<li>NOT NULL : obligatoire</li>
+<li>UNIQUE : distinctes, mais n’empêche pas les NULL</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="table" class="title-slide slide level2 center">
@@ -531,15 +583,36 @@ Ludovic Deneuville
 <ul>
 <li>une <code>ligne</code> représente un enregistrement spécifique</li>
 <li>une <code>colonne</code> représente un attribut particulier de ces enregistrements</li>
-<li><code>Clé primaire</code> (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table</li>
+<li><code>Clé primaire</code> (PK) : colonne ou un ensemble de colonnes qui identifie de manière unique chaque enregistrement dans une table
+<ul>
+<li>permet d’identifier une ligne sans ambiguïté</li>
+</ul></li>
 </ul>
+<aside class="notes">
+<p>PK :</p>
+<ul>
+<li>obligatoire (non null)</li>
+<li>unique</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="table---exemple" class="slide level3 smaller">
 <h3>Table - exemple</h3>
 <div class="panel-tabset nav-pills">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Diagramme UML</a></li><li><a href="#tabset-1-2">Données</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MCD</a></li><li><a href="#tabset-1-2">Données</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1">
+<p>Modèle Conceptuel de Données (UML)</p>
 <div style="background-color: #199edd;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -635,15 +708,15 @@ Ludovic Deneuville
 <ul>
 <li><code>1..1</code> : Une <em>Personne</em> a un <em>Passeport</em> et un <em>Passeport</em> appartient à une seule <em>Personne</em>
 <ul>
-<li>la clé étrangère pourra être placée dans l’une des deux tables</li>
+<li>clé étrangère dans l’une des 2 tables</li>
 </ul></li>
-<li><code>1..</code> : Une <em>Joueuse</em> joue pour une seule équipe <em>Equipe</em>. Une <em>Equipe</em> est composée de plusieurs <em>Joueuses</em>
+<li><code>1..*</code> : Une <em>Joueuse</em> joue pour une seule équipe <em>Equipe</em>. Une <em>Equipe</em> est composée de plusieurs <em>Joueuses</em>
 <ul>
-<li>la clé étrangère devra être placée dans la table <em>Joueuse</em></li>
+<li>clé étrangère dans la table <em>Joueuse</em></li>
 </ul></li>
-<li><code>..*</code> : Un <em>Etudiant</em> suit plusieurs <em>Cours</em> et un <em>Cours</em> et suivi par plusieurs <em>Etudiants</em>
+<li><code>*..*</code> : Un <em>Etudiant</em> suit plusieurs <em>Cours</em> et un <em>Cours</em> et suivi par plusieurs <em>Etudiants</em>
 <ul>
-<li>il faut créer une table d’association entre <em>Etudiant</em> et <em>Cours</em></li>
+<li>table d’association entre <em>Etudiant</em> et <em>Cours</em></li>
 </ul></li>
 </ul>
 </section>
@@ -768,7 +841,7 @@ Ludovic Deneuville
 <section id="lien-entre-2-tables-via-une-table-dassociation" class="slide level3 smaller">
 <h3>Lien entre 2 tables via une table d’association</h3>
 <div class="panel-tabset nav-pills">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Diagramme</a></li><li><a href="#tabset-3-2">Table joueuse</a></li><li><a href="#tabset-3-3">Table participation</a></li><li><a href="#tabset-3-4">table tournoi</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Diagramme</a></li><li><a href="#tabset-3-2">Table joueuse</a></li><li><a href="#tabset-3-3">Table participation</a></li><li><a href="#tabset-3-4">Table tournoi</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-3-1">
 <div style="background-color: #199edd;">
@@ -950,7 +1023,7 @@ Ludovic Deneuville
 <ul>
 <li><code>SELECT</code> : récupérer des données depuis une table</li>
 <li><code>INSERT</code> : insérer de nouvelles données dans une table</li>
-<li><code>UPDATE</code> : mettre à jour des données existantes dans une table</li>
+<li><code>UPDATE</code> : mettre à jour des données existantes</li>
 <li><code>DELETE</code> : supprimer des données d’une table</li>
 </ul>
 </section></section>
@@ -997,16 +1070,24 @@ Ludovic Deneuville
 </tr>
 </tbody>
 </table>
+<div title="Bonne pratique">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Bonne pratique</strong></p>
 </div>
 <div class="callout-content">
-<p>Le <code>ran.</code> correspond au schéma de la remise à niveau dans lequel nous rangerons toutes les tables.</p>
+<p>Une bonne pratique est de stocker les tables dans un schéma pour bien organiser votre base de données.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">SCHEMA</span> ran;</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> ran.personne (</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    id_personne      <span class="dt">INT</span>         <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">..</span>.</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1020,11 +1101,11 @@ Ludovic Deneuville
 <ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Requête</a></li><li><a href="#tabset-5-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-5-1">
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> personne (id_personne, nom, prenom, date_naissance, adresse)</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">'Gatore'</span>, <span class="st">'Ali'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Amiens'</span>),</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">'Dure'</span>, <span class="st">'Laure'</span>, <span class="st">'1985-09-22'</span>, <span class="st">'Auxerre'</span>),</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">'Erateur'</span>, <span class="st">'Maud'</span>, <span class="st">'1995-03-10'</span>, <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> personne (id_personne, nom, prenom, date_naissance, adresse)</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">'Gatore'</span> , <span class="st">'Ali'</span>  , <span class="st">'1990-05-15'</span>, <span class="st">'Amiens'</span>),</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">'Dure'</span>   , <span class="st">'Laure'</span>, <span class="st">'1985-09-22'</span>, <span class="st">'Auxerre'</span>),</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">'Erateur'</span>, <span class="st">'Maud'</span> , <span class="st">'1995-03-10'</span>, <span class="st">'Lille'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-5-2">
 <table class="caption-top">
@@ -1067,10 +1148,10 @@ Ludovic Deneuville
 </section>
 <section id="supprimer-une-table" class="slide level3">
 <h3>Supprimer une table</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si ensuite, vous essayez :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote>
 <p>ERREUR: la relation « personne » n’existe pas</p>
 </blockquote>
@@ -1083,8 +1164,8 @@ Ludovic Deneuville
 <section id="sélectionner-tout" class="slide level3">
 <h3>Sélectionner tout</h3>
 <p>Pour afficher tout le contenu d’une table.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <ul>
 <li>Une requête se termine par un ;</li>
@@ -1111,10 +1192,14 @@ Ludovic Deneuville
 <ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Requête</a></li><li><a href="#tabset-6-2">Résultat</a></li><li><a href="#tabset-6-3">LIKE</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-6-1">
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> adresse <span class="kw">LIKE</span> <span class="st">'A%'</span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> adresse <span class="kw">LIKE</span> <span class="st">'A%'</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> prenom <span class="op">=</span> <span class="st">'Laure'</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> adresse <span class="kw">IN</span> (<span class="st">'Amiens'</span>, <span class="st">'Auxerre'</span>)</span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> adresse <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> adresse <span class="op">!=</span> <span class="st">'Lille'</span></span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> id_personne <span class="kw">BETWEEN</span> <span class="dv">2</span> <span class="kw">AND</span> <span class="dv">3</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1167,11 +1252,12 @@ Ludovic Deneuville
 <ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Requête</a></li><li><a href="#tabset-7-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-7-1">
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> personne</span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> adresse <span class="op">=</span> <span class="st">'Amiens'</span></span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_personne <span class="op">=</span> <span class="dv">2</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> personne</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>   <span class="kw">SET</span> adresse <span class="op">=</span> <span class="st">'Amiens'</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_personne <span class="op">=</span> <span class="dv">2</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-7-2">
+<p>Si vous refaites un <code>SELECT * FROM personne;</code></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1206,22 +1292,6 @@ Ludovic Deneuville
 </tr>
 </tbody>
 </table>
-<div title="Résultat du SELECT">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Résultat du SELECT</strong></p>
-</div>
-<div class="callout-content">
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1250,6 +1320,10 @@ Ludovic Deneuville
 <div id="tabset-8-1">
 <div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> personne</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Ali'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p>Pour ensuite faire revivre Ali :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> personne (id_personne, nom, prenom, date_naissance, adresse)</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'Gatore'</span>, <span class="st">'Ali'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Amiens'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-8-2">
 <table class="caption-top">
@@ -1279,22 +1353,6 @@ Ludovic Deneuville
 </tr>
 </tbody>
 </table>
-<div title="Pour faire revivre Ali">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Pour faire revivre Ali</strong></p>
-</div>
-<div class="callout-content">
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> personne (id_personne, nom, prenom, date_naissance, adresse)</span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'Gatore'</span>, <span class="st">'Ali'</span>, <span class="st">'1990-05-15'</span>, <span class="st">'Amiens'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1396,21 +1454,14 @@ Ludovic Deneuville
 <div class="tab-content nav-pills">
 <div id="tabset-11-1">
 <div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> personne</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_aux_echecs <span class="dt">BOOLEAN</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_echecs <span class="dt">BOOLEAN</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
 <p>Vous pouvez ajouter une valeur par défaut.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> personne</span>
-<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_aux_echecs <span class="dt">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">true</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> joue_echecs <span class="dt">BOOLEAN</span> <span class="kw">DEFAULT</span> <span class="kw">true</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-11-2">
 <table class="caption-top">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 12%">
-<col style="width: 26%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>id_personne</th>
@@ -1418,7 +1469,7 @@ Ludovic Deneuville
 <th>prenom</th>
 <th>dnais</th>
 <th>adresse</th>
-<th>joue_aux_echecs</th>
+<th>joue_echecs</th>
 </tr>
 </thead>
 <tbody>
@@ -1459,7 +1510,7 @@ Ludovic Deneuville
 <div class="tab-content nav-pills">
 <div id="tabset-12-1">
 <div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> personne</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> joue_aux_echecs;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">COLUMN</span> joue_echecs;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-12-2">
 <table class="caption-top">
@@ -1502,7 +1553,8 @@ Ludovic Deneuville
 </section>
 <section id="renommer-à-laffichage" class="slide level3">
 <h3>Renommer à l’affichage</h3>
-<p>Le mot clé <code>AS</code> permet de renommer une colonne à l’affichage. Il ne change pas le nom de la colonne.</p>
+<p>Le mot clé <code>AS</code> permet de renommer une colonne à l’affichage.</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> Il ne change pas le nom de la colonne.</p>
 <div class="panel-tabset nav-pills">
 <ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">Requête</a></li><li><a href="#tabset-13-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
@@ -1541,19 +1593,15 @@ Ludovic Deneuville
 <section>
 <section id="jointures" class="title-slide slide level2 center">
 <h2>Jointures</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Jusqu’à maintenant, nous n’avions qu’une seule table</p>
-</div>
-</div>
-</div>
+
+</section>
+<section id="alias" class="slide level3">
+<h3>Alias</h3>
+<p>Jusqu’à maintenant, nous n’avions qu’une seule table.</p>
+<p>Nous savions donc que le champ <em>nom</em> venait de la table <em>personne</em>.</p>
+<p>Comment faire si nous faisons une jointure avec une table qui a également une colonne nommée <em>nom</em> ?</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.nom       <span class="co">-- 2. p.nom : attribut nom de la table d'alias p i.e. personne</span></span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p  <span class="co">-- 1. nous déclarons p comme alias de la table personne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="jointure-totale" class="slide level3 smaller">
 <h3>Jointure totale</h3>
@@ -1561,19 +1609,19 @@ Ludovic Deneuville
 <ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">Requête</a></li><li><a href="#tabset-14-2">Requête bis</a></li><li><a href="#tabset-14-3">Personne</a></li><li><a href="#tabset-14-4">Commande</a></li><li><a href="#tabset-14-5">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-14-1">
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p</span>
-<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> commande c <span class="kw">ON</span> p.id_personne <span class="op">=</span> c.id_personne</span>
-<span id="cb18-6"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-14-2">
 <div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
 <span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p</span>
-<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> commande c <span class="kw">USING</span>(id_personne);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> commande c <span class="kw">ON</span> p.id_personne <span class="op">=</span> c.id_personne</span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> prenom <span class="op">=</span> <span class="st">'Laure'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-14-2">
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
+<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p</span>
+<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> commande c <span class="kw">USING</span>(id_personne);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div title="USING">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1638,18 +1686,19 @@ Ludovic Deneuville
 <p><strong>Créer et insérer les données</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> commande (</span>
-<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>    id_commande <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>    produit <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</span>
-<span id="cb20-4"><a aria-hidden="true" tabindex="-1"></a>    quantite <span class="dt">INT</span>,</span>
-<span id="cb20-5"><a aria-hidden="true" tabindex="-1"></a>    prix_unitaire <span class="dt">DECIMAL</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
-<span id="cb20-6"><a aria-hidden="true" tabindex="-1"></a>    id_personne <span class="dt">INT</span></span>
-<span id="cb20-7"><a aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb20-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> commande (id_commande, produit, quantite, prix_unitaire, id_personne) <span class="kw">VALUES</span></span>
-<span id="cb20-10"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="st">'livre'</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>),</span>
-<span id="cb20-11"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="st">'pain'</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb20-12"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="st">'pomme'</span>, <span class="dv">10</span>, <span class="fl">0.5</span>, <span class="dv">2</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> commande (</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>    id_commande <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>    produit <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>    quantite <span class="dt">INT</span>,</span>
+<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>    prix_unitaire <span class="dt">DECIMAL</span>(<span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a>    id_personne <span class="dt">INT</span>,</span>
+<span id="cb21-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (id_personne) <span class="kw">REFERENCES</span> personne(id_personne)</span>
+<span id="cb21-8"><a aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb21-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> commande (id_commande, produit, quantite, prix_unitaire, id_personne) <span class="kw">VALUES</span></span>
+<span id="cb21-11"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="st">'livre'</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>),</span>
+<span id="cb21-12"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="st">'pain'</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb21-13"><a aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="st">'pomme'</span>, <span class="dv">10</span>, <span class="fl">0.5</span>, <span class="dv">2</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1755,11 +1804,16 @@ Ludovic Deneuville
 <ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">Requête</a></li><li><a href="#tabset-15-2">Résultat</a></li><li><a href="#tabset-15-3">Explication</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-15-1">
-<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
-<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
-<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
-<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p</span>
-<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> commande c <span class="kw">USING</span>(id_personne);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.prenom,</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>       c.produit,</span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>       c.quantite</span>
+<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne p</span>
+<span id="cb22-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> commande c <span class="kw">USING</span>(id_personne);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>LEFT JOIN</code> signifie que l’on garde tout le contenu provenant de la table précédente</li>
+<li>et que l’on complète avec le contenu de la table qui suit</li>
+<li><code>RIGHT JOIN</code> pour faire l’inverse</li>
+</ul>
 </div>
 <div id="tabset-15-2">
 <table class="caption-top">
@@ -1816,16 +1870,16 @@ Ludovic Deneuville
 <h3>GROUP BY</h3>
 <ul>
 <li>Utilisé pour regrouper les résultats en fonction d’une ou plusieurs colonnes</li>
-<li>et permettre l’utilisation de fonctions d’agrégation telles que COUNT, SUM, AVG</li>
+<li>Permet l’utilisation de fonctions d’agrégation telles COUNT, SUM, AVG…</li>
 </ul>
 <div class="panel-tabset nav-pills">
-<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">Requête</a></li><li><a href="#tabset-16-2">Résultat</a></li><li><a href="#tabset-16-3">Remarque</a></li></ul>
+<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">Requête</a></li><li><a href="#tabset-16-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-16-1">
-<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
-<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
-<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
-<span id="cb22-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-16-2">
 <table class="caption-top">
@@ -1847,23 +1901,21 @@ Ludovic Deneuville
 </tbody>
 </table>
 </div>
-<div id="tabset-16-3">
-<p>Tous les champs</p>
-</div>
 </div>
 </div>
 </section>
 <section id="having" class="slide level3">
 <h3>HAVING</h3>
+<p>Pour filter après un <em>GROUP BY</em></p>
 <div class="panel-tabset nav-pills">
 <ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1">Requête</a></li><li><a href="#tabset-17-2">Résultat</a></li><li><a href="#tabset-17-3">Attention</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-17-1">
-<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
-<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
-<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
-<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse</span>
-<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="dv">1</span>) <span class="op">&gt;</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> adresse,</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>)</span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
+<span id="cb24-4"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> adresse</span>
+<span id="cb24-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="dv">1</span>) <span class="op">&gt;</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-17-2">
 <table class="caption-top">
@@ -1904,14 +1956,19 @@ Ludovic Deneuville
 </section></section>
 <section id="ordonner-les-lignes" class="title-slide slide level2 center">
 <h2>Ordonner les lignes</h2>
-<p>Pour ordonner les résultats (ajouter éventuellement <em>DESC</em> pour décroissant).</p>
 <div class="panel-tabset nav-pills">
 <ul id="tabset-18" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-18-1">Requête</a></li><li><a href="#tabset-18-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-18-1">
-<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
-<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> dnais <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> personne</span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> dnais <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Pour ordonner les résultats
+<ul>
+<li>Ajouter éventuellement <em>DESC</em> pour décroissant</li>
+</ul></li>
+</ul>
 </div>
 <div id="tabset-18-2">
 <table class="caption-top">
@@ -1973,18 +2030,35 @@ Ludovic Deneuville
 </section>
 <section id="ere-forme-normale" class="slide level3">
 <h3>1ere forme normale</h3>
-<p>::: {.panel-tabset .nav-pills}</p>
-<h4 id="énoncé">Énoncé</h4>
+<div class="panel-tabset nav-pills">
+<ul id="tabset-19" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-19-1">Énoncé</a></li><li><a href="#tabset-19-2">Exemples</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-19-1">
 <p>Une relation est de première forme normale (1NF) si</p>
 <ul>
 <li>elle possède au moins une clé</li>
-<li>et si tous ses attributs sont atomiques
-<ul>
-<li>un attribut est <strong>atomique</strong> si il ne contient qu’une seule valeur pour un tuple donné</li>
-<li>donc s’il ne regroupe pas un ensemble de plusieurs valeurs</li>
-</ul></li>
+<li>et si tous ses attributs sont atomiques</li>
 </ul>
-<h4 id="exemples">Exemples</h4>
+<div title="Attribut atomique">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Attribut atomique</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Ne contient qu’une seule valeur pour un tuple donné</li>
+<li>Donc ne regroupe pas un ensemble de plusieurs valeurs</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-19-2">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1994,20 +2068,23 @@ Ludovic Deneuville
 </thead>
 <tbody>
 <tr class="odd">
-<td>Maud</td>
-<td>Maud Erateur</td>
-</tr>
-<tr class="even">
-<td>Ali</td>
+<td>1</td>
 <td>Ali Gator</td>
 </tr>
-<tr class="odd">
-<td>Laure</td>
+<tr class="even">
+<td>2</td>
 <td>Laure Dure</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Maud Erateur</td>
 </tr>
 </tbody>
 </table>
-<p>ne respecte pas la 1NF car son attribut <em>nom</em> n’est pas atomique.</p>
+<p>Cette table ne respecte pas la 1NF car son attribut <em>nom</em> n’est pas atomique.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="autres-formes-normales" class="slide level3">
 <h3>Autres formes normales</h3>
@@ -2016,33 +2093,57 @@ Ludovic Deneuville
 <li>3NF : 2NF + un attribut non clé ne peut pas dépendre d’un autre attribut non clé</li>
 </ul>
 </section></section>
+<section>
 <section id="les-schémas" class="title-slide slide level2 center">
 <h2>Les schémas</h2>
-<p>Par défaut toutes les tables que nous allons créer iraient dans le schéma <em>public</em>.<br>
-<span class="emoji" data-emoji="bulb">💡</span> pour une meilleure organisation, nous allons classer nos tables dans différents schémas :</p>
-<ul>
-<li><code>ran</code> : schéma utilisé pour la remise à niveau</li>
-<li><code>projet</code> : schéma du projet info 2A</li>
-</ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> ran;</span>
-<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> projet;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une bonne pratique (non appliquée ici) est de classer nos tables dans différents schémas.</p>
+<p>De la même manière que vous rangez des fichiers dans des dossiers, vous vous y retrouverez plus facilement en rangeant les tables dans des <code>schémas</code>.</p>
+<p>Si vous ne déclarez pas de shéma lors de la création d’une table, elle va dans le schéma <em>public</em>.</p>
 </section>
-
+<section id="schémas---exemple" class="slide level3">
+<h3>Schémas - exemple</h3>
+<p>Créer un schéma pour le projet info</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">schema</span> projet;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p>À la création, stocker la table dans le schéma</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">table</span> projet.joueuse(</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">..</span>.</span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p>Préciser le schéma lors des requêtes</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> projet.joueuse;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
 <section id="sql-sans-table" class="title-slide slide level2 center">
 <h2>SQL sans table</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">CURRENT_DATE</span>;</span>
-<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>;</span>
-<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">2</span>;</span>
-<span id="cb26-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="st">'Salut'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">CURRENT_DATE</span>;</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>;</span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">2</span>;</span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="st">'Salut'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="bibliographie" class="title-slide slide level2 center">
 <h2>Bibliographie</h2>
-<p><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" class="uri">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a> <a href="https://sql.sh/" class="uri">https://sql.sh/</a></p>
 <ul>
-<li>DBeaver</li>
-<li><a href="https://www.programiz.com/sql/online-compiler/" class="uri">https://www.programiz.com/sql/online-compiler/</a></li>
-<li><a href="https://www.mycompiler.io/fr/new/sql" class="uri">https://www.mycompiler.io/fr/new/sql</a></li>
+<li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" class="uri">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
+<li><a href="https://sql.sh/" class="uri">https://sql.sh/</a></li>
+</ul>
+</section>
+
+<section id="exercice" class="title-slide slide level2 smaller center">
+<h2>Exercice</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Commencez par configurer <a href="../../docs/sql/DBeaver.html" target="_blank">DBeaver</a></label></li>
+<li><label><input type="checkbox">Faîtes l’<a href="../../docs/sql/sql-exercice.html" target="_blank">exercice</a></label></li>
+</ul>
+<p>Autres possibilités pour faire l’exercice :</p>
+<ul>
+<li><a href="https://www.programiz.com/sql/online-compiler/" target="_blank">https://www.programiz.com/sql/online-compiler/</a>
+<ul>
+<li><code>DROP table customers; DROP table orders; DROP table shippings;</code></li>
+<li>pour supprimer les tables par défaut</li>
+</ul></li>
+<li><a href="https://www.mycompiler.io/fr/new/sql" target="_blank">https://www.mycompiler.io/fr/new/sql</a></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
