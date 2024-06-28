@@ -64,17 +64,20 @@ si vous avez vos accès à l'ENT ENSAI, les vidéos de la session de l'année de
 
 ### 2. Cours en ligne pour apprendre Python et SQL
 
-* SQL
-    * https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql
-* Python
-    * https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content
-        * parties 1 et 2
-    * https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
-        * parties 1 et 2
+- SQL
+  - https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql
+- Python
+  - https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content
+    - parties 1 et 2
+  - https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
+    - parties 1 et 2
 
-## :arrow_forward:Required packages
 
-```bash
-pip install -r requirements.txt
-pip list -v
-```
+## Publier les pages
+
+Site construit avec [Quarto](https://quarto.org/) ([Tuto](https://ludo2ne.github.io/Quarto-tuto/))
+
+Pour générer les pages :
+
+- en local : `quarto render` (les pages sont crées dans le dossier *_site*)
+- sur [GitHub](https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/) : voir fichier `.github/workflows/publish.yml`

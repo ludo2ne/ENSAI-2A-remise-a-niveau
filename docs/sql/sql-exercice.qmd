@@ -15,7 +15,7 @@ number-depth: 3
 
 ## Avant de commencer
 
-- [ ] Paramétrez [DBeaver](./DBeaver.qmd)
+- [ ] Paramétrez [DBeaver](./DBeaver.qmd){target="_blank"}
 - [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
 - [ ] Collez dans DBeaver
 - [ ] Exécuter le script

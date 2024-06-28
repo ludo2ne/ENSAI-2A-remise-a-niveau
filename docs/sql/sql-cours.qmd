@@ -6,7 +6,7 @@ format:
   html:
     toc: true
     toc-location: left
-    toc-expand: 3
+    toc-depth: 2
   revealjs:
     theme: moon
     footer: "[Home](../../index.html) --- [Introduction à SQL](sql-cours.html)"
@@ -119,6 +119,8 @@ CREATE TABLE personne (
 - SERIAL : séquence
 - NOT NULL : obligatoire
 - UNIQUE : distinctes, mais n'empêche pas les NULL
+
+Code bien aligné, Mots clés en majuscule
 :::
 
 
@@ -145,7 +147,7 @@ PK :
 
 #### MCD
 
-Modèle Conceptuel de Données (UML)
+Modèle Physique des Données (UML)
 
 :::{style="background-color: #199edd;"}
 
@@ -997,11 +999,23 @@ SELECT 1 > 2;
 SELECT 'Salut';
 ```
 
+## Autres notions non abordées {.smaller}
+
+- ACID, COMMIT, ROLLBACK
+- vues, snapshot
+- index
+- droits : grant / revoke
+- WITH (Common Table Expressions)
+- UNION, INTERSECT, EXCEPT
+- DISTINCT 
+- EXISTS
+- SEQUENCE
 
 ## Bibliographie
 
-- <https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>
-- <https://sql.sh/>
+- <https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>{target="_blank"}
+- <https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/>{target="_blank"}
+- <https://sql.sh/>{target="_blank"}
 
 
 ## Exercice {.smaller}

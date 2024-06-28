@@ -13,7 +13,7 @@ from: markdown+emoji
 - [ ] [Python - initiation](docs/python/python-cours.qmd) (6h)
 - [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
 - [ ] [UML](docs/UML/UML.qmd) (3h)
-- [ ] Divers outils utiles (git, markdown, R...)
+- [ ] Divers outils utiles (markdown, R...)
 
 
 ## 1. Initiation à SQL

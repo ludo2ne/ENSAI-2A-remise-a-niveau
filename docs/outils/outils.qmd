@@ -1,6 +1,6 @@
 ---
 title: "Divers outils"
-description: "Outils utile pour développer ou autre"
+description: "Outils utile pour développer"
 author: "Ludovic Deneuville"
 format: 
   html:
@@ -19,7 +19,6 @@ number-depth: 3
 - [Bookmarks](Bookmarks-ENSAI-student.html) : des favoris à importer dans votre navigateur
 - VSCode : un environnement de développement
 - UML : une introduction à la modélisation UML
-- Git : pour gérer les versions du code
 - Bash : pour apprendre à utiliser un terminal de commande
 - Markdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte
   - HackMd : un éditeur en ligne de Markdown
