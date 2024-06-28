@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -210,16 +210,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/outils/Git.html">
- <span class="dropdown-text">Git</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
- <span class="dropdown-text">Git TP</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/yaml.html">
+ <span class="dropdown-text">YAML</span></a>
   </li>  
     </ul>
   </li>
@@ -247,82 +243,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
-  <li><a href="#quest-ce-quune-base-de-données" id="toc-quest-ce-quune-base-de-données" class="nav-link" data-scroll-target="#quest-ce-quune-base-de-données">Qu’est-ce qu’une base de données ?</a>
-  <ul class="collapse">
-  <li><a href="#base-de-données-relationnelles" id="toc-base-de-données-relationnelles" class="nav-link" data-scroll-target="#base-de-données-relationnelles">Base de données relationnelles</a></li>
-  <li><a href="#sgbd" id="toc-sgbd" class="nav-link" data-scroll-target="#sgbd">SGBD</a></li>
-  <li><a href="#kesako" id="toc-kesako" class="nav-link" data-scroll-target="#kesako">Kesako</a></li>
-  <li><a href="#types-de-données" id="toc-types-de-données" class="nav-link" data-scroll-target="#types-de-données">Types de données</a></li>
-  <li><a href="#types---exemple" id="toc-types---exemple" class="nav-link" data-scroll-target="#types---exemple">Types - exemple</a></li>
-  </ul></li>
-  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a>
-  <ul class="collapse">
-  <li><a href="#table---exemple" id="toc-table---exemple" class="nav-link" data-scroll-target="#table---exemple">Table - exemple</a></li>
-  </ul></li>
-  <li><a href="#associations-entre-tables" id="toc-associations-entre-tables" class="nav-link" data-scroll-target="#associations-entre-tables">Associations entre tables</a>
-  <ul class="collapse">
-  <li><a href="#clé-étrangère" id="toc-clé-étrangère" class="nav-link" data-scroll-target="#clé-étrangère">Clé étrangère</a></li>
-  <li><a href="#types-dassociations" id="toc-types-dassociations" class="nav-link" data-scroll-target="#types-dassociations">Types d’associations</a></li>
-  <li><a href="#lien-entre-2-tables-via-une-clé-étrangère" id="toc-lien-entre-2-tables-via-une-clé-étrangère" class="nav-link" data-scroll-target="#lien-entre-2-tables-via-une-clé-étrangère">Lien entre 2 tables via une clé étrangère</a></li>
-  <li><a href="#lien-entre-2-tables-via-une-table-dassociation" id="toc-lien-entre-2-tables-via-une-table-dassociation" class="nav-link" data-scroll-target="#lien-entre-2-tables-via-une-table-dassociation">Lien entre 2 tables via une table d’association</a></li>
-  </ul></li>
-  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a>
-  <ul class="collapse">
-  <li><a href="#opérations-crud" id="toc-opérations-crud" class="nav-link" data-scroll-target="#opérations-crud">Opérations CRUD</a></li>
-  </ul></li>
-  <li><a href="#actions-sur-une-table" id="toc-actions-sur-une-table" class="nav-link" data-scroll-target="#actions-sur-une-table">Actions sur une table</a>
-  <ul class="collapse">
-  <li><a href="#créer-une-table" id="toc-créer-une-table" class="nav-link" data-scroll-target="#créer-une-table">Créer une Table</a></li>
-  <li><a href="#insérer-des-données" id="toc-insérer-des-données" class="nav-link" data-scroll-target="#insérer-des-données">Insérer des données</a></li>
-  <li><a href="#supprimer-une-table" id="toc-supprimer-une-table" class="nav-link" data-scroll-target="#supprimer-une-table">Supprimer une table</a></li>
-  </ul></li>
-  <li><a href="#actions-sur-les-lignes" id="toc-actions-sur-les-lignes" class="nav-link" data-scroll-target="#actions-sur-les-lignes">Actions sur les lignes</a>
-  <ul class="collapse">
-  <li><a href="#sélectionner-tout" id="toc-sélectionner-tout" class="nav-link" data-scroll-target="#sélectionner-tout">Sélectionner tout</a></li>
-  <li><a href="#filter-les-lignes" id="toc-filter-les-lignes" class="nav-link" data-scroll-target="#filter-les-lignes">Filter les lignes</a></li>
-  <li><a href="#mettre-à-jour-des-lignes" id="toc-mettre-à-jour-des-lignes" class="nav-link" data-scroll-target="#mettre-à-jour-des-lignes">Mettre à jour des lignes</a></li>
-  <li><a href="#supprimer-des-lignes" id="toc-supprimer-des-lignes" class="nav-link" data-scroll-target="#supprimer-des-lignes">Supprimer des lignes</a></li>
-  </ul></li>
-  <li><a href="#actions-sur-les-colonnes" id="toc-actions-sur-les-colonnes" class="nav-link" data-scroll-target="#actions-sur-les-colonnes">Actions sur les colonnes</a>
-  <ul class="collapse">
-  <li><a href="#sélectioner-des-colonnes" id="toc-sélectioner-des-colonnes" class="nav-link" data-scroll-target="#sélectioner-des-colonnes">Sélectioner des colonnes</a></li>
-  <li><a href="#renommer-une-colonne" id="toc-renommer-une-colonne" class="nav-link" data-scroll-target="#renommer-une-colonne">Renommer une colonne</a></li>
-  <li><a href="#ajouter-un-attribut" id="toc-ajouter-un-attribut" class="nav-link" data-scroll-target="#ajouter-un-attribut">Ajouter un attribut</a></li>
-  <li><a href="#supprimer-une-colonne" id="toc-supprimer-une-colonne" class="nav-link" data-scroll-target="#supprimer-une-colonne">Supprimer une colonne</a></li>
-  <li><a href="#renommer-à-laffichage" id="toc-renommer-à-laffichage" class="nav-link" data-scroll-target="#renommer-à-laffichage">Renommer à l’affichage</a></li>
-  </ul></li>
-  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures">Jointures</a>
-  <ul class="collapse">
-  <li><a href="#alias" id="toc-alias" class="nav-link" data-scroll-target="#alias">Alias</a></li>
-  <li><a href="#jointure-totale" id="toc-jointure-totale" class="nav-link" data-scroll-target="#jointure-totale">Jointure totale</a></li>
-  <li><a href="#types-de-jointures" id="toc-types-de-jointures" class="nav-link" data-scroll-target="#types-de-jointures">Types de jointures</a></li>
-  <li><a href="#jointures-externes" id="toc-jointures-externes" class="nav-link" data-scroll-target="#jointures-externes">Jointures externes</a></li>
-  </ul></li>
-  <li><a href="#agrégation" id="toc-agrégation" class="nav-link" data-scroll-target="#agrégation">Agrégation</a>
-  <ul class="collapse">
-  <li><a href="#group-by" id="toc-group-by" class="nav-link" data-scroll-target="#group-by">GROUP BY</a></li>
-  <li><a href="#having" id="toc-having" class="nav-link" data-scroll-target="#having">HAVING</a></li>
-  </ul></li>
+  <li><a href="#quest-ce-quune-base-de-données" id="toc-quest-ce-quune-base-de-données" class="nav-link" data-scroll-target="#quest-ce-quune-base-de-données">Qu’est-ce qu’une base de données ?</a></li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
+  <li><a href="#associations-entre-tables" id="toc-associations-entre-tables" class="nav-link" data-scroll-target="#associations-entre-tables">Associations entre tables</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
+  <li><a href="#actions-sur-une-table" id="toc-actions-sur-une-table" class="nav-link" data-scroll-target="#actions-sur-une-table">Actions sur une table</a></li>
+  <li><a href="#actions-sur-les-lignes" id="toc-actions-sur-les-lignes" class="nav-link" data-scroll-target="#actions-sur-les-lignes">Actions sur les lignes</a></li>
+  <li><a href="#actions-sur-les-colonnes" id="toc-actions-sur-les-colonnes" class="nav-link" data-scroll-target="#actions-sur-les-colonnes">Actions sur les colonnes</a></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures">Jointures</a></li>
+  <li><a href="#agrégation" id="toc-agrégation" class="nav-link" data-scroll-target="#agrégation">Agrégation</a></li>
   <li><a href="#ordonner-les-lignes" id="toc-ordonner-les-lignes" class="nav-link" data-scroll-target="#ordonner-les-lignes">Ordonner les lignes</a></li>
-  <li><a href="#formes-normales" id="toc-formes-normales" class="nav-link" data-scroll-target="#formes-normales">Formes normales</a>
-  <ul class="collapse">
-  <li><a href="#ere-forme-normale" id="toc-ere-forme-normale" class="nav-link" data-scroll-target="#ere-forme-normale">1ere forme normale</a></li>
-  <li><a href="#autres-formes-normales" id="toc-autres-formes-normales" class="nav-link" data-scroll-target="#autres-formes-normales">Autres formes normales</a></li>
-  </ul></li>
-  <li><a href="#les-schémas" id="toc-les-schémas" class="nav-link" data-scroll-target="#les-schémas">Les schémas</a>
-  <ul class="collapse">
-  <li><a href="#schémas---exemple" id="toc-schémas---exemple" class="nav-link" data-scroll-target="#schémas---exemple">Schémas - exemple</a></li>
-  </ul></li>
+  <li><a href="#formes-normales" id="toc-formes-normales" class="nav-link" data-scroll-target="#formes-normales">Formes normales</a></li>
+  <li><a href="#les-schémas" id="toc-les-schémas" class="nav-link" data-scroll-target="#les-schémas">Les schémas</a></li>
   <li><a href="#sql-sans-table" id="toc-sql-sans-table" class="nav-link" data-scroll-target="#sql-sans-table">SQL sans table</a></li>
+  <li><a href="#autres-notions-non-abordées" id="toc-autres-notions-non-abordées" class="nav-link" data-scroll-target="#autres-notions-non-abordées">Autres notions non abordées</a></li>
   <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
   <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice">Exercice</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sql-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sql-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -466,6 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>NOT NULL : obligatoire</li>
 <li>UNIQUE : distinctes, mais n’empêche pas les NULL</li>
 </ul>
+<p>Code bien aligné, Mots clés en majuscule</p>
 </div>
 </section>
 </section>
@@ -493,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">MCD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Données</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Modèle Conceptuel de Données (UML)</p>
+<p>Modèle Physique des Données (UML)</p>
 <div style="background-color: #199edd;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -1934,11 +1878,26 @@ Attribut atomique
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">2</span>;</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="st">'Salut'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="autres-notions-non-abordées" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="autres-notions-non-abordées">Autres notions non abordées</h2>
+<ul>
+<li>ACID, COMMIT, ROLLBACK</li>
+<li>vues, snapshot</li>
+<li>index</li>
+<li>droits : grant / revoke</li>
+<li>WITH (Common Table Expressions)</li>
+<li>UNION, INTERSECT, EXCEPT</li>
+<li>DISTINCT</li>
+<li>EXISTS</li>
+<li>SEQUENCE</li>
+</ul>
+</section>
 <section id="bibliographie" class="level2">
 <h2 class="anchored" data-anchor-id="bibliographie">Bibliographie</h2>
 <ul>
-<li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" class="uri">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
-<li><a href="https://sql.sh/" class="uri">https://sql.sh/</a></li>
+<li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" target="_blank">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
+<li><a href="https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/" target="_blank">https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/</a></li>
+<li><a href="https://sql.sh/" target="_blank">https://sql.sh/</a></li>
 </ul>
 </section>
 <section id="exercice" class="level2 smaller">

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Présentation de Git">
+<meta name="description" content="Introduction à YAML">
 
-<title>Remise à Niveau Informatique - Git</title>
+<title>Remise à Niveau Informatique - Yaml 101</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -206,16 +206,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/outils/Git.html">
- <span class="dropdown-text">Git</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../docs/outils/Git TP.html">
- <span class="dropdown-text">Git TP</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../docs/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/yaml.html">
+ <span class="dropdown-text">YAML</span></a>
   </li>  
     </ul>
   </li>
@@ -247,29 +243,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a>
+  <li><a href="#quest-ce-que-yaml" id="toc-quest-ce-que-yaml" class="nav-link active" data-scroll-target="#quest-ce-que-yaml"><span class="header-section-number">1</span> Qu’est-ce que YAML ?</a></li>
+  <li><a href="#pourquoi-utiliser-yaml" id="toc-pourquoi-utiliser-yaml" class="nav-link" data-scroll-target="#pourquoi-utiliser-yaml"><span class="header-section-number">2</span> Pourquoi utiliser YAML ?</a></li>
+  <li><a href="#syntaxe" id="toc-syntaxe" class="nav-link" data-scroll-target="#syntaxe"><span class="header-section-number">3</span> Syntaxe</a>
   <ul class="collapse">
-  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources">Ressources</a></li>
-  </ul></li>
-  <li><a href="#git-présentation" id="toc-git-présentation" class="nav-link" data-scroll-target="#git-présentation"><span class="header-section-number">1</span> Git présentation</a>
-  <ul class="collapse">
-  <li><a href="#git-ça-sert-à-quoi" id="toc-git-ça-sert-à-quoi" class="nav-link" data-scroll-target="#git-ça-sert-à-quoi"><span class="header-section-number">1.1</span> Git, ça sert à quoi ?</a></li>
-  <li><a href="#pourquoi-utiliser-un-outil-de-gestion-de-version" id="toc-pourquoi-utiliser-un-outil-de-gestion-de-version" class="nav-link" data-scroll-target="#pourquoi-utiliser-un-outil-de-gestion-de-version"><span class="header-section-number">1.2</span> Pourquoi utiliser un outil de gestion de version ?</a></li>
-  <li><a href="#principe-général-de-git" id="toc-principe-général-de-git" class="nav-link" data-scroll-target="#principe-général-de-git"><span class="header-section-number">1.3</span> Principe général de Git</a></li>
-  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples"><span class="header-section-number">1.4</span> Exemples</a></li>
-  <li><a href="#les-5-commandes-quil-faudra-retenir" id="toc-les-5-commandes-quil-faudra-retenir" class="nav-link" data-scroll-target="#les-5-commandes-quil-faudra-retenir"><span class="header-section-number">1.5</span> Les 5 commandes qu’il faudra retenir</a></li>
-  <li><a href="#schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" id="toc-schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="nav-link" data-scroll-target="#schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant"><span class="header-section-number">1.6</span> Schéma simplifié des liens entre dépôt local et dépôt distant</a></li>
-  </ul></li>
-  <li><a href="#paramètrer-git" id="toc-paramètrer-git" class="nav-link" data-scroll-target="#paramètrer-git"><span class="header-section-number">2</span> Paramètrer Git</a>
-  <ul class="collapse">
-  <li><a href="#configuration-git-bash" id="toc-configuration-git-bash" class="nav-link" data-scroll-target="#configuration-git-bash"><span class="header-section-number">2.1</span> Configuration Git Bash</a></li>
-  <li><a href="#clé-ssh" id="toc-clé-ssh" class="nav-link" data-scroll-target="#clé-ssh"><span class="header-section-number">2.2</span> Clé SSH</a></li>
-  <li><a href="#créer-un-compte-sur-gitlab-github-ou-autre" id="toc-créer-un-compte-sur-gitlab-github-ou-autre" class="nav-link" data-scroll-target="#créer-un-compte-sur-gitlab-github-ou-autre"><span class="header-section-number">2.3</span> Créer un compte sur GitLab, GitHub ou autre</a></li>
-  <li><a href="#déclarer-votre-clé-publique-ssh-à-gitlab" id="toc-déclarer-votre-clé-publique-ssh-à-gitlab" class="nav-link" data-scroll-target="#déclarer-votre-clé-publique-ssh-à-gitlab"><span class="header-section-number">2.4</span> Déclarer votre clé publique SSH à GitLab</a></li>
-  <li><a href="#en-cas-derreurs" id="toc-en-cas-derreurs" class="nav-link" data-scroll-target="#en-cas-derreurs"><span class="header-section-number">2.5</span> En cas d’erreurs</a></li>
+  <li><a href="#attributs" id="toc-attributs" class="nav-link" data-scroll-target="#attributs"><span class="header-section-number">3.1</span> Attributs</a></li>
+  <li><a href="#liste-de-valeurs" id="toc-liste-de-valeurs" class="nav-link" data-scroll-target="#liste-de-valeurs"><span class="header-section-number">3.2</span> Liste de valeurs</a></li>
+  <li><a href="#ancre-et-alias" id="toc-ancre-et-alias" class="nav-link" data-scroll-target="#ancre-et-alias"><span class="header-section-number">3.3</span> Ancre et alias</a></li>
+  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage"><span class="header-section-number">3.4</span> Héritage</a></li>
+  <li><a href="#long-texte" id="toc-long-texte" class="nav-link" data-scroll-target="#long-texte"><span class="header-section-number">3.5</span> Long texte</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/yaml.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -280,12 +265,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">Yaml 101</h1>
 </div>
 
 <div>
   <div class="description">
-    Présentation de Git
+    Introduction à YAML
   </div>
 </div>
 
@@ -308,242 +293,253 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="objectifs" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
-<ul>
-<li><label><input type="checkbox">Comprendre le principe et l’utilité de Git</label></li>
-<li><label><input type="checkbox">Configurer Git</label></li>
-<li><label><input type="checkbox">Créer un compte GitLab</label></li>
-<li>puis dans le fichier Git TP :
-<ul class="task-list">
-<li><label><input type="checkbox">Manipuler avec les commandes de base (clone, status, add, commit, pull, push)</label></li>
-<li><label><input type="checkbox">Gérer un conflit</label></li>
-</ul></li>
-</ul>
-<hr>
-<section id="ressources" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="ressources">Ressources</h3>
-<ul>
-<li><a href="https://github.com/InseeFrLab/formation-git" class="external" target="_blank">Formation Git du Lab INSEE</a></li>
-<li><a href="https://github.com/InseeFrLab/formation-bonnes-pratiques-git-R" class="external" target="_blank">Bonnes pratiques Git</a></li>
-</ul>
-<hr>
+<section id="quest-ce-que-yaml" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quest-ce-que-yaml"><span class="header-section-number">1</span> Qu’est-ce que YAML ?</h2>
+<p>YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.</p>
+<p>Il est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation.</p>
 </section>
-</section>
-<section id="git-présentation" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="git-présentation"><span class="header-section-number">1</span> Git présentation</h2>
-<section id="git-ça-sert-à-quoi" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="git-ça-sert-à-quoi"><span class="header-section-number">1.1</span> Git, ça sert à quoi ?</h3>
+<section id="pourquoi-utiliser-yaml" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="pourquoi-utiliser-yaml"><span class="header-section-number">2</span> Pourquoi utiliser YAML ?</h2>
 <ul>
-<li>Git
+<li><strong>Lisibilité</strong>
 <ul>
-<li>Logiciel de gestion de versions</li>
-<li>Logiciel libre</li>
-<li>créé par Linus Torvalds, qui n’est pas n’importe qui : également créateur du noyau Linux</li>
+<li>YAML est conçu pour être lisible par l’homme. La syntaxe est simple et directe, sans beaucoup de ponctuations.</li>
+<li>Les indentations permettent une structure claire et hiérarchisée, semblable à celle des langages de programmation comme Python.</li>
 </ul></li>
-<li>Git Bash
+<li><strong>Flexibilité</strong>
 <ul>
-<li>Terminal pour écrire des commandes <code>git</code></li>
-<li>Possible d’ouvrir via le menu Démarrer, mais aussi inclus dans Visual Studio Code</li>
+<li>YAML supporte des structures de données complexes comme les listes imbriquées et les dictionnaires.</li>
+<li>Il permet des alias et des ancres pour éviter la duplication de données, ce qui peut être utile pour des fichiers de configuration réutilisables.</li>
 </ul></li>
-<li>GitLab / GitHub
+<li><strong>Compatibilité avec les autres formats</strong>
 <ul>
-<li>Logiciel permettant de gérer des fichiers (dépôt)</li>
-<li>Partagé par plusieurs personnes</li>
-<li>S’utilise avec Git</li>
-<li>Propose d’autres fonctionnalités (wiki, gestion des incidents…)</li>
+<li>YAML peut facilement être converti en JSON, et vice versa</li>
+</ul></li>
+<li><strong>Usage dans DevOps</strong>
+<ul>
+<li>YAML est largement utilisé dans les outils de gestion de configuration, les pipelines CI/CD, et les orchestrateurs de conteneurs</li>
 </ul></li>
 </ul>
 </section>
-<section id="pourquoi-utiliser-un-outil-de-gestion-de-version" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="pourquoi-utiliser-un-outil-de-gestion-de-version"><span class="header-section-number">1.2</span> Pourquoi utiliser un outil de gestion de version ?</h3>
-<p>Est-ce que vous préférez avoir ceci ?</p>
-<pre><code>├───Projet info
-│   ├───Livrables
-│   │   ├───Rapport.tex
-│   │   ├───Rapport_Ludo.tex
-│   │   ├───Rapport_v1.0.tex
-│   │   └───Rapport_v1.2.tex
-│   ├───Rapport_old.tex
-│   ├───Rapport_2022.05.15.tex
-│   └───Rapport_2022.05.15_new.tex</code></pre>
-<p>Ou un seul fichier avec accès à l’historique des modifications ?</p>
-<pre><code>├───Projet info
-│   └───Livrables
-│     └───Rapport.tex
+<section id="syntaxe" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="syntaxe"><span class="header-section-number">3</span> Syntaxe</h2>
+<p>Voici quelques exemples de syntaxe avec son équivalent json</p>
+<section id="attributs" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="attributs"><span class="header-section-number">3.1</span> Attributs</h3>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">person</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Alice</span><span class="co">             # str</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">city</span><span class="kw">:</span><span class="at"> </span><span class="st">"Amiens"</span><span class="co">          # str</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">age</span><span class="kw">:</span><span class="at"> </span><span class="dv">30</span><span class="co">                 # int</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.75</span><span class="co">            # float</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">student</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">          # bool</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">birth_date</span><span class="kw">:</span><span class="at"> 1994-05-15</span><span class="co">  # date</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>json</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"person"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Alice"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"age"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"height"</span><span class="fu">:</span> <span class="fl">1.75</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"student"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"birth_date"</span><span class="fu">:</span> <span class="st">"1994-05-15"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="liste-de-valeurs" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="liste-de-valeurs"><span class="header-section-number">3.2</span> Liste de valeurs</h3>
+<p>Plusieurs possibilités pour déclarer des listes</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hobbies</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> chess</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> hiking</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> landart</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span><span class="co"> # ou</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">hobbies</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"chess"</span><span class="kw">,</span><span class="at"> </span><span class="st">"hiking"</span><span class="kw">,</span><span class="at"> </span><span class="st">"landart"</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>json</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"hobbies"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"chess"</span><span class="ot">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hiking"</span><span class="ot">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"landart"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Autre exemple</p>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">servers</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> server1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ip</span><span class="kw">:</span><span class="at"> </span><span class="fl">192.168.1.1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> server2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ip</span><span class="kw">:</span><span class="at"> </span><span class="fl">192.168.1.2</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"server3"</span><span class="kw">,</span><span class="at"> </span><span class="fu">ip</span><span class="kw">:</span><span class="at"> </span><span class="fl">192.168.1.3</span><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>json</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"servers"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"server1"</span><span class="fu">,</span> <span class="dt">"ip"</span><span class="fu">:</span> <span class="st">"192.168.1.1"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"server2"</span><span class="fu">,</span> <span class="dt">"ip"</span><span class="fu">:</span> <span class="st">"192.168.1.2"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"server3"</span><span class="fu">,</span> <span class="dt">"ip"</span><span class="fu">:</span> <span class="st">"192.168.1.3"</span><span class="fu">}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ancre-et-alias" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="ancre-et-alias"><span class="header-section-number">3.3</span> Ancre et alias</h3>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parent</span><span class="kw">:</span><span class="at"> </span><span class="ot">&amp;pere</span><span class="at"> Bob</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">child</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Eva</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">papa</span><span class="kw">:</span><span class="at"> </span><span class="ot">*pere</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Laury</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">papa</span><span class="kw">:</span><span class="at"> </span><span class="ot">*pere</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>json</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"parent"</span><span class="fu">:</span> <span class="st">"Bob"</span><span class="fu">,</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"child"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Eva"</span><span class="fu">,</span> <span class="dt">"parent"</span><span class="fu">:</span> <span class="st">"Bob"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span><span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Laury"</span><span class="fu">,</span> <span class="dt">"parent"</span><span class="fu">:</span> <span class="st">"Bob"</span><span class="fu">}</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="héritage" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="héritage"><span class="header-section-number">3.4</span> Héritage</h3>
+<div class="columns">
+<div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">default</span><span class="kw">:</span><span class="at"> </span><span class="ot">&amp;default_settings</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">timeout</span><span class="kw">:</span><span class="at"> </span><span class="dv">30</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">retries</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">server1</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">&lt;&lt;</span><span class="kw">:</span><span class="at"> </span><span class="ot">*default_settings</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> server1</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">server2</span><span class="kw">:</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">&lt;&lt;</span><span class="kw">:</span><span class="at"> </span><span class="ot">*default_settings</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> server2</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">retries</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>json</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="json"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"default"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timeout"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"retries"</span><span class="fu">:</span> <span class="dv">5</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"server1"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timeout"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"retries"</span><span class="fu">:</span> <span class="dv">5</span><span class="fu">,</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"server1"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"server2"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"timeout"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"retries"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"server2"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="long-texte" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="long-texte"><span class="header-section-number">3.5</span> Long texte</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="yaml"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># En conservant les retours à la ligne</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fable</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  Maître Corbeau, sur un arbre perché,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  Tenait en son bec un fromage.</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  Maître Renard, par l'odeur alléché,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  Lui tint à peu près ce langage :</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  "Hé ! bonjour, Monsieur du Corbeau.</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  Que vous êtes joli ! que vous me semblez beau !</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  Sans mentir, si votre ramage</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  Se rapporte à votre plumage,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  Vous êtes le Phénix des hôtes de ces bois."</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  À ces mots le Corbeau ne se sent pas de joie ;</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  Et pour montrer sa belle voix,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  Il ouvre un large bec, laisse tomber sa proie.</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  Le Renard s'en saisit, et dit : "Mon bon Monsieur,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  Apprenez que tout flatteur</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  Vit aux dépens de celui qui l'écoute :</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  Cette leçon vaut bien un fromage, sans doute."</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  Le Corbeau honteux et confus</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  Jura, mais un peu tard, qu'on ne l'y prendrait plus.</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co"># En supprimant les retours à la ligne</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="fu">choixpeau</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  Les nouveaux élèves de Poudlard sont répartis en quatre maisons : Gryffondor</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  pour les courageux, Poufsouffle pour les travailleurs, Serdaigle pour les</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  intelligents, Serpentard pour les ambitieux. Le Choixpeau magique, qui </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  s'occupe de la répartition, hésite sur la meilleure maison pour Harry. </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  Comme Harry a entendu dire que les mages noirs venaient tous de Serpentard,</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  il demande à aller ailleurs, et le Choixpeau l'envoie à Gryffondor, avec </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  Ron et Hermione. Albus Dumbledore, le directeur, prévient les élèves qu’ils</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  ne doivent pas aller dans la Forêt interdite, ni dans le couloir du deuxième</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  étage.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
-Historique des modifications de Rapport.tex
-Date         Heure   Auteur      Message commit
-----         -----   ------      --------------
-2022.05.29   23h58   bianca      "Version finale"
-2022.05.29   23h40   archibald   "j'avais oublié l'intro"
-2022.05.29   21h32   tryphon     "ajout partie 2"
-2022.05.29   20h25   bianca      "v1.1"
-2022.05.29   20h12   tryphon     "Création du rapport"</code></pre>
-<p>Git permet de créer des points de sauvegardes (<code>commit</code>). Ainsi pour chaque fichier il est possible de consulter une version précédente et éventuellement de revenir en arrière en cas d’erreur.</p>
-</section>
-<section id="principe-général-de-git" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="principe-général-de-git"><span class="header-section-number">1.3</span> Principe général de Git</h3>
-<ul>
-<li>Avec Git, vous allez avoir plusieurs dépôts de fichiers
-<ul>
-<li>un dépôt commun (dépôt distant)</li>
-<li>un dépôt par contributeur (dépôts locaux)</li>
-</ul></li>
-<li>Git va aider synchroniser ces dépôts
-<ul>
-<li>la synchronisation n’est pas automatique</li>
-<li>c’est à vous de dire quand vous voulez le faire avec des commandes git</li>
-</ul></li>
-</ul>
-</section>
-<section id="exemples" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="exemples"><span class="header-section-number">1.4</span> Exemples</h3>
-<section id="exemple-1" class="level4">
-<h4 class="anchored" data-anchor-id="exemple-1">Exemple 1</h4>
-<ul>
-<li>Si sur le dépôt distant, le fichier <code>soleil.txt</code> a été créé par une autre personne</li>
-<li>La commande <code>git pull</code> permet de mettre à jour son dépôt local</li>
-<li>Le fichier <code>soleil.txt</code> apparait sur votre dépôt local</li>
-</ul>
-</section>
-<section id="exemple-2" class="level4">
-<h4 class="anchored" data-anchor-id="exemple-2">Exemple 2</h4>
-<ul>
-<li>En local, vous avez créé le fichier <code>temple.py</code> et modifié le fichier <code>soleil.txt</code></li>
-<li>Faites <code>git add .</code> pour les faire reconnaitre par Git</li>
-<li>Créez un point de sauvegarde avec la commande <code>git commit</code></li>
-<li>Puis, la commande <code>git push</code> permet de partager cette nouvelle version sur le dépôt distant</li>
-<li>Sur le dépôt distant, les 2 fichiers seront créés ou mis à jour</li>
-</ul>
-<p>Pour gérer les versions, Git utilise des points de sauvegarde appelés <code>commits</code>. Grace à cela, il est possible de consulter les versions antérieures des fichiers.</p>
-</section>
-</section>
-<section id="les-5-commandes-quil-faudra-retenir" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="les-5-commandes-quil-faudra-retenir"><span class="header-section-number">1.5</span> Les 5 commandes qu’il faudra retenir</h3>
-<ul>
-<li><code>git status</code> : voir où l’on en est</li>
-<li><code>git add</code> : ajouter de nouveaux fichiers dans le dépôt</li>
-<li><code>git commit</code> : créer un point de sauvegarde</li>
-<li><code>git pull</code> : mettre à jour son dépôt local en synchronisant avec le dépôt distant</li>
-<li><code>git push</code> : mettre à jour le dépôt distant avec les modifications faites en local</li>
-</ul>
-</section>
-<section id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="schéma-simplifié-des-liens-entre-dépôt-local-et-dépôt-distant"><span class="header-section-number">1.6</span> Schéma simplifié des liens entre dépôt local et dépôt distant</h3>
-<p><img src="img/git-repo.png" class="img-fluid"></p>
-<ul>
-<li>Git distingue plusieurs états de votre dépôt local mais vous pouvez considérer que les 3 dépôts de gauche forment votre dépôt local</li>
-<li>Comme visible sur le schéma la commande <code>git commit -a</code> permet de combiner les 2 commandes <code>add</code> et <code>commit</code> en une seule</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="paramètrer-git" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="paramètrer-git"><span class="header-section-number">2</span> Paramètrer Git</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Le paramètrage de Git n’est pas très drôle et peut faire un peu peur. Mais pas de panique, c’est à faire une et une seule fois sur votre machine !</p>
-</div>
-</div>
-<section id="configuration-git-bash" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="configuration-git-bash"><span class="header-section-number">2.1</span> Configuration Git Bash</h3>
-<p>Git Bash est un Terminal où l’on peut écrire des commandes git.</p>
-<p>Ouvrir <code>Git Bash</code> et entrer une à une les commandes suivantes</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Prenom Nom"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email prenom.nom@eleve.ensai.fr</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La dernière commande permet de vérifier que les 2 attributs <code>user.name</code> et <code>user.email</code> sont bien renseignés</p>
-</section>
-<section id="clé-ssh" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="clé-ssh"><span class="header-section-number">2.2</span> Clé SSH</h3>
-<p>Afin de pouvoir faire des mises à jour sur le dépôt distant, il faut que votre machine (locale) soit reconnue. Vous devez donc fournir une clé d’authentification à GitLab.</p>
-<p>Toujours dans Git Bash, lancer une à une ces 2 commandes. La première commande permet de générer une clé publique SSH. La seconde permet de récupérer la valeur de cette clé.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 4096 <span class="at">-C</span> <span class="st">"prenom.nom@eleve.ensai.fr"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## tapez ENTREE à chaque question</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Récupérez le contenu de la clé avec l'une de ces 2 commandes</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">$HOME</span>/.ssh/id_rsa.pub </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">## ou avec</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /c/Users/idxxxx/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>La commande cat renvoie tout le contenu de ce fichier
-<ul>
-<li>En cas d’échec, vous pouvez aller dans le dossier caché <code>C:/Users/idxxxx/.ssh/</code> et ouvrir avec Notepad le fichier <code>id_rsa.pub</code></li>
-<li>si vous ne trouvez toujours pas le fichier <code>id_rsa.pub</code>, retournez voir le résultat de la commande <code>ssh-keygen</code>, il est écrit dans quel dossier la clé a été générée</li>
-</ul></li>
-<li>Sélectionner ce contenu et le copier dans notepad pour la prochaine étape</li>
-</ul>
-<section id="créez-une-copie-de-votre-clé" class="level4">
-<h4 class="anchored" data-anchor-id="créez-une-copie-de-votre-clé">Créez une copie de votre clé</h4>
-<p>Il arrive que le dossier <code>C:/Users/idxxxx/.ssh</code> soit supprimé.<br>
-Il est interessant d’avoir une copie de cette clé pour la restaurer si besoin.</p>
-<ul>
-<li><code>cp -r $HOME/.ssh /p</code> pour copier le dossier dans le disque P:</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="créer-un-compte-sur-gitlab-github-ou-autre" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="créer-un-compte-sur-gitlab-github-ou-autre"><span class="header-section-number">2.3</span> Créer un compte sur GitLab, GitHub ou autre</h3>
-<ul>
-<li><a href="https://gitlab.com/gitlab-org/gitlab" class="external" target="blank">GitLab</a> est le site qui permet d’héberger le dépôt distant du code (<a href="https://gitlab.com/users/sign_up" class="external" target="blank">Créer un compte</a> )</li>
-<li><a href="https://github.com/" class="external" target="blank">GitHub</a></li>
-</ul>
-</section>
-<section id="déclarer-votre-clé-publique-ssh-à-gitlab" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="déclarer-votre-clé-publique-ssh-à-gitlab"><span class="header-section-number">2.4</span> Déclarer votre clé publique SSH à GitLab</h3>
-<ul>
-<li>Dans GitLab, aller dans <code>Preferences</code> (en haut à droite) puis dans <a href="https://gitlab.com/-/profile/keys" class="external" target="blank">SSH Keys</a>
-<ul>
-<li>Key : coller le résultat de l’étape 2</li>
-<li>Add SSH Key</li>
-</ul></li>
-<li>Dans GitHub, aller dans Paramètres, puis <a href="https://github.com/settings/keys" class="external" target="blank">SSH and GPG Keys</a>
-<ul>
-<li>New SSh key</li>
-<li>donnez un titre et coller dans <code>Key</code> le résultat de l’étape 2</li>
-</ul></li>
-</ul>
-<p><span class="emoji" data-emoji="rainbow">🌈</span> Bravo le paramètrage est terminé <span class="emoji" data-emoji="confetti_ball">🎊</span></p>
-</section>
-<section id="en-cas-derreurs" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="en-cas-derreurs"><span class="header-section-number">2.5</span> En cas d’erreurs</h3>
-<section id="the-authenticity-of-host-xxx-cant-be-established" class="level4">
-<h4 class="anchored" data-anchor-id="the-authenticity-of-host-xxx-cant-be-established">The authenticity of host xxx can’t be established</h4>
-<pre><code>The authenticity of host 'github.com (140.82.121.4)' can't be established.  
-ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
-git@github.com: Permission denied (publickey).
-fatal: Could not read from remote repository.    
 
-Please make sure you have the correct access rights
-and the repository exists.</code></pre>
-<ol type="1">
-<li>Vérifiez que le dossier <code>C:/users/idxxxx/.ssh</code> existe et contient les fichiers <code>id_rsa</code> et <code>id_rsa.pub</code>. Si oui passer à l’étape 2.</li>
-</ol>
-<p>Si non, recopiez votre clé dans <code>C:/users/idxxxx/.ssh</code> à partir de la sauvegarde que vous avez faite dans <code>P:/.ssh</code> lors de la création de la clé. Pour automatiser ceci, vous pouvez créer un script <code>restore_ssh.bat</code> sur le bureau contenant le code ci-dessous :</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="st">"source=P:\.ssh"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="st">"destination=%HOME%\.ssh"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">xcopy</span> /E /H /I /Y <span class="st">"%source%"</span> <span class="st">"%destination%"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pause</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Vérifiez que la clé <code>id_rsa.pub</code> est bien déclarée dans GitLab ou GitHub. Si le problème persiste, regénérez une nouvelle clé ssh et déclarez là dans GitHub ou GitLab.</li>
-</ol>
-
-
-</section>
 </section>
 </section>
 
@@ -1109,7 +1105,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/yaml.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

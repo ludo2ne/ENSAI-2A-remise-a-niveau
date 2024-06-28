@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.4.557">
 
   <meta name="author" content="Ludovic Deneuville">
   <title>Remise à Niveau Informatique - Bases de Données Relationnelles et SQL</title>
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -564,6 +564,7 @@ Ludovic Deneuville
 <li>NOT NULL : obligatoire</li>
 <li>UNIQUE : distinctes, mais n’empêche pas les NULL</li>
 </ul>
+<p>Code bien aligné, Mots clés en majuscule</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -612,7 +613,7 @@ Ludovic Deneuville
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MCD</a></li><li><a href="#tabset-1-2">Données</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1">
-<p>Modèle Conceptuel de Données (UML)</p>
+<p>Modèle Physique des Données (UML)</p>
 <div style="background-color: #199edd;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -2122,11 +2123,27 @@ Ludovic Deneuville
 <span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="st">'Salut'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
+<section id="autres-notions-non-abordées" class="title-slide slide level2 smaller center">
+<h2>Autres notions non abordées</h2>
+<ul>
+<li>ACID, COMMIT, ROLLBACK</li>
+<li>vues, snapshot</li>
+<li>index</li>
+<li>droits : grant / revoke</li>
+<li>WITH (Common Table Expressions)</li>
+<li>UNION, INTERSECT, EXCEPT</li>
+<li>DISTINCT</li>
+<li>EXISTS</li>
+<li>SEQUENCE</li>
+</ul>
+</section>
+
 <section id="bibliographie" class="title-slide slide level2 center">
 <h2>Bibliographie</h2>
 <ul>
-<li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" class="uri">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
-<li><a href="https://sql.sh/" class="uri">https://sql.sh/</a></li>
+<li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" target="_blank">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
+<li><a href="https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/" target="_blank">https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/</a></li>
+<li><a href="https://sql.sh/" target="_blank">https://sql.sh/</a></li>
 </ul>
 </section>
 

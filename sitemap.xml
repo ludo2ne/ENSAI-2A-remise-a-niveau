@@ -2,82 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/index.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/sql/sql-cours.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/sql/sql-cours-slides.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/python-notebooks.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/05-POO-introduction.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/03-tests-et-boucles.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/01-types-et-variables.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/VSCode.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/Git.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/UML/UML.html</loc>
-    <lastmod>2024-06-20T14:44:06.543Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/POO/POO.html</loc>
-    <lastmod>2024-06-20T14:44:06.543Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/Git TP.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/VM.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/outils.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/VM.html</loc>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/POO/POO.html</loc>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/UML/UML.html</loc>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/VSCode.html</loc>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/outils/yaml.html</loc>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/02-listes-et-dictionnaires.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/04-fonctions.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.271Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/python-cours-slides.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/python/python-cours.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/sql/DBeaver.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
   <url>
     <loc>https://ludo2ne.github.io/ENSAI-2A-remise-a-niveau/docs/sql/sql-exercice.html</loc>
-    <lastmod>2024-06-20T14:44:06.547Z</lastmod>
+    <lastmod>2024-06-28T14:43:54.275Z</lastmod>
   </url>
 </urlset>
