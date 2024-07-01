@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Notebooks pour découvrir et apprendre Python">
+<meta name="description" content="Introduction à LaTeX">
 
-<title>Remise à Niveau Informatique - Notebooks Python</title>
+<title>Remise à Niveau Informatique - LaTeX</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -213,15 +276,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#les-notebooks" id="toc-les-notebooks" class="nav-link active" data-scroll-target="#les-notebooks"><span class="header-section-number">1</span> Les Notebooks</a></li>
-  <li><a href="#utiliser-un-notebook" id="toc-utiliser-un-notebook" class="nav-link" data-scroll-target="#utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</a>
+  <li><a href="#quest-ce-que-latex" id="toc-quest-ce-que-latex" class="nav-link active" data-scroll-target="#quest-ce-que-latex"><span class="header-section-number">1</span> Qu’est-ce que LaTeX ?</a></li>
+  <li><a href="#pourquoi-utiliser-latex" id="toc-pourquoi-utiliser-latex" class="nav-link" data-scroll-target="#pourquoi-utiliser-latex"><span class="header-section-number">2</span> Pourquoi utiliser LaTeX ?</a></li>
+  <li><a href="#utiliser-latex" id="toc-utiliser-latex" class="nav-link" data-scroll-target="#utiliser-latex"><span class="header-section-number">3</span> Utiliser LaTeX</a>
   <ul class="collapse">
-  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</a></li>
+  <li><a href="#mon-premier-document" id="toc-mon-premier-document" class="nav-link" data-scroll-target="#mon-premier-document"><span class="header-section-number">3.1</span> Mon premier document</a></li>
   </ul></li>
-  <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</a></li>
-  <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</a></li>
+  <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections"><span class="header-section-number">4</span> Sections</a></li>
+  <li><a href="#mise-en-formes" id="toc-mise-en-formes" class="nav-link" data-scroll-target="#mise-en-formes"><span class="header-section-number">5</span> Mise en formes</a>
+  <ul class="collapse">
+  <li><a href="#autres-mises-en-forme" id="toc-autres-mises-en-forme" class="nav-link" data-scroll-target="#autres-mises-en-forme"><span class="header-section-number">5.1</span> Autres mises en forme</a></li>
+  </ul></li>
+  <li><a href="#listes" id="toc-listes" class="nav-link" data-scroll-target="#listes"><span class="header-section-number">6</span> Listes</a>
+  <ul class="collapse">
+  <li><a href="#non-ordonnée" id="toc-non-ordonnée" class="nav-link" data-scroll-target="#non-ordonnée"><span class="header-section-number">6.1</span> Non ordonnée</a></li>
+  <li><a href="#ordonnée" id="toc-ordonnée" class="nav-link" data-scroll-target="#ordonnée"><span class="header-section-number">6.2</span> Ordonnée</a></li>
+  </ul></li>
+  <li><a href="#tableaux" id="toc-tableaux" class="nav-link" data-scroll-target="#tableaux"><span class="header-section-number">7</span> Tableaux</a></li>
+  <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images"><span class="header-section-number">8</span> Images</a></li>
+  <li><a href="#formules-matématiques" id="toc-formules-matématiques" class="nav-link" data-scroll-target="#formules-matématiques"><span class="header-section-number">9</span> Formules matématiques</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/LaTeX.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -232,12 +307,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notebooks Python</h1>
+<h1 class="title">LaTeX</h1>
 </div>
 
 <div>
   <div class="description">
-    Notebooks pour découvrir et apprendre Python
+    Introduction à LaTeX
   </div>
 </div>
 
@@ -260,199 +335,286 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="les-notebooks" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="les-notebooks"><span class="header-section-number">1</span> Les Notebooks</h2>
-<p>Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="../../docs/python/01-types-et-variables.html" target="_blank">Les types et variables</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/02-listes-et-dictionnaires.html" target="_blank">Les listes et dictionnaires</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/03-tests-et-boucles.html" target="_blank">Les boucles</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/04-fonctions.html" target="_blank">Les fonctions</a></label></li>
-<li><label><input type="checkbox"><a href="../../docs/python/05-POO-introduction.html" target="_blank">Introduction à la Programmation Orientée Objet</a></label></li>
-</ul>
-<p>Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :</p>
+<section id="quest-ce-que-latex" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quest-ce-que-latex"><span class="header-section-number">1</span> Qu’est-ce que LaTeX ?</h2>
+<p><a href="https://www.latex-project.org/" target="_blank">LaTeX</a>, créé par Leslie Lamport en 1984, est un langage de programmation conçu pour la mise en forme de documents. Il est très utilisé dans les milieux académiques et scientifiques pour la rédaction de textes complexes, notamment des articles, des rapports, des thèses et des présentations. LaTeX permet de créer des documents de haute qualité typographique grâce à sa gestion avancée des formules mathématiques, des tableaux, des figures et des références bibliographiques.</p>
+<p>LaTeX reste incontournable pour les documents nécessitant une mise en page complexe et des formules mathématiques avancées, mais il est supplanté par <a href="https://commonmark.org/help/" target="_blank">Markdown</a> beaucoup plus utilisé pour des tâches plus simples. Markdown est souvent préféré pour la rédaction rapide de notes, de documents collaboratifs, et de contenus web, en raison de sa simplicité et de sa flexibilité.</p>
+</section>
+<section id="pourquoi-utiliser-latex" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="pourquoi-utiliser-latex"><span class="header-section-number">2</span> Pourquoi utiliser LaTeX ?</h2>
 <ul>
-<li>Formation <a href="https://github.com/InseeFrLab/formation-python-initiation"><strong>Initiation à Python</strong></a> du SSP Cloud INSEE</li>
-<li>Cours de Python dispensés à l’ENSAE par <a href="https://pythonds.linogaliana.fr/rappels2a/">Lino Galiana</a> et <a href="http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html">Xavier Dupré</a></li>
-<li><a href="https://python.sdv.univ-paris-diderot.fr/">Cours de Python</a> de l’Université Paris Cité</li>
+<li><strong>Qualité typographique</strong> : LaTeX produit des documents avec une mise en page professionnelle, idéale pour les publications académiques.</li>
+<li><strong>Gestion avancée des formules mathématiques</strong> : LaTeX excelle dans la présentation des formules et des équations complexes.</li>
+<li><strong>Automatisation</strong> : LaTeX automatise de nombreuses tâches, comme la numérotation des sections, la gestion des références croisées et la création de bibliographies.</li>
+<li><strong>Flexibilité et extensibilité</strong> : Avec une vaste bibliothèque de packages, LaTeX peut être personnalisé pour répondre à une grande variété de besoins spécifiques.</li>
+<li><strong>Stabilité et reproductibilité</strong> : Les documents LaTeX sont textuels et peuvent être versionnés facilement avec des outils comme Git, assurant une gestion précise des versions et des collaborations.</li>
+<li><strong>Support pour les références et citations</strong> : LaTeX gère efficacement les références bibliographiques et les citations avec des outils comme BibTeX et BibLaTeX.</li>
 </ul>
 </section>
-<section id="utiliser-un-notebook" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</h2>
-<div class="callout callout-style-default callout-important callout-titled" title="Mode opératoire">
+<section id="utiliser-latex" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="utiliser-latex"><span class="header-section-number">3</span> Utiliser LaTeX</h2>
+<p>Pour utiliser LaTeX, vous avez principalement deux options :</p>
+<ul>
+<li>en ligne via des plateformes dédiées : <a href="https://www.overleaf.com/" target="_blank">Overleaf</a>…</li>
+<li>en installant un logiciel sur votre ordinateur : <a href="https://www.xm1math.net/texmaker/" target="_blank">Texmaker</a>, <a href="https://www.texstudio.org/" target="_blank">TeXstudio</a>…</li>
+</ul>
+<p>Les interfaces pour travailler avec LaTeX sont souvent divisées en deux parties distinctes : d’un côté, l’éditeur de code LaTeX et de l’autre, la vue de mise en forme du document.</p>
+<section id="mon-premier-document" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="mon-premier-document"><span class="header-section-number">3.1</span> Mon premier document</h3>
+<p>Voici un exemple simple illustrant les étapes essentielles pour rédiger un document LaTeX :</p>
+<ol type="1">
+<li>Définissez le type de document (article, report, book, slide…) et la taille de police par défaut</li>
+<li>Listez des packages nécessaires : de très nombreuses fonctionnalités nécessitent l’utilisation d’un package</li>
+<li>Définissez les métadonnées du document telles que le titre, l’auteur et la date</li>
+<li>Écrivez votre contenu principal entre <code>\begin{document}</code> et <code>\end{document}</code></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[11pt]{<span class="ex">article</span>}     <span class="co">% Article avec une taille de police à 11 par défaut</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Imports de packages</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[french]{<span class="ex">babel</span>}        <span class="co">% typographie française</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[T1]{<span class="ex">fontenc</span>}          <span class="co">% type d'encodage pour les polices de caractères</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}             <span class="co">% pour insérer des images</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath, amssymb</span>}     <span class="co">% symboles mathematiques</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">enumerate, enumitem</span>}  <span class="co">% pour les listes</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">% Métadonnées</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\title</span>{An awesome title}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\author</span>{An awesome author}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\date</span>{September 2024}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">% Début du document</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span>                       <span class="co">%% pour afficher titre, auteur et date</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>An awesome content.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sections" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sections"><span class="header-section-number">4</span> Sections</h2>
+<p>Vous pouvez découper votre document en sections, sous-sections et sous-sous-sections qui seront automatiquement numérotées.</p>
+<p>Il est possible de ne pas numéroter certaines sections (utile par exemple pour introduction et conslusion).</p>
+<p>Vous pouvez inclure une table des matières.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\tableofcontents</span>                   <span class="co">% Table des matières</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\newpage</span>                           <span class="co">% Saut de page</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introduction}            <span class="co">% avec le *, la section n'est pas numérotée</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Introduction} <span class="co">% Pour ajouter cette section non numérotée à la Table des matières</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>intro content</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{First Section}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>content of first section</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Second Section}</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>content of second section</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{First Subsection of second section}</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Content of subsection 2.1</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{subsubsection}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Content of subsection 2.1.1</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="mise-en-formes" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="mise-en-formes"><span class="header-section-number">5</span> Mise en formes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Exemple d’utilisation</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\textbf{Texte en gras}</code></td>
+<td><strong>Texte en gras</strong></td>
+</tr>
+<tr class="even">
+<td><code>\textit{Texte en italique}</code></td>
+<td><em>Texte en italique</em></td>
+</tr>
+<tr class="odd">
+<td><code>\underline{Texte souligné}</code></td>
+<td><u>Texte souligné</u></td>
+</tr>
+<tr class="even">
+<td><code>\texttt{Texte en monospace}</code></td>
+<td><code>Texte en monospace</code></td>
+</tr>
+</tbody>
+</table>
+<section id="autres-mises-en-forme" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="autres-mises-en-forme"><span class="header-section-number">5.1</span> Autres mises en forme</h3>
+<ul>
+<li><code>\textsc{Texte en petites majuscules}</code></li>
+<li><code>\textsuperscript{Texte en exposant}</code></li>
+<li><code>\textsubscript{Texte en indice}</code></li>
+<li><code>\tiny{Texte minuscule}</code></li>
+<li><code>\large{Texte grand}</code></li>
+<li><code>\Huge{Texte géant}</code></li>
+</ul>
+</section>
+</section>
+<section id="listes" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="listes"><span class="header-section-number">6</span> Listes</h2>
+<section id="non-ordonnée" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="non-ordonnée"><span class="header-section-number">6.1</span> Non ordonnée</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> un élément</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> un autre élément </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ordonnée" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="ordonnée"><span class="header-section-number">6.2</span> Ordonnée</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> élément 1</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> élément 2</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="tableaux" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="tableaux"><span class="header-section-number">7</span> Tableaux</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Mode opératoire
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Commencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus</li>
-<li>Téléchargez sur votre machine le fichier <code>.ipynb</code></li>
-<li>Connectez-vous à l’un des services proposés ci-dessous</li>
-<li>Uploadez sur ce service le fichier <code>.ipynb</code></li>
-</ol>
+<p>La syntaxe LaTeX pour réaliser un tableau est peu intuitive et très fastidieuse. Il est vivement recommandé de créer votre tableau dans un tableur calc et d’utiliser un outil en ligne pour le convertir en code LaTeX.</p>
+<p>Exemple d’outil : <a href="https://tableconvert.com/excel-to-latex" target="_blank">https://tableconvert.com/excel-to-latex</a></p>
 </div>
 </div>
-<p>Vous avez plusieurs possibilités pour lancer les notebooks :</p>
-<ul>
-<li><a href="https://jupyther.ensai.fr/" target="_blank">Un cluster Jupyter</a> de l’ENSAI <span class="emoji" data-emoji="arrow_right">➡️</span> si vous avez vos idep et mot de passe</li>
-<li>le datalab <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a> <span class="emoji" data-emoji="arrow_right">➡️</span> vous pouvez créer un compte avec votre mail ENSAI</li>
-</ul>
-<p>Si vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :</p>
-<ul>
-<li><a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
-<li><a href="https://www.kaggle.com/code" target="_blank">Kaggle notebooks</a></li>
-<li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
-</ul>
-<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Cluster ENSAI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">SSPCloud</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Jupyter Lab online</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Colab et Kaggle</a></li></ul>
-<div class="tab-content nav-pills">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ul>
-<li>Connectez-vous au <a href="https://jupyther.ensai.fr/" target="_blank">cluster Jupyter</a> avec id et mot de passe</li>
-<li>Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span></li>
-<li>Dans la colonne de gauche :
-<ul>
-<li>l’icone en forme de dossier permet d’explorer les fichiers</li>
-<li>l’icone en forme de liste permet d’afficher la table des matières</li>
-</ul></li>
-<li>Le champ <code>Code</code> permet d’indiquer si la cellule attend du code python ou du texte (Markdown)</li>
-</ul>
-<p><img src="img/jupyter.PNG" class="img-fluid"></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li>Connectez-vous au <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a></li>
-<li>Allez dans le menu <em>Catalogue de services</em></li>
-<li>Lancer <code>Jupyter-python</code></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li>Allez sur la page <a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
-</ul>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<ul>
-<li>Connectez-vous au service</li>
-<li>Importez le notebook (Fichier &gt; Importer le notebook)</li>
-</ul>
-</div>
-</div>
-</div>
-<section id="types-de-cellules" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</h3>
-<p>Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton <code>+</code> dans la barre d’outils.<br>
-Il existe deux types de cellules principaux :</p>
-<ul>
-<li>les cellules de code (où vous écrivez et exécutez du code Python)</li>
-<li>les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Le langage Mardown">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="sourceCode" id="cb5"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span>                               <span class="co">% Table centrée</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{Tableau des départements}       <span class="co">% Titre du tableau</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">tab_dep</span>}                          <span class="co">% Label pour référencer le tableau</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\vspace</span>{2mm}                             <span class="co">% Ajout d'un espace vertical</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c||l|l|r|}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\textbf</span>{Numéro} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Département} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Chef Lieu} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Nb habitants} <span class="fu">\\</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span> <span class="fu">\hline</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        01 <span class="op">&amp;</span> Ain                     <span class="op">&amp;</span> Bourg-en-Bresse <span class="op">&amp;</span> 650 000 <span class="fu">\\</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        02 <span class="op">&amp;</span> Aisne                   <span class="op">&amp;</span> Laon            <span class="op">&amp;</span> 535 000 <span class="fu">\\</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        03 <span class="op">&amp;</span> Allier                  <span class="op">&amp;</span> Moulins         <span class="op">&amp;</span> 339 000 <span class="fu">\\</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        04 <span class="op">&amp;</span> Alpes-de-Haute-Provence <span class="op">&amp;</span> Digne-les-Bains <span class="op">&amp;</span> 166 000 <span class="fu">\\</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        05 <span class="op">&amp;</span> Hautes-Alpes            <span class="op">&amp;</span> Gap             <span class="op">&amp;</span> 140 000 <span class="fu">\\</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Essayons tout de même d’expliquer la syntaxe ci-dessus :</p>
+<p>La commande <code>\begin{tabular}{|c||l|l|r|}</code> permet de définir les colonnes et leurs alignements :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbole</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>c</code></td>
+<td>Colonne centrée</td>
+</tr>
+<tr class="even">
+<td><code>l</code></td>
+<td>Colonne alignée à gauche</td>
+</tr>
+<tr class="odd">
+<td><code>r</code></td>
+<td>Colonne alignée à droite</td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td>Trait vertical</td>
+</tr>
+<tr class="odd">
+<td><code>||</code></td>
+<td>Double trait vertical</td>
+</tr>
+</tbody>
+</table>
+<p>Pour définir les lignes et le contenu :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbole</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\hline</code></td>
+<td>Ligne horizontale dans le tableau</td>
+</tr>
+<tr class="even">
+<td><code>&amp;</code></td>
+<td>Pour séparer les colonnes dans un tableau</td>
+</tr>
+<tr class="odd">
+<td><code>\\</code></td>
+<td>Fin d’une ligne dans un tableau</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="images" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="images"><span class="header-section-number">8</span> Images</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">\includegraphics</span>[width=0.75<span class="fu">\textwidth</span>]{<span class="ex">mesh</span>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{A nice plot.}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">fig:mesh1</span>}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Le langage Mardown
+Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>C’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).</p>
-<p>De très nombreuses ressources sont disponibles sur internet.</p>
-<p>Quelques exemples :</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Code</th>
-<th>Mise en forme</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>**texte en gras**</code></td>
-<td><strong>texte en gras</strong></td>
-</tr>
-<tr class="even">
-<td><code>*texte en italique*</code></td>
-<td><em>texte en italique</em></td>
-</tr>
-<tr class="odd">
-<td><code># Titre de niveau 1</code></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><code>## Titre de niveau 2</code></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><code>- Élement de liste à puces</code></td>
-<td>- Élement de liste à puces</td>
-</tr>
-</tbody>
-</table>
+<p>Vous pouvez utiliser la commande <code>\ref{}</code> pour faire référence à la figure via son label.</p>
+<p>Exemple : “Comme vous pouvez le remarquer dans la figure <code>\ref{fig:mesh1}</code>”</p>
 </div>
 </div>
+</section>
+<section id="formules-matématiques" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="formules-matématiques"><span class="header-section-number">9</span> Formules matématiques</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Le type de cellule souhaité est modifiable dans la barre d’outils.</p>
-</section>
-</section>
-<section id="commandes-utiles" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 75%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Commande</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>SHIFT + ENTER</code></td>
-<td>Exécuter une cellule et passer à la suivante.</td>
-</tr>
-<tr class="even">
-<td><code>CTRL + ENTER</code></td>
-<td>Exécuter une cellule sans passer à la suivante.</td>
-</tr>
-<tr class="odd">
-<td><code>ESC</code></td>
-<td>Passer en mode commande (les bordures de cellule deviennent bleues).</td>
-</tr>
-<tr class="even">
-<td><code>ENTER</code></td>
-<td>Passer en mode édition (vous pouvez modifier le contenu de la cellule).</td>
-</tr>
-<tr class="odd">
-<td><code>A</code></td>
-<td>Insérer une cellule au-dessus de la cellule courante.</td>
-</tr>
-<tr class="even">
-<td><code>B</code></td>
-<td>Insérer une cellule en dessous de la cellule courante.</td>
-</tr>
-<tr class="odd">
-<td><code>D + D</code></td>
-<td>Supprimer une cellule.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="ressources-utiles" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</h2>
-<p>Vous trouverez plus d’informations sur les notebooks, sur le <a href="https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter" target="_blank">site de la formation INSEE d’initiation à Python</a>.</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous pouvez insérer des formules :</p>
+<ul>
+<li>à l’intérieur d’un texte avec un seul <code>$</code></li>
+<li>avec retour à la ligne avec deux <code>$$</code></li>
+</ul>
+</div>
+</div>
+<p>La formule de la variance : <span class="math display">\[V = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \overline{x})^{2}\]</span></p>
+<p>La formule de Koenig-Huygens : <span class="math inline">\(\mathbb{V}(X) = \mathbb{E}(X^{2}) - (\mathbb{E}(X))^{2}\)</span>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>La formule de la variance : <span class="ss">$$V = </span><span class="sc">\frac</span><span class="ss">{1}{n} </span><span class="sc">\sum</span><span class="ss">_{i=1}^{n} (x_{i} - </span><span class="sc">\overline</span><span class="ss">{x})^{2}$$</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>La formule de Koenig-Huygens : <span class="ss">$</span><span class="sc">\mathbb</span><span class="ss">{V}(X) = </span><span class="sc">\mathbb</span><span class="ss">{E}(X^{2}) - (</span><span class="sc">\mathbb</span><span class="ss">{E}(X))^{2}$</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1019,7 +1181,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/python/python-notebooks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/LaTeX.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

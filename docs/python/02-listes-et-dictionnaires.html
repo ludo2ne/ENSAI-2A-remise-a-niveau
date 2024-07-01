@@ -209,8 +209,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/outils/yaml.html">
+    <a class="dropdown-item" href="../../docs/outils/YAML.qmd">
  <span class="dropdown-text">YAML</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
+ <span class="dropdown-text">LaTeX</span></a>
   </li>  
     </ul>
   </li>
@@ -337,35 +341,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="créer-une-liste" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="créer-une-liste"><span class="header-section-number">2.1</span> Créer une liste</h3>
-<div id="b2c3d523" class="cell" data-execution_count="1">
+<div id="f10279ef" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste d'entiers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">22</span>, <span class="dv">29</span>, <span class="dv">35</span>, <span class="dv">56</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e682a979" class="cell" data-execution_count="2">
+<div id="85ab6b65" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b22eaf28" class="cell" data-execution_count="3">
+<div id="86eaa0df" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste mixte</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="st">"bonjour"</span>, <span class="dv">20</span>, <span class="va">True</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f4400def" class="cell" data-execution_count="4">
+<div id="a2b8e746" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concaténation</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1a787afd" class="cell" data-execution_count="5">
+<div id="e0d14045" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Répétition</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Il existe de nombreuses autres possibilités pour créer des listes.</p>
-<div id="b5391c8b" class="cell" data-execution_count="6">
+<div id="e14b0883" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="14787abb" class="cell" data-execution_count="7">
+<div id="014d0cdc" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5b910aa3" class="cell" data-execution_count="8">
+<div id="e3b94c3d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En séparant une chaîne de caractères</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">"bleu;blanc;rouge;vert;jaune"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c.split(<span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -373,49 +377,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="méthodes-utiles" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="méthodes-utiles"><span class="header-section-number">2.2</span> Méthodes utiles</h3>
-<div id="574d634d" class="cell" data-execution_count="9">
+<div id="6480666b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre d'éléments</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7b3760d8" class="cell" data-execution_count="10">
+<div id="34770259" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Premier élément</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5f45a3b2" class="cell" data-execution_count="11">
+<div id="af06aa21" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dernier élément</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6f0553ff" class="cell" data-execution_count="12">
+<div id="2a0dde16" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tous les éléments à partir de la position 1</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ad862c60" class="cell" data-execution_count="13">
+<div id="e73d556d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tester si une valeur appartient à une liste</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span> <span class="kw">in</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3364689f" class="cell" data-execution_count="14">
+<div id="18f6822f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver la position d'un élément</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>a.index(<span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b9363cd6" class="cell" data-execution_count="15">
+<div id="77547c0a" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverser une liste (sans modifier la liste d'origine)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a[::-1] : "</span> <span class="op">+</span> <span class="bu">str</span>(a[::<span class="op">-</span><span class="dv">1</span>]))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a :       "</span> <span class="op">+</span> <span class="bu">str</span>(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="060328b7" class="cell" data-execution_count="16">
+<div id="6d0b940f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverser une liste (ici l'inversion est sauvegardée dans la variable **a** )</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>a.reverse()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e7a4de01" class="cell" data-execution_count="17">
+<div id="342cedad" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier une liste (sans modifier la liste d'origine)</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b1eb1985" class="cell" data-execution_count="18">
+<div id="025c3486" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Order décroissant</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(a, reverse<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3ac8fd3d" class="cell" data-execution_count="19">
+<div id="d89d0ad2" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trier une liste (en sauvegardant la modification dans la variable **a**)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Avant : "</span> <span class="op">+</span> <span class="bu">str</span>(a))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>a.sort()</span>
@@ -424,27 +428,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ajouter-modifier-et-supprimer" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="ajouter-modifier-et-supprimer"><span class="header-section-number">2.3</span> Ajouter, modifier et supprimer</h3>
-<div id="a64504e6" class="cell" data-execution_count="20">
+<div id="ce335df9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter à la fin</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>a.append(<span class="dv">44</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="acc74967" class="cell" data-execution_count="21">
+<div id="efab70fe" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Insérer à une position précise</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>a.insert(<span class="dv">2</span>, <span class="dv">88</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a9a40951" class="cell" data-execution_count="22">
+<div id="ccd192d7" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifier</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="220609b4" class="cell" data-execution_count="23">
+<div id="90849d60" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer par position</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>a.pop(<span class="dv">3</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8657eb3d" class="cell" data-execution_count="24">
+<div id="8b937a08" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer par valeur</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>a.remove(<span class="dv">44</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -459,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>suppression du dernier élément de <strong>copie</strong></li>
 <li>affichage de <strong>liste</strong></li>
 </ul>
-<div id="11a4344e" class="cell" data-execution_count="25">
+<div id="c65be878" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>liste2.pop()</span>
@@ -467,13 +471,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Nous pourrions nous attendre à ce que la variable <strong>liste</strong> ne soit pas modifiée et affiche <code>[1, 2, 3, 4]</code>.<br>
 Pourtant la variable <strong>liste2</strong> n’est pas une copie de <strong>liste</strong>, c’est simplement une autre manière d’appeler la même liste.</p>
-<div id="e475e5a6" class="cell" data-execution_count="26">
+<div id="ca89e8ce" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour créer une vraie copie qui sera distinct de l'original</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>copie <span class="op">=</span> <span class="bu">list</span>(liste)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>copie.append(<span class="dv">9</span>)</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>liste, copie</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ecc81e8a" class="cell" data-execution_count="27">
+<div id="32c3071c" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Autre possibilité pour copier</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> liste.copy()</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>cp.append(<span class="dv">8</span>)</span>
@@ -494,39 +498,39 @@ Pourtant la variable <strong>liste2</strong> n’est pas une copie de <strong>li
 </ul>
 <section id="créer-un-dictionnaire" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="créer-un-dictionnaire"><span class="header-section-number">3.1</span> Créer un dictionnaire</h3>
-<div id="ca46fa03" class="cell" data-execution_count="28">
+<div id="aa8dcbef" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ingredients <span class="op">=</span> {<span class="st">'sucre'</span>: <span class="st">'100g'</span>, <span class="st">'poire'</span>: <span class="dv">2</span>, <span class="st">'lait'</span>: <span class="st">'1L'</span>, <span class="st">'sel'</span>: <span class="va">True</span>}</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>ingredients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2263564a" class="cell" data-execution_count="29">
+<div id="9bfcd369" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(ingredients)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="74598b76" class="cell" data-execution_count="30">
+<div id="5c1a8e9f" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombre d'éléments</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(ingredients)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2786af48" class="cell" data-execution_count="31">
+<div id="3559958c" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recherche par clé</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ingredients[<span class="st">'lait'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4653f1c1" class="cell" data-execution_count="32">
+<div id="1a44d939" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recherche par clé - autre possibilité</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>ingredients.get(<span class="st">'lait'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ajouter-modifier-et-supprimer-1" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="ajouter-modifier-et-supprimer-1"><span class="header-section-number">3.2</span> Ajouter, modifier et supprimer</h3>
-<div id="e2d4346a" class="cell" data-execution_count="33">
+<div id="4eb03466" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter un élément</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>ingredients[<span class="st">'fraise'</span>] <span class="op">=</span>  <span class="st">'200g'</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>ingredients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="23746828" class="cell" data-execution_count="34">
+<div id="ebb33dd2" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifier</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>ingredients[<span class="st">'sucre'</span>] <span class="op">=</span>  <span class="st">'35g'</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>ingredients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="529e8521" class="cell" data-execution_count="35">
+<div id="9cc09c23" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer </span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>ingredients.pop(<span class="st">'lait'</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>ingredients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -534,15 +538,15 @@ Pourtant la variable <strong>liste2</strong> n’est pas une copie de <strong>li
 </section>
 <section id="méthodes-utiles-1" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="méthodes-utiles-1"><span class="header-section-number">3.3</span> Méthodes utiles</h3>
-<div id="426d3ec0" class="cell" data-execution_count="36">
+<div id="d58148a3" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des clés</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(ingredients.keys())      <span class="co"># idem : list(ingredients)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="623fb335" class="cell" data-execution_count="37">
+<div id="b0a52951" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des valeurs</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(ingredients.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5353f394" class="cell" data-execution_count="38">
+<div id="aabe8be5" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste des items (liste de tuples)</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(ingredients.items())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -557,15 +561,15 @@ Par exemple, il est possible de créer :</p>
 <li>une liste vide <code>[]</code></li>
 <li>un dictionnaire vide <code>{}</code></li>
 </ul>
-<div id="8cc30d8b" class="cell" data-execution_count="39">
+<div id="4aa0d121" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0435e95a" class="cell" data-execution_count="40">
+<div id="76ea3e77" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> []</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b3c66cd9" class="cell" data-execution_count="41">
+<div id="367084d6" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> {}</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -575,14 +579,14 @@ Par exemple, il est possible de créer :</p>
 <section id="exercice-1" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="exercice-1"><span class="header-section-number">5.1</span> Exercice 1</h3>
 <p>En partant de la liste <code>notes = ["do", "re", "re", "re", "fa", "sol", "solsi", "la"]</code>, <strong>ajoutez, supprimez et modifiez</strong> des éléments pour qu’elle contienne les notes de musique “do re mi fa sol la si” dans le bon ordre.</p>
-<div id="0ad36edf" class="cell" data-execution_count="42">
+<div id="4e8fdef9" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercice-2" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="exercice-2"><span class="header-section-number">5.2</span> Exercice 2</h3>
 <p>Proposez deux méthodes pour inverser la liste <code>["un", "deux", "trois", "quatre"]</code>. Quelle est la différence majeure entre les deux méthodes ?</p>
-<div id="26f67636" class="cell" data-execution_count="43">
+<div id="07341aab" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -590,7 +594,7 @@ Par exemple, il est possible de créer :</p>
 <h3 data-number="5.3" class="anchored" data-anchor-id="exercice-3"><span class="header-section-number">5.3</span> Exercice 3</h3>
 <p>Testez le comportement de la méthode <strong>pop</strong> sur la liste des entiers de 1 à 9.<br>
 Par exemple, testez <strong>pop()</strong> sans paramètres ou encore <strong>pop(-1)</strong>.</p>
-<div id="ab1d4bf7" class="cell" data-execution_count="44">
+<div id="98373d67" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -602,7 +606,7 @@ Par exemple, testez <strong>pop()</strong> sans paramètres ou encore <strong>po
 <li>sur une liste composée uniquement de chaînes de caractères ;</li>
 <li>sur une liste composée d’un mélange d’objets numériques et textuels.</li>
 </ul>
-<div id="adff486e" class="cell" data-execution_count="45">
+<div id="9c51dba8" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -610,7 +614,7 @@ Par exemple, testez <strong>pop()</strong> sans paramètres ou encore <strong>po
 <h3 data-number="5.5" class="anchored" data-anchor-id="exercice-5"><span class="header-section-number">5.5</span> Exercice 5</h3>
 <p>Essayer de créer une liste vide puis vérifiez son type.<br>
 Quel intérêt cela pourrait-il avoir ?</p>
-<div id="f676912c" class="cell" data-execution_count="46">
+<div id="94dcf85e" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exercice Soit le dictionnaire suivant : <code>animaux = {'chats': 5, 'chiens': 12}</code></p>
@@ -620,7 +624,7 @@ Quel intérêt cela pourrait-il avoir ?</p>
 <li><code>'chats' in animaux.values()</code></li>
 <li><code>'chats' in animaux</code></li>
 </ul>
-<div id="3529238a" class="cell" data-execution_count="47">
+<div id="75a24a8c" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -637,7 +641,7 @@ Affichez à l’aide d’opérations print :</p>
 <li>la liste de toutes les matières enseignées</li>
 <li>la liste des notes obtenues par les filles des deux classes</li>
 </ul>
-<div id="90e56861" class="cell" data-execution_count="48">
+<div id="8f0f26c1" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>resultats <span class="op">=</span> {</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"6emeA"</span>: {<span class="st">"Miranda"</span> : {<span class="st">"notes"</span>: {<span class="st">"physique"</span>: <span class="dv">16</span>, <span class="st">"histoire"</span>: <span class="dv">12</span>}},</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Celestin"</span>: {<span class="st">"notes"</span>: {<span class="st">"physique"</span>: <span class="st">"absent"</span>, <span class="st">"histoire"</span>: <span class="dv">18</span>}}</span>
@@ -647,7 +651,7 @@ Affichez à l’aide d’opérations print :</p>
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>             }</span>
 <span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="89e8874b" class="cell" data-execution_count="49">
+<div id="4e0f37ec" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -658,7 +662,7 @@ Affichez à l’aide d’opérations print :</p>
 <li><code>Je compte le nombre d'occurences de chaque caractère de la phrase courante.</code></li>
 </ul>
 <p><strong>Astuce</strong> : au préalable, faites un test sur une chaine plus petite.</p>
-<div id="24d88be6" class="cell" data-execution_count="50">
+<div id="d7668d3f" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -669,7 +673,7 @@ Affichez à l’aide d’opérations print :</p>
 <li><code>fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']</code></li>
 </ul>
 <p><strong>Indice</strong> : utiliser les set</p>
-<div id="b3154aff" class="cell" data-execution_count="51">
+<div id="1226b11a" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testez votre réponse dans cette cellule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
