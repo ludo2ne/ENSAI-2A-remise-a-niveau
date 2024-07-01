@@ -623,39 +623,46 @@
     "text": "4 Sections\nVous pouvez découper votre document en sections, sous-sections et sous-sous-sections qui seront automatiquement numérotées.\nIl est possible de ne pas numéroter certaines sections (utile par exemple pour introduction et conslusion).\nVous pouvez inclure une table des matières.\n\\documentclass{article}\n\\begin{document}\n\n\\tableofcontents                   % Table des matières\n\n\\newpage                           % Saut de page\n\n\\section*{Introduction}            % avec le *, la section n'est pas numérotée\n\\addcontentsline{toc}{section}{Introduction} % Pour ajouter cette section non numérotée à la Table des matières\nintro content\n\n\\section{First Section}\ncontent of first section\n\n\\section{Second Section}\ncontent of second section\n\n\\subsection{First Subsection of second section}\nContent of subsection 2.1\n\n\\subsubsection{subsubsection}\nContent of subsection 2.1.1\n\n\\end{document}"
   },
   {
-    "objectID": "docs/outils/LaTeX.html#mise-en-formes",
-    "href": "docs/outils/LaTeX.html#mise-en-formes",
+    "objectID": "docs/outils/LaTeX.html#mise-en-forme",
+    "href": "docs/outils/LaTeX.html#mise-en-forme",
     "title": "LaTeX",
-    "section": "5 Mise en formes",
-    "text": "5 Mise en formes\n\n\n\nExemple d’utilisation\nRésultat\n\n\n\n\n\\textbf{Texte en gras}\nTexte en gras\n\n\n\\textit{Texte en italique}\nTexte en italique\n\n\n\\underline{Texte souligné}\nTexte souligné\n\n\n\\texttt{Texte en monospace}\nTexte en monospace\n\n\n\n\n5.1 Autres mises en forme\n\n\\textsc{Texte en petites majuscules}\n\\textsuperscript{Texte en exposant}\n\\textsubscript{Texte en indice}\n\\tiny{Texte minuscule}\n\\large{Texte grand}\n\\Huge{Texte géant}"
+    "section": "5 Mise en forme",
+    "text": "5 Mise en forme\n\n\n\nExemple d’utilisation\nRésultat\n\n\n\n\n\\textbf{Texte en gras}\nTexte en gras\n\n\n\\textit{Texte en italique}\nTexte en italique\n\n\n\\underline{Texte souligné}\nTexte souligné\n\n\n\\texttt{Texte en monospace}\nTexte en monospace\n\n\n\n\n5.1 Autres mises en forme\n\n\n\nCommande\nRésultat\n\n\n\n\n\\textsc{}\nTexte en petites majuscules\n\n\n\\textsuperscript{}\nTexte en exposant\n\n\n\\textsubscript{}\nTexte en indice\n\n\n\\tiny{}\nTexte minuscule\n\n\n\\large{}\nTexte grand\n\n\n\\Huge{}\nTexte géant\n\n\n\n\n\n5.2 Couleur\nLa mise en couleur du texte nécessite le package xcolor. Pour avoir accès à plus de noms de couleurs, vous pouvez par exemple ajouter l’option x11names.\n% \\usepackage[x11names]{xcolor}\n\n\\textcolor{green}{Ce texte est en vert.}                                 \\par\n\\colorbox{magenta}{Ce texte a un fond magenta.}                          \\par\n\\fcolorbox{blue}{cyan}{Ce texte a une bordure bleue et un fond cyan.}"
+  },
+  {
+    "objectID": "docs/outils/LaTeX.html#retour-à-la-ligne",
+    "href": "docs/outils/LaTeX.html#retour-à-la-ligne",
+    "title": "LaTeX",
+    "section": "6 Retour à la ligne",
+    "text": "6 Retour à la ligne\n\n\n\n\n\n\nWarning\n\n\n\nPour LaTeX, un retour à la ligne simple est l’équivalent d’un espace.\n\n\nIl existe de très nombreuses manières de faire un retour à la ligne, en voici quelques unes :\nRetour à la ligne \\newline\nAutre retour à la ligne \\\\\nAjout d'un argument pour préciser l'espace vertical attendu \\\\[2 cm]\nUtilisation de vspace : \\vspace{1cm}\n\nUtiliser un big break\n\\bigbreak\nLaisser simplement une ligne vide en dessous\n\nEt c'est déjà pas mal !\n\n6.1 Saut de page\nLa commande \\newpage permet simplement de faire un saut de page."
   },
   {
     "objectID": "docs/outils/LaTeX.html#listes",
     "href": "docs/outils/LaTeX.html#listes",
     "title": "LaTeX",
-    "section": "6 Listes",
-    "text": "6 Listes\n\n6.1 Non ordonnée\n\\begin{itemize}\n  \\item un élément\n  \\item un autre élément \n\\end{itemize}\n\n\n6.2 Ordonnée\n\\begin{enumerate}\n  \\item élément 1\n  \\item élément 2\n\\end{enumerate}"
+    "section": "7 Listes",
+    "text": "7 Listes\n\n7.1 Non ordonnée\n\\begin{itemize}\n    \\item un élément\n    \\item un autre élément \n\\end{itemize}\n\n\n7.2 Ordonnée\n\\begin{enumerate}\n    \\item élément 1\n    \\item élément 2\n\\end{enumerate}\n\n\n\n\n\n\nIndentation\n\n\n\nLaTeX n’est pas sensible à l’indentation mais pour plus de lisibilité, nous vous conseillons d’indenter votre code.\n\n\n\n\n7.3 Changer les numérotations ou symboles\n\na) b) c)RenewcommandItem par item\n\n\n% \\usepackage{enumitem}\n\n\\begin{enumerate}[label=\\alph*)]\n    \\item élément a\n    \\item élément b\n\\end{enumerate}\n\n\nEn redéfinissant les puces utilisées à chaque niveau.\n% \\usepackage{amssymb}\n\n\\renewcommand{\\labelitemi}{$\\checkmark$}      % 1er niveau\n\\renewcommand{\\labelitemii}{$\\blacksquare$}   % 2e niveau\n\n\\begin{itemize}\n    \\item un élément\n    \\item un autre élément     \n        \\begin{itemize}\n            \\item un élément\n            \\item un autre élément \n        \\end{itemize}\n\\end{itemize}\n\n\nEn choisissant la puce utilisée pour chaque item.\n\\begin{itemize}\n    \\item[$\\blacksquare$] Carré noir\n    \\item[$\\checkmark$] Check\n    \\item[$\\star$] Étoile    \n\\end{itemize}"
   },
   {
     "objectID": "docs/outils/LaTeX.html#tableaux",
     "href": "docs/outils/LaTeX.html#tableaux",
     "title": "LaTeX",
-    "section": "7 Tableaux",
-    "text": "7 Tableaux\n\n\n\n\n\n\nTip\n\n\n\nLa syntaxe LaTeX pour réaliser un tableau est peu intuitive et très fastidieuse. Il est vivement recommandé de créer votre tableau dans un tableur calc et d’utiliser un outil en ligne pour le convertir en code LaTeX.\nExemple d’outil : https://tableconvert.com/excel-to-latex\n\n\n\\begin{table}\n    \\centering                               % Table centrée\n    \\caption{Tableau des départements}       % Titre du tableau\n    \\label{tab_dep}                          % Label pour référencer le tableau\n    \\vspace{2mm}                             % Ajout d'un espace vertical\n    \\begin{tabular}{|c||l|l|r|}\n        \\hline\n        \\textbf{Numéro} & \\textbf{Département} & \\textbf{Chef Lieu} & \\textbf{Nb habitants} \\\\\n        \\hline \\hline\n        01 & Ain                     & Bourg-en-Bresse & 650 000 \\\\\n        02 & Aisne                   & Laon            & 535 000 \\\\\n        03 & Allier                  & Moulins         & 339 000 \\\\\n        04 & Alpes-de-Haute-Provence & Digne-les-Bains & 166 000 \\\\\n        05 & Hautes-Alpes            & Gap             & 140 000 \\\\\n        \\hline\n    \\end{tabular}\n\\end{table}\nEssayons tout de même d’expliquer la syntaxe ci-dessus :\nLa commande \\begin{tabular}{|c||l|l|r|} permet de définir les colonnes et leurs alignements :\n\n\n\nSymbole\nSignification\n\n\n\n\nc\nColonne centrée\n\n\nl\nColonne alignée à gauche\n\n\nr\nColonne alignée à droite\n\n\n|\nTrait vertical\n\n\n||\nDouble trait vertical\n\n\n\nPour définir les lignes et le contenu :\n\n\n\nSymbole\nSignification\n\n\n\n\n\\hline\nLigne horizontale dans le tableau\n\n\n&\nPour séparer les colonnes dans un tableau\n\n\n\\\\\nFin d’une ligne dans un tableau"
+    "section": "8 Tableaux",
+    "text": "8 Tableaux\n\n\n\n\n\n\nTip\n\n\n\nLa syntaxe LaTeX pour réaliser un tableau est peu intuitive et très fastidieuse. Il est vivement recommandé de créer votre tableau dans un tableur calc et d’utiliser un outil en ligne pour le convertir en code LaTeX.\nExemple d’outil : https://tableconvert.com/excel-to-latex\n\n\n\\begin{table}\n    \\centering                               % Table centrée\n    \\caption{Tableau des départements}       % Titre du tableau\n    \\label{tab_dep}                          % Label pour référencer le tableau\n    \\vspace{2mm}                             % Ajout d'un espace vertical\n    \\begin{tabular}{|c||l|l|r|}\n        \\hline\n        \\textbf{Numéro} & \\textbf{Département} & \\textbf{Chef Lieu} & \\textbf{Nb habitants} \\\\\n        \\hline \\hline\n        01 & Ain                     & Bourg-en-Bresse & 650 000 \\\\\n        02 & Aisne                   & Laon            & 535 000 \\\\\n        03 & Allier                  & Moulins         & 339 000 \\\\\n        04 & Alpes-de-Haute-Provence & Digne-les-Bains & 166 000 \\\\\n        05 & Hautes-Alpes            & Gap             & 140 000 \\\\\n        \\hline\n    \\end{tabular}\n\\end{table}\nEssayons tout de même d’expliquer la syntaxe ci-dessus :\nLa commande \\begin{tabular}{|c||l|l|r|} permet de définir les colonnes et leurs alignements :\n\n\n\nSymbole\nSignification\n\n\n\n\nc\nColonne centrée\n\n\nl\nColonne alignée à gauche\n\n\nr\nColonne alignée à droite\n\n\n|\nTrait vertical\n\n\n||\nDouble trait vertical\n\n\n\nLes entêtes de colonnes sont mises en gras avec la commande \\textbf{}.\nPour définir les lignes et le contenu :\n\n\n\nSymbole\nSignification\n\n\n\n\n\\hline\nLigne horizontale dans le tableau\n\n\n&\nPour séparer les colonnes dans un tableau\n\n\n\\\\\nFin d’une ligne dans un tableau"
   },
   {
     "objectID": "docs/outils/LaTeX.html#images",
     "href": "docs/outils/LaTeX.html#images",
     "title": "LaTeX",
-    "section": "8 Images",
-    "text": "8 Images\n\\begin{figure}[h]\n    \\centering\n    \\includegraphics[width=0.75\\textwidth]{mesh}\n    \\caption{A nice plot.}\n    \\label{fig:mesh1}\n\\end{figure}\n\n\n\n\n\n\nNote\n\n\n\nVous pouvez utiliser la commande \\ref{} pour faire référence à la figure via son label.\nExemple : “Comme vous pouvez le remarquer dans la figure \\ref{fig:mesh1}”"
+    "section": "9 Images",
+    "text": "9 Images\n\n\n\n\n\n\nDossier img\n\n\n\nUne bonne pratique consiste à stocker toutes les images dans un seul dossier nommé par exemple img.\nRéférencez ensuite ce dossier au niveau des métadonnées du document :\n\\graphicspath{{img/}}          %% le chemin vers les images\n\n\n\n9.1 Image simple\n\\includegraphics[width=0.2\\textwidth]{ensai_logo.png}\nL’option [width=0.2\\textwidth] signifie que l’image aura une largeur de 20% de la largeur du texte\n\n\n9.2 Figures\nNous préférons généralement inclure une image dans une figure. Cela permet de numéroter, définir un titre, un label.\n\\begin{figure}[h]\n    \\centering\n    \\includegraphics[width=0.75\\textwidth]{ensai_logo.png}\n    \\caption{Le logo ENSAI}\n    \\label{fig:logo-ensai}\n\\end{figure}\n\n\n\n\n\n\nNote\n\n\n\nVous pouvez utiliser la commande \\ref{} pour faire référence à la figure via son label.\nExemple : “Comme vous pouvez le remarquer, la figure \\ref{fig:logo-ensai} représente le logo de l’école.”"
   },
   {
-    "objectID": "docs/outils/LaTeX.html#formules-matématiques",
-    "href": "docs/outils/LaTeX.html#formules-matématiques",
+    "objectID": "docs/outils/LaTeX.html#formules-mathématiques",
+    "href": "docs/outils/LaTeX.html#formules-mathématiques",
     "title": "LaTeX",
-    "section": "9 Formules matématiques",
-    "text": "9 Formules matématiques\n\n\n\n\n\n\nNote\n\n\n\nVous pouvez insérer des formules :\n\nà l’intérieur d’un texte avec un seul $\navec retour à la ligne avec deux $$\n\n\n\nLa formule de la variance : \\[V = \\frac{1}{n} \\sum_{i=1}^{n} (x_{i} - \\overline{x})^{2}\\]\nLa formule de Koenig-Huygens : \\(\\mathbb{V}(X) = \\mathbb{E}(X^{2}) - (\\mathbb{E}(X))^{2}\\).\nLa formule de la variance : $$V = \\frac{1}{n} \\sum_{i=1}^{n} (x_{i} - \\overline{x})^{2}$$\n\nLa formule de Koenig-Huygens : $\\mathbb{V}(X) = \\mathbb{E}(X^{2}) - (\\mathbb{E}(X))^{2}$."
+    "section": "10 Formules mathématiques",
+    "text": "10 Formules mathématiques\n\n\n\n\n\n\nNote\n\n\n\nVous pouvez insérer des formules :\n\nà l’intérieur d’un texte avec un seul $\navec retour à la ligne avec deux $$\n\n\n\nLa formule de la variance : \\[V = \\frac{1}{n} \\sum_{i=1}^{n} (x_{i} - \\overline{x})^{2}\\]\nLa formule de Koenig-Huygens : \\(\\mathbb{V}(X) = \\mathbb{E}(X^{2}) - (\\mathbb{E}(X))^{2}\\).\nLa formule de la variance : $$V = \\frac{1}{n} \\sum_{i=1}^{n} (x_{i} - \\overline{x})^{2}$$\n\nLa formule de Koenig-Huygens : $\\mathbb{V}(X) = \\mathbb{E}(X^{2}) - (\\mathbb{E}(X))^{2}$."
   },
   {
     "objectID": "docs/outils/VSCode.html",
