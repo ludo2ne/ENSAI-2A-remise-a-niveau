@@ -1,0 +1,242 @@
+---
+title: "LaTeX"
+description: "Introduction à LaTeX"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+## Qu'est-ce que LaTeX ?
+
+[LaTeX](https://www.latex-project.org/){target="_blank"}, créé par Leslie Lamport en 1984, est un langage de programmation conçu pour la mise en forme de documents. Il est très utilisé dans les milieux académiques et scientifiques pour la rédaction de textes complexes, notamment des articles, des rapports, des thèses et des présentations. LaTeX permet de créer des documents de haute qualité typographique grâce à sa gestion avancée des formules mathématiques, des tableaux, des figures et des références bibliographiques.
+
+LaTeX reste incontournable pour les documents nécessitant une mise en page complexe et des formules mathématiques avancées, mais il est supplanté par [Markdown](https://commonmark.org/help/){target="_blank"} beaucoup plus utilisé pour des tâches plus simples. Markdown est souvent préféré pour la rédaction rapide de notes, de documents collaboratifs, et de contenus web, en raison de sa simplicité et de sa flexibilité.
+
+
+## Pourquoi utiliser LaTeX ?
+
+- **Qualité typographique** : LaTeX produit des documents avec une mise en page professionnelle, idéale pour les publications académiques.
+- **Gestion avancée des formules mathématiques** : LaTeX excelle dans la présentation des formules et des équations complexes.
+- **Automatisation** : LaTeX automatise de nombreuses tâches, comme la numérotation des sections, la gestion des références croisées et la création de bibliographies.
+- **Flexibilité et extensibilité** : Avec une vaste bibliothèque de packages, LaTeX peut être personnalisé pour répondre à une grande variété de besoins spécifiques.
+- **Stabilité et reproductibilité** : Les documents LaTeX sont textuels et peuvent être versionnés facilement avec des outils comme Git, assurant une gestion précise des versions et des collaborations.
+- **Support pour les références et citations** : LaTeX gère efficacement les références bibliographiques et les citations avec des outils comme BibTeX et BibLaTeX.
+
+
+## Utiliser LaTeX
+
+Pour utiliser LaTeX, vous avez principalement deux options : 
+
+- en ligne via des plateformes dédiées : [Overleaf](https://www.overleaf.com/){target="_blank"}...
+- en installant un logiciel sur votre ordinateur : [Texmaker](https://www.xm1math.net/texmaker/){target="_blank"}, [TeXstudio](https://www.texstudio.org/){target="_blank"}...
+
+Les interfaces pour travailler avec LaTeX sont souvent divisées en deux parties distinctes : d'un côté, l'éditeur de code LaTeX et de l'autre, la vue de mise en forme du document.
+
+
+### Mon premier document
+
+Voici un exemple simple illustrant les étapes essentielles pour rédiger un document LaTeX :
+
+1. Définissez le type de document (article, report, book, slide...) et la taille de police par défaut
+2. Listez des packages nécessaires : de très nombreuses fonctionnalités nécessitent l'utilisation d'un package
+3. Définissez les métadonnées du document telles que le titre, l'auteur et la date
+4. Écrivez votre contenu principal entre `\begin{document}` et `\end{document}`
+
+
+```{.tex}
+\documentclass[11pt]{article}     % Article avec une taille de police à 11 par défaut
+
+% Imports de packages
+\usepackage[french]{babel}        % typographie française
+\usepackage[T1]{fontenc}          % type d'encodage pour les polices de caractères
+\usepackage{graphicx}             % pour insérer des images
+\usepackage{amsmath, amssymb}     % symboles mathematiques
+\usepackage{enumerate, enumitem}  % pour les listes
+
+% Métadonnées
+\title{An awesome title}
+\author{An awesome author}
+\date{September 2024}
+
+% Début du document
+\begin{document}
+
+\maketitle                       %% pour afficher titre, auteur et date
+
+An awesome content.
+
+\end{document}
+```
+
+## Sections
+
+Vous pouvez découper votre document en sections, sous-sections et sous-sous-sections qui seront automatiquement numérotées.
+
+Il est possible de ne pas numéroter certaines sections (utile par exemple pour introduction et conslusion).
+
+Vous pouvez inclure une table des matières.
+
+```{.tex}
+\documentclass{article}
+\begin{document}
+
+\tableofcontents                   % Table des matières
+
+\newpage                           % Saut de page
+
+\section*{Introduction}            % avec le *, la section n'est pas numérotée
+\addcontentsline{toc}{section}{Introduction} % Pour ajouter cette section non numérotée à la Table des matières
+intro content
+
+\section{First Section}
+content of first section
+
+\section{Second Section}
+content of second section
+
+\subsection{First Subsection of second section}
+Content of subsection 2.1
+
+\subsubsection{subsubsection}
+Content of subsection 2.1.1
+
+\end{document}
+```
+
+## Mise en formes
+
+| Exemple d'utilisation         | Résultat                     |
+| ----------------------------- | ---------------------------- |
+| `\textbf{Texte en gras}`      | **Texte en gras**            |
+| `\textit{Texte en italique}`  | *Texte en italique*          |
+| `\underline{Texte souligné}`  | [Texte souligné]{.underline} |
+| `\texttt{Texte en monospace}` | `Texte en monospace`         |
+
+### Autres mises en forme
+
+- `\textsc{Texte en petites majuscules}`
+- `\textsuperscript{Texte en exposant}`
+- `\textsubscript{Texte en indice}`
+- `\tiny{Texte minuscule}`
+- `\large{Texte grand}`
+- `\Huge{Texte géant}`
+
+
+## Listes
+
+### Non ordonnée
+
+```{.tex}
+\begin{itemize}
+  \item un élément
+  \item un autre élément 
+\end{itemize}
+```
+
+### Ordonnée
+
+```{.tex}
+\begin{enumerate}
+  \item élément 1
+  \item élément 2
+\end{enumerate}
+```
+
+## Tableaux
+
+::: {.callout-tip}
+La syntaxe LaTeX pour réaliser un tableau est peu intuitive et très fastidieuse. Il est vivement recommandé de créer votre tableau dans un tableur calc et d'utiliser un outil en ligne pour le convertir en code LaTeX. 
+
+Exemple d'outil : <https://tableconvert.com/excel-to-latex>{target="_blank"}
+:::
+
+
+```{.tex}
+\begin{table}
+    \centering                               % Table centrée
+    \caption{Tableau des départements}       % Titre du tableau
+    \label{tab_dep}                          % Label pour référencer le tableau
+    \vspace{2mm}                             % Ajout d'un espace vertical
+    \begin{tabular}{|c||l|l|r|}
+        \hline
+        \textbf{Numéro} & \textbf{Département} & \textbf{Chef Lieu} & \textbf{Nb habitants} \\
+        \hline \hline
+        01 & Ain                     & Bourg-en-Bresse & 650 000 \\
+        02 & Aisne                   & Laon            & 535 000 \\
+        03 & Allier                  & Moulins         & 339 000 \\
+        04 & Alpes-de-Haute-Provence & Digne-les-Bains & 166 000 \\
+        05 & Hautes-Alpes            & Gap             & 140 000 \\
+        \hline
+    \end{tabular}
+\end{table}
+```
+
+Essayons tout de même d'expliquer la syntaxe ci-dessus :
+
+La commande `\begin{tabular}{|c||l|l|r|}` permet de définir les colonnes et leurs alignements :
+
+| Symbole | Signification            |
+| ------- | ------------------------ |
+| `c`     | Colonne centrée          |
+| `l`     | Colonne alignée à gauche |
+| `r`     | Colonne alignée à droite |
+| `|`     | Trait vertical           |
+| `||`    | Double trait vertical    |
+
+Pour définir les lignes et le contenu :
+
+| Symbole  | Signification                             |
+| -------- | ----------------------------------------- |
+| `\hline` | Ligne horizontale dans le tableau         |
+| `&`      | Pour séparer les colonnes dans un tableau |
+| `\\`     | Fin d'une ligne dans un tableau           |
+
+
+## Images
+
+```{.tex}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{mesh}
+    \caption{A nice plot.}
+    \label{fig:mesh1}
+\end{figure}
+```
+
+::: {.callout-note}
+Vous pouvez utiliser la commande `\ref{}` pour faire référence à la figure via son label.
+
+Exemple : "Comme vous pouvez le remarquer dans la figure `\ref{fig:mesh1}`"
+:::
+
+
+## Formules matématiques
+
+::: {.callout-note}
+Vous pouvez insérer des formules :
+
+- à l'intérieur d'un texte avec un seul `$` 
+- avec retour à la ligne avec deux `$$`
+:::
+
+
+La formule de la variance : $$V = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \overline{x})^{2}$$
+
+La formule de Koenig-Huygens : $\mathbb{V}(X) = \mathbb{E}(X^{2}) - (\mathbb{E}(X))^{2}$.
+
+
+```{.tex}
+La formule de la variance : $$V = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \overline{x})^{2}$$
+
+La formule de Koenig-Huygens : $\mathbb{V}(X) = \mathbb{E}(X^{2}) - (\mathbb{E}(X))^{2}$.
+```
+
+ 
+

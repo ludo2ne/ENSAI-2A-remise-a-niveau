@@ -72,8 +72,7 @@ si vous avez vos accès à l'ENT ENSAI, les vidéos de la session de l'année de
   - https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python
     - parties 1 et 2
 
-
-## Publier les pages
+## :rocket: Publier les pages
 
 Site construit avec [Quarto](https://quarto.org/) ([Tuto](https://ludo2ne.github.io/Quarto-tuto/))
 

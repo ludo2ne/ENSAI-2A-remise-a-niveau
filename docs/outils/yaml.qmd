@@ -1,5 +1,5 @@
 ---
-title: "Yaml 101"
+title: "YAML 101"
 description: "Introduction à YAML"
 author: "Ludovic Deneuville"
 format: 

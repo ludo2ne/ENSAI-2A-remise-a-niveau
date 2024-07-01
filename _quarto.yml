@@ -48,8 +48,10 @@ website:
             text: "VM"
           - href: docs/outils/VSCode.qmd
             text: "Visual Studio Code"
-          - href: docs/outils/yaml.qmd
+          - href: docs/outils/YAML.qmd
             text: "YAML"
+          - href: docs/outils/LaTeX.qmd
+            text: "LaTeX"
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau

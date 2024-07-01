@@ -6,6 +6,8 @@ format: html
 from: markdown+emoji
 ---
 
+Ce cours de remise à niveau s'adresse aux étudiants intégrant directement la deuxième année de l'ENSAI. 
+Il vise à fournir les bases essentielles en Python, SQL et UML, afin de leur permettre de débuter le projet informatique en toute sérénité.
 
 ## Programme
 
@@ -13,7 +15,7 @@ from: markdown+emoji
 - [ ] [Python - initiation](docs/python/python-cours.qmd) (6h)
 - [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
 - [ ] [UML](docs/UML/UML.qmd) (3h)
-- [ ] Divers outils utiles (markdown, R...)
+- [ ] Divers outils utiles (markdown, R, LateX...)
 
 
 ## 1. Initiation à SQL
