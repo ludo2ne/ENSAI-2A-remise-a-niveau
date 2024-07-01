@@ -110,7 +110,7 @@ Content of subsection 2.1.1
 \end{document}
 ```
 
-## Mise en formes
+## Mise en forme
 
 | Exemple d'utilisation         | Résultat                     |
 | ----------------------------- | ---------------------------- |
@@ -121,13 +121,53 @@ Content of subsection 2.1.1
 
 ### Autres mises en forme
 
-- `\textsc{Texte en petites majuscules}`
-- `\textsuperscript{Texte en exposant}`
-- `\textsubscript{Texte en indice}`
-- `\tiny{Texte minuscule}`
-- `\large{Texte grand}`
-- `\Huge{Texte géant}`
+| Commande                | Résultat                          |
+|-------------------------|-----------------------------------|
+| `\textsc{}`             | Texte en petites majuscules       |
+| `\textsuperscript{}`    | Texte en exposant                 |
+| `\textsubscript{}`      | Texte en indice                   |
+| `\tiny{}`               | Texte minuscule                   |
+| `\large{}`              | Texte grand                       |
+| `\Huge{}`               | Texte géant                       |
 
+
+### Couleur
+
+La mise en couleur du texte nécessite le package `xcolor`. Pour avoir accès à plus de noms de couleurs, vous pouvez par exemple ajouter l'option [x11names](https://en.wikipedia.org/wiki/X11_color_names){target="_blank"}.
+
+
+```{.tex}
+% \usepackage[x11names]{xcolor}
+
+\textcolor{green}{Ce texte est en vert.}                                 \par
+\colorbox{magenta}{Ce texte a un fond magenta.}                          \par
+\fcolorbox{blue}{cyan}{Ce texte a une bordure bleue et un fond cyan.}
+```
+
+## Retour à la ligne
+
+::: {.callout-warning}
+Pour LaTeX, un retour à la ligne simple est l'équivalent d'un espace. 
+:::
+
+Il existe de très nombreuses manières de faire un retour à la ligne, en voici quelques unes :
+
+```{.tex}
+Retour à la ligne \newline
+Autre retour à la ligne \\
+Ajout d'un argument pour préciser l'espace vertical attendu \\[2 cm]
+Utilisation de vspace : \vspace{1cm}
+
+Utiliser un big break
+\bigbreak
+Laisser simplement une ligne vide en dessous
+
+Et c'est déjà pas mal !
+```
+
+### Saut de page
+
+La commande `\newpage` permet simplement de faire un saut de page.
 
 ## Listes
 
@@ -135,19 +175,73 @@ Content of subsection 2.1.1
 
 ```{.tex}
 \begin{itemize}
-  \item un élément
-  \item un autre élément 
+    \item un élément
+    \item un autre élément 
 \end{itemize}
 ```
 
 ### Ordonnée
 
-```{.tex}
+```{.tex title="Liste 1. 2. 3."}
 \begin{enumerate}
-  \item élément 1
-  \item élément 2
+    \item élément 1
+    \item élément 2
 \end{enumerate}
 ```
+
+::: {.callout-tip title="Indentation"}
+LaTeX n'est pas sensible à l'indentation mais pour plus de lisibilité, nous vous conseillons d'indenter votre code.
+:::
+
+### Changer les numérotations ou symboles
+
+
+::: {.panel-tabset .nav-pills}
+
+#### a) b) c)
+
+```{.tex title="Liste a) b) c)"}
+% \usepackage{enumitem}
+
+\begin{enumerate}[label=\alph*)]
+    \item élément a
+    \item élément b
+\end{enumerate}
+```
+
+#### Renewcommand
+
+En redéfinissant les puces utilisées à chaque niveau.
+
+```{.tex}
+% \usepackage{amssymb}
+
+\renewcommand{\labelitemi}{$\checkmark$}      % 1er niveau
+\renewcommand{\labelitemii}{$\blacksquare$}   % 2e niveau
+
+\begin{itemize}
+    \item un élément
+    \item un autre élément     
+        \begin{itemize}
+            \item un élément
+            \item un autre élément 
+        \end{itemize}
+\end{itemize}
+```
+
+#### Item par item
+
+En choisissant la puce utilisée pour chaque item.
+
+```{.tex}
+\begin{itemize}
+    \item[$\blacksquare$] Carré noir
+    \item[$\checkmark$] Check
+    \item[$\star$] Étoile    
+\end{itemize}
+```
+
+:::
 
 ## Tableaux
 
@@ -190,6 +284,8 @@ La commande `\begin{tabular}{|c||l|l|r|}` permet de définir les colonnes et leu
 | `|`     | Trait vertical           |
 | `||`    | Double trait vertical    |
 
+Les entêtes de colonnes sont mises en gras avec la commande `\textbf{}`.
+
 Pour définir les lignes et le contenu :
 
 | Symbole  | Signification                             |
@@ -201,23 +297,44 @@ Pour définir les lignes et le contenu :
 
 ## Images
 
+::: {.callout-tip title="Dossier img"}
+Une bonne pratique consiste à stocker toutes les images dans un seul dossier nommé par exemple `img`.
+
+Référencez ensuite ce dossier au niveau des métadonnées du document :
+
+```{.tex}
+\graphicspath{{img/}}          %% le chemin vers les images
+```
+:::
+
+### Image simple
+
+```{.tex}
+\includegraphics[width=0.2\textwidth]{ensai_logo.png}
+```
+
+L'option `[width=0.2\textwidth]` signifie que l'image aura une largeur de 20% de la largeur du texte
+
+### Figures
+
+Nous préférons généralement inclure une image dans une *figure*. Cela permet de numéroter, définir un titre, un label.
+
 ```{.tex}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{mesh}
-    \caption{A nice plot.}
-    \label{fig:mesh1}
+    \includegraphics[width=0.75\textwidth]{ensai_logo.png}
+    \caption{Le logo ENSAI}
+    \label{fig:logo-ensai}
 \end{figure}
 ```
 
 ::: {.callout-note}
 Vous pouvez utiliser la commande `\ref{}` pour faire référence à la figure via son label.
 
-Exemple : "Comme vous pouvez le remarquer dans la figure `\ref{fig:mesh1}`"
+Exemple : "Comme vous pouvez le remarquer, la figure `\ref{fig:logo-ensai}` représente le logo de l'école."
 :::
 
-
-## Formules matématiques
+## Formules mathématiques
 
 ::: {.callout-note}
 Vous pouvez insérer des formules :
