@@ -1,0 +1,81 @@
+---
+title: "Markdown"
+description: "Présentation du language Markdown"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+    code-tools:
+      source: true
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+## Qu'est-ce que Markdown ?
+
+Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l'écriture de texte destiné au web en permettant aux utilisateurs d'écrire en utilisant un format texte brut facile à lire et à écrire.
+
+## Pourquoi utiliser Markdown ?
+
+Markdown a été conçu comme une alternative intuitive aux balisages plus complexes du HTML. Il s'est rapidement popularisé parmi les développeurs, les blogueurs et les rédacteurs pour sa simplicité et sa lisibilité.
+
+- :white_check_mark: **Simplicité** : Facile à apprendre et à utiliser, même si vous n'êtes pas familiers avec HTML
+- :white_check_mark: **Lisibilité** : Le texte brut en Markdown reste lisible même sans être converti en HTML
+- :white_check_mark: **Portabilité** : Les fichiers Markdown peuvent être convertis facilement en HTML, PDF...
+- :white_check_mark: **Popularité** : Supporté par de nombreuses plates-formes et outils de rédaction
+- :x: **Limitations** : Markdown est conçu pour être simple, donc il ne supporte pas toutes les fonctionnalités avancées de mise en page
+
+## Écrire du markdown
+
+Les fichiers markdown sont des fichiers texte qui ont pour extension `.md`.
+
+Il existe de très nombreux éditeurs de Markdown :
+
+- en ligne, par exemple [HackMd](https://hackmd.io/){target="_blank}
+- à installer sur sa machine, par exemple dans Visual Studio Code
+
+Les éditeurs présentent généralement deux sections cote à cote :
+
+- une partie édition où l'on écrit le code
+- une partie vue où l'on voit le résultat
+
+### Exemples
+
+De très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple <https://commonmark.org/help/>{target="_blank}
+
+
+Quelques exemples de mise en forme :
+
+| Code Markdown                    | Résultat                       |
+| -------------------------------- | ------------------------------ |
+| `**texte en gras**`              | **texte en gras**              |
+| `*texte en italique*`            | *texte en italique*            |
+| `[lien](https://example.com)`    | [lien](https://example.com)    |
+| `![texte alternatif](image.jpg)` | ![texte alternatif](image.jpg) |
+| \`code en ligne\`                | `code en ligne`                |
+| `> Citation`                     | > Citation                     |
+| `# Titre de niveau 1`            |                                |
+| `## Titre de niveau 2`           |                                |
+
+
+::: {.callout-note}
+Cette page est elle-même écrite en Markdown ! (avec une [surcouche](https://quarto.org/docs/authoring/markdown-basics.html){target="_blank})
+
+Vous pouvez consulter le code en cliquant sur le bouton `</> Code` en haut à droite.
+:::
+
+Un [large choix d'emoji](https://gist.github.com/rxaviers/7360908){target="_blank} est également disponible en Markdown :sunglasses:
+
+## Utilisation dans VScode
+
+- CTRL + K puis V : pour avoir cote à cote les modes **édition** et **vue**
+- Extensions utiles (à aller chercher dans le marketplace)
+  - markdownlint
+  - Markdown Emoji
+  - Markdown Checkboxes
+  - Markdown Table
+  - Markdown Preview Mermaid Support

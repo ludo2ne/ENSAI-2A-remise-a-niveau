@@ -44,14 +44,16 @@ website:
         menu: 
           - href: docs/outils/outils.qmd
             text: "Outils"
-          - href: docs/outils/VM.qmd
-            text: "VM"
-          - href: docs/outils/VSCode.qmd
-            text: "Visual Studio Code"
-          - href: docs/outils/YAML.qmd
-            text: "YAML"
           - href: docs/outils/LaTeX.qmd
             text: "LaTeX"
+          - href: docs/outils/Markdown.qmd
+            text: "Markdown"
+          - href: docs/outils/VSCode.qmd
+            text: "Visual Studio Code"
+          - href: docs/outils/VM.qmd
+            text: "VM"
+          - href: docs/outils/YAML.qmd
+            text: "YAML"
     right:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
