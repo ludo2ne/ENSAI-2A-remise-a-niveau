@@ -53,7 +53,6 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 - [ ] Lisez le [cours d'introduction à UML](docs/UML/UML.qmd)
 - [ ] Faites l'exercice
 
----
 
 ## Alternatives 
 

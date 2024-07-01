@@ -53,7 +53,7 @@ A la racine de votre projet, créez les 3 dossiers suivants :
 - `data` : pour vos fichiers de données
 - `doc` : pour votre documentation
 
-```
+```{.default}
 .
 ├── data
 │   └── temperatures.csv
@@ -82,7 +82,7 @@ Remarques importantes :
 
 Voici un exemple plus concret :
 
-```
+```{.default}
 .
 └── src
     ├── __main__.py
@@ -126,29 +126,27 @@ Nous pouvons donc définir la classe `DeuxRoues`comme `abstraite`
 
 La principale utilité des classes abstraites est de définir un contrat  pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.
 
-> En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.
+> En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur `@abstractmethod` qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.
 
 :::{.callout-warning}
-classe mère ne veut pas dire forcément classe abstraite
-:::
+Classe mère ne veut pas dire forcément classe abstraite
 
-Exemple :
+Par exemple :
 
 - Considérons par exemple une classe `VeloElectrique` qui hérite de la classe `Velo`
 - Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance...)
 - Or ici la classe `Velo` n'a pas vocation à être abstraite car il n'est pas absurde de créer un objet vélo
-
----
+:::
 
 ## Exercices
 
-### Avant de commencer
-
+::: {.callout-caution title="Avant de commencer"}
 - Nous n'allons maintenant plus coder dans des Notebooks mais dans l'IDE VSCode
 - Suivez les consignes données dans le fichier de [paramétrage et d'utilisation de VSCode](../outils/VSCode.qmd)
 - Dans `src/Python-POO/exercices`, créez les 2 dossiers suivants :
   - `geometrie` pour stocker vos classes des exercices 1 et 2
   - `domino` pour l'exercice 3
+:::
 
 ### Exercice 1 - Points
 
@@ -175,9 +173,9 @@ Coder les méthodes suivantes :
 - [ ] Créer la classe `Rectangle` qui hérite de `Quadrilatere`
   - vérifier que les 2 cotés opposés sont de même longeur et qu'il y a un angle droit
 
-[Diagrammes de classe avec Mermaid](https://mermaid.js.org/syntax/classDiagram.html){.external target="_blank"}
+[Diagrammes de classe avec Mermaid](https://mermaid.js.org/syntax/classDiagram.html){target="_blank"}
 
-```mermaid
+```{mermaid}
 classDiagram
     Point --o Polygone
     Polygone <|-- Segment : 2
@@ -232,7 +230,7 @@ Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilit�
   - [ ] lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et `quit` pour arrêter de jouer)
   - [ ] ajoute le domino joué à la liste `dominos_poses` et le retire de `dominos_en_main`
 
-```mermaid
+```{mermaid}
 classDiagram
     class Domino{
         +int sommet_A

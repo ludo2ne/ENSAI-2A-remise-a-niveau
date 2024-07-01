@@ -94,10 +94,10 @@ Il existe deux types de cellules principaux :
 - les cellules de code (où vous écrivez et exécutez du code Python)
 - les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)
 
-::: {.callout-tip title="Le langage Mardown" collapse="true"}
+::: {.callout-tip title="Le langage Markdown" collapse="true"}
 C'est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).
 
-De très nombreuses ressources sont disponibles sur internet.
+De très nombreuses ressources sont disponibles sur internet, [par exemple](https://commonmark.org/help/){target="_blank"}
 
 Quelques exemples :
 

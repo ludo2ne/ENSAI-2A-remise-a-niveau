@@ -13,7 +13,7 @@ number-depth: 3
 ---
 
 
-Visual Studio Code est un logiciel qui permet d'éditer du code et propose de nombreuses extensions.
+[Visual Studio Code](https://code.visualstudio.com/){target="_blank"} est un logiciel qui permet d'éditer du code dans de très nombreux langages. Il propose également de nombreuses extensions pour faciliter le travail des développeurs.
 
 Le but de cette fiche est de :
 
@@ -32,7 +32,7 @@ Sur la version utilisées à l'ENSAI, vous pouvez trouver déjà installé :
 - isort
 - Python Test Explorer
 - ...
-- [ ] Désactiver l'extension **Ruff** (elle fait doublon avec **Flake8**)
+- :x: Désactiver l'extension **Ruff** (elle fait doublon avec **Flake8**)
 
 Autres extensions interessantes :
 
@@ -40,8 +40,8 @@ Autres extensions interessantes :
 
 ### Formatage et Linting
 
-- Un **formateur*- est un outil qui va mettre en forme votre code pour que ce soit joli et lisible
-- un **linter*- est un outil qui va vous avertir si votre code n'est pas joli
+- Un **formateur** est un outil qui va mettre en forme votre code pour que ce soit joli et lisible
+- un **linter** est un outil qui va vous avertir si votre code n'est pas joli
   - ex : ligne trop longue, espace manquant ou en trop...
 
 Les extensions Black Formatter et Flake8 sont respectivement un formateur et un linter
@@ -50,8 +50,8 @@ Les extensions Black Formatter et Flake8 sont respectivement un formateur et un 
 
 Vous pouvez préciser le paramètrage à plusieurs niveaux :
 
-- au niveau de l'application VSCode
-- au niveau d'un dépôt
+- au niveau utilisateur (User)
+- au niveau d'un dépôt (Workspace)
 
 Le fichier `.vscode/settings.json` contient du paramètrage qui va s'appliquer à tous les fichiers du dépôt.
 

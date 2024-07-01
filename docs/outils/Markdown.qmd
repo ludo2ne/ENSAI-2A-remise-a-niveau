@@ -47,7 +47,6 @@ Les éditeurs présentent généralement deux sections cote à cote :
 
 De très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple <https://commonmark.org/help/>{target="_blank}
 
-
 Quelques exemples de mise en forme :
 
 | Code Markdown                    | Résultat                       |
@@ -57,7 +56,6 @@ Quelques exemples de mise en forme :
 | `[lien](https://example.com)`    | [lien](https://example.com)    |
 | `![texte alternatif](image.jpg)` | ![texte alternatif](image.jpg) |
 | \`code en ligne\`                | `code en ligne`                |
-| `> Citation`                     | > Citation                     |
 | `# Titre de niveau 1`            |                                |
 | `## Titre de niveau 2`           |                                |
 

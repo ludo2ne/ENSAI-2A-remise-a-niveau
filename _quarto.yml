@@ -44,6 +44,8 @@ website:
         menu: 
           - href: docs/outils/outils.qmd
             text: "Outils"
+          - href: docs/outils/Bash.qmd
+            text: "Bash"
           - href: docs/outils/LaTeX.qmd
             text: "LaTeX"
           - href: docs/outils/Markdown.qmd
