@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à UML">
+<meta name="description" content="Initiation aux commandes Bash">
 
-<title>Remise à Niveau Informatique - UML</title>
+<title>Remise à Niveau Informatique - Le Bash</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,9 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -192,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">POO</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../docs/UML/UML.html" aria-current="page"> 
+    <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -258,19 +255,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#diagramme-de-cas-dutilisation" id="toc-diagramme-de-cas-dutilisation" class="nav-link active" data-scroll-target="#diagramme-de-cas-dutilisation"><span class="header-section-number">1</span> Diagramme de cas d’utilisation</a>
-  <ul class="collapse">
-  <li><a href="#outils" id="toc-outils" class="nav-link" data-scroll-target="#outils"><span class="header-section-number">1.1</span> Outils</a></li>
-  <li><a href="#exemple" id="toc-exemple" class="nav-link" data-scroll-target="#exemple"><span class="header-section-number">1.2</span> Exemple</a></li>
-  </ul></li>
-  <li><a href="#diagramme-de-classe" id="toc-diagramme-de-classe" class="nav-link" data-scroll-target="#diagramme-de-classe"><span class="header-section-number">2</span> Diagramme de classe</a>
-  <ul class="collapse">
-  <li><a href="#outils-1" id="toc-outils-1" class="nav-link" data-scroll-target="#outils-1"><span class="header-section-number">2.1</span> Outils</a></li>
-  <li><a href="#exemple-1" id="toc-exemple-1" class="nav-link" data-scroll-target="#exemple-1"><span class="header-section-number">2.2</span> Exemple</a></li>
-  </ul></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">3</span> Exercice</a></li>
+  <li><a href="#apprendre-à-naviguer" id="toc-apprendre-à-naviguer" class="nav-link active" data-scroll-target="#apprendre-à-naviguer"><span class="header-section-number">1</span> Apprendre à naviguer</a></li>
+  <li><a href="#quelques-trucs-et-astuces" id="toc-quelques-trucs-et-astuces" class="nav-link" data-scroll-target="#quelques-trucs-et-astuces"><span class="header-section-number">2</span> Quelques trucs et astuces</a></li>
+  <li><a href="#manipuler-fichiers-et-dossiers" id="toc-manipuler-fichiers-et-dossiers" class="nav-link" data-scroll-target="#manipuler-fichiers-et-dossiers"><span class="header-section-number">3</span> Manipuler fichiers et dossiers</a></li>
+  <li><a href="#résumé" id="toc-résumé" class="nav-link" data-scroll-target="#résumé"><span class="header-section-number">4</span> Résumé</a></li>
+  <li><a href="#un-petit-exercice-dapplication" id="toc-un-petit-exercice-dapplication" class="nav-link" data-scroll-target="#un-petit-exercice-dapplication"><span class="header-section-number">5</span> Un petit exercice d’application</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/UML/UML.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Bash.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -281,12 +272,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">UML</h1>
+<h1 class="title">Le Bash</h1>
 </div>
 
 <div>
   <div class="description">
-    Introduction à UML
+    Initiation aux commandes Bash
   </div>
 </div>
 
@@ -309,220 +300,240 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>UML (Unified Modeling Language) est un langage de modélisation graphique largement utilisé dans le domaine de l’ingénierie logicielle. Il fournit un ensemble de notations et de diagrammes standardisés pour représenter visuellement différents aspects d’un système logiciel.</p>
-<p>L’objectif principal d’UML est de faciliter la communication, la compréhension et la documentation des systèmes logiciels complexes. Il permet aux concepteurs, développeurs et parties prenantes de collaborer efficacement en utilisant des diagrammes compréhensibles et normalisés.</p>
-<p>Les 3 principaux diagrammes :</p>
+<p>Il y a peu, dans un monde proche, très proche la ligne de commande était le seul moyen de transmettre ses instructions à un ordinateur. Pas de souris, pas de bureau avec des icones, simplement un clavier et un terminal.</p>
+<p>Dans de nombreux domaines de l’informatique, les instructions se donnent toujours en lignes de commande. En effet, créer des interfaces graphiques est couteux et plus difficile à maintenir.</p>
+<p>Nous allons ici présenter quelques commandes simples, connues et utilisées par tout informaticien. Chez windows il y a 2 terminaux disponibles :</p>
 <ul>
-<li><code>Diagramme de cas d'utilisation</code> (Use Case Diagram) : Il représente les fonctionnalités fournies par un système logiciel du point de vue des utilisateurs (acteurs). Il montre les interactions entre les acteurs et le système.</li>
-<li><code>Diagramme de classes</code> (Class Diagram) : Il représente la structure statique d’un système logiciel en montrant les classes du système, leurs attributs, leurs méthodes et les relations entre les classes. Il permet de modéliser les concepts, les relations et les dépendances entre les classes.</li>
-<li><code>Diagramme d'activité</code> (Activity Diagram) : Il représente le flux de contrôle à l’intérieur d’un système logiciel ou d’un processus métier. Il montre les étapes, les décisions, les branchements et les flux de données.</li>
-<li>…</li>
+<li><a href="https://fr.wikipedia.org/wiki/Cmd">cmd</a>, l’invite de commande “historique”</li>
+<li><a href="https://fr.wikipedia.org/wiki/Windows_PowerShell">powershell</a>, plus récent</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p>Cependant, nous nous interesserons ici à la sphère Unix beaucoup plus populaire. Il y a également différents interpréteurs, le plus utilisé étant <a href="https://fr.wikipedia.org/wiki/Bourne-Again_shell">Bash</a>. Les commandes présentées ici sont standardisées et compréhensibles par n’importe quel interpréteur Unix (et sont même parfois identiques chez Windows)</p>
+<p>En tant que Data Scientist on ne vous demandera pas de savoir pirater la CIA avec une Casio Collège. Cependant, connaitre ces commandes est un <strong>must-have</strong> qui vous servira à coup sûr.</p>
+<section id="apprendre-à-naviguer" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="apprendre-à-naviguer"><span class="header-section-number">1</span> Apprendre à naviguer</h2>
+<p>Il ne s’agit pas d’apprendre à faire un noeud de chaise, mais de savoir parcourir les dossiers et les fichiers de votre machine.</p>
+<ul>
+<li>Ouvrir un terminal Bash
+<ul>
+<li>Par exemple Git Bash</li>
+</ul></li>
+<li>Ecire la commande <strong><code>pwd</code></strong> puis ENTREE
+<ul>
+<li>un faux ami : cela ne signifie pas password mais <strong>print working directory</strong></li>
+<li>normalement le résultat de cette commande est <code>/p/</code></li>
+<li>vous êtes donc à la racine du lecteur <code>/p</code>, votre espace personnel</li>
+</ul></li>
+<li><strong><code>ls</code></strong> pour <strong>lister</strong>
+<ul>
+<li>affiche les dossiers et fichiers de l’endroit où vous êtes (en l’occurence <code>/p</code>)</li>
+<li><strong><code>ls -l</code></strong> pour afficher en colonne (plus joli), et affiche d’autres informations telles le nom du propriétaire du fichier, la date de modification, les droits en lecture, écriture…
+<ul>
+<li><strong><code>ll</code></strong> : souvent cet alias à <code>ls -l</code> existe</li>
+<li>cela signifie que pour l’interpréteur <code>ll</code> ou <code>ls -l</code>, c’est pareil</li>
+<li>mais <code>ll</code> c’est plus rapide à taper</li>
+<li><code>alias</code> : affiche la liste des alias</li>
+</ul></li>
+<li>Le <code>-l</code> est donc une option de la commande <code>ls</code></li>
+<li>Chaque commande a de nombreuses options, internet est votre ami si besoin</li>
+</ul></li>
+<li><strong><code>cd 'Ma musique'</code></strong>
+<ul>
+<li>cd = change directory</li>
+<li>le terminal affiche votre nouvel emplacement : <code>/p/Ma musique</code></li>
+<li>lorsqu’il y a des espaces dans un nom de dossier, il faut ajouter des guillemets simples ’ ou doubles ” autour du nom du dossier</li>
+</ul></li>
+<li><code>pwd</code></li>
+<li><code>ls</code></li>
+<li><strong><code>cd ..</code></strong>
+<ul>
+<li>pour revenir au dossier parent</li>
+</ul></li>
+<li><code>cd /c</code>
+<ul>
+<li>pour changer de lecteur et aller sur le disque C:/</li>
+</ul></li>
+<li><code>ls</code></li>
+<li><code>cd /p</code>
+<ul>
+<li>revenir au lecteur P pour la suite</li>
+</ul></li>
+</ul>
+<p>Avec les 3 commandes décrites ci-dessus (pwd, ls et cd) vous pouvez naviguer sereinement dans les dossiers.</p>
+</section>
+<section id="quelques-trucs-et-astuces" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="quelques-trucs-et-astuces"><span class="header-section-number">2</span> Quelques trucs et astuces</h2>
+<p>Voici des raccourcis clavier bien utiles :</p>
+<ul>
+<li><strong>FLECHE HAUT</strong> : historique des commandes lancées
+<ul>
+<li>utile pour éviter de réécrire en entier une commande que l’on a lancée 2 min avant</li>
+<li>FLECHE BAS : également pour parcourir l’historique mais dans le sens inverse</li>
+</ul></li>
+<li><code>history</code> : historique des commandes exécutées</li>
+<li><strong>TAB</strong> : autocompletion
+<ul>
+<li><code>cd Ma</code> puis TAB</li>
+<li>le terminal va tenter de “compléter” la commande que vous êtes en train d’écrire</li>
+<li>Comme il n’y a qu’un seul dossier commençant par “Ma”, en faisant TAB, le terminal va ajouter pour obtenir <code>cd Ma\ musique</code> (= <code>cd "Ma musique"</code>)</li>
+</ul></li>
+<li><strong>CTRL + C</strong> : pour stopper la commande en cours si elle est trop longue</li>
+<li><strong>CLIC Molette</strong> (ou parfois CLIC droit, ou encore SHIFT + INSER) : Coller</li>
+</ul>
+</section>
+<section id="manipuler-fichiers-et-dossiers" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="manipuler-fichiers-et-dossiers"><span class="header-section-number">3</span> Manipuler fichiers et dossiers</h2>
+<ul>
+<li><code>cd /p</code></li>
+<li><strong><code>mkdir -p Cours/Informatique/bash-tp</code></strong>
+<ul>
+<li>mkdir = make directory</li>
+<li>Cette commande crée le dossier <code>bash-tp</code></li>
+<li><code>-p</code> permet de créer les dossiers parents (Cours et Informatique) s’ils n’existent pas</li>
+</ul></li>
+<li><code>cd Cours/Informatique/bash-tp</code>
+<ul>
+<li>Pour aller dans le dossier que l’on vient de créer</li>
+</ul></li>
+<li><strong><code>touch a.txt</code></strong>
+<ul>
+<li>créer un fichier vide nommé <code>a.txt</code></li>
+</ul></li>
+<li>Pour écrire dans un fichier il y a de nombreuses possibilités, par exemple avec l’<a href="https://fr.wikipedia.org/wiki/Vi">éditeur vi</a>
+<ul>
+<li>Cependant l’utilisation de <code>vi</code> est loin d’être triviale</li>
+<li>Si vous trouvez que ce TP est déjà assez compliqué comme ça, ne touchez pas à <code>vi</code></li>
+<li>Si vous êtes trop curieux, que vous avez ouvert le fichier a.txt avec <code>vi</code> et que maintenant vous êtes bloqué, tapez <code>:q!</code> pour sortir</li>
+</ul></li>
+<li>Pour info d’autres éditeurs :
+<ul>
+<li>Nano moins connu mais qui a l’air plus intuitif : <code>nano a.txt</code> (CTRL + X pour quitter)</li>
+<li>Si vous avez lancé votre terminal sous Windows : <code>notepad a.txt</code></li>
+</ul></li>
+<li><strong><code>rm a.txt</code></strong>
+<ul>
+<li>rm = remove pour supprimer le fichier</li>
+<li><span class="emoji" data-emoji="warning">⚠️</span> attention à bien utiliser cette commande, risque de perte de données</li>
+</ul></li>
+<li><strong><code>ls -l /c &gt; b.txt</code></strong>
+<ul>
+<li>Exécute la commande <code>ls -l /c</code> qui liste tous les fichiers et dossiers du lecteur /c</li>
+<li>Puis le &gt; indique que l’on sauvegarde le résultat dans le fichier b.txt créé s’il n’existe pas</li>
+</ul></li>
+<li><strong><code>cat b.txt</code></strong>
+<ul>
+<li>affiche le fichier</li>
+<li><code>head b.txt</code> : affiche uniquement les 10 premières lignes</li>
+<li><code>tail b.txt</code> : affiche uniquement les 10 dernières lignes</li>
+</ul></li>
+<li><code>pwd &gt;&gt; b.txt</code>
+<ul>
+<li>S’il y avait un seul <code>&gt;</code> : le contenu du fichier b.txt serait écrasé</li>
+<li>avec 2 <code>&gt;&gt;</code> : le résultat de la commande pwd est ajouté à la fin du fichier sans écraser ce qu’il y avait avant</li>
+<li><code>cat b.txt</code>
+<ul>
+<li>on voit que le fichier b.txt contient :
+<ul>
+<li>d’abord le résultat de la commande <code>ls -l /c</code></li>
+<li>puis celui de la commande <code>pwd</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong><code>cp b.txt b1.txt</code></strong>
+<ul>
+<li>Crée une copie du fichier b.txt dans le fichier b1.txt</li>
+</ul></li>
+<li><strong><code>mv b1.txt b2.txt</code></strong>
+<ul>
+<li>mv = move pour renommer le fichier b1.txt en b2.txt</li>
+</ul></li>
+<li><strong><code>grep Program b.txt</code></strong>
+<ul>
+<li>grep = Global Regular Expression Print</li>
+<li>L’exemple ci-dessus recherche dans le fichier b.txt toutes les lignes contenant le mot <code>Program</code> et les affiche</li>
+<li>Ou sinon comme le nom de la commande l’indique vous pouvez utiliser des expressions régulières si vous aimez ça</li>
+</ul></li>
+<li><strong><code>ls -l /c | grep Program</code></strong>
+<ul>
+<li>le résultat est le même que la dernière commande</li>
+<li>le terminal exécute la première commande <code>ls -l /c</code> et stocke le résultat</li>
+<li>le pipe | signifie que ce résultat est transféré à la commande suivante pour application (il est possible d’en enchainer plusieurs)</li>
+<li>Ainsi dans un second temps, le terminal exécute :
+<ul>
+<li><code>grep Program "résultat première commande"</code></li>
+</ul></li>
+<li><code>f(x) | g</code> <span class="emoji" data-emoji="arrow_right">➡️</span> traduit en langage matheux donne : g(f(x))</li>
+</ul></li>
+</ul>
+</section>
+<section id="résumé" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="résumé"><span class="header-section-number">4</span> Résumé</h2>
+<p>les commandes qu’il faut retenir et savoir utiliser</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>pwd</td>
+<td>Pour savoir où on est</td>
+</tr>
+<tr class="even">
+<td>ls</td>
+<td>Pour lister ce qu’il y a</td>
+</tr>
+<tr class="odd">
+<td>cd “dossier”</td>
+<td>Pour se déplacer vers un sous-dossier</td>
+</tr>
+<tr class="even">
+<td>cd ..</td>
+<td>Pour aller dans le dossier parent</td>
+</tr>
+<tr class="odd">
+<td>cat “fichier”</td>
+<td>Pour voir le contenu d’un fichier</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="un-petit-exercice-dapplication" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="un-petit-exercice-dapplication"><span class="header-section-number">5</span> Un petit exercice d’application</h2>
+<ol type="1">
+<li>Aller dans le dossier <code>/p/Cours/Informatique/bash-tp</code></li>
+<li>Créer un dossier <code>exo1</code> et aller dans ce dossier (commandes : <code>mkdir, cd</code>)</li>
+<li>Lister en lignes tous les fichiers et dossiers de <code>/C/Program Files</code> (<code>ls -l</code>)</li>
+<li>Stocker le résultat de la commande précédente dans le dossier exo1, fichier <code>liste_programmes.txt</code> (utiliser <code>&gt;</code>)</li>
+<li>Renommer ce fichier en <code>prog.txt</code> (<code>mv</code>)</li>
+<li>Afficher le contenu de ce fichier (<code>cat</code>)</li>
+<li>Compléter la commande précédente pour avoir uniquement les lignes contenant la lettre <code>m</code> (<code>|</code> et <code>grep</code>)</li>
+<li>Compléter la commande précédente pour trier (commande <code>sort</code>)</li>
+<li>Compléter la commande précédente pour ne garder que les 3 premières lignes (<code>head -3</code>)</li>
+<li>Copier le fichier <code>prog.txt</code> dans <code>/p/Cours/Informatique/bash-tp</code> (commande <code>cp</code> et utiliser <code>..</code> pour accéder au dossier parent)</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Solution
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Memento UML disponibles à la bibliothèque</p>
-</div>
-</div>
-<section id="diagramme-de-cas-dutilisation" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="diagramme-de-cas-dutilisation"><span class="header-section-number">1</span> Diagramme de cas d’utilisation</h2>
-<p>Un diagramme de cas d’utilisation UML (Unified Modeling Language) est un type de diagramme utilisé pour représenter les interactions entre les acteurs (utilisateurs ou systèmes externes) et le système logiciel. Il met l’accent sur les fonctionnalités fournies par le système du point de vue des utilisateurs.</p>
-<p>Un diagramme de cas d’utilisation se compose de plusieurs éléments clés :</p>
-<ul>
-<li><code>Acteur</code> : Un acteur représente un rôle joué par un utilisateur ou un système externe qui interagit avec le système logiciel. Il peut s’agir d’une personne, d’un autre système, d’un périphérique matériel, etc. Les acteurs sont souvent représentés par des silhouettes.</li>
-<li><code>Cas d'utilisation</code> : Un cas d’utilisation représente une fonctionnalité ou une action que le système logiciel fournit à ses acteurs. Il décrit une interaction entre les acteurs et le système pour atteindre un objectif spécifique.</li>
-<li><code>Relation d'association</code> : Les relations d’association connectent les acteurs aux cas d’utilisation pour montrer quel acteur utilise quel cas d’utilisation.</li>
-</ul>
-<p>Les diagrammes de cas d’utilisation UML sont utilisés pour :</p>
-<ul>
-<li>capturer les exigences fonctionnelles du système</li>
-<li>identifier les acteurs impliqués</li>
-<li>décrire les interactions entre les acteurs et le système</li>
-<li>définir les fonctionnalités attendues du système</li>
-</ul>
-<p>Ils aident à communiquer efficacement les besoins des utilisateurs et à guider le processus de développement logiciel en se concentrant sur les objectifs de l’utilisateur final.</p>
-<section id="outils" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="outils"><span class="header-section-number">1.1</span> Outils</h3>
-<ul>
-<li><a href="http://www.plantuml.com/" class="external" target="_blank">PlantUML</a>
-<ul>
-<li><a href="https://github.com/ludo2ne/projet-info-2A/blob/main/doc/diagrammes/diag_cas_utilisation.txt" class="external" target="_blank">exemple</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="exemple" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="exemple"><span class="header-section-number">1.2</span> Exemple</h3>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-
-  player[",-. \n`-' \n/|\ \n |\n/ \ \n Player"]
-  organizer[",-. \n`-' \n/|\ \n |\n/ \ \n Organizer"]
-
-  player --&gt; modifyProfile([Modify Profile])
-  player --&gt; register([Register Tournament])
-  player --&gt; becomeArbiter([Become Arbiter])
-  
-  organizer --&gt; createTournament([Create   Tournament])
-  organizer --&gt; modifyTournament([Modify Tournament])
-</pre>
-</div>
-<p></p></figure><p></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Cours/Informatique/bash-tp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> exo1</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="st">"/C/Program Files"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="st">"/C/Program Files"</span> <span class="op">&gt;</span> liste_programmes.txt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> liste_programmes.txt prog.txt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> prog.txt</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> prog.txt <span class="kw">|</span> <span class="fu">grep</span> m</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> prog.txt <span class="kw">|</span> <span class="fu">grep</span> m <span class="kw">|</span> <span class="fu">sort</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> prog.txt <span class="kw">|</span> <span class="fu">grep</span> m <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-3</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> prog.txt ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="diagramme-de-classe" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="diagramme-de-classe"><span class="header-section-number">2</span> Diagramme de classe</h2>
-<p>Un diagramme de classes UML (Unified Modeling Language) est un type de diagramme utilisé pour représenter la structure statique d’un système logiciel. Il montre les classes du système, leurs attributs, leurs méthodes et les relations entre les classes.</p>
-<p>Un diagramme de classes UML se compose de différentes boîtes représentant les classes, avec des lignes qui connectent ces boîtes pour montrer les relations entre les classes. Voici quelques éléments clés que l’on retrouve généralement dans un diagramme de classes :</p>
-<ul>
-<li><code>Classe</code> : Elle est représentée par une boîte avec trois sections :
-<ul>
-<li>le nom de la classe</li>
-<li>les attributs</li>
-<li>les méthodes</li>
-</ul></li>
-<li><code>Relation d'association</code> : Une relation d’association représente une connexion entre 2 classes. Elle montre que les objets d’une classe sont associés aux objets d’une autre classe. Par exemple, une classe <code>Étudiant</code> peut être associée à une classe <code>Cours</code> via une relation d’association pour indiquer que les étudiants suivent des cours.</li>
-<li><code>Héritage</code> : Cela permet de modéliser les concepts de généralisation et de spécialisation.</li>
-<li><code>Agrégation et Composition</code> : Ces relations décrivent la structure des classes et leur association avec d’autres classes.
-<ul>
-<li>L’agrégation est une relation où une classe peut être composée d’autres classes, mais ces classes peuvent exister indépendamment</li>
-<li>La composition est une relation plus forte où une classe est composée d’autres classes, et ces classes n’existent pas sans la classe parente.</li>
-</ul></li>
-<li><code>Multiplicité</code> : La multiplicité spécifie le nombre d’objets d’une classe associés à un ou plusieurs objets d’une autre classe dans une relation d’association. Elle est représentée par des nombres ou des symboles tels que “0..1”, “1”, “*“, etc.</li>
-</ul>
-<p>Les diagrammes de classes UML sont utilisés pour modéliser la structure conceptuelle d’un système logiciel, identifier les classes et leurs relations. Ils fournissent une représentation visuelle et standardisée pour analyser, concevoir et documenter les systèmes orientés objet.</p>
-<section id="outils-1" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="outils-1"><span class="header-section-number">2.1</span> Outils</h3>
-<ul>
-<li><a href="http://www.plantuml.com/" class="external" target="_blank">PlantUML</a>
-<ul>
-<li><a href="https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes" class="external" target="_blank">exemples</a></li>
-</ul></li>
-<li><a href="https://mermaid.js.org/syntax/classDiagram.html" class="external" target="_blank">mermaid</a></li>
-</ul>
-</section>
-<section id="exemple-1" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="exemple-1"><span class="header-section-number">2.2</span> Exemple</h3>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">classDiagram
-    class Adresse {
-        +numero: string
-        +rue: string
-        +ville: string
-    }
-
-    class Personne {
-        +nom: string
-        +prenom: string
-        +age: int
-        +demenager()
-    }
-
-    class Conducteur {
-        +no_permis: string
-    }
-
-    class Voiture {
-        +immat : string
-        +vitesse: float
-    }
-
-    class Roue {
-        +taille: string
-    }
-
-    class Carrosserie {
-        +couleur: string
-    }
-
-    Personne "*" -- "1" Adresse
-    Personne &lt;|-- Conducteur
-    Conducteur "*" -- "*" Voiture : conduit
-    Voiture o-- Roue
-    Voiture *-- Carrosserie
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="exercice" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercice"><span class="header-section-number">3</span> Exercice</h2>
-<p>Un Courrier peut être de 2 types : Lettre ou Colis.</p>
-<p>Une Lettre est caractérisée par :</p>
-<ul>
-<li>poids (en grammes)</li>
-<li>mode d’expédition (Rapide ou Normal)</li>
-<li>adresse de destination</li>
-<li>format (A3 ou A4)</li>
-</ul>
-<p>Un Colis est caractérisé par :</p>
-<ul>
-<li>poids (en grammes)</li>
-<li>mode d’expédition (Rapide ou Normal)</li>
-<li>adresse de destination</li>
-<li>volume (en litres)</li>
-</ul>
-<p>Chaque Courrier dispose des méthodes suivantes :</p>
-<ul>
-<li><code>__init__()</code> : un constructeur</li>
-<li><code>__str__()</code> : une méthode qui retourne une chaine décrivant le Courrier</li>
-<li><code>calcul_affranchissement()</code>
-<ul>
-<li>pour une Lettre : tarif_base + poids * 0.001
-<ul>
-<li>avec tarif_base = 2€50 pour le format A4 et 3€50 pour le A3</li>
-</ul></li>
-<li>pour un colis : volume / 4 + poids * 0.001</li>
-<li>en mode d’expédition rapide, les montants ci-dessus sont doublés</li>
-</ul></li>
-</ul>
-<section id="questions" class="level4">
-<h4 class="anchored" data-anchor-id="questions">Questions</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Définir le diagramme de classe</label></li>
-<li><label><input type="checkbox">Coder ces classes en Python</label></li>
-</ul>
-<p>Exemple de résultat attendu</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> l1 <span class="op">=</span> Lettre(<span class="st">"Bordeaux"</span>, <span class="dv">80</span>, <span class="st">"normal"</span>, <span class="st">"A4"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(l1)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Lettre : </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Adresse destination : Bordeaux</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    Poids : <span class="dv">80</span> grammes</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Mode : normal</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    Format : A4</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    Prix du timbre : <span class="fl">2.58</span> €</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> c1 <span class="op">=</span> Colis(<span class="st">"Rennes"</span>, <span class="dv">3500</span>, <span class="st">"rapide"</span>, <span class="fl">2.25</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(c1)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Colis : </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    Adresse destination : Rennes </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    Poids : <span class="dv">3500</span> grammes </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    Mode : rapide </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    Volume : <span class="fl">2.25</span> litres </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Prix du timbre : <span class="fl">8.12</span> €</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La correction est disponible <a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction" class="external" target="_blank">ici</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1087,7 +1098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/UML/UML.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/Bash.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

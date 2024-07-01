@@ -202,6 +202,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/outils/Bash.html">
+ <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
@@ -359,14 +363,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>code en ligne</code></td>
 </tr>
 <tr class="even">
-<td><code>&gt; Citation</code></td>
-<td>&gt; Citation</td>
-</tr>
-<tr class="odd">
 <td><code># Titre de niveau 1</code></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>## Titre de niveau 2</code></td>
 <td></td>
 </tr>
@@ -1062,38 +1062,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>De très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple <span class="ot">&lt;https://commonmark.org/help/&gt;</span>{target="_blank}</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Quelques exemples de mise en forme :</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>| Code Markdown                    | Résultat                       |</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>| -------------------------------- | ------------------------------ |</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>| <span class="in">`**texte en gras**`</span>              | **texte en gras**              |</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>| <span class="in">`*texte en italique*`</span>            | *texte en italique*            |</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>| <span class="in">`[lien](https://example.com)`</span>    | <span class="co">[</span><span class="ot">lien</span><span class="co">](https://example.com)</span>    |</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>| <span class="in">`![texte alternatif](image.jpg)`</span> | <span class="al">![texte alternatif](image.jpg)</span> |</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>| <span class="sc">\`</span>code en ligne<span class="sc">\`</span>                | <span class="in">`code en ligne`</span>                |</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>| <span class="in">`&gt; Citation`</span>                     | &gt; Citation                     |</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>| <span class="in">`# Titre de niveau 1`</span>            |                                |</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>| <span class="in">`## Titre de niveau 2`</span>           |                                |</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Cette page est elle-même écrite en Markdown ! (avec une <span class="co">[</span><span class="ot">surcouche</span><span class="co">](https://quarto.org/docs/authoring/markdown-basics.html)</span>{target="_blank})</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Vous pouvez consulter le code en cliquant sur le bouton <span class="in">`&lt;/&gt; Code`</span> en haut à droite.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Quelques exemples de mise en forme :</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>| Code Markdown                    | Résultat                       |</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>| -------------------------------- | ------------------------------ |</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>| <span class="in">`**texte en gras**`</span>              | **texte en gras**              |</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>| <span class="in">`*texte en italique*`</span>            | *texte en italique*            |</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>| <span class="in">`[lien](https://example.com)`</span>    | <span class="co">[</span><span class="ot">lien</span><span class="co">](https://example.com)</span>    |</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>| <span class="in">`![texte alternatif](image.jpg)`</span> | <span class="al">![texte alternatif](image.jpg)</span> |</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>| <span class="sc">\`</span>code en ligne<span class="sc">\`</span>                | <span class="in">`code en ligne`</span>                |</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>| <span class="in">`# Titre de niveau 1`</span>            |                                |</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>| <span class="in">`## Titre de niveau 2`</span>           |                                |</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Cette page est elle-même écrite en Markdown ! (avec une <span class="co">[</span><span class="ot">surcouche</span><span class="co">](https://quarto.org/docs/authoring/markdown-basics.html)</span>{target="_blank})</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Vous pouvez consulter le code en cliquant sur le bouton <span class="in">`&lt;/&gt; Code`</span> en haut à droite.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Un <span class="co">[</span><span class="ot">large choix d'emoji</span><span class="co">](https://gist.github.com/rxaviers/7360908)</span>{target="_blank} est également disponible en Markdown :sunglasses:</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Un <span class="co">[</span><span class="ot">large choix d'emoji</span><span class="co">](https://gist.github.com/rxaviers/7360908)</span>{target="_blank} est également disponible en Markdown :sunglasses:</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Utilisation dans VScode</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Utilisation dans VScode</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CTRL + K puis V : pour avoir cote à cote les modes **édition** et **vue**</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Extensions utiles (à aller chercher dans le marketplace)</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>markdownlint</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Emoji</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Checkboxes</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Table</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Preview Mermaid Support</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CTRL + K puis V : pour avoir cote à cote les modes **édition** et **vue**</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Extensions utiles (à aller chercher dans le marketplace)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>markdownlint</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Emoji</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Checkboxes</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Table</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Preview Mermaid Support</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

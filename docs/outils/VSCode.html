@@ -202,6 +202,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/outils/Bash.html">
+ <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
@@ -301,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Visual Studio Code est un logiciel qui permet d’éditer du code et propose de nombreuses extensions.</p>
+<p><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> est un logiciel qui permet d’éditer du code dans de très nombreux langages. Il propose également de nombreuses extensions pour faciliter le travail des développeurs.</p>
 <p>Le but de cette fiche est de :</p>
 <ul>
 <li>vous permettre d’exécuter un programme python avec VSCode</li>
@@ -318,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>isort</li>
 <li>Python Test Explorer</li>
 <li>…</li>
-<li><label><input type="checkbox">Désactiver l’extension <strong>Ruff</strong> (elle fait doublon avec <strong>Flake8</strong>)</label></li>
+<li><span class="emoji" data-emoji="x">❌</span> Désactiver l’extension <strong>Ruff</strong> (elle fait doublon avec <strong>Flake8</strong>)</li>
 </ul>
 <p>Autres extensions interessantes :</p>
 <ul>
@@ -328,8 +332,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="formatage-et-linting" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="formatage-et-linting"><span class="header-section-number">1.2</span> Formatage et Linting</h3>
 <ul>
-<li>Un **formateur*- est un outil qui va mettre en forme votre code pour que ce soit joli et lisible</li>
-<li>un **linter*- est un outil qui va vous avertir si votre code n’est pas joli
+<li>Un <strong>formateur</strong> est un outil qui va mettre en forme votre code pour que ce soit joli et lisible</li>
+<li>un <strong>linter</strong> est un outil qui va vous avertir si votre code n’est pas joli
 <ul>
 <li>ex : ligne trop longue, espace manquant ou en trop…</li>
 </ul></li>
@@ -340,8 +344,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.3" class="anchored" data-anchor-id="settings"><span class="header-section-number">1.3</span> Settings</h3>
 <p>Vous pouvez préciser le paramètrage à plusieurs niveaux :</p>
 <ul>
-<li>au niveau de l’application VSCode</li>
-<li>au niveau d’un dépôt</li>
+<li>au niveau utilisateur (User)</li>
+<li>au niveau d’un dépôt (Workspace)</li>
 </ul>
 <p>Le fichier <code>.vscode/settings.json</code> contient du paramètrage qui va s’appliquer à tous les fichiers du dépôt.</p>
 <p>Ce fichier contient par exemple les propriétés ci-dessous :</p>

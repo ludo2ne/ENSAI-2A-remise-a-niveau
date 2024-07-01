@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -70,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -168,6 +205,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../docs/outils/Bash.html">
+ <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
@@ -228,10 +269,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a>
   <ul class="collapse">
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer"><span class="header-section-number">3.1</span> Avant de commencer</a></li>
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">3.2</span> Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3.3</span> Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3.4</span> Exercice 3 - Domino</a></li>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">3.1</span> Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3.2</span> Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3.3</span> Exercice 3 - Domino</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -313,43 +353,43 @@ ul.task-list li input[type="checkbox"] {
 <li><code>data</code> : pour vos fichiers de données</li>
 <li><code>doc</code> : pour votre documentation</li>
 </ul>
-<pre><code>.
-├── data
-│   └── temperatures.csv
-├── doc
-│   ├── suivi.md
-│   └── rapport.tex
-└── src
-    ├── __main__.py
-    ├── package1
-    │   ├── __init__.py
-    │   ├── module1.py
-    │   ├── module2.py
-    └── package2
-        ├── __init__.py
-        ├── module3.py
-        └── subpackage21
-            ├── __init__.py
-            ├── module4.py
-            ├── module5.py</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── data</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   └── temperatures.csv</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>├── doc</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── suivi.md</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── rapport.tex</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>└── src</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    ├── __main__.py</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    ├── package1</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    │   ├── __init__.py</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    │   ├── module1.py</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    │   ├── module2.py</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    └── package2</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        ├── __init__.py</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        ├── module3.py</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        └── subpackage21</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            ├── __init__.py</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            ├── module4.py</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            ├── module5.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Remarques importantes :</p>
 <ul>
 <li>le fichier <code>__main__.py</code> contient le code à exécuter quand le pacakge est exécuté</li>
 <li>les fichiers <code>__init__.py</code> sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)</li>
 </ul>
 <p>Voici un exemple plus concret :</p>
-<pre><code>.
-└── src
-    ├── __main__.py
-    ├── vehicules
-    │   ├── __init__.py
-    │   ├── deux_roues.py
-    │   ├── velo.py
-    │   └── trottinette.py
-    └── humain
-        ├── __init__.py
-        ├── personne.py
-        └── etudiant.py</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>└── src</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ├── __main__.py</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    ├── vehicules</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    │   ├── __init__.py</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    │   ├── deux_roues.py</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    │   ├── velo.py</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    │   └── trottinette.py</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    └── humain</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        ├── __init__.py</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        ├── personne.py</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        └── etudiant.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="héritage" class="level2" data-number="2">
@@ -376,7 +416,7 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 </ul>
 <p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
 <blockquote class="blockquote">
-<p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <span class="citation" data-cites="abstractmethod">@abstractmethod</span> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
+<p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <code>@abstractmethod</code> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
 </blockquote>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -388,22 +428,29 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>classe mère ne veut pas dire forcément classe abstraite</p>
-</div>
-</div>
-<p>Exemple :</p>
+<p>Classe mère ne veut pas dire forcément classe abstraite</p>
+<p>Par exemple :</p>
 <ul>
 <li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
 <li>Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
 <li>Or ici la classe <code>Velo</code> n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo</li>
 </ul>
-<hr>
+</div>
+</div>
 </section>
 </section>
 <section id="exercices" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
-<section id="avant-de-commencer" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="avant-de-commencer"><span class="header-section-number">3.1</span> Avant de commencer</h3>
+<div class="callout callout-style-default callout-caution callout-titled" title="Avant de commencer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avant de commencer
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
 <li>Suivez les consignes données dans le fichier de <a href="../../docs/outils/VSCode.html">paramétrage et d’utilisation de VSCode</a></li>
@@ -413,9 +460,10 @@ Warning
 <li><code>domino</code> pour l’exercice 3</li>
 </ul></li>
 </ul>
-</section>
-<section id="exercice-1---points" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">3.2</span> Exercice 1 - Points</h3>
+</div>
+</div>
+<section id="exercice-1---points" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">3.1</span> Exercice 1 - Points</h3>
 <p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :</p>
 <ul class="task-list">
 <li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
@@ -428,8 +476,8 @@ Warning
 <li><label><input type="checkbox">(bonus) <code>rotation(self, a)</code> : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
 </ul>
 </section>
-<section id="exercice-2---polygones" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3.3</span> Exercice 2 - Polygones</h3>
+<section id="exercice-2---polygones" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3.2</span> Exercice 2 - Polygones</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Créer une classe <code>Polygones</code> composées d’objets de la classe <code>Point</code></label>
 <ul>
@@ -446,8 +494,13 @@ Warning
 <li>vérifier que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit</li>
 </ul></li>
 </ul>
-<p><a href="https://mermaid.js.org/syntax/classDiagram.html" class="external" target="_blank">Diagrammes de classe avec Mermaid</a></p>
-<pre class="mermaid"><code>classDiagram
+<p><a href="https://mermaid.js.org/syntax/classDiagram.html" target="_blank">Diagrammes de classe avec Mermaid</a></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
     Point --o Polygone
     Polygone &lt;|-- Segment : 2
     Polygone &lt;|-- Triangle : 3
@@ -474,10 +527,16 @@ Warning
     class Triangle{
         +aire()
         +perimetre()
-    }</code></pre>
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
-<section id="exercice-3---domino" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3.4</span> Exercice 3 - Domino</h3>
+<section id="exercice-3---domino" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3.3</span> Exercice 3 - Domino</h3>
 <p>Écrire une classe <code>Domino</code> avec :</p>
 <ul class="task-list">
 <li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
@@ -502,12 +561,23 @@ Warning
 <li><label><input type="checkbox">ajoute le domino joué à la liste <code>dominos_poses</code> et le retire de <code>dominos_en_main</code></label></li>
 </ul></li>
 </ul>
-<pre class="mermaid"><code>classDiagram
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
     class Domino{
         +int sommet_A
         +int sommet_B
         +accepte(autre_domino)
-    }</code></pre>
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 </section>
