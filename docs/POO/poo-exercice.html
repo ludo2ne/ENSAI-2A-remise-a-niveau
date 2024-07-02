@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.52">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Paramétrage et utilisation">
+<meta name="description" content="Exercice de POO avec Python">
 
-<title>Remise à Niveau Informatique - DBeaver</title>
+<title>Programmation Orientée Objet - Exercices – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -87,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -97,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">SQL</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
@@ -106,17 +143,13 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
- <span class="dropdown-text">DBeaver</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../docs/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Python</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
@@ -150,16 +183,27 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../../docs/POO/POO.html"> 
-<span class="menu-text">POO</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-poo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">POO</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-cours.html">
+ <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-exercice.html">
+ <span class="dropdown-text">Exercices POO</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
@@ -170,6 +214,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../docs/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/DBeaver.html">
+ <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
@@ -202,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -221,31 +269,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration"><span class="header-section-number">1</span> Configuration</a>
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer">Avant de commencer</a>
   <ul class="collapse">
-  <li><a href="#optionnel" id="toc-optionnel" class="nav-link" data-scroll-target="#optionnel"><span class="header-section-number">1.1</span> Optionnel</a></li>
+  <li><a href="#sur-votre-machine-personnelle" id="toc-sur-votre-machine-personnelle" class="nav-link" data-scroll-target="#sur-votre-machine-personnelle">Sur votre machine personnelle</a></li>
   </ul></li>
-  <li><a href="#créer-la-connexion" id="toc-créer-la-connexion" class="nav-link" data-scroll-target="#créer-la-connexion"><span class="header-section-number">2</span> Créer la connexion</a></li>
-  <li><a href="#exécuter-du-sql" id="toc-exécuter-du-sql" class="nav-link" data-scroll-target="#exécuter-du-sql"><span class="header-section-number">3</span> Exécuter du SQL</a></li>
-  <li><a href="#interface-pgadmin" id="toc-interface-pgadmin" class="nav-link" data-scroll-target="#interface-pgadmin"><span class="header-section-number">4</span> Interface pgAdmin</a></li>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</a>
+  <ul class="collapse">
+  <li><a href="#un-domino" id="toc-un-domino" class="nav-link" data-scroll-target="#un-domino"><span class="header-section-number">3.1</span> Un Domino</a></li>
+  <li><a href="#jeu" id="toc-jeu" class="nav-link" data-scroll-target="#jeu"><span class="header-section-number">3.2</span> Jeu</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/DBeaver.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DBeaver</h1>
+<h1 class="title">Programmation Orientée Objet - Exercices</h1>
 </div>
 
 <div>
   <div class="description">
-    Paramétrage et utilisation
+    Exercice de POO avec Python
   </div>
 </div>
 
@@ -268,97 +320,208 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="avant-de-commencer" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h2>
+<p>À partir de maintenant, nous n’allons plus coder dans des Notebooks mais dans l’IDE VSCode.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Ouvrez Visual Studio Code</label></li>
+<li><label><input type="checkbox"><a href="../../docs/outils/VSCode.html" target="_blank">Paramétrez VSCode</a></label></li>
+<li><label><input type="checkbox">Dans la fiche VSCode, suivez les consignes de la section <code>Première utilisation</code></label>
+<ul>
+<li>cela vous permettra de créer un clone du code</li>
+</ul></li>
+<li><label><input type="checkbox">Dans le dossier <code>src/Python-POO/exercices</code>, créez les 2 dossiers suivants :</label>
+<ul>
+<li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
+<li><code>domino</code> pour l’exercice 3</li>
+</ul></li>
+</ul>
+<section id="sur-votre-machine-personnelle" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sur-votre-machine-personnelle">Sur votre machine personnelle</h3>
+<p>Si vous n’avez pas accès au réseau ENSAI, vous pouvez soit :</p>
+<ul>
+<li>continuer à coder dans les notebooks</li>
+<li>installer les outils pour développer en python</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Installation outils Python">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Installation outils Python
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>DBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d’autres encore.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Téléchargez et installez <a href="https://www.python.org/downloads/" target="_blank">Python</a> version ≥ 3.10</label></li>
+<li><label><input type="checkbox">Téléchargez et installez <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></label></li>
+<li><label><input type="checkbox">Téléchargez et installez <a href="https://git-scm.com/" target="_blank">Git</a></label></li>
+<li><label><input type="checkbox">Ouvrez VS Code et installez l’extension Python (View &gt; Extension)</label></li>
+</ul>
+<p><a href="https://learn.microsoft.com/fr-fr/training/modules/python-install-vscode/" target="_blank">Plus de détails</a></p>
 </div>
 </div>
-<p>Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous.</p>
-<section id="configuration" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="configuration"><span class="header-section-number">1</span> Configuration</h2>
-<ul>
-<li>Menu <code>Fenêtre</code> &gt; <code>Preference</code>
-<ul>
-<li>Formatage SQL
-<ul>
-<li>Casse des mots clefs : <code>UPPER</code></li>
-<li><label><input type="checkbox" checked="">Insert spaces for tabs</label></li>
-<li>Appliquer</li>
-</ul></li>
-<li>Metadonnées
-<ul>
-<li>Décocher <code>Ouvrir une connexion séparée pour la lecture des étadonnées</code></li>
-</ul></li>
-<li>Editeur SQL
-<ul>
-<li>Décocher <code>Ouvrir une connexion séparée pour chaque éditeur</code></li>
-</ul></li>
-</ul></li>
-</ul>
-<section id="optionnel" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="optionnel"><span class="header-section-number">1.1</span> Optionnel</h3>
-<ul>
-<li>Templates
-<ul>
-<li>Enlever les modèles existants</li>
-<li>Importer le fichier <a href="templates_dbeaver.xml" download="">templates_dbeaver.xml</a></li>
-<li>Les templates permettent d’écrire plus rapidement des requêtes</li>
-</ul></li>
-</ul>
 </section>
 </section>
-<section id="créer-la-connexion" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="créer-la-connexion"><span class="header-section-number">2</span> Créer la connexion</h2>
-<p>Pour créer une connexion vers la base de données ENSAI sur la VM :</p>
+<section id="exercice-1---points" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</h2>
+<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y.</p>
+<p>Codez les méthodes suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
+<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
+<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
+<li><label><input type="checkbox"><code>distance(self, autre_point)</code> : distance avec un autre point</label></li>
+<li><label><input type="checkbox"><code>__eq__(self, autre_point) -&gt; bool</code> : dit si les 2 points sont identiques</label></li>
+<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
+<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
+<li><label><input type="checkbox"><code>rotation(self, a)</code> (bonus) : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Pour vérifier que vos méthodes sont correctes, vous pouvez ajouter à la fin de votre classe un bloc <code>main</code>. Lorsque vous exécuterez ce fichier, c’est ce code qui sera lancé.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>point.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="point.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p1 : </span><span class="sc">{</span>p1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Distance entre p1 et p2 : </span><span class="sc">{</span>p1<span class="sc">.</span>distance(p2)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p1 est égal à p2 : </span><span class="sc">{</span>p1 <span class="op">==</span> p2<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-2---polygones" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Créez une classe <code>Polygone</code> composées d’objets de la classe <code>Point</code></label>
 <ul>
-<li>Cliquer sur l’icone <code>Nouvelle connexion</code> en haut à gauche sous fichier</li>
-<li>Sélectionner <code>PostgreSQL</code> puis suivant
-<ul>
-<li>Host : <code>sgbd-eleves.domensai.ecole</code></li>
-<li>Port : <code>5432</code></li>
-<li>Database : <code>idxxxx</code></li>
-<li>Nom d’utilisateur : <code>idxxxx</code></li>
-<li>Mot de passe : <code>idxxxx</code></li>
-<li><code>Test de connexion</code></li>
-<li>Acceptez les mises à jour des pilotes</li>
-<li><code>Terminer</code></li>
+<li>Nous supposerons par la suite que les segments ne se croisent pas</li>
 </ul></li>
+<li><label><input type="checkbox">Ajoutez à cette classe 2 méthodes abstraites <code>aire()</code> et <code>périmètre()</code></label>
+<ul>
+<li>ces méthodes seront définies dans les classes filles</li>
+</ul></li>
+<li><label><input type="checkbox">Créez les classes <code>Segment</code>, <code>Triangle</code> et <code>Quadrilatere</code> qui héritent de la classe <code>Polygone</code></label>
+<ul>
+<li>vérifiez à chaque fois le nombre de points</li>
+</ul></li>
+<li><label><input type="checkbox">Définissez les méthodes <code>aire()</code> et <code>périmètre()</code> dans ces 3 classes</label></li>
+<li><label><input type="checkbox">Créez la classe <code>Rectangle</code> qui hérite de <code>Quadrilatere</code></label></li>
+<li><label><input type="checkbox">Vérifier pour Rectangle, que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit</label></li>
+</ul>
+<p>Voici le diagramme de classes généré avec <a href="https://mermaid.js.org/syntax/classDiagram.html" target="_blank">Mermaid</a></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    Point --o Polygone
+    Polygone &lt;|-- Segment : 2
+    Polygone &lt;|-- Triangle : 3
+    Polygone &lt;|-- Quadrilatere : 4
+    Quadrilatere &lt;|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(autre_point)
+    }
+    class Polygone{
+        +liste[Point] liste_points
+        +aire()
+        +perimetre()
+    }
+    class Quadrilatere{
+        +aire()
+        +perimetre()
+    }
+    class Segment{
+        +aire()
+        +perimetre()
+    }
+    class Triangle{
+        +aire()
+        +perimetre()
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-3---domino" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</h2>
+<section id="un-domino" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="un-domino"><span class="header-section-number">3.1</span> Un Domino</h3>
+<p>Écrire une classe <code>Domino</code> avec :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
+<li><label><input type="checkbox"><code>__str__()</code> : qui affiche les points présents sur les deux extrémités</label></li>
+<li><label><input type="checkbox"><code>retourne()</code> qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).</label></li>
+<li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
 </ul>
 </section>
-<section id="exécuter-du-sql" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exécuter-du-sql"><span class="header-section-number">3</span> Exécuter du SQL</h2>
-<ul>
-<li>Cliquer sur l’icone <code>SQL</code></li>
-<li>Exécuter la requête courante (où est le curseur de la souris):
-<ul>
-<li>CTRL + ENTREE</li>
-<li>le petit triangle orange</li>
-</ul></li>
-<li>Exécuter toutes les requêtes
-<ul>
-<li>le triangle orange à l’intérieur d’un parchemin</li>
-</ul></li>
+<section id="jeu" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="jeu"><span class="header-section-number">3.2</span> Jeu</h3>
+<p>Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n’y aura qu’un seul joueur et il n’est possible de poser que d’un seul côté, à la fin de la rangée de domino):</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Écrivez une fonction qui génère tous les dominos et renvoie la liste</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>pioche()</code> qui pioche au hasard un domino dans une liste et le retire de cette liste</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>affiche_dominos()</code> qui affiche une liste de dominos</label></li>
+<li><label><input type="checkbox">Écrivez une fonction <code>domino_posables(dominos_en_main, dominos_poses)</code> qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste <code>dominos_poses</code>.</label></li>
 </ul>
-</section>
-<section id="interface-pgadmin" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="interface-pgadmin"><span class="header-section-number">4</span> Interface pgAdmin</h2>
-<p>En cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface <a href="http://sgbd-eleves.domensai.ecole/phppgadmin/" target="_blank">pgAdmin</a></p>
-<ul>
-<li>Utilisateur : idxxxx</li>
-<li>Mot de passe : idxxxx</li>
-<li>Une fois connecté, cliquez sur <code>idxxxx</code> dans le menu de gauche</li>
-<li>cliquez sur <code>SQL</code> pour exécuter des requêtes</li>
+<p>Écrivez une fonction <code>jouer()</code> qui :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">génére la liste de tous les dominos</label></li>
+<li><label><input type="checkbox">tire un 1er domino au hasard et le place dans la liste <code>dominos_poses</code></label></li>
+<li><label><input type="checkbox">distribue aléatoirement 6 dominos au joueur</label></li>
+<li><label><input type="checkbox">affiche les dominos qu’il peut jouer</label></li>
+<li><label><input type="checkbox">si aucun domino n’est jouable, lui proposer de piocher</label></li>
+<li><label><input type="checkbox">lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et <code>quit</code> pour arrêter de jouer)</label></li>
+<li><label><input type="checkbox">ajoute le domino joué à la liste <code>dominos_poses</code> et le retire de <code>dominos_en_main</code></label></li>
 </ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class Domino{
+        +int extr_A
+        +int extr_B
+        +retourne()
+        +accepte_apres(autre_domino)
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -541,18 +704,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -584,7 +736,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/ludo2ne\.github\.io\/ENSAI-2A-remise-a-niveau\/");
@@ -592,7 +766,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -923,7 +1097,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/DBeaver.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

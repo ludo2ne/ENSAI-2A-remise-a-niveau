@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.52">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
 <meta name="description" content="POO avec Python">
 
-<title>Remise à Niveau Informatique - Programmation Orientée Objet</title>
+<title>Programmation Orientée Objet – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,9 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -124,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -134,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">SQL</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
@@ -143,17 +140,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
- <span class="dropdown-text">DBeaver</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../docs/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Python</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
@@ -187,16 +180,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="../../docs/POO/POO.html" aria-current="page"> 
-<span class="menu-text">POO</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-poo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">POO</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-cours.html">
+ <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-exercice.html">
+ <span class="dropdown-text">Exercices POO</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
@@ -207,6 +211,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../../docs/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/DBeaver.html">
+ <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
@@ -239,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -267,18 +275,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite"><span class="header-section-number">2.1</span> Classe Abstraite</a></li>
   </ul></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a>
-  <ul class="collapse">
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">3.1</span> Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3.2</span> Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3.3</span> Exercice 3 - Domino</a></li>
-  </ul></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -441,146 +444,9 @@ Warning
 </section>
 <section id="exercices" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
-<div class="callout callout-style-default callout-caution callout-titled" title="Avant de commencer">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Avant de commencer
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Nous n’allons maintenant plus coder dans des Notebooks mais dans l’IDE VSCode</li>
-<li>Suivez les consignes données dans le fichier de <a href="../../docs/outils/VSCode.html">paramétrage et d’utilisation de VSCode</a></li>
-<li>Dans <code>src/Python-POO/exercices</code>, créez les 2 dossiers suivants :
-<ul>
-<li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
-<li><code>domino</code> pour l’exercice 3</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<section id="exercice-1---points" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">3.1</span> Exercice 1 - Points</h3>
-<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y. Coder les méthodes suivantes :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
-<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
-<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
-<li><label><input type="checkbox"><code>distance(self, autre_point)</code> : distance avec un autre point</label></li>
-<li><label><input type="checkbox"><code>__eq__(self, autre_point)</code> : renvoi un booléen qui dit si les 2 points sont identiques</label></li>
-<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
-<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
-<li><label><input type="checkbox">(bonus) <code>rotation(self, a)</code> : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
-</ul>
-</section>
-<section id="exercice-2---polygones" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3.2</span> Exercice 2 - Polygones</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Créer une classe <code>Polygones</code> composées d’objets de la classe <code>Point</code></label>
-<ul>
-<li>nous supposerons par la suite que les segments ne se croisent pas</li>
-</ul></li>
-<li><label><input type="checkbox">Ajouter à cette classe 2 méthodes abstraites <code>aire()</code> et <code>périmètre()</code> qui seront définies dans les classes filles</label></li>
-<li><label><input type="checkbox">Créer les classes <code>Segment</code>, <code>Triangle</code> et <code>Quadrilatere</code> qui héritent de la classe <code>Polygone</code></label>
-<ul>
-<li>vérifier à chaque fois le nombre de points</li>
-<li><label><input type="checkbox">Définir les méthodes <code>aire()</code> et <code>périmètre()</code> dans ces classes</label></li>
-</ul></li>
-<li><label><input type="checkbox">Créer la classe <code>Rectangle</code> qui hérite de <code>Quadrilatere</code></label>
-<ul>
-<li>vérifier que les 2 cotés opposés sont de même longeur et qu’il y a un angle droit</li>
-</ul></li>
-</ul>
-<p><a href="https://mermaid.js.org/syntax/classDiagram.html" target="_blank">Diagrammes de classe avec Mermaid</a></p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">classDiagram
-    Point --o Polygone
-    Polygone &lt;|-- Segment : 2
-    Polygone &lt;|-- Triangle : 3
-    Polygone &lt;|-- Quadrilatere : 4
-    Quadrilatere &lt;|-- Rectangle
-    class Point{
-        +float x
-        +float y
-        +distance(autre_point)
-    }
-    class Polygone{
-        +liste[Point] liste_points
-        +aire()
-        +perimetre()
-    }
-    class Quadrilatere{
-        +aire()
-        +perimetre()
-    }
-    class Segment{
-        +aire()
-        +perimetre()
-    }
-    class Triangle{
-        +aire()
-        +perimetre()
-    }
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-3---domino" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3.3</span> Exercice 3 - Domino</h3>
-<p>Écrire une classe <code>Domino</code> avec :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">2 attributs entiers entre 1 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
-<li><label><input type="checkbox"><code>__str__()</code> : qui affiche les points présents sur les deux extrémités</label></li>
-<li><label><input type="checkbox"><code>retourne()</code> qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).</label></li>
-<li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
-</ul>
-<p>Maintenant nous allons essayer de coder un jeu de dominos (pour plus de facilité, il n’y aura qu’un seul joueur et il n’est possible de poser que d’un seul côté, à la fin de la rangée de domino):</p>
-<ul>
-<li><label><input type="checkbox">Écrivez une fonction qui génère tous les dominos et renvoie la liste</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>pioche()</code> qui pioche au hasard un domino dans une liste et le retire de cette liste</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>affiche_dominos()</code> qui affiche une liste de dominos</label></li>
-<li><label><input type="checkbox">Écrivez une fonction <code>domino_posables(dominos_en_main, dominos_poses)</code> qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste <code>dominos_poses</code>.</label></li>
-<li>Écrivez une fonction <code>jouer()</code> qui :
-<ul class="task-list">
-<li><label><input type="checkbox">génére la liste de tous les dominos</label></li>
-<li><label><input type="checkbox">tire un 1er domino au hasard et le place dans la liste dominos_poses</label></li>
-<li><label><input type="checkbox">distribue aléatoirement 6 dominos au joueur</label></li>
-<li><label><input type="checkbox">affiche les dominos qu’il peut jouer</label></li>
-<li><label><input type="checkbox">si aucun domino n’est jouable, lui proposer de piocher</label></li>
-<li><label><input type="checkbox">lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et <code>quit</code> pour arrêter de jouer)</label></li>
-<li><label><input type="checkbox">ajoute le domino joué à la liste <code>dominos_poses</code> et le retire de <code>dominos_en_main</code></label></li>
-</ul></li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">classDiagram
-    class Domino{
-        +int sommet_A
-        +int sommet_B
-        +accepte(autre_domino)
-    }
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<p><a href="../../docs/POO/poo-exercice.html" target="_blank">exercices</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -763,18 +629,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -806,7 +661,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/ludo2ne\.github\.io\/ENSAI-2A-remise-a-niveau\/");
@@ -814,7 +691,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1145,7 +1022,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/POO.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.557">
+<meta name="generator" content="quarto-1.5.52">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
 <meta name="description" content="Exercice d’apprentissage du SQL">
 
-<title>Remise à Niveau Informatique - Exercice BDR et SQL</title>
+<title>Exercice BDR et SQL – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sql" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">SQL</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
@@ -109,17 +109,13 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../docs/sql/DBeaver.html">
- <span class="dropdown-text">DBeaver</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../docs/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Python</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
@@ -153,16 +149,27 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../../docs/POO/POO.html"> 
-<span class="menu-text">POO</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-poo" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">POO</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-cours.html">
+ <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/POO/poo-exercice.html">
+ <span class="dropdown-text">Exercices POO</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../docs/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
@@ -173,6 +180,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../docs/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../docs/outils/DBeaver.html">
+ <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../docs/outils/LaTeX.html">
@@ -205,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -224,21 +235,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</a></li>
-  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">2</span> Description des données</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a>
+  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer">Avant de commencer</a>
   <ul class="collapse">
-  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</a></li>
-  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</a></li>
-  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">3.3</span> Jointures</a></li>
-  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">3.4</span> Agrégations</a></li>
+  <li><a href="#vm-ensai" id="toc-vm-ensai" class="nav-link" data-scroll-target="#vm-ensai">VM ENSAI</a></li>
+  <li><a href="#hors-vm" id="toc-hors-vm" class="nav-link" data-scroll-target="#hors-vm">Hors VM</a></li>
+  <li><a href="#dans-les-2-cas" id="toc-dans-les-2-cas" class="nav-link" data-scroll-target="#dans-les-2-cas">Dans les 2 cas</a></li>
+  </ul></li>
+  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">1</span> Description des données</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">2</span> Questions</a>
+  <ul class="collapse">
+  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</a></li>
+  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</a></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">2.3</span> Jointures</a></li>
+  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">2.4</span> Agrégations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -273,22 +289,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="avant-de-commencer" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="avant-de-commencer"><span class="header-section-number">1</span> Avant de commencer</h2>
+<section id="avant-de-commencer" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h2>
+<section id="vm-ensai" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="vm-ensai">VM ENSAI</h3>
+<p>Si vous êtes connectés sur la VM ENSAI :</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Paramétrez <a href="../../docs/sql/DBeaver.html" target="_blank">DBeaver</a></label></li>
-<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
-<li><label><input type="checkbox">Collez dans DBeaver</label></li>
-<li><label><input type="checkbox">Exécuter le script</label></li>
+<li><label><input type="checkbox">Lancez le logiciel Dbeaver</label></li>
+<li><label><input type="checkbox">Paramétrez <a href="../../docs/outils/DBeaver.html" target="_blank">DBeaver</a></label></li>
 </ul>
 </section>
-<section id="description-des-données" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">2</span> Description des données</h2>
+<section id="hors-vm" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="hors-vm">Hors VM</h3>
+<p>Si vous n’êtes pas sur le réseau ENSAI, voici d’autres possibilités pour faire l’exercice :</p>
 <ul>
-<li>Nous avons des joueurs, des tournois</li>
-<li>Certains joueurs sont aussi arbitres et ont un grade d’arbitre</li>
-<li>Les tournois ont une cadence. Ils sont arbitrés par un arbitre</li>
+<li><a href="https://www.programiz.com/sql/online-compiler/" target="_blank">https://www.programiz.com/sql/online-compiler/</a>
+<ul>
+<li><code>DROP table customers; DROP table orders; DROP table shippings;</code></li>
+<li>pour supprimer les tables par défaut</li>
+</ul></li>
+<li><a href="https://www.mycompiler.io/fr/new/sql" target="_blank">https://www.mycompiler.io/fr/new/sql</a></li>
 </ul>
+</section>
+<section id="dans-les-2-cas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="dans-les-2-cas">Dans les 2 cas</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
+<li><label><input type="checkbox">Collez dans votre éditeur (DBeaver ou autre)</label></li>
+<li><label><input type="checkbox">Exécutez le script</label></li>
+</ul>
+</section>
+</section>
+<section id="description-des-données" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">1</span> Description des données</h2>
+<p>Nous avons une liste de <strong>joueurs</strong> et de <strong>tournois</strong>. Les joueurs peuvent participer aux différents tournois.</p>
+<p>Un tournoi est supervisé par un <strong>arbitre</strong>. Un arbitre est un joueur qui a obtenu un <strong>grade d’arbitre</strong>.</p>
+<p>Dans un tournoi, les parties se déroule à une certaine <strong>cadence</strong> (Lente, Rapide, Blitz).</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -334,7 +370,6 @@ ul.task-list li input[type="checkbox"] {
   cadence -- tournoi
   tournoi -- participant
   joueur -- participant
-
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -342,10 +377,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="questions" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="questions"><span class="header-section-number">3</span> Questions</h2>
-<section id="découverte-des-tables" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</h3>
+<section id="questions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="questions"><span class="header-section-number">2</span> Questions</h2>
+<section id="découverte-des-tables" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Listez tous les joueurs</label></li>
 <li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
@@ -357,8 +392,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="mise-à-jour" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</h3>
+<section id="mise-à-jour" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
 <li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
@@ -374,15 +409,15 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
 </ul>
 </section>
-<section id="jointures" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">3.3</span> Jointures</h3>
+<section id="jointures" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">2.3</span> Jointures</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
 <li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
 </ul>
 </section>
-<section id="agrégations" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">3.4</span> Agrégations</h3>
+<section id="agrégations" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">2.4</span> Agrégations</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitre</label></li>
 <li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
@@ -591,18 +626,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -634,7 +658,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/ludo2ne\.github\.io\/ENSAI-2A-remise-a-niveau\/");
@@ -642,7 +688,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
