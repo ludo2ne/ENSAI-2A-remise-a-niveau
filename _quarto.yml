@@ -16,8 +16,6 @@ website:
         menu: 
           - href: docs/sql/sql-cours.qmd
             text: "Introduction à SQL"
-          - href: docs/sql/DBeaver.qmd
-            text: "DBeaver"
           - href: docs/sql/sql-exercice.qmd
             text: "Exercice SQL"
       - text: Python
@@ -36,8 +34,12 @@ website:
             text: "Fonctions"
           - href: docs/python/05-POO-introduction.qmd
             text: "Introduction à la POO"
-      - href: docs/POO/POO.qmd
-        text: POO
+      - text: POO
+        menu:
+          - href: docs/POO/poo-cours.qmd
+            text: "Introduction à la POO"
+          - href: docs/POO/poo-exercice.qmd
+            text: "Exercices POO"
       - href: docs/UML/UML.qmd
         text: UML
       - text: Outils
@@ -46,6 +48,8 @@ website:
             text: "Outils"
           - href: docs/outils/Bash.qmd
             text: "Bash"
+          - href: docs/outils/DBeaver.qmd
+            text: "DBeaver"
           - href: docs/outils/LaTeX.qmd
             text: "LaTeX"
           - href: docs/outils/Markdown.qmd
@@ -60,7 +64,7 @@ website:
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
         target: "_blank"
-  reader-mode: true      
+  reader-mode: true
   page-footer:
     right: |
       Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>

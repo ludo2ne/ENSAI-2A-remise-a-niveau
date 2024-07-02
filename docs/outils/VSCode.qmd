@@ -12,20 +12,30 @@ number-sections: true
 number-depth: 3
 ---
 
+## Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com/){target="_blank"} est un logiciel qui permet d'éditer du code dans de très nombreux langages. Il propose également de nombreuses extensions pour faciliter le travail des développeurs.
+[Visual Studio Code](https://code.visualstudio.com/){target="_blank"} (VS Code) est un éditeur de code source développé par Microsoft, gratuit et open-source, conçu pour être léger et performant. Il est compatible avec de très nombreux langages de programmation : Python, R, Java, JavaScript, C++...
+
+### Fonctionnalités
+
+- **Auto-complétion** : Aide à écrire du code plus rapidement et avec moins d'erreurs
+- **Coloration syntaxique** : Améliore la lisibilité du code
+- **Débogage intégré** : Facilite l'identification et la correction des erreurs
+- **Extensibilité** : grâce à une vaste bibliothèque d'extensions disponibles sur le marketplace
+- **Configuration et outils** : linters, formateurs de code...
+
 
 Le but de cette fiche est de :
 
-- vous permettre d'exécuter un programme python avec VSCode
-- donner quelques astuces pour faciliter votre utilisation
+- vous permettre d'exécuter un programme python avec VS Code
+- donner quelques astuces pour faciliter son utilisation
 
 ## Paramétrage
 
 ### Extensions
 
-De très nombreuses extensions permettent d'améliorer votre utilisation de VSCode.
-Sur la version utilisées à l'ENSAI, vous pouvez trouver déjà installé :
+De très nombreuses extensions permettent d'améliorer votre utilisation de VS Code.
+Sur la version installée sur la VM ENSAI, vous pouvez trouver :
 
 - Black Formatter
 - Flake8
@@ -57,9 +67,9 @@ Le fichier `.vscode/settings.json` contient du paramètrage qui va s'appliquer �
 
 Ce fichier contient par exemple les propriétés ci-dessous :
 
-```json
+```{.json filename=".vscode/settings.json"}
     "flake8.args": [
-        "--max-line-length=120"
+        "--max-line-length=100"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
@@ -69,34 +79,33 @@ Ce fichier contient par exemple les propriétés ci-dessous :
     },
 ```
 
----
-
 ## Première utilisation
 
-> Nous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode
+::: {.callout-note}
+Nous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode.
+:::
 
-- Ouvrir Visual Studio Code
-- Ouvrir un terminal
+- [ ] Ouvrez Visual Studio Code
+- [ ] Ouvrez un terminal
   - Menu Terminal > New terminal (raccourci : CTRL + ù)
-- Créer un dossier pour le Cours
-  - Copier cette commande : `mkdir -p /p/Cours2A/UE3_Remise_a_niveau`
-  - Dans le terminal, faire clic droit (Coller) puis ENTREE
-  - Vérifier que les dossiers sont bien créés, sinon créer les dossiers à la main
-- Cloner le dépôt
-  - Se postionner dans le dossier créé : `cd /p/Cours2A/UE3_Remise_a_niveau`
+- [ ] Créez un dossier pour le Cours
+  - Copiez cette commande : `mkdir -p /p/Cours2A/UE3_Remise_a_niveau`
+  - Dans le terminal, faîtes clic droit (Coller) puis ENTREE
+  - Vérifiez que les dossiers sont bien créés, sinon créer les dossiers à la main
+- [ ] Clonez le dépôt
+  - Positionnez-vous dans le dossier créé : `cd /p/Cours2A/UE3_Remise_a_niveau`
   - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-- Ouvrir un espace de travail
+- [ ] Ouvrez un espace de travail
   - Dans VSCode : File > Open Folder
-  - Sélectionner le dossier `P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau` créé précédemment
+  - Sélectionnez le dossier `P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau` créé précédemment
   - Yes i trust...
-- Ouvrir, puis exécuter un fichier Python
-  - Ouvrir le fichier `Python-POO/exemple/src/__main__.py`
-  - Executer le fichier
+- [ ] Ouvrez, puis exécutez un fichier Python
+  - Ouvrez le fichier `Python-POO/exemple/src/__main__.py`
+  - Executez le fichier
     - En haut à droite, cliquer sur l'icone en forme de triangle ▷
     - Run python file in terminal
   - Cela ouvre un terminal et exécute le fichier
 
----
 
 ## Le terminal python
 
@@ -114,15 +123,14 @@ Ce fichier contient par exemple les propriétés ci-dessous :
   - dans ce mode on peut aussi écrire directement du python dans le terminal
   - taper `quit()` ou CTRL + Z pour retourner à l'autre mode
 
----
 
 ## Python, VSCode et les packages
 
 Imaginez que votre code est organisé de la manière ci-dessous
 
-```
+```{.default}
 ├───tp1
-│   └───code
+│   └───src
 │   │   ├───vehicule
 │   │   │   ├───velo.py
 │   │   │   └───trottinette.py
@@ -136,7 +144,7 @@ Si dans la classe *Girafe*, vous voulez créer un objet de la classe *Velo*, vou
 - import de la classe Velo
 - puis création d'un objet *Velo*
 
-```python=
+```{.python filename="girafe.py"}
 from vehicule.velo import Velo
 
 class Girafe:
@@ -153,10 +161,10 @@ class Girafe:
 Comme solution de contournement, vous pouvez :
 
 - en reprenant l'arborescence ci-dessus,
-- dans le dossier code créer un dossier *.vscode*
+- dans le dossier code créez un dossier *.vscode*
 - dans ce dossier .vscode, créer le fichier settings.json qui contient ceci :
 
-```json
+```{.json}
 {
     "python.analysis.extraPaths": [
         "./*"
@@ -171,12 +179,12 @@ Comme solution de contournement, vous pouvez :
 }
 ```
 
-- puis fermer et redémarrer VSCode
+- puis fermez et redémarrez VSCode
 - File > Open Folder > `C:/.../tp1/code`
 
 ## Afficher les variables d'environnement
 
-```bash=
+```{.bash}
 printenv
 echo $PYTHONPATH
 echo $HOME

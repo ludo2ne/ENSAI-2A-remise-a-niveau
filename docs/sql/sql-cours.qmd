@@ -1018,14 +1018,6 @@ SELECT 'Salut';
 - <https://sql.sh/>{target="_blank"}
 
 
-## Exercice {.smaller}
+## Exercice
 
-- [ ] Commencez par configurer [DBeaver](./DBeaver.qmd){target="_blank"}
-- [ ] Faîtes l'[exercice](./sql-exercice.qmd){target="_blank"}
-
-Autres possibilités pour faire l'exercice :
-
-- <https://www.programiz.com/sql/online-compiler/>{target="_blank"}
-  - `DROP table customers; DROP table orders; DROP table shippings;`
-  - pour supprimer les tables par défaut
-- <https://www.mycompiler.io/fr/new/sql>{target="_blank"}
+[exercice](./sql-exercice.qmd){target="_blank"}

@@ -12,19 +12,40 @@ number-sections: true
 number-depth: 3
 ---
 
+## Avant de commencer {.unnumbered}
 
-## Avant de commencer
+### VM ENSAI {.unnumbered}
 
-- [ ] Paramétrez [DBeaver](./DBeaver.qmd){target="_blank"}
+Si vous êtes connectés sur la VM ENSAI :
+
+- [ ] Lancez le logiciel Dbeaver
+- [ ] Paramétrez [DBeaver](../outils/DBeaver.qmd){target="_blank"}
+
+### Hors VM {.unnumbered}
+
+Si vous n'êtes pas sur le réseau ENSAI, voici d'autres possibilités pour faire l'exercice :
+
+- <https://www.programiz.com/sql/online-compiler/>{target="_blank"}
+  - `DROP table customers; DROP table orders; DROP table shippings;`
+  - pour supprimer les tables par défaut
+- <https://www.mycompiler.io/fr/new/sql>{target="_blank"}
+
+### Dans les 2 cas {.unnumbered}
+
 - [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
-- [ ] Collez dans DBeaver
-- [ ] Exécuter le script
+- [ ] Collez dans votre éditeur (DBeaver ou autre)
+- [ ] Exécutez le script
+
 
 ## Description des données
 
-- Nous avons des joueurs, des tournois
-- Certains joueurs sont aussi arbitres et ont un grade d'arbitre
-- Les tournois ont une cadence. Ils sont arbitrés par un arbitre
+Nous avons une liste de **joueurs** et de **tournois**. Les joueurs peuvent participer aux différents tournois.
+
+Un tournoi est supervisé par un **arbitre**. Un arbitre est un joueur qui a obtenu un **grade d'arbitre**.
+
+Dans un tournoi, les parties se déroule à une certaine **cadence** (Lente, Rapide, Blitz).
+
+
 
 ```{mermaid}
 classDiagram
@@ -67,7 +88,6 @@ classDiagram
   cadence -- tournoi
   tournoi -- participant
   joueur -- participant
-
 ```
 
 ## Questions

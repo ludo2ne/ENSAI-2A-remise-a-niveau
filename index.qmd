@@ -13,7 +13,7 @@ Il vise à fournir les bases essentielles en Python, SQL et UML, afin de leur pe
 
 - [ ] [Bases de données et SQL](docs/sql/sql-cours.qmd) (3h)
 - [ ] [Python - initiation](docs/python/python-cours.qmd) (6h)
-- [ ] [Programmation Orientée Objet (POO)](docs/POO/POO.qmd) (9h)
+- [ ] [Programmation Orientée Objet (POO)](docs/POO/poo-cours.qmd) (9h)
 - [ ] [UML](docs/UML/UML.qmd) (3h)
 - [ ] Divers outils utiles (markdown, R, LateX...)
 
@@ -43,7 +43,7 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 
 ---
 
-- [ ] Lisez le [cours d'introduction à la POO](docs/POO/POO.qmd)
+- [ ] Lisez le [cours d'introduction à la POO](docs/POO/poo-cours.qmd)
 - [ ] Suivez les consignes pour le paramètrage de VSCode
 - [ ] Faites les exercices
 
@@ -65,14 +65,16 @@ si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022
 
 ### Cours en ligne pour apprendre Python et SQL
 
-- [SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
-- [Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parties 1 et 2)
-- [POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parties 1 et 2)
+- [Openclassrooms - Requêtez avecSQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
+- [Initiation à Python](https://inseefrlab.github.io/formation-python-initiation/){target="_blank"} dans le Service Statistique Public
+- [Openclassrooms - bases de Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parties 1 et 2)
+- [Openclassrooms - POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parties 1 et 2)
 		
 
 ### Ressources utiles
 
-- https://realpython.com/
-- https://refactoring.guru/
-- https://github.com/faif/python-patterns
-- https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/
+- <https://realpython.com/>{target="_blank"}
+- <https://refactoring.guru/>{target="_blank"}
+- <https://github.com/faif/python-patterns>{target="_blank"}
+- <https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/>{target="_blank"}
+- [Python pour la data science](https://pythonds.linogaliana.fr/){target="_blank"}, Lino Galiana (INSEE, ENSAE)

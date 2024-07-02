@@ -65,9 +65,9 @@ class Jeu:
         """
         d_posables = []
         for d in self.dominos_joueur:
-            if self.dominos_poses[-1].accepte_apres(d) or self.dominos_poses[
-                -1
-            ].accepte_apres(d.retourner()):
+            if self.dominos_poses[-1].accepte_apres(d) or self.dominos_poses[-1].accepte_apres(
+                d.retourner()
+            ):
                 d_posables.append(d)
         return d_posables
 

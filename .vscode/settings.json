@@ -1,13 +1,19 @@
 {
+    "flake8.args": [
+        "--max-line-length=100"
+    ],
     "[python]": {
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
         "editor.insertSpaces": true,
         "editor.tabSize": 4
     },
+    "black-formatter.args": ["--line-length", "100"],
+    "python.languageServer": "Jedi",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "python.analysis.extraPaths": [
         "./*"
     ],
@@ -20,6 +26,8 @@
     "terminal.integrated.env.osx": {
         "PYTHONPATH": "${workspaceFolder}/src"
     },
-    "python.languageServer": "Jedi",
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true
+    },
 }
