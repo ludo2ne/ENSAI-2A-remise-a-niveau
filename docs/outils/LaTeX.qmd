@@ -40,6 +40,36 @@ Pour utiliser LaTeX, vous avez principalement deux options :
 Les interfaces pour travailler avec LaTeX sont souvent divisées en deux parties distinctes : d'un côté, l'éditeur de code LaTeX et de l'autre, la vue de mise en forme du document.
 
 
+### Démarrer avec Overleaf
+
+- [ ] Connectez vous au site d'[Overleaf](https://www.overleaf.com/){target="_blank"}, créez un compte si nécessaire et connectez-vous
+- [ ] Cliquez sur le bouton [New Project]{.green-button}, puis sur *Blank project* et nommez votre projet
+
+::: {.callout-note}
+Cela ouvre la page de votre projet avec :
+
+- dans le menu de gauche : votre explorateur de fichiers (avec par défaut un fichier *main.tex*)
+- à gauche : votre code LaTeX
+- à droite : le document mis en forme
+
+Pour revenir à l'écran principal, cliquez sur l'icone :house:
+:::
+
+- [ ] Ajoutez du texte dans la section *Introduction*, puis cliquez sur [Recompile]{.green-button}
+- [ ] Dans l'explorer, créez un dossier *img* qui contiendra vos images
+
+::: {.callout-tip title="Quelques fonctionnalités utiles"}
+En haut à droite, vous trouverez des boutons proposant des fonctionnalités utiles :
+
+- **Review** : pour ajouter des commentaires
+  - Dans la partie code, sélectionnez du code à la souris
+  - Cliquez sur le bouton `Add comment` qui doit apparaitre
+- **Share** : pour travailler en groupe
+  - *Turn on the sharing link*
+  - Partagez le lien d'édition
+- **History** : pour voir l'historique des modifications
+:::
+
 ### Mon premier document
 
 Voici un exemple simple illustrant les étapes essentielles pour rédiger un document LaTeX :
@@ -355,5 +385,56 @@ La formule de la variance : $$V = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \overline{
 La formule de Koenig-Huygens : $\mathbb{V}(X) = \mathbb{E}(X^{2}) - (\mathbb{E}(X))^{2}$.
 ```
 
- 
+## Bibliographie
 
+Nous allons utiliser le format [BibTeX](https://www.bibtex.org/Using/){target="_blank"}. Ce format est réguliérement utilisé pour citer des articles scientifiques.
+
+- [ ] À la racine de votre projet, créez un fichier *.bib* : `biblio.bib` et collez ce contenu
+  ```{.default}
+  @article{prospect_theory,
+  title={Prospect theory: An analysis of decision under risk},
+  author={Kahneman, Daniel and Tversky, Amos},
+  journal={Econometrica},
+  volume={47},
+  number={2},
+  pages={363--391},
+  year={1979}
+  }
+
+  @article{marriage_stability,
+  title={College admissions and the stability of marriage},
+  author={Gale, David and Shapley, Lloyd S},
+  journal={The American Mathematical Monthly},
+  volume={69},
+  number={1},
+  pages={9--15},
+  year={1962},
+  publisher={Taylor \& Francis}
+  }
+  ```
+ - [ ] Retournez dans votre fichier *main.tex* et citez un article
+   ```{.tex}
+   La Prospect Theory \cite{prospect_theory}, développée par Daniel Kahneman et Amos Tversky, suggère que les individus évaluent les pertes et les gains de manière asymétrique, donnant généralement plus de poids aux pertes qu'aux gains équivalents.
+   ```
+- [ ] Vous pouvez également ajouter à votre bibliographie des articles que vous ne citez pas avec `\nocite{marriage_stability}`
+- [ ] Affichez votre bibliographie
+  ```{.tex}
+  \renewcommand{\refname}{Bibliographie} %% Renommer en Bibliographie
+  \bibliographystyle{plain}
+  \bibliography{biblio}
+  \addcontentsline{toc}{section}{Bibliographie} %% Ajout à la table des matières
+  ```
+  
+## Annexes
+
+Pour ajouter vos annexes :
+
+```{.tex}
+\appendix 
+\appendixpage 
+\addappheadtotoc
+
+\section*{Annexe 1}
+
+\section*{Annexe 2}
+```
