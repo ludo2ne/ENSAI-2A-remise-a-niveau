@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.52">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -299,7 +299,8 @@ window.Quarto = {
   <li><a href="#pourquoi-utiliser-latex" id="toc-pourquoi-utiliser-latex" class="nav-link" data-scroll-target="#pourquoi-utiliser-latex"><span class="header-section-number">2</span> Pourquoi utiliser LaTeX ?</a></li>
   <li><a href="#utiliser-latex" id="toc-utiliser-latex" class="nav-link" data-scroll-target="#utiliser-latex"><span class="header-section-number">3</span> Utiliser LaTeX</a>
   <ul class="collapse">
-  <li><a href="#mon-premier-document" id="toc-mon-premier-document" class="nav-link" data-scroll-target="#mon-premier-document"><span class="header-section-number">3.1</span> Mon premier document</a></li>
+  <li><a href="#démarrer-avec-overleaf" id="toc-démarrer-avec-overleaf" class="nav-link" data-scroll-target="#démarrer-avec-overleaf"><span class="header-section-number">3.1</span> Démarrer avec Overleaf</a></li>
+  <li><a href="#mon-premier-document" id="toc-mon-premier-document" class="nav-link" data-scroll-target="#mon-premier-document"><span class="header-section-number">3.2</span> Mon premier document</a></li>
   </ul></li>
   <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections"><span class="header-section-number">4</span> Sections</a></li>
   <li><a href="#mise-en-forme" id="toc-mise-en-forme" class="nav-link" data-scroll-target="#mise-en-forme"><span class="header-section-number">5</span> Mise en forme</a>
@@ -324,6 +325,8 @@ window.Quarto = {
   <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">9.2</span> Figures</a></li>
   </ul></li>
   <li><a href="#formules-mathématiques" id="toc-formules-mathématiques" class="nav-link" data-scroll-target="#formules-mathématiques"><span class="header-section-number">10</span> Formules mathématiques</a></li>
+  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie"><span class="header-section-number">11</span> Bibliographie</a></li>
+  <li><a href="#annexes" id="toc-annexes" class="nav-link" data-scroll-target="#annexes"><span class="header-section-number">12</span> Annexes</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/LaTeX.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -388,8 +391,64 @@ window.Quarto = {
 <li>en installant un logiciel sur votre ordinateur : <a href="https://www.xm1math.net/texmaker/" target="_blank">Texmaker</a>, <a href="https://www.texstudio.org/" target="_blank">TeXstudio</a>…</li>
 </ul>
 <p>Les interfaces pour travailler avec LaTeX sont souvent divisées en deux parties distinctes : d’un côté, l’éditeur de code LaTeX et de l’autre, la vue de mise en forme du document.</p>
-<section id="mon-premier-document" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="mon-premier-document"><span class="header-section-number">3.1</span> Mon premier document</h3>
+<section id="démarrer-avec-overleaf" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="démarrer-avec-overleaf"><span class="header-section-number">3.1</span> Démarrer avec Overleaf</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Connectez vous au site d’<a href="https://www.overleaf.com/" target="_blank">Overleaf</a>, créez un compte si nécessaire et connectez-vous</label></li>
+<li><label><input type="checkbox">Cliquez sur le bouton <span class="green-button">New Project</span>, puis sur <em>Blank project</em> et nommez votre projet</label></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cela ouvre la page de votre projet avec :</p>
+<ul>
+<li>dans le menu de gauche : votre explorateur de fichiers (avec par défaut un fichier <em>main.tex</em>)</li>
+<li>à gauche : votre code LaTeX</li>
+<li>à droite : le document mis en forme</li>
+</ul>
+<p>Pour revenir à l’écran principal, cliquez sur l’icone <span class="emoji" data-emoji="house">🏠</span></p>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Ajoutez du texte dans la section <em>Introduction</em>, puis cliquez sur <span class="green-button">Recompile</span></label></li>
+<li><label><input type="checkbox">Dans l’explorer, créez un dossier <em>img</em> qui contiendra vos images</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Quelques fonctionnalités utiles">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quelques fonctionnalités utiles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En haut à droite, vous trouverez des boutons proposant des fonctionnalités utiles :</p>
+<ul>
+<li><strong>Review</strong> : pour ajouter des commentaires
+<ul>
+<li>Dans la partie code, sélectionnez du code à la souris</li>
+<li>Cliquez sur le bouton <code>Add comment</code> qui doit apparaitre</li>
+</ul></li>
+<li><strong>Share</strong> : pour travailler en groupe
+<ul>
+<li><em>Turn on the sharing link</em></li>
+<li>Partagez le lien d’édition</li>
+</ul></li>
+<li><strong>History</strong> : pour voir l’historique des modifications</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="mon-premier-document" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="mon-premier-document"><span class="header-section-number">3.2</span> Mon premier document</h3>
 <p>Voici un exemple simple illustrant les étapes essentielles pour rédiger un document LaTeX :</p>
 <ol type="1">
 <li>Définissez le type de document (article, report, book, slide…) et la taille de police par défaut</li>
@@ -788,6 +847,52 @@ Note
 <div class="sourceCode" id="cb14"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>La formule de la variance : <span class="ss">$$V = </span><span class="sc">\frac</span><span class="ss">{1}{n} </span><span class="sc">\sum</span><span class="ss">_{i=1}^{n} (x_{i} - </span><span class="sc">\overline</span><span class="ss">{x})^{2}$$</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>La formule de Koenig-Huygens : <span class="ss">$</span><span class="sc">\mathbb</span><span class="ss">{V}(X) = </span><span class="sc">\mathbb</span><span class="ss">{E}(X^{2}) - (</span><span class="sc">\mathbb</span><span class="ss">{E}(X))^{2}$</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bibliographie" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="bibliographie"><span class="header-section-number">11</span> Bibliographie</h2>
+<p>Nous allons utiliser le format <a href="https://www.bibtex.org/Using/" target="_blank">BibTeX</a>. Ce format est réguliérement utilisé pour citer des articles scientifiques.</p>
+<ul class="task-list">
+<li><p><label><input type="checkbox">À la racine de votre projet, créez un fichier <em>.bib</em> : <code>biblio.bib</code> et collez ce contenu</label></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>@article{prospect_theory,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>title={Prospect theory: An analysis of decision under risk},</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>author={Kahneman, Daniel and Tversky, Amos},</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>journal={Econometrica},</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>volume={47},</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>number={2},</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pages={363--391},</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>year={1979}</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>@article{marriage_stability,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>title={College admissions and the stability of marriage},</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>author={Gale, David and Shapley, Lloyd S},</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>journal={The American Mathematical Monthly},</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>volume={69},</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>number={1},</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>pages={9--15},</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>year={1962},</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>publisher={Taylor \&amp; Francis}</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">Retournez dans votre fichier <em>main.tex</em> et citez un article</label></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>La Prospect Theory <span class="kw">\cite</span>{<span class="ex">prospect_theory</span>}, développée par Daniel Kahneman et Amos Tversky, suggère que les individus évaluent les pertes et les gains de manière asymétrique, donnant généralement plus de poids aux pertes qu'aux gains équivalents.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><label><input type="checkbox">Vous pouvez également ajouter à votre bibliographie des articles que vous ne citez pas avec <code>\nocite{marriage_stability}</code></label></p></li>
+<li><p><label><input type="checkbox">Affichez votre bibliographie</label></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\refname</span>}{Bibliographie} <span class="co">%% Renommer en Bibliographie</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>}</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">biblio</span>}</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Bibliographie} <span class="co">%% Ajout à la table des matières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="annexes" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="annexes"><span class="header-section-number">12</span> Annexes</h2>
+<p>Pour ajouter vos annexes :</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendix</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendixpage</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\addappheadtotoc</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 1}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 2}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
