@@ -128,8 +128,6 @@ Toujours à propos de numérotation, mais cette fois-ci concernant celle des pag
 
 Vous pouvez également inclure une table des matières.
 
-
-
 ```{.tex}
 \documentclass[11pt]{article}
 
@@ -161,6 +159,67 @@ Content of subsubsection 2.1.1
 
 \end{document}
 ```
+
+### Découper son fichier
+
+Si vous trouvez votre fichier principal *main.tex* trop long et que vous avez du mal à vous y retrouver, il est possible de le découper en plusieurs fichiers.
+
+Imaginez que votre fichier initial est le suivant :
+
+```{.tex filename="main.tex"}
+\documentclass[11pt]{article}
+
+\begin{document}
+
+\begin{titlepage}
+    My title
+\end{titlepage}
+
+\section{First Section}
+very very very long first section
+
+\newpage
+
+\section{Second Section}
+very very very long second section
+
+\end{document}
+```
+
+Vous pouvez découper votre fichier de cette manière :
+
+- créer 2 nouveaux fichiers *partie1.tex* et *partie2.tex*
+- déplacer le contenu des sections 1 et 2 dans ces fichiers
+- importer le contenu de ces fichiers dans le *main.tex*
+
+```{.tex filename="partie1.tex"}
+\section{First Section}
+very very very long first section
+```
+
+```{.tex filename="partie2.tex"}
+\section{Second Section}
+very very very long second section
+```
+
+```{.tex filename="main.tex"}
+\documentclass[11pt]{article}
+
+\begin{document}
+
+\begin{titlepage}
+    My title
+\end{titlepage}
+
+\include{partie1}          % import du contenu du fichier partie1.tex
+
+\newpage
+
+\include{partie2}          % import du contenu du fichier partie2.tex
+
+\end{document}
+```
+
 
 ## Mise en forme
 
