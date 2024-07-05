@@ -306,7 +306,8 @@ window.Quarto = {
   <li><a href="#mise-en-forme" id="toc-mise-en-forme" class="nav-link" data-scroll-target="#mise-en-forme"><span class="header-section-number">5</span> Mise en forme</a>
   <ul class="collapse">
   <li><a href="#autres-mises-en-forme" id="toc-autres-mises-en-forme" class="nav-link" data-scroll-target="#autres-mises-en-forme"><span class="header-section-number">5.1</span> Autres mises en forme</a></li>
-  <li><a href="#couleur" id="toc-couleur" class="nav-link" data-scroll-target="#couleur"><span class="header-section-number">5.2</span> Couleur</a></li>
+  <li><a href="#alignement" id="toc-alignement" class="nav-link" data-scroll-target="#alignement"><span class="header-section-number">5.2</span> Alignement</a></li>
+  <li><a href="#couleur" id="toc-couleur" class="nav-link" data-scroll-target="#couleur"><span class="header-section-number">5.3</span> Couleur</a></li>
   </ul></li>
   <li><a href="#retour-à-la-ligne" id="toc-retour-à-la-ligne" class="nav-link" data-scroll-target="#retour-à-la-ligne"><span class="header-section-number">6</span> Retour à la ligne</a>
   <ul class="collapse">
@@ -327,6 +328,8 @@ window.Quarto = {
   <li><a href="#formules-mathématiques" id="toc-formules-mathématiques" class="nav-link" data-scroll-target="#formules-mathématiques"><span class="header-section-number">10</span> Formules mathématiques</a></li>
   <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie"><span class="header-section-number">11</span> Bibliographie</a></li>
   <li><a href="#annexes" id="toc-annexes" class="nav-link" data-scroll-target="#annexes"><span class="header-section-number">12</span> Annexes</a></li>
+  <li><a href="#redéfinir-les-commandes" id="toc-redéfinir-les-commandes" class="nav-link" data-scroll-target="#redéfinir-les-commandes"><span class="header-section-number">13</span> Redéfinir les commandes</a></li>
+  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources">Ressources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/outils/LaTeX.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
@@ -473,42 +476,79 @@ Quelques fonctionnalités utiles
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">% Début du document</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span>                       <span class="co">%% pour afficher titre, auteur et date</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\maketitle</span>                        <span class="co">% pour afficher titre, auteur et date</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>An awesome content.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il faut bien distinguer et ne pas mélanger :</p>
+<ul>
+<li>les entêtes (imports de packages, métadonnées, redéfinitions de commandes…)</li>
+<li>le contenu du document : entre les balises <code>\begin{document}</code> et <code>\end{document}</code></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="sections" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="sections"><span class="header-section-number">4</span> Sections</h2>
-<p>Vous pouvez découper votre document en sections, sous-sections et sous-sous-sections qui seront automatiquement numérotées.</p>
-<p>Il est possible de ne pas numéroter certaines sections (utile par exemple pour introduction et conslusion).</p>
-<p>Vous pouvez inclure une table des matières.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\tableofcontents</span>                   <span class="co">% Table des matières</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\newpage</span>                           <span class="co">% Saut de page</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introduction}            <span class="co">% avec le *, la section n'est pas numérotée</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Introduction} <span class="co">% Pour ajouter cette section non numérotée à la Table des matières</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>intro content</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{First Section}</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>content of first section</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Second Section}</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>content of second section</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{First Subsection of second section}</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Content of subsection 2.1</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{subsubsection}</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Content of subsection 2.1.1</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous pouvez découper votre document en sections, sous-sections et sous-sous-sections qui seront automatiquement numérotées avec les commandes <code>\section</code>, <code>\subsection</code> et <code>\subsubsection</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Numérotation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Numérotation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il est possible de ne pas numéroter certaines sections en ajoutant le symbole <code>*</code> à la fin de la commande.</p>
+<p>Cela est utile par exemple pour introduction et conclusion.</p>
+<hr>
+<p>Toujours à propos de numérotation, mais cette fois-ci concernant celle des pages : il est d’usage de ne pas numéroter la page de titre, ni la table des matières. La commande <code>titlepage</code> permet de définir les pages qui ne doivent pas être numérotées.</p>
+</div>
+</div>
+<p>Vous pouvez également inclure une table des matières.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[11pt]{<span class="ex">article</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">titlepage</span>}                  <span class="co">% Crée une nouvelle page de titre non numérotée</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    My title</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">titlepage</span>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">titlepage</span>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\tableofcontents</span>               <span class="co">% Table des matières</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">titlepage</span>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Introduction}            <span class="co">% avec le *, cette section n'est pas numérotée</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Introduction} <span class="co">% Pour ajouter cette section non numérotée à la Table des matières</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>intro content</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{First Section}</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>content of first section</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Second Section}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>content of second section</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsection</span>{First Subsection of second section}</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Content of subsection 2.1</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="kw">\subsubsection</span>{subsubsection}</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>Content of subsubsection 2.1.1</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="mise-en-forme" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="mise-en-forme"><span class="header-section-number">5</span> Mise en forme</h2>
@@ -575,14 +615,37 @@ Quelques fonctionnalités utiles
 </tbody>
 </table>
 </section>
-<section id="couleur" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="couleur"><span class="header-section-number">5.2</span> Couleur</h3>
+<section id="alignement" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="alignement"><span class="header-section-number">5.2</span> Alignement</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Gauche</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Centré</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Droite</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flushleft</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    Ce texte est aligné à gauche</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flushleft</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">center</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    Ce texte est centré</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">center</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="sourceCode" id="cb5"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">flushright</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    Ce texte est aligné à droite</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">flushright</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="couleur" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="couleur"><span class="header-section-number">5.3</span> Couleur</h3>
 <p>La mise en couleur du texte nécessite le package <code>xcolor</code>. Pour avoir accès à plus de noms de couleurs, vous pouvez par exemple ajouter l’option <a href="https://en.wikipedia.org/wiki/X11_color_names" target="_blank">x11names</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage[x11names]{xcolor}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\textcolor</span>{green}{Ce texte est en vert.}                                 <span class="fu">\par</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\colorbox</span>{magenta}{Ce texte a un fond magenta.}                          <span class="fu">\par</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\fcolorbox</span>{blue}{cyan}{Ce texte a une bordure bleue et un fond cyan.}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage[x11names]{xcolor}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\textcolor</span>{green}{Ce texte est en vert.}                                 <span class="fu">\par</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\colorbox</span>{magenta}{Ce texte a un fond magenta.}                          <span class="fu">\par</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\fcolorbox</span>{blue}{cyan}{Ce texte a une bordure bleue et un fond cyan.}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="retour-à-la-ligne" class="level2" data-number="6">
@@ -601,16 +664,16 @@ Warning
 </div>
 </div>
 <p>Il existe de très nombreuses manières de faire un retour à la ligne, en voici quelques unes :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Retour à la ligne <span class="fu">\newline</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Autre retour à la ligne <span class="fu">\\</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Ajout d'un argument pour préciser l'espace vertical attendu <span class="fu">\\</span>[2 cm]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Utilisation de vspace : <span class="fu">\vspace</span>{1cm}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Utiliser un big break</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\bigbreak</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>Laisser simplement une ligne vide en dessous</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>Et c'est déjà pas mal !</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Retour à la ligne <span class="fu">\newline</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Autre retour à la ligne <span class="fu">\\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Ajout d'un argument pour préciser l'espace vertical attendu <span class="fu">\\</span>[2 cm]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Utilisation de vspace : <span class="fu">\vspace</span>{1cm}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>Utiliser un big break</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\bigbreak</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>Laisser simplement une ligne vide en dessous</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Et c'est déjà pas mal !</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="saut-de-page" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="saut-de-page"><span class="header-section-number">6.1</span> Saut de page</h3>
 <p>La commande <code>\newpage</code> permet simplement de faire un saut de page.</p>
@@ -620,17 +683,17 @@ Warning
 <h2 data-number="7" class="anchored" data-anchor-id="listes"><span class="header-section-number">7</span> Listes</h2>
 <section id="non-ordonnée" class="level3" data-number="7.1">
 <h3 data-number="7.1" class="anchored" data-anchor-id="non-ordonnée"><span class="header-section-number">7.1</span> Non ordonnée</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un élément</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un autre élément </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un élément</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un autre élément </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ordonnée" class="level3" data-number="7.2">
 <h3 data-number="7.2" class="anchored" data-anchor-id="ordonnée"><span class="header-section-number">7.2</span> Ordonnée</h3>
-<div class="sourceCode" id="cb6" title="Liste 1. 2. 3."><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément 1</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément 2</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" title="Liste 1. 2. 3."><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément 1</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément 2</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Indentation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -648,39 +711,39 @@ Indentation
 <section id="changer-les-numérotations-ou-symboles" class="level3" data-number="7.3">
 <h3 data-number="7.3" class="anchored" data-anchor-id="changer-les-numérotations-ou-symboles"><span class="header-section-number">7.3</span> Changer les numérotations ou symboles</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">a) b) c)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Renewcommand</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Item par item</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">a) b) c)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Renewcommand</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Item par item</a></li></ul>
 <div class="tab-content nav-pills">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb7" title="Liste a) b) c)"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage{enumitem}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}[label=<span class="fu">\alph*</span>)]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément a</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément b</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb10" title="Liste a) b) c)"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage{enumitem}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}[label=<span class="fu">\alph*</span>)]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément a</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> élément b</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>En redéfinissant les puces utilisées à chaque niveau.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage{amssymb}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\labelitemi</span>}{<span class="ss">$</span><span class="sc">\checkmark</span><span class="ss">$</span>}      <span class="co">% 1er niveau</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\labelitemii</span>}{<span class="ss">$</span><span class="sc">\blacksquare</span><span class="ss">$</span>}   <span class="co">% 2e niveau</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un élément</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un autre élément     </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">\item</span> un élément</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">\item</span> un autre élément </span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage{amssymb}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\labelitemi</span>}{<span class="ss">$</span><span class="sc">\checkmark</span><span class="ss">$</span>}      <span class="co">% 1er niveau</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\labelitemii</span>}{<span class="ss">$</span><span class="sc">\blacksquare</span><span class="ss">$</span>}   <span class="co">% 2e niveau</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un élément</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> un autre élément     </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">\item</span> un élément</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">\item</span> un autre élément </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>En choisissant la puce utilisée pour chaque item.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\blacksquare</span><span class="ss">$</span>] Carré noir</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\checkmark</span><span class="ss">$</span>] Check</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\star</span><span class="ss">$</span>] Étoile    </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\blacksquare</span><span class="ss">$</span>] Carré noir</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\checkmark</span><span class="ss">$</span>] Check</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span>[<span class="ss">$</span><span class="sc">\star</span><span class="ss">$</span>] Étoile    </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -702,23 +765,23 @@ Tip
 <p>Exemple d’outil : <a href="https://tableconvert.com/excel-to-latex" target="_blank">https://tableconvert.com/excel-to-latex</a></p>
 </div>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span>                               <span class="co">% Table centrée</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{Tableau des départements}       <span class="co">% Titre du tableau</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">tab_dep</span>}                          <span class="co">% Label pour référencer le tableau</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\vspace</span>{2mm}                             <span class="co">% Ajout d'un espace vertical</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c||l|l|r|}</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\textbf</span>{Numéro} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Département} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Chef Lieu} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Nb habitants} <span class="fu">\\</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span> <span class="fu">\hline</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        01 <span class="op">&amp;</span> Ain                     <span class="op">&amp;</span> Bourg-en-Bresse <span class="op">&amp;</span> 650 000 <span class="fu">\\</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        02 <span class="op">&amp;</span> Aisne                   <span class="op">&amp;</span> Laon            <span class="op">&amp;</span> 535 000 <span class="fu">\\</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        03 <span class="op">&amp;</span> Allier                  <span class="op">&amp;</span> Moulins         <span class="op">&amp;</span> 339 000 <span class="fu">\\</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        04 <span class="op">&amp;</span> Alpes-de-Haute-Provence <span class="op">&amp;</span> Digne-les-Bains <span class="op">&amp;</span> 166 000 <span class="fu">\\</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        05 <span class="op">&amp;</span> Hautes-Alpes            <span class="op">&amp;</span> Gap             <span class="op">&amp;</span> 140 000 <span class="fu">\\</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span>                               <span class="co">% Table centrée</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{Tableau des départements}       <span class="co">% Titre du tableau</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">tab_dep</span>}                          <span class="co">% Label pour référencer le tableau</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\vspace</span>{2mm}                             <span class="co">% Ajout d'un espace vertical</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c||l|l|r|}</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\textbf</span>{Numéro} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Département} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Chef Lieu} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Nb habitants} <span class="fu">\\</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span> <span class="fu">\hline</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        01 <span class="op">&amp;</span> Ain                     <span class="op">&amp;</span> Bourg-en-Bresse <span class="op">&amp;</span> 650 000 <span class="fu">\\</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        02 <span class="op">&amp;</span> Aisne                   <span class="op">&amp;</span> Laon            <span class="op">&amp;</span> 535 000 <span class="fu">\\</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        03 <span class="op">&amp;</span> Allier                  <span class="op">&amp;</span> Moulins         <span class="op">&amp;</span> 339 000 <span class="fu">\\</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        04 <span class="op">&amp;</span> Alpes-de-Haute-Provence <span class="op">&amp;</span> Digne-les-Bains <span class="op">&amp;</span> 166 000 <span class="fu">\\</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        05 <span class="op">&amp;</span> Hautes-Alpes            <span class="op">&amp;</span> Gap             <span class="op">&amp;</span> 140 000 <span class="fu">\\</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\hline</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Essayons tout de même d’expliquer la syntaxe ci-dessus :</p>
 <p>La commande <code>\begin{tabular}{|c||l|l|r|}</code> permet de définir les colonnes et leurs alignements :</p>
 <table class="caption-top table">
@@ -790,23 +853,23 @@ Dossier img
 <div class="callout-body-container callout-body">
 <p>Une bonne pratique consiste à stocker toutes les images dans un seul dossier nommé par exemple <code>img</code>.</p>
 <p>Référencez ensuite ce dossier au niveau des métadonnées du document :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\graphicspath</span>{{img/}}          <span class="co">%% le chemin vers les images</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\graphicspath</span>{{img/}}          <span class="co">%% le chemin vers les images</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="image-simple" class="level3" data-number="9.1">
 <h3 data-number="9.1" class="anchored" data-anchor-id="image-simple"><span class="header-section-number">9.1</span> Image simple</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.2<span class="fu">\textwidth</span>]{<span class="ex">ensai_logo.png</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=0.2<span class="fu">\textwidth</span>]{<span class="ex">ensai_logo.png</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>L’option <code>[width=0.2\textwidth]</code> signifie que l’image aura une largeur de 20% de la largeur du texte</p>
 </section>
 <section id="figures" class="level3" data-number="9.2">
 <h3 data-number="9.2" class="anchored" data-anchor-id="figures"><span class="header-section-number">9.2</span> Figures</h3>
 <p>Nous préférons généralement inclure une image dans une <em>figure</em>. Cela permet de numéroter, définir un titre, un label.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">\includegraphics</span>[width=0.75<span class="fu">\textwidth</span>]{<span class="ex">ensai_logo.png</span>}</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{Le logo ENSAI}</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">fig:logo-ensai</span>}</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">\includegraphics</span>[width=0.75<span class="fu">\textwidth</span>]{<span class="ex">ensai_logo.png</span>}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{Le logo ENSAI}</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">fig:logo-ensai</span>}</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -844,55 +907,92 @@ Note
 </div>
 <p>La formule de la variance : <span class="math display">\[V = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \overline{x})^{2}\]</span></p>
 <p>La formule de Koenig-Huygens : <span class="math inline">\(\mathbb{V}(X) = \mathbb{E}(X^{2}) - (\mathbb{E}(X))^{2}\)</span>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>La formule de la variance : <span class="ss">$$V = </span><span class="sc">\frac</span><span class="ss">{1}{n} </span><span class="sc">\sum</span><span class="ss">_{i=1}^{n} (x_{i} - </span><span class="sc">\overline</span><span class="ss">{x})^{2}$$</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>La formule de Koenig-Huygens : <span class="ss">$</span><span class="sc">\mathbb</span><span class="ss">{V}(X) = </span><span class="sc">\mathbb</span><span class="ss">{E}(X^{2}) - (</span><span class="sc">\mathbb</span><span class="ss">{E}(X))^{2}$</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>La formule de la variance : <span class="ss">$$V = </span><span class="sc">\frac</span><span class="ss">{1}{n} </span><span class="sc">\sum</span><span class="ss">_{i=1}^{n} (x_{i} - </span><span class="sc">\overline</span><span class="ss">{x})^{2}$$</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>La formule de Koenig-Huygens : <span class="ss">$</span><span class="sc">\mathbb</span><span class="ss">{V}(X) = </span><span class="sc">\mathbb</span><span class="ss">{E}(X^{2}) - (</span><span class="sc">\mathbb</span><span class="ss">{E}(X))^{2}$</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="bibliographie" class="level2" data-number="11">
 <h2 data-number="11" class="anchored" data-anchor-id="bibliographie"><span class="header-section-number">11</span> Bibliographie</h2>
 <p>Nous allons utiliser le format <a href="https://www.bibtex.org/Using/" target="_blank">BibTeX</a>. Ce format est réguliérement utilisé pour citer des articles scientifiques.</p>
 <ul class="task-list">
 <li><p><label><input type="checkbox">À la racine de votre projet, créez un fichier <em>.bib</em> : <code>biblio.bib</code> et collez ce contenu</label></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>@article{prospect_theory,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>title={Prospect theory: An analysis of decision under risk},</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>author={Kahneman, Daniel and Tversky, Amos},</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>journal={Econometrica},</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>volume={47},</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>number={2},</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>pages={363--391},</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>year={1979}</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>@article{marriage_stability,</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>title={College admissions and the stability of marriage},</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>author={Gale, David and Shapley, Lloyd S},</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>journal={The American Mathematical Monthly},</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>volume={69},</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>number={1},</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>pages={9--15},</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>year={1962},</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>publisher={Taylor \&amp; Francis}</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>@article{prospect_theory,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>title={Prospect theory: An analysis of decision under risk},</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>author={Kahneman, Daniel and Tversky, Amos},</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>journal={Econometrica},</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>volume={47},</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>number={2},</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>pages={363--391},</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>year={1979}</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>@article{marriage_stability,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>title={College admissions and the stability of marriage},</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>author={Gale, David and Shapley, Lloyd S},</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>journal={The American Mathematical Monthly},</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>volume={69},</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>number={1},</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>pages={9--15},</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>year={1962},</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>publisher={Taylor \&amp; Francis}</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><label><input type="checkbox">Retournez dans votre fichier <em>main.tex</em> et citez un article</label></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>La Prospect Theory <span class="kw">\cite</span>{<span class="ex">prospect_theory</span>}, développée par Daniel Kahneman et Amos Tversky, suggère que les individus évaluent les pertes et les gains de manière asymétrique, donnant généralement plus de poids aux pertes qu'aux gains équivalents.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb19"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>La Prospect Theory <span class="kw">\cite</span>{<span class="ex">prospect_theory</span>}, développée par Daniel Kahneman et Amos Tversky, suggère que les individus évaluent les pertes et les gains de manière asymétrique,donnant généralement plus de poids aux pertes qu'aux gains équivalents.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><label><input type="checkbox">Vous pouvez également ajouter à votre bibliographie des articles que vous ne citez pas avec <code>\nocite{marriage_stability}</code></label></p></li>
 <li><p><label><input type="checkbox">Affichez votre bibliographie</label></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\refname</span>}{Bibliographie} <span class="co">%% Renommer en Bibliographie</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>}</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">biblio</span>}</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Bibliographie} <span class="co">%% Ajout à la table des matières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb20"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliographystyle</span>{<span class="ex">plain</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\bibliography</span>{<span class="ex">biblio</span>}</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\addcontentsline</span>{toc}{section}{Bibliographie} <span class="co">%% Ajout à la table des matières</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="annexes" class="level2" data-number="12">
 <h2 data-number="12" class="anchored" data-anchor-id="annexes"><span class="header-section-number">12</span> Annexes</h2>
 <p>Pour ajouter vos annexes :</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendix</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendixpage</span> </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\addappheadtotoc</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 1}</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 2}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">% \usepackage{appendix}              % Package à ajouter au début</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendix</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\appendixpage</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\addappheadtotoc</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 1}</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\section*</span>{Annexe 2}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="redéfinir-les-commandes" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="redéfinir-les-commandes"><span class="header-section-number">13</span> Redéfinir les commandes</h2>
+<p>Il est parfois utile de pouvoir redéfinir certaines commandes LaTeX.</p>
+<p>Cela est possible grâce à la commande <code>\renewcommand{\nom_commande}{nouvelle_définition}</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les commandes doivent être redéfinies avant le début du document i.e.&nbsp;avant <code>\begin{document}</code></p>
+</div>
+</div>
+<p>Quelques exemples :</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\contentsname</span>}{Sommaire} <span class="co">% Renommer la Table des matières</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\refname</span>}{Bibliographie} <span class="co">% Renommer la Bibliographie</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">% Renommer les annexes</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\appendixname</span>}{Annexes} </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\appendixpagename</span>}{Annexes} </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\appendixtocname</span>}{Liste des Annexes}</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">% définir une nouvelle commande (\HRule : ligne horizontale)</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\HRule</span>}{<span class="fu">\rule</span>{<span class="fu">\linewidth</span>}{0.5mm}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ressources" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://latexref.xyz/fr/" target="_blank">https://latexref.xyz/fr/</a></li>
+<li><a href="https://fr.wikibooks.org/wiki/LaTeX" target="_blank">Wiki LaTeX</a></li>
+</ul>
 
 
 </section>
