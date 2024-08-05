@@ -462,32 +462,25 @@
     "text": "Alternatives\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\nVidéos de la session 2022-2023\nsi vous avez vos accès à MyENSAI, les vidéos de la session de l’année 2022-2023 sont disponibles ici\n\n\nCours en ligne pour apprendre Python et SQL\n\nOpenclassrooms - Requêtez avecSQL\nInitiation à Python dans le Service Statistique Public\nOpenclassrooms - bases de Python (parties 1 et 2)\nOpenclassrooms - POO avec Python (parties 1 et 2)\n\n\n\nRessources utiles\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/\nPython pour la data science, Lino Galiana (INSEE, ENSAE)"
   },
   {
-    "objectID": "docs/outils/yaml.html",
-    "href": "docs/outils/yaml.html",
-    "title": "YAML 101",
+    "objectID": "docs/outils/outils.html",
+    "href": "docs/outils/outils.html",
+    "title": "Divers outils",
     "section": "",
-    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
+    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
   },
   {
-    "objectID": "docs/outils/yaml.html#quest-ce-que-yaml",
-    "href": "docs/outils/yaml.html#quest-ce-que-yaml",
-    "title": "YAML 101",
+    "objectID": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
+    "href": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
+    "title": "Divers outils",
     "section": "",
-    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
+    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
   },
   {
-    "objectID": "docs/outils/yaml.html#pourquoi-utiliser-yaml",
-    "href": "docs/outils/yaml.html#pourquoi-utiliser-yaml",
-    "title": "YAML 101",
-    "section": "2 Pourquoi utiliser YAML ?",
-    "text": "2 Pourquoi utiliser YAML ?\n\nLisibilité\n\nYAML est conçu pour être lisible par l’homme. La syntaxe est simple et directe, sans beaucoup de ponctuations.\nLes indentations permettent une structure claire et hiérarchisée, semblable à celle des langages de programmation comme Python.\n\nFlexibilité\n\nYAML supporte des structures de données complexes comme les listes imbriquées et les dictionnaires.\nIl permet des alias et des ancres pour éviter la duplication de données, ce qui peut être utile pour des fichiers de configuration réutilisables.\n\nCompatibilité avec les autres formats\n\nYAML peut facilement être converti en JSON, et vice versa\n\nUsage dans DevOps\n\nYAML est largement utilisé dans les outils de gestion de configuration, les pipelines CI/CD, et les orchestrateurs de conteneurs"
-  },
-  {
-    "objectID": "docs/outils/yaml.html#syntaxe",
-    "href": "docs/outils/yaml.html#syntaxe",
-    "title": "YAML 101",
-    "section": "3 Syntaxe",
-    "text": "3 Syntaxe\nVoici quelques exemples de syntaxe avec son équivalent json\n\n3.1 Attributs\n\n\n\n\nyaml\n\nperson:\n  name: Alice             # str\n  city: \"Amiens\"          # str\n  age: 30                 # int\n  height: 1.75            # float\n  student: false          # bool\n  birth_date: 1994-05-15  # date\n\n\n\n\njson\n\n{\n  \"person\": {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"height\": 1.75,\n    \"student\": false,\n    \"birth_date\": \"1994-05-15\"\n  }\n}\n\n\n\n\n\n3.2 Liste de valeurs\nPlusieurs possibilités pour déclarer des listes\n\n\n\n\nyaml\n\nhobbies: \n  - chess\n  - hiking\n  - landart\n\n--- # ou\n\nhobbies: [\"chess\", \"hiking\", \"landart\"]\n\n\n\n\njson\n\n{\n  \"hobbies\": [\n    \"chess\",\n    \"hiking\",\n    \"landart\"\n  ]\n}\n\n\n\nAutre exemple\n\n\n\n\nyaml\n\nservers:\n  - name: server1\n    ip: 192.168.1.1\n  - name: server2\n    ip: 192.168.1.2\n  - {name: \"server3\", ip: 192.168.1.3}\n\n\n\n\njson\n\n{\n  \"servers\": [\n    {\"name\": \"server1\", \"ip\": \"192.168.1.1\"},\n    {\"name\": \"server2\", \"ip\": \"192.168.1.2\"},\n    {\"name\": \"server3\", \"ip\": \"192.168.1.3\"}\n  ]\n}\n\n\n\n\n\n3.3 Ancre et alias\n\n\n\n\nyaml\n\nparent: &pere Bob\nchild:\n  - name: Eva\n    papa: *pere\n  - name: Laury\n    papa: *pere\n\n\n\n\njson\n\n{\n  \"parent\": \"Bob\",\n  \"child\": [\n    {\"name\": \"Eva\", \"parent\": \"Bob\"},\n    {\"name\": \"Laury\", \"parent\": \"Bob\"}\n  ]\n}\n\n\n\n\n\n3.4 Héritage\n\n\n\n\nyaml\n\ndefault: &default_settings\n  timeout: 30\n  retries: 5\n\nserver1:\n  &lt;&lt;: *default_settings\n  name: server1\n\nserver2:\n  &lt;&lt;: *default_settings\n  name: server2\n  retries: 3\n\n\n\n\njson\n\n{\n  \"default\": {\n    \"timeout\": 30,\n    \"retries\": 5\n  },\n  \"server1\": {\n    \"timeout\": 30,\n    \"retries\": 5,\n    \"name\": \"server1\"\n  },\n  \"server2\": {\n    \"timeout\": 30,\n    \"retries\": 3,\n    \"name\": \"server2\"\n  }\n}\n\n\n\n\n\n3.5 Long texte\n\n\nyaml\n\n\n# En conservant les retours à la ligne\nfable: |\n  Maître Corbeau, sur un arbre perché,\n  Tenait en son bec un fromage.\n  Maître Renard, par l'odeur alléché,\n  Lui tint à peu près ce langage :\n  \"Hé ! bonjour, Monsieur du Corbeau.\n  Que vous êtes joli ! que vous me semblez beau !\n  Sans mentir, si votre ramage\n  Se rapporte à votre plumage,\n  Vous êtes le Phénix des hôtes de ces bois.\"\n  À ces mots le Corbeau ne se sent pas de joie ;\n  Et pour montrer sa belle voix,\n  Il ouvre un large bec, laisse tomber sa proie.\n  Le Renard s'en saisit, et dit : \"Mon bon Monsieur,\n  Apprenez que tout flatteur\n  Vit aux dépens de celui qui l'écoute :\n  Cette leçon vaut bien un fromage, sans doute.\"\n  Le Corbeau honteux et confus\n  Jura, mais un peu tard, qu'on ne l'y prendrait plus.\n\n# En supprimant les retours à la ligne\nchoixpeau: &gt;\n  Les nouveaux élèves de Poudlard sont répartis en quatre maisons : Gryffondor\n  pour les courageux, Poufsouffle pour les travailleurs, Serdaigle pour les\n  intelligents, Serpentard pour les ambitieux. Le Choixpeau magique, qui \n  s'occupe de la répartition, hésite sur la meilleure maison pour Harry. \n  Comme Harry a entendu dire que les mages noirs venaient tous de Serpentard,\n  il demande à aller ailleurs, et le Choixpeau l'envoie à Gryffondor, avec \n  Ron et Hermione. Albus Dumbledore, le directeur, prévient les élèves qu’ils\n  ne doivent pas aller dans la Forêt interdite, ni dans le couloir du deuxième\n  étage."
+    "objectID": "docs/outils/outils.html#autres-outils",
+    "href": "docs/outils/outils.html#autres-outils",
+    "title": "Divers outils",
+    "section": "2 Autres outils",
+    "text": "2 Autres outils\n\n\n\nOutil\nIntérêt\n\n\n\n\nChatGPT\nDébugage, Génération de code, Génération de données, Documentation automatique\n\n\nStack Overflow\nTrés nombreuses questions et réponses en informatique\n\n\nJSON Formatter\nOutil en ligne pour formater et visualiser des données JSON\n\n\nDeepL\nOutil de traduction\n\n\nScribens\nCorrecteur grammatical en ligne"
   },
   {
     "objectID": "docs/outils/VSCode.html",
@@ -833,25 +826,32 @@
     "text": "5 Impression\n\nMode opératoire complet : ENT &gt; Assistance &gt; Foire aux questions &gt; Rechercher “imprimer”\nImprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)\nRetenez votre code d’identification à 6 chiffres\nPapercut (ou dans ENT &gt; Impression &gt; Papercut)\nAllez en salle 113\nEntrez votre code d’identification sur l’imprimante\nSélectionnez et libérez vos documents en attente d’impression\nAutre possibilité pour s’identifier auprès de l’imprimante\nEn utilisant votre carte étudiant\n\nSuivre mode opératoire affiché en salle 113"
   },
   {
-    "objectID": "docs/outils/outils.html",
-    "href": "docs/outils/outils.html",
-    "title": "Divers outils",
+    "objectID": "docs/outils/YAML.html",
+    "href": "docs/outils/YAML.html",
+    "title": "YAML 101",
     "section": "",
-    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
+    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
   },
   {
-    "objectID": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
-    "href": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
-    "title": "Divers outils",
+    "objectID": "docs/outils/YAML.html#quest-ce-que-yaml",
+    "href": "docs/outils/YAML.html#quest-ce-que-yaml",
+    "title": "YAML 101",
     "section": "",
-    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
+    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
   },
   {
-    "objectID": "docs/outils/outils.html#autres-outils",
-    "href": "docs/outils/outils.html#autres-outils",
-    "title": "Divers outils",
-    "section": "2 Autres outils",
-    "text": "2 Autres outils\n\n\n\nOutil\nIntérêt\n\n\n\n\nChatGPT\nDébugage, Génération de code, Génération de données, Documentation automatique\n\n\nStack Overflow\nTrés nombreuses questions et réponses en informatique\n\n\nJSON Formatter\nOutil en ligne pour formater et visualiser des données JSON\n\n\nDeepL\nOutil de traduction\n\n\nScribens\nCorrecteur grammatical en ligne"
+    "objectID": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
+    "href": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
+    "title": "YAML 101",
+    "section": "2 Pourquoi utiliser YAML ?",
+    "text": "2 Pourquoi utiliser YAML ?\n\nLisibilité\n\nYAML est conçu pour être lisible par l’homme. La syntaxe est simple et directe, sans beaucoup de ponctuations.\nLes indentations permettent une structure claire et hiérarchisée, semblable à celle des langages de programmation comme Python.\n\nFlexibilité\n\nYAML supporte des structures de données complexes comme les listes imbriquées et les dictionnaires.\nIl permet des alias et des ancres pour éviter la duplication de données, ce qui peut être utile pour des fichiers de configuration réutilisables.\n\nCompatibilité avec les autres formats\n\nYAML peut facilement être converti en JSON, et vice versa\n\nUsage dans DevOps\n\nYAML est largement utilisé dans les outils de gestion de configuration, les pipelines CI/CD, et les orchestrateurs de conteneurs"
+  },
+  {
+    "objectID": "docs/outils/YAML.html#syntaxe",
+    "href": "docs/outils/YAML.html#syntaxe",
+    "title": "YAML 101",
+    "section": "3 Syntaxe",
+    "text": "3 Syntaxe\nVoici quelques exemples de syntaxe avec son équivalent json\n\n3.1 Attributs\n\n\n\n\nyaml\n\nperson:\n  name: Alice             # str\n  city: \"Amiens\"          # str\n  age: 30                 # int\n  height: 1.75            # float\n  student: false          # bool\n  birth_date: 1994-05-15  # date\n\n\n\n\njson\n\n{\n  \"person\": {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"height\": 1.75,\n    \"student\": false,\n    \"birth_date\": \"1994-05-15\"\n  }\n}\n\n\n\n\n\n3.2 Liste de valeurs\nPlusieurs possibilités pour déclarer des listes\n\n\n\n\nyaml\n\nhobbies: \n  - chess\n  - hiking\n  - landart\n\n--- # ou\n\nhobbies: [\"chess\", \"hiking\", \"landart\"]\n\n\n\n\njson\n\n{\n  \"hobbies\": [\n    \"chess\",\n    \"hiking\",\n    \"landart\"\n  ]\n}\n\n\n\nAutre exemple\n\n\n\n\nyaml\n\nservers:\n  - name: server1\n    ip: 192.168.1.1\n  - name: server2\n    ip: 192.168.1.2\n  - {name: \"server3\", ip: 192.168.1.3}\n\n\n\n\njson\n\n{\n  \"servers\": [\n    {\"name\": \"server1\", \"ip\": \"192.168.1.1\"},\n    {\"name\": \"server2\", \"ip\": \"192.168.1.2\"},\n    {\"name\": \"server3\", \"ip\": \"192.168.1.3\"}\n  ]\n}\n\n\n\n\n\n3.3 Ancre et alias\n\n\n\n\nyaml\n\nparent: &pere Bob\nchild:\n  - name: Eva\n    papa: *pere\n  - name: Laury\n    papa: *pere\n\n\n\n\njson\n\n{\n  \"parent\": \"Bob\",\n  \"child\": [\n    {\"name\": \"Eva\", \"parent\": \"Bob\"},\n    {\"name\": \"Laury\", \"parent\": \"Bob\"}\n  ]\n}\n\n\n\n\n\n3.4 Héritage\n\n\n\n\nyaml\n\ndefault: &default_settings\n  timeout: 30\n  retries: 5\n\nserver1:\n  &lt;&lt;: *default_settings\n  name: server1\n\nserver2:\n  &lt;&lt;: *default_settings\n  name: server2\n  retries: 3\n\n\n\n\njson\n\n{\n  \"default\": {\n    \"timeout\": 30,\n    \"retries\": 5\n  },\n  \"server1\": {\n    \"timeout\": 30,\n    \"retries\": 5,\n    \"name\": \"server1\"\n  },\n  \"server2\": {\n    \"timeout\": 30,\n    \"retries\": 3,\n    \"name\": \"server2\"\n  }\n}\n\n\n\n\n\n3.5 Long texte\n\n\nyaml\n\n\n# En conservant les retours à la ligne\nfable: |\n  Maître Corbeau, sur un arbre perché,\n  Tenait en son bec un fromage.\n  Maître Renard, par l'odeur alléché,\n  Lui tint à peu près ce langage :\n  \"Hé ! bonjour, Monsieur du Corbeau.\n  Que vous êtes joli ! que vous me semblez beau !\n  Sans mentir, si votre ramage\n  Se rapporte à votre plumage,\n  Vous êtes le Phénix des hôtes de ces bois.\"\n  À ces mots le Corbeau ne se sent pas de joie ;\n  Et pour montrer sa belle voix,\n  Il ouvre un large bec, laisse tomber sa proie.\n  Le Renard s'en saisit, et dit : \"Mon bon Monsieur,\n  Apprenez que tout flatteur\n  Vit aux dépens de celui qui l'écoute :\n  Cette leçon vaut bien un fromage, sans doute.\"\n  Le Corbeau honteux et confus\n  Jura, mais un peu tard, qu'on ne l'y prendrait plus.\n\n# En supprimant les retours à la ligne\nchoixpeau: &gt;\n  Les nouveaux élèves de Poudlard sont répartis en quatre maisons : Gryffondor\n  pour les courageux, Poufsouffle pour les travailleurs, Serdaigle pour les\n  intelligents, Serpentard pour les ambitieux. Le Choixpeau magique, qui \n  s'occupe de la répartition, hésite sur la meilleure maison pour Harry. \n  Comme Harry a entendu dire que les mages noirs venaient tous de Serpentard,\n  il demande à aller ailleurs, et le Choixpeau l'envoie à Gryffondor, avec \n  Ron et Hermione. Albus Dumbledore, le directeur, prévient les élèves qu’ils\n  ne doivent pas aller dans la Forêt interdite, ni dans le couloir du deuxième\n  étage.\n\na"
   },
   {
     "objectID": "docs/python/python-notebooks.html",
