@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Ludovic Deneuville">
-  <title>Remise à Niveau Informatique – Introduction à Python</title>
+  <title>Remise à Niveau Informatique – Programmation Orientée Objet</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -391,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction à Python</h1>
+  <h1 class="title">Programmation Orientée Objet</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -402,384 +402,397 @@ Ludovic Deneuville
 </div>
 
 </section>
-<section id="historique" class="title-slide slide level2 center">
-<h2>Historique</h2>
-<ul>
-<li>Créé par <a href="https://fr.wikipedia.org/wiki/Python_(langage)#/media/Fichier:Guido_van_Rossum_OSCON_2006.jpg" target="_blank">Guido van Rossum</a> (Pays-Bas)</li>
-<li>1ère version en 1991</li>
-<li>Géré par la <em>Python Software Foundation</em> depuis 2001</li>
-<li><a href="https://www.python.org/" target="_blank">Python</a> 3.12</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Créé fin 1989 pendant les vacances de Noël</li>
-<li>Python Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="pourquoi-apprendre-python" class="title-slide slide level2 center">
-<h2>Pourquoi Apprendre Python ?</h2>
-<ul>
-<li>Langage polyvalent et populaire</li>
-<li>Facilité d’apprentissage et de lecture</li>
-<li>Large communauté et nombreuses ressources</li>
-<li>Nombreux packages</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Important dans le monde de la data science et de l’ingénierie.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="les-fondamentaux-de-python" class="title-slide slide level2 center">
-<h2>Les Fondamentaux de Python</h2>
-<ul>
-<li>Langage interprété et interactif</li>
-<li>Typage Dynamique</li>
-<li>Syntaxe claire et concise</li>
-<li>Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)</li>
-</ul>
-<aside class="notes">
-<ul>
-<li><p>Expliquer la différence entre un langage interprété et compilé.</p></li>
-<li><p>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</p></li>
-<li><p>Typage Dynamique (vérification des types au moment de l’exécution)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-2"><a></a>a <span class="op">=</span> <span class="st">"toto"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="python-à-lensai" class="title-slide slide level2 center">
-<h2>Python à l’ENSAI</h2>
-<ul>
-<li>Distribution CPython</li>
-<li>Version 3.10 (<code>python --version</code>)</li>
-<li>Vous allez coder dans :
-<ul>
-<li>des <a href="https://jupyter.org/" target="_blank">notebooks Jupyter</a></li>
-<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
-</ul></li>
-<li>Packages pré-installés</li>
-</ul>
-<aside class="notes">
-<p>Distribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils</p>
-<ul>
-<li>Anaconda (datascience et machine learning)</li>
-<li>Miniconda (plus léger)</li>
-</ul>
-<p>Autre IDE : PyCharm, Atom</p>
-<p>Gestionnnaire de packages <strong>pip</strong>, à lancer dans un terminal</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
 <section>
-<section id="packages" class="title-slide slide level2 center">
-<h2>Packages</h2>
-<p>Dans un terminal (par exemple : <strong>Git Bash</strong>)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">pip</span> list                            <span class="co"># Packages installés</span></span>
-<span id="cb2-2"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>               <span class="co"># Installer un package</span></span>
-<span id="cb2-3"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>==<span class="op">&lt;</span>version<span class="op">&gt;</span>    <span class="co"># Version spécifique</span></span>
-<span id="cb2-4"><a></a><span class="ex">pip</span> uninstall <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a><span class="co"># Distribution utilisée</span></span>
-<span id="cb2-7"><a></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<aside class="notes">
-<p>En projet :</p>
+<section id="introduction" class="title-slide slide level2 center">
+<h2>Introduction</h2>
+<p>La POO est un paradigme de programmation qui organise le code autour d’<strong>objets</strong> plutôt que de fonctions et de procédures.</p>
+<p>Ces objets représentent des entités du monde réel, ils ont :</p>
 <ul>
-<li>liste des packages dans un fichier texte à la racine</li>
-<li><code>pip install - r requirements.txt</code></li>
-</ul>
-<p><strong>Démo</strong> : lancer python dans le terminal</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="packages-populaires" class="slide level3">
-<h3>Packages populaires</h3>
-<p>Datascience :</p>
-<ul>
-<li>NumPy</li>
-<li>Pandas, Polars</li>
-<li>Matplotlib, Seaborn</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>NumPy
-<ul>
-<li>Calcul numérique</li>
-<li>ndarray, perf, stats, manipulation des tableaux</li>
-</ul></li>
-<li>Pandas
-<ul>
-<li>dataframe, analyse de données</li>
-</ul></li>
-<li>Matplotlib : graphiques</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="écrire-votre-premier-code-en-python" class="title-slide slide level2 center">
-<h2>Écrire votre Premier Code en Python</h2>
-<ul>
-<li>Variables et types de données (int, float, str, bool, list, dict)</li>
-<li>Opérations de base</li>
-<li>Sensible à l’indentation</li>
-<li>Structures de contrôle (if, for, while)</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>= : affectation</li>
-<li>== : test d’égalité / != différence</li>
-</ul>
-<p>indentation : utiliser un formateur dans VSCode</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="structures-de-contrôle" class="slide level3">
-<h3>Structures de contrôle</h3>
-<div class="panel-tabset nav-pills">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">If</a></li><li><a href="#tabset-1-2">For</a></li><li><a href="#tabset-1-3">While</a></li><li><a href="#tabset-1-4">Enumerate</a></li></ul>
-<div class="tab-content nav-pills">
-<div id="tabset-1-1">
-<div id="23afefbe" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>note <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="cf">if</span> note <span class="op">&gt;</span> <span class="dv">16</span>:</span>
-<span id="cb3-4"><a></a>    <span class="bu">print</span>(<span class="st">"Validé avec mention"</span>)</span>
-<span id="cb3-5"><a></a><span class="cf">elif</span> note <span class="op">&gt;</span> <span class="dv">10</span>:</span>
-<span id="cb3-6"><a></a>    <span class="bu">print</span>(<span class="st">"Validé"</span>)</span>
-<span id="cb3-7"><a></a><span class="cf">else</span>:</span>
-<span id="cb3-8"><a></a>    <span class="bu">print</span>(<span class="st">"Non validé"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Validé avec mention</code></pre>
-</div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div id="ad1d61e1" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
-<span id="cb5-2"><a></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-2
-3
-4</code></pre>
-</div>
-</div>
-</div>
-<div id="tabset-1-3">
-<div id="46c2c159" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb7-3"><a></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
-<span id="cb7-4"><a></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
-<span id="cb7-5"><a></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10 9 8 7 6 5 4 3 2 1 boom</code></pre>
-</div>
-</div>
-</div>
-<div id="tabset-1-4">
-<div id="8194b3fe" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>liste <span class="op">=</span> [<span class="st">"Alban"</span>, <span class="st">"Bertille"</span>, <span class="st">"Corine"</span>]</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
-<span id="cb9-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> : valeur </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>index 0 : valeur Alban
-index 1 : valeur Bertille
-index 2 : valeur Corine</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="collections---les-2-principales" class="title-slide slide level2 center">
-<h2>Collections - les 2 principales</h2>
-<ul>
-<li><p><strong>Liste</strong> : collection ordonnée de valeurs modifiables</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Dictionnaire</strong> : collection de paires clé-valeur non ordonnées</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>des <strong>attributs</strong> : ce qu’ils sont</li>
+<li>des <strong>méthodes</strong> : ce qu’ils peuvent faire</li>
 </ul>
 </section>
-<section id="autres-collections-utiles" class="slide level3">
-<h3>Autres Collections utiles</h3>
+<section id="intérêt" class="slide level3">
+<h3>Intérêt</h3>
+<p>La POO permet :</p>
 <ul>
-<li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>d’organiser le code de manière plus structurée</li>
+<li>de favoriser la réutilisation et la maintenance du code</li>
+<li>de modéliser les concepts du domaine d’application de manière naturelle</li>
 </ul>
+<p>Elle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.</p>
+</section>
+<section id="exemple" class="slide level3">
+<h3>Exemple</h3>
+<p>Modélisons par exemple une personne :</p>
+<ul>
+<li>Attributs : nom, prenom, age, compétences</li>
+<li>Méthodes : apprendre(), vieillir()</li>
+</ul>
+<div title="Les méthodes peuvent agir sur les attributs">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>Les méthodes peuvent agir sur les attributs</strong></p>
 </div>
 <div class="callout-content">
-<p>De nombreux autres types de collections existent (Arbre, Liste chainée…).</p>
+<p>La méthode <em>vieillir()</em> va augmenter l’age de la personne de 1.</p>
+<p>La méthode <em>apprendre(“Python”)</em>, va ajouter “Python” à la liste des compétences.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="collections-principales---résumé" class="slide level3">
-<h3>Collections principales - résumé</h3>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Type de Donnée</th>
-<th style="text-align: center;">Ordonné</th>
-<th style="text-align: center;">Mutable</th>
-<th style="text-align: center;">Doublon</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>list</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td>dict</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td>tuple</td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">✔</td>
-</tr>
-<tr class="even">
-<td>set</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">✔</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
+</div>
 </section></section>
 <section>
-<section id="aide-au-développement" class="title-slide slide level2 center">
-<h2>Aide au développement</h2>
-<p>Pour apprendre le langage, évitez de foncer vers les LLM.</p>
-<p>Préférez :</p>
+<section id="principes-fondamentaux" class="title-slide slide level2 center">
+<h2>Principes fondamentaux</h2>
+
+</section>
+<section id="encapsulation" class="slide level3">
+<h3>Encapsulation</h3>
+<p>L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet.</p>
+<p>Cela permet de :</p>
 <ul>
-<li><a href="https://docs.python.org/fr/3.10/tutorial/" target="_blank">Aide en ligne</a></li>
-<li>Votre moteur de recherche favori</li>
-<li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+<li>cacher les détails d’implémentation</li>
+<li>de fournir une interface cohérente pour interagir avec l’objet</li>
 </ul>
 </section>
-<section id="ressources-utiles" class="slide level3">
-<h3>Ressources utiles</h3>
+<section id="héritage" class="slide level3">
+<h3>Héritage</h3>
+<p>L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise :</p>
 <ul>
-<li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
-<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la datascience</a></li>
-<li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
+<li>la réutilisation du code</li>
+<li>la création d’une hiérarchie de classes</li>
 </ul>
-<aside class="notes">
-<p>LLM pas adapté pour retenir mais pratique pour :</p>
-<ul>
-<li>déboguer</li>
-<li>documenter</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<blockquote>
+<p>Exemple : <em>Carré</em> hérite de <em>Rectangle</em>. Un carré est un rectangle avec des propriétés supplémentaires.</p>
+</blockquote>
+</section>
+<section id="polymorphisme" class="slide level3">
+<h3>Polymorphisme</h3>
+<p>Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action.</p>
+<p>Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes.</p>
 </section></section>
-<section id="au-travail" class="title-slide slide level2 center">
-<h2>Au travail</h2>
-<p>5 notebooks sont à votre disposition pour apprendre les bases du langage :</p>
-<p><a href="../../docs/python/python-notebooks.html">Comment utiliser les notebooks</a></p>
+<section>
+<section id="classe-et-objet" class="title-slide slide level2 center">
+<h2>Classe et Objet</h2>
+<ul>
+<li>Une <strong>classe</strong> est un <u>modèle</u> pour créer des objets
+<ul>
+<li>Elle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe</li>
+</ul></li>
+<li>Les <strong>objets</strong> sont des instances de classes
+<ul>
+<li>Ils possèdent des attributs et des méthodes qui définissent leur état et leur comportement</li>
+</ul></li>
+</ul>
+</section>
+<section id="exemple-1" class="slide level3">
+<h3>Exemple</h3>
+<ul>
+<li>Création de la classe <em>Personne</em> qui représente une personne
+<ul>
+<li>avec ses attributs et ses méthodes</li>
+</ul></li>
+<li>Création de l’objet <em>personne1</em> à partir de cette classe
+<ul>
+<li>prénom = Sacha</li>
+<li>nom = Touille</li>
+<li>age = 20</li>
+<li>compétences = []</li>
+</ul></li>
+</ul>
+</section>
+<section id="classe-python" class="slide level3">
+<h3>Classe Python</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>personne.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="personne.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Personne:</span>
+<span id="cb1-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, prenom, age):</span>
+<span id="cb1-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb1-4"><a></a>        <span class="va">self</span>.prenom <span class="op">=</span> prenom</span>
+<span id="cb1-5"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb1-6"><a></a>        <span class="va">self</span>.competences <span class="op">=</span> []</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>    <span class="kw">def</span> apprendre(<span class="va">self</span>, nouvelle_competence):</span>
+<span id="cb1-9"><a></a>        <span class="co">"""Ajoute une nouvelle compétence à la liste des compétences."""</span></span>
+<span id="cb1-10"><a></a>        <span class="va">self</span>.competences.append(nouvelle_competence)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a>    <span class="kw">def</span> vieillir(<span class="va">self</span>):</span>
+<span id="cb1-13"><a></a>        <span class="co">"""Incrémente l'âge de la personne d'un an."""</span></span>
+<span id="cb1-14"><a></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="objets-python" class="slide level3">
+<h3>Objets Python</h3>
+<p>À partir de la classe <em>Personne</em>, nous pouvons créer des objets.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>main.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="main.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">from</span> personne <span class="im">import</span> Personne</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>personne1 <span class="op">=</span> Personne(<span class="st">"Touille"</span>, <span class="st">"Sacha"</span>, <span class="dv">20</span>)</span>
+<span id="cb2-4"><a></a>personne2 <span class="op">=</span> Personne(<span class="st">"Ginal"</span>, <span class="st">"Laury"</span>, <span class="dv">30</span>)</span>
+<span id="cb2-5"><a></a>personne2.vieillir()</span>
+<span id="cb2-6"><a></a>personne2.apprendre(<span class="st">"SQL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="constructeur" class="slide level3">
+<h3>Constructeur</h3>
+<p>Le code <code>Personne("Touille", "Sacha", 20)</code> appelle la méthode <code>__init__()</code> de la classe <em>Personne</em>.</p>
+<p>Cette méthode est appelée <u>le constructeur</u>.</p>
+<p>Comme son nom l’indique, elle permet de « construire » des objets à partir de la classe.</p>
+</section>
+<section id="conventions-python" class="slide level3">
+<h3>Conventions Python</h3>
+<ul>
+<li>Un nom de classe s’écrit en <em>CamelCase</em> (majuscule à chaque mot)</li>
+<li>Un fichier python (ou module) ne contient qu’une seule classe</li>
+<li>Un nom de module s’écrit en snake_case (mots en minuscules séparés par des <code>_</code>)</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo_electrique.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="velo_electrique.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> VeloElectrique:</span>
+<span id="cb3-2"><a></a>    ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="héritage-1" class="title-slide slide level2 center">
+<h2>Héritage</h2>
+<p>Un des trois piliers de la POO est l’héritage.</p>
+<p>Une classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.</p>
+<p>Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
+</section>
+<section id="exemple-dhéritage" class="slide level3">
+<h3>Exemple d’Héritage</h3>
+<p>Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes.</p>
+<p>L’idée naïve est de créer une classe pour chacun.</p>
+</section>
+<section id="exemple-dhéritage-1" class="slide level3">
+<h3>Exemple d’Héritage</h3>
+<div class="panel-tabset nav-pills">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Velo</a></li><li><a href="#tabset-1-2">Trottinette</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Velo:</span>
+<span id="cb4-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb4-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb4-4"><a></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span>
+<span id="cb4-5"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb4-8"><a></a>        <span class="co">"""Augmente la vitesse du vélo."""</span></span>
+<span id="cb4-9"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb4-12"><a></a>        <span class="co">"""Diminue la vitesse du vélo."""</span></span>
+<span id="cb4-13"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb4-14"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-15"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>trottinette.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Trottinette:</span>
+<span id="cb5-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb5-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb5-4"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb5-7"><a></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb5-8"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb5-9"><a></a></span>
+<span id="cb5-10"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb5-11"><a></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb5-12"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb5-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-14"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemple-dhéritage-2" class="slide level3">
+<h3>Exemple d’Héritage</h3>
+<p>En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :</p>
+<ul>
+<li>couleur</li>
+<li>vitesse</li>
+<li>accelerer()</li>
+<li>ralentir()</li>
+</ul>
+<p>Une idée est de regrouper ces caractéristiques communes dans une classe <code>DeuxRoues</code>. Puis de faire hériter <code>Vélo</code> et <code>Trottinette</code> de <code>DeuxRoues</code></p>
+</section>
+<section id="exemple-dhéritage-3" class="slide level3">
+<h3>Exemple d’Héritage</h3>
+<div class="panel-tabset nav-pills">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Deux Roues</a></li><li><a href="#tabset-2-2">Velo</a></li><li><a href="#tabset-2-3">Trottinette</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>deux_roues.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="deux_roues.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> DeuxRoues:</span>
+<span id="cb6-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
+<span id="cb6-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb6-4"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb6-7"><a></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb6-8"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb6-11"><a></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb6-12"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb6-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-14"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="kw">class</span> Velo(DeuxRoues):</span>
+<span id="cb7-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb7-5"><a></a>        <span class="bu">super</span>.<span class="fu">__init__</span>(couleur)  <span class="co"># Appel du constructeur de la classe mère</span></span>
+<span id="cb7-6"><a></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>trottinette.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb8-2"><a></a></span>
+<span id="cb8-3"><a></a><span class="kw">class</span> Trottinette(DeuxRoues):</span>
+<span id="cb8-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb8-5"><a></a>        <span class="bu">super</span>.<span class="fu">__init__</span>(couleur)   <span class="co"># Appel du constructeur de la classe mère</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="self-et-super" class="slide level3">
+<h3>Self et Super</h3>
+<ul>
+<li><strong>self</strong> est une référence à l’instance actuelle de la classe
+<ul>
+<li>Il est utilisé pour accéder aux attributs et aux méthodes d’une instance spécifique de la classe</li>
+</ul></li>
+<li><strong>super()</strong> est une fonction intégrée qui référence la classe mère
+<ul>
+<li>Il est utilisé pour appeler des méthodes de la classe parent dans une classe enfant</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="classe-abstraite" class="title-slide slide level2 center">
+<h2>Classe Abstraite</h2>
+<div title="Dessine-moi un deux roues">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dessine-moi un deux roues</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Est-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?</li>
+</ul>
+<p>Si l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.</p>
+<p>Alors que dessiner un vélo ou une trottinette, c’est déjà plus concret.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="classe-abstraite---deuxroues" class="slide level3">
+<h3>Classe Abstraite - DeuxRoues</h3>
+<p>Certaines classes n’ont pas vocation à être instanciées. Par exemple, nous n’allons pas créer d’objets de la classe <em>DeuxRoues</em>.</p>
+<p>Nous allons directement créer des <em>Velo</em> et des <em>Trottinettes</em>.</p>
+<p>Nous pouvons donc définir la classe <em>DeuxRoues</em> comme <strong>abstraite</strong>.</p>
+<ul>
+<li>on ne peut pas créer d’objets à partir de cette classe</li>
+</ul>
+</section>
+<section id="classe-abstraite---deuxroues-1" class="slide level3">
+<h3>Classe Abstraite - DeuxRoues</h3>
+<p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles.</p>
+<p>Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
+</section>
+<section id="classe-abstraite---python" class="slide level3">
+<h3>Classe Abstraite - Python</h3>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>En Python, la notion de classe abstraite est implémentée grâce au module <em>abc</em> (Abstract Base Classes).</p>
+<p>Ce module fournit le décorateur <code>@abstractmethod</code> qui permet de déclarer une méthode comme abstraite dans une classe abstraite.</p>
+<p>Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="classe-abstraite---remarque" class="slide level3">
+<h3>Classe Abstraite - Remarque</h3>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Classe mère ne veut pas dire forcément classe abstraite.</p>
+<p>Par exemple :</p>
+<ul>
+<li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
+<li>Cela parait cohérent car un vélo électrique est un vélo
+<ul>
+<li>donc il hérite de tous ses attributs et méthodes</li>
+<li>et il a des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
+</ul></li>
+<li>Or ici la classe <code>Velo</code> n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section id="exercices" class="title-slide slide level2 center">
+<h2>Exercices</h2>
+<p><a href="../../docs/POO/poo-exercice.html" target="_blank">exercices</a></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p><a href="../../index.html">Home</a> — <a href="python-cours.html">Introduction à Python</a></p>
+<p><a href="../../index.html">Home</a> — <a href="poo-cours.html">Introduction à la POO</a></p>
 </div>
 </div>
 </section>

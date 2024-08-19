@@ -606,35 +606,91 @@
     "href": "docs/POO/poo-cours.html",
     "title": "Programmation Orientée Objet",
     "section": "",
-    "text": "Nous allons introduire les notions suivantes :"
+    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
   },
   {
     "objectID": "docs/POO/poo-cours.html#introduction",
     "href": "docs/POO/poo-cours.html#introduction",
     "title": "Programmation Orientée Objet",
-    "section": "Introduction",
-    "text": "Introduction\nLa POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (attributs) et des actions (méthodes) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :\n\nEncapsulation : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet\nHéritage : L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d’une hiérarchie de classes\nPolymorphisme : Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action. Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives."
+    "section": "",
+    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
   },
   {
-    "objectID": "docs/POO/poo-cours.html#organisation-du-code",
-    "href": "docs/POO/poo-cours.html#organisation-du-code",
+    "objectID": "docs/POO/poo-cours.html#principes-fondamentaux",
+    "href": "docs/POO/poo-cours.html#principes-fondamentaux",
     "title": "Programmation Orientée Objet",
-    "section": "1 Organisation du code",
-    "text": "1 Organisation du code\nDans la suite, nous allons organsier notre code de manière logique dans différents modules.\n\nmodule : Les modules d’un programme Python sont ses fichiers sources.\n\n\npaquet : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.\n\n\n1.1 bonne pratique\nA la racine de votre projet, créez les 3 dossiers suivants :\n\nsrc : pour stocker votre code source\ndata : pour vos fichiers de données\ndoc : pour votre documentation\n\n.\n├── data\n│   └── temperatures.csv\n├── doc\n│   ├── suivi.md\n│   └── rapport.tex\n└── src\n    ├── __main__.py\n    ├── package1\n    │   ├── __init__.py\n    │   ├── module1.py\n    │   ├── module2.py\n    └── package2\n        ├── __init__.py\n        ├── module3.py\n        └── subpackage21\n            ├── __init__.py\n            ├── module4.py\n            ├── module5.py\nRemarques importantes :\n\nle fichier __main__.py contient le code à exécuter quand le pacakge est exécuté\nles fichiers __init__.py sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)\n\nVoici un exemple plus concret :\n.\n└── src\n    ├── __main__.py\n    ├── vehicules\n    │   ├── __init__.py\n    │   ├── deux_roues.py\n    │   ├── velo.py\n    │   └── trottinette.py\n    └── humain\n        ├── __init__.py\n        ├── personne.py\n        └── etudiant.py"
+    "section": "Principes fondamentaux",
+    "text": "Principes fondamentaux\n\nEncapsulation\nL’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet.\nCela permet de :\n\ncacher les détails d’implémentation\nde fournir une interface cohérente pour interagir avec l’objet\n\n\n\nHéritage\nL’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise :\n\nla réutilisation du code\nla création d’une hiérarchie de classes\n\n\nExemple : Carré hérite de Rectangle. Un carré est un rectangle avec des propriétés supplémentaires.\n\n\n\nPolymorphisme\nLe polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action.\nCela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes."
   },
   {
-    "objectID": "docs/POO/poo-cours.html#héritage",
-    "href": "docs/POO/poo-cours.html#héritage",
+    "objectID": "docs/POO/poo-cours.html#classe-et-objet",
+    "href": "docs/POO/poo-cours.html#classe-et-objet",
     "title": "Programmation Orientée Objet",
-    "section": "2 Héritage",
-    "text": "2 Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthode de sa classe parente.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.\nSupposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L’idée naïve est de créer une classe pour chacun.\nEn réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :\n\ncouleur\nvitesse\naccelerer()\nralentir()\n\nUne idée est de regrouper ces caractéristiques communes dans une classe DeuxRoues. Puis de faire hériter Vélo et Trottinette de DeuxRoues\n\n2.1 Classe Abstraite\nCertaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe DeuxRoues. Nous allons directement créer des Velo et des Trottinettes.\nNous pouvons donc définir la classe DeuxRouescomme abstraite\n\nc’est à dire qui ne peut pas être instanciée\ndit autrement : on ne peut pas créer d’objets de cette classe\n\nLa principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.\n\nEn Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.\n\n\n\n\n\n\n\nWarning\n\n\n\nClasse mère ne veut pas dire forcément classe abstraite\nPar exemple :\n\nConsidérons par exemple une classe VeloElectrique qui hérite de la classe Velo\nCela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)\nOr ici la classe Velo n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo"
+    "section": "Classe et Objet",
+    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement\n\n\n\nExemple\n\nCréation de la classe Personne qui représente une personne\n\navec ses attributs et ses méthodes\n\nCréation de l’objet personne1 à partir de cette classe\n\nprénom = Sacha\nnom = Touille\nage = 20\ncompétences = []\n\n\n\n\nClasse Python\n\n\npersonne.py\n\nclass Personne:\n    def __init__(self, nom, prenom, age):\n        self.nom = nom\n        self.prenom = prenom\n        self.age = age\n        self.competences = []\n\n    def apprendre(self, nouvelle_competence):\n        \"\"\"Ajoute une nouvelle compétence à la liste des compétences.\"\"\"\n        self.competences.append(nouvelle_competence)\n\n    def vieillir(self):\n        \"\"\"Incrémente l'âge de la personne d'un an.\"\"\"\n        self.age += 1\n\n\n\nObjets Python\nÀ partir de la classe Personne, nous pouvons créer des objets.\n\n\nmain.py\n\nfrom personne import Personne\n\npersonne1 = Personne(\"Touille\", \"Sacha\", 20)\npersonne2 = Personne(\"Ginal\", \"Laury\", 30)\npersonne2.vieillir()\npersonne2.apprendre(\"SQL\")\n\n\n\nConstructeur\nLe code Personne(\"Touille\", \"Sacha\", 20) appelle la méthode __init__() de la classe Personne.\nCette méthode est appelée le constructeur.\nComme son nom l’indique, elle permet de « construire » des objets à partir de la classe.\n\n\nConventions Python\n\nUn nom de classe s’écrit en CamelCase (majuscule à chaque mot)\nUn fichier python (ou module) ne contient qu’une seule classe\nUn nom de module s’écrit en snake_case (mots en minuscules séparés par des _)\n\n\n\nvelo_electrique.py\n\nclass VeloElectrique:\n    ..."
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#héritage-1",
+    "href": "docs/POO/poo-cours.html#héritage-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Héritage",
+    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.\n\nExemple d’Héritage\nSupposons que dans notre code, nous voulons gérer des vélos et de trottinettes.\nL’idée naïve est de créer une classe pour chacun.\n\n\nExemple d’Héritage\n\nVeloTrottinette\n\n\n\n\nvelo.py\n\nclass Velo:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.nb_pignons = nb_pignons\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse du vélo.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse du vélo.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\ntrottinette.py\n\nclass Trottinette:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\n\nExemple d’Héritage\nEn réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :\n\ncouleur\nvitesse\naccelerer()\nralentir()\n\nUne idée est de regrouper ces caractéristiques communes dans une classe DeuxRoues. Puis de faire hériter Vélo et Trottinette de DeuxRoues\n\n\nExemple d’Héritage\n\nDeux RouesVeloTrottinette\n\n\n\n\ndeux_roues.py\n\nclass DeuxRoues:\n    def __init__(self, couleur):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\nvelo.py\n\nfrom deux_roues import DeuxRoues\n\nclass Velo(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super.__init__(couleur)  # Appel du constructeur de la classe mère\n        self.nb_pignons = nb_pignons\n\n\n\n\n\ntrottinette.py\n\nfrom deux_roues import DeuxRoues\n\nclass Trottinette(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super.__init__(couleur)   # Appel du constructeur de la classe mère\n\n\n\n\n\n\nSelf et Super\n\nself est une référence à l’instance actuelle de la classe\n\nIl est utilisé pour accéder aux attributs et aux méthodes d’une instance spécifique de la classe\n\nsuper() est une fonction intégrée qui référence la classe mère\n\nIl est utilisé pour appeler des méthodes de la classe parent dans une classe enfant"
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#classe-abstraite",
+    "href": "docs/POO/poo-cours.html#classe-abstraite",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe Abstraite",
+    "text": "Classe Abstraite\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret.\n\n\n\nClasse Abstraite - DeuxRoues\nCertaines classes n’ont pas vocation à être instanciées. Par exemple, nous n’allons pas créer d’objets de la classe DeuxRoues.\nNous allons directement créer des Velo et des Trottinettes.\nNous pouvons donc définir la classe DeuxRoues comme abstraite.\n\non ne peut pas créer d’objets à partir de cette classe\n\n\n\nClasse Abstraite - DeuxRoues\nLa principale utilité des classes abstraites est de définir un contrat pour les classes filles.\nElles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.\n\n\nClasse Abstraite - Python\n\n\n\n\n\n\nTip\n\n\n\nEn Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes).\nCe module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite.\nUne classe abstraite est définie en héritant de la classe ABC du module abc.\n\n\n\n\nClasse Abstraite - Remarque\n\n\n\n\n\n\nWarning\n\n\n\nClasse mère ne veut pas dire forcément classe abstraite.\nPar exemple :\n\nConsidérons par exemple une classe VeloElectrique qui hérite de la classe Velo\nCela parait cohérent car un vélo électrique est un vélo\n\ndonc il hérite de tous ses attributs et méthodes\net il a des caractéristiques supplémentaires (batterie, autonomie, puissance…)\n\nOr ici la classe Velo n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo"
   },
   {
     "objectID": "docs/POO/poo-cours.html#exercices",
     "href": "docs/POO/poo-cours.html#exercices",
     "title": "Programmation Orientée Objet",
-    "section": "3 Exercices",
-    "text": "3 Exercices\nexercices"
+    "section": "Exercices",
+    "text": "Exercices\nexercices"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#introduction",
+    "href": "docs/POO/poo-cours-slides.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "Introduction",
+    "text": "Introduction\nLa POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
+    "href": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
+    "title": "Programmation Orientée Objet",
+    "section": "Principes fondamentaux",
+    "text": "Principes fondamentaux"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#classe-et-objet",
+    "href": "docs/POO/poo-cours-slides.html#classe-et-objet",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe et Objet",
+    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#héritage-1",
+    "href": "docs/POO/poo-cours-slides.html#héritage-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Héritage",
+    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code."
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#classe-abstraite",
+    "href": "docs/POO/poo-cours-slides.html#classe-abstraite",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe Abstraite",
+    "text": "Classe Abstraite\n\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret."
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#exercices",
+    "href": "docs/POO/poo-cours-slides.html#exercices",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercices",
+    "text": "Exercices\nexercices\n\n\n\nHome — Introduction à la POO"
   },
   {
     "objectID": "docs/outils/Bash.html",

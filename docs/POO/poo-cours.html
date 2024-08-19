@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="POO avec Python">
+<meta name="description" content="Slides">
 
 <title>Programmation Orientée Objet – Remise à Niveau Informatique</title>
 <style>
@@ -262,22 +262,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#organisation-du-code" id="toc-organisation-du-code" class="nav-link" data-scroll-target="#organisation-du-code"><span class="header-section-number">1</span> Organisation du code</a>
-  <ul class="collapse">
-  <li><a href="#bonne-pratique" id="toc-bonne-pratique" class="nav-link" data-scroll-target="#bonne-pratique"><span class="header-section-number">1.1</span> bonne pratique</a></li>
-  </ul></li>
-  <li><a href="#héritage" id="toc-héritage" class="nav-link" data-scroll-target="#héritage"><span class="header-section-number">2</span> Héritage</a>
-  <ul class="collapse">
-  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite"><span class="header-section-number">2.1</span> Classe Abstraite</a></li>
-  </ul></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices"><span class="header-section-number">3</span> Exercices</a></li>
+  <li><a href="#principes-fondamentaux" id="toc-principes-fondamentaux" class="nav-link" data-scroll-target="#principes-fondamentaux">Principes fondamentaux</a></li>
+  <li><a href="#classe-et-objet" id="toc-classe-et-objet" class="nav-link" data-scroll-target="#classe-et-objet">Classe et Objet</a></li>
+  <li><a href="#héritage-1" id="toc-héritage-1" class="nav-link" data-scroll-target="#héritage-1">Héritage</a></li>
+  <li><a href="#classe-abstraite" id="toc-classe-abstraite" class="nav-link" data-scroll-target="#classe-abstraite">Classe Abstraite</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/docs/POO/poo-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="poo-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -293,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    POO avec Python
+    <a href="poo-cours-slides.html">Slides</a>
   </div>
 </div>
 
@@ -316,21 +312,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Nous allons introduire les notions suivantes :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Principe de la POO</label></li>
-<li><label><input type="checkbox">L’organisation du code</label></li>
-<li><label><input type="checkbox">L’héritage</label></li>
-<li><label><input type="checkbox">Les classe abstraites</label></li>
-</ul>
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>La POO est un paradigme de programmation qui permet d’organiser et de structurer le code en utilisant des objets. Les objets sont des entités qui regroupent des données (<code>attributs</code>) et des actions (<code>méthodes</code>) qui leur sont associées. La POO repose sur plusieurs principes fondamentaux :</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>La POO est un paradigme de programmation qui organise le code autour d’<strong>objets</strong> plutôt que de fonctions et de procédures.</p>
+<p>Ces objets représentent des entités du monde réel, ils ont :</p>
 <ul>
-<li><code>Encapsulation</code> : L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet. Cela permet de cacher les détails d’implémentation et de fournir une interface cohérente pour interagir avec l’objet</li>
-<li><code>Héritage</code> : L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise la réutilisation du code et la création d’une hiérarchie de classes</li>
-<li><code>Polymorphisme</code> : Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action. Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes</li>
+<li>des <strong>attributs</strong> : ce qu’ils sont</li>
+<li>des <strong>méthodes</strong> : ce qu’ils peuvent faire</li>
 </ul>
+<section id="intérêt" class="level3">
+<h3 class="anchored" data-anchor-id="intérêt">Intérêt</h3>
 <p>La POO permet :</p>
 <ul>
 <li>d’organiser le code de manière plus structurée</li>
@@ -339,68 +330,207 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Elle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.</p>
 </section>
-<section id="organisation-du-code" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="organisation-du-code"><span class="header-section-number">1</span> Organisation du code</h2>
-<p>Dans la suite, nous allons organsier notre code de manière logique dans différents modules.</p>
-<blockquote class="blockquote">
-<p><code>module</code> : Les modules d’un programme Python sont ses fichiers sources.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><code>paquet</code> : Un paquet (package en anglais) est un ensemble de modules dans le même dossier.</p>
-</blockquote>
-<section id="bonne-pratique" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="bonne-pratique"><span class="header-section-number">1.1</span> bonne pratique</h3>
-<p>A la racine de votre projet, créez les 3 dossiers suivants :</p>
+<section id="exemple" class="level3">
+<h3 class="anchored" data-anchor-id="exemple">Exemple</h3>
+<p>Modélisons par exemple une personne :</p>
 <ul>
-<li><code>src</code> : pour stocker votre code source</li>
-<li><code>data</code> : pour vos fichiers de données</li>
-<li><code>doc</code> : pour votre documentation</li>
+<li>Attributs : nom, prenom, age, compétences</li>
+<li>Méthodes : apprendre(), vieillir()</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── data</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   └── temperatures.csv</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>├── doc</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── suivi.md</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── rapport.tex</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>└── src</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    ├── __main__.py</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    ├── package1</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    │   ├── __init__.py</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    │   ├── module1.py</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    │   ├── module2.py</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    └── package2</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        ├── __init__.py</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        ├── module3.py</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        └── subpackage21</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            ├── __init__.py</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            ├── module4.py</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            ├── module5.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Remarques importantes :</p>
-<ul>
-<li>le fichier <code>__main__.py</code> contient le code à exécuter quand le pacakge est exécuté</li>
-<li>les fichiers <code>__init__.py</code> sont des fichiers qu’il faut créer dans chaque module pour pouvoir les utiliser (c’est comme ça…)</li>
-</ul>
-<p>Voici un exemple plus concret :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>└── src</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    ├── __main__.py</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    ├── vehicules</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    │   ├── __init__.py</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    │   ├── deux_roues.py</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    │   ├── velo.py</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    │   └── trottinette.py</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    └── humain</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        ├── __init__.py</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        ├── personne.py</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        └── etudiant.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled" title="Les méthodes peuvent agir sur les attributs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Les méthodes peuvent agir sur les attributs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La méthode <em>vieillir()</em> va augmenter l’age de la personne de 1.</p>
+<p>La méthode <em>apprendre(“Python”)</em>, va ajouter “Python” à la liste des compétences.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="héritage" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="héritage"><span class="header-section-number">2</span> Héritage</h2>
-<p>Un des trois piliers de la POO est l’héritage.<br>
-Une classe enfant peut utiliser tous les attributs et méthode de sa classe parente.<br>
-Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
-<p>Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes. L’idée naïve est de créer une classe pour chacun.</p>
+<section id="principes-fondamentaux" class="level2">
+<h2 class="anchored" data-anchor-id="principes-fondamentaux">Principes fondamentaux</h2>
+<section id="encapsulation" class="level3">
+<h3 class="anchored" data-anchor-id="encapsulation">Encapsulation</h3>
+<p>L’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet.</p>
+<p>Cela permet de :</p>
+<ul>
+<li>cacher les détails d’implémentation</li>
+<li>de fournir une interface cohérente pour interagir avec l’objet</li>
+</ul>
+</section>
+<section id="héritage" class="level3">
+<h3 class="anchored" data-anchor-id="héritage">Héritage</h3>
+<p>L’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise :</p>
+<ul>
+<li>la réutilisation du code</li>
+<li>la création d’une hiérarchie de classes</li>
+</ul>
+<blockquote class="blockquote">
+<p>Exemple : <em>Carré</em> hérite de <em>Rectangle</em>. Un carré est un rectangle avec des propriétés supplémentaires.</p>
+</blockquote>
+</section>
+<section id="polymorphisme" class="level3">
+<h3 class="anchored" data-anchor-id="polymorphisme">Polymorphisme</h3>
+<p>Le polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action.</p>
+<p>Cela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes.</p>
+</section>
+</section>
+<section id="classe-et-objet" class="level2">
+<h2 class="anchored" data-anchor-id="classe-et-objet">Classe et Objet</h2>
+<ul>
+<li>Une <strong>classe</strong> est un <u>modèle</u> pour créer des objets
+<ul>
+<li>Elle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe</li>
+</ul></li>
+<li>Les <strong>objets</strong> sont des instances de classes
+<ul>
+<li>Ils possèdent des attributs et des méthodes qui définissent leur état et leur comportement</li>
+</ul></li>
+</ul>
+<section id="exemple-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-1">Exemple</h3>
+<ul>
+<li>Création de la classe <em>Personne</em> qui représente une personne
+<ul>
+<li>avec ses attributs et ses méthodes</li>
+</ul></li>
+<li>Création de l’objet <em>personne1</em> à partir de cette classe
+<ul>
+<li>prénom = Sacha</li>
+<li>nom = Touille</li>
+<li>age = 20</li>
+<li>compétences = []</li>
+</ul></li>
+</ul>
+</section>
+<section id="classe-python" class="level3">
+<h3 class="anchored" data-anchor-id="classe-python">Classe Python</h3>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>personne.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="personne.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Personne:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, prenom, age):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.prenom <span class="op">=</span> prenom</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.competences <span class="op">=</span> []</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> apprendre(<span class="va">self</span>, nouvelle_competence):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Ajoute une nouvelle compétence à la liste des compétences."""</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.competences.append(nouvelle_competence)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vieillir(<span class="va">self</span>):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Incrémente l'âge de la personne d'un an."""</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="objets-python" class="level3">
+<h3 class="anchored" data-anchor-id="objets-python">Objets Python</h3>
+<p>À partir de la classe <em>Personne</em>, nous pouvons créer des objets.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>main.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="main.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> personne <span class="im">import</span> Personne</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>personne1 <span class="op">=</span> Personne(<span class="st">"Touille"</span>, <span class="st">"Sacha"</span>, <span class="dv">20</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>personne2 <span class="op">=</span> Personne(<span class="st">"Ginal"</span>, <span class="st">"Laury"</span>, <span class="dv">30</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>personne2.vieillir()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>personne2.apprendre(<span class="st">"SQL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="constructeur" class="level3">
+<h3 class="anchored" data-anchor-id="constructeur">Constructeur</h3>
+<p>Le code <code>Personne("Touille", "Sacha", 20)</code> appelle la méthode <code>__init__()</code> de la classe <em>Personne</em>.</p>
+<p>Cette méthode est appelée <u>le constructeur</u>.</p>
+<p>Comme son nom l’indique, elle permet de « construire » des objets à partir de la classe.</p>
+</section>
+<section id="conventions-python" class="level3">
+<h3 class="anchored" data-anchor-id="conventions-python">Conventions Python</h3>
+<ul>
+<li>Un nom de classe s’écrit en <em>CamelCase</em> (majuscule à chaque mot)</li>
+<li>Un fichier python (ou module) ne contient qu’une seule classe</li>
+<li>Un nom de module s’écrit en snake_case (mots en minuscules séparés par des <code>_</code>)</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo_electrique.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="velo_electrique.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> VeloElectrique:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="héritage-1" class="level2">
+<h2 class="anchored" data-anchor-id="héritage-1">Héritage</h2>
+<p>Un des trois piliers de la POO est l’héritage.</p>
+<p>Une classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.</p>
+<p>Ce principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.</p>
+<section id="exemple-dhéritage" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-dhéritage">Exemple d’Héritage</h3>
+<p>Supposons que dans notre code, nous voulons gérer des vélos et de trottinettes.</p>
+<p>L’idée naïve est de créer une classe pour chacun.</p>
+</section>
+<section id="exemple-dhéritage-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-dhéritage-1">Exemple d’Héritage</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Velo</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Trottinette</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="velo.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Augmente la vitesse du vélo."""</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Diminue la vitesse du vélo."""</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>trottinette.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="trottinette.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Trottinette:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemple-dhéritage-2" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-dhéritage-2">Exemple d’Héritage</h3>
 <p>En réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :</p>
 <ul>
 <li>couleur</li>
@@ -409,18 +539,128 @@ Ce principe d’héritage permet également de mettre en commun des attributs et
 <li>ralentir()</li>
 </ul>
 <p>Une idée est de regrouper ces caractéristiques communes dans une classe <code>DeuxRoues</code>. Puis de faire hériter <code>Vélo</code> et <code>Trottinette</code> de <code>DeuxRoues</code></p>
-<section id="classe-abstraite" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="classe-abstraite"><span class="header-section-number">2.1</span> Classe Abstraite</h3>
-<p>Certaines classes n’ont pas vocation à être instanciée. Par exemple, nous n’allons pas créer d’objets de la classe <code>DeuxRoues</code>. Nous allons directement créer des <code>Velo</code> et des <code>Trottinettes</code>.</p>
-<p>Nous pouvons donc définir la classe <code>DeuxRoues</code>comme <code>abstraite</code></p>
+</section>
+<section id="exemple-dhéritage-3" class="level3">
+<h3 class="anchored" data-anchor-id="exemple-dhéritage-3">Exemple d’Héritage</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Deux Roues</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Velo</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Trottinette</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>deux_roues.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="deux_roues.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DeuxRoues:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>velo.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="velo.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo(DeuxRoues):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>.<span class="fu">__init__</span>(couleur)  <span class="co"># Appel du constructeur de la classe mère</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>trottinette.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="trottinette.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Trottinette(DeuxRoues):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>.<span class="fu">__init__</span>(couleur)   <span class="co"># Appel du constructeur de la classe mère</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="self-et-super" class="level3">
+<h3 class="anchored" data-anchor-id="self-et-super">Self et Super</h3>
 <ul>
-<li>c’est à dire qui ne peut pas être instanciée</li>
-<li>dit autrement : on ne peut pas créer d’objets de cette classe</li>
+<li><strong>self</strong> est une référence à l’instance actuelle de la classe
+<ul>
+<li>Il est utilisé pour accéder aux attributs et aux méthodes d’une instance spécifique de la classe</li>
+</ul></li>
+<li><strong>super()</strong> est une fonction intégrée qui référence la classe mère
+<ul>
+<li>Il est utilisé pour appeler des méthodes de la classe parent dans une classe enfant</li>
+</ul></li>
 </ul>
-<p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles. Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
-<blockquote class="blockquote">
-<p>En Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes). Ce module fournit le décorateur <code>@abstractmethod</code> qui permet de déclarer une méthode comme abstraite dans une classe abstraite. Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
-</blockquote>
+</section>
+</section>
+<section id="classe-abstraite" class="level2">
+<h2 class="anchored" data-anchor-id="classe-abstraite">Classe Abstraite</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Dessine-moi un deux roues">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dessine-moi un deux roues
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Est-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?</li>
+</ul>
+<p>Si l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.</p>
+<p>Alors que dessiner un vélo ou une trottinette, c’est déjà plus concret.</p>
+</div>
+</div>
+<section id="classe-abstraite---deuxroues" class="level3">
+<h3 class="anchored" data-anchor-id="classe-abstraite---deuxroues">Classe Abstraite - DeuxRoues</h3>
+<p>Certaines classes n’ont pas vocation à être instanciées. Par exemple, nous n’allons pas créer d’objets de la classe <em>DeuxRoues</em>.</p>
+<p>Nous allons directement créer des <em>Velo</em> et des <em>Trottinettes</em>.</p>
+<p>Nous pouvons donc définir la classe <em>DeuxRoues</em> comme <strong>abstraite</strong>.</p>
+<ul>
+<li>on ne peut pas créer d’objets à partir de cette classe</li>
+</ul>
+</section>
+<section id="classe-abstraite---deuxroues-1" class="level3">
+<h3 class="anchored" data-anchor-id="classe-abstraite---deuxroues-1">Classe Abstraite - DeuxRoues</h3>
+<p>La principale utilité des classes abstraites est de définir un contrat pour les classes filles.</p>
+<p>Elles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.</p>
+</section>
+<section id="classe-abstraite---python" class="level3">
+<h3 class="anchored" data-anchor-id="classe-abstraite---python">Classe Abstraite - Python</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En Python, la notion de classe abstraite est implémentée grâce au module <em>abc</em> (Abstract Base Classes).</p>
+<p>Ce module fournit le décorateur <code>@abstractmethod</code> qui permet de déclarer une méthode comme abstraite dans une classe abstraite.</p>
+<p>Une classe abstraite est définie en héritant de la classe ABC du module abc.</p>
+</div>
+</div>
+</section>
+<section id="classe-abstraite---remarque" class="level3">
+<h3 class="anchored" data-anchor-id="classe-abstraite---remarque">Classe Abstraite - Remarque</h3>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -431,19 +671,23 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Classe mère ne veut pas dire forcément classe abstraite</p>
+<p>Classe mère ne veut pas dire forcément classe abstraite.</p>
 <p>Par exemple :</p>
 <ul>
 <li>Considérons par exemple une classe <code>VeloElectrique</code> qui hérite de la classe <code>Velo</code></li>
-<li>Cela parait cohérent car un vélo électrique est un vélo (donc hérite de tous ses attributs et méthodes) avec des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
+<li>Cela parait cohérent car un vélo électrique est un vélo
+<ul>
+<li>donc il hérite de tous ses attributs et méthodes</li>
+<li>et il a des caractéristiques supplémentaires (batterie, autonomie, puissance…)</li>
+</ul></li>
 <li>Or ici la classe <code>Velo</code> n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo</li>
 </ul>
 </div>
 </div>
 </section>
 </section>
-<section id="exercices" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercices"><span class="header-section-number">3</span> Exercices</h2>
+<section id="exercices" class="level2">
+<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
 <p><a href="../../docs/POO/poo-exercice.html" target="_blank">exercices</a></p>
 
 
