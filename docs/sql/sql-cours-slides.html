@@ -554,7 +554,7 @@ Ludovic Deneuville
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    email            <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">UNIQUE</span>,</span>
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    nb_enfants       <span class="dt">INT</span> <span class="kw">CHECK</span> (nb_enfants <span class="op">&gt;=</span> <span class="dv">0</span>),</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span>
 <span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    est_actif        <span class="dt">BOOLEAN</span>,</span>
 <span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    last_updated     TIMESTAMPTZ <span class="kw">DEFAULT</span> NOW() </span>
 <span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -563,6 +563,10 @@ Ludovic Deneuville
 <li>SERIAL : séquence</li>
 <li>NOT NULL : obligatoire</li>
 <li>UNIQUE : distinctes, mais n’empêche pas les NULL</li>
+<li>DECIMAL(3, 2) : de -9.99 à 9.99
+<ul>
+<li>3 chiffres significatifs dont 2 après la virgule</li>
+</ul></li>
 </ul>
 <p>Code bien aligné, Mots clés en majuscule</p>
 <style type="text/css">
@@ -838,6 +842,23 @@ Ludovic Deneuville
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>On supposera ici :</p>
+<ul>
+<li>Une joueuse a un pays</li>
+<li>Un pays a plusieurs joueuses</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="lien-entre-2-tables-via-une-table-dassociation" class="slide level3 smaller">
 <h3>Lien entre 2 tables via une table d’association</h3>
@@ -991,6 +1012,22 @@ Ludovic Deneuville
 </div>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>Une joueuse peut participer a plusieurs tournois</li>
+<li>Un tournoi accueille plusieurs joueuses</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="sql" class="title-slide slide level2 center">
@@ -1027,6 +1064,21 @@ Ludovic Deneuville
 <li><code>UPDATE</code> : mettre à jour des données existantes</li>
 <li><code>DELETE</code> : supprimer des données d’une table</li>
 </ul>
+<div title="CRUD">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>CRUD</strong></p>
+</div>
+<div class="callout-content">
+<p>Create, Read, Update, Delete</p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="actions-sur-une-table" class="title-slide slide level2 center">
@@ -1363,8 +1415,8 @@ Ludovic Deneuville
 <h2>Actions sur les colonnes</h2>
 
 </section>
-<section id="sélectioner-des-colonnes" class="slide level3">
-<h3>Sélectioner des colonnes</h3>
+<section id="sélectionner-des-colonnes" class="slide level3">
+<h3>Sélectionner des colonnes</h3>
 <div class="panel-tabset nav-pills">
 <ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Requête</a></li><li><a href="#tabset-9-2">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
@@ -1769,6 +1821,19 @@ Ludovic Deneuville
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Faire une jointure c’est comme créer un gros tableau fusionné</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="types-de-jointures" class="slide level3">
 <h3>Types de jointures</h3>

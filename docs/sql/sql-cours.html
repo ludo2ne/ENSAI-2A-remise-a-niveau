@@ -422,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    date_naissance   <span class="dt">DATE</span>,</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    email            <span class="dt">VARCHAR</span>(<span class="dv">255</span>) <span class="kw">UNIQUE</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    nb_enfants       <span class="dt">INT</span> <span class="kw">CHECK</span> (nb_enfants <span class="op">&gt;=</span> <span class="dv">0</span>),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    taille_m         <span class="dt">DECIMAL</span>(<span class="dv">3</span>, <span class="dv">2</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    est_actif        <span class="dt">BOOLEAN</span>,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    last_updated     TIMESTAMPTZ <span class="kw">DEFAULT</span> NOW() </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -431,6 +431,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>SERIAL : séquence</li>
 <li>NOT NULL : obligatoire</li>
 <li>UNIQUE : distinctes, mais n’empêche pas les NULL</li>
+<li>DECIMAL(3, 2) : de -9.99 à 9.99
+<ul>
+<li>3 chiffres significatifs dont 2 après la virgule</li>
+</ul></li>
 </ul>
 <p>Code bien aligné, Mots clés en majuscule</p>
 </div>
@@ -683,6 +687,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="notes">
+<p>On supposera ici :</p>
+<ul>
+<li>Une joueuse a un pays</li>
+<li>Un pays a plusieurs joueuses</li>
+</ul>
+</div>
 </section>
 <section id="lien-entre-2-tables-via-une-table-dassociation" class="level3 smaller">
 <h3 class="smaller anchored" data-anchor-id="lien-entre-2-tables-via-une-table-dassociation">Lien entre 2 tables via une table d’association</h3>
@@ -836,6 +847,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="notes">
+<ul>
+<li>Une joueuse peut participer a plusieurs tournois</li>
+<li>Un tournoi accueille plusieurs joueuses</li>
+</ul>
+</div>
 </section>
 </section>
 <section id="sql" class="level2">
@@ -861,6 +878,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>UPDATE</code> : mettre à jour des données existantes</li>
 <li><code>DELETE</code> : supprimer des données d’une table</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled" title="CRUD">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CRUD
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create, Read, Update, Delete</p>
+</div>
+</div>
 </section>
 </section>
 <section id="actions-sur-une-table" class="level2">
@@ -904,7 +934,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <div class="callout callout-style-default callout-tip callout-titled" title="Bonne pratique">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -913,7 +943,7 @@ Bonne pratique
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Une bonne pratique est de stocker les tables dans un schéma pour bien organiser votre base de données.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">SCHEMA</span> ran;</span>
@@ -1172,8 +1202,8 @@ Tip
 </section>
 <section id="actions-sur-les-colonnes" class="level2">
 <h2 class="anchored" data-anchor-id="actions-sur-les-colonnes">Actions sur les colonnes</h2>
-<section id="sélectioner-des-colonnes" class="level3">
-<h3 class="anchored" data-anchor-id="sélectioner-des-colonnes">Sélectioner des colonnes</h3>
+<section id="sélectionner-des-colonnes" class="level3">
+<h3 class="anchored" data-anchor-id="sélectionner-des-colonnes">Sélectionner des colonnes</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Requête</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Résultat</a></li></ul>
 <div class="tab-content nav-pills">
@@ -1483,7 +1513,7 @@ USING
 </div>
 <div id="tabset-14-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-4-tab">
 <div class="callout callout-style-default callout-note callout-titled" title="Créer et insérer les données">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1492,7 +1522,7 @@ Créer et insérer les données
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> commande (</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    id_commande <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
@@ -1574,6 +1604,9 @@ Créer et insérer les données
 </table>
 </div>
 </div>
+</div>
+<div class="notes">
+<p>Faire une jointure c’est comme créer un gros tableau fusionné</p>
 </div>
 </section>
 <section id="types-de-jointures" class="level3">
