@@ -109,7 +109,7 @@ CREATE TABLE personne (
     date_naissance   DATE,
     email            VARCHAR(255) UNIQUE,
     nb_enfants       INT CHECK (nb_enfants >= 0),
-    taille_m         DECIMAL(5, 2)
+    taille_m         DECIMAL(3, 2)
     est_actif        BOOLEAN,
     last_updated     TIMESTAMPTZ DEFAULT NOW() 
 );
@@ -119,6 +119,8 @@ CREATE TABLE personne (
 - SERIAL : séquence
 - NOT NULL : obligatoire
 - UNIQUE : distinctes, mais n'empêche pas les NULL
+- DECIMAL(3, 2) : de -9.99 à 9.99
+  - 3 chiffres significatifs dont 2 après la virgule
 
 Code bien aligné, Mots clés en majuscule
 :::
@@ -253,8 +255,13 @@ classDiagram
 | FR        | France  |
 | HU        | Hongrie |
 
+:::
 
+:::{.notes}
+On supposera ici :
 
+- Une joueuse a un pays
+- Un pays a plusieurs joueuses
 :::
 
 
@@ -327,8 +334,11 @@ classDiagram
 | 1          | Norway Chess | Oslo         |
 | 2          | Tata Steel   | Wijk aan Zee |
 
+:::
 
-
+:::{.notes}
+- Une joueuse peut participer a plusieurs tournois
+- Un tournoi accueille plusieurs joueuses
 :::
 
 
@@ -352,6 +362,10 @@ SQL permet d'effectuer les opérations du CRUD :
 - `INSERT` : insérer de nouvelles données dans une table
 - `UPDATE` : mettre à jour des données existantes
 - `DELETE` : supprimer des données d'une table
+
+::: {.callout-note title="CRUD"}
+Create, Read, Update, Delete
+:::
 
 
 ##  Actions sur une table
@@ -555,7 +569,7 @@ VALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');
 
 ##  Actions sur les colonnes
 
-### Sélectioner des colonnes
+### Sélectionner des colonnes
 
 ::: {.panel-tabset .nav-pills}
 
@@ -770,6 +784,10 @@ INSERT INTO commande (id_commande, produit, quantite, prix_unitaire, id_personne
 | Laure  | pomme   | 10       |
 | Maud   | pain    | 3        |
 
+:::
+
+:::{.notes}
+Faire une jointure c'est comme créer un gros tableau fusionné
 :::
 
 ### Types de jointures
