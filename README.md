@@ -10,6 +10,13 @@ Remise à niveau pour les étudiants de 2e année (21h)
 - [ ] UML (3h)
 - [ ] Divers outils utiles (Markdown, VSCode...)
 
+## :construction: TODO
+
+### SQL
+
+- [ ] maj SEQUENCE de la table joueurs après INSERT
+- [ ] fix pour requêter hors VM
+
 ## :rocket: Publier les pages
 
 Site construit avec [Quarto](https://quarto.org/) ([Tuto](https://ludo2ne.github.io/Quarto-tuto/))

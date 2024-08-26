@@ -43,7 +43,7 @@ Nous avons une liste de **joueurs** et de **tournois**. Les joueurs peuvent part
 
 Un tournoi est supervisé par un **arbitre**. Un arbitre est un joueur qui a obtenu un **grade d'arbitre**.
 
-Dans un tournoi, les parties se déroule à une certaine **cadence** (Lente, Rapide, Blitz).
+Dans un tournoi, les parties se déroulent à une certaine **cadence** (Lente, Rapide, Blitz).
 
 
 

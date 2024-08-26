@@ -223,7 +223,7 @@ De nombreux autres types de collections existent (Arbre, Liste chainée...).
 
 | Type de Donnée | Ordonné | Mutable | Doublon |
 |----------------|:-------:|:-------:|:-------:|
-| list           | ✔       | ✔       |        |
+| list           | ✔       | ✔       | ✔      |
 | dict           |         | ✔       |         |
 | tuple          | ✔       |         | ✔      |
 | set            |         | ✔       |         |

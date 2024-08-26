@@ -56,7 +56,7 @@ a
 ```
 
 Remarque : Un notebook n'affiche que la dernière valeur qui lui est demandé.  
-Pour réaliser plusieurs affichage, il faut utiliser la méthode **print**
+Pour réaliser plusieurs affichages, il faut utiliser la méthode **print**
 
 ```{python}
 #| vscode: {languageId: python}
