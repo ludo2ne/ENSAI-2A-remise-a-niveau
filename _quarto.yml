@@ -34,6 +34,8 @@ website:
             text: "Fonctions"
           - href: docs/python/05-POO-introduction.qmd
             text: "Introduction à la POO"
+          - href: docs/python/correction.qmd
+            text: "Correction"
       - text: POO
         menu:
           - href: docs/POO/poo-cours.qmd

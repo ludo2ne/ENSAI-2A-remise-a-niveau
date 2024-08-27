@@ -1,13 +1,145 @@
 
+---
+title: Corrections Notebooks
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+---
 
+# Liste et dictionnaires
 
+## ex1
+
+```{python}
+# Plusieurs manières de faire, par exemple
+
+notes = ["do", "re", "re", "re", "fa", "sol", "solsi", "la"]
+
+notes.pop(3)           # suppression par index
+notes.pop(2)
+notes.remove("solsi")  # suppression par valeur
+notes.insert(2, "mi")  
+
+notes
+```
+
+## ex2
+
+```{python}
+l = ["un", "deux", "trois", "quatre"]
+
+# Inverse la liste sans la modifier
+l_inv = list(reversed(l)) # cast en list
+print(l_inv)
+
+# Modifie la liste
+l.reverse()
+print(l)
+```
+
+## ex3
+
+```{python}
+entiers = [n for n in range(1, 10)]
+print(entiers)
+
+entiers.pop()
+print(entiers)
+
+entiers.pop(-1)
+print(entiers)
+```
+
+## ex4
+
+```{python}
+la = ["triangle", "carré", "Rectangle"]
+print(max(la)) 
+print(min(la)) 
+
+# Pour les chaines de caractères, c'est ordonné par code ASCII
+
+# Pas de notion d'ordre entre chaines de caractères et types numériques
+```
+
+## ex5
+
+```{python}
+type([])
+
+# ex extraire les entiers positifs
+relatifs = [1, 12, -20, 5, 8, -19, -2]
+
+positifs = []
+
+for z in relatifs:
+    if z >= 0:
+        positifs.append(z)
+
+print(positifs)
+```
+
+## ex6
+
+:construction: TODO : faire sans boucle
+
+```{python}
+resultats = {
+    "6emeA": {"Miranda" : {"notes": {"physique": 16, "histoire": 12}},
+              "Celestin": {"notes": {"physique": "absent", "histoire": 18}}
+             },
+    "6emeB": {"Hypolyte": {"notes": {"maths": 11, "anglais": 0}},
+              "Josephine": {"notes": {"maths": 16, "anglais": 20}}
+             }
+}
+
+print(list(resultats.keys()))
+print(resultats["6emeA"]["Miranda"]["notes"]["histoire"])
+print(list(resultats["6emeB"]["Hypolyte"]["notes"].values()))
+print(list(resultats["6emeB"].keys()))
+
+matieres_6emeA = []
+for eleve in resultats["6emeA"].values():
+    matieres_6emeA += eleve["notes"].keys()
+    
+print(list(set(matieres_6emeA)))
+```
+
+## ex7
+
+:construction: TODO : faire sans boucle
+
+```{python}
+chaine = "Je compte le nombre d'occurences de chaque caractère de la phrase courante."
+
+lettres = {}
+
+for c in chaine:
+    if c in lettres:
+        lettres[c] += 1
+    else:
+        lettres[c] = 1
+
+for c, count in lettres.items():
+    print(f"'{c}': {count}")
+```
+
+## ex8
+
+```{python}
+
+```
 
 
 # Tests et boucles
 
 ## ex1
 
-```python
+```{python}
 somme = 0
 for i in range(1, 11):
     somme += i**2
@@ -16,7 +148,7 @@ somme
 
 ## ex2
 
-```python
+```{python}
 for i in range(5, -1, -1):
     print(i)
 print("Boom")
@@ -24,7 +156,7 @@ print("Boom")
 
 ## ex3
 
-```python
+```{python}
 gamme = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']
 
 i = 0
@@ -37,7 +169,7 @@ while i < len(gamme):
 ## ex4
 
 
-```python
+```{python}
 liste = [34, 7, 20, 12, 50, 23, 16, 28, 6, 11, 19, 13, 26, 8, 9]
 taille = len(liste)
 
@@ -52,7 +184,7 @@ liste
 
 ## ex5
 
-```python
+```{python}
 a = 0
 b = 1
 for i in range(10):
@@ -63,7 +195,7 @@ for i in range(10):
 
 ## ex6
 
-```python
+```{python}
 x = [8, 18, 6, 0, 15, 17.5, 9, 1]
 minimum = float('inf')
 maximum = -float('inf')
@@ -80,8 +212,7 @@ print("min : " + str(minimum))
 
 ## ex7
 
-```python
-# Testez votre réponse dans cette cellule
+```{.python}
 for eleve in notes:
     print(eleve, end = ' : ')
     nb_notes = 0
@@ -99,7 +230,7 @@ for eleve in notes:
 
 ## ex1
 
-```python
+```{python}
 def puissance(x, y):
     return x**y
 
@@ -108,7 +239,7 @@ print(puissance(2, 10))
 
 ## ex2
 
-```python
+```{python}
 import numpy as np
 
 def statistiques_descriptives(liste):
@@ -119,7 +250,7 @@ statistiques_descriptives([1,12,20,3,8,15,17])
 
 ## ex3
 
-```python
+```{python}
 def est_pair(i):
     if type(i) is not int:
         print("Le paramètre " + str(i) + " n'est pas entier")
@@ -133,7 +264,7 @@ print(est_pair("toto"))
 
 ## ex4
 
-```python
+```{python}
 def enlever_doublons(liste, trier = False):
     if trier:
         return sorted(set(liste))
@@ -146,7 +277,7 @@ print(enlever_doublons([1,12,1,4,4], True))
 
 ## ex5
 
-```python
+```{python}
 def factoriel_rec(i):
     if i == 0:
         return 1
@@ -158,7 +289,7 @@ factoriel_rec(5)
 
 ## ex6
 
-```python
+```{python}
 def appliquer_fonction_liste(liste, fonction):
     res = [fonction(element) for element in liste]
     return res
@@ -174,7 +305,7 @@ appliquer_fonction_liste(l, majuscule)
 
 ## ex1
 
-```python
+```{.python}
 # by ChatGPT
 
 class Etudiant:
@@ -206,7 +337,7 @@ print(f"Moyenne de {etudiant1.nom}: {moyenne_etudiant1}")
 
 ## ex2
 
-```python
+```{.python}
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -234,7 +365,7 @@ print(c1.calculer_surface())
 
 ## ex3
 
-```python
+```{.python}
 class CompteBancaire:
     def __init__(self, titulaire, solde):
         self.titulaire = titulaire
