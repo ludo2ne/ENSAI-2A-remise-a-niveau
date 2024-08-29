@@ -12,10 +12,19 @@ Remise à niveau pour les étudiants de 2e année (21h)
 
 ## :construction: TODO
 
+- [ ] Création d'arbo
+- [ ] Bookmarks
+
 ### SQL
 
 - [ ] maj SEQUENCE de la table joueurs après INSERT
 - [ ] fix pour requêter hors VM
+
+### Python
+
+- [ ] égalité entre float (pytest approx)
+- [ ] join ne prend qu'un seul paramètre
+- [ ] fonctions : type retour -> float, doc """, nom explicite
 
 ## :rocket: Publier les pages
 
