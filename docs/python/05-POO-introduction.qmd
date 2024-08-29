@@ -360,7 +360,7 @@ La classe devra avoir les méthodes suivantes :
 - `deposer(self, montant)` : une méthode qui permet de déposer un montant sur le compte. Le montant devra être ajouté au solde
 - `retirer(self, montant)` : une méthode qui permet de retirer un montant du compte. Le montant devra être soustrait du solde
 - `afficher_solde(self)` : une méthode qui affiche le solde du compte
-- `transferer(autreCompte, montant)` qui transfère de l'argent du compte vers l'autre si le solde est suffisant
+- `transferer(self, autreCompte, montant)` qui transfère de l'argent du compte vers l'autre si le solde est suffisant
     
 Créer 2 Comptes et tester les différentes fonctionnalités.
 

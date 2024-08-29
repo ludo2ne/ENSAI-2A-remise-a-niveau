@@ -156,3 +156,28 @@ classDiagram
         +accepte_apres(autre_domino)
     }
 ```
+
+
+## Correction {.unnumbered}
+
+::: {.callout-tip title="Proposition de correction" collapse="true"}
+
+#### Exercices 1 et 2
+
+- [point.py](./exercices/geometrie/point.py){target="_blank"}
+- [polygone.py](./exercices/geometrie/polygone.py){target="_blank"}
+- [segment.py](./exercices/geometrie/segment.py){target="_blank"}
+- [triangle.py](./exercices/geometrie/triangle.py){target="_blank"}
+- [quadrilatere.py](./exercices/geometrie/quadrilatere.py){target="_blank"}
+- [rectangle.py](./exercices/geometrie/rectangle.py){target="_blank"}
+
+Un exemple de tests unitaires sur la classe Point :
+
+- [test_point.py](./exercices/geometrie/test_point.py){target="_blank"}
+
+
+#### Exercice 3
+
+- [domino.py](./exercices/domino/domino.py){target="_blank"}
+- [jeu.py](./exercices/domino/jeu.py){target="_blank"}
+:::

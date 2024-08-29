@@ -250,7 +250,7 @@ from deux_roues import DeuxRoues
 
 class Velo(DeuxRoues):
     def __init__(self, couleur, nb_pignons):
-        super.__init__(couleur)  # Appel du constructeur de la classe mère
+        super().__init__(couleur)  # Appel du constructeur de la classe mère
         self.nb_pignons = nb_pignons
 ```
 
@@ -262,7 +262,7 @@ from deux_roues import DeuxRoues
 
 class Trottinette(DeuxRoues):
     def __init__(self, couleur, nb_pignons):
-        super.__init__(couleur)   # Appel du constructeur de la classe mère
+        super().__init__(couleur)   # Appel du constructeur de la classe mère
 ```
 
 :::

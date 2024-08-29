@@ -241,7 +241,7 @@ len("J'ai 18 caractères")
 #| vscode: {languageId: python}
 # Concaténation
 "I am" + "your father"
-" ".join("I am", "your father")
+" ".join(["I am", "your father"])
 ```
 
 

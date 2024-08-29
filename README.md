@@ -23,8 +23,14 @@ Remise à niveau pour les étudiants de 2e année (21h)
 ### Python
 
 - [ ] égalité entre float (pytest approx)
-- [ ] join ne prend qu'un seul paramètre
+- [x] join ne prend qu'un seul paramètre
 - [ ] fonctions : type retour -> float, doc """, nom explicite
+- [ ] Compte bancaire : clean + ajouter controles
+- [ ] Protection des attributs : step 1 intro, step2 : properties pour aller plus loin
+
+## POO
+
+- Slide : ajouter abstract
 
 ## :rocket: Publier les pages
 
