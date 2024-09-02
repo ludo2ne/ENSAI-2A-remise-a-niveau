@@ -28,9 +28,15 @@ Remise à niveau pour les étudiants de 2e année (21h)
 - [ ] Compte bancaire : clean + ajouter controles
 - [ ] Protection des attributs : step 1 intro, step2 : properties pour aller plus loin
 
+```
+if type(nom) != str:
+    raise TypeError(f"Attributes nom : Expected str got {type(nom)}")
+```
+
 ## POO
 
-- Slide : ajouter abstract
+- [ ] Slide : ajouter abstract
+- [ ] TDD sur jeu de Dominos
 
 ## :rocket: Publier les pages
 

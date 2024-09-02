@@ -155,11 +155,11 @@ Par défaut, cette valeur est fixée à `'\n'`, soit un retour à la ligne.
 Nous l'avons modifié dans la deuxième cellule à un espace, d'où la différence de résultat.  
   
 Nous allons maintenant créer une fonction avec un argument optionnel.  
-Pour expliquer le comportement de cette méthode, une documentation a été ajoutée entre les caractères `'''`.
+Pour expliquer le comportement de cette méthode, une documentation a été ajoutée entre les caractères `"""`.
 
 ```{python}
-def note_finale(note1, note2, bonus=0):
-    '''Fonction d'ajout de 2 notes
+def note_finale(note1, note2, bonus=0) -> float:
+    """Fonction d'ajout de 2 notes
     Parameters
     ----------
         note1 : float
@@ -171,7 +171,7 @@ def note_finale(note1, note2, bonus=0):
     Returns
     -------
         float : sommes des 2 notes et du bonus
-    '''
+    """
     return note1 + note2 + bonus
 ```
 
@@ -184,6 +184,10 @@ note_finale(8.5, 7)
 # Comportement modifié
 note_finale(8.5, 7, bonus = 2)  
 ```
+
+Vous remarquerez également que la signature de la fonction se termine par `-> float`.
+
+C'est également un élément de documentation non contraignant. Cela siginfie le type de données attendu en sortie.
 
 #### Bonus : nombre d'arguments variable
 
@@ -387,8 +391,9 @@ print('\n'.join(['\t'.join(map(str, row)) for row in triangle_pascal(10)]))
     - une fonction
 - retourne la liste à laquelle on a appliqué la fonction
 
-Exemple :  
-appliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2) -> [1, 4, 9, 16]
+Exemple :
+
+`appliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2)` -> `[1, 4, 9, 16]`
 
 ```{python}
 # Testez votre réponse dans cette cellule
