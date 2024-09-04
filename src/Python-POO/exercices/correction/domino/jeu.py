@@ -143,7 +143,7 @@ if __name__ == "__main__":
 
         domino_a_jouer = j.choix_joueur()
         if domino_a_jouer is None:
-            print("Merci d'avoir jouer")
+            print("Merci d'avoir joué")
             break
         else:
             j.poser_domino(domino_a_jouer)

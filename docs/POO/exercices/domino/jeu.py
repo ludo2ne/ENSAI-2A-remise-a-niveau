@@ -1,4 +1,5 @@
 import random as rnd
+import warnings
 
 from domino import Domino
 
@@ -25,8 +26,8 @@ class Jeu:
 
     def generer_tous(self) -> list[Domino]:
         """
-        Générer tous les dominos
-        i.e. toutes les combinaisons unique de couple entre 0 et 6
+        Générer tous les dominos.
+        i.e. toutes les combinaisons unique de couple entre 0 et 6.
         """
         liste_dominos = []
         for i in range(0, 7):
@@ -40,9 +41,14 @@ class Jeu:
         """
         Pioche un Domino dans la liste des dominos_restants
         """
-        index = rnd.randint(0, len(self.dominos_restants) - 1)
-        domino_pioche = self.dominos_restants.pop(index)
-        return domino_pioche
+        if self.dominos_restants:
+            index = rnd.randint(0, len(self.dominos_restants) - 1)
+            domino_pioche = self.dominos_restants.pop(index)
+            return domino_pioche
+        else:
+            print("\n\n" + "*" * 20 + " WARNING " + "*" * 20)
+            print("La pioche est vide")
+            print("*" * 49 + "\n\n")
 
     def poser_premier_domino(self) -> None:
         """
@@ -52,8 +58,8 @@ class Jeu:
 
     def distribuer_au_joueur(self) -> None:
         """
-        Distribue 6 Domino au joueur (au début de la partie)
-        Pioche 6 Domino dans dominos_restants et les met dans dominos_joueur
+        Distribue 6 Dominos au joueur (au début de la partie)
+        Pioche 6 Dominos dans dominos_restants et les met dans dominos_joueur
         """
         for i in range(6):
             domino = self.piocher()
@@ -61,7 +67,8 @@ class Jeu:
 
     def dominos_posables(self) -> list[Domino]:
         """
-        Liste des Dominos que le joueur a le droit de poser
+        Liste des Dominos que le joueur a le droit de poser.
+        Méthode utilisée simplement pour vérification.
         """
         d_posables = []
         for d in self.dominos_joueur:
@@ -102,7 +109,9 @@ class Jeu:
             if i == "q":
                 break
             elif i == "p":
-                self.dominos_joueur.append(self.piocher())
+                domino_pioche = self.piocher()
+                if domino_pioche:
+                    self.dominos_joueur.append(domino_pioche)
                 self.afficher_jeu()
             else:
                 i = int(i)
@@ -147,3 +156,6 @@ if __name__ == "__main__":
             break
         else:
             j.poser_domino(domino_a_jouer)
+            if j.dominos_joueur == []:
+                print("Bravo vous avez gagné !")
+                break

@@ -33,10 +33,40 @@ if type(nom) != str:
     raise TypeError(f"Attributes nom : Expected str got {type(nom)}")
 ```
 
-## POO
+### POO
 
 - [ ] Slide : ajouter abstract
 - [ ] TDD sur jeu de Dominos
+
+### diapo intro
+
+```
+- Présentation
+  - perso
+  - scola, DSI, rôles
+  - cours à l'ENSAI, matières théoriques, pratiques, étudiant diversifiés
+  - ENSAI-stats sur github (tuto-R ancienne version)
+  - l'info, pourquoi cette remise à niveau
+  - projet info (intégration, ex : site de location de velo)
+    - IHM : les menus
+	- stocker vos données
+	- Lien entre les 2 : services
+  - contenu de la remise à niveau
+  - examen date ??
+- Tour de table 
+  - prénom
+  - où vous venez
+  - que faisiez-vous l'année dernière
+  - connaissances Python SQL POO
+  
+  
+TODO :
+
+- tester videos
+- sujets en ligne
+- groupes projet info
+- date exam
+```
 
 ## :rocket: Publier les pages
 
