@@ -17,14 +17,17 @@ class Domino:
         self.extr_A = a
         self.extr_B = b
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"[{self.extr_A} , {self.extr_B}]"
 
-    def retourner(self) -> None:
-        tmp = self.extr_A
-        self.extr_A = self.extr_B
-        self.extr_B = tmp
-        # ou simplement : self.extr_A, self.extr_B = self.extr_B, self.extr_A
+    def retourner(self) -> "Domino":
+        """Inverse l'extrémité A et l'extrémité B et retourne le domino inversé."""
+        self.extr_A, self.extr_B = self.extr_B, self.extr_A
+        return self
 
     def accepte_apres(self, autre_domino) -> bool:
+        """
+        True si le côté B du domino courant est égal au côté A
+        du domino que l'on souhaite poser après.
+        """
         return self.extr_B == autre_domino.extr_A
