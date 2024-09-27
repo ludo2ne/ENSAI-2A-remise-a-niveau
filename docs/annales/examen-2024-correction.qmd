@@ -1,0 +1,399 @@
+---
+title: Examen 2024 - correction
+description: examen sur table - 26/09/2024 - sans documents
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    toc-expand: 3
+from: markdown+emoji
+number-sections: false
+number-depth: 3
+execute:
+  eval: false
+lightbox: true
+---
+
+## Python
+
+### 1
+
+Créez une collection adaptée qui permet de stocker les clés et valeurs suivantes :
+
+- numero : 23
+- voie : "Boulevard Gambetta"
+- code_postal : "02300"
+- ville : "Chauny"
+- zone_inondable : False
+
+::: {.callout-note title="Réponse" collapse="true"}
+Pour stocker ces informations en Python, la structure de données la plus adaptée est un dictionnaire :
+
+```{.python}
+adresse = {
+    "numero": 23,
+    "voie": "Boulevard Gambetta",
+    "code_postal": "02300",
+    "ville": "Chauny",
+    "zone_inondable": False
+}
+```
+:::
+
+### 2
+
+Que va afficher le code ci-dessous ?
+
+```{.python}
+liste = [0, 1, 2, 3, 4, 5]
+liste.append(12)
+print(liste[-1])
+liste2 = liste
+liste2.pop()
+print(len(liste))
+```
+
+::: {.callout-note title="Réponse" collapse="true"}
+```
+12  # cette instruction affiche le dernier élément de la liste
+6   # `liste2` et `liste` pointent vers le même objet
+```
+:::
+
+### 3
+
+Écrivez le code d'une fonction qui prend en entrée une chaîne de caractères et retourne le nombre de voyelles contenues dans cette chaîne de caractères.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.python}
+def compter_voyelles(chaine) -> int:
+    voyelles = "aeiouAEIOU"
+    compteur = 0
+    for caractere in chaine:
+        if caractere in voyelles:
+            compteur += 1
+    return compteur
+
+# Exemple d'utilisation
+res = compter_voyelles("Bonjour tout le monde")
+print(res)
+```
+:::
+
+### 4
+
+Recopiez et complétez ce code pour n'afficher que les valeurs de `i` paires et sortir de la boucle quand `i` est égal à 0. Que va afficher votre code ?
+
+```{.python}
+i = 10
+while True:
+    i = i - 1
+    # Compléter ici    
+    print(i, end=" ")    
+    # Compléter ici    
+print("\nboom")
+```
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.python}
+i = 10
+while True:
+    i = i - 1
+    if i % 2 != 0:  # Si i n'est pas pair, passer à l'itération suivante
+        continue
+    print(i, end=" ")
+    if i == 0:      # Si i est égal à 0, sortir de la boucle
+        break
+print("\nboom")
+```
+
+Ce code va afficher :
+
+```
+8 6 4 2 0 
+boom
+```
+:::
+
+### 5
+
+Écrivez le code d'une fonction qui prend en entrée un entier `n` et affiche les `n` premières valeurs de la suite de Fibonacci.
+
+Rappel :
+
+- $F_0 = 0$
+- $F_1 = 1$
+- $\forall n \geq 2 \, F_n = F_{n-1} + F_{n-2}$
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.python}
+def fibonacci(n) -> None:
+    if n <= 0 or not isinstance(n, int):
+        raise ValueError("Veuillez entrer un entier strictement positif.")
+
+    Fn_2, Fn_1 = 0, 1
+    
+    # Affiche le 1er terme
+    print(Fn_2, end=" ")
+
+    # Si n vaut au moins 2, affiche le 2e terme
+    if n >= 2:
+        print(Fn_1, end=" ")
+
+    # Calcule et affiche les termes suivants
+    for _ in range(2, n):
+        Fn = Fn_2 + Fn_1
+        print(Fn, end=" ")
+        Fn_2, Fn_1 = Fn_1, Fn
+```
+:::
+
+### 6
+
+Écrivez le code d'une fonction qui prend en entrée une température en Celsius et retourne celle-ci convertie en Fahrenheit ($F = \frac{9}{5} \times C + 32$).
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.python}
+def celsius_vers_fahrenheit(celsius) -> float:
+    fahrenheit = (9 / 5) * celsius + 32
+    return fahrenheit
+```
+:::
+
+
+## SQL
+
+![](img/2024-dvd.png)
+
+Un adhérent peut emprunter plusieurs dvd.
+
+Un emprunt est caractérisé par un numéro d'emprunt, la date de début, la date de fin, le numéro d'adhérent et le numéro du dvd emprunté.
+
+Un dvd contient un seul et unique film. Un film peut-être disponible sur plusieurs dvd différents.
+
+Écrivez la requête SQL qui répond à chaque question ci-dessous.
+
+### 1
+
+Listez tous les films du genre « science-fiction » en les classant en premier ceux qui sont sortis le plus récemment.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+SELECT *
+  FROM film
+ WHERE genre = 'science-fiction'
+ ORDER BY date_sortie DESC;
+```
+:::
+
+### 2
+
+Listez tous les films qui contiennent dans leur titre le mot « batman ».
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+SELECT *
+  FROM film
+ WHERE LOWER(titre) LIKE '%batman%';
+```
+:::
+
+### 3
+
+Donnez le prix d'achat moyen des DVD du film « Alibi ».
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+SELECT AVG(d.prix_achat)
+  FROM dvd d
+  JOIN film f USING(id_film)
+ WHERE f.titre = 'Alibi';
+```
+:::
+
+### 4
+
+Donnez les noms et prénoms des adhérents ayant déjà emprunté le film « Matrix ».
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+SELECT a.nom, 
+       a.prenom
+  FROM adherent a
+  JOIN emprunte e USING (id_adherent)
+  JOIN dvd d USING (id_dvd)
+  JOIN film f USING (id_film)
+ WHERE f.titre = 'Matrix';
+```
+:::
+
+### 5
+
+Listez les identifiants des DVD qui n'ont jamais été empruntés.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```sql
+SELECT d.id_dvd
+  FROM dvd d
+WHERE d.id_dvd NOT IN (SELECT e.id_dvd 
+                         FROM emprunte e);
+
+-- ou
+
+SELECT d.id_dvd 
+  FROM dvd d
+ WHERE NOT EXISTS (SELECT 1
+                     FROM emprunte e
+                    WHERE e.id_dvd = d.id_dvd);
+```
+:::
+
+### 6
+
+Listez les titres des films qui ont été empruntés plus de 10 fois.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+SELECT f.titre,
+       COUNT(1) AS nb_emprunts
+  FROM film f
+  JOIN dvd d USING (id_film) 
+  JOIN emprunte e USING (id_dvd)
+ GROUP BY f.titre
+HAVING COUNT(1) > 10;
+```
+:::
+
+### 7
+
+Insérez en base de données le film Barbie du genre « comédie » sorti le 19 juillet 2023.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.sql}
+INSERT INTO film (titre, genre, date_sortie)
+VALUES ('Barbie', 'comédie', '2023-07-19');
+```
+:::
+
+
+## POO et UML
+
+### 1
+
+Proposez un diagramme de classes UML pour décrire l'application ci-dessus.
+
+```{mermaid}
+classDiagram
+    class Magasin {
+        -str nom
+        -List[Legume] stock
+        -List[Client] clients
+    }
+
+    class Legume {
+        -str type
+        -str variete
+        -float prix
+        -float stock
+    }
+
+    class Client {
+        -int numeroClient
+        -str nom
+        -str prénom
+        -int age
+        -bool carteFidelite
+        -List[Commande]
+        +void validerCommande(int numeroCommande)
+    }
+
+    class Commande {
+        -int numeroClient
+        -int numeroCommande
+        -float montant
+        -List[LigneCommande] lignesCommande
+    }
+
+    class LigneCommande {
+        -Legume legume
+        -float quantite
+    }
+
+    Magasin o-- Client : gére
+    Client --> Commande : réalise
+    Commande o-- LigneCommande : composée
+    LigneCommande -- Legume
+    Magasin o-- Legume : stocke
+```
+
+### 2
+
+Écrivez le constructeur de la classe `Commande` en Python.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```python
+class Commande:
+    def __init__(self, numero_commande, numero_client):
+        self.numero_client = numero_client
+        self.numero_commande = numero_commande
+        self.montant = 0.0
+        self.lignes_commande = []
+```
+:::
+
+### 3
+
+Écrivez le code de la méthode `valider_commande()` dans la classe `Magasin`, qui permet de :
+
+- Vérifier si une commande est valide (si le stock de légumes est suffisant).
+- Calculer et mettre à jour le montant total de la commande si la commande est valide.
+- Retourner `True` si la commande est valide, `False` sinon.
+
+::: {.callout-note title="Réponse" collapse="true"}
+```{.python}
+class Magasin:
+
+    def __init__(self, nom):
+        self.nom = nom
+        self.stock = []     # Liste de Legume
+        self.clients = []
+
+    def valider_commande(self, commande) -> bool:
+        total_commande = 0.0
+        
+        # Pour chaque Legume de la commande
+        for ligne in commande.lignes_commande:
+            legume = ligne.legume
+            quantite = ligne.quantite
+            
+            # Vérifier si le stock est suffisant
+            stock_legume = None
+            
+            for l in self.stock:
+                if l.variete == legume.variete and l.type == legume.type:
+                    stock_legume = l.stock
+                    break
+            
+            # Si le légume n'est pas trouvé ou le stock est insuffisant
+            if stock_legume is None or stock_legume < quantite:
+                return False  
+            else:
+                total_commande += legume.prix * quantite
+        
+        # Mettre à jour le montant de la commande
+        commande.montant = total_commande
+        
+        # Mettre à jour le stock
+        for ligne in commande.lignes_commande:
+            legume = ligne.legume
+            quantite = ligne.quantite
+            for l in self.stock:
+                if l.variete == legume.variete and l.type == legume.type:
+                    l.stock -= quantite
+                    break
+    
+        return True
+```
+:::
