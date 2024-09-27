@@ -405,7 +405,7 @@ print(d)
 
 ---
 
-## Boléens
+## Booléens
 
 Les Booléens ne peuvent prendre que deux valeurs : `True` et `False`  
 Attention à bien respecter la notation avec la première lettre en majuscule et les autres en minuscule.  

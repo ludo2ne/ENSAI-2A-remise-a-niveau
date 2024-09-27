@@ -26,7 +26,7 @@ Ouvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications c
     - [x] Insert spaces for tabs
     - Appliquer
   - Metadonnées
-    - Décocher `Ouvrir une connexion séparée pour la lecture des étadonnées`
+    - Décocher `Ouvrir une connexion séparée pour la lecture des métadonnées`
   - Editeur SQL
     - Décocher `Ouvrir une connexion séparée pour chaque éditeur`
 

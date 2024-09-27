@@ -12,6 +12,7 @@ Remise à niveau pour les étudiants de 2e année (21h)
 
 ## :construction: TODO
 
+- [ ] Clean repo :arrow_right: dossiers src et Outils
 - [ ] Création d'arbo
 - [ ] Bookmarks
 
