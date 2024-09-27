@@ -455,109 +455,326 @@
     "text": "2 Questions\n\n2.1 Découverte des tables\n\nListez tous les joueurs\nFaîtes de même sur les autres tables pour observer leur contenu\nListez tous les joueurs ordonnés par elo descroissant\nListez tous les joueurs ayant un elo inférieur ou égal à 2000\nListez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule)\n\n💡 voir méthode UPPER\n\n\n\n\n2.2 Mise à jour\n\nCréez la joueuse : Martine Dupont, elo : 1999, Arbitre Elite\nSupprimez le joueur de pseudo marc78\nEssayez de supprimer le joueur ayant pour id : 20\n\nPourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?\n\nListez les joueurs qui sont arbitres\n\n💡 voir IS NOT NULL\n\nAjoutez à la table joueur la colonne de type booléen est_arbitre\nRemplissez cette nouvelle colonne pour tous les joueurs\n\n\n\n2.3 Jointures\n\nListez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre\nListez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont\n\n\n\n2.4 Agrégations\n\nComptez le nombre de joueurs qui sont arbitre\nComptez le nombre d’arbitres par grade\nComptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000\nAffichez la liste des tournois (nom du tournoi, cadence, arbitre)\nAjouter le nombre de joueurs et le elo max des joueurs\n\n\n\n\n\n\n\nCorrection\n\n\n\n\n\nLien vers la correction"
   },
   {
-    "objectID": "docs/python/python-notebooks.html",
-    "href": "docs/python/python-notebooks.html",
-    "title": "Notebooks Python",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Remise à niveau informatique",
     "section": "",
-    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
+    "text": "Ce cours de remise à niveau s’adresse aux étudiants intégrant directement la deuxième année de l’ENSAI. Il vise à fournir les bases essentielles en Python, SQL et UML, afin de leur permettre de débuter le projet informatique en toute sérénité."
   },
   {
-    "objectID": "docs/python/python-notebooks.html#les-notebooks",
-    "href": "docs/python/python-notebooks.html#les-notebooks",
-    "title": "Notebooks Python",
+    "objectID": "index.html#programme",
+    "href": "index.html#programme",
+    "title": "Remise à niveau informatique",
+    "section": "Programme",
+    "text": "Programme\n\nBases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (markdown, R, LateX…)"
+  },
+  {
+    "objectID": "index.html#initiation-à-sql",
+    "href": "index.html#initiation-à-sql",
+    "title": "Remise à niveau informatique",
+    "section": "1. Initiation à SQL",
+    "text": "1. Initiation à SQL\n\nLisez le cours d’introduction aux bases de données et à SQL\nEffectuez le paramètrage pour utiliser DBeaver\nFaites l’exercice"
+  },
+  {
+    "objectID": "index.html#initiation-à-python",
+    "href": "index.html#initiation-à-python",
+    "title": "Remise à niveau informatique",
+    "section": "2. Initiation à Python",
+    "text": "2. Initiation à Python\n\nLisez le cours d’introduction à Python\nLisez et faites les exercices des 5 notebooks"
+  },
+  {
+    "objectID": "index.html#programmation-orientée-objet",
+    "href": "index.html#programmation-orientée-objet",
+    "title": "Remise à niveau informatique",
+    "section": "3. Programmation Orientée Objet",
+    "text": "3. Programmation Orientée Objet\nVous pouvez commencer par créer un clone du dépôt Git sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\n\nLisez le cours d’introduction à la POO\nSuivez les consignes pour le paramètrage de VSCode\nFaites les exercices"
+  },
+  {
+    "objectID": "index.html#uml",
+    "href": "index.html#uml",
+    "title": "Remise à niveau informatique",
+    "section": "4. UML",
+    "text": "4. UML\n\nLisez le cours d’introduction à UML\nFaites l’exercice"
+  },
+  {
+    "objectID": "index.html#alternatives",
+    "href": "index.html#alternatives",
+    "title": "Remise à niveau informatique",
+    "section": "Alternatives",
+    "text": "Alternatives\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\nVidéos de la session 2022-2023\nsi vous avez vos accès à MyENSAI, les vidéos de la session de l’année 2022-2023 sont disponibles ici\n\n\nCours en ligne pour apprendre Python et SQL\n\nOpenclassrooms - Requêtez avecSQL\nInitiation à Python dans le Service Statistique Public\nOpenclassrooms - bases de Python (parties 1 et 2)\nOpenclassrooms - POO avec Python (parties 1 et 2)\n\n\n\nRessources utiles\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/\nPython pour la data science, Lino Galiana (INSEE, ENSAE)"
+  },
+  {
+    "objectID": "docs/outils/outils.html",
+    "href": "docs/outils/outils.html",
+    "title": "Divers outils",
     "section": "",
-    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
+    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
   },
   {
-    "objectID": "docs/python/python-notebooks.html#utiliser-un-notebook",
-    "href": "docs/python/python-notebooks.html#utiliser-un-notebook",
-    "title": "Notebooks Python",
-    "section": "2 Utiliser un notebook",
-    "text": "2 Utiliser un notebook\n\n\n\n\n\n\nMode opératoire\n\n\n\n\nCommencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus\nTéléchargez sur votre machine le fichier .ipynb\nConnectez-vous à l’un des services proposés ci-dessous\nUploadez sur ce service le fichier .ipynb\n\n\n\nVous avez plusieurs possibilités pour lancer les notebooks :\n\nUn cluster Jupyter de l’ENSAI ➡️ si vous avez vos idep et mot de passe\nle datalab SSPCloud ➡️ vous pouvez créer un compte avec votre mail ENSAI\n\nSi vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :\n\nJupyter Lab online\nKaggle notebooks\nGoogle Colab\n\n\nCluster ENSAISSPCloudJupyter Lab onlineColab et Kaggle\n\n\n\nConnectez-vous au cluster Jupyter avec id et mot de passe\nImportez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche ⬆️\nDans la colonne de gauche :\n\nl’icone en forme de dossier permet d’explorer les fichiers\nl’icone en forme de liste permet d’afficher la table des matières\n\nLe champ Code permet d’indiquer si la cellule attend du code python ou du texte (Markdown)\n\n\n\n\n\nConnectez-vous au SSPCloud\nAllez dans le menu Catalogue de services\nLancer Jupyter-python\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nAllez sur la page Jupyter Lab online\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nConnectez-vous au service\nImportez le notebook (Fichier &gt; Importer le notebook)\n\n\n\n\n\n2.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\n\n\n\n\n\n\nLe langage Markdown\n\n\n\n\n\nC’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).\nDe très nombreuses ressources sont disponibles sur internet, par exemple\nQuelques exemples :\n\n\n\nCode\nMise en forme\n\n\n\n\n**texte en gras**\ntexte en gras\n\n\n*texte en italique*\ntexte en italique\n\n\n# Titre de niveau 1\n\n\n\n## Titre de niveau 2\n\n\n\n- Élement de liste à puces\n- Élement de liste à puces\n\n\n\n\n\n\nLe type de cellule souhaité est modifiable dans la barre d’outils."
-  },
-  {
-    "objectID": "docs/python/python-notebooks.html#commandes-utiles",
-    "href": "docs/python/python-notebooks.html#commandes-utiles",
-    "title": "Notebooks Python",
-    "section": "3 Commandes utiles",
-    "text": "3 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
-  },
-  {
-    "objectID": "docs/python/python-notebooks.html#ressources-utiles",
-    "href": "docs/python/python-notebooks.html#ressources-utiles",
-    "title": "Notebooks Python",
-    "section": "4 Ressources utiles",
-    "text": "4 Ressources utiles\nVous trouverez plus d’informations sur les notebooks, sur le site de la formation INSEE d’initiation à Python."
-  },
-  {
-    "objectID": "docs/outils/YAML.html",
-    "href": "docs/outils/YAML.html",
-    "title": "YAML 101",
+    "objectID": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
+    "href": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
+    "title": "Divers outils",
     "section": "",
-    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
+    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
   },
   {
-    "objectID": "docs/outils/YAML.html#quest-ce-que-yaml",
-    "href": "docs/outils/YAML.html#quest-ce-que-yaml",
-    "title": "YAML 101",
+    "objectID": "docs/outils/outils.html#autres-outils",
+    "href": "docs/outils/outils.html#autres-outils",
+    "title": "Divers outils",
+    "section": "2 Autres outils",
+    "text": "2 Autres outils\n\n\n\nOutil\nIntérêt\n\n\n\n\nChatGPT\nDébugage, Génération de code, Génération de données, Documentation automatique\n\n\nStack Overflow\nTrés nombreuses questions et réponses en informatique\n\n\nJSON Formatter\nOutil en ligne pour formater et visualiser des données JSON\n\n\nDeepL\nOutil de traduction\n\n\nScribens\nCorrecteur grammatical en ligne"
+  },
+  {
+    "objectID": "docs/outils/VSCode.html",
+    "href": "docs/outils/VSCode.html",
+    "title": "Visual Studio Code",
     "section": "",
-    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
+    "text": "Visual Studio Code (VS Code) est un éditeur de code source développé par Microsoft, gratuit et open-source, conçu pour être léger et performant. Il est compatible avec de très nombreux langages de programmation : Python, R, Java, JavaScript, C++…\n\n\n\nAuto-complétion : Aide à écrire du code plus rapidement et avec moins d’erreurs\nColoration syntaxique : Améliore la lisibilité du code\nDébogage intégré : Facilite l’identification et la correction des erreurs\nExtensibilité : grâce à une vaste bibliothèque d’extensions disponibles sur le marketplace\nConfiguration et outils : linters, formateurs de code…\n\nLe but de cette fiche est de :\n\nvous permettre d’exécuter un programme python avec VS Code\ndonner quelques astuces pour faciliter son utilisation"
   },
   {
-    "objectID": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
-    "href": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
-    "title": "YAML 101",
-    "section": "2 Pourquoi utiliser YAML ?",
-    "text": "2 Pourquoi utiliser YAML ?\n\nLisibilité\n\nYAML est conçu pour être lisible par l’homme. La syntaxe est simple et directe, sans beaucoup de ponctuations.\nLes indentations permettent une structure claire et hiérarchisée, semblable à celle des langages de programmation comme Python.\n\nFlexibilité\n\nYAML supporte des structures de données complexes comme les listes imbriquées et les dictionnaires.\nIl permet des alias et des ancres pour éviter la duplication de données, ce qui peut être utile pour des fichiers de configuration réutilisables.\n\nCompatibilité avec les autres formats\n\nYAML peut facilement être converti en JSON, et vice versa\n\nUsage dans DevOps\n\nYAML est largement utilisé dans les outils de gestion de configuration, les pipelines CI/CD, et les orchestrateurs de conteneurs"
-  },
-  {
-    "objectID": "docs/outils/YAML.html#syntaxe",
-    "href": "docs/outils/YAML.html#syntaxe",
-    "title": "YAML 101",
-    "section": "3 Syntaxe",
-    "text": "3 Syntaxe\nVoici quelques exemples de syntaxe avec son équivalent json\n\n3.1 Attributs\n\n\n\n\nyaml\n\nperson:\n  name: Alice             # str\n  city: \"Amiens\"          # str\n  age: 30                 # int\n  height: 1.75            # float\n  student: false          # bool\n  birth_date: 1994-05-15  # date\n\n\n\n\njson\n\n{\n  \"person\": {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"height\": 1.75,\n    \"student\": false,\n    \"birth_date\": \"1994-05-15\"\n  }\n}\n\n\n\n\n\n3.2 Liste de valeurs\nPlusieurs possibilités pour déclarer des listes\n\n\n\n\nyaml\n\nhobbies: \n  - chess\n  - hiking\n  - landart\n\n--- # ou\n\nhobbies: [\"chess\", \"hiking\", \"landart\"]\n\n\n\n\njson\n\n{\n  \"hobbies\": [\n    \"chess\",\n    \"hiking\",\n    \"landart\"\n  ]\n}\n\n\n\nAutre exemple\n\n\n\n\nyaml\n\nservers:\n  - name: server1\n    ip: 192.168.1.1\n  - name: server2\n    ip: 192.168.1.2\n  - {name: \"server3\", ip: 192.168.1.3}\n\n\n\n\njson\n\n{\n  \"servers\": [\n    {\"name\": \"server1\", \"ip\": \"192.168.1.1\"},\n    {\"name\": \"server2\", \"ip\": \"192.168.1.2\"},\n    {\"name\": \"server3\", \"ip\": \"192.168.1.3\"}\n  ]\n}\n\n\n\n\n\n3.3 Ancre et alias\n\n\n\n\nyaml\n\nparent: &pere Bob\nchild:\n  - name: Eva\n    papa: *pere\n  - name: Laury\n    papa: *pere\n\n\n\n\njson\n\n{\n  \"parent\": \"Bob\",\n  \"child\": [\n    {\"name\": \"Eva\", \"parent\": \"Bob\"},\n    {\"name\": \"Laury\", \"parent\": \"Bob\"}\n  ]\n}\n\n\n\n\n\n3.4 Héritage\n\n\n\n\nyaml\n\ndefault: &default_settings\n  timeout: 30\n  retries: 5\n\nserver1:\n  &lt;&lt;: *default_settings\n  name: server1\n\nserver2:\n  &lt;&lt;: *default_settings\n  name: server2\n  retries: 3\n\n\n\n\njson\n\n{\n  \"default\": {\n    \"timeout\": 30,\n    \"retries\": 5\n  },\n  \"server1\": {\n    \"timeout\": 30,\n    \"retries\": 5,\n    \"name\": \"server1\"\n  },\n  \"server2\": {\n    \"timeout\": 30,\n    \"retries\": 3,\n    \"name\": \"server2\"\n  }\n}\n\n\n\n\n\n3.5 Long texte\n\n\nyaml\n\n\n# En conservant les retours à la ligne\nfable: |\n  Maître Corbeau, sur un arbre perché,\n  Tenait en son bec un fromage.\n  Maître Renard, par l'odeur alléché,\n  Lui tint à peu près ce langage :\n  \"Hé ! bonjour, Monsieur du Corbeau.\n  Que vous êtes joli ! que vous me semblez beau !\n  Sans mentir, si votre ramage\n  Se rapporte à votre plumage,\n  Vous êtes le Phénix des hôtes de ces bois.\"\n  À ces mots le Corbeau ne se sent pas de joie ;\n  Et pour montrer sa belle voix,\n  Il ouvre un large bec, laisse tomber sa proie.\n  Le Renard s'en saisit, et dit : \"Mon bon Monsieur,\n  Apprenez que tout flatteur\n  Vit aux dépens de celui qui l'écoute :\n  Cette leçon vaut bien un fromage, sans doute.\"\n  Le Corbeau honteux et confus\n  Jura, mais un peu tard, qu'on ne l'y prendrait plus.\n\n# En supprimant les retours à la ligne\nchoixpeau: &gt;\n  Les nouveaux élèves de Poudlard sont répartis en quatre maisons : Gryffondor\n  pour les courageux, Poufsouffle pour les travailleurs, Serdaigle pour les\n  intelligents, Serpentard pour les ambitieux. Le Choixpeau magique, qui \n  s'occupe de la répartition, hésite sur la meilleure maison pour Harry. \n  Comme Harry a entendu dire que les mages noirs venaient tous de Serpentard,\n  il demande à aller ailleurs, et le Choixpeau l'envoie à Gryffondor, avec \n  Ron et Hermione. Albus Dumbledore, le directeur, prévient les élèves qu’ils\n  ne doivent pas aller dans la Forêt interdite, ni dans le couloir du deuxième\n  étage.\n\na"
-  },
-  {
-    "objectID": "docs/outils/VM.html",
-    "href": "docs/outils/VM.html",
-    "title": "VM",
+    "objectID": "docs/outils/VSCode.html#visual-studio-code",
+    "href": "docs/outils/VSCode.html#visual-studio-code",
+    "title": "Visual Studio Code",
     "section": "",
-    "text": "http://view.ensai.fr\ninstaller VMWare Horizon (Recommandé)\nOuvrir VMWare Horizon\n\nAller dans Paramètre &gt; Sécurité &gt; Désactiver la vérification de Certificat\nAjouter un serveur\n\nview.ensai.fr\nsaisir id et mot de passe"
+    "text": "Visual Studio Code (VS Code) est un éditeur de code source développé par Microsoft, gratuit et open-source, conçu pour être léger et performant. Il est compatible avec de très nombreux langages de programmation : Python, R, Java, JavaScript, C++…\n\n\n\nAuto-complétion : Aide à écrire du code plus rapidement et avec moins d’erreurs\nColoration syntaxique : Améliore la lisibilité du code\nDébogage intégré : Facilite l’identification et la correction des erreurs\nExtensibilité : grâce à une vaste bibliothèque d’extensions disponibles sur le marketplace\nConfiguration et outils : linters, formateurs de code…\n\nLe but de cette fiche est de :\n\nvous permettre d’exécuter un programme python avec VS Code\ndonner quelques astuces pour faciliter son utilisation"
   },
   {
-    "objectID": "docs/outils/VM.html#se-connecter-à-distance-la-vm-ensai",
-    "href": "docs/outils/VM.html#se-connecter-à-distance-la-vm-ensai",
-    "title": "VM",
+    "objectID": "docs/outils/VSCode.html#paramétrage",
+    "href": "docs/outils/VSCode.html#paramétrage",
+    "title": "Visual Studio Code",
+    "section": "2 Paramétrage",
+    "text": "2 Paramétrage\n\n2.1 Extensions\nDe très nombreuses extensions permettent d’améliorer votre utilisation de VS Code. Sur la version installée sur la VM ENSAI, vous pouvez trouver :\n\nBlack Formatter\nFlake8\nisort\nPython Test Explorer\n…\n❌ Désactiver l’extension Ruff (elle fait doublon avec Flake8)\n\nAutres extensions interessantes :\n\nBetter Comments\n\n\n\n2.2 Formatage et Linting\n\nUn formateur est un outil qui va mettre en forme votre code pour que ce soit joli et lisible\nun linter est un outil qui va vous avertir si votre code n’est pas joli\n\nex : ligne trop longue, espace manquant ou en trop…\n\n\nLes extensions Black Formatter et Flake8 sont respectivement un formateur et un linter\n\n\n2.3 Settings\nVous pouvez préciser le paramètrage à plusieurs niveaux :\n\nau niveau utilisateur (User)\nau niveau d’un dépôt (Workspace)\n\nLe fichier .vscode/settings.json contient du paramètrage qui va s’appliquer à tous les fichiers du dépôt.\nCe fichier contient par exemple les propriétés ci-dessous :\n\n\n.vscode/settings.json\n\n    \"flake8.args\": [\n        \"--max-line-length=100\"\n    ],\n    \"[python]\": {\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\",\n        \"editor.formatOnSave\": true,\n        \"editor.insertSpaces\": true,\n        \"editor.tabSize\": 4\n    },"
+  },
+  {
+    "objectID": "docs/outils/VSCode.html#première-utilisation",
+    "href": "docs/outils/VSCode.html#première-utilisation",
+    "title": "Visual Studio Code",
+    "section": "3 Première utilisation",
+    "text": "3 Première utilisation\n\n\n\n\n\n\nNote\n\n\n\nNous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode.\n\n\n\nOuvrez Visual Studio Code\nOuvrez un terminal\n\nMenu Terminal &gt; New terminal (raccourci : CTRL + ù)\n\nCréez un dossier pour le Cours\n\nCopiez cette commande : mkdir -p /p/Cours2A/UE3_Remise_a_niveau\nDans le terminal, faîtes clic droit (Coller) puis ENTREE\nVérifiez que les dossiers sont bien créés, sinon créer les dossiers à la main\n\nClonez le dépôt\n\nPositionnez-vous dans le dossier créé : cd /p/Cours2A/UE3_Remise_a_niveau\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\n\nOuvrez un espace de travail\n\nDans VSCode : File &gt; Open Folder\nSélectionnez le dossier P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau créé précédemment\nYes i trust…\n\nOuvrez, puis exécutez un fichier Python\n\nOuvrez le fichier Python-POO/exemple/src/__main__.py\nExecutez le fichier\n\nEn haut à droite, cliquer sur l’icone en forme de triangle ▷\nRun python file in terminal\n\nCela ouvre un terminal et exécute le fichier"
+  },
+  {
+    "objectID": "docs/outils/VSCode.html#le-terminal-python",
+    "href": "docs/outils/VSCode.html#le-terminal-python",
+    "title": "Visual Studio Code",
+    "section": "4 Le terminal python",
+    "text": "4 Le terminal python\n2 modes :\n\nP:\\Cours\\Python\\tp1&gt;\n\npour éxecuter en totalité un fichier python\n\nen cliquant sur le triangle ▷\nen tapant la commande python bacasable.py\n\ntaper python en ENTREE pour passer à l’autre mode\n\n&gt;&gt;&gt; pour exécuter directement du code python\n\npermet d’exécuter uniquement certaines lignes du fichier\n\nen cliquant sur une ligne puis SHIFT + ENTREE\nen sélectionnant plusieurs lignes puis SHIFT + ENTREE\n\ndans ce mode on peut aussi écrire directement du python dans le terminal\ntaper quit() ou CTRL + Z pour retourner à l’autre mode"
+  },
+  {
+    "objectID": "docs/outils/VSCode.html#python-vscode-et-les-packages",
+    "href": "docs/outils/VSCode.html#python-vscode-et-les-packages",
+    "title": "Visual Studio Code",
+    "section": "5 Python, VSCode et les packages",
+    "text": "5 Python, VSCode et les packages\nImaginez que votre code est organisé de la manière ci-dessous\n├───tp1\n│   └───src\n│   │   ├───vehicule\n│   │   │   ├───velo.py\n│   │   │   └───trottinette.py\n│   │   ├───animal\n│   │   │   ├───girafe.py\n│   │   │   └───ane.py\nSi dans la classe Girafe, vous voulez créer un objet de la classe Velo, vous pouvez par exemple faire ceci dans le code de girafe.py :\n\nimport de la classe Velo\npuis création d’un objet Velo\n\n\n\ngirafe.py\n\nfrom vehicule.velo import Velo\n\nclass Girafe:\n    def __init__(self, nom, nom_moyen_transport):\n        self.nom = nom\n        vehicule = None\n        if nom_moyen_transport * \"velo\":\n            vehicule = Velo()\n        self.moyen_transport = vehicule\n\n🚨 Cependant, il se peut que que VSCode et/ou le compilateur python n’apprécient pas ce genre d’imports et que vous rencontriez des erreurs du type le module velo n’existe pas\nComme solution de contournement, vous pouvez :\n\nen reprenant l’arborescence ci-dessus,\ndans le dossier code créez un dossier .vscode\ndans ce dossier .vscode, créer le fichier settings.json qui contient ceci :\n\n{\n    \"python.analysis.extraPaths\": [\n        \"./*\"\n    ],\n    \"terminal.integrated.env.windows\": {\n        \"PYTHONPATH\": \"${workspaceFolder}/src\",\n    },\n    \"terminal.integrated.env.linux\": {\n        \"PYTHONPATH\": \"${workspaceFolder}/src\",\n    },\n    \"python.languageServer\": \"Jedi\"\n}\n\npuis fermez et redémarrez VSCode\nFile &gt; Open Folder &gt; C:/.../tp1/code"
+  },
+  {
+    "objectID": "docs/outils/VSCode.html#afficher-les-variables-denvironnement",
+    "href": "docs/outils/VSCode.html#afficher-les-variables-denvironnement",
+    "title": "Visual Studio Code",
+    "section": "6 Afficher les variables d’environnement",
+    "text": "6 Afficher les variables d’environnement\nprintenv\necho $PYTHONPATH\necho $HOME"
+  },
+  {
+    "objectID": "docs/outils/Markdown.html",
+    "href": "docs/outils/Markdown.html",
+    "title": "Markdown",
     "section": "",
-    "text": "http://view.ensai.fr\ninstaller VMWare Horizon (Recommandé)\nOuvrir VMWare Horizon\n\nAller dans Paramètre &gt; Sécurité &gt; Désactiver la vérification de Certificat\nAjouter un serveur\n\nview.ensai.fr\nsaisir id et mot de passe"
+    "text": "Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l’écriture de texte destiné au web en permettant aux utilisateurs d’écrire en utilisant un format texte brut facile à lire et à écrire."
   },
   {
-    "objectID": "docs/outils/VM.html#ctrl-alt-f12",
-    "href": "docs/outils/VM.html#ctrl-alt-f12",
-    "title": "VM",
-    "section": "2 CTRL + ALT + F12",
-    "text": "2 CTRL + ALT + F12\n\npour bloquer votre session dès que vous quittez votre poste\nà votre retour, se reconnecter simplement\nla session reste active pendant 3h"
+    "objectID": "docs/outils/Markdown.html#quest-ce-que-markdown",
+    "href": "docs/outils/Markdown.html#quest-ce-que-markdown",
+    "title": "Markdown",
+    "section": "",
+    "text": "Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l’écriture de texte destiné au web en permettant aux utilisateurs d’écrire en utilisant un format texte brut facile à lire et à écrire."
   },
   {
-    "objectID": "docs/outils/VM.html#lecteur-p",
-    "href": "docs/outils/VM.html#lecteur-p",
-    "title": "VM",
-    "section": "3 Lecteur P:",
-    "text": "3 Lecteur P:\n\nespace Personnel de 2Go\nEnregistrez vos fichiers dans ce lecteur\nfaite des sauvegardes de temps en temps sur clé USB"
+    "objectID": "docs/outils/Markdown.html#pourquoi-utiliser-markdown",
+    "href": "docs/outils/Markdown.html#pourquoi-utiliser-markdown",
+    "title": "Markdown",
+    "section": "2 Pourquoi utiliser Markdown ?",
+    "text": "2 Pourquoi utiliser Markdown ?\nMarkdown a été conçu comme une alternative intuitive aux balisages plus complexes du HTML. Il s’est rapidement popularisé parmi les développeurs, les blogueurs et les rédacteurs pour sa simplicité et sa lisibilité.\n\n✅ Simplicité : Facile à apprendre et à utiliser, même si vous n’êtes pas familiers avec HTML\n✅ Lisibilité : Le texte brut en Markdown reste lisible même sans être converti en HTML\n✅ Portabilité : Les fichiers Markdown peuvent être convertis facilement en HTML, PDF…\n✅ Popularité : Supporté par de nombreuses plates-formes et outils de rédaction\n❌ Limitations : Markdown est conçu pour être simple, donc il ne supporte pas toutes les fonctionnalités avancées de mise en page"
   },
   {
-    "objectID": "docs/outils/VM.html#disque-plein",
-    "href": "docs/outils/VM.html#disque-plein",
-    "title": "VM",
-    "section": "4 Disque plein",
-    "text": "4 Disque plein\n\nSi vous recevez des mails Votre disque est plein à 100%\nSouvent cela est du à des fichiers temporaires qui se créent lorsque vous ouvrez VSCode, Teams…\nPaliatif :\n\nCliquer sur l’icone Windows Démarrer\n2-Accessoires\nlancer les scripts : Nettoyage-profil et Nettoyage-Python"
+    "objectID": "docs/outils/Markdown.html#écrire-du-markdown",
+    "href": "docs/outils/Markdown.html#écrire-du-markdown",
+    "title": "Markdown",
+    "section": "3 Écrire du markdown",
+    "text": "3 Écrire du markdown\nLes fichiers markdown sont des fichiers texte qui ont pour extension .md.\nIl existe de très nombreux éditeurs de Markdown :\n\nen ligne, par exemple HackMd\nà installer sur sa machine, par exemple dans Visual Studio Code\n\nLes éditeurs présentent généralement deux sections cote à cote :\n\nune partie édition où l’on écrit le code\nune partie vue où l’on voit le résultat\n\n\n3.1 Exemples\nDe très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple https://commonmark.org/help/\nQuelques exemples de mise en forme :\n\n\n\nCode Markdown\nRésultat\n\n\n\n\n**texte en gras**\ntexte en gras\n\n\n*texte en italique*\ntexte en italique\n\n\n[lien](https://example.com)\nlien\n\n\n![texte alternatif](image.jpg)\n\n\n\n`code en ligne`\ncode en ligne\n\n\n# Titre de niveau 1\n\n\n\n## Titre de niveau 2\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nCette page est elle-même écrite en Markdown ! (avec une surcouche)\nVous pouvez consulter le code en cliquant sur le bouton &lt;/&gt; Code en haut à droite.\n\n\nUn large choix d’emoji est également disponible en Markdown 😎"
   },
   {
-    "objectID": "docs/outils/VM.html#impression",
-    "href": "docs/outils/VM.html#impression",
-    "title": "VM",
-    "section": "5 Impression",
-    "text": "5 Impression\n\nMode opératoire complet : ENT &gt; Assistance &gt; Foire aux questions &gt; Rechercher “imprimer”\nImprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)\nRetenez votre code d’identification à 6 chiffres\nPapercut (ou dans ENT &gt; Impression &gt; Papercut)\nAllez en salle 113\nEntrez votre code d’identification sur l’imprimante\nSélectionnez et libérez vos documents en attente d’impression\nAutre possibilité pour s’identifier auprès de l’imprimante\nEn utilisant votre carte étudiant\n\nSuivre mode opératoire affiché en salle 113"
+    "objectID": "docs/outils/Markdown.html#utilisation-dans-vscode",
+    "href": "docs/outils/Markdown.html#utilisation-dans-vscode",
+    "title": "Markdown",
+    "section": "4 Utilisation dans VScode",
+    "text": "4 Utilisation dans VScode\n\nCTRL + K puis V : pour avoir cote à cote les modes édition et vue\nExtensions utiles (à aller chercher dans le marketplace)\n\nmarkdownlint\nMarkdown Emoji\nMarkdown Checkboxes\nMarkdown Table\nMarkdown Preview Mermaid Support"
+  },
+  {
+    "objectID": "docs/outils/DBeaver.html",
+    "href": "docs/outils/DBeaver.html",
+    "title": "DBeaver",
+    "section": "",
+    "text": "Note\n\n\n\nDBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d’autres encore.\nOuvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous."
+  },
+  {
+    "objectID": "docs/outils/DBeaver.html#configuration",
+    "href": "docs/outils/DBeaver.html#configuration",
+    "title": "DBeaver",
+    "section": "1 Configuration",
+    "text": "1 Configuration\n\nMenu Fenêtre &gt; Preference\n\nFormatage SQL\n\nCasse des mots clefs : UPPER\nInsert spaces for tabs\nAppliquer\n\nMetadonnées\n\nDécocher Ouvrir une connexion séparée pour la lecture des métadonnées\n\nEditeur SQL\n\nDécocher Ouvrir une connexion séparée pour chaque éditeur\n\n\n\n\n1.1 Optionnel\n\nTemplates\n\nEnlever les modèles existants\nImporter le fichier templates_dbeaver.xml\nLes templates permettent d’écrire plus rapidement des requêtes"
+  },
+  {
+    "objectID": "docs/outils/DBeaver.html#créer-la-connexion",
+    "href": "docs/outils/DBeaver.html#créer-la-connexion",
+    "title": "DBeaver",
+    "section": "2 Créer la connexion",
+    "text": "2 Créer la connexion\nPour créer une connexion vers la base de données ENSAI sur la VM :\n\nCliquer sur l’icone Nouvelle connexion en haut à gauche sous fichier\nSélectionner PostgreSQL puis suivant\n\nHost : sgbd-eleves.domensai.ecole\nPort : 5432\nDatabase : idxxxx\nNom d’utilisateur : idxxxx\nMot de passe : idxxxx\nTest de connexion\nAcceptez les mises à jour des pilotes\nTerminer"
+  },
+  {
+    "objectID": "docs/outils/DBeaver.html#exécuter-du-sql",
+    "href": "docs/outils/DBeaver.html#exécuter-du-sql",
+    "title": "DBeaver",
+    "section": "3 Exécuter du SQL",
+    "text": "3 Exécuter du SQL\n\nCliquer sur l’icone SQL\nExécuter la requête courante (où est le curseur de la souris):\n\nCTRL + ENTREE\nle petit triangle orange\n\nExécuter toutes les requêtes\n\nle triangle orange à l’intérieur d’un parchemin"
+  },
+  {
+    "objectID": "docs/outils/DBeaver.html#interface-pgadmin",
+    "href": "docs/outils/DBeaver.html#interface-pgadmin",
+    "title": "DBeaver",
+    "section": "4 Interface pgAdmin",
+    "text": "4 Interface pgAdmin\nEn cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface pgAdmin\n\nUtilisateur : idxxxx\nMot de passe : idxxxx\nUne fois connecté, cliquez sur idxxxx dans le menu de gauche\ncliquez sur SQL pour exécuter des requêtes"
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html",
+    "href": "docs/POO/poo-cours.html",
+    "title": "Programmation Orientée Objet",
+    "section": "",
+    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#introduction",
+    "href": "docs/POO/poo-cours.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "",
+    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#principes-fondamentaux",
+    "href": "docs/POO/poo-cours.html#principes-fondamentaux",
+    "title": "Programmation Orientée Objet",
+    "section": "Principes fondamentaux",
+    "text": "Principes fondamentaux\n\nEncapsulation\nL’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet.\nCela permet de :\n\ncacher les détails d’implémentation\nde fournir une interface cohérente pour interagir avec l’objet\n\n\n\nHéritage\nL’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise :\n\nla réutilisation du code\nla création d’une hiérarchie de classes\n\n\nExemple : Carré hérite de Rectangle. Un carré est un rectangle avec des propriétés supplémentaires.\n\n\n\nPolymorphisme\nLe polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action.\nCela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes."
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#classe-et-objet",
+    "href": "docs/POO/poo-cours.html#classe-et-objet",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe et Objet",
+    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement\n\n\n\nExemple\n\nCréation de la classe Personne qui représente une personne\n\navec ses attributs et ses méthodes\n\nCréation de l’objet personne1 à partir de cette classe\n\nprénom = Sacha\nnom = Touille\nage = 20\ncompétences = []\n\n\n\n\nClasse Python\n\n\npersonne.py\n\nclass Personne:\n    def __init__(self, nom, prenom, age):\n        self.nom = nom\n        self.prenom = prenom\n        self.age = age\n        self.competences = []\n\n    def apprendre(self, nouvelle_competence):\n        \"\"\"Ajoute une nouvelle compétence à la liste des compétences.\"\"\"\n        self.competences.append(nouvelle_competence)\n\n    def vieillir(self):\n        \"\"\"Incrémente l'âge de la personne d'un an.\"\"\"\n        self.age += 1\n\n\n\nObjets Python\nÀ partir de la classe Personne, nous pouvons créer des objets.\n\n\nmain.py\n\nfrom personne import Personne\n\npersonne1 = Personne(\"Touille\", \"Sacha\", 20)\npersonne2 = Personne(\"Ginal\", \"Laury\", 30)\npersonne2.vieillir()\npersonne2.apprendre(\"SQL\")\n\n\n\nConstructeur\nLe code Personne(\"Touille\", \"Sacha\", 20) appelle la méthode __init__() de la classe Personne.\nCette méthode est appelée le constructeur.\nComme son nom l’indique, elle permet de « construire » des objets à partir de la classe.\n\n\nConventions Python\n\nUn nom de classe s’écrit en CamelCase (majuscule à chaque mot)\nUn fichier python (ou module) ne contient qu’une seule classe\nUn nom de module s’écrit en snake_case (mots en minuscules séparés par des _)\n\n\n\nvelo_electrique.py\n\nclass VeloElectrique:\n    ..."
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#héritage-1",
+    "href": "docs/POO/poo-cours.html#héritage-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Héritage",
+    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.\n\nExemple d’Héritage\nSupposons que dans notre code, nous voulons gérer des vélos et de trottinettes.\nL’idée naïve est de créer une classe pour chacun.\n\n\nExemple d’Héritage\n\nVeloTrottinette\n\n\n\n\nvelo.py\n\nclass Velo:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.nb_pignons = nb_pignons\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse du vélo.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse du vélo.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\ntrottinette.py\n\nclass Trottinette:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\n\nExemple d’Héritage\nEn réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :\n\ncouleur\nvitesse\naccelerer()\nralentir()\n\nUne idée est de regrouper ces caractéristiques communes dans une classe DeuxRoues. Puis de faire hériter Vélo et Trottinette de DeuxRoues\n\n\nExemple d’Héritage\n\nDeux RouesVeloTrottinette\n\n\n\n\ndeux_roues.py\n\nclass DeuxRoues:\n    def __init__(self, couleur):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\nvelo.py\n\nfrom deux_roues import DeuxRoues\n\nclass Velo(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super().__init__(couleur)  # Appel du constructeur de la classe mère\n        self.nb_pignons = nb_pignons\n\n\n\n\n\ntrottinette.py\n\nfrom deux_roues import DeuxRoues\n\nclass Trottinette(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super().__init__(couleur)   # Appel du constructeur de la classe mère\n\n\n\n\n\n\nSelf et Super\n\nself est une référence à l’instance actuelle de la classe\n\nIl est utilisé pour accéder aux attributs et aux méthodes d’une instance spécifique de la classe\n\nsuper() est une fonction intégrée qui référence la classe mère\n\nIl est utilisé pour appeler des méthodes de la classe parent dans une classe enfant"
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#classe-abstraite",
+    "href": "docs/POO/poo-cours.html#classe-abstraite",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe Abstraite",
+    "text": "Classe Abstraite\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret.\n\n\n\nClasse Abstraite - DeuxRoues\nCertaines classes n’ont pas vocation à être instanciées. Par exemple, nous n’allons pas créer d’objets de la classe DeuxRoues.\nNous allons directement créer des Velo et des Trottinettes.\nNous pouvons donc définir la classe DeuxRoues comme abstraite.\n\non ne peut pas créer d’objets à partir de cette classe\n\n\n\nClasse Abstraite - DeuxRoues\nLa principale utilité des classes abstraites est de définir un contrat pour les classes filles.\nElles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.\n\n\nClasse Abstraite - Python\n\n\n\n\n\n\nTip\n\n\n\nEn Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes).\nCe module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite.\nUne classe abstraite est définie en héritant de la classe ABC du module abc.\n\n\n\n\nClasse Abstraite - Remarque\n\n\n\n\n\n\nWarning\n\n\n\nClasse mère ne veut pas dire forcément classe abstraite.\nPar exemple :\n\nConsidérons par exemple une classe VeloElectrique qui hérite de la classe Velo\nCela parait cohérent car un vélo électrique est un vélo\n\ndonc il hérite de tous ses attributs et méthodes\net il a des caractéristiques supplémentaires (batterie, autonomie, puissance…)\n\nOr ici la classe Velo n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo"
+  },
+  {
+    "objectID": "docs/POO/poo-cours.html#exercices",
+    "href": "docs/POO/poo-cours.html#exercices",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercices",
+    "text": "Exercices\nexercices"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#introduction",
+    "href": "docs/POO/poo-cours-slides.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "Introduction",
+    "text": "Introduction\nLa POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
+    "href": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
+    "title": "Programmation Orientée Objet",
+    "section": "Principes fondamentaux",
+    "text": "Principes fondamentaux"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#classe-et-objet",
+    "href": "docs/POO/poo-cours-slides.html#classe-et-objet",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe et Objet",
+    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement"
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#héritage-1",
+    "href": "docs/POO/poo-cours-slides.html#héritage-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Héritage",
+    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code."
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#classe-abstraite",
+    "href": "docs/POO/poo-cours-slides.html#classe-abstraite",
+    "title": "Programmation Orientée Objet",
+    "section": "Classe Abstraite",
+    "text": "Classe Abstraite\n\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret."
+  },
+  {
+    "objectID": "docs/POO/poo-cours-slides.html#exercices",
+    "href": "docs/POO/poo-cours-slides.html#exercices",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercices",
+    "text": "Exercices\nexercices\n\n\n\nHome — Introduction à la POO"
+  },
+  {
+    "objectID": "docs/outils/Bash.html",
+    "href": "docs/outils/Bash.html",
+    "title": "Le Bash",
+    "section": "",
+    "text": "Il y a peu, dans un monde proche, très proche la ligne de commande était le seul moyen de transmettre ses instructions à un ordinateur. Pas de souris, pas de bureau avec des icones, simplement un clavier et un terminal.\nDans de nombreux domaines de l’informatique, les instructions se donnent toujours en lignes de commande. En effet, créer des interfaces graphiques est couteux et plus difficile à maintenir.\nNous allons ici présenter quelques commandes simples, connues et utilisées par tout informaticien. Chez windows il y a 2 terminaux disponibles :\nCependant, nous nous interesserons ici à la sphère Unix beaucoup plus populaire. Il y a également différents interpréteurs, le plus utilisé étant Bash. Les commandes présentées ici sont standardisées et compréhensibles par n’importe quel interpréteur Unix (et sont même parfois identiques chez Windows)\nEn tant que Data Scientist on ne vous demandera pas de savoir pirater la CIA avec une Casio Collège. Cependant, connaitre ces commandes est un must-have qui vous servira à coup sûr."
+  },
+  {
+    "objectID": "docs/outils/Bash.html#apprendre-à-naviguer",
+    "href": "docs/outils/Bash.html#apprendre-à-naviguer",
+    "title": "Le Bash",
+    "section": "1 Apprendre à naviguer",
+    "text": "1 Apprendre à naviguer\nIl ne s’agit pas d’apprendre à faire un noeud de chaise, mais de savoir parcourir les dossiers et les fichiers de votre machine.\n\nOuvrir un terminal Bash\n\nPar exemple Git Bash\n\nEcire la commande pwd puis ENTREE\n\nun faux ami : cela ne signifie pas password mais print working directory\nnormalement le résultat de cette commande est /p/\nvous êtes donc à la racine du lecteur /p, votre espace personnel\n\nls pour lister\n\naffiche les dossiers et fichiers de l’endroit où vous êtes (en l’occurence /p)\nls -l pour afficher en colonne (plus joli), et affiche d’autres informations telles le nom du propriétaire du fichier, la date de modification, les droits en lecture, écriture…\n\nll : souvent cet alias à ls -l existe\ncela signifie que pour l’interpréteur ll ou ls -l, c’est pareil\nmais ll c’est plus rapide à taper\nalias : affiche la liste des alias\n\nLe -l est donc une option de la commande ls\nChaque commande a de nombreuses options, internet est votre ami si besoin\n\ncd 'Ma musique'\n\ncd = change directory\nle terminal affiche votre nouvel emplacement : /p/Ma musique\nlorsqu’il y a des espaces dans un nom de dossier, il faut ajouter des guillemets simples ’ ou doubles ” autour du nom du dossier\n\npwd\nls\ncd ..\n\npour revenir au dossier parent\n\ncd /c\n\npour changer de lecteur et aller sur le disque C:/\n\nls\ncd /p\n\nrevenir au lecteur P pour la suite\n\n\nAvec les 3 commandes décrites ci-dessus (pwd, ls et cd) vous pouvez naviguer sereinement dans les dossiers."
+  },
+  {
+    "objectID": "docs/outils/Bash.html#quelques-trucs-et-astuces",
+    "href": "docs/outils/Bash.html#quelques-trucs-et-astuces",
+    "title": "Le Bash",
+    "section": "2 Quelques trucs et astuces",
+    "text": "2 Quelques trucs et astuces\nVoici des raccourcis clavier bien utiles :\n\nFLECHE HAUT : historique des commandes lancées\n\nutile pour éviter de réécrire en entier une commande que l’on a lancée 2 min avant\nFLECHE BAS : également pour parcourir l’historique mais dans le sens inverse\n\nhistory : historique des commandes exécutées\nTAB : autocompletion\n\ncd Ma puis TAB\nle terminal va tenter de “compléter” la commande que vous êtes en train d’écrire\nComme il n’y a qu’un seul dossier commençant par “Ma”, en faisant TAB, le terminal va ajouter pour obtenir cd Ma\\ musique (= cd \"Ma musique\")\n\nCTRL + C : pour stopper la commande en cours si elle est trop longue\nCLIC Molette (ou parfois CLIC droit, ou encore SHIFT + INSER) : Coller"
+  },
+  {
+    "objectID": "docs/outils/Bash.html#manipuler-fichiers-et-dossiers",
+    "href": "docs/outils/Bash.html#manipuler-fichiers-et-dossiers",
+    "title": "Le Bash",
+    "section": "3 Manipuler fichiers et dossiers",
+    "text": "3 Manipuler fichiers et dossiers\n\ncd /p\nmkdir -p Cours/Informatique/bash-tp\n\nmkdir = make directory\nCette commande crée le dossier bash-tp\n-p permet de créer les dossiers parents (Cours et Informatique) s’ils n’existent pas\n\ncd Cours/Informatique/bash-tp\n\nPour aller dans le dossier que l’on vient de créer\n\ntouch a.txt\n\ncréer un fichier vide nommé a.txt\n\nPour écrire dans un fichier il y a de nombreuses possibilités, par exemple avec l’éditeur vi\n\nCependant l’utilisation de vi est loin d’être triviale\nSi vous trouvez que ce TP est déjà assez compliqué comme ça, ne touchez pas à vi\nSi vous êtes trop curieux, que vous avez ouvert le fichier a.txt avec vi et que maintenant vous êtes bloqué, tapez :q! pour sortir\n\nPour info d’autres éditeurs :\n\nNano moins connu mais qui a l’air plus intuitif : nano a.txt (CTRL + X pour quitter)\nSi vous avez lancé votre terminal sous Windows : notepad a.txt\n\nrm a.txt\n\nrm = remove pour supprimer le fichier\n⚠️ attention à bien utiliser cette commande, risque de perte de données\n\nls -l /c &gt; b.txt\n\nExécute la commande ls -l /c qui liste tous les fichiers et dossiers du lecteur /c\nPuis le &gt; indique que l’on sauvegarde le résultat dans le fichier b.txt créé s’il n’existe pas\n\ncat b.txt\n\naffiche le fichier\nhead b.txt : affiche uniquement les 10 premières lignes\ntail b.txt : affiche uniquement les 10 dernières lignes\n\npwd &gt;&gt; b.txt\n\nS’il y avait un seul &gt; : le contenu du fichier b.txt serait écrasé\navec 2 &gt;&gt; : le résultat de la commande pwd est ajouté à la fin du fichier sans écraser ce qu’il y avait avant\ncat b.txt\n\non voit que le fichier b.txt contient :\n\nd’abord le résultat de la commande ls -l /c\npuis celui de la commande pwd\n\n\n\ncp b.txt b1.txt\n\nCrée une copie du fichier b.txt dans le fichier b1.txt\n\nmv b1.txt b2.txt\n\nmv = move pour renommer le fichier b1.txt en b2.txt\n\ngrep Program b.txt\n\ngrep = Global Regular Expression Print\nL’exemple ci-dessus recherche dans le fichier b.txt toutes les lignes contenant le mot Program et les affiche\nOu sinon comme le nom de la commande l’indique vous pouvez utiliser des expressions régulières si vous aimez ça\n\nls -l /c | grep Program\n\nle résultat est le même que la dernière commande\nle terminal exécute la première commande ls -l /c et stocke le résultat\nle pipe | signifie que ce résultat est transféré à la commande suivante pour application (il est possible d’en enchainer plusieurs)\nAinsi dans un second temps, le terminal exécute :\n\ngrep Program \"résultat première commande\"\n\nf(x) | g ➡️ traduit en langage matheux donne : g(f(x))"
+  },
+  {
+    "objectID": "docs/outils/Bash.html#résumé",
+    "href": "docs/outils/Bash.html#résumé",
+    "title": "Le Bash",
+    "section": "4 Résumé",
+    "text": "4 Résumé\nles commandes qu’il faut retenir et savoir utiliser\n\n\n\npwd\nPour savoir où on est\n\n\nls\nPour lister ce qu’il y a\n\n\ncd “dossier”\nPour se déplacer vers un sous-dossier\n\n\ncd ..\nPour aller dans le dossier parent\n\n\ncat “fichier”\nPour voir le contenu d’un fichier"
+  },
+  {
+    "objectID": "docs/outils/Bash.html#un-petit-exercice-dapplication",
+    "href": "docs/outils/Bash.html#un-petit-exercice-dapplication",
+    "title": "Le Bash",
+    "section": "5 Un petit exercice d’application",
+    "text": "5 Un petit exercice d’application\n\nAller dans le dossier /p/Cours/Informatique/bash-tp\nCréer un dossier exo1 et aller dans ce dossier (commandes : mkdir, cd)\nLister en lignes tous les fichiers et dossiers de /C/Program Files (ls -l)\nStocker le résultat de la commande précédente dans le dossier exo1, fichier liste_programmes.txt (utiliser &gt;)\nRenommer ce fichier en prog.txt (mv)\nAfficher le contenu de ce fichier (cat)\nCompléter la commande précédente pour avoir uniquement les lignes contenant la lettre m (| et grep)\nCompléter la commande précédente pour trier (commande sort)\nCompléter la commande précédente pour ne garder que les 3 premières lignes (head -3)\nCopier le fichier prog.txt dans /p/Cours/Informatique/bash-tp (commande cp et utiliser .. pour accéder au dossier parent)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ncd Cours/Informatique/bash-tp\nmkdir exo1\nls -l \"/C/Program Files\"\nls -l \"/C/Program Files\" &gt; liste_programmes.txt\nmv liste_programmes.txt prog.txt\ncat prog.txt\ncat prog.txt | grep m\ncat prog.txt | grep m | sort\ncat prog.txt | grep m | sort | head -3\ncp prog.txt .."
   },
   {
     "objectID": "docs/outils/LaTeX.html",
@@ -665,326 +882,137 @@
     "text": "Ressources\n\nhttps://latexref.xyz/fr/\nWiki LaTeX"
   },
   {
-    "objectID": "docs/outils/Bash.html",
-    "href": "docs/outils/Bash.html",
-    "title": "Le Bash",
+    "objectID": "docs/outils/VM.html",
+    "href": "docs/outils/VM.html",
+    "title": "VM",
     "section": "",
-    "text": "Il y a peu, dans un monde proche, très proche la ligne de commande était le seul moyen de transmettre ses instructions à un ordinateur. Pas de souris, pas de bureau avec des icones, simplement un clavier et un terminal.\nDans de nombreux domaines de l’informatique, les instructions se donnent toujours en lignes de commande. En effet, créer des interfaces graphiques est couteux et plus difficile à maintenir.\nNous allons ici présenter quelques commandes simples, connues et utilisées par tout informaticien. Chez windows il y a 2 terminaux disponibles :\nCependant, nous nous interesserons ici à la sphère Unix beaucoup plus populaire. Il y a également différents interpréteurs, le plus utilisé étant Bash. Les commandes présentées ici sont standardisées et compréhensibles par n’importe quel interpréteur Unix (et sont même parfois identiques chez Windows)\nEn tant que Data Scientist on ne vous demandera pas de savoir pirater la CIA avec une Casio Collège. Cependant, connaitre ces commandes est un must-have qui vous servira à coup sûr."
+    "text": "http://view.ensai.fr\ninstaller VMWare Horizon (Recommandé)\nOuvrir VMWare Horizon\n\nAller dans Paramètre &gt; Sécurité &gt; Désactiver la vérification de Certificat\nAjouter un serveur\n\nview.ensai.fr\nsaisir id et mot de passe"
   },
   {
-    "objectID": "docs/outils/Bash.html#apprendre-à-naviguer",
-    "href": "docs/outils/Bash.html#apprendre-à-naviguer",
-    "title": "Le Bash",
-    "section": "1 Apprendre à naviguer",
-    "text": "1 Apprendre à naviguer\nIl ne s’agit pas d’apprendre à faire un noeud de chaise, mais de savoir parcourir les dossiers et les fichiers de votre machine.\n\nOuvrir un terminal Bash\n\nPar exemple Git Bash\n\nEcire la commande pwd puis ENTREE\n\nun faux ami : cela ne signifie pas password mais print working directory\nnormalement le résultat de cette commande est /p/\nvous êtes donc à la racine du lecteur /p, votre espace personnel\n\nls pour lister\n\naffiche les dossiers et fichiers de l’endroit où vous êtes (en l’occurence /p)\nls -l pour afficher en colonne (plus joli), et affiche d’autres informations telles le nom du propriétaire du fichier, la date de modification, les droits en lecture, écriture…\n\nll : souvent cet alias à ls -l existe\ncela signifie que pour l’interpréteur ll ou ls -l, c’est pareil\nmais ll c’est plus rapide à taper\nalias : affiche la liste des alias\n\nLe -l est donc une option de la commande ls\nChaque commande a de nombreuses options, internet est votre ami si besoin\n\ncd 'Ma musique'\n\ncd = change directory\nle terminal affiche votre nouvel emplacement : /p/Ma musique\nlorsqu’il y a des espaces dans un nom de dossier, il faut ajouter des guillemets simples ’ ou doubles ” autour du nom du dossier\n\npwd\nls\ncd ..\n\npour revenir au dossier parent\n\ncd /c\n\npour changer de lecteur et aller sur le disque C:/\n\nls\ncd /p\n\nrevenir au lecteur P pour la suite\n\n\nAvec les 3 commandes décrites ci-dessus (pwd, ls et cd) vous pouvez naviguer sereinement dans les dossiers."
-  },
-  {
-    "objectID": "docs/outils/Bash.html#quelques-trucs-et-astuces",
-    "href": "docs/outils/Bash.html#quelques-trucs-et-astuces",
-    "title": "Le Bash",
-    "section": "2 Quelques trucs et astuces",
-    "text": "2 Quelques trucs et astuces\nVoici des raccourcis clavier bien utiles :\n\nFLECHE HAUT : historique des commandes lancées\n\nutile pour éviter de réécrire en entier une commande que l’on a lancée 2 min avant\nFLECHE BAS : également pour parcourir l’historique mais dans le sens inverse\n\nhistory : historique des commandes exécutées\nTAB : autocompletion\n\ncd Ma puis TAB\nle terminal va tenter de “compléter” la commande que vous êtes en train d’écrire\nComme il n’y a qu’un seul dossier commençant par “Ma”, en faisant TAB, le terminal va ajouter pour obtenir cd Ma\\ musique (= cd \"Ma musique\")\n\nCTRL + C : pour stopper la commande en cours si elle est trop longue\nCLIC Molette (ou parfois CLIC droit, ou encore SHIFT + INSER) : Coller"
-  },
-  {
-    "objectID": "docs/outils/Bash.html#manipuler-fichiers-et-dossiers",
-    "href": "docs/outils/Bash.html#manipuler-fichiers-et-dossiers",
-    "title": "Le Bash",
-    "section": "3 Manipuler fichiers et dossiers",
-    "text": "3 Manipuler fichiers et dossiers\n\ncd /p\nmkdir -p Cours/Informatique/bash-tp\n\nmkdir = make directory\nCette commande crée le dossier bash-tp\n-p permet de créer les dossiers parents (Cours et Informatique) s’ils n’existent pas\n\ncd Cours/Informatique/bash-tp\n\nPour aller dans le dossier que l’on vient de créer\n\ntouch a.txt\n\ncréer un fichier vide nommé a.txt\n\nPour écrire dans un fichier il y a de nombreuses possibilités, par exemple avec l’éditeur vi\n\nCependant l’utilisation de vi est loin d’être triviale\nSi vous trouvez que ce TP est déjà assez compliqué comme ça, ne touchez pas à vi\nSi vous êtes trop curieux, que vous avez ouvert le fichier a.txt avec vi et que maintenant vous êtes bloqué, tapez :q! pour sortir\n\nPour info d’autres éditeurs :\n\nNano moins connu mais qui a l’air plus intuitif : nano a.txt (CTRL + X pour quitter)\nSi vous avez lancé votre terminal sous Windows : notepad a.txt\n\nrm a.txt\n\nrm = remove pour supprimer le fichier\n⚠️ attention à bien utiliser cette commande, risque de perte de données\n\nls -l /c &gt; b.txt\n\nExécute la commande ls -l /c qui liste tous les fichiers et dossiers du lecteur /c\nPuis le &gt; indique que l’on sauvegarde le résultat dans le fichier b.txt créé s’il n’existe pas\n\ncat b.txt\n\naffiche le fichier\nhead b.txt : affiche uniquement les 10 premières lignes\ntail b.txt : affiche uniquement les 10 dernières lignes\n\npwd &gt;&gt; b.txt\n\nS’il y avait un seul &gt; : le contenu du fichier b.txt serait écrasé\navec 2 &gt;&gt; : le résultat de la commande pwd est ajouté à la fin du fichier sans écraser ce qu’il y avait avant\ncat b.txt\n\non voit que le fichier b.txt contient :\n\nd’abord le résultat de la commande ls -l /c\npuis celui de la commande pwd\n\n\n\ncp b.txt b1.txt\n\nCrée une copie du fichier b.txt dans le fichier b1.txt\n\nmv b1.txt b2.txt\n\nmv = move pour renommer le fichier b1.txt en b2.txt\n\ngrep Program b.txt\n\ngrep = Global Regular Expression Print\nL’exemple ci-dessus recherche dans le fichier b.txt toutes les lignes contenant le mot Program et les affiche\nOu sinon comme le nom de la commande l’indique vous pouvez utiliser des expressions régulières si vous aimez ça\n\nls -l /c | grep Program\n\nle résultat est le même que la dernière commande\nle terminal exécute la première commande ls -l /c et stocke le résultat\nle pipe | signifie que ce résultat est transféré à la commande suivante pour application (il est possible d’en enchainer plusieurs)\nAinsi dans un second temps, le terminal exécute :\n\ngrep Program \"résultat première commande\"\n\nf(x) | g ➡️ traduit en langage matheux donne : g(f(x))"
-  },
-  {
-    "objectID": "docs/outils/Bash.html#résumé",
-    "href": "docs/outils/Bash.html#résumé",
-    "title": "Le Bash",
-    "section": "4 Résumé",
-    "text": "4 Résumé\nles commandes qu’il faut retenir et savoir utiliser\n\n\n\npwd\nPour savoir où on est\n\n\nls\nPour lister ce qu’il y a\n\n\ncd “dossier”\nPour se déplacer vers un sous-dossier\n\n\ncd ..\nPour aller dans le dossier parent\n\n\ncat “fichier”\nPour voir le contenu d’un fichier"
-  },
-  {
-    "objectID": "docs/outils/Bash.html#un-petit-exercice-dapplication",
-    "href": "docs/outils/Bash.html#un-petit-exercice-dapplication",
-    "title": "Le Bash",
-    "section": "5 Un petit exercice d’application",
-    "text": "5 Un petit exercice d’application\n\nAller dans le dossier /p/Cours/Informatique/bash-tp\nCréer un dossier exo1 et aller dans ce dossier (commandes : mkdir, cd)\nLister en lignes tous les fichiers et dossiers de /C/Program Files (ls -l)\nStocker le résultat de la commande précédente dans le dossier exo1, fichier liste_programmes.txt (utiliser &gt;)\nRenommer ce fichier en prog.txt (mv)\nAfficher le contenu de ce fichier (cat)\nCompléter la commande précédente pour avoir uniquement les lignes contenant la lettre m (| et grep)\nCompléter la commande précédente pour trier (commande sort)\nCompléter la commande précédente pour ne garder que les 3 premières lignes (head -3)\nCopier le fichier prog.txt dans /p/Cours/Informatique/bash-tp (commande cp et utiliser .. pour accéder au dossier parent)\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\ncd Cours/Informatique/bash-tp\nmkdir exo1\nls -l \"/C/Program Files\"\nls -l \"/C/Program Files\" &gt; liste_programmes.txt\nmv liste_programmes.txt prog.txt\ncat prog.txt\ncat prog.txt | grep m\ncat prog.txt | grep m | sort\ncat prog.txt | grep m | sort | head -3\ncp prog.txt .."
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#introduction",
-    "href": "docs/POO/poo-cours-slides.html#introduction",
-    "title": "Programmation Orientée Objet",
-    "section": "Introduction",
-    "text": "Introduction\nLa POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire"
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
-    "href": "docs/POO/poo-cours-slides.html#principes-fondamentaux",
-    "title": "Programmation Orientée Objet",
-    "section": "Principes fondamentaux",
-    "text": "Principes fondamentaux"
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#classe-et-objet",
-    "href": "docs/POO/poo-cours-slides.html#classe-et-objet",
-    "title": "Programmation Orientée Objet",
-    "section": "Classe et Objet",
-    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement"
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#héritage-1",
-    "href": "docs/POO/poo-cours-slides.html#héritage-1",
-    "title": "Programmation Orientée Objet",
-    "section": "Héritage",
-    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code."
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#classe-abstraite",
-    "href": "docs/POO/poo-cours-slides.html#classe-abstraite",
-    "title": "Programmation Orientée Objet",
-    "section": "Classe Abstraite",
-    "text": "Classe Abstraite\n\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret."
-  },
-  {
-    "objectID": "docs/POO/poo-cours-slides.html#exercices",
-    "href": "docs/POO/poo-cours-slides.html#exercices",
-    "title": "Programmation Orientée Objet",
-    "section": "Exercices",
-    "text": "Exercices\nexercices\n\n\n\nHome — Introduction à la POO"
-  },
-  {
-    "objectID": "docs/POO/poo-cours.html",
-    "href": "docs/POO/poo-cours.html",
-    "title": "Programmation Orientée Objet",
+    "objectID": "docs/outils/VM.html#se-connecter-à-distance-la-vm-ensai",
+    "href": "docs/outils/VM.html#se-connecter-à-distance-la-vm-ensai",
+    "title": "VM",
     "section": "",
-    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
+    "text": "http://view.ensai.fr\ninstaller VMWare Horizon (Recommandé)\nOuvrir VMWare Horizon\n\nAller dans Paramètre &gt; Sécurité &gt; Désactiver la vérification de Certificat\nAjouter un serveur\n\nview.ensai.fr\nsaisir id et mot de passe"
   },
   {
-    "objectID": "docs/POO/poo-cours.html#introduction",
-    "href": "docs/POO/poo-cours.html#introduction",
-    "title": "Programmation Orientée Objet",
+    "objectID": "docs/outils/VM.html#ctrl-alt-f12",
+    "href": "docs/outils/VM.html#ctrl-alt-f12",
+    "title": "VM",
+    "section": "2 CTRL + ALT + F12",
+    "text": "2 CTRL + ALT + F12\n\npour bloquer votre session dès que vous quittez votre poste\nà votre retour, se reconnecter simplement\nla session reste active pendant 3h"
+  },
+  {
+    "objectID": "docs/outils/VM.html#lecteur-p",
+    "href": "docs/outils/VM.html#lecteur-p",
+    "title": "VM",
+    "section": "3 Lecteur P:",
+    "text": "3 Lecteur P:\n\nespace Personnel de 2Go\nEnregistrez vos fichiers dans ce lecteur\nfaite des sauvegardes de temps en temps sur clé USB"
+  },
+  {
+    "objectID": "docs/outils/VM.html#disque-plein",
+    "href": "docs/outils/VM.html#disque-plein",
+    "title": "VM",
+    "section": "4 Disque plein",
+    "text": "4 Disque plein\n\nSi vous recevez des mails Votre disque est plein à 100%\nSouvent cela est du à des fichiers temporaires qui se créent lorsque vous ouvrez VSCode, Teams…\nPaliatif :\n\nCliquer sur l’icone Windows Démarrer\n2-Accessoires\nlancer les scripts : Nettoyage-profil et Nettoyage-Python"
+  },
+  {
+    "objectID": "docs/outils/VM.html#impression",
+    "href": "docs/outils/VM.html#impression",
+    "title": "VM",
+    "section": "5 Impression",
+    "text": "5 Impression\n\nMode opératoire complet : ENT &gt; Assistance &gt; Foire aux questions &gt; Rechercher “imprimer”\nImprimez votre document sur PAPERCUT (imprimante ENSAI salle 113)\nRetenez votre code d’identification à 6 chiffres\nPapercut (ou dans ENT &gt; Impression &gt; Papercut)\nAllez en salle 113\nEntrez votre code d’identification sur l’imprimante\nSélectionnez et libérez vos documents en attente d’impression\nAutre possibilité pour s’identifier auprès de l’imprimante\nEn utilisant votre carte étudiant\n\nSuivre mode opératoire affiché en salle 113"
+  },
+  {
+    "objectID": "docs/outils/YAML.html",
+    "href": "docs/outils/YAML.html",
+    "title": "YAML 101",
     "section": "",
-    "text": "La POO est un paradigme de programmation qui organise le code autour d’objets plutôt que de fonctions et de procédures.\nCes objets représentent des entités du monde réel, ils ont :\n\ndes attributs : ce qu’ils sont\ndes méthodes : ce qu’ils peuvent faire\n\n\n\nLa POO permet :\n\nd’organiser le code de manière plus structurée\nde favoriser la réutilisation et la maintenance du code\nde modéliser les concepts du domaine d’application de manière naturelle\n\nElle est largement utilisée dans de nombreux langages de programmation, dont Python, pour développer des applications complexes et évolutives.\n\n\n\nModélisons par exemple une personne :\n\nAttributs : nom, prenom, age, compétences\nMéthodes : apprendre(), vieillir()\n\n\n\n\n\n\n\nLes méthodes peuvent agir sur les attributs\n\n\n\nLa méthode vieillir() va augmenter l’age de la personne de 1.\nLa méthode apprendre(“Python”), va ajouter “Python” à la liste des compétences."
+    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
   },
   {
-    "objectID": "docs/POO/poo-cours.html#principes-fondamentaux",
-    "href": "docs/POO/poo-cours.html#principes-fondamentaux",
-    "title": "Programmation Orientée Objet",
-    "section": "Principes fondamentaux",
-    "text": "Principes fondamentaux\n\nEncapsulation\nL’encapsulation consiste à regrouper les données et les méthodes qui les manipulent au sein d’un même objet.\nCela permet de :\n\ncacher les détails d’implémentation\nde fournir une interface cohérente pour interagir avec l’objet\n\n\n\nHéritage\nL’héritage permet de créer de nouvelles classes à partir de classes existantes, en héritant de leurs attributs et méthodes. Cela favorise :\n\nla réutilisation du code\nla création d’une hiérarchie de classes\n\n\nExemple : Carré hérite de Rectangle. Un carré est un rectangle avec des propriétés supplémentaires.\n\n\n\nPolymorphisme\nLe polymorphisme permet à des objets de classes différentes de répondre de manière différente à une même action.\nCela permet de manipuler des objets de différentes classes de manière uniforme, en utilisant des interfaces communes."
-  },
-  {
-    "objectID": "docs/POO/poo-cours.html#classe-et-objet",
-    "href": "docs/POO/poo-cours.html#classe-et-objet",
-    "title": "Programmation Orientée Objet",
-    "section": "Classe et Objet",
-    "text": "Classe et Objet\n\nUne classe est un modèle pour créer des objets\n\nElle définit les attributs et les méthodes qui seront présents dans chaque objet de cette classe\n\nLes objets sont des instances de classes\n\nIls possèdent des attributs et des méthodes qui définissent leur état et leur comportement\n\n\n\nExemple\n\nCréation de la classe Personne qui représente une personne\n\navec ses attributs et ses méthodes\n\nCréation de l’objet personne1 à partir de cette classe\n\nprénom = Sacha\nnom = Touille\nage = 20\ncompétences = []\n\n\n\n\nClasse Python\n\n\npersonne.py\n\nclass Personne:\n    def __init__(self, nom, prenom, age):\n        self.nom = nom\n        self.prenom = prenom\n        self.age = age\n        self.competences = []\n\n    def apprendre(self, nouvelle_competence):\n        \"\"\"Ajoute une nouvelle compétence à la liste des compétences.\"\"\"\n        self.competences.append(nouvelle_competence)\n\n    def vieillir(self):\n        \"\"\"Incrémente l'âge de la personne d'un an.\"\"\"\n        self.age += 1\n\n\n\nObjets Python\nÀ partir de la classe Personne, nous pouvons créer des objets.\n\n\nmain.py\n\nfrom personne import Personne\n\npersonne1 = Personne(\"Touille\", \"Sacha\", 20)\npersonne2 = Personne(\"Ginal\", \"Laury\", 30)\npersonne2.vieillir()\npersonne2.apprendre(\"SQL\")\n\n\n\nConstructeur\nLe code Personne(\"Touille\", \"Sacha\", 20) appelle la méthode __init__() de la classe Personne.\nCette méthode est appelée le constructeur.\nComme son nom l’indique, elle permet de « construire » des objets à partir de la classe.\n\n\nConventions Python\n\nUn nom de classe s’écrit en CamelCase (majuscule à chaque mot)\nUn fichier python (ou module) ne contient qu’une seule classe\nUn nom de module s’écrit en snake_case (mots en minuscules séparés par des _)\n\n\n\nvelo_electrique.py\n\nclass VeloElectrique:\n    ..."
-  },
-  {
-    "objectID": "docs/POO/poo-cours.html#héritage-1",
-    "href": "docs/POO/poo-cours.html#héritage-1",
-    "title": "Programmation Orientée Objet",
-    "section": "Héritage",
-    "text": "Héritage\nUn des trois piliers de la POO est l’héritage.\nUne classe enfant peut utiliser tous les attributs et méthodes de sa classe mère.\nCe principe d’héritage permet également de mettre en commun des attributs et méthodes pour éviter des duplications de code.\n\nExemple d’Héritage\nSupposons que dans notre code, nous voulons gérer des vélos et de trottinettes.\nL’idée naïve est de créer une classe pour chacun.\n\n\nExemple d’Héritage\n\nVeloTrottinette\n\n\n\n\nvelo.py\n\nclass Velo:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.nb_pignons = nb_pignons\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse du vélo.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse du vélo.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\ntrottinette.py\n\nclass Trottinette:\n    def __init__(self, couleur, nb_pignons):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\n\nExemple d’Héritage\nEn réfléchissant un peu, nous nous disons que ces 2 classes ont des attributs et méthodes en commun :\n\ncouleur\nvitesse\naccelerer()\nralentir()\n\nUne idée est de regrouper ces caractéristiques communes dans une classe DeuxRoues. Puis de faire hériter Vélo et Trottinette de DeuxRoues\n\n\nExemple d’Héritage\n\nDeux RouesVeloTrottinette\n\n\n\n\ndeux_roues.py\n\nclass DeuxRoues:\n    def __init__(self, couleur):\n        self.couleur = couleur\n        self.vitesse = 0  # La vitesse initiale est 0\n\n    def accelerer(self, increment):\n        \"\"\"Augmente la vitesse.\"\"\"\n        self.vitesse += increment\n\n    def ralentir(self, decrement):\n        \"\"\"Diminue la vitesse.\"\"\"\n        self.vitesse -= decrement\n        if self.vitesse &lt; 0:\n            self.vitesse = 0  # La vitesse ne peut pas être négative\n\n\n\n\n\nvelo.py\n\nfrom deux_roues import DeuxRoues\n\nclass Velo(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super().__init__(couleur)  # Appel du constructeur de la classe mère\n        self.nb_pignons = nb_pignons\n\n\n\n\n\ntrottinette.py\n\nfrom deux_roues import DeuxRoues\n\nclass Trottinette(DeuxRoues):\n    def __init__(self, couleur, nb_pignons):\n        super().__init__(couleur)   # Appel du constructeur de la classe mère\n\n\n\n\n\n\nSelf et Super\n\nself est une référence à l’instance actuelle de la classe\n\nIl est utilisé pour accéder aux attributs et aux méthodes d’une instance spécifique de la classe\n\nsuper() est une fonction intégrée qui référence la classe mère\n\nIl est utilisé pour appeler des méthodes de la classe parent dans une classe enfant"
-  },
-  {
-    "objectID": "docs/POO/poo-cours.html#classe-abstraite",
-    "href": "docs/POO/poo-cours.html#classe-abstraite",
-    "title": "Programmation Orientée Objet",
-    "section": "Classe Abstraite",
-    "text": "Classe Abstraite\n\n\n\n\n\n\nDessine-moi un deux roues\n\n\n\n\nEst-ce que cela a du sens de créer un objet à partir de la classe DeuxRoues ?\n\nSi l’on vous demande de dessiner un deux-roues, vous ne savez pas vraiment comment faire, vous manquez d’informations.\nAlors que dessiner un vélo ou une trottinette, c’est déjà plus concret.\n\n\n\nClasse Abstraite - DeuxRoues\nCertaines classes n’ont pas vocation à être instanciées. Par exemple, nous n’allons pas créer d’objets de la classe DeuxRoues.\nNous allons directement créer des Velo et des Trottinettes.\nNous pouvons donc définir la classe DeuxRoues comme abstraite.\n\non ne peut pas créer d’objets à partir de cette classe\n\n\n\nClasse Abstraite - DeuxRoues\nLa principale utilité des classes abstraites est de définir un contrat pour les classes filles.\nElles fournissent une structure et une organisation cohérentes pour les classes qui partagent des caractéristiques communes, tout en permettant une flexibilité pour les implémentations spécifiques à chaque classe fille.\n\n\nClasse Abstraite - Python\n\n\n\n\n\n\nTip\n\n\n\nEn Python, la notion de classe abstraite est implémentée grâce au module abc (Abstract Base Classes).\nCe module fournit le décorateur @abstractmethod qui permet de déclarer une méthode comme abstraite dans une classe abstraite.\nUne classe abstraite est définie en héritant de la classe ABC du module abc.\n\n\n\n\nClasse Abstraite - Remarque\n\n\n\n\n\n\nWarning\n\n\n\nClasse mère ne veut pas dire forcément classe abstraite.\nPar exemple :\n\nConsidérons par exemple une classe VeloElectrique qui hérite de la classe Velo\nCela parait cohérent car un vélo électrique est un vélo\n\ndonc il hérite de tous ses attributs et méthodes\net il a des caractéristiques supplémentaires (batterie, autonomie, puissance…)\n\nOr ici la classe Velo n’a pas vocation à être abstraite car il n’est pas absurde de créer un objet vélo"
-  },
-  {
-    "objectID": "docs/POO/poo-cours.html#exercices",
-    "href": "docs/POO/poo-cours.html#exercices",
-    "title": "Programmation Orientée Objet",
-    "section": "Exercices",
-    "text": "Exercices\nexercices"
-  },
-  {
-    "objectID": "docs/outils/DBeaver.html",
-    "href": "docs/outils/DBeaver.html",
-    "title": "DBeaver",
+    "objectID": "docs/outils/YAML.html#quest-ce-que-yaml",
+    "href": "docs/outils/YAML.html#quest-ce-que-yaml",
+    "title": "YAML 101",
     "section": "",
-    "text": "Note\n\n\n\nDBeaver est un logiciel qui permet de se connecter à une base de données. Il offre une interface graphique conviviale pour se connecter, gérer et requêter différentes bases de données, notamment MySQL, PostgreSQL, Oracle, SQLite, et bien d’autres encore.\nOuvrez le logiciel DBeaver installé sur votre VM, puis suivez les indications ci-dessous."
+    "text": "YAML (YAML Ain’t Markup Language) est un format de sérialisation de données lisible par l’homme, conçu pour être facile à lire et à écrire.\nIl est souvent utilisé pour la configuration des fichiers, le stockage de données, et les échanges de données entre langages de programmation."
   },
   {
-    "objectID": "docs/outils/DBeaver.html#configuration",
-    "href": "docs/outils/DBeaver.html#configuration",
-    "title": "DBeaver",
-    "section": "1 Configuration",
-    "text": "1 Configuration\n\nMenu Fenêtre &gt; Preference\n\nFormatage SQL\n\nCasse des mots clefs : UPPER\nInsert spaces for tabs\nAppliquer\n\nMetadonnées\n\nDécocher Ouvrir une connexion séparée pour la lecture des métadonnées\n\nEditeur SQL\n\nDécocher Ouvrir une connexion séparée pour chaque éditeur\n\n\n\n\n1.1 Optionnel\n\nTemplates\n\nEnlever les modèles existants\nImporter le fichier templates_dbeaver.xml\nLes templates permettent d’écrire plus rapidement des requêtes"
+    "objectID": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
+    "href": "docs/outils/YAML.html#pourquoi-utiliser-yaml",
+    "title": "YAML 101",
+    "section": "2 Pourquoi utiliser YAML ?",
+    "text": "2 Pourquoi utiliser YAML ?\n\nLisibilité\n\nYAML est conçu pour être lisible par l’homme. La syntaxe est simple et directe, sans beaucoup de ponctuations.\nLes indentations permettent une structure claire et hiérarchisée, semblable à celle des langages de programmation comme Python.\n\nFlexibilité\n\nYAML supporte des structures de données complexes comme les listes imbriquées et les dictionnaires.\nIl permet des alias et des ancres pour éviter la duplication de données, ce qui peut être utile pour des fichiers de configuration réutilisables.\n\nCompatibilité avec les autres formats\n\nYAML peut facilement être converti en JSON, et vice versa\n\nUsage dans DevOps\n\nYAML est largement utilisé dans les outils de gestion de configuration, les pipelines CI/CD, et les orchestrateurs de conteneurs"
   },
   {
-    "objectID": "docs/outils/DBeaver.html#créer-la-connexion",
-    "href": "docs/outils/DBeaver.html#créer-la-connexion",
-    "title": "DBeaver",
-    "section": "2 Créer la connexion",
-    "text": "2 Créer la connexion\nPour créer une connexion vers la base de données ENSAI sur la VM :\n\nCliquer sur l’icone Nouvelle connexion en haut à gauche sous fichier\nSélectionner PostgreSQL puis suivant\n\nHost : sgbd-eleves.domensai.ecole\nPort : 5432\nDatabase : idxxxx\nNom d’utilisateur : idxxxx\nMot de passe : idxxxx\nTest de connexion\nAcceptez les mises à jour des pilotes\nTerminer"
+    "objectID": "docs/outils/YAML.html#syntaxe",
+    "href": "docs/outils/YAML.html#syntaxe",
+    "title": "YAML 101",
+    "section": "3 Syntaxe",
+    "text": "3 Syntaxe\nVoici quelques exemples de syntaxe avec son équivalent json\n\n3.1 Attributs\n\n\n\n\nyaml\n\nperson:\n  name: Alice             # str\n  city: \"Amiens\"          # str\n  age: 30                 # int\n  height: 1.75            # float\n  student: false          # bool\n  birth_date: 1994-05-15  # date\n\n\n\n\njson\n\n{\n  \"person\": {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"height\": 1.75,\n    \"student\": false,\n    \"birth_date\": \"1994-05-15\"\n  }\n}\n\n\n\n\n\n3.2 Liste de valeurs\nPlusieurs possibilités pour déclarer des listes\n\n\n\n\nyaml\n\nhobbies: \n  - chess\n  - hiking\n  - landart\n\n--- # ou\n\nhobbies: [\"chess\", \"hiking\", \"landart\"]\n\n\n\n\njson\n\n{\n  \"hobbies\": [\n    \"chess\",\n    \"hiking\",\n    \"landart\"\n  ]\n}\n\n\n\nAutre exemple\n\n\n\n\nyaml\n\nservers:\n  - name: server1\n    ip: 192.168.1.1\n  - name: server2\n    ip: 192.168.1.2\n  - {name: \"server3\", ip: 192.168.1.3}\n\n\n\n\njson\n\n{\n  \"servers\": [\n    {\"name\": \"server1\", \"ip\": \"192.168.1.1\"},\n    {\"name\": \"server2\", \"ip\": \"192.168.1.2\"},\n    {\"name\": \"server3\", \"ip\": \"192.168.1.3\"}\n  ]\n}\n\n\n\n\n\n3.3 Ancre et alias\n\n\n\n\nyaml\n\nparent: &pere Bob\nchild:\n  - name: Eva\n    papa: *pere\n  - name: Laury\n    papa: *pere\n\n\n\n\njson\n\n{\n  \"parent\": \"Bob\",\n  \"child\": [\n    {\"name\": \"Eva\", \"parent\": \"Bob\"},\n    {\"name\": \"Laury\", \"parent\": \"Bob\"}\n  ]\n}\n\n\n\n\n\n3.4 Héritage\n\n\n\n\nyaml\n\ndefault: &default_settings\n  timeout: 30\n  retries: 5\n\nserver1:\n  &lt;&lt;: *default_settings\n  name: server1\n\nserver2:\n  &lt;&lt;: *default_settings\n  name: server2\n  retries: 3\n\n\n\n\njson\n\n{\n  \"default\": {\n    \"timeout\": 30,\n    \"retries\": 5\n  },\n  \"server1\": {\n    \"timeout\": 30,\n    \"retries\": 5,\n    \"name\": \"server1\"\n  },\n  \"server2\": {\n    \"timeout\": 30,\n    \"retries\": 3,\n    \"name\": \"server2\"\n  }\n}\n\n\n\n\n\n3.5 Long texte\n\n\nyaml\n\n\n# En conservant les retours à la ligne\nfable: |\n  Maître Corbeau, sur un arbre perché,\n  Tenait en son bec un fromage.\n  Maître Renard, par l'odeur alléché,\n  Lui tint à peu près ce langage :\n  \"Hé ! bonjour, Monsieur du Corbeau.\n  Que vous êtes joli ! que vous me semblez beau !\n  Sans mentir, si votre ramage\n  Se rapporte à votre plumage,\n  Vous êtes le Phénix des hôtes de ces bois.\"\n  À ces mots le Corbeau ne se sent pas de joie ;\n  Et pour montrer sa belle voix,\n  Il ouvre un large bec, laisse tomber sa proie.\n  Le Renard s'en saisit, et dit : \"Mon bon Monsieur,\n  Apprenez que tout flatteur\n  Vit aux dépens de celui qui l'écoute :\n  Cette leçon vaut bien un fromage, sans doute.\"\n  Le Corbeau honteux et confus\n  Jura, mais un peu tard, qu'on ne l'y prendrait plus.\n\n# En supprimant les retours à la ligne\nchoixpeau: &gt;\n  Les nouveaux élèves de Poudlard sont répartis en quatre maisons : Gryffondor\n  pour les courageux, Poufsouffle pour les travailleurs, Serdaigle pour les\n  intelligents, Serpentard pour les ambitieux. Le Choixpeau magique, qui \n  s'occupe de la répartition, hésite sur la meilleure maison pour Harry. \n  Comme Harry a entendu dire que les mages noirs venaient tous de Serpentard,\n  il demande à aller ailleurs, et le Choixpeau l'envoie à Gryffondor, avec \n  Ron et Hermione. Albus Dumbledore, le directeur, prévient les élèves qu’ils\n  ne doivent pas aller dans la Forêt interdite, ni dans le couloir du deuxième\n  étage.\n\na"
   },
   {
-    "objectID": "docs/outils/DBeaver.html#exécuter-du-sql",
-    "href": "docs/outils/DBeaver.html#exécuter-du-sql",
-    "title": "DBeaver",
-    "section": "3 Exécuter du SQL",
-    "text": "3 Exécuter du SQL\n\nCliquer sur l’icone SQL\nExécuter la requête courante (où est le curseur de la souris):\n\nCTRL + ENTREE\nle petit triangle orange\n\nExécuter toutes les requêtes\n\nle triangle orange à l’intérieur d’un parchemin"
-  },
-  {
-    "objectID": "docs/outils/DBeaver.html#interface-pgadmin",
-    "href": "docs/outils/DBeaver.html#interface-pgadmin",
-    "title": "DBeaver",
-    "section": "4 Interface pgAdmin",
-    "text": "4 Interface pgAdmin\nEn cas de soucis avec DBeaver, une autre solution pour éxécuter des requêtes SQL est de passer par l’interface pgAdmin\n\nUtilisateur : idxxxx\nMot de passe : idxxxx\nUne fois connecté, cliquez sur idxxxx dans le menu de gauche\ncliquez sur SQL pour exécuter des requêtes"
-  },
-  {
-    "objectID": "docs/outils/Markdown.html",
-    "href": "docs/outils/Markdown.html",
-    "title": "Markdown",
+    "objectID": "docs/python/python-notebooks.html",
+    "href": "docs/python/python-notebooks.html",
+    "title": "Notebooks Python",
     "section": "",
-    "text": "Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l’écriture de texte destiné au web en permettant aux utilisateurs d’écrire en utilisant un format texte brut facile à lire et à écrire."
+    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
   },
   {
-    "objectID": "docs/outils/Markdown.html#quest-ce-que-markdown",
-    "href": "docs/outils/Markdown.html#quest-ce-que-markdown",
-    "title": "Markdown",
+    "objectID": "docs/python/python-notebooks.html#les-notebooks",
+    "href": "docs/python/python-notebooks.html#les-notebooks",
+    "title": "Notebooks Python",
     "section": "",
-    "text": "Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l’écriture de texte destiné au web en permettant aux utilisateurs d’écrire en utilisant un format texte brut facile à lire et à écrire."
+    "text": "Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :\n\nLes types et variables\nLes listes et dictionnaires\nLes boucles\nLes fonctions\nIntroduction à la Programmation Orientée Objet\n\nPour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :\n\nFormation Initiation à Python du SSP Cloud INSEE\nCours de Python dispensés à l’ENSAE par Lino Galiana et Xavier Dupré\nCours de Python de l’Université Paris Cité"
   },
   {
-    "objectID": "docs/outils/Markdown.html#pourquoi-utiliser-markdown",
-    "href": "docs/outils/Markdown.html#pourquoi-utiliser-markdown",
-    "title": "Markdown",
-    "section": "2 Pourquoi utiliser Markdown ?",
-    "text": "2 Pourquoi utiliser Markdown ?\nMarkdown a été conçu comme une alternative intuitive aux balisages plus complexes du HTML. Il s’est rapidement popularisé parmi les développeurs, les blogueurs et les rédacteurs pour sa simplicité et sa lisibilité.\n\n✅ Simplicité : Facile à apprendre et à utiliser, même si vous n’êtes pas familiers avec HTML\n✅ Lisibilité : Le texte brut en Markdown reste lisible même sans être converti en HTML\n✅ Portabilité : Les fichiers Markdown peuvent être convertis facilement en HTML, PDF…\n✅ Popularité : Supporté par de nombreuses plates-formes et outils de rédaction\n❌ Limitations : Markdown est conçu pour être simple, donc il ne supporte pas toutes les fonctionnalités avancées de mise en page"
+    "objectID": "docs/python/python-notebooks.html#utiliser-un-notebook",
+    "href": "docs/python/python-notebooks.html#utiliser-un-notebook",
+    "title": "Notebooks Python",
+    "section": "2 Utiliser un notebook",
+    "text": "2 Utiliser un notebook\n\n\n\n\n\n\nMode opératoire\n\n\n\n\nCommencez par vous rendre sur la page de l’un des 5 notebooks cités ci-dessus\nTéléchargez sur votre machine le fichier .ipynb\nConnectez-vous à l’un des services proposés ci-dessous\nUploadez sur ce service le fichier .ipynb\n\n\n\nVous avez plusieurs possibilités pour lancer les notebooks :\n\nUn cluster Jupyter de l’ENSAI ➡️ si vous avez vos idep et mot de passe\nle datalab SSPCloud ➡️ vous pouvez créer un compte avec votre mail ENSAI\n\nSi vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :\n\nJupyter Lab online\nKaggle notebooks\nGoogle Colab\n\n\nCluster ENSAISSPCloudJupyter Lab onlineColab et Kaggle\n\n\n\nConnectez-vous au cluster Jupyter avec id et mot de passe\nImportez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche ⬆️\nDans la colonne de gauche :\n\nl’icone en forme de dossier permet d’explorer les fichiers\nl’icone en forme de liste permet d’afficher la table des matières\n\nLe champ Code permet d’indiquer si la cellule attend du code python ou du texte (Markdown)\n\n\n\n\n\nConnectez-vous au SSPCloud\nAllez dans le menu Catalogue de services\nLancer Jupyter-python\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nAllez sur la page Jupyter Lab online\nSuivez les mêmes instructions que pour le Cluster ENSAI\n\n\n\n\nConnectez-vous au service\nImportez le notebook (Fichier &gt; Importer le notebook)\n\n\n\n\n\n2.1 Types de cellules\nUn notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton + dans la barre d’outils.\nIl existe deux types de cellules principaux :\n\nles cellules de code (où vous écrivez et exécutez du code Python)\nles cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)\n\n\n\n\n\n\n\nLe langage Markdown\n\n\n\n\n\nC’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).\nDe très nombreuses ressources sont disponibles sur internet, par exemple\nQuelques exemples :\n\n\n\nCode\nMise en forme\n\n\n\n\n**texte en gras**\ntexte en gras\n\n\n*texte en italique*\ntexte en italique\n\n\n# Titre de niveau 1\n\n\n\n## Titre de niveau 2\n\n\n\n- Élement de liste à puces\n- Élement de liste à puces\n\n\n\n\n\n\nLe type de cellule souhaité est modifiable dans la barre d’outils."
   },
   {
-    "objectID": "docs/outils/Markdown.html#écrire-du-markdown",
-    "href": "docs/outils/Markdown.html#écrire-du-markdown",
-    "title": "Markdown",
-    "section": "3 Écrire du markdown",
-    "text": "3 Écrire du markdown\nLes fichiers markdown sont des fichiers texte qui ont pour extension .md.\nIl existe de très nombreux éditeurs de Markdown :\n\nen ligne, par exemple HackMd\nà installer sur sa machine, par exemple dans Visual Studio Code\n\nLes éditeurs présentent généralement deux sections cote à cote :\n\nune partie édition où l’on écrit le code\nune partie vue où l’on voit le résultat\n\n\n3.1 Exemples\nDe très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple https://commonmark.org/help/\nQuelques exemples de mise en forme :\n\n\n\nCode Markdown\nRésultat\n\n\n\n\n**texte en gras**\ntexte en gras\n\n\n*texte en italique*\ntexte en italique\n\n\n[lien](https://example.com)\nlien\n\n\n![texte alternatif](image.jpg)\n\n\n\n`code en ligne`\ncode en ligne\n\n\n# Titre de niveau 1\n\n\n\n## Titre de niveau 2\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nCette page est elle-même écrite en Markdown ! (avec une surcouche)\nVous pouvez consulter le code en cliquant sur le bouton &lt;/&gt; Code en haut à droite.\n\n\nUn large choix d’emoji est également disponible en Markdown 😎"
+    "objectID": "docs/python/python-notebooks.html#commandes-utiles",
+    "href": "docs/python/python-notebooks.html#commandes-utiles",
+    "title": "Notebooks Python",
+    "section": "3 Commandes utiles",
+    "text": "3 Commandes utiles\n\n\n\n\n\n\n\nCommande\nDescription\n\n\n\n\nSHIFT + ENTER\nExécuter une cellule et passer à la suivante.\n\n\nCTRL + ENTER\nExécuter une cellule sans passer à la suivante.\n\n\nESC\nPasser en mode commande (les bordures de cellule deviennent bleues).\n\n\nENTER\nPasser en mode édition (vous pouvez modifier le contenu de la cellule).\n\n\nA\nInsérer une cellule au-dessus de la cellule courante.\n\n\nB\nInsérer une cellule en dessous de la cellule courante.\n\n\nD + D\nSupprimer une cellule."
   },
   {
-    "objectID": "docs/outils/Markdown.html#utilisation-dans-vscode",
-    "href": "docs/outils/Markdown.html#utilisation-dans-vscode",
-    "title": "Markdown",
-    "section": "4 Utilisation dans VScode",
-    "text": "4 Utilisation dans VScode\n\nCTRL + K puis V : pour avoir cote à cote les modes édition et vue\nExtensions utiles (à aller chercher dans le marketplace)\n\nmarkdownlint\nMarkdown Emoji\nMarkdown Checkboxes\nMarkdown Table\nMarkdown Preview Mermaid Support"
+    "objectID": "docs/python/python-notebooks.html#ressources-utiles",
+    "href": "docs/python/python-notebooks.html#ressources-utiles",
+    "title": "Notebooks Python",
+    "section": "4 Ressources utiles",
+    "text": "4 Ressources utiles\nVous trouverez plus d’informations sur les notebooks, sur le site de la formation INSEE d’initiation à Python."
   },
   {
-    "objectID": "docs/outils/VSCode.html",
-    "href": "docs/outils/VSCode.html",
-    "title": "Visual Studio Code",
+    "objectID": "docs/annales/examen-2024-correction.html",
+    "href": "docs/annales/examen-2024-correction.html",
+    "title": "Examen 2024 - correction",
     "section": "",
-    "text": "Visual Studio Code (VS Code) est un éditeur de code source développé par Microsoft, gratuit et open-source, conçu pour être léger et performant. Il est compatible avec de très nombreux langages de programmation : Python, R, Java, JavaScript, C++…\n\n\n\nAuto-complétion : Aide à écrire du code plus rapidement et avec moins d’erreurs\nColoration syntaxique : Améliore la lisibilité du code\nDébogage intégré : Facilite l’identification et la correction des erreurs\nExtensibilité : grâce à une vaste bibliothèque d’extensions disponibles sur le marketplace\nConfiguration et outils : linters, formateurs de code…\n\nLe but de cette fiche est de :\n\nvous permettre d’exécuter un programme python avec VS Code\ndonner quelques astuces pour faciliter son utilisation"
+    "text": "Créez une collection adaptée qui permet de stocker les clés et valeurs suivantes :\n\nnumero : 23\nvoie : “Boulevard Gambetta”\ncode_postal : “02300”\nville : “Chauny”\nzone_inondable : False\n\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nPour stocker ces informations en Python, la structure de données la plus adaptée est un dictionnaire :\nadresse = {\n    \"numero\": 23,\n    \"voie\": \"Boulevard Gambetta\",\n    \"code_postal\": \"02300\",\n    \"ville\": \"Chauny\",\n    \"zone_inondable\": False\n}\n\n\n\n\n\n\nQue va afficher le code ci-dessous ?\nliste = [0, 1, 2, 3, 4, 5]\nliste.append(12)\nprint(liste[-1])\nliste2 = liste\nliste2.pop()\nprint(len(liste))\n\n\n\n\n\n\nRéponse\n\n\n\n\n\n12  # cette instruction affiche le dernier élément de la liste\n6   # `liste2` et `liste` pointent vers le même objet\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée une chaîne de caractères et retourne le nombre de voyelles contenues dans cette chaîne de caractères.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef compter_voyelles(chaine) -&gt; int:\n    voyelles = \"aeiouAEIOU\"\n    compteur = 0\n    for caractere in chaine:\n        if caractere in voyelles:\n            compteur += 1\n    return compteur\n\n# Exemple d'utilisation\nres = compter_voyelles(\"Bonjour tout le monde\")\nprint(res)\n\n\n\n\n\n\nRecopiez et complétez ce code pour n’afficher que les valeurs de i paires et sortir de la boucle quand i est égal à 0. Que va afficher votre code ?\ni = 10\nwhile True:\n    i = i - 1\n    # Compléter ici    \n    print(i, end=\" \")    \n    # Compléter ici    \nprint(\"\\nboom\")\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ni = 10\nwhile True:\n    i = i - 1\n    if i % 2 != 0:  # Si i n'est pas pair, passer à l'itération suivante\n        continue\n    print(i, end=\" \")\n    if i == 0:      # Si i est égal à 0, sortir de la boucle\n        break\nprint(\"\\nboom\")\nCe code va afficher :\n8 6 4 2 0 \nboom\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée un entier n et affiche les n premières valeurs de la suite de Fibonacci.\nRappel :\n\n\\(F_0 = 0\\)\n\\(F_1 = 1\\)\n\\(\\forall n \\geq 2 \\, F_n = F_{n-1} + F_{n-2}\\)\n\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef fibonacci(n) -&gt; None:\n    if n &lt;= 0 or not isinstance(n, int):\n        raise ValueError(\"Veuillez entrer un entier strictement positif.\")\n\n    Fn_2, Fn_1 = 0, 1\n    \n    # Affiche le 1er terme\n    print(Fn_2, end=\" \")\n\n    # Si n vaut au moins 2, affiche le 2e terme\n    if n &gt;= 2:\n        print(Fn_1, end=\" \")\n\n    # Calcule et affiche les termes suivants\n    for _ in range(2, n):\n        Fn = Fn_2 + Fn_1\n        print(Fn, end=\" \")\n        Fn_2, Fn_1 = Fn_1, Fn\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée une température en Celsius et retourne celle-ci convertie en Fahrenheit (\\(F = \\frac{9}{5} \\times C + 32\\)).\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef celsius_vers_fahrenheit(celsius) -&gt; float:\n    fahrenheit = (9 / 5) * celsius + 32\n    return fahrenheit"
   },
   {
-    "objectID": "docs/outils/VSCode.html#visual-studio-code",
-    "href": "docs/outils/VSCode.html#visual-studio-code",
-    "title": "Visual Studio Code",
+    "objectID": "docs/annales/examen-2024-correction.html#python",
+    "href": "docs/annales/examen-2024-correction.html#python",
+    "title": "Examen 2024 - correction",
     "section": "",
-    "text": "Visual Studio Code (VS Code) est un éditeur de code source développé par Microsoft, gratuit et open-source, conçu pour être léger et performant. Il est compatible avec de très nombreux langages de programmation : Python, R, Java, JavaScript, C++…\n\n\n\nAuto-complétion : Aide à écrire du code plus rapidement et avec moins d’erreurs\nColoration syntaxique : Améliore la lisibilité du code\nDébogage intégré : Facilite l’identification et la correction des erreurs\nExtensibilité : grâce à une vaste bibliothèque d’extensions disponibles sur le marketplace\nConfiguration et outils : linters, formateurs de code…\n\nLe but de cette fiche est de :\n\nvous permettre d’exécuter un programme python avec VS Code\ndonner quelques astuces pour faciliter son utilisation"
+    "text": "Créez une collection adaptée qui permet de stocker les clés et valeurs suivantes :\n\nnumero : 23\nvoie : “Boulevard Gambetta”\ncode_postal : “02300”\nville : “Chauny”\nzone_inondable : False\n\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nPour stocker ces informations en Python, la structure de données la plus adaptée est un dictionnaire :\nadresse = {\n    \"numero\": 23,\n    \"voie\": \"Boulevard Gambetta\",\n    \"code_postal\": \"02300\",\n    \"ville\": \"Chauny\",\n    \"zone_inondable\": False\n}\n\n\n\n\n\n\nQue va afficher le code ci-dessous ?\nliste = [0, 1, 2, 3, 4, 5]\nliste.append(12)\nprint(liste[-1])\nliste2 = liste\nliste2.pop()\nprint(len(liste))\n\n\n\n\n\n\nRéponse\n\n\n\n\n\n12  # cette instruction affiche le dernier élément de la liste\n6   # `liste2` et `liste` pointent vers le même objet\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée une chaîne de caractères et retourne le nombre de voyelles contenues dans cette chaîne de caractères.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef compter_voyelles(chaine) -&gt; int:\n    voyelles = \"aeiouAEIOU\"\n    compteur = 0\n    for caractere in chaine:\n        if caractere in voyelles:\n            compteur += 1\n    return compteur\n\n# Exemple d'utilisation\nres = compter_voyelles(\"Bonjour tout le monde\")\nprint(res)\n\n\n\n\n\n\nRecopiez et complétez ce code pour n’afficher que les valeurs de i paires et sortir de la boucle quand i est égal à 0. Que va afficher votre code ?\ni = 10\nwhile True:\n    i = i - 1\n    # Compléter ici    \n    print(i, end=\" \")    \n    # Compléter ici    \nprint(\"\\nboom\")\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ni = 10\nwhile True:\n    i = i - 1\n    if i % 2 != 0:  # Si i n'est pas pair, passer à l'itération suivante\n        continue\n    print(i, end=\" \")\n    if i == 0:      # Si i est égal à 0, sortir de la boucle\n        break\nprint(\"\\nboom\")\nCe code va afficher :\n8 6 4 2 0 \nboom\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée un entier n et affiche les n premières valeurs de la suite de Fibonacci.\nRappel :\n\n\\(F_0 = 0\\)\n\\(F_1 = 1\\)\n\\(\\forall n \\geq 2 \\, F_n = F_{n-1} + F_{n-2}\\)\n\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef fibonacci(n) -&gt; None:\n    if n &lt;= 0 or not isinstance(n, int):\n        raise ValueError(\"Veuillez entrer un entier strictement positif.\")\n\n    Fn_2, Fn_1 = 0, 1\n    \n    # Affiche le 1er terme\n    print(Fn_2, end=\" \")\n\n    # Si n vaut au moins 2, affiche le 2e terme\n    if n &gt;= 2:\n        print(Fn_1, end=\" \")\n\n    # Calcule et affiche les termes suivants\n    for _ in range(2, n):\n        Fn = Fn_2 + Fn_1\n        print(Fn, end=\" \")\n        Fn_2, Fn_1 = Fn_1, Fn\n\n\n\n\n\n\nÉcrivez le code d’une fonction qui prend en entrée une température en Celsius et retourne celle-ci convertie en Fahrenheit (\\(F = \\frac{9}{5} \\times C + 32\\)).\n\n\n\n\n\n\nRéponse\n\n\n\n\n\ndef celsius_vers_fahrenheit(celsius) -&gt; float:\n    fahrenheit = (9 / 5) * celsius + 32\n    return fahrenheit"
   },
   {
-    "objectID": "docs/outils/VSCode.html#paramétrage",
-    "href": "docs/outils/VSCode.html#paramétrage",
-    "title": "Visual Studio Code",
-    "section": "2 Paramétrage",
-    "text": "2 Paramétrage\n\n2.1 Extensions\nDe très nombreuses extensions permettent d’améliorer votre utilisation de VS Code. Sur la version installée sur la VM ENSAI, vous pouvez trouver :\n\nBlack Formatter\nFlake8\nisort\nPython Test Explorer\n…\n❌ Désactiver l’extension Ruff (elle fait doublon avec Flake8)\n\nAutres extensions interessantes :\n\nBetter Comments\n\n\n\n2.2 Formatage et Linting\n\nUn formateur est un outil qui va mettre en forme votre code pour que ce soit joli et lisible\nun linter est un outil qui va vous avertir si votre code n’est pas joli\n\nex : ligne trop longue, espace manquant ou en trop…\n\n\nLes extensions Black Formatter et Flake8 sont respectivement un formateur et un linter\n\n\n2.3 Settings\nVous pouvez préciser le paramètrage à plusieurs niveaux :\n\nau niveau utilisateur (User)\nau niveau d’un dépôt (Workspace)\n\nLe fichier .vscode/settings.json contient du paramètrage qui va s’appliquer à tous les fichiers du dépôt.\nCe fichier contient par exemple les propriétés ci-dessous :\n\n\n.vscode/settings.json\n\n    \"flake8.args\": [\n        \"--max-line-length=100\"\n    ],\n    \"[python]\": {\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\",\n        \"editor.formatOnSave\": true,\n        \"editor.insertSpaces\": true,\n        \"editor.tabSize\": 4\n    },"
+    "objectID": "docs/annales/examen-2024-correction.html#sql",
+    "href": "docs/annales/examen-2024-correction.html#sql",
+    "title": "Examen 2024 - correction",
+    "section": "SQL",
+    "text": "SQL\n\nUn adhérent peut emprunter plusieurs dvd.\nUn emprunt est caractérisé par un numéro d’emprunt, la date de début, la date de fin, le numéro d’adhérent et le numéro du dvd emprunté.\nUn dvd contient un seul et unique film. Un film peut-être disponible sur plusieurs dvd différents.\nÉcrivez la requête SQL qui répond à chaque question ci-dessous.\n\n1\nListez tous les films du genre « science-fiction » en les classant en premier ceux qui sont sortis le plus récemment.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT *\n  FROM film\n WHERE genre = 'science-fiction'\n ORDER BY date_sortie DESC;\n\n\n\n\n\n2\nListez tous les films qui contiennent dans leur titre le mot « batman ».\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT *\n  FROM film\n WHERE LOWER(titre) LIKE '%batman%';\n\n\n\n\n\n3\nDonnez le prix d’achat moyen des DVD du film « Alibi ».\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT AVG(d.prix_achat)\n  FROM dvd d\n  JOIN film f USING(id_film)\n WHERE f.titre = 'Alibi';\n\n\n\n\n\n4\nDonnez les noms et prénoms des adhérents ayant déjà emprunté le film « Matrix ».\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT a.nom, \n       a.prenom\n  FROM adherent a\n  JOIN emprunte e USING (id_adherent)\n  JOIN dvd d USING (id_dvd)\n  JOIN film f USING (id_film)\n WHERE f.titre = 'Matrix';\n\n\n\n\n\n5\nListez les identifiants des DVD qui n’ont jamais été empruntés.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT d.id_dvd\n  FROM dvd d\nWHERE d.id_dvd NOT IN (SELECT e.id_dvd \n                         FROM emprunte e);\n\n-- ou\n\nSELECT d.id_dvd \n  FROM dvd d\n WHERE NOT EXISTS (SELECT 1\n                     FROM emprunte e\n                    WHERE e.id_dvd = d.id_dvd);\n\n\n\n\n\n6\nListez les titres des films qui ont été empruntés plus de 10 fois.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nSELECT f.titre,\n       COUNT(1) AS nb_emprunts\n  FROM film f\n  JOIN dvd d USING (id_film) \n  JOIN emprunte e USING (id_dvd)\n GROUP BY f.titre\nHAVING COUNT(1) &gt; 10;\n\n\n\n\n\n7\nInsérez en base de données le film Barbie du genre « comédie » sorti le 19 juillet 2023.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nINSERT INTO film (titre, genre, date_sortie)\nVALUES ('Barbie', 'comédie', '2023-07-19');"
   },
   {
-    "objectID": "docs/outils/VSCode.html#première-utilisation",
-    "href": "docs/outils/VSCode.html#première-utilisation",
-    "title": "Visual Studio Code",
-    "section": "3 Première utilisation",
-    "text": "3 Première utilisation\n\n\n\n\n\n\nNote\n\n\n\nNous allons créer un dépôt local avec Git, puis ouvrir ce dépôt avec VSCode.\n\n\n\nOuvrez Visual Studio Code\nOuvrez un terminal\n\nMenu Terminal &gt; New terminal (raccourci : CTRL + ù)\n\nCréez un dossier pour le Cours\n\nCopiez cette commande : mkdir -p /p/Cours2A/UE3_Remise_a_niveau\nDans le terminal, faîtes clic droit (Coller) puis ENTREE\nVérifiez que les dossiers sont bien créés, sinon créer les dossiers à la main\n\nClonez le dépôt\n\nPositionnez-vous dans le dossier créé : cd /p/Cours2A/UE3_Remise_a_niveau\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\n\nOuvrez un espace de travail\n\nDans VSCode : File &gt; Open Folder\nSélectionnez le dossier P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau créé précédemment\nYes i trust…\n\nOuvrez, puis exécutez un fichier Python\n\nOuvrez le fichier Python-POO/exemple/src/__main__.py\nExecutez le fichier\n\nEn haut à droite, cliquer sur l’icone en forme de triangle ▷\nRun python file in terminal\n\nCela ouvre un terminal et exécute le fichier"
-  },
-  {
-    "objectID": "docs/outils/VSCode.html#le-terminal-python",
-    "href": "docs/outils/VSCode.html#le-terminal-python",
-    "title": "Visual Studio Code",
-    "section": "4 Le terminal python",
-    "text": "4 Le terminal python\n2 modes :\n\nP:\\Cours\\Python\\tp1&gt;\n\npour éxecuter en totalité un fichier python\n\nen cliquant sur le triangle ▷\nen tapant la commande python bacasable.py\n\ntaper python en ENTREE pour passer à l’autre mode\n\n&gt;&gt;&gt; pour exécuter directement du code python\n\npermet d’exécuter uniquement certaines lignes du fichier\n\nen cliquant sur une ligne puis SHIFT + ENTREE\nen sélectionnant plusieurs lignes puis SHIFT + ENTREE\n\ndans ce mode on peut aussi écrire directement du python dans le terminal\ntaper quit() ou CTRL + Z pour retourner à l’autre mode"
-  },
-  {
-    "objectID": "docs/outils/VSCode.html#python-vscode-et-les-packages",
-    "href": "docs/outils/VSCode.html#python-vscode-et-les-packages",
-    "title": "Visual Studio Code",
-    "section": "5 Python, VSCode et les packages",
-    "text": "5 Python, VSCode et les packages\nImaginez que votre code est organisé de la manière ci-dessous\n├───tp1\n│   └───src\n│   │   ├───vehicule\n│   │   │   ├───velo.py\n│   │   │   └───trottinette.py\n│   │   ├───animal\n│   │   │   ├───girafe.py\n│   │   │   └───ane.py\nSi dans la classe Girafe, vous voulez créer un objet de la classe Velo, vous pouvez par exemple faire ceci dans le code de girafe.py :\n\nimport de la classe Velo\npuis création d’un objet Velo\n\n\n\ngirafe.py\n\nfrom vehicule.velo import Velo\n\nclass Girafe:\n    def __init__(self, nom, nom_moyen_transport):\n        self.nom = nom\n        vehicule = None\n        if nom_moyen_transport * \"velo\":\n            vehicule = Velo()\n        self.moyen_transport = vehicule\n\n🚨 Cependant, il se peut que que VSCode et/ou le compilateur python n’apprécient pas ce genre d’imports et que vous rencontriez des erreurs du type le module velo n’existe pas\nComme solution de contournement, vous pouvez :\n\nen reprenant l’arborescence ci-dessus,\ndans le dossier code créez un dossier .vscode\ndans ce dossier .vscode, créer le fichier settings.json qui contient ceci :\n\n{\n    \"python.analysis.extraPaths\": [\n        \"./*\"\n    ],\n    \"terminal.integrated.env.windows\": {\n        \"PYTHONPATH\": \"${workspaceFolder}/src\",\n    },\n    \"terminal.integrated.env.linux\": {\n        \"PYTHONPATH\": \"${workspaceFolder}/src\",\n    },\n    \"python.languageServer\": \"Jedi\"\n}\n\npuis fermez et redémarrez VSCode\nFile &gt; Open Folder &gt; C:/.../tp1/code"
-  },
-  {
-    "objectID": "docs/outils/VSCode.html#afficher-les-variables-denvironnement",
-    "href": "docs/outils/VSCode.html#afficher-les-variables-denvironnement",
-    "title": "Visual Studio Code",
-    "section": "6 Afficher les variables d’environnement",
-    "text": "6 Afficher les variables d’environnement\nprintenv\necho $PYTHONPATH\necho $HOME"
-  },
-  {
-    "objectID": "docs/outils/outils.html",
-    "href": "docs/outils/outils.html",
-    "title": "Divers outils",
-    "section": "",
-    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
-  },
-  {
-    "objectID": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
-    "href": "docs/outils/outils.html#outils-présentés-dans-cette-partie",
-    "title": "Divers outils",
-    "section": "",
-    "text": "VM : parler de l’environnement de travail à l’ENSAI\nArborescence : pour bien organiser vos cours\nBookmarks : des favoris à importer dans votre navigateur\nVSCode : un environnement de développement\nUML : une introduction à la modélisation UML\nBash : pour apprendre à utiliser un terminal de commande\nMarkdown : langage de balisage léger et intuitif utilisé pour formater et structurer du texte\n\nHackMd : un éditeur en ligne de Markdown"
-  },
-  {
-    "objectID": "docs/outils/outils.html#autres-outils",
-    "href": "docs/outils/outils.html#autres-outils",
-    "title": "Divers outils",
-    "section": "2 Autres outils",
-    "text": "2 Autres outils\n\n\n\nOutil\nIntérêt\n\n\n\n\nChatGPT\nDébugage, Génération de code, Génération de données, Documentation automatique\n\n\nStack Overflow\nTrés nombreuses questions et réponses en informatique\n\n\nJSON Formatter\nOutil en ligne pour formater et visualiser des données JSON\n\n\nDeepL\nOutil de traduction\n\n\nScribens\nCorrecteur grammatical en ligne"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Remise à niveau informatique",
-    "section": "",
-    "text": "Ce cours de remise à niveau s’adresse aux étudiants intégrant directement la deuxième année de l’ENSAI. Il vise à fournir les bases essentielles en Python, SQL et UML, afin de leur permettre de débuter le projet informatique en toute sérénité."
-  },
-  {
-    "objectID": "index.html#programme",
-    "href": "index.html#programme",
-    "title": "Remise à niveau informatique",
-    "section": "Programme",
-    "text": "Programme\n\nBases de données et SQL (3h)\nPython - initiation (6h)\nProgrammation Orientée Objet (POO) (9h)\nUML (3h)\nDivers outils utiles (markdown, R, LateX…)"
-  },
-  {
-    "objectID": "index.html#initiation-à-sql",
-    "href": "index.html#initiation-à-sql",
-    "title": "Remise à niveau informatique",
-    "section": "1. Initiation à SQL",
-    "text": "1. Initiation à SQL\n\nLisez le cours d’introduction aux bases de données et à SQL\nEffectuez le paramètrage pour utiliser DBeaver\nFaites l’exercice"
-  },
-  {
-    "objectID": "index.html#initiation-à-python",
-    "href": "index.html#initiation-à-python",
-    "title": "Remise à niveau informatique",
-    "section": "2. Initiation à Python",
-    "text": "2. Initiation à Python\n\nLisez le cours d’introduction à Python\nLisez et faites les exercices des 5 notebooks"
-  },
-  {
-    "objectID": "index.html#programmation-orientée-objet",
-    "href": "index.html#programmation-orientée-objet",
-    "title": "Remise à niveau informatique",
-    "section": "3. Programmation Orientée Objet",
-    "text": "3. Programmation Orientée Objet\nVous pouvez commencer par créer un clone du dépôt Git sur votre machine :\n\nOuvrez Git Bash, puis coller les commandes suivantes\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\ncela crée une copie du dépôt dans P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\n\nLisez le cours d’introduction à la POO\nSuivez les consignes pour le paramètrage de VSCode\nFaites les exercices"
-  },
-  {
-    "objectID": "index.html#uml",
-    "href": "index.html#uml",
-    "title": "Remise à niveau informatique",
-    "section": "4. UML",
-    "text": "4. UML\n\nLisez le cours d’introduction à UML\nFaites l’exercice"
-  },
-  {
-    "objectID": "index.html#alternatives",
-    "href": "index.html#alternatives",
-    "title": "Remise à niveau informatique",
-    "section": "Alternatives",
-    "text": "Alternatives\nVoici d’autres possibilités pour se mettre à niveau en Python, POO et SQL\n\nVidéos de la session 2022-2023\nsi vous avez vos accès à MyENSAI, les vidéos de la session de l’année 2022-2023 sont disponibles ici\n\n\nCours en ligne pour apprendre Python et SQL\n\nOpenclassrooms - Requêtez avecSQL\nInitiation à Python dans le Service Statistique Public\nOpenclassrooms - bases de Python (parties 1 et 2)\nOpenclassrooms - POO avec Python (parties 1 et 2)\n\n\n\nRessources utiles\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/\nPython pour la data science, Lino Galiana (INSEE, ENSAE)"
+    "objectID": "docs/annales/examen-2024-correction.html#poo-et-uml",
+    "href": "docs/annales/examen-2024-correction.html#poo-et-uml",
+    "title": "Examen 2024 - correction",
+    "section": "POO et UML",
+    "text": "POO et UML\n\n1\nProposez un diagramme de classes UML pour décrire l’application ci-dessus.\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nÉcrivez le constructeur de la classe Commande en Python.\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nclass Commande:\n    def __init__(self, numero_commande, numero_client):\n        self.numero_client = numero_client\n        self.numero_commande = numero_commande\n        self.montant = 0.0\n        self.lignes_commande = []\n\n\n\n\n\n3\nÉcrivez le code de la méthode valider_commande() dans la classe Magasin, qui permet de :\n\nVérifier si une commande est valide (si le stock de légumes est suffisant).\nCalculer et mettre à jour le montant total de la commande si la commande est valide.\nRetourner True si la commande est valide, False sinon.\n\n\n\n\n\n\n\nRéponse\n\n\n\n\n\nclass Magasin:\n\n    def __init__(self, nom):\n        self.nom = nom\n        self.stock = []     # Liste de Legume\n        self.clients = []\n\n    def valider_commande(self, commande) -&gt; bool:\n        total_commande = 0.0\n        \n        # Pour chaque Legume de la commande\n        for ligne in commande.lignes_commande:\n            legume = ligne.legume\n            quantite = ligne.quantite\n            \n            # Vérifier si le stock est suffisant\n            stock_legume = None\n            \n            for l in self.stock:\n                if l.variete == legume.variete and l.type == legume.type:\n                    stock_legume = l.stock\n                    break\n            \n            # Si le légume n'est pas trouvé ou le stock est insuffisant\n            if stock_legume is None or stock_legume &lt; quantite:\n                return False  \n            else:\n                total_commande += legume.prix * quantite\n        \n        # Mettre à jour le montant de la commande\n        commande.montant = total_commande\n        \n        # Mettre à jour le stock\n        for ligne in commande.lignes_commande:\n            legume = ligne.legume\n            quantite = ligne.quantite\n            for l in self.stock:\n                if l.variete == legume.variete and l.type == legume.type:\n                    l.stock -= quantite\n                    break\n    \n        return True"
   },
   {
     "objectID": "docs/POO/poo-exercice.html",
