@@ -63,6 +63,10 @@ website:
           - href: docs/outils/YAML.qmd
             text: "YAML"
     right:
+      - text: Examens
+        menu: 
+          - href: docs/annales/examen-2024.qmd
+            text: "Examen 2024"
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
         target: "_blank"
