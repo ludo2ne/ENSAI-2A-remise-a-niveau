@@ -11,8 +11,6 @@ format:
 from: markdown+emoji
 number-sections: false
 number-depth: 3
-execute:
-  eval: false
 lightbox: true
 ---
 
@@ -69,7 +67,7 @@ print(len(liste))
 ::: {.callout-note title="Réponse" collapse="true"}
 ```{.python}
 def compter_voyelles(chaine) -> int:
-    voyelles = "aeiouAEIOU"
+    voyelles = "aeiouyAEIOUY"
     compteur = 0
     for caractere in chaine:
         if caractere in voyelles:
@@ -97,6 +95,9 @@ print("\nboom")
 ```
 
 ::: {.callout-note title="Réponse" collapse="true"}
+
+:warning: Il n'était pas autorisé de décaler vers la droite le `print(i, end=" ")`.
+
 ```{.python}
 i = 10
 while True:
@@ -128,6 +129,8 @@ Rappel :
 - $\forall n \geq 2 \, F_n = F_{n-1} + F_{n-2}$
 
 ::: {.callout-note title="Réponse" collapse="true"}
+:warning: Il était demandé d'[afficher]{.underline} les valeurs et non pas de les retourner ! 
+
 ```{.python}
 def fibonacci(n) -> None:
     if n <= 0 or not isinstance(n, int):
@@ -157,6 +160,9 @@ def fibonacci(n) -> None:
 ::: {.callout-note title="Réponse" collapse="true"}
 ```{.python}
 def celsius_vers_fahrenheit(celsius) -> float:
+    if not isinstance(celsius, (int, float)):
+        raise TypeError("L'argument doit être de type int ou float")
+    
     fahrenheit = (9 / 5) * celsius + 32
     return fahrenheit
 ```
@@ -234,7 +240,7 @@ SELECT a.nom,
 Listez les identifiants des DVD qui n'ont jamais été empruntés.
 
 ::: {.callout-note title="Réponse" collapse="true"}
-```sql
+```{.sql}
 SELECT d.id_dvd
   FROM dvd d
 WHERE d.id_dvd NOT IN (SELECT e.id_dvd 
@@ -247,6 +253,13 @@ SELECT d.id_dvd
  WHERE NOT EXISTS (SELECT 1
                      FROM emprunte e
                     WHERE e.id_dvd = d.id_dvd);
+
+-- ou encore
+
+SELECT d.id_dvd
+  FROM dvd d
+  LEFT JOIN emprunte e USING(id_dvd)
+ WHERE e.id_emprunt IS NULL;
 ```
 :::
 
@@ -280,6 +293,18 @@ VALUES ('Barbie', 'comédie', '2023-07-19');
 
 ## POO et UML
 
+Un magasin de légumes souhaite créer une application pour gérer son stock, ses clients et les commandes.
+
+Chaque légume à un type, une variété, un prix et son stock (en kg).
+
+Le magasin dispose également d’une liste de clients qui sont déﬁnis par leurs numéros de client, nom, prénom, âge et s’ils possèdent la carte de ﬁdélité du magasin.
+
+Une commande possède un numéro de commande, un montant total initialement à 0, et est réalisée par un client. Une commande est décomposée en lignes de commandes. Chaque ligne contient un légume et une quantité.
+
+::: {.callout-note}
+Pour cet exercice, il y a plusieurs manières de répondre au besoin, en voici une.
+:::
+
 ### 1
 
 Proposez un diagramme de classes UML pour décrire l'application ci-dessus.
@@ -293,7 +318,7 @@ classDiagram
     }
 
     class Legume {
-        -str type
+        -str type_leg
         -str variete
         -float prix
         -float stock
@@ -302,7 +327,7 @@ classDiagram
     class Client {
         -int numeroClient
         -str nom
-        -str prénom
+        -str prenom
         -int age
         -bool carteFidelite
         -List[Commande]
@@ -333,7 +358,7 @@ classDiagram
 Écrivez le constructeur de la classe `Commande` en Python.
 
 ::: {.callout-note title="Réponse" collapse="true"}
-```python
+```{.python}
 class Commande:
     def __init__(self, numero_commande, numero_client):
         self.numero_client = numero_client
@@ -372,7 +397,7 @@ class Magasin:
             stock_legume = None
             
             for l in self.stock:
-                if l.variete == legume.variete and l.type == legume.type:
+                if l.variete == legume.variete and l.type_leg == legume.type_leg:
                     stock_legume = l.stock
                     break
             
