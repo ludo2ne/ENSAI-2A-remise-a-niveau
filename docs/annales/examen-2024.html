@@ -438,7 +438,7 @@ Réponse
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compter_voyelles(chaine) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    voyelles <span class="op">=</span> <span class="st">"aeiouAEIOU"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    voyelles <span class="op">=</span> <span class="st">"aeiouyAEIOUY"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    compteur <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> caractere <span class="kw">in</span> chaine:</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> caractere <span class="kw">in</span> voyelles:</span>
@@ -474,6 +474,7 @@ Réponse
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><span class="emoji" data-emoji="warning">⚠️</span> Il n’était pas autorisé de décaler vers la droite le <code>print(i, end=" ")</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> i <span class="op">-</span> <span class="dv">1</span></span>
@@ -511,6 +512,7 @@ Réponse
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p><span class="emoji" data-emoji="warning">⚠️</span> Il était demandé d’<u>afficher</u> les valeurs et non pas de les retourner !</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci(n) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span> <span class="kw">or</span> <span class="kw">not</span> <span class="bu">isinstance</span>(n, <span class="bu">int</span>):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Veuillez entrer un entier strictement positif."</span>)</span>
@@ -549,8 +551,11 @@ Réponse
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_vers_fahrenheit(celsius) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    fahrenheit <span class="op">=</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>) <span class="op">*</span> celsius <span class="op">+</span> <span class="dv">32</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fahrenheit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(celsius, (<span class="bu">int</span>, <span class="bu">float</span>)):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">"L'argument doit être de type int ou float"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    fahrenheit <span class="op">=</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>) <span class="op">*</span> celsius <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fahrenheit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -683,7 +688,14 @@ Réponse
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> dvd d</span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> (<span class="kw">SELECT</span> <span class="dv">1</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>                     <span class="kw">FROM</span> emprunte e</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">WHERE</span> e.id_dvd <span class="op">=</span> d.id_dvd);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">WHERE</span> e.id_dvd <span class="op">=</span> d.id_dvd);</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">-- ou encore</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> d.id_dvd</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> dvd d</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> emprunte e <span class="kw">USING</span>(id_dvd)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> e.id_emprunt <span class="kw">IS</span> <span class="kw">NULL</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -738,6 +750,23 @@ Réponse
 </section>
 <section id="poo-et-uml" class="level2">
 <h2 class="anchored" data-anchor-id="poo-et-uml">POO et UML</h2>
+<p>Un magasin de légumes souhaite créer une application pour gérer son stock, ses clients et les commandes.</p>
+<p>Chaque légume à un type, une variété, un prix et son stock (en kg).</p>
+<p>Le magasin dispose également d’une liste de clients qui sont déﬁnis par leurs numéros de client, nom, prénom, âge et s’ils possèdent la carte de ﬁdélité du magasin.</p>
+<p>Une commande possède un numéro de commande, un montant total initialement à 0, et est réalisée par un client. Une commande est décomposée en lignes de commandes. Chaque ligne contient un légume et une quantité.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour cet exercice, il y a plusieurs manières de répondre au besoin, en voici une.</p>
+</div>
+</div>
 <section id="section-13" class="level3">
 <h3 class="anchored" data-anchor-id="section-13">1</h3>
 <p>Proposez un diagramme de classes UML pour décrire l’application ci-dessus.</p>
@@ -746,7 +775,48 @@ Réponse
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
+<pre class="mermaid mermaid-js">classDiagram
+    class Magasin {
+        -str nom
+        -List[Legume] stock
+        -List[Client] clients
+    }
 
+    class Legume {
+        -str type_leg
+        -str variete
+        -float prix
+        -float stock
+    }
+
+    class Client {
+        -int numeroClient
+        -str nom
+        -str prenom
+        -int age
+        -bool carteFidelite
+        -List[Commande]
+        +void validerCommande(int numeroCommande)
+    }
+
+    class Commande {
+        -int numeroClient
+        -int numeroCommande
+        -float montant
+        -List[LigneCommande] lignesCommande
+    }
+
+    class LigneCommande {
+        -Legume legume
+        -float quantite
+    }
+
+    Magasin o-- Client : gére
+    Client --&gt; Commande : réalise
+    Commande o-- LigneCommande : composée
+    LigneCommande -- Legume
+    Magasin o-- Legume : stocke
+</pre>
 </div>
 <p></p></figure><p></p>
 </div>
@@ -757,7 +827,7 @@ Réponse
 <h3 class="anchored" data-anchor-id="section-14">2</h3>
 <p>Écrivez le constructeur de la classe <code>Commande</code> en Python.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Réponse">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -766,7 +836,7 @@ Réponse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Commande:</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, numero_commande, numero_client):</span>
@@ -787,7 +857,7 @@ Réponse
 <li>Retourner <code>True</code> si la commande est valide, <code>False</code> sinon.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Réponse">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -796,7 +866,7 @@ Réponse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Magasin:</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -817,7 +887,7 @@ Réponse
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>            stock_legume <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>            </span>
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> l <span class="kw">in</span> <span class="va">self</span>.stock:</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> l.variete <span class="op">==</span> legume.variete <span class="kw">and</span> l.<span class="bu">type</span> <span class="op">==</span> legume.<span class="bu">type</span>:</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> l.variete <span class="op">==</span> legume.variete <span class="kw">and</span> l.type_leg <span class="op">==</span> legume.type_leg:</span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>                    stock_legume <span class="op">=</span> l.stock</span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>            </span>
@@ -1427,7 +1497,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
