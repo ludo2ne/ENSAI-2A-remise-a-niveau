@@ -66,6 +66,7 @@ L'utilisation de RStudio sur la VM est déconseillée mais comme cela parait plu
 * <https://www.book.utilitr.org/>
 * <https://teaching.slmc.fr/r/>
 * <https://github.com/ludo2ne/R-tuto>
+* <https://ssm-agriculture.github.io/site-formations-R/>
 
 <style>
     h1{

@@ -5,9 +5,10 @@ Remise à niveau pour les étudiants de 2e année (21h)
 ## :arrow_forward: Programme
 
 - [ ] Bases de données et SQL (3h)
-- [ ] Python - initiation (6h)
+- [ ] Python - initiation (5h)
 - [ ] Programmation Orientée Objet (POO) (9h)
 - [ ] UML (3h)
+- [ ] Git (1h)
 - [ ] Divers outils utiles (Markdown, VSCode...)
 
 ## :construction: TODO
@@ -28,6 +29,8 @@ Remise à niveau pour les étudiants de 2e année (21h)
 - [ ] fonctions : type retour -> float, doc """, nom explicite
 - [ ] Compte bancaire : clean + ajouter controles
 - [ ] Protection des attributs : step 1 intro, step2 : properties pour aller plus loin
+- https://datacrafting.substack.com/p/jour-17-ii-python-the-right-way-comprendre
+
 
 ```
 if type(nom) != str:
@@ -39,6 +42,11 @@ if type(nom) != str:
 - [ ] Slide : ajouter abstract
 - [ ] TDD sur jeu de Dominos
 
+
+### UML
+
+- https://lipn.univ-paris13.fr/~gerard/uml-s2/uml-cours04.html
+
 ### diapo intro
 
 ```
@@ -46,7 +54,6 @@ if type(nom) != str:
   - perso
   - scola, DSI, rôles
   - cours à l'ENSAI, matières théoriques, pratiques, étudiant diversifiés
-  - ENSAI-stats sur github (tuto-R ancienne version)
   - l'info, pourquoi cette remise à niveau
   - projet info (intégration, ex : site de location de velo)
     - IHM : les menus

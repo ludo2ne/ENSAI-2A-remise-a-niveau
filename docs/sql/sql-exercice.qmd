@@ -12,28 +12,73 @@ number-sections: true
 number-depth: 3
 ---
 
-## Avant de commencer {.unnumbered}
+## Se connecter à une base de données {.unnumbered}
+
+Vous allez effectuer cet exercice sur le datalab du GENES.
+
+Vous pouvez également réaliser l'exercice sur :
+
+- le [SSPCloud](https://www.sspcloud.fr/){target="_blank"}, même modop que sur le datalab du GENES
+- la VM ENSAI (voir section ci-après)
+- trouver une ressource sur internet permettant d'exécuter du SQL
+
+### Datalab du GENES {.unnumbered}
+
+- [ ] Connectez-vous à <https://onyxia.lab.groupe-genes.fr/>{target="_blank"}
+- [ ] Lancez un service **PostgreSQL**
+  - pour créer votre base de données
+- [ ] Lancez un service **Cloudbeaver**
+  - pour interagir avec la base de données que vous venez de créer
+
+Attendez que le service Cloudbeaver se lance :
+
+- [ ] Ouvrez le service
+  - Cliquer pour copier le mot de passe
+  - Ouvrir le service
+- [ ] Authentification
+  - username : `user-<idxxxx>-ensai`
+  - password : collez le mot de passe (CTRL+V) copié juste avant
+
+Une fois connecté :
+
+- Dans l'explorateur à gauche, vous devez voir afficher votre connexion à la base de données PostgreSQL 
+- [ ] Cliquez sur l'icone **SQL** en haut à gauche
+
+
+::: {.callout-tip title="Si la connection ne s'est pas faite"}
+- [ ] Cliquez su **+**, puis **New connection**
+- [ ] Sélectionnez **PostgreSQL**
+- [ ] Renseignez : Host, Port, Database, Username, Password
+
+Pour obtenir ces informations, retournez sur le Datalab, onglet **Mes Services**, puis cliquez sur le README du service PostgreSQL.
+
+- [ ] **TEST** pour vérifier que la connexion se fait bien
+- [ ] **CREATE**
+- [ ] Dans l'explorer à gauche, cliquez sur votre connexion pour qu'elle passe au vert
+:::
+
 
 ### VM ENSAI {.unnumbered}
 
-Si vous êtes connectés sur la VM ENSAI :
+Autre possibilité si vous êtes connectés sur la VM ENSAI :
 
 - [ ] Lancez le logiciel Dbeaver
 - [ ] Paramétrez [DBeaver](../outils/DBeaver.qmd){target="_blank"}
 
-### Hors VM {.unnumbered}
+### Autres possibilités {.unnumbered}
 
-Si vous n'êtes pas sur le réseau ENSAI, voici d'autres possibilités pour faire l'exercice :
+Si vous n'avez pas accès aux ressources de l'ENSAI, voici par exemple quelques ressources pour faire les exercices :
 
 - <https://www.programiz.com/sql/online-compiler/>{target="_blank"}
   - `DROP table customers; DROP table orders; DROP table shippings;`
   - pour supprimer les tables par défaut
 - <https://www.mycompiler.io/fr/new/sql>{target="_blank"}
 
-### Dans les 2 cas {.unnumbered}
+
+## Données de l'exercice {.unnumbered}
 
 - [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
-- [ ] Collez dans votre éditeur (DBeaver ou autre)
+- [ ] Collez dans votre éditeur
 - [ ] Exécutez le script
 
 

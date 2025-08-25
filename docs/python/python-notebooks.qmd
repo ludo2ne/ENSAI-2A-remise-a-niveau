@@ -42,8 +42,9 @@ Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :
 
 Vous avez plusieurs possibilités pour lancer les notebooks :
 
-- [Un cluster Jupyter](https://jupyther.ensai.fr/){target="_blank"} de l'ENSAI :arrow_right: si vous avez vos idep et mot de passe
+- le [datalab du GENES](https://onyxia.lab.groupe-genes.fr/){target="_blank"}
 - le datalab [SSPCloud](https://datalab.sspcloud.fr/){target="_blank"} :arrow_right: vous pouvez créer un compte avec votre mail ENSAI
+- [Un cluster Jupyter](https://jupyther.ensai.fr/){target="_blank"} de l'ENSAI :arrow_right: si vous avez vos idep et mot de passe
 
 Si vous n'avez, ni identifiants, ni mail ENSAI, d'autres solutions existent :
 
@@ -53,6 +54,14 @@ Si vous n'avez, ni identifiants, ni mail ENSAI, d'autres solutions existent :
 
 
 ::: {.panel-tabset .nav-pills}
+
+
+#### Datalab
+
+- Connectez-vous au datalab
+- Allez dans le menu *Catalogue de services*
+- Lancer `Jupyter-python`
+- Suivez les mêmes instructions que pour le Cluster ENSAI
 
 #### Cluster ENSAI
 
@@ -65,12 +74,6 @@ Si vous n'avez, ni identifiants, ni mail ENSAI, d'autres solutions existent :
 
 ![](img/jupyter.PNG)
 
-#### SSPCloud
-
-- Connectez-vous au [SSPCloud](https://datalab.sspcloud.fr/){target="_blank"}
-- Allez dans le menu *Catalogue de services*
-- Lancer `Jupyter-python`
-- Suivez les mêmes instructions que pour le Cluster ENSAI
 
 #### Jupyter Lab online
 

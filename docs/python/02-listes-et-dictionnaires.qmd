@@ -370,7 +370,8 @@ Quel intérêt cela pourrait-il avoir ?
 # Testez votre réponse dans cette cellule
 ```
 
-Exercice
+### Exercice 6
+
 Soit le dictionnaire suivant : `animaux = {'chats': 5, 'chiens': 12}`  
   
 Que vont retourner les tests d'appartenance suivants ? Vérifiez vos prédictions.  
@@ -383,7 +384,7 @@ Que vont retourner les tests d'appartenance suivants ? Vérifiez vos prédiction
 # Testez votre réponse dans cette cellule
 ```
 
-### Exercice 6
+### Exercice 7
 
 Soit le dictionnaire défini dans la cellule ci-dessous.  
 Affichez à l'aide d'opérations print :
@@ -411,7 +412,7 @@ resultats = {
 # Testez votre réponse dans cette cellule
 ```
 
-### Exercice 7
+### Exercice 8
 
 À l'aide d'un dictionnaire, comptez puis affichez le nombre d'occurences de chaque caractère dans la phrase suivante :
 
@@ -423,7 +424,7 @@ resultats = {
 # Testez votre réponse dans cette cellule
 ```
 
-### Exercice 8
+### Exercice 9
 
 Nettoyer cette liste pour retirer tous les doublons et ne conserver qu'une seule occurence de chaque fruit :
 
