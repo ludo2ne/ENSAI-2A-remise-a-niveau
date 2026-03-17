@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année">
+<meta name="description" content="Exercice d’apprentissage du SQL">
 
-<title>Remise à niveau informatique – Remise à Niveau Informatique</title>
+<title>Exercice BDR et SQL – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,26 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,12 +72,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -244,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -255,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -264,11 +267,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -279,11 +282,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -294,35 +297,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="./doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/correction.html">
+    <a class="dropdown-item" href="../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -333,17 +336,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./doc/UML/UML.html"> 
+    <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -352,39 +355,39 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
-    <a class="dropdown-item" href="./doc/outils/outils.html">
+    <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Bash.html">
+    <a class="dropdown-item" href="../../doc/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/DBeaver.html">
+    <a class="dropdown-item" href="../../doc/outils/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/LaTeX.html">
+    <a class="dropdown-item" href="../../doc/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Markdown.html">
+    <a class="dropdown-item" href="../../doc/outils/Markdown.html">
  <span class="dropdown-text">Markdown</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VSCode.html">
+    <a class="dropdown-item" href="../../doc/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VM.html">
+    <a class="dropdown-item" href="../../doc/outils/VM.html">
  <span class="dropdown-text">VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/YAML.html">
+    <a class="dropdown-item" href="../../doc/outils/YAML.html">
  <span class="dropdown-text">YAML</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/regexp.html">
+    <a class="dropdown-item" href="../../doc/outils/regexp.html">
  <span class="dropdown-text">Expressions régulières</span></a>
   </li>  
     </ul>
@@ -397,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="./doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -423,20 +426,45 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#se-connecter-à-une-base-de-données" id="toc-se-connecter-à-une-base-de-données" class="nav-link active" data-scroll-target="#se-connecter-à-une-base-de-données">Se connecter à une base de données</a>
+  <ul class="collapse">
+  <li><a href="#datalab-du-genes" id="toc-datalab-du-genes" class="nav-link" data-scroll-target="#datalab-du-genes">Datalab du GENES</a></li>
+  <li><a href="#vm-ensai" id="toc-vm-ensai" class="nav-link" data-scroll-target="#vm-ensai">VM ENSAI</a></li>
+  <li><a href="#autres-possibilités" id="toc-autres-possibilités" class="nav-link" data-scroll-target="#autres-possibilités">Autres possibilités</a></li>
+  </ul></li>
+  <li><a href="#données-de-lexercice" id="toc-données-de-lexercice" class="nav-link" data-scroll-target="#données-de-lexercice">Données de l’exercice</a></li>
+  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">1</span> Description des données</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">2</span> Questions</a>
+  <ul class="collapse">
+  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</a></li>
+  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</a></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">2.3</span> Jointures</a></li>
+  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">2.4</span> Agrégations</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remise à niveau informatique</h1>
+<h1 class="title">Exercice BDR et SQL</h1>
 </div>
 
 <div>
   <div class="description">
-    Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année
+    Exercice d’apprentissage du SQL
   </div>
 </div>
 
@@ -459,102 +487,219 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Pourquoi cette remise à niveau ?">
+<section id="se-connecter-à-une-base-de-données" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="se-connecter-à-une-base-de-données">Se connecter à une base de données</h2>
+<p>Vous allez effectuer cet exercice sur le datalab du GENES.</p>
+<p>Vous pouvez également réaliser l’exercice sur :</p>
+<ul>
+<li>le <a href="https://www.sspcloud.fr/" target="_blank">SSPCloud</a>, même modop que sur le datalab du GENES</li>
+<li>la VM ENSAI (voir section ci-après)</li>
+<li>trouver une ressource sur internet permettant d’exécuter du SQL</li>
+</ul>
+<section id="datalab-du-genes" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="datalab-du-genes">Datalab du GENES</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Connectez-vous à <a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">https://onyxia.lab.groupe-genes.fr/</a></label></li>
+<li><label><input type="checkbox">Lancez un service <strong>PostgreSQL</strong></label>
+<ul>
+<li>pour créer votre base de données</li>
+</ul></li>
+<li><label><input type="checkbox">Lancez un service <strong>Cloudbeaver</strong></label>
+<ul>
+<li>pour interagir avec la base de données que vous venez de créer</li>
+</ul></li>
+</ul>
+<p>Attendez que le service Cloudbeaver se lance :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Ouvrez le service</label>
+<ul>
+<li>Cliquer pour copier le mot de passe</li>
+<li>Ouvrir le service</li>
+</ul></li>
+<li><label><input type="checkbox">Authentification</label>
+<ul>
+<li>username : <code>user-&lt;idxxxx&gt;-ensai</code></li>
+<li>password : collez le mot de passe (CTRL+V) copié juste avant</li>
+</ul></li>
+</ul>
+<p>Une fois connecté :</p>
+<ul>
+<li>Dans l’explorateur à gauche, vous devez voir afficher votre connexion à la base de données PostgreSQL</li>
+<li><label><input type="checkbox">Cliquez sur l’icone <strong>SQL</strong> en haut à gauche</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Si la connection ne s'est pas faite">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Pourquoi cette remise à niveau ?
+<span class="screen-reader-only">Tip</span>Si la connection ne s’est pas faite
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce cours de remise à niveau s’adresse aux étudiants intégrant directement la deuxième année de l’ENSAI. Il s’agit d’un panorama des cours suivis par les étudiants en première année.</p>
-<p><strong>Le projet informatique démarre dès le début de la deuxième année.</strong></p>
-<p>Il est donc essentiel pour tous d’avoir les bases en Python, POO, SQL et UML, afin de débuter le projet informatique en toute sérénité.</p>
-<p>Ces enseignements sont à réaliser en autonomie. La charge de travail est estimée à 21h.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Cliquez su <strong>+</strong>, puis <strong>New connection</strong></label></li>
+<li><label><input type="checkbox">Sélectionnez <strong>PostgreSQL</strong></label></li>
+<li><label><input type="checkbox">Renseignez : Host, Port, Database, Username, Password</label></li>
+</ul>
+<p>Pour obtenir ces informations, retournez sur le Datalab, onglet <strong>Mes Services</strong>, puis cliquez sur le README du service PostgreSQL.</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>TEST</strong> pour vérifier que la connexion se fait bien</label></li>
+<li><label><input type="checkbox"><strong>CREATE</strong></label></li>
+<li><label><input type="checkbox">Dans l’explorer à gauche, cliquez sur votre connexion pour qu’elle passe au vert</label></li>
+</ul>
 </div>
 </div>
-<section id="pré-requis-et-datalab" class="level2">
-<h2 class="anchored" data-anchor-id="pré-requis-et-datalab">Pré-requis et Datalab</h2>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
 </section>
-<section id="programme" class="level2">
-<h2 class="anchored" data-anchor-id="programme">Programme</h2>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
-</section>
-<section id="initiation-à-sql" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-sql">Initiation à SQL</h3>
-<p>3h</p>
+<section id="vm-ensai" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="vm-ensai">VM ENSAI</h3>
+<p>Autre possibilité si vous êtes connectés sur la VM ENSAI :</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/sql/sql-cours.qmd">cours d’introduction aux bases de données et à SQL</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
+<li><label><input type="checkbox">Lancez le logiciel Dbeaver</label></li>
+<li><label><input type="checkbox">Paramétrez <a href="../../doc/outils/DBeaver.html" target="_blank">DBeaver</a></label></li>
 </ul>
 </section>
-<section id="initiation-à-python" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-python">Initiation à Python</h3>
-<p>6h</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/python/python-cours.qmd">cours d’introduction à Python</a></label></li>
-<li><label><input type="checkbox">Lisez et faites les exercices des 5 notebooks</label></li>
-</ul>
-</section>
-<section id="programmation-orientée-objet" class="level3">
-<h3 class="anchored" data-anchor-id="programmation-orientée-objet">Programmation Orientée Objet</h3>
-<p>9h</p>
-<p>Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez <strong>Git Bash</strong>, puis coller les commandes suivantes</label>
+<section id="autres-possibilités" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="autres-possibilités">Autres possibilités</h3>
+<p>Si vous n’avez pas accès aux ressources de l’ENSAI, voici par exemple quelques ressources pour faire les exercices :</p>
 <ul>
-<li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
-<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans <em>P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</em></li>
+<li><a href="https://sqliteonline.com/" target="_blank">https://sqliteonline.com/</a>
+<ul>
+<li>PostgreSQL &gt; Click to connect</li>
+</ul></li>
+<li><a href="https://aiven.io/tools/pg-playground" target="_blank">https://aiven.io/tools/pg-playground</a></li>
+</ul>
+</section>
+</section>
+<section id="données-de-lexercice" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="données-de-lexercice">Données de l’exercice</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
+<li><label><input type="checkbox">Collez dans votre éditeur</label></li>
+<li><label><input type="checkbox">Exécutez le script</label></li>
+</ul>
+</section>
+<section id="description-des-données" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">1</span> Description des données</h2>
+<p>Nous avons une liste de <strong>joueurs</strong> et de <strong>tournois</strong>. Les joueurs peuvent participer aux différents tournois.</p>
+<p>Un tournoi est supervisé par un <strong>arbitre</strong>. Un arbitre est un joueur qui a obtenu un <strong>grade d’arbitre</strong>.</p>
+<p>Dans un tournoi, les parties se déroulent à une certaine <strong>cadence</strong> (Lente, Rapide, Blitz).</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -&gt; arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -&gt; joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -&gt; cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -&gt; tournoi)
+    id_joueur: INT(FK -&gt; joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="questions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="questions"><span class="header-section-number">2</span> Questions</h2>
+<section id="découverte-des-tables" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Listez tous les joueurs</label></li>
+<li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ordonnés par elo descroissant</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs ayant un elo inférieur ou égal à 2000 et dont le prénom contient un “e” (majuscule ou minuscule)</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> voir méthode UPPER</li>
 </ul></li>
 </ul>
-<hr>
+</section>
+<section id="mise-à-jour" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/POO/poo-cours.qmd">cours d’introduction à la POO</a></label></li>
-<li><label><input type="checkbox">Suivez les consignes pour le paramètrage de VSCode</label></li>
-<li><label><input type="checkbox">Faites les exercices</label></li>
+<li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
+<li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
+<li><label><input type="checkbox">Essayez de supprimer le joueur ayant pour id : 20</label>
+<ul>
+<li>Pourquoi cela ne fonctionne pas ? Que faudrait-t-il faire pour supprimer ce joueur ?</li>
+</ul></li>
+<li><label><input type="checkbox">Listez les joueurs qui sont arbitres</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> <em>voir IS NOT NULL</em></li>
+</ul></li>
+<li><label><input type="checkbox">Ajoutez à la table joueur la colonne de type booléen <em>est_arbitre</em></label></li>
+<li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
 </ul>
 </section>
-<section id="uml" class="level3">
-<h3 class="anchored" data-anchor-id="uml">UML</h3>
-<p>3h</p>
-<p>UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.</p>
+<section id="jointures" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">2.3</span> Jointures</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/UML/UML.qmd">cours d’introduction à UML</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
+<li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
+<li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
 </ul>
 </section>
-</section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
-<section id="vidéos-de-la-session-2022-2023" class="level3">
-<h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à <em>MyENSAI</em>, les vidéos de la session de l’année 2022-2023 sont disponibles <a href="https://foad-moodle.ensai.fr/mod/url/view.php?id=11354" target="_blank">ici</a></p>
-</section>
-<section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
-<h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">Cours en ligne pour apprendre Python et SQL</h3>
-<ul>
-<li><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" target="_blank">Openclassrooms - Requêtez avecSQL</a></li>
-<li><a href="https://inseefrlab.github.io/formation-python-initiation/" target="_blank">Initiation à Python</a> dans le Service Statistique Public</li>
-<li><a href="https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content" target="_blank">Openclassrooms - bases de Python</a> (parties 1 et 2)</li>
-<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Openclassrooms - POO avec Python</a> (parties 1 et 2)</li>
+<section id="agrégations" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">2.4</span> Agrégations</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitres</label></li>
+<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
+<li><label><input type="checkbox">Comptez le nombre d’arbitres par grade et n’afficher que si la moyenne elo des arbitres du grade est supérieure à 2000</label></li>
+<li><label><input type="checkbox">Affichez la liste des tournois (nom du tournoi, cadence, arbitre)</label></li>
+<li><label><input type="checkbox">Ajouter le nombre de joueurs et le elo max des joueurs</label></li>
 </ul>
-</section>
-<section id="ressources-utiles" class="level3">
-<h3 class="anchored" data-anchor-id="ressources-utiles">Ressources utiles</h3>
-<ul>
-<li><a href="https://realpython.com/" target="_blank">https://realpython.com/</a></li>
-<li><a href="https://refactoring.guru/" target="_blank">https://refactoring.guru/</a></li>
-<li><a href="https://github.com/faif/python-patterns" target="_blank">https://github.com/faif/python-patterns</a></li>
-<li><a href="https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/" target="_blank">https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/</a></li>
-<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la data science</a>, Lino Galiana (INSEE, ENSAE)</li>
-</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Correction">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Correction
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lien vers la <a href="./exercice/correction.sql">correction</a></p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -982,7 +1127,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

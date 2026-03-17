@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année">
+<meta name="description" content="Présentation du language Markdown">
 
-<title>Remise à niveau informatique – Remise à Niveau Informatique</title>
+<title>Markdown – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,29 +22,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +109,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -244,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -255,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -264,11 +299,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -279,11 +314,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -294,35 +329,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="./doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/correction.html">
+    <a class="dropdown-item" href="../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -333,17 +368,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./doc/UML/UML.html"> 
+    <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -352,39 +387,39 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
-    <a class="dropdown-item" href="./doc/outils/outils.html">
+    <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Bash.html">
+    <a class="dropdown-item" href="../../doc/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/DBeaver.html">
+    <a class="dropdown-item" href="../../doc/outils/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/LaTeX.html">
+    <a class="dropdown-item" href="../../doc/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Markdown.html">
+    <a class="dropdown-item" href="../../doc/outils/Markdown.html">
  <span class="dropdown-text">Markdown</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VSCode.html">
+    <a class="dropdown-item" href="../../doc/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VM.html">
+    <a class="dropdown-item" href="../../doc/outils/VM.html">
  <span class="dropdown-text">VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/YAML.html">
+    <a class="dropdown-item" href="../../doc/outils/YAML.html">
  <span class="dropdown-text">YAML</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/regexp.html">
+    <a class="dropdown-item" href="../../doc/outils/regexp.html">
  <span class="dropdown-text">Expressions régulières</span></a>
   </li>  
     </ul>
@@ -397,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="./doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -423,20 +458,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quest-ce-que-markdown" id="toc-quest-ce-que-markdown" class="nav-link active" data-scroll-target="#quest-ce-que-markdown"><span class="header-section-number">1</span> Qu’est-ce que Markdown ?</a></li>
+  <li><a href="#pourquoi-utiliser-markdown" id="toc-pourquoi-utiliser-markdown" class="nav-link" data-scroll-target="#pourquoi-utiliser-markdown"><span class="header-section-number">2</span> Pourquoi utiliser Markdown ?</a></li>
+  <li><a href="#écrire-du-markdown" id="toc-écrire-du-markdown" class="nav-link" data-scroll-target="#écrire-du-markdown"><span class="header-section-number">3</span> Écrire du markdown</a>
+  <ul class="collapse">
+  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples"><span class="header-section-number">3.1</span> Exemples</a></li>
+  </ul></li>
+  <li><a href="#utilisation-dans-vscode" id="toc-utilisation-dans-vscode" class="nav-link" data-scroll-target="#utilisation-dans-vscode"><span class="header-section-number">4</span> Utilisation dans VScode</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/outils/Markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remise à niveau informatique</h1>
+<div class="quarto-title-block"><div><h1 class="title">Markdown</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 <div>
   <div class="description">
-    Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année
+    Présentation du language Markdown
   </div>
 </div>
 
@@ -459,105 +511,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Pourquoi cette remise à niveau ?">
+<section id="quest-ce-que-markdown" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quest-ce-que-markdown"><span class="header-section-number">1</span> Qu’est-ce que Markdown ?</h2>
+<p>Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l’écriture de texte destiné au web en permettant aux utilisateurs d’écrire en utilisant un format texte brut facile à lire et à écrire.</p>
+</section>
+<section id="pourquoi-utiliser-markdown" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="pourquoi-utiliser-markdown"><span class="header-section-number">2</span> Pourquoi utiliser Markdown ?</h2>
+<p>Markdown a été conçu comme une alternative intuitive aux balisages plus complexes du HTML. Il s’est rapidement popularisé parmi les développeurs, les blogueurs et les rédacteurs pour sa simplicité et sa lisibilité.</p>
+<ul>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Simplicité</strong> : Facile à apprendre et à utiliser, même si vous n’êtes pas familiers avec HTML</li>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Lisibilité</strong> : Le texte brut en Markdown reste lisible même sans être converti en HTML</li>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Portabilité</strong> : Les fichiers Markdown peuvent être convertis facilement en HTML, PDF…</li>
+<li><span class="emoji" data-emoji="white_check_mark">✅</span> <strong>Popularité</strong> : Supporté par de nombreuses plates-formes et outils de rédaction</li>
+<li><span class="emoji" data-emoji="x">❌</span> <strong>Limitations</strong> : Markdown est conçu pour être simple, donc il ne supporte pas toutes les fonctionnalités avancées de mise en page</li>
+</ul>
+</section>
+<section id="écrire-du-markdown" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="écrire-du-markdown"><span class="header-section-number">3</span> Écrire du markdown</h2>
+<p>Les fichiers markdown sont des fichiers texte qui ont pour extension <code>.md</code>.</p>
+<p>Il existe de très nombreux éditeurs de Markdown :</p>
+<ul>
+<li>en ligne, par exemple <a href="https://hackmd.io/" target="&quot;_blank">HackMd</a></li>
+<li>à installer sur sa machine, par exemple dans Visual Studio Code</li>
+</ul>
+<p>Les éditeurs présentent généralement deux sections cote à cote :</p>
+<ul>
+<li>une partie édition où l’on écrit le code</li>
+<li>une partie vue où l’on voit le résultat</li>
+</ul>
+<section id="exemples" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="exemples"><span class="header-section-number">3.1</span> Exemples</h3>
+<p>De très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple <a href="https://commonmark.org/help/" target="&quot;_blank">https://commonmark.org/help/</a></p>
+<p>Quelques exemples de mise en forme :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Code Markdown</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>**texte en gras**</code></td>
+<td><strong>texte en gras</strong></td>
+</tr>
+<tr class="even">
+<td><code>*texte en italique*</code></td>
+<td><em>texte en italique</em></td>
+</tr>
+<tr class="odd">
+<td><code>[lien](https://example.com)</code></td>
+<td><a href="https://example.com">lien</a></td>
+</tr>
+<tr class="even">
+<td><code>![texte alternatif](image.jpg)</code></td>
+<td><img src="image.jpg" class="img-fluid" alt="texte alternatif"></td>
+</tr>
+<tr class="odd">
+<td>`code en ligne`</td>
+<td><code>code en ligne</code></td>
+</tr>
+<tr class="even">
+<td><code># Titre de niveau 1</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>## Titre de niveau 2</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Pourquoi cette remise à niveau ?
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce cours de remise à niveau s’adresse aux étudiants intégrant directement la deuxième année de l’ENSAI. Il s’agit d’un panorama des cours suivis par les étudiants en première année.</p>
-<p><strong>Le projet informatique démarre dès le début de la deuxième année.</strong></p>
-<p>Il est donc essentiel pour tous d’avoir les bases en Python, POO, SQL et UML, afin de débuter le projet informatique en toute sérénité.</p>
-<p>Ces enseignements sont à réaliser en autonomie. La charge de travail est estimée à 21h.</p>
+<p>Cette page est elle-même écrite en Markdown ! (avec une <a href="https://quarto.org/docs/authoring/markdown-basics.html" target="&quot;_blank">surcouche</a>)</p>
+<p>Vous pouvez consulter le code en cliquant sur le bouton <code>&lt;/&gt; Code</code> en haut à droite.</p>
 </div>
 </div>
-<section id="pré-requis-et-datalab" class="level2">
-<h2 class="anchored" data-anchor-id="pré-requis-et-datalab">Pré-requis et Datalab</h2>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
+<p>Un <a href="https://gist.github.com/rxaviers/7360908" target="&quot;_blank">large choix d’emoji</a> est également disponible en Markdown <span class="emoji" data-emoji="sunglasses">😎</span></p>
 </section>
-<section id="programme" class="level2">
-<h2 class="anchored" data-anchor-id="programme">Programme</h2>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
 </section>
-<section id="initiation-à-sql" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-sql">Initiation à SQL</h3>
-<p>3h</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/sql/sql-cours.qmd">cours d’introduction aux bases de données et à SQL</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
-</ul>
-</section>
-<section id="initiation-à-python" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-python">Initiation à Python</h3>
-<p>6h</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/python/python-cours.qmd">cours d’introduction à Python</a></label></li>
-<li><label><input type="checkbox">Lisez et faites les exercices des 5 notebooks</label></li>
-</ul>
-</section>
-<section id="programmation-orientée-objet" class="level3">
-<h3 class="anchored" data-anchor-id="programmation-orientée-objet">Programmation Orientée Objet</h3>
-<p>9h</p>
-<p>Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez <strong>Git Bash</strong>, puis coller les commandes suivantes</label>
+<section id="utilisation-dans-vscode" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="utilisation-dans-vscode"><span class="header-section-number">4</span> Utilisation dans VScode</h2>
 <ul>
-<li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
-<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans <em>P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</em></li>
+<li>CTRL + K puis V : pour avoir cote à cote les modes <strong>édition</strong> et <strong>vue</strong></li>
+<li>Extensions utiles (à aller chercher dans le marketplace)
+<ul>
+<li>markdownlint</li>
+<li>Markdown Emoji</li>
+<li>Markdown Checkboxes</li>
+<li>Markdown Table</li>
+<li>Markdown Preview Mermaid Support</li>
 </ul></li>
 </ul>
-<hr>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/POO/poo-cours.qmd">cours d’introduction à la POO</a></label></li>
-<li><label><input type="checkbox">Suivez les consignes pour le paramètrage de VSCode</label></li>
-<li><label><input type="checkbox">Faites les exercices</label></li>
-</ul>
-</section>
-<section id="uml" class="level3">
-<h3 class="anchored" data-anchor-id="uml">UML</h3>
-<p>3h</p>
-<p>UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/UML/UML.qmd">cours d’introduction à UML</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
-</ul>
-</section>
-</section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
-<section id="vidéos-de-la-session-2022-2023" class="level3">
-<h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à <em>MyENSAI</em>, les vidéos de la session de l’année 2022-2023 sont disponibles <a href="https://foad-moodle.ensai.fr/mod/url/view.php?id=11354" target="_blank">ici</a></p>
-</section>
-<section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
-<h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">Cours en ligne pour apprendre Python et SQL</h3>
-<ul>
-<li><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" target="_blank">Openclassrooms - Requêtez avecSQL</a></li>
-<li><a href="https://inseefrlab.github.io/formation-python-initiation/" target="_blank">Initiation à Python</a> dans le Service Statistique Public</li>
-<li><a href="https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content" target="_blank">Openclassrooms - bases de Python</a> (parties 1 et 2)</li>
-<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Openclassrooms - POO avec Python</a> (parties 1 et 2)</li>
-</ul>
-</section>
-<section id="ressources-utiles" class="level3">
-<h3 class="anchored" data-anchor-id="ressources-utiles">Ressources utiles</h3>
-<ul>
-<li><a href="https://realpython.com/" target="_blank">https://realpython.com/</a></li>
-<li><a href="https://refactoring.guru/" target="_blank">https://refactoring.guru/</a></li>
-<li><a href="https://github.com/faif/python-patterns" target="_blank">https://github.com/faif/python-patterns</a></li>
-<li><a href="https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/" target="_blank">https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/</a></li>
-<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la data science</a>, Lino Galiana (INSEE, ENSAE)</li>
-</ul>
 
 
-</section>
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -644,6 +701,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -973,7 +1081,87 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Markdown"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Présentation du language Markdown"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ludovic Deneuville"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-expand: 3</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">from:</span><span class="co"> markdown+emoji</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">number-depth:</span><span class="co"> 3</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Qu'est-ce que Markdown ?</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Markdown est un langage de balisage léger créé par John Gruber en 2004. Son objectif de simplifier l'écriture de texte destiné au web en permettant aux utilisateurs d'écrire en utilisant un format texte brut facile à lire et à écrire.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pourquoi utiliser Markdown ?</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Markdown a été conçu comme une alternative intuitive aux balisages plus complexes du HTML. Il s'est rapidement popularisé parmi les développeurs, les blogueurs et les rédacteurs pour sa simplicité et sa lisibilité.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="sc">:white_check_mark:</span> **Simplicité** : Facile à apprendre et à utiliser, même si vous n'êtes pas familiers avec HTML</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="sc">:white_check_mark:</span> **Lisibilité** : Le texte brut en Markdown reste lisible même sans être converti en HTML</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="sc">:white_check_mark:</span> **Portabilité** : Les fichiers Markdown peuvent être convertis facilement en HTML, PDF...</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="sc">:white_check_mark:</span> **Popularité** : Supporté par de nombreuses plates-formes et outils de rédaction</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="sc">:x:</span> **Limitations** : Markdown est conçu pour être simple, donc il ne supporte pas toutes les fonctionnalités avancées de mise en page</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Écrire du markdown</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Les fichiers markdown sont des fichiers texte qui ont pour extension <span class="in">`.md`</span>.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Il existe de très nombreux éditeurs de Markdown :</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>en ligne, par exemple <span class="co">[</span><span class="ot">HackMd</span><span class="co">](https://hackmd.io/)</span>{target="_blank}</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>à installer sur sa machine, par exemple dans Visual Studio Code</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Les éditeurs présentent généralement deux sections cote à cote :</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>une partie édition où l'on écrit le code</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>une partie vue où l'on voit le résultat</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exemples</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>De très nombreuses ressources existent pour apprendre en quelques minutes le langage, par exemple <span class="ot">&lt;https://commonmark.org/help/&gt;</span>{target="_blank}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Quelques exemples de mise en forme :</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Code Markdown                    <span class="pp">|</span> Résultat                       <span class="pp">|</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="pp">| --------------------------------</span> <span class="pp">| ------------------------------</span> <span class="pp">|</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`**texte en gras**`</span>              <span class="pp">|</span> **texte en gras**              <span class="pp">|</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`*texte en italique*`</span>            <span class="pp">|</span> *texte en italique*            <span class="pp">|</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`[lien](https://example.com)`</span>    <span class="pp">|</span> <span class="co">[</span><span class="ot">lien</span><span class="co">](https://example.com)</span>    <span class="pp">|</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`![texte alternatif](image.jpg)`</span> <span class="pp">|</span> <span class="al">![texte alternatif](image.jpg)</span> <span class="pp">|</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="sc">\`</span>code en ligne<span class="sc">\`</span>                <span class="pp">|</span> <span class="in">`code en ligne`</span>                <span class="pp">|</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`# Titre de niveau 1`</span>            <span class="pp">|</span>                                <span class="pp">|</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`## Titre de niveau 2`</span>           <span class="pp">|</span>                                <span class="pp">|</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Cette page est elle-même écrite en Markdown ! (avec une <span class="co">[</span><span class="ot">surcouche</span><span class="co">](https://quarto.org/docs/authoring/markdown-basics.html)</span>{target="_blank})</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Vous pouvez consulter le code en cliquant sur le bouton <span class="in">`&lt;/&gt; Code`</span> en haut à droite.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Un <span class="co">[</span><span class="ot">large choix d'emoji</span><span class="co">](https://gist.github.com/rxaviers/7360908)</span>{target="_blank} est également disponible en Markdown <span class="sc">:sunglasses:</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Utilisation dans VScode</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CTRL + K puis V : pour avoir cote à cote les modes **édition** et **vue**</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Extensions utiles (à aller chercher dans le marketplace)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>markdownlint</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Emoji</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Checkboxes</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Table</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Markdown Preview Mermaid Support</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -982,7 +1170,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/outils/Markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

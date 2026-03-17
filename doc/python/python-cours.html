@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année">
+<meta name="description" content="Slides">
 
-<title>Remise à niveau informatique – Remise à Niveau Informatique</title>
+<title>Introduction à Python – Remise à Niveau Informatique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,29 +22,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +109,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -244,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -255,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -264,11 +299,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -279,11 +314,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -294,35 +329,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="./doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/python/correction.html">
+    <a class="dropdown-item" href="../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -333,17 +368,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./doc/UML/UML.html"> 
+    <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -352,39 +387,39 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
         <li>
-    <a class="dropdown-item" href="./doc/outils/outils.html">
+    <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Bash.html">
+    <a class="dropdown-item" href="../../doc/outils/Bash.html">
  <span class="dropdown-text">Bash</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/DBeaver.html">
+    <a class="dropdown-item" href="../../doc/outils/DBeaver.html">
  <span class="dropdown-text">DBeaver</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/LaTeX.html">
+    <a class="dropdown-item" href="../../doc/outils/LaTeX.html">
  <span class="dropdown-text">LaTeX</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/Markdown.html">
+    <a class="dropdown-item" href="../../doc/outils/Markdown.html">
  <span class="dropdown-text">Markdown</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VSCode.html">
+    <a class="dropdown-item" href="../../doc/outils/VSCode.html">
  <span class="dropdown-text">Visual Studio Code</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/VM.html">
+    <a class="dropdown-item" href="../../doc/outils/VM.html">
  <span class="dropdown-text">VM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/YAML.html">
+    <a class="dropdown-item" href="../../doc/outils/YAML.html">
  <span class="dropdown-text">YAML</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./doc/outils/regexp.html">
+    <a class="dropdown-item" href="../../doc/outils/regexp.html">
  <span class="dropdown-text">Expressions régulières</span></a>
   </li>  
     </ul>
@@ -397,7 +432,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="./doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -423,20 +458,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#historique" id="toc-historique" class="nav-link active" data-scroll-target="#historique">Historique</a></li>
+  <li><a href="#pourquoi-apprendre-python" id="toc-pourquoi-apprendre-python" class="nav-link" data-scroll-target="#pourquoi-apprendre-python">Pourquoi Apprendre Python ?</a></li>
+  <li><a href="#les-fondamentaux-de-python" id="toc-les-fondamentaux-de-python" class="nav-link" data-scroll-target="#les-fondamentaux-de-python">Les Fondamentaux de Python</a></li>
+  <li><a href="#python-à-lensai" id="toc-python-à-lensai" class="nav-link" data-scroll-target="#python-à-lensai">Python à l’ENSAI</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#écrire-votre-premier-code-en-python" id="toc-écrire-votre-premier-code-en-python" class="nav-link" data-scroll-target="#écrire-votre-premier-code-en-python">Écrire votre Premier Code en Python</a></li>
+  <li><a href="#collections---les-2-principales" id="toc-collections---les-2-principales" class="nav-link" data-scroll-target="#collections---les-2-principales">Collections - les 2 principales</a></li>
+  <li><a href="#aide-au-développement" id="toc-aide-au-développement" class="nav-link" data-scroll-target="#aide-au-développement">Aide au développement</a></li>
+  <li><a href="#au-travail" id="toc-au-travail" class="nav-link" data-scroll-target="#au-travail">Au travail</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/python/python-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="python-cours-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remise à niveau informatique</h1>
+<h1 class="title">Introduction à Python</h1>
 </div>
 
 <div>
   <div class="description">
-    Remise à niveau pour les étudiants de l’ENSAI intégrés directement en 2e année
+    <a href="python-cours-slides.html">Slides</a>
   </div>
 </div>
 
@@ -459,105 +513,294 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Pourquoi cette remise à niveau ?">
+<section id="historique" class="level2">
+<h2 class="anchored" data-anchor-id="historique">Historique</h2>
+<ul>
+<li>Créé par <a href="https://fr.wikipedia.org/wiki/Python_(langage)#/media/Fichier:Guido_van_Rossum_OSCON_2006.jpg" target="_blank">Guido van Rossum</a> (Pays-Bas)</li>
+<li>1ère version en 1991</li>
+<li>Géré par la <em>Python Software Foundation</em> depuis 2001</li>
+<li><a href="https://www.python.org/" target="_blank">Python</a> 3.12</li>
+</ul>
+<div class="notes">
+<ul>
+<li>Créé fin 1989 pendant les vacances de Noël</li>
+<li>Python Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté</li>
+</ul>
+</div>
+</section>
+<section id="pourquoi-apprendre-python" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-apprendre-python">Pourquoi Apprendre Python ?</h2>
+<ul>
+<li>Langage polyvalent et populaire</li>
+<li>Facilité d’apprentissage et de lecture</li>
+<li>Large communauté et nombreuses ressources</li>
+<li>Nombreux packages</li>
+</ul>
+<div class="notes">
+<ul>
+<li>Important dans le monde de la data science et de l’ingénierie.</li>
+</ul>
+</div>
+</section>
+<section id="les-fondamentaux-de-python" class="level2">
+<h2 class="anchored" data-anchor-id="les-fondamentaux-de-python">Les Fondamentaux de Python</h2>
+<ul>
+<li>Langage interprété et interactif</li>
+<li>Typage Dynamique</li>
+<li>Syntaxe claire et concise</li>
+<li>Supporte plusieurs paradigmes (procédural, orienté objet, fonctionnel)</li>
+</ul>
+<div class="notes">
+<ul>
+<li><p>Expliquer la différence entre un langage interprété et compilé.</p></li>
+<li><p>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</p></li>
+<li><p>Typage Dynamique (vérification des types au moment de l’exécution)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">"toto"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</div>
+</section>
+<section id="python-à-lensai" class="level2">
+<h2 class="anchored" data-anchor-id="python-à-lensai">Python à l’ENSAI</h2>
+<ul>
+<li>Distribution CPython</li>
+<li>Version 3.10 (<code>python --version</code>)</li>
+<li>Vous allez coder dans :
+<ul>
+<li>des <a href="https://jupyter.org/" target="_blank">notebooks Jupyter</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+</ul></li>
+<li>Packages pré-installés</li>
+</ul>
+<div class="notes">
+<p>Distribution : version pré-packagée de l’interpréteur Python accompagnée de nombreux modules, bibliothèques et outils</p>
+<ul>
+<li>Anaconda (datascience et machine learning)</li>
+<li>Miniconda (plus léger)</li>
+</ul>
+<p>Autre IDE : PyCharm, Atom</p>
+<p>Gestionnnaire de packages <strong>pip</strong>, à lancer dans un terminal</p>
+</div>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Dans un terminal (par exemple : <strong>Git Bash</strong>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> list                            <span class="co"># Packages installés</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>               <span class="co"># Installer un package</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>==<span class="op">&lt;</span>version<span class="op">&gt;</span>    <span class="co"># Version spécifique</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> uninstall <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution utilisée</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="notes">
+<p>En projet :</p>
+<ul>
+<li>liste des packages dans un fichier texte à la racine</li>
+<li><code>pip install - r requirements.txt</code></li>
+</ul>
+<p><strong>Démo</strong> : lancer python dans le terminal</p>
+</div>
+<section id="packages-populaires" class="level3">
+<h3 class="anchored" data-anchor-id="packages-populaires">Packages populaires</h3>
+<p>Datascience :</p>
+<ul>
+<li>NumPy</li>
+<li>Pandas, Polars</li>
+<li>Matplotlib, Seaborn</li>
+</ul>
+<div class="notes">
+<ul>
+<li>NumPy
+<ul>
+<li>Calcul numérique</li>
+<li>ndarray, perf, stats, manipulation des tableaux</li>
+</ul></li>
+<li>Pandas
+<ul>
+<li>dataframe, analyse de données</li>
+</ul></li>
+<li>Matplotlib : graphiques</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="écrire-votre-premier-code-en-python" class="level2">
+<h2 class="anchored" data-anchor-id="écrire-votre-premier-code-en-python">Écrire votre Premier Code en Python</h2>
+<ul>
+<li>Variables et types de données (int, float, str, bool, list, dict)</li>
+<li>Opérations de base</li>
+<li>Sensible à l’indentation</li>
+<li>Structures de contrôle (if, for, while)</li>
+</ul>
+<div class="notes">
+<ul>
+<li>= : affectation</li>
+<li>== : test d’égalité / != différence</li>
+</ul>
+<p>indentation : utiliser un formateur dans VSCode</p>
+</div>
+<section id="structures-de-contrôle" class="level3">
+<h3 class="anchored" data-anchor-id="structures-de-contrôle">Structures de contrôle</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">If</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">For</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">While</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Enumerate</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="ddbe91f3" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>note <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> note <span class="op">&gt;</span> <span class="dv">16</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Validé avec mention"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> note <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Validé"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Non validé"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Validé avec mention</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="3ba5d732" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+2
+3
+4</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="3c9b13bd" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 9 8 7 6 5 4 3 2 1 boom</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div id="7c122de5" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="st">"Alban"</span>, <span class="st">"Bertille"</span>, <span class="st">"Corine"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> : valeur </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>index 0 : valeur Alban
+index 1 : valeur Bertille
+index 2 : valeur Corine</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="collections---les-2-principales" class="level2">
+<h2 class="anchored" data-anchor-id="collections---les-2-principales">Collections - les 2 principales</h2>
+<ul>
+<li><p><strong>Liste</strong> : collection ordonnée de valeurs modifiables</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Dictionnaire</strong> : collection de paires clé-valeur non ordonnées</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+<section id="autres-collections-utiles" class="level3">
+<h3 class="anchored" data-anchor-id="autres-collections-utiles">Autres Collections utiles</h3>
+<ul>
+<li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Pourquoi cette remise à niveau ?
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce cours de remise à niveau s’adresse aux étudiants intégrant directement la deuxième année de l’ENSAI. Il s’agit d’un panorama des cours suivis par les étudiants en première année.</p>
-<p><strong>Le projet informatique démarre dès le début de la deuxième année.</strong></p>
-<p>Il est donc essentiel pour tous d’avoir les bases en Python, POO, SQL et UML, afin de débuter le projet informatique en toute sérénité.</p>
-<p>Ces enseignements sont à réaliser en autonomie. La charge de travail est estimée à 21h.</p>
+<p>De nombreux autres types de collections existent (Arbre, Liste chainée…).</p>
 </div>
 </div>
-<section id="pré-requis-et-datalab" class="level2">
-<h2 class="anchored" data-anchor-id="pré-requis-et-datalab">Pré-requis et Datalab</h2>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
 </section>
-<section id="programme" class="level2">
-<h2 class="anchored" data-anchor-id="programme">Programme</h2>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
-<p><span class="emoji" data-emoji="construction">🚧</span></p>
+<section id="collections-principales---résumé" class="level3">
+<h3 class="anchored" data-anchor-id="collections-principales---résumé">Collections principales - résumé</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type de Donnée</th>
+<th style="text-align: center;">Ordonné</th>
+<th style="text-align: center;">Mutable</th>
+<th style="text-align: center;">Doublon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>list</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">✔</td>
+</tr>
+<tr class="even">
+<td>dict</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>tuple</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+</tr>
+<tr class="even">
+<td>set</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="initiation-à-sql" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-sql">Initiation à SQL</h3>
-<p>3h</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/sql/sql-cours.qmd">cours d’introduction aux bases de données et à SQL</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
-</ul>
 </section>
-<section id="initiation-à-python" class="level3">
-<h3 class="anchored" data-anchor-id="initiation-à-python">Initiation à Python</h3>
-<p>6h</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/python/python-cours.qmd">cours d’introduction à Python</a></label></li>
-<li><label><input type="checkbox">Lisez et faites les exercices des 5 notebooks</label></li>
-</ul>
-</section>
-<section id="programmation-orientée-objet" class="level3">
-<h3 class="anchored" data-anchor-id="programmation-orientée-objet">Programmation Orientée Objet</h3>
-<p>9h</p>
-<p>Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez <strong>Git Bash</strong>, puis coller les commandes suivantes</label>
+<section id="aide-au-développement" class="level2">
+<h2 class="anchored" data-anchor-id="aide-au-développement">Aide au développement</h2>
+<p>Pour apprendre le langage, évitez de foncer vers les LLM.</p>
+<p>Préférez :</p>
 <ul>
-<li><code>mkdir -p /p/Cours2A/UE3_Remise_a_niveau &amp;&amp; cd $_</code></li>
-<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-<li>cela crée une copie du dépôt dans <em>P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau</em></li>
-</ul></li>
+<li><a href="https://docs.python.org/fr/3.10/tutorial/" target="_blank">Aide en ligne</a></li>
+<li>Votre moteur de recherche favori</li>
+<li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
 </ul>
-<hr>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/POO/poo-cours.qmd">cours d’introduction à la POO</a></label></li>
-<li><label><input type="checkbox">Suivez les consignes pour le paramètrage de VSCode</label></li>
-<li><label><input type="checkbox">Faites les exercices</label></li>
-</ul>
-</section>
-<section id="uml" class="level3">
-<h3 class="anchored" data-anchor-id="uml">UML</h3>
-<p>3h</p>
-<p>UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lisez le <a href="docs/UML/UML.qmd">cours d’introduction à UML</a></label></li>
-<li><label><input type="checkbox">Faites l’exercice</label></li>
-</ul>
-</section>
-</section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<p>Voici d’autres possibilités pour se mettre à niveau en Python, POO et SQL</p>
-<section id="vidéos-de-la-session-2022-2023" class="level3">
-<h3 class="anchored" data-anchor-id="vidéos-de-la-session-2022-2023">Vidéos de la session 2022-2023</h3>
-<p>si vous avez vos accès à <em>MyENSAI</em>, les vidéos de la session de l’année 2022-2023 sont disponibles <a href="https://foad-moodle.ensai.fr/mod/url/view.php?id=11354" target="_blank">ici</a></p>
-</section>
-<section id="cours-en-ligne-pour-apprendre-python-et-sql" class="level3">
-<h3 class="anchored" data-anchor-id="cours-en-ligne-pour-apprendre-python-et-sql">Cours en ligne pour apprendre Python et SQL</h3>
-<ul>
-<li><a href="https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql" target="_blank">Openclassrooms - Requêtez avecSQL</a></li>
-<li><a href="https://inseefrlab.github.io/formation-python-initiation/" target="_blank">Initiation à Python</a> dans le Service Statistique Public</li>
-<li><a href="https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content" target="_blank">Openclassrooms - bases de Python</a> (parties 1 et 2)</li>
-<li><a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Openclassrooms - POO avec Python</a> (parties 1 et 2)</li>
-</ul>
-</section>
 <section id="ressources-utiles" class="level3">
 <h3 class="anchored" data-anchor-id="ressources-utiles">Ressources utiles</h3>
 <ul>
-<li><a href="https://realpython.com/" target="_blank">https://realpython.com/</a></li>
-<li><a href="https://refactoring.guru/" target="_blank">https://refactoring.guru/</a></li>
-<li><a href="https://github.com/faif/python-patterns" target="_blank">https://github.com/faif/python-patterns</a></li>
-<li><a href="https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/" target="_blank">https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/</a></li>
-<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la data science</a>, Lino Galiana (INSEE, ENSAE)</li>
+<li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+<li><a href="https://pythonds.linogaliana.fr/" target="_blank">Python pour la datascience</a></li>
+<li><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python</a></li>
 </ul>
-
-
+<div class="notes">
+<p>LLM pas adapté pour retenir mais pratique pour :</p>
+<ul>
+<li>déboguer</li>
+<li>documenter</li>
+</ul>
+</div>
 </section>
+</section>
+<section id="au-travail" class="level2">
+<h2 class="anchored" data-anchor-id="au-travail">Au travail</h2>
+<p>5 notebooks sont à votre disposition pour apprendre les bases du langage :</p>
+<p><a href="../../doc/python/python-notebooks.html">Comment utiliser les notebooks</a></p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -982,7 +1225,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/python/python-cours.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
