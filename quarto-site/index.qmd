@@ -1,0 +1,97 @@
+---
+title: "Remise à niveau informatique"
+description: "Remise à niveau pour les étudiants de l'ENSAI intégrés directement en 2e année"
+author: "Ludovic Deneuville"
+format: html
+from: markdown+emoji
+---
+
+::: {.callout-important title="Pourquoi cette remise à niveau ?"}
+Ce cours de remise à niveau s'adresse aux étudiants intégrant directement la deuxième année de l'ENSAI. Il s'agit d'un panorama des cours suivis par les étudiants en première année. 
+
+**Le projet informatique démarre dès le début de la deuxième année.**
+
+Il est donc essentiel pour tous d'avoir les bases en Python, POO, SQL et UML, afin de débuter le projet informatique en toute sérénité.
+
+Ces enseignements sont à réaliser en autonomie. La charge de travail est estimée à 21h.
+:::
+
+## Pré-requis et Datalab
+
+:construction:
+
+
+## Programme
+
+### Git
+
+:construction:
+
+### Initiation à SQL
+
+3h
+
+- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql-cours.qmd)
+- [ ] Faites l'exercice
+
+
+### Initiation à Python
+
+6h
+
+- [ ] Lisez le [cours d'introduction à Python](docs/python/python-cours.qmd)
+- [ ] Lisez et faites les exercices des 5 notebooks
+
+
+### Programmation Orientée Objet
+
+9h
+
+Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
+
+- [ ] Ouvrez **Git Bash**, puis coller les commandes suivantes
+  - `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
+  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
+  - cela crée une copie du dépôt dans *P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau*
+
+---
+
+- [ ] Lisez le [cours d'introduction à la POO](docs/POO/poo-cours.qmd)
+- [ ] Suivez les consignes pour le paramètrage de VSCode
+- [ ] Faites les exercices
+
+
+### UML
+
+3h
+
+UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.
+
+- [ ] Lisez le [cours d'introduction à UML](docs/UML/UML.qmd)
+- [ ] Faites l'exercice
+
+
+## Alternatives 
+
+Voici d'autres possibilités pour se mettre à niveau en Python, POO et SQL
+
+### Vidéos de la session 2022-2023
+
+si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022-2023 sont disponibles [ici](https://foad-moodle.ensai.fr/mod/url/view.php?id=11354){target="_blank"}
+
+
+### Cours en ligne pour apprendre Python et SQL
+
+- [Openclassrooms - Requêtez avecSQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
+- [Initiation à Python](https://inseefrlab.github.io/formation-python-initiation/){target="_blank"} dans le Service Statistique Public
+- [Openclassrooms - bases de Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parties 1 et 2)
+- [Openclassrooms - POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parties 1 et 2)
+		
+
+### Ressources utiles
+
+- <https://realpython.com/>{target="_blank"}
+- <https://refactoring.guru/>{target="_blank"}
+- <https://github.com/faif/python-patterns>{target="_blank"}
+- <https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/>{target="_blank"}
+- [Python pour la data science](https://pythonds.linogaliana.fr/){target="_blank"}, Lino Galiana (INSEE, ENSAE)

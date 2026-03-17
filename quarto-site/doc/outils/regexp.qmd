@@ -1,0 +1,379 @@
+---
+title: "Les Regex"
+description: "Introduction aux expressions régulières"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Qu'est-ce qu'une expression régulière ?
+
+Une expression régulière (regex) est un langage permettant de décrire des motifs de texte.
+
+Elles sont utilisées pour :
+
+- rechercher du texte
+- filtrer des données
+- valider des formats
+- remplacer du contenu
+
+On les retrouve dans de nombreux outils :
+
+- éditeurs de texte
+- langages de programmation
+- scripts de traitement de données
+- moteurs de recherche avancés
+
+Exemples d'utilisation :
+
+| Objectif | Regex |
+|---|---|
+| trouver un nombre | `\d+` |
+| trouver un email simple | `\w+@\w+\.\w+` |
+| lignes qui commencent par `##` | `^##` |
+
+
+## Principe
+
+Une regex est une suite de caractères spéciaux et normaux décrivant un motif.
+
+Exemple :
+
+```
+chat
+```
+
+Correspond simplement au mot **chat**.
+
+
+## Les ancres
+
+Les ancres permettent de cibler **la position dans la ligne**.
+
+| Regex | Signification  |
+| ----- | -------------- |
+| `^`   | début de ligne |
+| `$`   | fin de ligne   |
+
+### Exemples
+
+```
+^Bonjour
+```
+
+Correspond à :
+
+```
+Bonjour tout le monde
+Bonjour Pierre
+```
+
+mais pas :
+
+```
+Je dis Bonjour
+```
+
+---
+
+```
+erreur$
+```
+
+Correspond à :
+
+```
+Fatal erreur
+Une erreur
+```
+
+
+## Les caractères spéciaux
+
+### Le point
+
+```text
+.
+```
+
+Correspond à **n'importe quel caractère**.
+
+Exemple :
+
+```text
+c.t
+```
+
+Correspond à :
+
+```
+cat
+cot
+cut
+```
+
+---
+
+## Les répétitions
+
+Les quantificateurs indiquent **combien de fois un motif apparaît**.
+
+| Regex | Signification  |
+| ----- | -------------- |
+| `*`   | 0 ou plusieurs |
+| `+`   | 1 ou plusieurs |
+| `?`   | 0 ou 1         |
+
+### Exemples
+
+```text
+ab*
+```
+
+Correspond à :
+
+```
+a
+ab
+abb
+abbb
+```
+
+---
+
+```text
+ab+
+```
+
+Correspond à :
+
+```
+ab
+abb
+abbb
+```
+
+
+## Classes de caractères
+
+Les crochets permettent de définir **un ensemble de caractères possibles**.
+
+```text
+[abc]
+```
+
+Correspond à :
+
+```
+a
+b
+c
+```
+
+---
+
+### Intervalles
+
+```text
+[a-z]
+```
+
+lettre minuscule
+
+```text
+[A-Z]
+```
+
+lettre majuscule
+
+```text
+[0-9]
+```
+
+chiffre
+
+
+### Exemple
+
+```text
+[aeiou]
+```
+
+Correspond à **une voyelle**.
+
+
+## Classes prédéfinies
+
+Les regex proposent des raccourcis très utiles.
+
+| Regex | Signification     |
+| ----- | ----------------- |
+| `\d`  | chiffre           |
+| `\w`  | lettre ou chiffre |
+| `\s`  | espace            |
+| `\D`  | non chiffre       |
+| `\W`  | non mot           |
+| `\S`  | non espace        |
+
+### Exemple
+
+```text
+\d\d\d\d
+```
+
+Correspond à :
+
+```
+2024
+1999
+1234
+```
+
+
+## Groupes
+
+Les parenthèses permettent de **regrouper des motifs**.
+
+```text
+(abc)
+```
+
+Exemple :
+
+```text
+(abc)+
+```
+
+Correspond à :
+
+```
+abc
+abcabc
+abcabcabc
+```
+
+---
+
+## Le OU logique
+
+Le symbole `|` signifie **ou**.
+
+```text
+chat|chien
+```
+
+Correspond à :
+
+```
+chat
+chien
+```
+
+---
+
+## Négation
+
+Dans une classe de caractères, `^` signifie **tout sauf**.
+
+```text
+[^0-9]
+```
+
+Correspond à **tout caractère qui n'est pas un chiffre**.
+
+---
+
+## Exemple pratique
+
+Supprimer toutes les lignes **qui ne commencent pas par `##`**.
+
+Regex :
+
+```text
+^(?!##).*
+```
+
+Explication :
+
+| Partie   | Signification            |
+| -------- | ------------------------ |
+| `^`      | début de ligne           |
+| `(?!##)` | ne commence pas par `##` |
+| `.*`     | reste de la ligne        |
+
+Exemple :
+
+```text
+## titre
+ligne1
+## chapitre
+ligne2
+```
+
+Correspondance :
+
+```
+ligne1
+ligne2
+```
+
+---
+
+## Outils pour tester les regex
+
+Sites utiles :
+
+- [https://regex101.com](https://regex101.com)
+- [https://regexr.com](https://regexr.com)
+
+Ces outils permettent de :
+
+- tester une regex
+- voir les correspondances
+- obtenir une explication du motif
+
+---
+
+## À retenir
+
+Quelques regex très utiles :
+
+## Les 15 symboles regex indispensables
+
+| Symbole | Signification | Exemple | Correspond à |
+|---|---|---|---|
+| `.` | n'importe quel caractère | `c.t` | cat, cot |
+| `^` | début de ligne | `^Bonjour` | lignes commençant par Bonjour |
+| `$` | fin de ligne | `erreur$` | lignes finissant par erreur |
+| `*` | 0 ou plusieurs occurrences | `ab*` | a, ab, abb |
+| `+` | 1 ou plusieurs occurrences | `ab+` | ab, abb |
+| `?` | 0 ou 1 occurrence | `colou?r` | color, colour |
+| `[abc]` | un caractère parmi | `[aeiou]` | voyelles |
+| `[^abc]` | tout sauf | `[^0-9]` | caractère non numérique |
+| `[a-z]` | intervalle | `[0-9]` | un chiffre |
+| `\d` | chiffre | `\d\d` | 42, 99 |
+| `\w` | caractère de mot | `\w+` | hello, abc123 |
+| `\s` | espace | `\s+` | espaces, tabulations |
+| `(...)` | groupe | `(abc)+` | abc, abcabc |
+| `|` | ou logique | `chat|chien` | chat ou chien |
+| `{n}` `{n,m}` | répétition précise | `\d{4}` | 2024 |
+
+
+---
+
+### Mémo rapide
+
+| Catégorie | Symboles |
+|---|---|
+| Position | `^` `$` |
+| Quantité | `*` `+` `?` `{n}` |
+| Choix | `[ ]` `[^ ]` `|` |
+| Classes | `\d` `\w` `\s` |
+| Structure | `( )` |
+| Joker | `.` |

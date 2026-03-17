@@ -1,0 +1,165 @@
+---
+title: "Git"
+description: "Introduction à Git"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
+
+Le but est de vous présenter très rapidement Git et son utilisation. Pour plus d'informations, consultez les liens en bas de cette page.
+
+## Git ?
+
+Git est un logiciel qui permet de :
+
+- versionner son code 
+- synchroniser des dépôts de code
+
+Lorsque vous travailler à cinq sur un projet, ce n'est pas évident pour tous d'avoir à chaque instant la même version du code.
+
+En travaillant avec Git, vous allez avoir :
+
+- un dépôt de code commun central distant (remote) hébergé ici sur <https://github.com/>{target="_blank"}
+- chacun votre dépôt local sur lequel vous travaillez
+
+L'idée est synchroniser réguliérement ces dépôts pour que chaque membre de l'équipe travaille avec la version la plus récente.
+
+::: {.callout-note title="Un dépôt ?"}
+C'est simplement un ensemble de dossiers et fichiers, comme un Drive.
+
+Pour faciliter la synchronisation, un dépôt doit être :
+
+- léger (quelques Mo maximum)
+- contenir principalement des fichiers lisibles par un éditeur de texte (.txt, .sql, .py, .R, etc.)
+:::
+
+Nous allons ensuite détailler le fonctionnement de Git dans le cadre d'un exercice.
+
+## Exercice
+
+### Compte GitHub et jeton
+
+Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.
+
+- [ ] Créez un compte sur <https://github.com/>{target="_blank"}
+- [ ] Créez un nouveau token classic : [Lien direct](https://github.com/settings/tokens/new){target="_blank"}
+  - Note: for ENSAI datalabs
+  - Expiration: `30/06/<year n+1>`
+  - cochez repo and workflow
+  - [Generate token]{.green-button}
+- [ ] Copiez le token (ghp_xxxxxxxxxx)
+
+::: {.callout-caution}
+Attention sa valeur ne sera affichée qu'une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.
+:::
+
+Vous allez maintenant déclarer ce jeton sur le datalab :
+
+- [ ] Connectez-vous au datalab
+- [ ] Allez dans *Mon Compte > Git*
+- [ ] Collez le token
+- [ ] Renseignez également ici votre nom d'utilisateur GitHub et mail 
+
+Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.
+
+Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.
+
+### Créer un dépôt distant
+
+Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.
+
+- [ ] Créez un nouveau dépôt (repository), [Lien direct](https://github.com/new){target="_blank"}
+  - Repository name : ENSAI-Git-TP
+  - Add README : On
+  - Add .gitignore : Python
+  - [Create repository]{.green-button}
+
+Votre dépôt distant est créé. Il contient uniquement les fichiers README et .gitignore.
+
+::: {.callout-tip}
+Le dépôt distant n'a pas vocation à être modifié directement.
+
+Son rôle est de :
+
+- avoir une sauvegarde de votre code 
+- avoir un dépôt central si vous travaillez à plusieurs
+
+Les modifications seront réalisées sur les dépôts locaux et partagées sur le dépôt distant.
+:::
+
+### Cloner son dépôt local
+
+Commençons par récupérer l'url du dépôt distant :
+
+- [ ] Allez la page GitHub de votre dépôt
+- [ ] Cliquez sur [Code]{.green-button}
+- [ ] Copiez l'adresse https
+
+Nous allons maintenant créer un clone local dans un service du datalab. 
+
+Sur le datalab :
+
+- [ ] Allez dans le catalogue de services
+- [ ] Sélectionnez *VScode-python* et cliquez sur `Lancer`
+
+Vous arrivez sur la page des paramètres avant de lancer le service.
+
+- [ ] Allez dans l'onglet *Git*
+- [ ] Collez votre adresse dans la case *Repository url*
+- [ ] Open the service in the clone folder : Oui
+- [ ] Cliquez sur `Lancer`, puis ouvrez le service 
+
+Vous avez maintenant un service VScode avec un clone local de votre dépôt.
+
+::: {.callout-tip title="Ce qu'il s'est passé"}
+Suite au lancement de votre service, la commande suivante a été exécutée :
+
+`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git
+
+avec :
+
+- `$GIT_PERSONAL_ACCESS_TOKEN` : une variable d'environnement contenant la valeur de votre jeton
+- `<username>` : votre nom d'utilisateur GitHub
+
+Cette commande crée localement un clone de votre dépôt distant.
+:::
+
+
+### Add, commit, push
+
+Avant de commencer à modifier votre dépôt local, vérifiez qu'il est bien branché sur le dépôt distant.
+
+Dans Visual Studio Code :
+
+- [ ] Cliquez sur les 3 barres horizontales en haut à gauche > Terminal > New Terminal
+- [ ] Lancez la commande : `git remote -v`
+
+Vous devez voir apparaitre l'url de votre dépôt distant incluant votre jeton.
+
+Nous allons maintenant créer de nouveaux fichiers et les envoyer vers le dépôt distant.
+
+Dans l'explorer (à gauche) de Visual Studio Code :
+
+- [ ] Créez un fichier *ex1.py*
+  - Clic droit > New file
+  - Insérer le code `print("Hello")` dans ce fichier et sauvegardez-le
+
+Partageons maintenant ce fichier et ce dossier avec le dépôt distant.
+
+Cet envoi se déroule en plusieurs étapes obligatoires :
+
+1. Déclarer le fichier à Git
+2. L'ajouter dans un commit (point de sauvegarde)
+3. Envoyer ce commit au dépôt distant
+
+
+
+
+## Liens {.unnumbered}
+
+<https://ludo2ne.github.io/Git-tuto/>{target="_blank"}

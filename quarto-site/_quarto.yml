@@ -1,0 +1,99 @@
+
+project:
+  type: website
+  render:
+    - "**/*.qmd"
+    - "**/*.ipynb"
+
+website:
+  title: "Remise à Niveau Informatique"
+  navbar:
+    background: "#447099"
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Premiers pas
+        menu: 
+          - href: doc/first-steps/datalab.qmd
+            text: Datalab
+          - href: doc/first-steps/git.qmd
+            text: Git
+      - text: SQL
+        menu: 
+          - href: doc/sql/sql-cours.qmd
+            text: "Introduction à SQL"
+          - href: doc/sql/sql-exercice.qmd
+            text: "Exercice SQL"
+      - text: Python
+        menu: 
+          - href: doc/python/python-cours.qmd
+            text: "Introduction à Python"
+          - href: doc/python/python-notebooks.qmd
+            text: "Notebooks Python"
+          - href: doc/python/01-types-et-variables.qmd
+            text: "Types et Variables"
+          - href: doc/python/02-listes-et-dictionnaires.qmd
+            text: "Listes et Dictionnaires"
+          - href: doc/python/03-tests-et-boucles.qmd
+            text: "Tests et Boucles"
+          - href: doc/python/04-fonctions.qmd
+            text: "Fonctions"
+          - href: doc/python/05-POO-introduction.qmd
+            text: "Introduction à la POO"
+          - href: doc/python/correction.qmd
+            text: "Correction"
+      - text: POO
+        menu:
+          - href: doc/POO/poo-cours.qmd
+            text: "Introduction à la POO"
+          - href: doc/POO/poo-exercice.qmd
+            text: "Exercices POO"
+      - href: doc/UML/UML.qmd
+        text: UML
+      - text: Outils
+        menu: 
+          - href: doc/outils/outils.qmd
+            text: "Outils"
+          - href: doc/outils/Bash.qmd
+            text: "Bash"
+          - href: doc/outils/DBeaver.qmd
+            text: "DBeaver"
+          - href: doc/outils/LaTeX.qmd
+            text: "LaTeX"
+          - href: doc/outils/Markdown.qmd
+            text: "Markdown"
+          - href: doc/outils/VSCode.qmd
+            text: "Visual Studio Code"
+          - href: doc/outils/VM.qmd
+            text: "VM"
+          - href: doc/outils/YAML.qmd
+            text: "YAML"
+          - href: doc/outils/regexp.qmd
+            text: "Expressions régulières"
+    right:
+      - text: Examens
+        menu: 
+          - href: doc/annales/examen-2024.qmd
+            text: "Examen 2024"
+      - icon: github
+        href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
+        target: "_blank"
+  reader-mode: true
+  page-footer:
+    right: |
+      Website built with [Quarto](https://quarto.org/){.external target="_blank"} <br>
+      [Source code](https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau){.external target="_blank"}
+  repo-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
+  repo-branch: main
+  issue-url: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new
+  repo-actions: [edit, issue]
+
+format:
+  html:
+    theme: 
+      dark: solar
+      light: cosmo
+    css: styles.css
+
+
+

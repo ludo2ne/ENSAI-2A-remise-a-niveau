@@ -1,0 +1,190 @@
+---
+title: "Programmation Orientée Objet - Exercices"
+description: "Exercice de POO avec Python"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Avant de commencer {.unnumbered}
+
+À partir de maintenant, nous n'allons plus coder dans des Notebooks mais dans l'IDE VSCode.
+
+- [ ] Ouvrez Visual Studio Code
+- [ ] [Paramétrez VSCode](../outils/VSCode.qmd){target="_blank"}
+- [ ] Dans la fiche VSCode, suivez les consignes de la section `Première utilisation`
+  - cela vous permettra de créer un clone du code
+- [ ] Dans le dossier `src/Python-POO/exercices`, créez les 2 dossiers suivants :
+  - `geometrie` pour stocker vos classes des exercices 1 et 2
+  - `domino` pour l'exercice 3
+
+### Sur votre machine personnelle {.unnumbered}
+
+Si vous n'avez pas accès au réseau ENSAI, vous pouvez soit :
+
+- continuer à coder dans les notebooks
+- installer les outils pour développer en python
+
+::: {.callout-note title="Installation outils Python"}
+- [ ] Téléchargez et installez [Python](https://www.python.org/downloads/){target="_blank"} version ≥ 3.10
+- [ ] Téléchargez et installez [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
+- [ ] Téléchargez et installez [Git](https://git-scm.com/){target="_blank"}
+- [ ] Ouvrez VS Code et installez l'extension Python (View > Extension)
+
+[Plus de détails](https://learn.microsoft.com/fr-fr/training/modules/python-install-vscode/){target="_blank"}
+:::
+
+## Exercice 1 - Points
+
+Définissez une classe `Point` pour représenter un point du plan de coordonnées x et y.
+
+Codez les méthodes suivantes :
+
+- [ ] `__init__(self, x, y)` : constructeur du point avec des coordonnées cartésiennes
+- [ ] `r(self)` et `t(self)` : renvoyant les coordonnées polaires du point
+- [ ] `__str__(self)` : pour afficher le Point sous forme de texte, ex : `(1.0, 2.4)`
+- [ ] `distance(self, autre_point)` : distance avec un autre point
+- [ ] `__eq__(self, autre_point) -> bool` : dit si les 2 points sont identiques
+- [ ] `homothetie(self, k)` : appliquant au point une homothétie de centre (0, 0) et de rapport k
+- [ ] `translation(self, dx, dy)` : appliquant au point une translation de vecteur (dx, dy)
+- [ ] `rotation(self, a)` (bonus) : appliquant au point une rotation de centre (0, 0) et d'angle a
+
+::: {.callout-tip collapse="true"}
+Pour vérifier que vos méthodes sont correctes, vous pouvez ajouter à la fin de votre classe un bloc `main`. Lorsque vous exécuterez ce fichier, c'est ce code qui sera lancé.
+
+```{.python filename="point.py"}
+class Point:
+
+    # ...
+
+if __name__ == "__main__":
+    p1 = Point(1, 2)
+    p2 = Point(1, 2)
+    print(f"p1 : {p1}")
+    print(f"Distance entre p1 et p2 : {p1.distance(p2)}")
+    print(f"p1 est égal à p2 : {p1 == p2}")
+```
+:::
+
+## Exercice 2 - Polygones
+
+- [ ] Créez une classe `Polygone` composées d'objets de la classe `Point`
+  - Nous supposerons par la suite que les segments ne se croisent pas
+- [ ] Ajoutez à cette classe 2 méthodes abstraites `aire()` et `périmètre()` 
+  - ces méthodes seront définies dans les classes filles
+- [ ] Créez les classes `Segment`, `Triangle` et `Quadrilatere` qui héritent de la classe `Polygone`
+  - vérifiez à chaque fois le nombre de points
+- [ ] Définissez les méthodes `aire()` et `périmètre()` dans ces 3 classes
+- [ ] Créez la classe `Rectangle` qui hérite de `Quadrilatere`
+- [ ] Vérifier pour Rectangle, que les 2 cotés opposés sont de même longueur et qu'il y a un angle droit
+
+Voici le diagramme de classes généré avec [Mermaid](https://mermaid.js.org/syntax/classDiagram.html){target="_blank"}
+
+```{mermaid}
+classDiagram
+    Point --o Polygone
+    Polygone <|-- Segment : 2
+    Polygone <|-- Triangle : 3
+    Polygone <|-- Quadrilatere : 4
+    Quadrilatere <|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(autre_point)
+    }
+    class Polygone{
+        +liste[Point] liste_points
+        +aire()
+        +perimetre()
+    }
+    class Quadrilatere{
+        +aire()
+        +perimetre()
+    }
+    class Segment{
+        +aire()
+        +perimetre()
+    }
+    class Triangle{
+        +aire()
+        +perimetre()
+    }
+```
+
+## Exercice 3 - Domino
+
+### Un Domino
+
+Écrire une classe `Domino` avec :
+
+- [ ] 2 attributs entiers entre 0 et 6 : `extr_A` et `extr_B`
+- [ ] `__str__()` : qui affiche les points présents sur les deux extrémités
+- [ ] `retourne()` qui retourne le domino (son extrémité A devient son extrémité B et vice-versa).
+- [ ] `accepte_apres(autre_domino)` : vérifie si l'extrémité B du domino courant a la même valeur que l'extrémité A de l'autre domino
+
+### Jeu
+
+Maintenant nous allons essayer de coder un jeu de dominos.
+
+Pour plus de facilité :
+
+- il n'y aura qu'un seul joueur
+- il n'est possible de poser que d'un seul côté, à la fin de la rangée de domino
+
+Commençons par générer tous les dominos possibles, i.e. toutes les combinaisons de (0,0) à (6,6) sans doublon.
+
+- [ ] Écrivez une fonction qui génère tous les dominos et renvoie la liste
+- [ ] Écrivez une fonction `affiche_dominos()` qui affiche une liste de dominos
+- [ ] Écrivez une fonction `pioche()` qui pioche au hasard un domino dans une liste et le retire de cette liste
+- [ ] Écrivez une fonction `domino_posables(dominos_en_main, dominos_poses)` qui prend deux listes de dominos en arguments. La fonction retourne la liste des dominos en main qui pourraient être posés après le dernier domino de la liste `dominos_poses`.
+
+Écrivez une fonction `jouer()` qui :
+
+- [ ] génére la liste de tous les dominos
+- [ ] tire un 1er domino au hasard et le place dans la liste `dominos_poses`
+- [ ] distribue aléatoirement 6 dominos au joueur
+- [ ] affiche les dominos qu'il peut jouer
+- [ ] si aucun domino n'est jouable, lui proposer de piocher
+- [ ] lui demande lequel il veut jouer (par exemple en lui demandant de saisir le numéro dans la liste de dominos, et `quit` pour arrêter de jouer)
+- [ ] ajoute le domino joué à la liste `dominos_poses` et le retire de `dominos_en_main`
+
+```{mermaid}
+classDiagram
+    class Domino{
+        +int extr_A
+        +int extr_B
+        +retourne()
+        +accepte_apres(autre_domino)
+    }
+```
+
+
+## Correction {.unnumbered}
+
+::: {.callout-tip title="Proposition de correction" collapse="true"}
+
+#### Exercices 1 et 2
+
+- [point.py](./exercices/geometrie/point.py){target="_blank"}
+- [polygone.py](./exercices/geometrie/polygone.py){target="_blank"}
+- [segment.py](./exercices/geometrie/segment.py){target="_blank"}
+- [triangle.py](./exercices/geometrie/triangle.py){target="_blank"}
+- [quadrilatere.py](./exercices/geometrie/quadrilatere.py){target="_blank"}
+- [rectangle.py](./exercices/geometrie/rectangle.py){target="_blank"}
+
+Un exemple de tests unitaires sur la classe Point :
+
+- [test_point.py](./exercices/geometrie/test_point.py){target="_blank"}
+
+
+#### Exercice 3
+
+- [domino.py](./exercices/domino/domino.py){target="_blank"}
+- [jeu.py](./exercices/domino/jeu.py){target="_blank"}
+:::
