@@ -25,7 +25,7 @@ from: markdown+emoji
 - [ ] Qu'est ce qu'une base de données relationnelle ?
 - [ ] Comment sont construites les tables ?
 - [ ] Savoir écrire des requêtes SQL
-- [ ] Utiliser le logiciel [DBeaver](https://dbeaver.io/){target="_blank"}
+- [ ] Utiliser le service cloudBeaver
 
 
 ## Qu'est-ce qu'une base de données ?
@@ -147,16 +147,16 @@ PK :
 
 ::: {.panel-tabset .nav-pills}
 
-#### MCD
+#### MPD
 
 Modèle Physique des Données (UML)
 
-:::{style="background-color: #199edd;"}
+:::{style="background-color: #ffffff;"}
 
 ```{mermaid}
 classDiagram
   class Joueuse {
-    id_joueuse: INT(PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
@@ -209,22 +209,22 @@ Une clé étrangère (FK) :
 
 #### Diagramme
 
-:::{style="background-color: #199edd;"}
+:::{style="background-color: #ffffff;"}
 
 ```{mermaid}
 classDiagram
   direction LR
   
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Pays {
-    code_pays: VARCHAR (PK)
+    code_pays: VARCHAR PK
     nom: VARCHAR
   }
 
@@ -271,30 +271,30 @@ On supposera ici :
 
 #### Diagramme
 
-:::{style="background-color: #199edd;"}
+:::{style="background-color: #ffffff;"}
 
 ```{mermaid}
 classDiagram
   direction LR
 
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Tournoi {
-    id_tournoi: INT (PK)
+    id_tournoi: INT PK
     nom: VARCHAR
     ville: VARCHAR
   }
 
   
   class Participation {
-    id_joueuse: INT (FK)
-    id_tournoi: INT (FK)
+    id_joueuse: INT FK
+    id_tournoi: INT FK
   }
 
   Joueuse "*" .. "1" Participation
@@ -1031,7 +1031,7 @@ SELECT 'Salut';
 
 ## Bibliographie
 
-- [Cours ENSAI 1A 2024-2025](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
+- [Cours ENSAI 1A](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
 - <https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/>{target="_blank"}
 - <https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/>{target="_blank"}
 - <https://sql.sh/>{target="_blank"}

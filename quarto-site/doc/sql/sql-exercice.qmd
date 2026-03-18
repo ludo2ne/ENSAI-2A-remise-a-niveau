@@ -12,73 +12,98 @@ number-sections: true
 number-depth: 3
 ---
 
-## Se connecter à une base de données {.unnumbered}
+## Objectif {.unnumbered}
 
-Vous allez effectuer cet exercice sur le datalab du GENES.
+Dans ce TP, vous allez :
 
-Vous pouvez également réaliser l'exercice sur :
+- créer une base de données : lancer un service *PostgreSQL*
+- vous connecter à cette base de données : utiliser un service *cloudBeaver*
+- insérer des données via un script SQL
+- écrire les requêtes SQL pour répondre aux questions
 
-- le [SSPCloud](https://www.sspcloud.fr/){target="_blank"}, même modop que sur le datalab du GENES
-- la VM ENSAI (voir section ci-après)
-- trouver une ressource sur internet permettant d'exécuter du SQL
+## Mise en place
 
-### Datalab du GENES {.unnumbered}
+### Lancer les services
 
-- [ ] Connectez-vous à <https://onyxia.lab.groupe-genes.fr/>{target="_blank"}
+- [ ] Connectez-vous au [SSPCloud](https://www.sspcloud.fr/){target="_blank"}
 - [ ] Lancez un service **PostgreSQL**
-  - pour créer votre base de données
 - [ ] Lancez un service **Cloudbeaver**
-  - pour interagir avec la base de données que vous venez de créer
+- [ ] Ouvrez cloudBeaver
+  - username : user-<username>
+  - password : collez votre mot de passe
 
-Attendez que le service Cloudbeaver se lance :
+::: {.callout-tip title="Kesako"}
+- PostgreSQL : Base de données
+- Cloudbeaver : Logiciel pour communiquer avec une base de données
 
-- [ ] Ouvrez le service
-  - Cliquer pour copier le mot de passe
-  - Ouvrir le service
-- [ ] Authentification
-  - username : `user-<idxxxx>-ensai`
-  - password : collez le mot de passe (CTRL+V) copié juste avant
-
-Une fois connecté :
-
-- Dans l'explorateur à gauche, vous devez voir afficher votre connexion à la base de données PostgreSQL 
-- [ ] Cliquez sur l'icone **SQL** en haut à gauche
-
-
-::: {.callout-tip title="Si la connection ne s'est pas faite"}
-- [ ] Cliquez su **+**, puis **New connection**
-- [ ] Sélectionnez **PostgreSQL**
-- [ ] Renseignez : Host, Port, Database, Username, Password
-
-Pour obtenir ces informations, retournez sur le Datalab, onglet **Mes Services**, puis cliquez sur le README du service PostgreSQL.
-
-- [ ] **TEST** pour vérifier que la connexion se fait bien
-- [ ] **CREATE**
-- [ ] Dans l'explorer à gauche, cliquez sur votre connexion pour qu'elle passe au vert
+Il est possible de se connecter directement à une base de données, mais beaucoup plus simple d'utiliser un outil tel cloudBeaver.
 :::
 
+### Créer une connexion
 
-### VM ENSAI {.unnumbered}
+Normalement si vous lancez les deux services dans l'ordre, lors du lancement de cloudBeaver, la base de données PostgreSQL est détectée et la connexion créée automatiquement.
 
-Autre possibilité si vous êtes connectés sur la VM ENSAI :
+Est-ce que la connexion a été créée ?
 
-- [ ] Lancez le logiciel Dbeaver
-- [ ] Paramétrez [DBeaver](../outils/DBeaver.qmd){target="_blank"}
+- Si oui, elle apparait à gauche dans cloudBeaver (liste des connexions)
+- Si non, créez la connexion
 
-### Autres possibilités {.unnumbered}
+::: {.callout-note title="Créer une connexion"}
 
-Si vous n'avez pas accès aux ressources de l'ENSAI, voici par exemple quelques ressources pour faire les exercices :
+- [ ] Commencez par ouvrir le README du service PostgreSQL
+  - il contient les informations pour se connecter à la base de données
+- [ ] Dans cloudBeaver > New connection
+- [ ] Sélectionnez **PostgreSQL**
+- [ ] Renseignez les champs suivants
+  - Hostname : `postgresql-<...>`
+  - Port : 5432
+  - Database : defaultdb
+  - Username : `user-<username>`
+  - Password : `<password>`
+- [ ] Cliquez sur TEST, puis sur [CREATE]{.blue-button}
+:::
 
+Une fois la connexion créée, ouvrez-là :
+
+- [ ] Clic droit sur la connexion > Open
+  - un petit rond vert apparait à côté
+
+Enfin ouvrez un éditeur SQL pour écrire des requêtes :
+
+- [ ] Clic droit > *SQL Editor*
+- [ ] Vérifiez que vous êtes sous le profil `public@defaultdb`
+  - En haut dans le bandeau bleu, sinon sélectionnez ce profil
+
+### Insérer les données
+
+- [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
+- [ ] Collez dans cloudBeaver
+- [ ] Exécutez le script
+  - Icone orange avec un parchemin contenant une flêche :scroll:
+
+Si vous n'avez eu aucun message d'erreur, vérifiez la création des tables :
+
+- [ ] Supprimez tout le script, une fois les tables créées, vous n'en avez plus besoin
+- [ ] `SELECT * FROM echecs.tournoi;`
+- [ ] Cliquez sur la flêche orange
+
+::: {.callout-tip}
+- Parchemin contenant une flêche (ALT+X) :arrow_right: exécuter toutes les requêtes de l'éditeur
+- Flêche orange (CTRL+ENTREE) :arrow_right: exécuter la requête courante (là où est le curseur de la souris)
+:::
+
+### Alternatives
+
+D'autres outils pour réaliser l'exercice :
+
+- <https://onyxia.lab.groupe-genes.fr/>{target="_blank"} : fonctionne comme le SSP Cloud 
+- DBeaver sur la VM ENSAI
+  - Connectez-vous à la VM ENSAI
+  - Lancez le logiciel Dbeaver
+  - Paramétrez [DBeaver](../outils/DBeaver.qmd){target="_blank"}
 - <https://sqliteonline.com/>{target="_blank"}
   - PostgreSQL > Click to connect
 - <https://aiven.io/tools/pg-playground>{target="_blank"}
-
-
-## Données de l'exercice {.unnumbered}
-
-- [ ] Copiez le contenu du fichier [echecs.sql](./exercice/echecs.sql){target="_blank"}
-- [ ] Collez dans votre éditeur
-- [ ] Exécutez le script
 
 
 ## Description des données

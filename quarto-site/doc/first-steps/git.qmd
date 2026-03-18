@@ -149,16 +149,73 @@ Dans l'explorer (à gauche) de Visual Studio Code :
   - Clic droit > New file
   - Insérer le code `print("Hello")` dans ce fichier et sauvegardez-le
 
-Partageons maintenant ce fichier et ce dossier avec le dépôt distant.
+Partageons maintenant ce fichier avec le dépôt distant.
 
 Cet envoi se déroule en plusieurs étapes obligatoires :
 
-1. Déclarer le fichier à Git
-2. L'ajouter dans un commit (point de sauvegarde)
-3. Envoyer ce commit au dépôt distant
+1. Déclarez le fichier à Git
+2. Ajoutez-le dans un commit (point de sauvegarde)
+3. Envoyez ce commit au dépôt distant
 
+Voici la suite de commandes à connaitre et exécuter :
 
+- [ ] `git status` : elle affiche l'état du dépôt. Vous remarquez que le fichier *ex1.py* apparait dans les « Untracked files » i.e. les fichiers que Git a repéré mais ne versionne pas pour l'instant.
+- [ ] `git add ex1.py` : indique à Git que ce fichier a été créé/modifié et qu'il faut l'ajouter au prochain commit
+- [ ] Si vous faites de nouveau `git status`, le fichier apparait maintenant dans « Changes to be commited »
+- [ ] `git commit -m "ajout du fichier ex1"` : pour créer un commit (point de sauvegarde). `-m` signifie que l'on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit
+- [ ] Faites encore une fois `git status`. Vous notez que votre dépôt local a un commit d'avance sur le dépôt distant.
+- [ ] `git push` comme précisé pour pousser votre code vers le dépôt distant
 
+Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.
+
+### Pull
+
+Nous venons d'envoyer du code vers le dépôt distant. 
+
+Maintenant imaginez que :
+
+- vous travaillez en équipe
+- un camarade a envoyé une modification sur le dépôt distant
+- vous souhaitez mettre à jour votre dépôt local pour récupérer la modification
+
+Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.
+
+- [ ] Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier
+  - :warning: ce n'est pas une bonne pratique mais ici c'est pour l'exercice
+- [ ] Sur votre dépôt local : `git pull`
+
+Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.
+
+## Autres points importants
+
+Ce qui a été fait ici n'est que le minimum du minimim à savoir pour utiliser Git.
+
+De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.
+
+N'hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).
+
+### Conflit
+
+Par exemple, que se passe-t-il si :
+
+- Kim a modifié le fichier *ex1.py* sur son dépôt local et a poussé sa modification vers le dépôt distant
+- Sur votre dépôt local, vous avez également modifié le même fichier
+- Vous essayez de faire `git push` : vous avez un message disant que vous devez commencer par *pull*
+- Vous faites donc `git pull` et là vous avez un conflit i.e. Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim
+
+```{mermaid}
+flowchart
+    github[(Remote)]
+    dev1[(Local Kim)]
+    dev2[(Local yours)]
+    
+    github <--> dev1
+    github <--> dev2
+```
+
+### Fichier .gitignore
+
+Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C'est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.
 
 ## Liens {.unnumbered}
 

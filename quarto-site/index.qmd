@@ -31,7 +31,7 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 
 3h
 
-- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](docs/sql/sql-cours.qmd)
+- [ ] Lisez le [cours d'introduction aux bases de données et à SQL](doc/sql/sql-cours.qmd)
 - [ ] Faites l'exercice
 
 
@@ -39,7 +39,7 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 
 6h
 
-- [ ] Lisez le [cours d'introduction à Python](docs/python/python-cours.qmd)
+- [ ] Lisez le [cours d'introduction à Python](doc/python/python-cours.qmd)
 - [ ] Lisez et faites les exercices des 5 notebooks
 
 
@@ -56,7 +56,7 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 
 ---
 
-- [ ] Lisez le [cours d'introduction à la POO](docs/POO/poo-cours.qmd)
+- [ ] Lisez le [cours d'introduction à la POO](doc/POO/poo-cours.qmd)
 - [ ] Suivez les consignes pour le paramètrage de VSCode
 - [ ] Faites les exercices
 
@@ -67,7 +67,7 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 
 UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.
 
-- [ ] Lisez le [cours d'introduction à UML](docs/UML/UML.qmd)
+- [ ] Lisez le [cours d'introduction à UML](doc/UML/UML.qmd)
 - [ ] Faites l'exercice
 
 

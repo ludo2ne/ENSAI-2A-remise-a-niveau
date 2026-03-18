@@ -45,7 +45,7 @@ Il est [fortement recommandé]{.underline} d'utiliser en priorité le SSP Cloud 
 
 Lorsque vous êtes connecté, vous arrivez sur l'interface du logiciel Onyxia.
 
-{{< https://www.youtube.com/watch?v=FvpNfVrxBFM >}}
+{{< video https://www.youtube.com/watch?v=FvpNfVrxBFM >}}
 
 Cette interface permet en quelques clics de lancer des services catalogues (Jupyter, VSCode, RStudio, Bases de données...).
 

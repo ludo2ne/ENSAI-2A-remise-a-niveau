@@ -7,6 +7,7 @@ project:
 
 website:
   title: "Remise à Niveau Informatique"
+  sidebar: true
   navbar:
     background: "#447099"
     left:
@@ -50,6 +51,7 @@ website:
             text: "Exercices POO"
       - href: doc/UML/UML.qmd
         text: UML
+    right:
       - text: Outils
         menu: 
           - href: doc/outils/outils.qmd
@@ -70,7 +72,6 @@ website:
             text: "YAML"
           - href: doc/outils/regexp.qmd
             text: "Expressions régulières"
-    right:
       - text: Examens
         menu: 
           - href: doc/annales/examen-2024.qmd
@@ -90,6 +91,7 @@ website:
 
 format:
   html:
+    page-navigation: true
     theme: 
       dark: solar
       light: cosmo
