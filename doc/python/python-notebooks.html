@@ -431,7 +431,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#les-notebooks" id="toc-les-notebooks" class="nav-link active" data-scroll-target="#les-notebooks"><span class="header-section-number">1</span> Les Notebooks</a></li>
   <li><a href="#utiliser-un-notebook" id="toc-utiliser-un-notebook" class="nav-link" data-scroll-target="#utiliser-un-notebook"><span class="header-section-number">2</span> Utiliser un notebook</a>
   <ul class="collapse">
-  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</a></li>
+  <li><a href="#lancer-un-service-jupyter" id="toc-lancer-un-service-jupyter" class="nav-link" data-scroll-target="#lancer-un-service-jupyter"><span class="header-section-number">2.1</span> Lancer un service Jupyter</a></li>
+  <li><a href="#types-de-cellules" id="toc-types-de-cellules" class="nav-link" data-scroll-target="#types-de-cellules"><span class="header-section-number">2.2</span> Types de cellules</a></li>
   </ul></li>
   <li><a href="#commandes-utiles" id="toc-commandes-utiles" class="nav-link" data-scroll-target="#commandes-utiles"><span class="header-section-number">3</span> Commandes utiles</a></li>
   <li><a href="#ressources-utiles" id="toc-ressources-utiles" class="nav-link" data-scroll-target="#ressources-utiles"><span class="header-section-number">4</span> Ressources utiles</a></li>
@@ -479,12 +480,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="les-notebooks" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="les-notebooks"><span class="header-section-number">1</span> Les Notebooks</h2>
 <p>Pour découvrir Python, nous allons commencer par coder dans ces 5 notebooks :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="../../doc/python/01-types-et-variables.html" target="_blank">Les types et variables</a></label></li>
-<li><label><input type="checkbox"><a href="../../doc/python/02-listes-et-dictionnaires.html" target="_blank">Les listes et dictionnaires</a></label></li>
-<li><label><input type="checkbox"><a href="../../doc/python/03-tests-et-boucles.html" target="_blank">Les boucles</a></label></li>
-<li><label><input type="checkbox"><a href="../../doc/python/04-fonctions.html" target="_blank">Les fonctions</a></label></li>
-<li><label><input type="checkbox"><a href="../../doc/python/05-POO-introduction.html" target="_blank">Introduction à la Programmation Orientée Objet</a></label></li>
+<ul>
+<li><a href="../../doc/python/01-types-et-variables.html" target="_blank">Les types et variables</a></li>
+<li><a href="../../doc/python/02-listes-et-dictionnaires.html" target="_blank">Les listes et dictionnaires</a></li>
+<li><a href="../../doc/python/03-tests-et-boucles.html" target="_blank">Les boucles</a></li>
+<li><a href="../../doc/python/04-fonctions.html" target="_blank">Les fonctions</a></li>
+<li><a href="../../doc/python/05-POO-introduction.html" target="_blank">Introduction à la Programmation Orientée Objet</a></li>
 </ul>
 <p>Pour réaliser ces notebooks, je me suis inspiré des ressources ci-dessous :</p>
 <ul>
@@ -512,58 +513,47 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </div>
 </div>
-<p>Vous avez plusieurs possibilités pour lancer les notebooks :</p>
+<section id="lancer-un-service-jupyter" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="lancer-un-service-jupyter"><span class="header-section-number">2.1</span> Lancer un service Jupyter</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Connectez-vous au <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a></label></li>
+<li><label><input type="checkbox">Allez dans le menu <em>Catalogue de services</em></label></li>
+<li><label><input type="checkbox">Lancez un service <code>Jupyter-python</code>, puis ouvrez-le</label></li>
+<li><label><input type="checkbox">Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span></label></li>
+</ul>
+<p>Dans la colonne de gauche :</p>
+<ul>
+<li>l’icone en forme de dossier permet d’explorer les fichiers</li>
+<li>l’icone en forme de liste permet d’afficher la table des matières</li>
+</ul>
+<p>Le champ <code>Code</code> permet d’indiquer si la cellule attend du code python ou du texte (Markdown)</p>
+<p><img src="img/jupyter.PNG" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Alternatives">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Alternatives
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Voici d’autres possibilités pour utiliser un notebook :</p>
 <ul>
 <li>le <a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">datalab du GENES</a></li>
-<li>le datalab <a href="https://datalab.sspcloud.fr/" target="_blank">SSPCloud</a> <span class="emoji" data-emoji="arrow_right">➡️</span> vous pouvez créer un compte avec votre mail ENSAI</li>
 <li><a href="https://jupyther.ensai.fr/" target="_blank">Un cluster Jupyter</a> de l’ENSAI <span class="emoji" data-emoji="arrow_right">➡️</span> si vous avez vos idep et mot de passe</li>
-</ul>
-<p>Si vous n’avez, ni identifiants, ni mail ENSAI, d’autres solutions existent :</p>
-<ul>
 <li><a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
 <li><a href="https://www.kaggle.com/code" target="_blank">Kaggle notebooks</a></li>
 <li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
 </ul>
-<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Datalab</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Cluster ENSAI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Jupyter Lab online</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Colab et Kaggle</a></li></ul>
-<div class="tab-content nav-pills">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ul>
-<li>Connectez-vous au datalab</li>
-<li>Allez dans le menu <em>Catalogue de services</em></li>
-<li>Lancer <code>Jupyter-python</code></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
-</ul>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li>Connectez-vous au <a href="https://jupyther.ensai.fr/" target="_blank">cluster Jupyter</a> avec id et mot de passe</li>
-<li>Importez un notebook : en haut à gauche, sous la barre de menu, utilisez la flèche <span class="emoji" data-emoji="arrow_up">⬆️</span></li>
-<li>Dans la colonne de gauche :
-<ul>
-<li>l’icone en forme de dossier permet d’explorer les fichiers</li>
-<li>l’icone en forme de liste permet d’afficher la table des matières</li>
-</ul></li>
-<li>Le champ <code>Code</code> permet d’indiquer si la cellule attend du code python ou du texte (Markdown)</li>
-</ul>
-<p><img src="img/jupyter.PNG" class="img-fluid"></p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li>Allez sur la page <a href="https://jupyter.org/try-jupyter/lab/" target="_blank">Jupyter Lab online</a></li>
-<li>Suivez les mêmes instructions que pour le Cluster ENSAI</li>
-</ul>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<ul>
-<li>Connectez-vous au service</li>
-<li>Importez le notebook (Fichier &gt; Importer le notebook)</li>
-</ul>
 </div>
 </div>
 </div>
-<section id="types-de-cellules" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">2.1</span> Types de cellules</h3>
+</section>
+<section id="types-de-cellules" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="types-de-cellules"><span class="header-section-number">2.2</span> Types de cellules</h3>
 <p>Un notebook est constitué de cellules. Vous pouvez créer une nouvelle cellule en cliquant sur le bouton <code>+</code> dans la barre d’outils.<br>
 Il existe deux types de cellules principaux :</p>
 <ul>
@@ -571,7 +561,7 @@ Il existe deux types de cellules principaux :</p>
 <li>les cellules de texte (où vous écrivez du texte formaté en utilisant Markdown)</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Le langage Markdown">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -580,7 +570,7 @@ Il existe deux types de cellules principaux :</p>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>C’est un langage simple et intuitif qui permet de formater du texte (Ce site est généré avec du code markdown).</p>
 <p>De très nombreuses ressources sont disponibles sur internet, <a href="https://commonmark.org/help/" target="_blank">par exemple</a></p>

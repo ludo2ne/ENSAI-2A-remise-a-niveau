@@ -466,16 +466,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link active" data-scroll-target="#avant-de-commencer">Avant de commencer</a>
+  <li><a href="#mise-en-place" id="toc-mise-en-place" class="nav-link active" data-scroll-target="#mise-en-place"><span class="header-section-number">1</span> Mise en place</a>
   <ul class="collapse">
-  <li><a href="#sur-votre-machine-personnelle" id="toc-sur-votre-machine-personnelle" class="nav-link" data-scroll-target="#sur-votre-machine-personnelle">Sur votre machine personnelle</a></li>
+  <li><a href="#lancer-un-service-vscode" id="toc-lancer-un-service-vscode" class="nav-link" data-scroll-target="#lancer-un-service-vscode"><span class="header-section-number">1.1</span> Lancer un service VSCode</a></li>
+  <li><a href="#récupérer-le-code" id="toc-récupérer-le-code" class="nav-link" data-scroll-target="#récupérer-le-code"><span class="header-section-number">1.2</span> Récupérer le code</a></li>
   </ul></li>
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</a>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">2</span> Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3</span> Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">4</span> Exercice 3 - Domino</a>
   <ul class="collapse">
-  <li><a href="#un-domino" id="toc-un-domino" class="nav-link" data-scroll-target="#un-domino"><span class="header-section-number">3.1</span> Un Domino</a></li>
-  <li><a href="#jeu" id="toc-jeu" class="nav-link" data-scroll-target="#jeu"><span class="header-section-number">3.2</span> Jeu</a></li>
+  <li><a href="#un-domino" id="toc-un-domino" class="nav-link" data-scroll-target="#un-domino"><span class="header-section-number">4.1</span> Un Domino</a></li>
+  <li><a href="#jeu" id="toc-jeu" class="nav-link" data-scroll-target="#jeu"><span class="header-section-number">4.2</span> Jeu</a></li>
   </ul></li>
   <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction">Correction</a></li>
   </ul>
@@ -519,52 +520,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="avant-de-commencer" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h2>
-<p>À partir de maintenant, nous n’allons plus coder dans des Notebooks mais dans l’IDE VSCode.</p>
+<section id="mise-en-place" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="mise-en-place"><span class="header-section-number">1</span> Mise en place</h2>
+<section id="lancer-un-service-vscode" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="lancer-un-service-vscode"><span class="header-section-number">1.1</span> Lancer un service VSCode</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Ouvrez Visual Studio Code</label></li>
-<li><label><input type="checkbox"><a href="../../doc/outils/VSCode.html" target="_blank">Paramétrez VSCode</a></label></li>
-<li><label><input type="checkbox">Dans la fiche VSCode, suivez les consignes de la section <code>Première utilisation</code></label>
+<li><label><input type="checkbox">Connectez-vous au <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a></label></li>
+<li><label><input type="checkbox">Lancez un service <code>Vscode-python</code>, puis ouvrez-le</label></li>
+</ul>
+</section>
+<section id="récupérer-le-code" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="récupérer-le-code"><span class="header-section-number">1.2</span> Récupérer le code</h3>
+<p>Deux possibilités pour récupérer le code, soit :</p>
 <ul>
-<li>cela vous permettra de créer un clone du code</li>
+<li>vous clonez directement le dépôt de l’enseignant
+<ul>
+<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
 </ul></li>
-<li><label><input type="checkbox">Dans le dossier <code>src/Python-POO/exercices</code>, créez les 2 dossiers suivants :</label>
+<li>vous créez un fork de ce dépôt, puis clonez ce fork
 <ul>
-<li><code>geometrie</code> pour stocker vos classes des exercices 1 et 2</li>
-<li><code>domino</code> pour l’exercice 3</li>
+<li><a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork" target="_blank">https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork</a></li>
+<li><code>git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-2A-remise-a-niveau.git</code></li>
 </ul></li>
 </ul>
-<section id="sur-votre-machine-personnelle" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sur-votre-machine-personnelle">Sur votre machine personnelle</h3>
-<p>Si vous n’avez pas accès au réseau ENSAI, vous pouvez soit :</p>
-<ul>
-<li>continuer à coder dans les notebooks</li>
-<li>installer les outils pour développer en python</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" title="Installation outils Python">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Installation outils Python
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Si vous clonez directement le dépôt de l’enseignant, vous ne pourrez pas utiliser Git pour conserver votre travail. Il faudra par exemple télécharger les fichiers à la main.</p>
+<p>Un fork est une copie d’un dépôt distant. Comme cette copie vous appartient, vous avez le droit d’en modifier le code.</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Téléchargez et installez <a href="https://www.python.org/downloads/" target="_blank">Python</a> version ≥ 3.10</label></li>
-<li><label><input type="checkbox">Téléchargez et installez <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></label></li>
-<li><label><input type="checkbox">Téléchargez et installez <a href="https://git-scm.com/" target="_blank">Git</a></label></li>
-<li><label><input type="checkbox">Ouvrez VS Code et installez l’extension Python (View &gt; Extension)</label></li>
+<li><label><input type="checkbox">Clonez le dépôt en choisissant l’une des deux options ci-dessus</label></li>
 </ul>
-<p><a href="https://learn.microsoft.com/fr-fr/training/modules/python-install-vscode/" target="_blank">Plus de détails</a></p>
-</div>
-</div>
+<p>Ensuite, positionnez-vous dans le dossier <code>src/POO</code> :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">File &gt; Open Folder &gt; <code>/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></label>
+<ul>
+<li>ou directement via le terminal : <code>code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></li>
+</ul></li>
+</ul>
+<p>Vous pouvez ensuite coder dans les fichiers du dossier <em>exercice</em>. Si besoin, vous pouvez créer de nouveaux fichiers.</p>
 </section>
 </section>
-<section id="exercice-1---points" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</h2>
+<section id="exercice-1---points" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">2</span> Exercice 1 - Points</h2>
 <p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y.</p>
 <p>Codez les méthodes suivantes :</p>
 <ul class="task-list">
@@ -578,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox"><code>rotation(self, a)</code> (bonus) : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -587,7 +582,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pour vérifier que vos méthodes sont correctes, vous pouvez ajouter à la fin de votre classe un bloc <code>main</code>. Lorsque vous exécuterez ce fichier, c’est ce code qui sera lancé.</p>
 <div class="code-with-filename">
@@ -609,8 +604,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="exercice-2---polygones" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</h2>
+<section id="exercice-2---polygones" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3</span> Exercice 2 - Polygones</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Créez une classe <code>Polygone</code> composées d’objets de la classe <code>Point</code></label>
 <ul>
@@ -669,10 +664,10 @@ Tip
 </div>
 </div>
 </section>
-<section id="exercice-3---domino" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</h2>
-<section id="un-domino" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="un-domino"><span class="header-section-number">3.1</span> Un Domino</h3>
+<section id="exercice-3---domino" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">4</span> Exercice 3 - Domino</h2>
+<section id="un-domino" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="un-domino"><span class="header-section-number">4.1</span> Un Domino</h3>
 <p>Écrire une classe <code>Domino</code> avec :</p>
 <ul class="task-list">
 <li><label><input type="checkbox">2 attributs entiers entre 0 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
@@ -681,8 +676,8 @@ Tip
 <li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
 </ul>
 </section>
-<section id="jeu" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="jeu"><span class="header-section-number">3.2</span> Jeu</h3>
+<section id="jeu" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="jeu"><span class="header-section-number">4.2</span> Jeu</h3>
 <p>Maintenant nous allons essayer de coder un jeu de dominos.</p>
 <p>Pour plus de facilité :</p>
 <ul>
@@ -729,7 +724,7 @@ Tip
 <section id="correction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="correction">Correction</h2>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proposition de correction">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -738,7 +733,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="exercices-1-et-2" class="level4">
 <h4 class="anchored" data-anchor-id="exercices-1-et-2">Exercices 1 et 2</h4>
