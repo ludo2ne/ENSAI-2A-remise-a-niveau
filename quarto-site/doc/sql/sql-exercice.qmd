@@ -25,7 +25,7 @@ Dans ce TP, vous allez :
 
 ### Lancer les services
 
-- [ ] Connectez-vous au [SSPCloud](https://www.sspcloud.fr/){target="_blank"}
+- [ ] Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
 - [ ] Lancez un service **PostgreSQL**
 - [ ] Lancez un service **Cloudbeaver**
 - [ ] Ouvrez cloudBeaver

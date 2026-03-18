@@ -12,33 +12,35 @@ number-sections: true
 number-depth: 3
 ---
 
-## Avant de commencer {.unnumbered}
+## Mise en place
 
-À partir de maintenant, nous n'allons plus coder dans des Notebooks mais dans l'IDE VSCode.
+### Lancer un service VSCode
 
-- [ ] Ouvrez Visual Studio Code
-- [ ] [Paramétrez VSCode](../outils/VSCode.qmd){target="_blank"}
-- [ ] Dans la fiche VSCode, suivez les consignes de la section `Première utilisation`
-  - cela vous permettra de créer un clone du code
-- [ ] Dans le dossier `src/Python-POO/exercices`, créez les 2 dossiers suivants :
-  - `geometrie` pour stocker vos classes des exercices 1 et 2
-  - `domino` pour l'exercice 3
+- [ ] Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+- [ ] Lancez un service `Vscode-python`, puis ouvrez-le
 
-### Sur votre machine personnelle {.unnumbered}
+### Récupérer le code
 
-Si vous n'avez pas accès au réseau ENSAI, vous pouvez soit :
+Deux possibilités pour récupérer le code, soit :
 
-- continuer à coder dans les notebooks
-- installer les outils pour développer en python
+- vous clonez directement le dépôt de l'enseignant
+  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
+- vous créez un fork de ce dépôt, puis clonez ce fork
+  - <https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork>{target="_blank"}
+  - `git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-2A-remise-a-niveau.git`
 
-::: {.callout-note title="Installation outils Python"}
-- [ ] Téléchargez et installez [Python](https://www.python.org/downloads/){target="_blank"} version ≥ 3.10
-- [ ] Téléchargez et installez [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
-- [ ] Téléchargez et installez [Git](https://git-scm.com/){target="_blank"}
-- [ ] Ouvrez VS Code et installez l'extension Python (View > Extension)
+Si vous clonez directement le dépôt de l'enseignant, vous ne pourrez pas utiliser Git pour conserver votre travail. Il faudra par exemple télécharger les fichiers à la main.
 
-[Plus de détails](https://learn.microsoft.com/fr-fr/training/modules/python-install-vscode/){target="_blank"}
-:::
+Un fork est une copie d'un dépôt distant. Comme cette copie vous appartient, vous avez le droit d'en modifier le code.
+
+- [ ] Clonez le dépôt en choisissant l'une des deux options ci-dessus
+
+Ensuite, positionnez-vous dans le dossier `src/POO` :
+
+- [ ] File > Open Folder > `/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
+  - ou directement via le terminal : `code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
+
+Vous pouvez ensuite coder dans les fichiers du dossier *exercice*. Si besoin, vous pouvez créer de nouveaux fichiers.
 
 ## Exercice 1 - Points
 
