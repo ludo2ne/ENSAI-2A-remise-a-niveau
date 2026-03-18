@@ -214,7 +214,7 @@ Ludovic Deneuville
 <li><label><input type="checkbox">Qu’est ce qu’une base de données relationnelle ?</label></li>
 <li><label><input type="checkbox">Comment sont construites les tables ?</label></li>
 <li><label><input type="checkbox">Savoir écrire des requêtes SQL</label></li>
-<li><label><input type="checkbox">Utiliser le logiciel <a href="https://dbeaver.io/" target="_blank">DBeaver</a></label></li>
+<li><label><input type="checkbox">Utiliser le service cloudBeaver</label></li>
 </ul>
 </section>
 
@@ -416,11 +416,11 @@ Ludovic Deneuville
 <section id="table---exemple" class="slide level3 smaller">
 <h3>Table - exemple</h3>
 <div class="panel-tabset nav-pills">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MCD</a></li><li><a href="#tabset-1-2">Données</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MPD</a></li><li><a href="#tabset-1-2">Données</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1">
 <p>Modèle Physique des Données (UML)</p>
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -428,7 +428,7 @@ Ludovic Deneuville
 <div>
 <pre class="mermaid mermaid-js">classDiagram
   class Joueuse {
-    id_joueuse: INT(PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
@@ -533,7 +533,7 @@ Ludovic Deneuville
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Diagramme</a></li><li><a href="#tabset-2-2">Table joueuse</a></li><li><a href="#tabset-2-3">Table pays</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1">
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -543,15 +543,15 @@ Ludovic Deneuville
   direction LR
   
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Pays {
-    code_pays: VARCHAR (PK)
+    code_pays: VARCHAR PK
     nom: VARCHAR
   }
 
@@ -668,7 +668,7 @@ Ludovic Deneuville
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Diagramme</a></li><li><a href="#tabset-3-2">Table joueuse</a></li><li><a href="#tabset-3-3">Table participation</a></li><li><a href="#tabset-3-4">Table tournoi</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-3-1">
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -678,23 +678,23 @@ Ludovic Deneuville
   direction LR
 
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Tournoi {
-    id_tournoi: INT (PK)
+    id_tournoi: INT PK
     nom: VARCHAR
     ville: VARCHAR
   }
 
   
   class Participation {
-    id_joueuse: INT (FK)
-    id_tournoi: INT (FK)
+    id_joueuse: INT FK
+    id_tournoi: INT FK
   }
 
   Joueuse "*" .. "1" Participation
@@ -2008,7 +2008,7 @@ Ludovic Deneuville
 <section id="bibliographie" class="title-slide slide level2 center">
 <h2>Bibliographie</h2>
 <ul>
-<li><a href="https://ludo2ne.github.io/ENSAI-1A-SQL/" target="_blank">Cours ENSAI 1A 2024-2025</a></li>
+<li><a href="https://ludo2ne.github.io/ENSAI-1A-SQL/" target="_blank">Cours ENSAI 1A</a></li>
 <li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" target="_blank">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
 <li><a href="https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/" target="_blank">https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/</a></li>
 <li><a href="https://sql.sh/" target="_blank">https://sql.sh/</a></li>

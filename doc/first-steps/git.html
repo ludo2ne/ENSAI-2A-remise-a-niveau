@@ -72,6 +72,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -346,11 +349,13 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-outils">    
         <li>
     <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
@@ -389,8 +394,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examens" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examens</span>
@@ -435,6 +438,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#créer-un-dépôt-distant" id="toc-créer-un-dépôt-distant" class="nav-link" data-scroll-target="#créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</a></li>
   <li><a href="#cloner-son-dépôt-local" id="toc-cloner-son-dépôt-local" class="nav-link" data-scroll-target="#cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</a></li>
   <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
+  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
+  </ul></li>
+  <li><a href="#autres-points-importants" id="toc-autres-points-importants" class="nav-link" data-scroll-target="#autres-points-importants"><span class="header-section-number">3</span> Autres points importants</a>
+  <ul class="collapse">
+  <li><a href="#conflit" id="toc-conflit" class="nav-link" data-scroll-target="#conflit"><span class="header-section-number">3.1</span> Conflit</a></li>
+  <li><a href="#fichier-.gitignore" id="toc-fichier-.gitignore" class="nav-link" data-scroll-target="#fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</a></li>
   </ul></li>
   <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a></li>
   </ul>
@@ -646,13 +655,80 @@ Tip
 <li>Insérer le code <code>print("Hello")</code> dans ce fichier et sauvegardez-le</li>
 </ul></li>
 </ul>
-<p>Partageons maintenant ce fichier et ce dossier avec le dépôt distant.</p>
+<p>Partageons maintenant ce fichier avec le dépôt distant.</p>
 <p>Cet envoi se déroule en plusieurs étapes obligatoires :</p>
 <ol type="1">
-<li>Déclarer le fichier à Git</li>
-<li>L’ajouter dans un commit (point de sauvegarde)</li>
-<li>Envoyer ce commit au dépôt distant</li>
+<li>Déclarez le fichier à Git</li>
+<li>Ajoutez-le dans un commit (point de sauvegarde)</li>
+<li>Envoyez ce commit au dépôt distant</li>
 </ol>
+<p>Voici la suite de commandes à connaitre et exécuter :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>git status</code> : elle affiche l’état du dépôt. Vous remarquez que le fichier <em>ex1.py</em> apparait dans les « Untracked files » i.e.&nbsp;les fichiers que Git a repéré mais ne versionne pas pour l’instant.</label></li>
+<li><label><input type="checkbox"><code>git add ex1.py</code> : indique à Git que ce fichier a été créé/modifié et qu’il faut l’ajouter au prochain commit</label></li>
+<li><label><input type="checkbox">Si vous faites de nouveau <code>git status</code>, le fichier apparait maintenant dans « Changes to be commited »</label></li>
+<li><label><input type="checkbox"><code>git commit -m "ajout du fichier ex1"</code> : pour créer un commit (point de sauvegarde). <code>-m</code> signifie que l’on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit</label></li>
+<li><label><input type="checkbox">Faites encore une fois <code>git status</code>. Vous notez que votre dépôt local a un commit d’avance sur le dépôt distant.</label></li>
+<li><label><input type="checkbox"><code>git push</code> comme précisé pour pousser votre code vers le dépôt distant</label></li>
+</ul>
+<p>Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.</p>
+</section>
+<section id="pull" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
+<p>Nous venons d’envoyer du code vers le dépôt distant.</p>
+<p>Maintenant imaginez que :</p>
+<ul>
+<li>vous travaillez en équipe</li>
+<li>un camarade a envoyé une modification sur le dépôt distant</li>
+<li>vous souhaitez mettre à jour votre dépôt local pour récupérer la modification</li>
+</ul>
+<p>Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier</label>
+<ul>
+<li><span class="emoji" data-emoji="warning">⚠️</span> ce n’est pas une bonne pratique mais ici c’est pour l’exercice</li>
+</ul></li>
+<li><label><input type="checkbox">Sur votre dépôt local : <code>git pull</code></label></li>
+</ul>
+<p>Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.</p>
+</section>
+</section>
+<section id="autres-points-importants" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="autres-points-importants"><span class="header-section-number">3</span> Autres points importants</h2>
+<p>Ce qui a été fait ici n’est que le minimum du minimim à savoir pour utiliser Git.</p>
+<p>De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.</p>
+<p>N’hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).</p>
+<section id="conflit" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="conflit"><span class="header-section-number">3.1</span> Conflit</h3>
+<p>Par exemple, que se passe-t-il si :</p>
+<ul>
+<li>Kim a modifié le fichier <em>ex1.py</em> sur son dépôt local et a poussé sa modification vers le dépôt distant</li>
+<li>Sur votre dépôt local, vous avez également modifié le même fichier</li>
+<li>Vous essayez de faire <code>git push</code> : vous avez un message disant que vous devez commencer par <em>pull</em></li>
+<li>Vous faites donc <code>git pull</code> et là vous avez un conflit i.e.&nbsp;Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart
+    github[(Remote)]
+    dev1[(Local Kim)]
+    dev2[(Local yours)]
+    
+    github &lt;--&gt; dev1
+    github &lt;--&gt; dev2
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="fichier-.gitignore" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</h3>
+<p>Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C’est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.</p>
 </section>
 </section>
 <section id="liens" class="level2 unnumbered">

@@ -349,11 +349,13 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-outils">    
         <li>
     <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
@@ -392,8 +394,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examens" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examens</span>
@@ -431,20 +431,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#se-connecter-à-une-base-de-données" id="toc-se-connecter-à-une-base-de-données" class="nav-link active" data-scroll-target="#se-connecter-à-une-base-de-données">Se connecter à une base de données</a>
+  <li><a href="#objectif" id="toc-objectif" class="nav-link active" data-scroll-target="#objectif">Objectif</a></li>
+  <li><a href="#mise-en-place" id="toc-mise-en-place" class="nav-link" data-scroll-target="#mise-en-place"><span class="header-section-number">1</span> Mise en place</a>
   <ul class="collapse">
-  <li><a href="#datalab-du-genes" id="toc-datalab-du-genes" class="nav-link" data-scroll-target="#datalab-du-genes">Datalab du GENES</a></li>
-  <li><a href="#vm-ensai" id="toc-vm-ensai" class="nav-link" data-scroll-target="#vm-ensai">VM ENSAI</a></li>
-  <li><a href="#autres-possibilités" id="toc-autres-possibilités" class="nav-link" data-scroll-target="#autres-possibilités">Autres possibilités</a></li>
+  <li><a href="#lancer-les-services" id="toc-lancer-les-services" class="nav-link" data-scroll-target="#lancer-les-services"><span class="header-section-number">1.1</span> Lancer les services</a></li>
+  <li><a href="#créer-une-connexion" id="toc-créer-une-connexion" class="nav-link" data-scroll-target="#créer-une-connexion"><span class="header-section-number">1.2</span> Créer une connexion</a></li>
+  <li><a href="#insérer-les-données" id="toc-insérer-les-données" class="nav-link" data-scroll-target="#insérer-les-données"><span class="header-section-number">1.3</span> Insérer les données</a></li>
+  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives"><span class="header-section-number">1.4</span> Alternatives</a></li>
   </ul></li>
-  <li><a href="#données-de-lexercice" id="toc-données-de-lexercice" class="nav-link" data-scroll-target="#données-de-lexercice">Données de l’exercice</a></li>
-  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">1</span> Description des données</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">2</span> Questions</a>
+  <li><a href="#description-des-données" id="toc-description-des-données" class="nav-link" data-scroll-target="#description-des-données"><span class="header-section-number">2</span> Description des données</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a>
   <ul class="collapse">
-  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</a></li>
-  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</a></li>
-  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">2.3</span> Jointures</a></li>
-  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">2.4</span> Agrégations</a></li>
+  <li><a href="#découverte-des-tables" id="toc-découverte-des-tables" class="nav-link" data-scroll-target="#découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</a></li>
+  <li><a href="#mise-à-jour" id="toc-mise-à-jour" class="nav-link" data-scroll-target="#mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</a></li>
+  <li><a href="#jointures" id="toc-jointures" class="nav-link" data-scroll-target="#jointures"><span class="header-section-number">3.3</span> Jointures</a></li>
+  <li><a href="#agrégations" id="toc-agrégations" class="nav-link" data-scroll-target="#agrégations"><span class="header-section-number">3.4</span> Agrégations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/sql/sql-exercice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -487,82 +488,145 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="se-connecter-à-une-base-de-données" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="se-connecter-à-une-base-de-données">Se connecter à une base de données</h2>
-<p>Vous allez effectuer cet exercice sur le datalab du GENES.</p>
-<p>Vous pouvez également réaliser l’exercice sur :</p>
+<section id="objectif" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objectif">Objectif</h2>
+<p>Dans ce TP, vous allez :</p>
 <ul>
-<li>le <a href="https://www.sspcloud.fr/" target="_blank">SSPCloud</a>, même modop que sur le datalab du GENES</li>
-<li>la VM ENSAI (voir section ci-après)</li>
-<li>trouver une ressource sur internet permettant d’exécuter du SQL</li>
+<li>créer une base de données : lancer un service <em>PostgreSQL</em></li>
+<li>vous connecter à cette base de données : utiliser un service <em>cloudBeaver</em></li>
+<li>insérer des données via un script SQL</li>
+<li>écrire les requêtes SQL pour répondre aux questions</li>
 </ul>
-<section id="datalab-du-genes" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="datalab-du-genes">Datalab du GENES</h3>
+</section>
+<section id="mise-en-place" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="mise-en-place"><span class="header-section-number">1</span> Mise en place</h2>
+<section id="lancer-les-services" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="lancer-les-services"><span class="header-section-number">1.1</span> Lancer les services</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Connectez-vous à <a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">https://onyxia.lab.groupe-genes.fr/</a></label></li>
-<li><label><input type="checkbox">Lancez un service <strong>PostgreSQL</strong></label>
+<li><label><input type="checkbox">Connectez-vous au <a href="https://www.sspcloud.fr/" target="_blank">SSPCloud</a></label></li>
+<li><label><input type="checkbox">Lancez un service <strong>PostgreSQL</strong></label></li>
+<li><label><input type="checkbox">Lancez un service <strong>Cloudbeaver</strong></label></li>
+<li><label><input type="checkbox">Ouvrez cloudBeaver</label>
 <ul>
-<li>pour créer votre base de données</li>
-</ul></li>
-<li><label><input type="checkbox">Lancez un service <strong>Cloudbeaver</strong></label>
-<ul>
-<li>pour interagir avec la base de données que vous venez de créer</li>
-</ul></li>
-</ul>
-<p>Attendez que le service Cloudbeaver se lance :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Ouvrez le service</label>
-<ul>
-<li>Cliquer pour copier le mot de passe</li>
-<li>Ouvrir le service</li>
-</ul></li>
-<li><label><input type="checkbox">Authentification</label>
-<ul>
-<li>username : <code>user-&lt;idxxxx&gt;-ensai</code></li>
-<li>password : collez le mot de passe (CTRL+V) copié juste avant</li>
+<li>username : user-<username></username></li>
+<li>password : collez votre mot de passe</li>
 </ul></li>
 </ul>
-<p>Une fois connecté :</p>
-<ul>
-<li>Dans l’explorateur à gauche, vous devez voir afficher votre connexion à la base de données PostgreSQL</li>
-<li><label><input type="checkbox">Cliquez sur l’icone <strong>SQL</strong> en haut à gauche</label></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Si la connection ne s'est pas faite">
+<div class="callout callout-style-default callout-tip callout-titled" title="Kesako">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Si la connection ne s’est pas faite
+<span class="screen-reader-only">Tip</span>Kesako
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>PostgreSQL : Base de données</li>
+<li>Cloudbeaver : Logiciel pour communiquer avec une base de données</li>
+</ul>
+<p>Il est possible de se connecter directement à une base de données, mais beaucoup plus simple d’utiliser un outil tel cloudBeaver.</p>
+</div>
+</div>
+</section>
+<section id="créer-une-connexion" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="créer-une-connexion"><span class="header-section-number">1.2</span> Créer une connexion</h3>
+<p>Normalement si vous lancez les deux services dans l’ordre, lors du lancement de cloudBeaver, la base de données PostgreSQL est détectée et la connexion créée automatiquement.</p>
+<p>Est-ce que la connexion a été créée ?</p>
+<ul>
+<li>Si oui, elle apparait à gauche dans cloudBeaver (liste des connexions)</li>
+<li>Si non, créez la connexion</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Créer une connexion">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Créer une connexion
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul class="task-list">
-<li><label><input type="checkbox">Cliquez su <strong>+</strong>, puis <strong>New connection</strong></label></li>
-<li><label><input type="checkbox">Sélectionnez <strong>PostgreSQL</strong></label></li>
-<li><label><input type="checkbox">Renseignez : Host, Port, Database, Username, Password</label></li>
-</ul>
-<p>Pour obtenir ces informations, retournez sur le Datalab, onglet <strong>Mes Services</strong>, puis cliquez sur le README du service PostgreSQL.</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><strong>TEST</strong> pour vérifier que la connexion se fait bien</label></li>
-<li><label><input type="checkbox"><strong>CREATE</strong></label></li>
-<li><label><input type="checkbox">Dans l’explorer à gauche, cliquez sur votre connexion pour qu’elle passe au vert</label></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="vm-ensai" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="vm-ensai">VM ENSAI</h3>
-<p>Autre possibilité si vous êtes connectés sur la VM ENSAI :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Lancez le logiciel Dbeaver</label></li>
-<li><label><input type="checkbox">Paramétrez <a href="../../doc/outils/DBeaver.html" target="_blank">DBeaver</a></label></li>
-</ul>
-</section>
-<section id="autres-possibilités" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="autres-possibilités">Autres possibilités</h3>
-<p>Si vous n’avez pas accès aux ressources de l’ENSAI, voici par exemple quelques ressources pour faire les exercices :</p>
+<li><label><input type="checkbox">Commencez par ouvrir le README du service PostgreSQL</label>
 <ul>
+<li>il contient les informations pour se connecter à la base de données</li>
+</ul></li>
+<li><label><input type="checkbox">Dans cloudBeaver &gt; New connection</label></li>
+<li><label><input type="checkbox">Sélectionnez <strong>PostgreSQL</strong></label></li>
+<li><label><input type="checkbox">Renseignez les champs suivants</label>
+<ul>
+<li>Hostname : <code>postgresql-&lt;...&gt;</code></li>
+<li>Port : 5432</li>
+<li>Database : defaultdb</li>
+<li>Username : <code>user-&lt;username&gt;</code></li>
+<li>Password : <code>&lt;password&gt;</code></li>
+</ul></li>
+<li><label><input type="checkbox">Cliquez sur TEST, puis sur <span class="blue-button">CREATE</span></label></li>
+</ul>
+</div>
+</div>
+<p>Une fois la connexion créée, ouvrez-là :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Clic droit sur la connexion &gt; Open</label>
+<ul>
+<li>un petit rond vert apparait à côté</li>
+</ul></li>
+</ul>
+<p>Enfin ouvrez un éditeur SQL pour écrire des requêtes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Clic droit &gt; <em>SQL Editor</em></label></li>
+<li><label><input type="checkbox">Vérifiez que vous êtes sous le profil <code>public@defaultdb</code></label>
+<ul>
+<li>En haut dans le bandeau bleu, sinon sélectionnez ce profil</li>
+</ul></li>
+</ul>
+</section>
+<section id="insérer-les-données" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="insérer-les-données"><span class="header-section-number">1.3</span> Insérer les données</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
+<li><label><input type="checkbox">Collez dans cloudBeaver</label></li>
+<li><label><input type="checkbox">Exécutez le script</label>
+<ul>
+<li>Icone orange avec un parchemin contenant une flêche <span class="emoji" data-emoji="scroll">📜</span></li>
+</ul></li>
+</ul>
+<p>Si vous n’avez eu aucun message d’erreur, vérifiez la création des tables :</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Supprimez tout le script, une fois les tables créées, vous n’en avez plus besoin</label></li>
+<li><label><input type="checkbox"><code>SELECT * FROM echecs.tournoi;</code></label></li>
+<li><label><input type="checkbox">Cliquez sur la flêche orange</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Parchemin contenant une flêche (ALT+X) <span class="emoji" data-emoji="arrow_right">➡️</span> exécuter toutes les requêtes de l’éditeur</li>
+<li>Flêche orange (CTRL+ENTREE) <span class="emoji" data-emoji="arrow_right">➡️</span> exécuter la requête courante (là où est le curseur de la souris)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="alternatives" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="alternatives"><span class="header-section-number">1.4</span> Alternatives</h3>
+<p>D’autres outils pour réaliser l’exercice :</p>
+<ul>
+<li><a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">https://onyxia.lab.groupe-genes.fr/</a> : fonctionne comme le SSP Cloud</li>
+<li>DBeaver sur la VM ENSAI
+<ul>
+<li>Connectez-vous à la VM ENSAI</li>
+<li>Lancez le logiciel Dbeaver</li>
+<li>Paramétrez <a href="../../doc/outils/DBeaver.html" target="_blank">DBeaver</a></li>
+</ul></li>
 <li><a href="https://sqliteonline.com/" target="_blank">https://sqliteonline.com/</a>
 <ul>
 <li>PostgreSQL &gt; Click to connect</li>
@@ -571,16 +635,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="données-de-lexercice" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="données-de-lexercice">Données de l’exercice</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Copiez le contenu du fichier <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
-<li><label><input type="checkbox">Collez dans votre éditeur</label></li>
-<li><label><input type="checkbox">Exécutez le script</label></li>
-</ul>
-</section>
-<section id="description-des-données" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">1</span> Description des données</h2>
+<section id="description-des-données" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="description-des-données"><span class="header-section-number">2</span> Description des données</h2>
 <p>Nous avons une liste de <strong>joueurs</strong> et de <strong>tournois</strong>. Les joueurs peuvent participer aux différents tournois.</p>
 <p>Un tournoi est supervisé par un <strong>arbitre</strong>. Un arbitre est un joueur qui a obtenu un <strong>grade d’arbitre</strong>.</p>
 <p>Dans un tournoi, les parties se déroulent à une certaine <strong>cadence</strong> (Lente, Rapide, Blitz).</p>
@@ -636,10 +692,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="questions" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="questions"><span class="header-section-number">2</span> Questions</h2>
-<section id="découverte-des-tables" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">2.1</span> Découverte des tables</h3>
+<section id="questions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions"><span class="header-section-number">3</span> Questions</h2>
+<section id="découverte-des-tables" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="découverte-des-tables"><span class="header-section-number">3.1</span> Découverte des tables</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Listez tous les joueurs</label></li>
 <li><label><input type="checkbox">Faîtes de même sur les autres tables pour observer leur contenu</label></li>
@@ -651,8 +707,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="mise-à-jour" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">2.2</span> Mise à jour</h3>
+<section id="mise-à-jour" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="mise-à-jour"><span class="header-section-number">3.2</span> Mise à jour</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Créez la joueuse : <em>Martine Dupont, elo : 1999, Arbitre Elite</em></label></li>
 <li><label><input type="checkbox">Supprimez le joueur de pseudo <em>marc78</em></label></li>
@@ -668,15 +724,15 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">Remplissez cette nouvelle colonne pour tous les joueurs</label></li>
 </ul>
 </section>
-<section id="jointures" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">2.3</span> Jointures</h3>
+<section id="jointures" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="jointures"><span class="header-section-number">3.3</span> Jointures</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Listez les joueurs (nom, prénom) qui sont arbitres, ainsi que leur grade d’arbitre</label></li>
 <li><label><input type="checkbox">Listez tous les joueurs (nom, prénom) ainsi que leur grade d’arbitre s’ils le sont</label></li>
 </ul>
 </section>
-<section id="agrégations" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">2.4</span> Agrégations</h3>
+<section id="agrégations" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="agrégations"><span class="header-section-number">3.4</span> Agrégations</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Comptez le nombre de joueurs qui sont arbitres</label></li>
 <li><label><input type="checkbox">Comptez le nombre d’arbitres par grade</label></li>
@@ -685,7 +741,7 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">Ajouter le nombre de joueurs et le elo max des joueurs</label></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled" title="Correction">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -694,7 +750,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Lien vers la <a href="./exercice/correction.sql">correction</a></p>
 </div>

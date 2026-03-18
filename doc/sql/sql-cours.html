@@ -385,11 +385,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Outils</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-outils">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-outils">    
         <li>
     <a class="dropdown-item" href="../../doc/outils/outils.html">
  <span class="dropdown-text">Outils</span></a>
@@ -428,8 +430,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examens" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examens</span>
@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Qu’est ce qu’une base de données relationnelle ?</label></li>
 <li><label><input type="checkbox">Comment sont construites les tables ?</label></li>
 <li><label><input type="checkbox">Savoir écrire des requêtes SQL</label></li>
-<li><label><input type="checkbox">Utiliser le logiciel <a href="https://dbeaver.io/" target="_blank">DBeaver</a></label></li>
+<li><label><input type="checkbox">Utiliser le service cloudBeaver</label></li>
 </ul>
 </section>
 <section id="quest-ce-quune-base-de-données" class="level2">
@@ -659,11 +659,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="table---exemple" class="level3 smaller">
 <h3 class="smaller anchored" data-anchor-id="table---exemple">Table - exemple</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">MCD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Données</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">MPD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Données</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Modèle Physique des Données (UML)</p>
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -671,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <pre class="mermaid mermaid-js">classDiagram
   class Joueuse {
-    id_joueuse: INT(PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
@@ -774,7 +774,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Diagramme</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Table joueuse</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Table pays</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -784,15 +784,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   direction LR
   
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Pays {
-    code_pays: VARCHAR (PK)
+    code_pays: VARCHAR PK
     nom: VARCHAR
   }
 
@@ -899,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Diagramme</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Table joueuse</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Table participation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Table tournoi</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div style="background-color: #199edd;">
+<div style="background-color: #ffffff;">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -909,23 +909,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   direction LR
 
   class Joueuse {
-    id_joueuse: INT (PK)
+    id_joueuse: INT PK
     nom: VARCHAR
     prenom: VARCHAR
     date_naissance: DATE
-    code_pays: VARCHAR (FK)
+    code_pays: VARCHAR FK
   }
   
   class Tournoi {
-    id_tournoi: INT (PK)
+    id_tournoi: INT PK
     nom: VARCHAR
     ville: VARCHAR
   }
 
   
   class Participation {
-    id_joueuse: INT (FK)
-    id_tournoi: INT (FK)
+    id_joueuse: INT FK
+    id_tournoi: INT FK
   }
 
   Joueuse "*" .. "1" Participation
@@ -2149,7 +2149,7 @@ Warning
 <section id="bibliographie" class="level2">
 <h2 class="anchored" data-anchor-id="bibliographie">Bibliographie</h2>
 <ul>
-<li><a href="https://ludo2ne.github.io/ENSAI-1A-SQL/" target="_blank">Cours ENSAI 1A 2024-2025</a></li>
+<li><a href="https://ludo2ne.github.io/ENSAI-1A-SQL/" target="_blank">Cours ENSAI 1A</a></li>
 <li><a href="https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/" target="_blank">https://www-lisic.univ-littoral.fr/~hebert/bdd/introduction/</a></li>
 <li><a href="https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/" target="_blank">https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/</a></li>
 <li><a href="https://sql.sh/" target="_blank">https://sql.sh/</a></li>
