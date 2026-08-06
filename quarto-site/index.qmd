@@ -18,18 +18,30 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 
 ## Pré-requis et Datalab
 
-:construction:
+- [ ] Créer un compte sur [GitHub](https://github.com/){target="_blank"}
+- [ ] Créer un compte sur le [SSP Cloud](https://datalab.sspcloud.fr/){target="_blank"}
+  - avec votre mail `prenom.nom@eleve.ensai.fr`
+- [ ] Lire cette page sur [Datalab](./doc/first-steps/datalab.qmd){target="_blank"}
+- [ ] Créer un token en suivant les instructions ci-dessus
+  - vous trouverez les infos [ici](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/basics.html){target="_blank"}
 
 
 ## Programme
 
 ### Git
 
-:construction:
+> 3h
+
+Git est un système de gestion de versions qui permet de suivre les modifications apportées à des fichiers, de collaborer efficacement et de conserver l'historique d'un projet.
+
+- [ ] Lire la [présentation de Git](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}
+- [ ] TP rapide Git [cours d'introduction aux bases de données et à SQL](doc/first-steps/git.qmd)
 
 ### Initiation à SQL
 
-3h
+> 3h
+
+SQL (Structured Query Language) est le langage standard utilisé pour créer, interroger, modifier et administrer les bases de données relationnelles.
 
 - [ ] Lisez le [cours d'introduction aux bases de données et à SQL](doc/sql/sql-cours.qmd)
 - [ ] Faites l'exercice
@@ -37,7 +49,9 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 
 ### Initiation à Python
 
-6h
+> 6h
+
+Python est un langage de programmation polyvalent, simple à apprendre et largement utilisé pour le développement d'applications, l'analyse de données, l'intelligence artificielle et l'automatisation.
 
 - [ ] Lisez le [cours d'introduction à Python](doc/python/python-cours.qmd)
 - [ ] Lisez et faites les exercices des 5 notebooks
@@ -45,7 +59,9 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 
 ### Programmation Orientée Objet
 
-9h
+> 9h
+
+La POO est un paradigme de programmation qui consiste à modéliser un programme sous forme d'objets combinant des données (attributs) et des comportements (méthodes).
 
 Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 
@@ -63,9 +79,9 @@ Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
 
 ### UML
 
-3h
+> 3h
 
-UML est un langage de modélisation qui sera utilisé dans le cadre du projet informatique.
+UML est un langage de modélisation graphique permettant de représenter la structure et le comportement d'un système logiciel avant ou pendant son développement.
 
 - [ ] Lisez le [cours d'introduction à UML](doc/UML/UML.qmd)
 - [ ] Faites l'exercice

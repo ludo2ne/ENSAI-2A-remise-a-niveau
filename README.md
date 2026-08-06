@@ -4,77 +4,19 @@ Remise à niveau pour les étudiants de 2e année (21h)
 
 ## :arrow_forward: Programme
 
+- [ ] Datalab et Git (2h)
 - [ ] Bases de données et SQL (3h)
-- [ ] Python - initiation (5h)
+- [ ] Python - initiation (4h)
 - [ ] Programmation Orientée Objet (POO) (9h)
 - [ ] UML (3h)
-- [ ] Git (1h)
-- [ ] Divers outils utiles (Markdown, VSCode...)
 
-## :construction: TODO
+### En présentiel
 
-- [ ] Clean repo :arrow_right: dossiers src et Outils
-- [ ] Création d'arbo
-- [ ] Bookmarks
+9h en présentiel, le reste des exercices est à faire en autonomie.
 
-### SQL
-
-- [ ] maj SEQUENCE de la table joueurs après INSERT
-- [ ] fix pour requêter hors VM
-
-### Python
-
-- [ ] égalité entre float (pytest approx)
-- [x] join ne prend qu'un seul paramètre
-- [ ] fonctions : type retour -> float, doc """, nom explicite
-- [ ] Compte bancaire : clean + ajouter controles
-- [ ] Protection des attributs : step 1 intro, step2 : properties pour aller plus loin
-- https://datacrafting.substack.com/p/jour-17-ii-python-the-right-way-comprendre
-
-
-```
-if type(nom) != str:
-    raise TypeError(f"Attributes nom : Expected str got {type(nom)}")
-```
-
-### POO
-
-- [ ] Slide : ajouter abstract
-- [ ] TDD sur jeu de Dominos
-
-
-### UML
-
-- https://lipn.univ-paris13.fr/~gerard/uml-s2/uml-cours04.html
-
-### diapo intro
-
-```
-- Présentation
-  - perso
-  - scola, DSI, rôles
-  - cours à l'ENSAI, matières théoriques, pratiques, étudiant diversifiés
-  - l'info, pourquoi cette remise à niveau
-  - projet info (intégration, ex : site de location de velo)
-    - IHM : les menus
-	- stocker vos données
-	- Lien entre les 2 : services
-  - contenu de la remise à niveau
-  - examen date ??
-- Tour de table 
-  - prénom
-  - où vous venez
-  - que faisiez-vous l'année dernière
-  - connaissances Python SQL POO
-  
-  
-TODO :
-
-- tester videos
-- sujets en ligne
-- groupes projet info
-- date exam
-```
+- Séance 1 : Datalab + Git + présentation SQL et Python
+- Séance 2 : POO
+- Séance 3 : POO + UML
 
 ## :rocket: Publier les pages
 

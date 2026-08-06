@@ -7,7 +7,6 @@ project:
 
 website:
   title: "Remise à Niveau Informatique"
-  sidebar: true
   navbar:
     background: "#447099"
     left:
@@ -52,26 +51,6 @@ website:
       - href: doc/UML/UML.qmd
         text: UML
     right:
-      - text: Outils
-        menu: 
-          - href: doc/outils/outils.qmd
-            text: "Outils"
-          - href: doc/outils/Bash.qmd
-            text: "Bash"
-          - href: doc/outils/DBeaver.qmd
-            text: "DBeaver"
-          - href: doc/outils/LaTeX.qmd
-            text: "LaTeX"
-          - href: doc/outils/Markdown.qmd
-            text: "Markdown"
-          - href: doc/outils/VSCode.qmd
-            text: "Visual Studio Code"
-          - href: doc/outils/VM.qmd
-            text: "VM"
-          - href: doc/outils/YAML.qmd
-            text: "YAML"
-          - href: doc/outils/regexp.qmd
-            text: "Expressions régulières"
       - text: Examens
         menu: 
           - href: doc/annales/examen-2024.qmd

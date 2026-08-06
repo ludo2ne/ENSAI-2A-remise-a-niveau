@@ -100,7 +100,6 @@ D'autres outils pour réaliser l'exercice :
 - DBeaver sur la VM ENSAI
   - Connectez-vous à la VM ENSAI
   - Lancez le logiciel Dbeaver
-  - Paramétrez [DBeaver](../outils/DBeaver.qmd){target="_blank"}
 - <https://sqliteonline.com/>{target="_blank"}
   - PostgreSQL > Click to connect
 - <https://aiven.io/tools/pg-playground>{target="_blank"}

@@ -59,8 +59,8 @@ Ils aident à communiquer efficacement les besoins des utilisateurs et à guider
 ```{mermaid}
 graph LR
 
-  player[",-. \n`-' \n/|\ \n |\n/ \ \n Player"]
-  organizer[",-. \n`-' \n/|\ \n |\n/ \ \n Organizer"]
+  player["Player"]
+  organizer["Organizer"]
 
   player --> modifyProfile([Modify Profile])
   player --> register([Register Tournament])

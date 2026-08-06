@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Dark Modern",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.rulers": [
@@ -9,7 +9,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wrappingIndent": "indent",
+    "editor.wrappingIndent": "none",
     "editor.wordWrapColumn": 120,
   },
   "editor.quickSuggestions": {

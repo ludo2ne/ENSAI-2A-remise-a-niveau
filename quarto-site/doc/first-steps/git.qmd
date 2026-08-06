@@ -219,4 +219,4 @@ Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés pa
 
 ## Liens {.unnumbered}
 
-<https://ludo2ne.github.io/Git-tuto/>{target="_blank"}
+[Introdution à Git](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}

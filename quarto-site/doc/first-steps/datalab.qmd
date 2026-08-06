@@ -90,4 +90,5 @@ Il est donc indispensable de sauvegarder :
 ## Liens utiles {.unnumbered}
 
 - [Documentation et tutoriels](https://www.sspcloud.fr/catalog){target="_blank"}
-- <https://ludo2ne.github.io/ENSAI-1A-SQL/doc/outils/datalab.html>{target="_blank"}
+- [Présentation du Datalab](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/intro.html){target="_blank"}
+- [Découverte du Datalab](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/basics.html){target="_blank"}
