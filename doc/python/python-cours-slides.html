@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Ludovic Deneuville">
   <title>Remise à Niveau Informatique – Introduction à Python</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -95,7 +101,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-06e768f098560084c2d7120de8ad04fb.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-84b150702567ae7e15cad124fb9039e2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -198,7 +204,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Ludovic Deneuville 
+Ludovic Deneuville
 </div>
 </div>
 </div>
@@ -268,8 +274,8 @@ Ludovic Deneuville
 <li><p>Expliquer la différence entre un langage interprété et compilé.</p></li>
 <li><p>interactif : environnement où vous pouvez entrer des commandes Python une par une, voir immédiatement les résultats (Notebook)</p></li>
 <li><p>Typage Dynamique (vérification des types au moment de l’exécution)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-2"><a></a>a <span class="op">=</span> <span class="st">"toto"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-2"><a aria-label="2"></a>a <span class="op">=</span> <span class="st">"toto"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -321,13 +327,13 @@ Ludovic Deneuville
 <section id="packages" class="title-slide slide level2 center">
 <h2>Packages</h2>
 <p>Dans un terminal (par exemple : <strong>Git Bash</strong>)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">pip</span> list                            <span class="co"># Packages installés</span></span>
-<span id="cb2-2"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>               <span class="co"># Installer un package</span></span>
-<span id="cb2-3"><a></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>==<span class="op">&lt;</span>version<span class="op">&gt;</span>    <span class="co"># Version spécifique</span></span>
-<span id="cb2-4"><a></a><span class="ex">pip</span> uninstall <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a><span class="co"># Distribution utilisée</span></span>
-<span id="cb2-7"><a></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-label="1"></a><span class="ex">pip</span> list                            <span class="co"># Packages installés</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>               <span class="co"># Installer un package</span></span>
+<span id="cb2-3"><a aria-label="3"></a><span class="ex">pip</span> install <span class="op">&lt;</span>package<span class="op">&gt;</span>==<span class="op">&lt;</span>version<span class="op">&gt;</span>    <span class="co"># Version spécifique</span></span>
+<span id="cb2-4"><a aria-label="4"></a><span class="ex">pip</span> uninstall <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
+<span id="cb2-5"><a aria-label="5"></a></span>
+<span id="cb2-6"><a aria-label="6"></a><span class="co"># Distribution utilisée</span></span>
+<span id="cb2-7"><a aria-label="7"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">'import platform; print(platform.python_implementation())'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>En projet :</p>
 <ul>
@@ -413,24 +419,24 @@ Ludovic Deneuville
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">If</a></li><li><a href="#tabset-1-2">For</a></li><li><a href="#tabset-1-3">While</a></li><li><a href="#tabset-1-4">Enumerate</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1">
-<div id="af54463d" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>note <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="cf">if</span> note <span class="op">&gt;</span> <span class="dv">16</span>:</span>
-<span id="cb3-4"><a></a>    <span class="bu">print</span>(<span class="st">"Validé avec mention"</span>)</span>
-<span id="cb3-5"><a></a><span class="cf">elif</span> note <span class="op">&gt;</span> <span class="dv">10</span>:</span>
-<span id="cb3-6"><a></a>    <span class="bu">print</span>(<span class="st">"Validé"</span>)</span>
-<span id="cb3-7"><a></a><span class="cf">else</span>:</span>
-<span id="cb3-8"><a></a>    <span class="bu">print</span>(<span class="st">"Non validé"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="572f1eec" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>note <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb3-2"><a aria-label="2"></a></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="cf">if</span> note <span class="op">&gt;</span> <span class="dv">16</span>:</span>
+<span id="cb3-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="st">"Validé avec mention"</span>)</span>
+<span id="cb3-5"><a aria-label="5"></a><span class="cf">elif</span> note <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb3-6"><a aria-label="6"></a>    <span class="bu">print</span>(<span class="st">"Validé"</span>)</span>
+<span id="cb3-7"><a aria-label="7"></a><span class="cf">else</span>:</span>
+<span id="cb3-8"><a aria-label="8"></a>    <span class="bu">print</span>(<span class="st">"Non validé"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Validé avec mention</code></pre>
 </div>
 </div>
 </div>
 <div id="tabset-1-2">
-<div id="82a5fc4e" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
-<span id="cb5-2"><a></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="65bad539" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
+<span id="cb5-2"><a aria-label="2"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 2
@@ -440,23 +446,23 @@ Ludovic Deneuville
 </div>
 </div>
 <div id="tabset-1-3">
-<div id="81940548" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb7-3"><a></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
-<span id="cb7-4"><a></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
-<span id="cb7-5"><a></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4b453525" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a>cpt <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="cf">while</span> cpt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-3"><a aria-label="3"></a>    <span class="bu">print</span>(cpt, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb7-4"><a aria-label="4"></a>    cpt <span class="op">-=</span> <span class="dv">1</span>    </span>
+<span id="cb7-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="st">"boom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10 9 8 7 6 5 4 3 2 1 boom</code></pre>
 </div>
 </div>
 </div>
 <div id="tabset-1-4">
-<div id="ff4fe5fa" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>liste <span class="op">=</span> [<span class="st">"Alban"</span>, <span class="st">"Bertille"</span>, <span class="st">"Corine"</span>]</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
-<span id="cb9-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> : valeur </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="07a30188" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>liste <span class="op">=</span> [<span class="st">"Alban"</span>, <span class="st">"Bertille"</span>, <span class="st">"Corine"</span>]</span>
+<span id="cb9-2"><a aria-label="2"></a></span>
+<span id="cb9-3"><a aria-label="3"></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(liste):</span>
+<span id="cb9-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="ss">f"index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> : valeur </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>index 0 : valeur Alban
 index 1 : valeur Bertille
@@ -472,18 +478,18 @@ index 2 : valeur Corine</code></pre>
 <h2>Collections - les 2 principales</h2>
 <ul>
 <li><p><strong>Liste</strong> : collection ordonnée de valeurs modifiables</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a><span class="bu">list</span> <span class="op">=</span> [<span class="st">"pomme"</span>, <span class="st">"poire"</span>, <span class="dv">2</span>, <span class="va">True</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p><strong>Dictionnaire</strong> : collection de paires clé-valeur non ordonnées</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>recette <span class="op">=</span> {<span class="st">"fraise"</span>: <span class="dv">5</span>, <span class="st">"Moutarde"</span>: <span class="st">"5g"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section id="autres-collections-utiles" class="slide level3">
 <h3>Autres Collections utiles</h3>
 <ul>
 <li><p><strong>Set</strong> : collection non ordonnée de valeurs uniques</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>premiers <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p><strong>Tuple</strong> : collection ordonnée de valeurs immuables</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a>coord <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">

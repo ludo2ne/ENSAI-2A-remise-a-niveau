@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Ludovic Deneuville">
   <title>Remise à Niveau Informatique – Programmation Orientée Objet</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -95,7 +101,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-06e768f098560084c2d7120de8ad04fb.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-84b150702567ae7e15cad124fb9039e2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -198,7 +204,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Ludovic Deneuville 
+Ludovic Deneuville
 </div>
 </div>
 </div>
@@ -314,20 +320,20 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>personne.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="personne.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Personne:</span>
-<span id="cb1-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, prenom, age):</span>
-<span id="cb1-3"><a></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
-<span id="cb1-4"><a></a>        <span class="va">self</span>.prenom <span class="op">=</span> prenom</span>
-<span id="cb1-5"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb1-6"><a></a>        <span class="va">self</span>.competences <span class="op">=</span> []</span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a>    <span class="kw">def</span> apprendre(<span class="va">self</span>, nouvelle_competence):</span>
-<span id="cb1-9"><a></a>        <span class="co">"""Ajoute une nouvelle compétence à la liste des compétences."""</span></span>
-<span id="cb1-10"><a></a>        <span class="va">self</span>.competences.append(nouvelle_competence)</span>
-<span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a>    <span class="kw">def</span> vieillir(<span class="va">self</span>):</span>
-<span id="cb1-13"><a></a>        <span class="co">"""Incrémente l'âge de la personne d'un an."""</span></span>
-<span id="cb1-14"><a></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="personne.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="kw">class</span> Personne:</span>
+<span id="cb1-2"><a aria-label="2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nom, prenom, age):</span>
+<span id="cb1-3"><a aria-label="3"></a>        <span class="va">self</span>.nom <span class="op">=</span> nom</span>
+<span id="cb1-4"><a aria-label="4"></a>        <span class="va">self</span>.prenom <span class="op">=</span> prenom</span>
+<span id="cb1-5"><a aria-label="5"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb1-6"><a aria-label="6"></a>        <span class="va">self</span>.competences <span class="op">=</span> []</span>
+<span id="cb1-7"><a aria-label="7"></a></span>
+<span id="cb1-8"><a aria-label="8"></a>    <span class="kw">def</span> apprendre(<span class="va">self</span>, nouvelle_competence):</span>
+<span id="cb1-9"><a aria-label="9"></a>        <span class="co">"""Ajoute une nouvelle compétence à la liste des compétences."""</span></span>
+<span id="cb1-10"><a aria-label="10"></a>        <span class="va">self</span>.competences.append(nouvelle_competence)</span>
+<span id="cb1-11"><a aria-label="11"></a></span>
+<span id="cb1-12"><a aria-label="12"></a>    <span class="kw">def</span> vieillir(<span class="va">self</span>):</span>
+<span id="cb1-13"><a aria-label="13"></a>        <span class="co">"""Incrémente l'âge de la personne d'un an."""</span></span>
+<span id="cb1-14"><a aria-label="14"></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="objets-python" class="slide level3">
@@ -337,12 +343,12 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>main.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="main.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">from</span> personne <span class="im">import</span> Personne</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>personne1 <span class="op">=</span> Personne(<span class="st">"Touille"</span>, <span class="st">"Sacha"</span>, <span class="dv">20</span>)</span>
-<span id="cb2-4"><a></a>personne2 <span class="op">=</span> Personne(<span class="st">"Ginal"</span>, <span class="st">"Laury"</span>, <span class="dv">30</span>)</span>
-<span id="cb2-5"><a></a>personne2.vieillir()</span>
-<span id="cb2-6"><a></a>personne2.apprendre(<span class="st">"SQL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="main.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">from</span> personne <span class="im">import</span> Personne</span>
+<span id="cb2-2"><a aria-label="2"></a></span>
+<span id="cb2-3"><a aria-label="3"></a>personne1 <span class="op">=</span> Personne(<span class="st">"Touille"</span>, <span class="st">"Sacha"</span>, <span class="dv">20</span>)</span>
+<span id="cb2-4"><a aria-label="4"></a>personne2 <span class="op">=</span> Personne(<span class="st">"Ginal"</span>, <span class="st">"Laury"</span>, <span class="dv">30</span>)</span>
+<span id="cb2-5"><a aria-label="5"></a>personne2.vieillir()</span>
+<span id="cb2-6"><a aria-label="6"></a>personne2.apprendre(<span class="st">"SQL"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="constructeur" class="slide level3">
@@ -362,8 +368,8 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>velo_electrique.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="velo_electrique.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> VeloElectrique:</span>
-<span id="cb3-2"><a></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="velo_electrique.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="kw">class</span> VeloElectrique:</span>
+<span id="cb3-2"><a aria-label="2"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -388,21 +394,21 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>velo.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Velo:</span>
-<span id="cb4-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
-<span id="cb4-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb4-4"><a></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span>
-<span id="cb4-5"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
-<span id="cb4-8"><a></a>        <span class="co">"""Augmente la vitesse du vélo."""</span></span>
-<span id="cb4-9"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
-<span id="cb4-12"><a></a>        <span class="co">"""Diminue la vitesse du vélo."""</span></span>
-<span id="cb4-13"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
-<span id="cb4-14"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-15"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="kw">class</span> Velo:</span>
+<span id="cb4-2"><a aria-label="2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb4-3"><a aria-label="3"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb4-4"><a aria-label="4"></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span>
+<span id="cb4-5"><a aria-label="5"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb4-6"><a aria-label="6"></a></span>
+<span id="cb4-7"><a aria-label="7"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb4-8"><a aria-label="8"></a>        <span class="co">"""Augmente la vitesse du vélo."""</span></span>
+<span id="cb4-9"><a aria-label="9"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb4-10"><a aria-label="10"></a></span>
+<span id="cb4-11"><a aria-label="11"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb4-12"><a aria-label="12"></a>        <span class="co">"""Diminue la vitesse du vélo."""</span></span>
+<span id="cb4-13"><a aria-label="13"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb4-14"><a aria-label="14"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-15"><a aria-label="15"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -410,20 +416,20 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>trottinette.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Trottinette:</span>
-<span id="cb5-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
-<span id="cb5-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb5-4"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
-<span id="cb5-7"><a></a>        <span class="co">"""Augmente la vitesse."""</span></span>
-<span id="cb5-8"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
-<span id="cb5-9"><a></a></span>
-<span id="cb5-10"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
-<span id="cb5-11"><a></a>        <span class="co">"""Diminue la vitesse."""</span></span>
-<span id="cb5-12"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
-<span id="cb5-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb5-14"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="kw">class</span> Trottinette:</span>
+<span id="cb5-2"><a aria-label="2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
+<span id="cb5-3"><a aria-label="3"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb5-4"><a aria-label="4"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb5-5"><a aria-label="5"></a></span>
+<span id="cb5-6"><a aria-label="6"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb5-7"><a aria-label="7"></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb5-8"><a aria-label="8"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb5-9"><a aria-label="9"></a></span>
+<span id="cb5-10"><a aria-label="10"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb5-11"><a aria-label="11"></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb5-12"><a aria-label="12"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb5-13"><a aria-label="13"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb5-14"><a aria-label="14"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -450,20 +456,20 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>deux_roues.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="deux_roues.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> DeuxRoues:</span>
-<span id="cb6-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
-<span id="cb6-3"><a></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
-<span id="cb6-4"><a></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
-<span id="cb6-7"><a></a>        <span class="co">"""Augmente la vitesse."""</span></span>
-<span id="cb6-8"><a></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
-<span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
-<span id="cb6-11"><a></a>        <span class="co">"""Diminue la vitesse."""</span></span>
-<span id="cb6-12"><a></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
-<span id="cb6-13"><a></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb6-14"><a></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="deux_roues.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="kw">class</span> DeuxRoues:</span>
+<span id="cb6-2"><a aria-label="2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
+<span id="cb6-3"><a aria-label="3"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb6-4"><a aria-label="4"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse initiale est 0</span></span>
+<span id="cb6-5"><a aria-label="5"></a></span>
+<span id="cb6-6"><a aria-label="6"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, increment):</span>
+<span id="cb6-7"><a aria-label="7"></a>        <span class="co">"""Augmente la vitesse."""</span></span>
+<span id="cb6-8"><a aria-label="8"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> increment</span>
+<span id="cb6-9"><a aria-label="9"></a></span>
+<span id="cb6-10"><a aria-label="10"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, decrement):</span>
+<span id="cb6-11"><a aria-label="11"></a>        <span class="co">"""Diminue la vitesse."""</span></span>
+<span id="cb6-12"><a aria-label="12"></a>        <span class="va">self</span>.vitesse <span class="op">-=</span> decrement</span>
+<span id="cb6-13"><a aria-label="13"></a>        <span class="cf">if</span> <span class="va">self</span>.vitesse <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-14"><a aria-label="14"></a>            <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span>  <span class="co"># La vitesse ne peut pas être négative</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -471,12 +477,12 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>velo.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a><span class="kw">class</span> Velo(DeuxRoues):</span>
-<span id="cb7-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
-<span id="cb7-5"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(couleur)  <span class="co"># Appel du constructeur de la classe mère</span></span>
-<span id="cb7-6"><a></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="velo.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb7-2"><a aria-label="2"></a></span>
+<span id="cb7-3"><a aria-label="3"></a><span class="kw">class</span> Velo(DeuxRoues):</span>
+<span id="cb7-4"><a aria-label="4"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, nb_pignons):</span>
+<span id="cb7-5"><a aria-label="5"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(couleur)  <span class="co"># Appel du constructeur de la classe mère</span></span>
+<span id="cb7-6"><a aria-label="6"></a>        <span class="va">self</span>.nb_pignons <span class="op">=</span> nb_pignons</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-3">
@@ -484,11 +490,11 @@ Ludovic Deneuville
 <div class="code-with-filename-file">
 <pre><strong>trottinette.py</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a><span class="kw">class</span> Trottinette(DeuxRoues):</span>
-<span id="cb8-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
-<span id="cb8-5"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(couleur)   <span class="co"># Appel du constructeur de la classe mère</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="trottinette.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="im">from</span> deux_roues <span class="im">import</span> DeuxRoues</span>
+<span id="cb8-2"><a aria-label="2"></a></span>
+<span id="cb8-3"><a aria-label="3"></a><span class="kw">class</span> Trottinette(DeuxRoues):</span>
+<span id="cb8-4"><a aria-label="4"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur):</span>
+<span id="cb8-5"><a aria-label="5"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(couleur)   <span class="co"># Appel du constructeur de la classe mère</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

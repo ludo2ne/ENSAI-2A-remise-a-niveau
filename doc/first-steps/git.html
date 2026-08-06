@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,16 @@
 
 <title>Git – Remise à Niveau Informatique</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -34,17 +40,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-db8412935377c476a6a34876e811a251.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-d075c25e60777822068c2219745b13b0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -351,49 +356,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-outils" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Outils</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-outils">    
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/outils.html">
- <span class="dropdown-text">Outils</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/Bash.html">
- <span class="dropdown-text">Bash</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/DBeaver.html">
- <span class="dropdown-text">DBeaver</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/LaTeX.html">
- <span class="dropdown-text">LaTeX</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/Markdown.html">
- <span class="dropdown-text">Markdown</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/VSCode.html">
- <span class="dropdown-text">Visual Studio Code</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/VM.html">
- <span class="dropdown-text">VM</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/YAML.html">
- <span class="dropdown-text">YAML</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../doc/outils/regexp.html">
- <span class="dropdown-text">Expressions régulières</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examens" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examens</span>
@@ -733,7 +695,7 @@ Tip
 </section>
 <section id="liens" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="liens">Liens</h2>
-<p><a href="https://ludo2ne.github.io/Git-tuto/" target="_blank">https://ludo2ne.github.io/Git-tuto/</a></p>
+<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introdution à Git</a></p>
 
 
 </section>
