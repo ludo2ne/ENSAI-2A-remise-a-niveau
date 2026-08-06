@@ -1,0 +1,196 @@
+---
+title: "Programmation Orientée Objet - Exercices"
+description: "Exercice de POO avec Python"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+## Setup
+
+### Start a VSCode service
+
+- [ ] Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+- [ ] Start a `Vscode-python` service, then open it
+
+### Retrieve the code
+
+There are two possibilities to retrieve the code:
+
+- clone the teacher's repository directly
+  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
+- create a fork of this repository, then clone this fork
+  - https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork{target="_blank"}
+  - `git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-2A-remise-a-niveau.git`
+
+If you clone the teacher's repository directly, you will not be able to use Git to keep track of your work. You will have to download the files manually, for example.
+
+A fork is a copy of a remote repository. Since this copy belongs to you, you have the right to modify the code.
+
+- [ ] Clone the repository by choosing one of the two options above
+
+Then, go to the `src/POO` folder:
+
+- [ ] File > Open Folder > `/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
+  - or directly from the terminal: `code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
+
+You can then code in the files in the *exercise* folder. If needed, you can create new files.
+
+## Exercise 1 - Points
+
+Define a `Point` class to represent a point in the plane with x and y coordinates.
+
+Implement the following methods:
+
+- [ ] `__init__(self, x, y)`: point constructor with Cartesian coordinates
+- [ ] `r(self)` and `t(self)`: returning the polar coordinates of the point
+- [ ] `__str__(self)`: to display the Point as text, e.g. `(1.0, 2.4)`
+- [ ] `distance(self, other_point)`: distance to another point
+- [ ] `__eq__(self, other_point) -> bool`: indicates whether the two points are identical
+- [ ] `homothety(self, k)`: applying a homothety centered at (0, 0) with ratio k
+- [ ] `translation(self, dx, dy)`: applying a translation with vector (dx, dy)
+- [ ] `rotation(self, a)` (bonus): applying a rotation centered at (0, 0) with angle a
+
+\::: {.callout-tip collapse="true"}
+To check that your methods are correct, you can add a `main` block at the end of your class. When you execute this file, this code will be run.
+
+```{.python}
+class Point:
+
+    # ...
+
+if __name__ == "__main__":
+    p1 = Point(1, 2)
+    p2 = Point(1, 2)
+    print(f"p1 : {p1}")
+    print(f"Distance between p1 and p2 : {p1.distance(p2)}")
+    print(f"p1 is equal to p2 : {p1 == p2}")
+````
+
+:::
+
+## Exercise 2 - Polygons
+
+* [ ] Create a `Polygon` class composed of objects from the `Point` class
+
+  * We will assume from now on that segments do not cross
+* [ ] Add 2 abstract methods `area()` and `perimeter()` to this class
+
+  * these methods will be defined in child classes
+* [ ] Create the `Segment`, `Triangle` and `Quadrilateral` classes that inherit from the `Polygon` class
+
+  * check the number of points each time
+* [ ] Define the `area()` and `perimeter()` methods in these 3 classes
+* [ ] Create the `Rectangle` class that inherits from `Quadrilateral`
+* [ ] For Rectangle, check that the 2 opposite sides have the same length and that there is a right angle
+
+Here is the class diagram generated with [Mermaid](https://mermaid.js.org/syntax/classDiagram.html){target="_blank"}
+
+```{mermaid}
+classDiagram
+    Point --o Polygon
+    Polygon <|-- Segment : 2
+    Polygon <|-- Triangle : 3
+    Polygon <|-- Quadrilateral : 4
+    Quadrilateral <|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(other_point)
+    }
+    class Polygon{
+        +list[Point] points_list
+        +area()
+        +perimeter()
+    }
+    class Quadrilateral{
+        +area()
+        +perimeter()
+    }
+    class Segment{
+        +area()
+        +perimeter()
+    }
+    class Triangle{
+        +area()
+        +perimeter()
+    }
+```
+
+## Exercise 3 - Domino
+
+### A Domino
+
+Write a `Domino` class with:
+
+* [ ] 2 integer attributes between 0 and 6: `end_A` and `end_B`
+* [ ] `__str__()`: which displays the dots present on both ends
+* [ ] `flip()`: which flips the domino (its A end becomes its B end and vice versa)
+* [ ] `accepts_after(other_domino)`: checks whether the B end of the current domino has the same value as the A end of the other domino
+
+### Game
+
+Now we will try to code a domino game.
+
+For simplicity:
+
+* there will only be one player
+* it is only possible to place a domino on one side, at the end of the domino row
+
+Let's start by generating all possible dominoes, i.e. all combinations from (0,0) to (6,6) without duplicates.
+
+* [ ] Write a function that generates all dominoes and returns the list
+* [ ] Write an `display_dominoes()` function that displays a list of dominoes
+* [ ] Write a `draw()` function that randomly draws a domino from a list and removes it from that list
+* [ ] Write a `playable_dominoes(hand_dominoes, placed_dominoes)` function that takes two lists of dominoes as arguments. The function returns the list of dominoes in hand that could be placed after the last domino in the `placed_dominoes` list.
+
+Write a `play()` function that:
+
+* [ ] generates the list of all dominoes
+* [ ] randomly draws a first domino and places it in the `placed_dominoes` list
+* [ ] randomly distributes 6 dominoes to the player
+* [ ] displays the dominoes they can play
+* [ ] if no domino can be played, offer them the possibility to draw
+* [ ] asks which domino they want to play (for example by asking them to enter the number in the domino list, and `quit` to stop playing)
+* [ ] adds the played domino to the `placed_dominoes` list and removes it from the `hand_dominoes` list
+
+```{mermaid}
+classDiagram
+    class Domino{
+        +int end_A
+        +int end_B
+        +flip()
+        +accepts_after(other_domino)
+    }
+```
+
+## Correction {.unnumbered}
+
+::: {.callout-tip title="Suggested solution" collapse="true"}
+
+#### Exercises 1 and 2
+
+* [point.py](./exercices/geometrie/point.py){target="_blank"}
+* [polygone.py](./exercices/geometrie/polygone.py){target="_blank"}
+* [segment.py](./exercices/geometrie/segment.py){target="_blank"}
+* [triangle.py](./exercices/geometrie/triangle.py){target="_blank"}
+* [quadrilatere.py](./exercices/geometrie/quadrilatere.py){target="_blank"}
+* [rectangle.py](./exercices/geometrie/rectangle.py){target="_blank"}
+
+An example of unit tests for the Point class:
+
+* [test_point.py](./exercices/geometrie/test_point.py){target="_blank"}
+
+#### Exercise 3
+
+* [domino.py](./exercices/domino/domino.py){target="_blank"}
+* [jeu.py](./exercices/domino/jeu.py){target="_blank"}
+  :::
+

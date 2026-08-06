@@ -1,0 +1,279 @@
+---
+title: "Python introduction"
+description: "[Slides](python-cours-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Introduction à Python](python-cours.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: python-cours-slides.html
+from: markdown+emoji
+lightbox: true
+---
+
+## History
+
+- Created by [Guido van Rossum](https://fr.wikipedia.org/wiki/Python_\(langage\)#/media/Fichier\:Guido_van_Rossum_OSCON_2006.jpg){target="_blank"} (Netherlands)
+- First version in 1991
+- Managed by the *Python Software Foundation* since 2001
+- [Python](https://www.python.org/){target="_blank"} 3.12
+
+::: {.notes}
+
+- Created at the end of 1989 during the Christmas holidays
+- Python Software Foundation (non-profit organization): promote and protect the language in order to expand the community
+  :::
+
+## Why Learn Python?
+
+- Versatile and popular language
+- Easy to learn and read
+- Large community and many resources
+- Many packages
+
+::: {.notes}
+
+- Important in the world of data science and engineering.
+  :::
+
+## Python Fundamentals
+
+- Interpreted and interactive language
+- Dynamic typing
+- Clear and concise syntax
+- Supports several paradigms (procedural, object-oriented, functional)
+
+::: {.notes}
+
+- Explain the difference between an interpreted and a compiled language.
+- Interactive: an environment where you can enter Python commands one by one and immediately see the results (Notebook)
+- Dynamic typing (type checking at runtime)
+```
+
+a = 5
+a = "toto"
+
+```
+
+:::
+
+## Python at ENSAI
+
+- CPython distribution
+- Version 3.10 (`python --version`)
+- You will code in:
+- [Jupyter notebooks](https://jupyter.org/){target="_blank"}
+- [Visual Studio Code](https://code.visualstudio.com/){target="_blank"}
+- Pre-installed packages
+
+::: {.notes}
+Distribution: a pre-packaged version of the Python interpreter including many modules, libraries, and tools
+
+- Anaconda (data science and machine learning)
+- Miniconda (lighter)
+
+Other IDEs: PyCharm, Atom
+
+Package manager **pip**, to be run in a terminal
+:::
+
+## Packages
+
+In a terminal (for example: **Git Bash**)
+
+```
+
+pip list                            # Installed packages
+pip install <package>               # Install a package
+pip install <package>==<version>    # Specific version
+pip uninstall <package>
+
+# Distribution used
+
+python -c 'import platform; print(platform.python_implementation())'
+
+```
+
+::: {.notes}
+For projects:
+
+- list of packages in a text file at the root
+- `pip install - r requirements.txt`
+
+**Demo**: run Python in the terminal
+:::
+
+### Popular Packages
+
+Data science:
+
+- NumPy
+- Pandas, Polars
+- Matplotlib, Seaborn
+
+::: {.notes}
+
+- NumPy
+  - Numerical computation
+  - ndarray, performance, statistics, array manipulation
+- Pandas
+  - dataframe, data analysis
+- Matplotlib: charts
+  :::
+
+## Writing Your First Python Code
+
+- Variables and data types (int, float, str, bool, list, dict)
+- Basic operations
+- Sensitive to indentation
+- Control structures (if, for, while)
+
+::: {.notes}
+
+- \= : assignment
+- \== : equality test / != difference
+
+Indentation: use a formatter in VSCode
+:::
+
+### Control Structures
+
+::: {.panel-tabset .nav-pills}
+
+#### If
+
+```
+
+#| eval: true
+#| echo: true
+note = 18
+
+if note > 16:
+print("Validated with honors")
+elif note > 10:
+print("Validated")
+else:
+print("Not validated")
+
+```
+
+#### For
+
+```
+
+#| eval: true
+#| echo: true
+for i in range(1, 5):
+print(i)
+
+```
+
+#### While
+
+```
+
+#| eval: true
+#| echo: true
+cpt = 10
+while cpt > 0:
+print(cpt, end = " ")
+cpt -= 1
+print("boom")
+
+```
+
+#### Enumerate
+
+```
+
+#| eval: true
+#| echo: true
+liste = ["Alban", "Bertille", "Corine"]
+
+for i, v in enumerate(liste):
+print(f"index {i} : value {v}")
+
+```
+
+:::
+
+
+
+## Collections - the 2 main ones
+
+- **List**: ordered collection of modifiable values
+```
+
+list = ["apple", "pear", 2, True]
+
+```
+- **Dictionary**: unordered collection of key-value pairs
+```
+
+recipe = {"strawberry": 5, "Mustard": "5g"}
+
+```
+
+### Other Useful Collections
+
+- **Set**: unordered collection of unique values
+```
+
+primes = {2, 3, 5, 7, 11, 13}
+
+```
+- **Tuple**: ordered collection of immutable values
+```
+
+coord = (-1, 5, 4)
+
+```
+
+::: {.callout-note}
+Many other collection types exist (Tree, Linked List...).
+:::
+
+### Main Collections - Summary
+
+| Data Type | Ordered | Mutable | Duplicate |
+| ----------------------------------- | - | - | - |
+| list                                | ✔ | ✔ | ✔ |
+| dict                                |   | ✔ |   |
+| tuple                               | ✔ |   | ✔ |
+| set                                 |   | ✔ |   |
+
+## Development Assistance
+
+To learn the language, avoid rushing to LLMs.
+
+Prefer:
+
+- [Online documentation](https://docs.python.org/fr/3.10/tutorial/){target="_blank"}
+- Your favorite search engine
+- [Stack Overflow](https://stackoverflow.com/){target="_blank"}
+
+### Useful Resources
+
+- [Real Python](https://realpython.com/){target="_blank"}
+- [Python for Data Science](https://pythonds.linogaliana.fr/){target="_blank"}
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/){target="_blank"}
+
+::: {.notes}
+LLMs are not suitable for memorization but are useful for:
+
+- debugging
+- documenting
+:::
+
+## At Work
+
+5 notebooks are available to help you learn the basics of the language:
+
+[How to use notebooks](./python-notebooks-en.qmd)

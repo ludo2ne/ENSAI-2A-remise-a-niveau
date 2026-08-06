@@ -1,0 +1,201 @@
+---
+title: "Exercice BDR et SQL"
+description: "Exercice d'apprentissage du SQL"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Objective {.unnumbered}
+
+In this practical work, you will:
+
+- create a database: start a *PostgreSQL* service
+- connect to this database: use a *CloudBeaver* service
+- insert data using an SQL script
+- write SQL queries to answer the questions
+
+## Setup
+
+### Start the services
+
+- [ ] Connect to [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+- [ ] Start a **PostgreSQL** service
+- [ ] Start a **CloudBeaver** service
+- [ ] Open CloudBeaver
+  - username: user-
+  - password: paste your password
+
+::: {.callout-tip title="What is what?"}
+
+- PostgreSQL: Database
+- CloudBeaver: Software used to communicate with a database
+
+It is possible to connect directly to a database, but it is much easier to use a tool such as CloudBeaver.
+:::
+
+### Create a connection
+
+Normally, if you start both services in the correct order, when launching CloudBeaver, the PostgreSQL database is detected and the connection is automatically created.
+
+Has the connection been created?
+
+- If yes, it appears on the left in CloudBeaver (connection list)
+- If no, create the connection
+
+::: {.callout-note title="Create a connection"}
+
+- [ ] First open the README of the PostgreSQL service
+  - it contains the information needed to connect to the database
+- [ ] In CloudBeaver > New connection
+- [ ] Select **PostgreSQL**
+- [ ] Fill in the following fields
+  - Hostname: `postgresql-<...>`
+  - Port: 5432
+  - Database: defaultdb
+  - Username: `user-<username>`
+  - Password: `<password>`
+- [ ] Click TEST, then [CREATE]{.blue-button}
+  :::
+
+Once the connection has been created, open it:
+
+- [ ] Right-click on the connection > Open
+  - a small green dot appears next to it
+
+Finally, open an SQL editor to write queries:
+
+- [ ] Right-click > *SQL Editor*
+- [ ] Check that you are using the `public@defaultdb` profile
+  - At the top in the blue banner, otherwise select this profile
+
+### Insert data
+
+- [ ] Copy the contents of the file [echecs.sql](./exercice/echecs.sql){target="_blank"}
+- [ ] Paste it into CloudBeaver
+- [ ] Execute the script
+  - Orange icon with a scroll containing an arrow \:scroll:
+
+If you did not get any error message, check that the tables were created:
+
+- [ ] Delete the whole script. Once the tables are created, you no longer need it
+- [ ] `SELECT * FROM echecs.tournoi;`
+- [ ] Click the orange arrow
+
+::: {.callout-tip}
+
+- Scroll containing an arrow (ALT+X) \:arrow\_right: execute all queries in the editor
+- Orange arrow (CTRL+ENTER) \:arrow\_right: execute the current query (where the mouse cursor is located)
+  :::
+
+### Alternatives
+
+Other tools can be used to complete the exercise:
+
+- [https://onyxia.lab.groupe-genes.fr/](https://onyxia.lab.groupe-genes.fr/{target=)[{target=](https://onyxia.lab.groupe-genes.fr/{target=)"_blank"}: works like SSP Cloud
+- DBeaver on the ENSAI VM
+  - Connect to the ENSAI VM
+  - Launch the DBeaver software
+- [https://sqliteonline.com/](https://sqliteonline.com/{target=)[{target=](https://sqliteonline.com/{target=)"_blank"}
+  - PostgreSQL > Click to connect
+- [https://aiven.io/tools/pg-playground](https://aiven.io/tools/pg-playground{target=)[{target=](https://aiven.io/tools/pg-playground{target=)"_blank"}
+
+## Data description
+
+We have a list of **players** and **tournaments**. Players can participate in different tournaments.
+
+A tournament is supervised by an **arbiter**. An arbiter is a player who has obtained an **arbiter grade**.
+
+In a tournament, games are played at a certain **time control** (Classical, Rapid, Blitz).
+
+```{mermaid}
+classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -> arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -> joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -> cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -> tournoi)
+    id_joueur: INT(FK -> joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
+````
+
+## Questions
+
+### Discovering tables
+
+* [ ] List all players
+* [ ] Do the same for the other tables to observe their contents
+* [ ] List all players ordered by descending Elo rating
+* [ ] List all players with an Elo rating less than or equal to 2000
+* [ ] List all players with an Elo rating less than or equal to 2000 and whose first name contains an "e" (uppercase or lowercase)
+
+  * :bulb: see the UPPER method
+
+### Updating data
+
+* [ ] Create the player: *Martine Dupont, Elo: 1999, Elite Arbiter*
+* [ ] Delete the player with the username *marc78*
+* [ ] Try to delete the player with id: 20
+
+  * Why does this not work? What should be done to delete this player?
+* [ ] List the players who are arbiters
+
+  * :bulb: see IS NOT NULL
+* [ ] Add a boolean column *is_arbiter* to the player table
+* [ ] Fill this new column for all players
+
+### Joins
+
+* [ ] List players (last name, first name) who are arbiters, along with their arbiter grade
+* [ ] List all players (last name, first name) along with their arbiter grade if they have one
+
+### Aggregations
+
+* [ ] Count the number of players who are arbiters
+* [ ] Count the number of arbiters by grade
+* [ ] Count the number of arbiters by grade and display only grades where the average Elo rating of arbiters is greater than 2000
+* [ ] Display the list of tournaments (tournament name, time control, arbiter)
+* [ ] Add the number of players and the maximum Elo rating of the players
+
+::: {.callout-tip title="Solution" collapse="true"}
+Link to the [solution](./exercice/correction.sql)
+:::
+

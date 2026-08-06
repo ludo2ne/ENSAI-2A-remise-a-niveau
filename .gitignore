@@ -3,3 +3,5 @@ __pycache__/
 _site/
 
 _TODO.md
+/.quarto/
+**/*.quarto_ipynb

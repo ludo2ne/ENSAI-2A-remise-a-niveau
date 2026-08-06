@@ -1,0 +1,433 @@
+---
+title: Lists and Dictionaries
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+
+## Before starting {.unnumbered}
+
+- Download this [Jupyter notebook](02-listes-et-dictionnaires.ipynb){target="_blank"}
+- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} with your username and password
+  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Import the .ipynb file
+
+## Containers
+
+There are several data structures in Python:
+
+- Lists (list): ordered and mutable collection of elements
+- Dictionaries (dict): unordered collection of **key-value** pairs
+- Sets (set): unordered collection of **unique** elements
+- Tuples (tuple): ordered and immutable collection of elements
+
+Here we will focus on the two most common structures: **lists** and **dictionaries**
+
+## Lists
+
+Properties of Python lists:
+
+- **Indexing**: List elements are indexed, which means they can be accessed using their position in the list. The index of the first element is 0, and the index of the last element is len(list) - 1.
+- **Mutable**: Lists are mutable objects, which means you can modify their elements. You can add, remove, or modify elements.
+- **Heterogeneity**: Lists can contain elements of different data types: integers, strings, booleans, or even other lists.
+- **Variable length**: Lists can contain a variable number of elements. They can be empty (without elements) or contain an unlimited number of elements.
+
+### Creating a list
+
+```{python}
+# Integer list
+a = [22, 29, 35, 56]
+a
+```
+
+```{python}
+type(a)
+```
+
+```{python}
+# Mixed list
+b = ["bonjour", 20, True]
+print(b)
+```
+
+```{python}
+# Concatenation
+a + b
+```
+
+```{python}
+# Repetition
+a * 2
+```
+
+There are many other possibilities for creating lists.
+
+```{python}
+list(range(1, 7))
+```
+
+```{python}
+[x for x in range(1, 7)]
+```
+
+```{python}
+# Splitting a string
+c = "bleu;blanc;rouge;vert;jaune"
+c.split(";")
+```
+
+### Useful methods
+
+```{python}
+# Number of elements
+len(a)
+```
+
+```{python}
+# First element
+a[0]
+```
+
+```{python}
+# Last element
+a[-1]
+```
+
+```{python}
+# All elements from position 1
+a[1:]
+```
+
+```{python}
+# Test if a value belongs to a list
+22 in a
+```
+
+```{python}
+# Find the position of an element
+a.index(29)
+```
+
+```{python}
+# Reverse a list (without modifying the original list)
+print("a[::-1] : " + str(a[::-1]))
+print("a :       " + str(a))
+```
+
+```{python}
+# Reverse a list (here the reversal is saved in variable **a**)
+a.reverse()
+a
+```
+
+```{python}
+# Sort a list (without modifying the original list)
+sorted(a)
+```
+
+```{python}
+# Descending order
+sorted(a, reverse=True)
+```
+
+```{python}
+# Sort a list (saving the modification in variable **a**)
+print("Before : " + str(a))
+a.sort()
+print("After : " + str(a))
+```
+
+### Adding, modifying and deleting
+
+```{python}
+# Add at the end
+a.append(44)
+a
+```
+
+```{python}
+# Insert at a specific position
+a.insert(2, 88)
+a
+```
+
+```{python}
+# Modify
+a[0] = 99
+a
+```
+
+```{python}
+# Delete by position
+a.pop(3)
+a
+```
+
+```{python}
+# Delete by value
+a.remove(44)
+a
+```
+
+### Copying a list
+
+Observe, then execute the code below. It contains the following instructions:
+
+* creation of the variable **list**
+* creation of the variable **copy**
+* deletion of the last element of **copy**
+* display of **list**
+
+```{python}
+list = [1, 2, 3, 4]
+list2 = list
+list2.pop()
+list
+```
+
+We might expect the variable **list** not to be modified and to display `[1, 2, 3, 4]`.
+However, variable **list2** is not a copy of **list**, it is simply another way of referring to the same list.
+
+```{python}
+# To create a real copy that will be distinct from the original
+copy = list(list)
+copy.append(9)
+list, copy
+```
+
+```{python}
+# Another possibility to copy
+cp = list.copy()
+cp.append(8)
+list, cp
+```
+
+---
+
+## Dictionaries
+
+Important properties of a Python dictionary:
+
+* **Indexing by key**: Dictionary elements are indexed by keys rather than positions. **Each key must be unique** in the dictionary, and it is associated with a corresponding value. Searching for a value associated with a key is very fast.
+* **Mutable**: Dictionaries are mutable objects, which means you can add, remove, or modify dictionary elements after its creation.
+* **Heterogeneity**: Dictionaries can contain key-value pairs with different data types. Keys can be immutable types such as strings, integers... Values can be any valid Python data type.
+* **Variable length**: Dictionaries can contain a variable number of key-value pairs. They can be empty (without key-value pairs) or contain an unlimited number of pairs.
+* **Unordered**: Unlike lists, dictionary elements have no defined order. The order in which key-value pairs are stored is not guaranteed and may change during dictionary modifications.
+
+### Creating a dictionary
+
+```{python}
+ingredients = {'sugar': '100g', 'pear': 2, 'milk': '1L', 'salt': True}
+ingredients
+```
+
+```{python}
+type(ingredients)
+```
+
+```{python}
+# Number of elements
+len(ingredients)
+```
+
+```{python}
+# Search by key
+ingredients['milk']
+```
+
+```{python}
+# Search by key - another possibility
+ingredients.get('milk')
+```
+
+### Adding, modifying and deleting
+
+```{python}
+# Add an element
+ingredients['strawberry'] = '200g'
+ingredients
+```
+
+```{python}
+# Modify
+ingredients['sugar'] = '35g'
+ingredients
+```
+
+```{python}
+# Delete
+ingredients.pop('milk')
+ingredients
+```
+
+### Useful methods
+
+```{python}
+# List of keys
+list(ingredients.keys())      # same as: list(ingredients)
+```
+
+```{python}
+# List of values
+list(ingredients.values())
+```
+
+```{python}
+# List of items (list of tuples)
+list(ingredients.items())
+```
+
+## "Empty" types
+
+Now that we have seen lists and dictionaries, we can talk about **empty** types.
+For example, it is possible to create:
+
+* a variable that contains nothing: `None`
+* an empty list `[]`
+* an empty dictionary `{}`
+
+```{python}
+x = None
+type(x)
+```
+
+```{python}
+y = []
+type(y)
+```
+
+```{python}
+z = {}
+type(z)
+```
+
+## Exercises
+
+### Exercise 1
+
+Starting from the list `notes = ["do", "re", "re", "re", "fa", "sol", "solsi", "la"]`, **add, remove and modify** elements so that it contains the musical notes "do re mi fa sol la si" in the correct order.
+
+```{python}
+#| lines_to_next_cell: 2
+# Test your answer in this cell
+```
+
+### Exercise 2
+
+Suggest two methods to reverse the list `["un", "deux", "trois", "quatre"]`. What is the main difference between the two methods?
+
+```{python}
+#| lines_to_next_cell: 2
+# Test your answer in this cell
+```
+
+### Exercise 3
+
+Test the behavior of the **pop** method on the list of integers from 1 to 9.
+For example, test **pop()** without parameters or **pop(-1)**.
+
+```{python}
+#| lines_to_next_cell: 2
+# Test your answer in this cell
+```
+
+### Exercise 4
+
+Test the behavior of the **min** and **max** methods on:
+
+* a list composed only of numeric objects (`int` and `float`);
+* a list composed only of strings;
+* a list composed of a mixture of numeric and text objects.
+
+```{python}
+#| lines_to_next_cell: 2
+# Test your answer in this cell
+```
+
+### Exercise 5
+
+Try creating an empty list, then check its type.
+What could be the purpose of this?
+
+```{python}
+#| lines_to_next_cell: 2
+# Test your answer in this cell
+```
+
+### Exercise 6
+
+Given the following dictionary: `animals = {'cats': 5, 'dogs': 12}`
+
+What will the following membership tests return? Check your predictions.
+
+* `'cats' in animals.keys()`
+* `'cats' in animals.values()`
+* `'cats' in animals`
+
+```{python}
+# Test your answer in this cell
+```
+
+### Exercise 7
+
+Given the dictionary defined in the cell below.
+Display using print operations:
+
+* the list of names of the different classes
+* Miranda's history grade
+* the list of grades obtained by Hypolyte
+* the list of names of students in 6emeB
+* the list of subjects taught in 6eme A
+* the list of all taught subjects
+* the list of grades obtained by girls from both classes
+
+```{python}
+resultats = {
+    "6emeA": {"Miranda" : {"notes": {"physique": 16, "histoire": 12}},
+              "Celestin": {"notes": {"physique": "absent", "histoire": 18}}
+             },
+    "6emeB": {"Hypolyte": {"notes": {"maths": 11, "anglais": 0}},
+              "Josephine": {"notes": {"maths": 16, "anglais": 20}}
+             }
+}
+```
+
+```{python}
+# Test your answer in this cell
+```
+
+### Exercise 8
+
+Using a dictionary, count and display the number of occurrences of each character in the following sentence:
+
+* `Je compte le nombre d'occurences de chaque caractère de la phrase courante.`
+
+**Tip**: first, test on a smaller string.
+
+```{python}
+# Test your answer in this cell
+```
+
+### Exercise 9
+
+Clean this list to remove all duplicates and keep only one occurrence of each fruit:
+
+* `fruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']`
+
+**Hint**: use sets
+
+```{python}
+# Test your answer in this cell
+```

@@ -1,0 +1,108 @@
+---
+title: "Python Notebooks"
+description: "Notebooks for discovering and learning Python"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Notebooks
+
+To discover Python, we will start by coding in these 5 notebooks:
+
+- [Types and variables](01-types-et-variables-en.qmd){target="_blank"}
+- [Lists and dictionaries](02-listes-et-dictionnaires-en.qmd){target="_blank"}
+- [Loops](03-tests-et-boucles-en.qmd){target="_blank"}
+- [Functions](04-fonctions-en.qmd){target="_blank"}
+- [Introduction to Object-Oriented Programming](05-POO-introduction-en.qmd){target="_blank"}
+
+To create these notebooks, I was inspired by the resources below:
+
+- [**Introduction to Python**](https://github.com/InseeFrLab/formation-python-initiation) training from the INSEE SSP Cloud
+- [Python Course](https://python.sdv.univ-paris-diderot.fr/) from Université Paris Cité
+
+
+
+## Using a notebook
+
+::: {.callout-important title="Instructions"}
+
+1. Start by going to one of the 5 notebooks mentioned above
+2. Download the `.ipynb` file to your machine
+3. Connect to one of the services offered below
+4. Upload the `.ipynb` file to this service
+   :::
+
+### Launching a Jupyter service
+
+- [ ] Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+- [ ] Go to the *Service Catalog* menu
+- [ ] Launch a `Jupyter-python` service, then open it
+- [ ] Import a notebook: at the top left, below the menu bar, use the \:arrow\_up: arrow
+
+In the left column:
+
+- the folder icon allows you to browse files
+- the list icon allows you to display the table of contents
+
+The `Code` field indicates whether the cell expects Python code or text (Markdown)
+
+
+
+::: {.callout-note title="Alternatives" collapse="true"}
+Here are other possibilities for using a notebook:
+
+- the [GENES datalab](https://onyxia.lab.groupe-genes.fr/){target="_blank"}
+- an [ENSAI Jupyter cluster](https://jupyther.ensai.fr/){target="_blank"} \:arrow\_right: if you have your username and password
+- [Jupyter Lab online](https://jupyter.org/try-jupyter/lab/){target="_blank"}
+- [Kaggle notebooks](https://www.kaggle.com/code){target="_blank"}
+- [Google Colab](https://colab.research.google.com/){target="_blank"}
+  :::
+
+### Cell types
+
+A notebook is made up of cells. You can create a new cell by clicking on the `+` button in the toolbar.
+There are two main types of cells:
+
+- code cells (where you write and execute Python code)
+- text cells (where you write formatted text using Markdown)
+
+::: {.callout-tip title="The Markdown language" collapse="true"}
+It is a simple and intuitive language that allows you to format text (this website is generated with Markdown code).
+
+Many resources are available on the internet, [for example](https://commonmark.org/help/){target="_blank"}
+
+Some examples:
+
+| Code                         | Formatting                  |
+| ---------------------------- | --------------------------- |
+| `**bold text**`              | **bold text**               |
+| `*italic text*`              | *italic text*               |
+| `# Level 1 title`            |                             |
+| `## Level 2 title`           |                             |
+| `- Bullet point item`        | - Bullet point item         |
+| :::                          |                             |
+
+The desired cell type can be changed in the toolbar.
+
+## Useful commands
+
+| Command        | Description                                                               |
+| -------------- | ------------------------------------------------------------------------- |
+| `SHIFT + ENTER` | Execute a cell and move to the next one.                                 |
+| `CTRL + ENTER`  | Execute a cell without moving to the next one.                            |
+| `ESC`           | Switch to command mode (cell borders become blue).                        |
+| `ENTER`         | Switch to edit mode (you can modify the cell content).                   |
+| `A`             | Insert a cell above the current cell.                                     |
+| `B`             | Insert a cell below the current cell.                                     |
+| `D + D`         | Delete a cell.                                                           |
+
+## Useful resources
+
+You will find more information about notebooks on the [INSEE Python introductory training website](https://inseefrlab.github.io/formation-python-initiation/#les-notebooks-jupyter){target="_blank"}.

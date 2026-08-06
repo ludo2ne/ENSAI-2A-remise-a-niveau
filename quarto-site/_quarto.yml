@@ -51,6 +51,38 @@ website:
       - href: doc/UML/UML.qmd
         text: UML
     right:
+      - text: English
+        menu: 
+          - href: doc/english/home-en.qmd
+            text: "Home"
+          - href: doc/english/datalab-en.qmd
+            text: "Datalab"
+          - href: doc/english/git-en.qmd
+            text: "Git"
+          - href: doc/english/sql/sql-cours-en.qmd
+            text: "SQL lesson"
+          - href: doc/english/sql/sql-exercice-en.qmd
+            text: "SQL exercice"
+          - href: doc/english/python/python-cours-en.qmd
+            text: "Python Lesson"
+          - href: doc/english/python/python-notebooks-en.qmd
+            text: "Python Notebooks"
+          - href: doc/english/python/01-types-et-variables-en.qmd
+            text: "Python Types and variables"
+          - href: doc/english/python/02-listes-et-dictionnaires-en.qmd
+            text: "Python List and Dictionaries"
+          - href: doc/english/python/03-tests-et-boucles-en.qmd
+            text: "Python Tests and Loops"
+          - href: doc/english/python/04-fonctions-en.qmd
+            text: "Python functions"
+          - href: doc/english/python/05-POO-introduction-en.qmd
+            text: "Python POO introduction"
+          - href: doc/english/POO/poo-cours-en.qmd
+            text: "POO Lesson"
+          - href: doc/english/POO/poo-exercice-en.qmd
+            text: "POO Exercices"
+          - href: doc/english/UML-en.qmd
+            text: "UML"
       - text: Examens
         menu: 
           - href: doc/annales/examen-2024.qmd

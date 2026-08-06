@@ -1,0 +1,196 @@
+---
+title: "UML"
+description: "Introduction à UML"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+
+UML (Unified Modeling Language) is a graphical modeling language widely used in the field of software engineering. It provides a set of standardized notations and diagrams to visually represent different aspects of a software system.
+
+The main objective of UML is to facilitate communication, understanding, and documentation of complex software systems. It allows designers, developers, and stakeholders to collaborate effectively using understandable and standardized diagrams.
+
+The 3 main diagrams:
+
+- `Use Case Diagram`: It represents the functionalities provided by a software system from the users' (actors') point of view. It shows the interactions between actors and the system.
+- `Class Diagram`: It represents the static structure of a software system by showing the system's classes, their attributes, their methods, and the relationships between classes. It allows modeling concepts, relationships, and dependencies between classes.
+- `Activity Diagram`: It represents the control flow within a software system or a business process. It shows steps, decisions, branches, and data flows.
+- ...
+
+\:::{.callout-tip}
+UML cheat sheet available in the library
+\:::
+
+## Use Case Diagram
+
+A UML (Unified Modeling Language) use case diagram is a type of diagram used to represent interactions between actors (users or external systems) and the software system. It focuses on the functionalities provided by the system from the users' point of view.
+
+A use case diagram consists of several key elements:
+
+- `Actor`: An actor represents a role played by a user or an external system that interacts with the software system. It can be a person, another system, a hardware device, etc. Actors are often represented by stick figures.
+- `Use Case`: A use case represents a functionality or action that the software system provides to its actors. It describes an interaction between actors and the system to achieve a specific goal.
+- `Association Relationship`: Association relationships connect actors to use cases to show which actor uses which use case.
+
+UML use case diagrams are used to:
+
+- capture the functional requirements of the system
+- identify the actors involved
+- describe interactions between actors and the system
+- define the expected functionalities of the system
+
+They help effectively communicate user needs and guide the software development process by focusing on end-user objectives.
+
+### Tools
+
+- [PlantUML](http://www.plantuml.com/){.external target="\_blank"}
+  - [example](https://github.com/ludo2ne/projet-info-2A/blob/main/doc/diagrammes/diag_cas_utilisation.txt){.external target="\_blank"}
+
+### Example
+
+```{mermaid}
+graph LR
+
+  player["Player"]
+  organizer["Organizer"]
+
+  player --> modifyProfile([Modify Profile])
+  player --> register([Register Tournament])
+  player --> becomeArbiter([Become Arbiter])
+  
+  organizer --> createTournament([Create   Tournament])
+  organizer --> modifyTournament([Modify Tournament])
+````
+
+## Class Diagram
+
+A UML (Unified Modeling Language) class diagram is a type of diagram used to represent the static structure of a software system. It shows the system's classes, their attributes, their methods, and the relationships between classes.
+
+A UML class diagram consists of different boxes representing classes, with lines connecting these boxes to show relationships between classes. Here are some key elements commonly found in a class diagram:
+
+* `Class`: It is represented by a box with three sections:
+
+  * the class name
+  * attributes
+  * methods
+* `Association Relationship`: An association relationship represents a connection between two classes. It shows that objects of one class are associated with objects of another class. For example, a `Student` class can be associated with a `Course` class through an association relationship to indicate that students attend courses.
+* `Inheritance`: This allows modeling generalization and specialization concepts.
+* `Aggregation and Composition`: These relationships describe the structure of classes and their association with other classes.
+
+  * Aggregation is a relationship where a class can be composed of other classes, but these classes can exist independently
+  * Composition is a stronger relationship where a class is composed of other classes, and these classes cannot exist without the parent class.
+* `Multiplicity`: Multiplicity specifies the number of objects of one class associated with one or more objects of another class in an association relationship. It is represented by numbers or symbols such as "0..1", "1", "*", etc.
+
+Class diagrams are used to model the conceptual structure of a software system and identify classes and their relationships. They provide a visual and standardized representation for analyzing, designing, and documenting object-oriented systems.
+
+### Tools
+
+* [PlantUML](http://www.plantuml.com/){.external target="_blank"}
+
+  * [examples](https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes){.external target="_blank"}
+* [mermaid](https://mermaid.js.org/syntax/classDiagram.html){.external target="_blank"}
+
+### Example
+
+```{mermaid}
+classDiagram
+    class Address {
+        +number: string
+        +street: string
+        +city: string
+    }
+
+    class Person {
+        +name: string
+        +first_name: string
+        +age: int
+        +move()
+    }
+
+    class Driver {
+        +license_number: string
+    }
+
+    class Car {
+        +registration: string
+        +speed: float
+    }
+
+    class Wheel {
+        +size: string
+    }
+
+    class Bodywork {
+        +color: string
+    }
+
+    Person "*" -- "1" Address
+    Person <|-- Driver
+    Driver "*" -- "*" Car : drives
+    Car o-- Wheel
+    Car *-- Bodywork
+```
+
+## Exercise
+
+A Mail item can be of 2 types: Letter or Package.
+
+A Letter is characterized by:
+
+* weight (in grams)
+* shipping mode (Express or Standard)
+* destination address
+* format (A3 or A4)
+
+A Package is characterized by:
+
+* weight (in grams)
+* shipping mode (Express or Standard)
+* destination address
+* volume (in liters)
+
+Each Mail item has the following methods:
+
+* `__init__()` : a constructor
+* `__str__()` : a method that returns a string describing the Mail item
+* `calculate_postage()`
+
+  * for a Letter: base_rate + weight * 0.001
+
+    * with base_rate = €2.50 for A4 format and €3.50 for A3 format
+  * for a Package: volume / 4 + weight * 0.001
+  * in Express shipping mode, the amounts above are doubled
+
+#### Questions
+
+* [ ] Define the class diagram
+* [ ] Code these classes in Python
+
+Expected output example
+
+```python
+>>> l1 = Letter("Bordeaux", 80, "standard", "A4")
+>>> print(l1)
+Letter : 
+    Destination address : Bordeaux
+    Weight : 80 grams
+    Mode : standard
+    Format : A4
+    Stamp price : €2.58
+>>> c1 = Package("Rennes", 3500, "express", 2.25)
+>>> print(c1)
+Package : 
+    Destination address : Rennes 
+    Weight : 3500 grams 
+    Mode : express 
+    Volume : 2.25 liters 
+    Stamp price : €8.12
+```
+
+The correction is available [here](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction){target="_blank"}

@@ -1,0 +1,327 @@
+---
+title: "Programmation Orientée Objet"
+description: "[Slides](poo-cours-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Introduction à la POO](poo-cours.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: poo-cours-slides.html
+from: markdown+emoji
+lightbox: true
+---
+
+## Introduction
+
+OOP is a programming paradigm that organizes code around **objects** rather than functions and procedures.
+
+These objects represent real-world entities and have:
+
+- **attributes**: what they are
+- **methods**: what they can do
+
+### Benefits
+
+OOP allows you to:
+
+- organize code in a more structured way
+- promote code reuse and maintainability
+- naturally model concepts from the application domain
+
+It is widely used in many programming languages, including Python, to develop complex and scalable applications.
+
+### Example
+
+Let's model a person:
+
+- Attributes: last name, first name, age, skills
+- Methods: learn(), grow_older()
+
+\::: {.callout-note title="Methods can modify attributes"}
+The *grow_older()* method will increase the person's age by 1.
+
+The *learn("Python")* method will add "Python" to the list of skills.
+\:::
+
+## Fundamental principles
+
+### Encapsulation
+
+Encapsulation consists of grouping data and the methods that manipulate it within the same object.
+
+It allows you to:
+
+- hide implementation details
+- provide a consistent interface for interacting with the object
+
+### Inheritance
+
+Inheritance allows new classes to be created from existing classes by inheriting their attributes and methods. This promotes:
+
+- code reuse
+- the creation of class hierarchies
+
+> Example: *Square* inherits from *Rectangle*. A square is a rectangle with additional properties.
+
+### Polymorphism
+
+Polymorphism allows objects from different classes to respond differently to the same action.
+
+It allows objects from different classes to be manipulated uniformly by using common interfaces.
+
+## Class and Object
+
+- A **class** is a [model]{.underline} used to create objects
+  - It defines the attributes and methods that will be present in every object of this class
+- **Objects** are instances of classes
+  - They have attributes and methods that define their state and behavior
+
+### Example
+
+- Creating the *Person* class, which represents a person
+  - with its attributes and methods
+- Creating the *person1* object from this class
+  - first name = Sacha
+  - last name = Touille
+  - age = 20
+  - skills = []
+
+### Python Class
+
+```{.python}
+class Person:
+    def __init__(self, last_name, first_name, age):
+        self.last_name = last_name
+        self.first_name = first_name
+        self.age = age
+        self.skills = []
+
+    def learn(self, new_skill):
+        """Adds a new skill to the list of skills."""
+        self.skills.append(new_skill)
+
+    def grow_older(self):
+        """Increments the person's age by one year."""
+        self.age += 1
+````
+
+### Python Objects
+
+From the *Person* class, we can create objects.
+
+```{.python}
+from person import Person
+
+person1 = Person("Touille", "Sacha", 20)
+person2 = Person("Ginal", "Laury", 30)
+person2.grow_older()
+person2.learn("SQL")
+```
+
+### Constructor
+
+The code `Person("Touille", "Sacha", 20)` calls the `__init__()` method of the *Person* class.
+
+This method is called the [constructor]{.underline}.
+
+As its name suggests, it is used to "build" objects from the class.
+
+### Python Conventions
+
+* A class name is written in *CamelCase* (uppercase letter at the beginning of each word)
+* A Python file (or module) contains only one class
+* A module name is written in snake_case (lowercase words separated by `_`)
+
+```{.python}
+class ElectricBike:
+    ...
+```
+
+## Inheritance
+
+One of the three pillars of OOP is inheritance.
+
+A child class can use all the attributes and methods of its parent class.
+
+This inheritance principle also allows common attributes and methods to be shared in order to avoid code duplication.
+
+### Inheritance Example
+
+Suppose that in our code, we want to manage bicycles and scooters.
+
+The naive idea is to create a class for each one.
+
+### Inheritance Example
+
+::: {.panel-tabset .nav-pills}
+
+#### Bike
+
+```{.python}
+class Bike:
+    def __init__(self, color, nb_gears):
+        self.color = color
+        self.nb_gears = nb_gears
+        self.speed = 0  # Initial speed is 0
+
+    def accelerate(self, increment):
+        """Increases the bike speed."""
+        self.speed += increment
+
+    def slow_down(self, decrement):
+        """Decreases the bike speed."""
+        self.speed -= decrement
+        if self.speed < 0:
+            self.speed = 0  # Speed cannot be negative
+```
+
+#### Scooter
+
+```{.python}
+class Scooter:
+    def __init__(self, color):
+        self.color = color
+        self.speed = 0  # Initial speed is 0
+
+    def accelerate(self, increment):
+        """Increases the speed."""
+        self.speed += increment
+
+    def slow_down(self, decrement):
+        """Decreases the speed."""
+        self.speed -= decrement
+        if self.speed < 0:
+            self.speed = 0  # Speed cannot be negative
+```
+
+:::
+
+### Inheritance Example
+
+Thinking about it, we realize that these two classes have common attributes and methods:
+
+* color
+* speed
+* accelerate()
+* slow_down()
+
+One idea is to group these common characteristics into a `TwoWheels` class. Then make `Bike` and `Scooter` inherit from `TwoWheels`.
+
+### Inheritance Example
+
+::: {.panel-tabset .nav-pills}
+
+#### Two Wheels
+
+```{.python}
+class TwoWheels:
+    def __init__(self, color):
+        self.color = color
+        self.speed = 0  # Initial speed is 0
+
+    def accelerate(self, increment):
+        """Increases the speed."""
+        self.speed += increment
+
+    def slow_down(self, decrement):
+        """Decreases the speed."""
+        self.speed -= decrement
+        if self.speed < 0:
+            self.speed = 0  # Speed cannot be negative
+```
+
+#### Bike
+
+```{.python}
+from two_wheels import TwoWheels
+
+class Bike(TwoWheels):
+    def __init__(self, color, nb_gears):
+        super().__init__(color)  # Call the parent class constructor
+        self.nb_gears = nb_gears
+```
+
+#### Scooter
+
+```{.python}
+from two_wheels import TwoWheels
+
+class Scooter(TwoWheels):
+    def __init__(self, color):
+        super().__init__(color)   # Call the parent class constructor
+```
+
+:::
+
+### Self and Super
+
+* **self** is a reference to the current instance of the class
+
+  * It is used to access the attributes and methods of a specific class instance
+* **super()** is a built-in function that references the parent class
+
+  * It is used to call methods from the parent class in a child class
+
+## Abstract Class
+
+::: {.callout-tip title="Draw me a two-wheeler"}
+
+* Does it make sense to create an object from the TwoWheels class?
+
+If you are asked to draw a two-wheeler, you do not really know how to do it because you lack information.
+
+Whereas drawing a bicycle or a scooter is much more concrete.
+:::
+
+### Abstract Class - TwoWheels
+
+Some classes are not intended to be instantiated. For example, we will not create objects from the *TwoWheels* class.
+
+We will directly create *Bikes* and *Scooters*.
+
+Therefore, we can define the *TwoWheels* class as **abstract**.
+
+* objects cannot be created from this class
+
+### Abstract Class - TwoWheels
+
+The main purpose of abstract classes is to define a contract for child classes.
+
+They provide a consistent structure and organization for classes that share common characteristics, while allowing flexibility for specific implementations in each child class.
+
+### Abstract Class - Python
+
+::: {.callout-tip}
+In Python, the concept of abstract classes is implemented using the *abc* module (Abstract Base Classes).
+
+This module provides the `@abstractmethod` decorator, which allows a method to be declared as abstract in an abstract class.
+
+An abstract class is defined by inheriting from the ABC class of the abc module.
+:::
+
+### Abstract Class - Note
+
+:::{.callout-warning}
+A parent class does not necessarily mean an abstract class.
+
+For example:
+
+* Consider a `ElectricBike` class that inherits from the `Bike` class
+* This seems logical because an electric bike is a bike
+
+  * therefore, it inherits all its attributes and methods
+  * and it has additional characteristics (battery, range, power...)
+* However, in this case, the `Bike` class does not need to be abstract because creating a bike object is perfectly valid
+  :::
+
+## Exercises
+
+[exercises](./poo-exercice-en.qmd){target="_blank"}
+

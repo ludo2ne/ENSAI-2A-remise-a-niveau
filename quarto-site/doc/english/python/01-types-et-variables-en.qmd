@@ -1,0 +1,576 @@
+---
+title: Types and variables
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+
+## Before starting {.unnumbered}
+
+- Download this [Jupyter notebook](01-types-et-variables.ipynb){target="_blank"}
+- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} with your username and password
+  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Import the .ipynb file
+
+## Introduction {.unnumbered}
+
+In this notebook, we will discover the basic types in Python:
+
+- numeric
+  - **int**: integers
+  - **float**: decimals
+- character strings: **str**
+- booleans: **bool**
+
+## Variable assignment
+
+```{python}
+#| vscode: {languageId: python}
+# Create variable a and assign it the value 8
+a = 8
+
+# Create variable b and assign it the string "texte"
+b = "texte"
+
+# Create variable c and assign it the boolean True
+c = True
+````
+
+```{python}
+#| vscode: {languageId: python}
+# Display the content of a
+a
+```
+
+Note: A notebook only displays the last value requested from it.
+To display several values, you must use the **print** method.
+
+```{python}
+#| vscode: {languageId: python}
+print(a+1)
+print(b)
+print(c)
+```
+
+Python is a **dynamically typed language**.
+This means that it is possible to modify the type of a variable without constraints.
+If the variable **a** contains text, it is possible to assign it an integer afterwards.
+
+```{python}
+#| vscode: {languageId: python}
+print(a)
+a = "abcd"
+print(a)
+a = False
+print(a)
+```
+
+**Tip**: To display all created variables and their values, you can use the `%whos` command.
+
+```{python}
+#| vscode: {languageId: python}
+%whos
+```
+
+---
+
+## Numbers
+
+The `type` function allows you to know the type.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+a = 8
+type(a)
+```
+
+```{python}
+#| vscode: {languageId: python}
+b = 33.5
+type(b)
+```
+
+```{python}
+#| vscode: {languageId: python}
+float('inf')
+```
+
+### Conversions
+
+The `float` and `int` functions can be used to switch from one type to another.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Conversion to float
+float(a)
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Conversion to int (integer part)
+int(b)
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Scientific notation
+2.1e3
+```
+
+### Basic arithmetic operations
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Addition
+1 + 1
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Subtraction
+6 - 2
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Multiplication
+3 * 4
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Division
+11 / 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Euclidean division: quotient
+11 // 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Euclidean division: remainder (modulo)
+11 % 5
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Power
+2 ** 10
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Square root
+36 ** 0.5
+```
+
+---
+
+## Character strings
+
+Character strings (strings) are used to store textual information.
+
+A *string* is defined by putting the information between single quotes `'` or double quotes `"`.
+
+### Definition
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+a = 'a string defined with single quotes'
+a
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+b = "a string defined with double quotes"
+b
+```
+
+```{python}
+#| vscode: {languageId: python}
+# To include an apostrophe inside the string
+"j'inclus l'apostrophe"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# To include double quotes inside the string
+'les "guillemets" sont là'
+```
+
+### Useful methods
+
+Here is an overview of some useful methods. Many others exist (see [official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods))
+
+```{python}
+#| vscode: {languageId: python}
+# String length (number of characters)
+len("J'ai 18 caractères")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Concatenation
+"I am" + "your father"
+" ".join(["I am", "your father"])
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Concatenation with a number
+year = 2
+"je suis en " + year + "ème année"
+```
+
+Problem: the number must first be converted into a string.
+The **str** method does the job.
+
+```{python}
+#| vscode: {languageId: python}
+# Concatenation with a number - after converting the number to a string
+year = 2
+"je suis en " + str(year) + "ème année"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Repetition
+"hop " * 5
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Convert to uppercase
+"C'est OK".upper()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Convert to lowercase
+"C'est OK".lower()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Count the number of occurrences
+"Mangez cinq fruits et légumes par jour".count("a")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Create a list of words
+"Mangez cinq fruits et légumes par jour".split()
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Split words according to a specific character
+"un-deux-trois-soleil".split("-")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Use strings as templates
+"mon numéro est : {}".format("06 12 34 56 78")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Starts with ?
+"vélo".startswith("vé")
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Ends with ?
+"vélo".endswith("lo")
+```
+
+### Extracting substrings
+
+A string is considered in Python as a list of characters.
+It is therefore possible to extract different elements from this list.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# First element
+"c'est de toute beauté"[0]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Second element
+"c'est de toute beauté"[1]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Last element
+"c'est de toute beauté"[-1]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# From a specific character
+"c'est de toute beauté"[6:]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Up to a specific character
+"c'est de toute beauté"[:8]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Extract a substring
+"c'est de toute beauté"[9:14]
+```
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Extract every 2 characters, starting from the 4th position
+"c'est de toute beauté"[4::2]
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Reverse a string
+"c'est de toute beauté"[::-1]
+```
+
+#### Special characters
+
+To insert special characters within a string, you must use the escape character `\`.
+
+| Character | Description      |
+| --------- | ---------------- |
+| <br>      | Escape character |
+| \'        | Apostrophe       |
+| \"        | Double quotes    |
+| \n        | New line         |
+| \t        | Horizontal tab   |
+| \r        | Carriage return  |
+
+```{python}
+#| vscode: {languageId: python}
+c = "une chaîne\nsur 2 lignes"
+print(c)
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Define a string over multiple lines
+d = """une autre \"possibilité\" pour
+avoir une chaîne sur 2 lignes"""
+print(d)
+```
+
+---
+
+## Booleans
+
+Booleans can only take two values: `True` and `False`
+Be careful to respect the notation with the first letter uppercase and the others lowercase.
+
+```{python}
+#| vscode: {languageId: python}
+type(True)
+```
+
+### Comparison operators
+
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| ==       | Equal to                 |
+| !=       | Not equal to             |
+| <        | Strictly less than       |
+| >        | Strictly greater than    |
+| <=       | Less than or equal to    |
+| >=       | Greater than or equal to |
+
+```{python}
+#| vscode: {languageId: python}
+8 > 5
+```
+
+```{python}
+#| vscode: {languageId: python}
+1+1 == 2
+```
+
+```{python}
+#| vscode: {languageId: python}
+[1, 2, 3] == [1, 2, 3]
+```
+
+```{python}
+#| vscode: {languageId: python}
+"girafe" != "gnou"
+```
+
+```{python}
+#| vscode: {languageId: python}
+# Chained operators
+1 < 2 == 2 >= 1 != 2
+```
+
+### and, or, not operators
+
+```{python}
+#| vscode: {languageId: python}
+a = True
+b = False
+
+a and b
+```
+
+```{python}
+#| vscode: {languageId: python}
+a or b
+```
+
+```{python}
+#| vscode: {languageId: python}
+not a
+```
+
+```{python}
+#| vscode: {languageId: python}
+(a or b) and (a and not b)
+```
+
+---
+
+## Exercises
+
+### Exercise 1
+
+Calculate the sum of the lengths of the following three strings:
+
+* "une première chaîne"
+* "et une deuxième"
+* "jamais deux sans trois"
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```
+
+### Exercise 2
+
+What is the appropriate type for defining a postal code?
+
+Try defining the following postal codes in `int` format and `string` format:
+
+* 92120
+* 02350
+
+What do you conclude?
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```
+
+### Exercise 3
+
+Count the number of times the letter e appears in the following string:
+`Je compte le nombre de e dans cette chaîne de caractères`
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```
+
+### Exercise 4
+
+Find the first position where the letter e appears in the following string: "Je fais un comptage des e."
+
+**Hint**: you can use the *built-in* [find](https://docs.python.org/fr/3/library/stdtypes.html#str.find) method.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```
+
+### Exercise 5
+
+Remove unnecessary spaces at the beginning and end of the following string:
+
+**Hint**: you can use the *built-in* [strip](https://docs.python.org/fr/3/library/stdtypes.html#str.strip) method.
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+a = "    Un string très mal formatté.         "
+```
+
+### Exercise 6
+
+Perform the following operations using increment operators, and print the final value:
+
+* initialize a variable to 1
+* subtract 5 from it
+* multiply it by 4
+* add 22 to it
+
+```{python}
+#| lines_to_next_cell: 2
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```
+
+### Exercise 7
+
+Consider the following two sequences:
+
+* "nous sommes en"
+* "2022"
+
+Using the tutorial, find two different ways to use them to compose the sequence "nous sommes en 2022".
+
+```{python}
+#| vscode: {languageId: python}
+# Type your answer in this cell
+```

@@ -1,0 +1,221 @@
+---
+title: "Git"
+description: "Git introduction"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
+
+The purpose of this page is to give you a quick introduction to Git and how to use it. For more information, see the links at the bottom of this page.
+
+## What is Git?
+
+Git is software that allows you to:
+
+- version your code
+- synchronize code repositories
+
+When five people are working on the same project, it is not easy for everyone to always have the same version of the code.
+
+By using Git, you will have:
+
+- a shared remote central repository hosted on https://github.com/{target="_blank"}
+- your own local repository where you work
+
+The idea is to synchronize these repositories regularly so that every team member works with the most recent version.
+
+::: {.callout-note title="What is a repository?"}
+A repository is simply a collection of folders and files, similar to a Drive.
+
+To make synchronization easier, a repository should:
+
+- be lightweight (a few MB at most)
+- mainly contain files that can be read by a text editor (.txt, .sql, .py, .R, etc.)
+:::
+
+We will now explain how Git works through a practical exercise.
+
+## Exercise
+
+### GitHub account and token
+
+First, create your GitHub account and then generate a token that will allow you to communicate between your repositories without additional authentication.
+
+- [ ] Create an account on https://github.com/{target="_blank"}
+- [ ] Create a new classic token: [Direct link](https://github.com/settings/tokens/new){target="_blank"}
+  - Note: for ENSAI datalabs
+  - Expiration: `30/06/<year n+1>`
+  - Check **repo** and **workflow**
+  - [Generate token]{.green-button}
+- [ ] Copy the token (`ghp_xxxxxxxxxx`)
+
+::: {.callout-caution}
+Be careful: its value will only be displayed once. If you lose it, you must delete it and create a new one.
+:::
+
+Now register this token on the datalab:
+
+- [ ] Connect to the datalab
+- [ ] Go to *My Account > Git*
+- [ ] Paste the token
+- [ ] Also enter your GitHub username and email address
+
+You can now use this token in your services to communicate with GitHub.
+
+Without this token, you would have to authenticate (login + password) every time your repositories communicate.
+
+### Create a remote repository
+
+The easiest approach is to create the remote repository on GitHub first and then clone it.
+
+- [ ] Create a new repository, [Direct link](https://github.com/new){target="_blank"}
+  - Repository name: ENSAI-Git-TP
+  - Add README: On
+  - Add .gitignore: Python
+  - [Create repository]{.green-button}
+
+Your remote repository has been created. It currently contains only the README and .gitignore files.
+
+::: {.callout-tip}
+The remote repository is not intended to be modified directly.
+
+Its role is to:
+
+- keep a backup of your code
+- provide a central repository when working as a team
+
+Changes should be made in local repositories and then shared with the remote repository.
+:::
+
+### Clone your local repository
+
+Let's start by retrieving the URL of the remote repository:
+
+- [ ] Go to your repository's GitHub page
+- [ ] Click [Code]{.green-button}
+- [ ] Copy the HTTPS address
+
+We will now create a local clone inside a datalab service.
+
+On the datalab:
+
+- [ ] Go to the service catalog
+- [ ] Select *VScode-python* and click `Launch`
+
+You will arrive at the service configuration page before launching it.
+
+- [ ] Go to the *Git* tab
+- [ ] Paste your repository URL into the *Repository URL* field
+- [ ] Open the service in the clone folder: Yes
+- [ ] Click `Launch`, then open the service
+
+You now have a VS Code service with a local clone of your repository.
+
+::: {.callout-tip title="What just happened?"}
+When your service was launched, the following command was executed:
+
+`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git`
+
+where:
+
+- `$GIT_PERSONAL_ACCESS_TOKEN`: an environment variable containing the value of your token
+- `<username>`: your GitHub username
+
+This command creates a local clone of your remote repository.
+:::
+
+### Add, commit, push
+
+Before modifying your local repository, make sure it is properly connected to the remote repository.
+
+In Visual Studio Code:
+
+- [ ] Click the three horizontal bars in the upper-left corner > Terminal > New Terminal
+- [ ] Run the command: `git remote -v`
+
+You should see the URL of your remote repository, including your token.
+
+We will now create new files and send them to the remote repository.
+
+In the Visual Studio Code Explorer (left panel):
+
+- [ ] Create a file named *ex1.py*
+  - Right-click > New File
+  - Insert the code `print("Hello")` into this file and save it
+
+Let's now share this file with the remote repository.
+
+This process requires several mandatory steps:
+
+1. Tell Git about the file
+2. Add it to a commit (a restore point)
+3. Send the commit to the remote repository
+
+Here are the commands you need to know and run:
+
+- [ ] `git status`: displays the current status of the repository. You will notice that *ex1.py* appears under "Untracked files", i.e. files detected by Git but not yet versioned.
+- [ ] `git add ex1.py`: tells Git that this file has been created or modified and should be included in the next commit.
+- [ ] Run `git status` again. The file now appears under "Changes to be committed".
+- [ ] `git commit -m "Add ex1 file"`: creates a commit (restore point). The `-m` option lets you add a message (required) briefly describing the contents of the commit.
+- [ ] Run `git status` once again. You will notice that your local repository is now one commit ahead of the remote repository.
+- [ ] Run `git push` to send your code to the remote repository.
+
+Refresh your GitHub repository and verify that the file has appeared.
+
+### Pull
+
+We have just sent code to the remote repository.
+
+Now imagine that:
+
+- you are working as part of a team
+- a teammate has pushed changes to the remote repository
+- you want to update your local repository to retrieve those changes
+
+To simulate this, we will modify the remote repository directly.
+
+- [ ] On your remote GitHub repository page, create or edit a file
+  - :warning: this is not good practice, but we are doing it here for the exercise
+- [ ] In your local repository, run: `git pull`
+
+This updates your local repository with the changes made to the remote repository.
+
+## Other important points
+
+What we have covered here is only the absolute minimum required to use Git.
+
+Many essential concepts have deliberately been left aside to keep this introduction simple.
+
+Feel free to consult the course and lab material provided to first-year students (see the link below).
+
+### Conflict
+
+For example, what happens if:
+
+- Kim modifies the file *ex1.py* in their local repository and pushes the changes to the remote repository
+- you also modify the same file in your local repository
+- you try to run `git push` and receive a message telling you to `pull` first
+- you run `git pull` and encounter a conflict, i.e. Git cannot determine which version is the correct one: yours or Kim's
+
+```{mermaid}
+flowchart
+    github[(Remote)]
+    dev1[(Local Kim)]
+    dev2[(Local yours)]
+
+    github <--> dev1
+    github <--> dev2
+```
+
+### .gitignore file
+
+This file lists the files that should not be versioned by Git. It is useful, for example, to avoid sending files containing passwords or large data files to the remote repository.
+
+## Links {.unnumbered}
+
+[Introduction to Git](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}

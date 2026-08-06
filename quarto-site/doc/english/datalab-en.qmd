@@ -1,0 +1,92 @@
+---
+title: "Datalab"
+description: "Working in a datalab"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+---
+
+## Principle
+
+At ENSAI, most practical sessions (labs) use a datalab.
+
+A datalab is a cloud environment where you can:
+
+1. reserve resources (CPU, GPU, RAM, storage)
+2. install your software, packages, and extensions
+3. run your programs and computations
+4. release the resources after saving your code and results
+
+It is as if you were provided with a fresh machine, completed your work, and then returned it.
+
+## Connecting
+
+::: {.callout-important title="Prerequisites"}
+Have your [myENSAI](https://genes.sharepoint.com/sites/MyEnsai){target="_blank"} account activated and access to your ENSAI email inbox.
+:::
+
+Two datalabs are available to ENSAI students:
+
+- [ ] [GENES Datalab](https://onyxia.lab.groupe-genes.fr/){target="_blank"}
+- [ ] [INSEE SSP Cloud](https://datalab.sspcloud.fr/){target="_blank"}
+  - create an account using your ENSAI email address: `firstname.lastname@eleve.ensai.fr`
+
+::: {.callout-tip}
+It is [strongly recommended]{.underline} to use the SSP Cloud first, as it is more stable.
+:::
+
+## How to use it?
+
+Once connected, you will arrive at the Onyxia interface.
+
+{{< video https://www.youtube.com/watch?v=FvpNfVrxBFM >}}
+
+This interface allows you to launch catalog services (Jupyter, VSCode, RStudio, Databases, etc.) in just a few clicks.
+
+::: {.callout-note title="Launching a service"}
+For example, start by launching a *Jupyter-python* service:
+
+- [ ] Go to the service catalog
+- [ ] Click `Launch`
+- [ ] Modify the settings if necessary, then click `Launch` again
+
+Wait a few seconds for the service to be deployed, then click:
+
+- [ ] `Open`
+- [ ] `Click to copy the password`
+- [ ] `Open service`
+
+A new tab will open.
+
+- [ ] Paste the password
+
+Your working environment is now ready.
+:::
+
+## Usage
+
+::: {.callout-caution}
+On a datalab, services have a limited lifetime.
+:::
+
+Moreover, there is no service guarantee, i.e. [your services may disappear at any time]{.underline}.
+
+In practice, services do not disappear except in the event of an incident or after more than one week of inactivity.
+
+It is therefore essential to save:
+
+- your code (see the next section: Git)
+- your data
+  - by sending it to S3 storage (not covered here, see the documentation below)
+  - or by downloading it manually
+
+## Useful links {.unnumbered}
+
+- [Documentation and tutorials](https://www.sspcloud.fr/catalog){target="_blank"}
+- [Datalab presentation](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/intro.html){target="_blank"}
+- [Getting started with the Datalab](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/basics.html){target="_blank"}

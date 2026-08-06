@@ -1,0 +1,368 @@
+---
+title: "Bases de Données Relationnelles et SQL"
+description: "[Slides](sql-cours-slides.html)"
+author: "Ludovic Deneuville"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+  revealjs:
+    theme: moon
+    footer: "[Home](../../index.html) --- [Introduction à SQL](sql-cours.html)"
+    slide-number: c/t                    # collapsed/total
+    slide-level: 3
+    controls: true
+    output-file: sql-cours-slides.html
+mermaid:
+  theme: forest
+code-line-numbers: false
+from: markdown+emoji
+---
+
+
+## Objectives {.unnumbered}
+
+- [ ] What is a relational database?
+- [ ] How are tables built?
+- [ ] Know how to write SQL queries
+- [ ] Use the CloudBeaver service
+
+## What is a database?
+
+- Organized collection of data
+- Stored electronically
+- Structured to facilitate access and management
+- Designed to minimize redundancy
+
+::: {.notes}
+
+- Can be used by applications
+- Can be queried and modified by users
+  :::
+
+### Relational databases
+
+- Organizes data into `Tables`
+- Interconnected tables
+- Structured tables
+
+::: {.notes}
+
+- Table = spreadsheet
+  :::
+
+### DBMS
+
+A Database Management System (DBMS) is software that allows you to:
+
+- store
+- organize
+- manage data in a structured way
+
+Examples of DBMS:
+
+- relational: [PostgreSQL](https://www.postgresql.org/){target="_blank"}, MySQL, Oracle Database
+- NoSQL: MongoDB, Cassandra
+
+::: {.notes}
+
+- DBMS: main interface with data
+- For us, PostgreSQL, free, open source, installed on a VM
+- NoSQL: Not Only SQL
+  :::
+
+### What is it?
+
+- **PostgreSQL**: DBMS
+- **DBeaver**: client tool that allows connection to a DBMS
+- **SQL**: programming language designed to manage and manipulate relational databases.
+
+:::{.notes}
+SQL will be discussed afterwards
+:::
+
+### Data types
+
+There are many different data types that can be stored, the main ones are:
+
+- Character strings
+- Numeric values
+- Boolean values
+- Date and time
+- Geometric data
+
+More details in the [PostgreSQL documentation](https://www.postgresql.org/docs/current/datatype.html){target="_blank"}.
+
+:::{.notes}
+
+- Date and time -> many functions
+- Geometric -> geographic boundaries
+  :::
+
+### Types - example
+
+```{.sql}
+CREATE TABLE personne (
+    id_personne      SERIAL PRIMARY KEY,
+    nom              VARCHAR(100) NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    date_naissance   DATE,
+    email            VARCHAR(255) UNIQUE,
+    nb_enfants       INT CHECK (nb_enfants >= 0),
+    taille_m         DECIMAL(3, 2)
+    est_actif        BOOLEAN,
+    last_updated     TIMESTAMPTZ DEFAULT NOW() 
+);
+````
+
+:::{.notes}
+
+* SERIAL: sequence
+* NOT NULL: mandatory
+* UNIQUE: distinct values, but does not prevent NULL values
+* DECIMAL(3, 2): from -9.99 to 9.99
+
+  * 3 significant digits including 2 decimal places
+
+Well-aligned code, keywords in uppercase
+:::
+
+## Table
+
+A `Table` is composed of rows and columns:
+
+* a `row` represents a specific record
+* a `column` represents a particular attribute of these records
+* `Primary key` (PK): a column or set of columns that uniquely identifies each record in a table
+
+  * allows a row to be identified unambiguously
+
+:::{.notes}
+PK:
+
+* mandatory (not null)
+* unique
+  :::
+
+### Table - example {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Physical Data Model
+
+Physical Data Model (UML)
+
+:::{style="background-color: #ffffff;"}
+
+```{mermaid}
+classDiagram
+  class Joueuse {
+    id_joueuse: INT PK
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    pays: VARCHAR
+  }
+```
+
+:::
+
+#### Data
+
+| id_joueuse (PK) | nom       | prenom    | date_naissance | pays        |
+| --------------- | --------- | --------- | -------------- | ----------- |
+| 1               | Sebag     | Marie     | 1986-10-15     | France      |
+| 2               | Polgar    | Judit     | 1976-07-23     | Hungary     |
+| 3               | Hou       | Yifan     | 1994-02-27     | China       |
+| 4               | Kosteniuk | Alexandra | 1984-04-23     | Switzerland |
+| 5               | Ju        | Wenjun    | 1991-01-31     | China       |
+
+: Joueuse
+
+:::
+
+## Relationships between tables {.smaller}
+
+### Foreign key
+
+A foreign key (FK):
+
+* establishes a link between 2 tables
+* is a column of table A
+* corresponds to the primary key of table B
+
+### Types of relationships
+
+* `1..1`: A *Person* has a *Passport* and a *Passport* belongs to a single *Person*
+
+  * foreign key in one of the 2 tables
+* `1..*`: A *Player* plays for a single *Team*. A *Team* is composed of several *Players*
+
+  * foreign key in the *Player* table
+* `*..*`: A *Student* attends several *Courses* and a *Course* is attended by several *Students*
+
+  * association table between *Student* and *Course*
+
+### Link between 2 tables through a foreign key {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Diagram
+
+:::{style="background-color: #ffffff;"}
+
+```{mermaid}
+classDiagram
+  direction LR
+  
+  class Joueuse {
+    id_joueuse: INT PK
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR FK
+  }
+  
+  class Pays {
+    code_pays: VARCHAR PK
+    nom: VARCHAR
+  }
+
+  Joueuse "*" -- "1" Pays : BelongsTo
+```
+
+:::
+
+#### Player table
+
+| id_joueuse | nom       | prenom    | date_naissance | code_pays |
+| ---------- | --------- | --------- | -------------- | --------- |
+| 1          | Sebag     | Marie     | 1986-10-15     | FR        |
+| 2          | Polgar    | Judit     | 1976-07-23     | HU        |
+| 3          | Hou       | Yifan     | 1994-02-27     | CN        |
+| 4          | Kosteniuk | Alexandra | 1984-04-23     | CH        |
+| 5          | Ju        | Wenjun    | 1991-01-31     | CN        |
+
+#### Country table
+
+| code_pays | nom         |
+| --------- | ----------- |
+| CH        | Switzerland |
+| CN        | China       |
+| FR        | France      |
+| HU        | Hungary     |
+
+:::
+
+:::{.notes}
+We assume here:
+
+* A player has one country
+* A country has several players
+  :::
+
+### Link between 2 tables through an association table {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Diagram
+
+:::{style="background-color: #ffffff;"}
+
+```{mermaid}
+classDiagram
+  direction LR
+
+  class Joueuse {
+    id_joueuse: INT PK
+    nom: VARCHAR
+    prenom: VARCHAR
+    date_naissance: DATE
+    code_pays: VARCHAR FK
+  }
+  
+  class Tournoi {
+    id_tournoi: INT PK
+    nom: VARCHAR
+    ville: VARCHAR
+  }
+
+  
+  class Participation {
+    id_joueuse: INT FK
+    id_tournoi: INT FK
+  }
+
+  Joueuse "*" .. "1" Participation
+  Participation "1" .. "*" Tournoi
+```
+
+:::
+
+#### Player table
+
+| id_joueuse | nom       | prenom    | date_naissance | code_pays |
+| ---------- | --------- | --------- | -------------- | --------- |
+| 1          | Sebag     | Marie     | 1986-10-15     | FR        |
+| 2          | Polgar    | Judit     | 1976-07-23     | HU        |
+| 3          | Hou       | Yifan     | 1994-02-27     | CN        |
+| 4          | Kosteniuk | Alexandra | 1984-04-23     | CH        |
+| 5          | Ju        | Wenjun    | 1991-01-31     | CN        |
+
+#### Participation table
+
+| id_joueuse | id_tournoi |
+| ---------- | ---------- |
+| 1          | 1          |
+| 1          | 2          |
+| 3          | 2          |
+| 4          | 1          |
+| 4          | 2          |
+
+#### Tournament table
+
+| id_tournoi | nom          | ville        |
+| ---------- | ------------ | ------------ |
+| 1          | Norway Chess | Oslo         |
+| 2          | Tata Steel   | Wijk aan Zee |
+
+:::
+
+:::{.notes}
+
+* A player can participate in several tournaments
+* A tournament hosts several players
+  :::
+
+## SQL
+
+* SQL: Structured Query Language
+* Invented in 1970 by Edgar F. Codd
+* Programming language
+* Used to manage and manipulate relational databases
+
+:::{.notes}
+
+* Very, very, very widely used
+* All data-related programming languages can embed SQL
+  :::
+
+### CRUD operations
+
+SQL allows CRUD operations:
+
+* `SELECT`: retrieve data from a table
+* `INSERT`: insert new data into a table
+* `UPDATE`: update existing data
+* `DELETE`: delete data from a table
+
+::: {.callout-note title="CRUD"}
+Create, Read, Update, Delete
+:::
+
+## Actions on a table
+
+### Create a Table
+
+

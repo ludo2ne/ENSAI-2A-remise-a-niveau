@@ -1,0 +1,377 @@
+---
+title: POO Introduction
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+
+## Before starting {.unnumbered}
+
+- Download this [Jupyter notebook](05-POO-introduction.ipynb){target="_blank"}
+- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} platform with your username and password
+  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Import the .ipynb file
+
+## Object-oriented programming
+
+Object-oriented programming (OOP) is a programming paradigm that allows programs to be structured around **objects**, which contain:
+
+- **attributes** (characteristics of the object)
+- **methods** (functions specific to the object)
+
+In Python, it is possible but not mandatory to use OOP. However, Python's internal functioning is strongly influenced by OOP.
+
+### "Everything is an object"
+
+**In Python, everything is an object** (in the OOP sense). Let's look at what this means by retrieving the type of different objects we have seen in previous tutorials.
+
+```{python}
+print(type(1))
+print(type("bonjour"))
+print(type([]))
+print(type({}))          
+print(type(lambda x: x**2))
+````
+
+### Defining your own objects
+
+To create an **object**, we first need a model: a **class**.
+We can think of a class as a "mold" that will then be used to create objects.
+For example, we create a `Velo` class with the following documentation:
+
+```python
+    """
+    Class representing a bicycle.
+
+    Attributes:
+        couleur (str): The color of the bicycle.
+        vitesse (int): The current speed of the bicycle.
+        porte_bagage (bool): Indicates whether the bicycle has a rack.
+
+    Methods:
+        __init__(couleur, porte_bagage=False): Builds a new Velo object
+        __str__(): string representation of a Velo object
+        accelerer(acceleration): Increases the bicycle speed by adding acceleration to its current speed.
+        ralentir(deceleration): Decreases the bicycle speed by subtracting deceleration from its current speed.
+        installer_porte_bagage(): Installs a rack on the bicycle by setting it to True.
+        est_arrete(): Checks whether the bicycle is completely stopped.
+
+    """
+```
+
+```{python}
+class Velo:
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self.vitesse = 0
+        self.porte_bagage = porte_bagage
+        
+    def __str__(self):
+        s = "I am a " + self.couleur + " bicycle."
+        s += " My speed is: " + str(self.vitesse) + "."
+        if self.porte_bagage:
+            s += " I have a rack."
+        return s
+
+    def accelerer(self, acceleration):
+        self.vitesse += acceleration
+
+    def ralentir(self, deceleration):
+        self.vitesse -= deceleration
+        if self.vitesse < 0:
+            self.vitesse = 0
+
+    def installer_porte_bagage(self):
+        self.porte_bagage = True
+            
+    def est_arrete(self):
+        return self.vitesse == 0
+```
+
+With this class we can now create **instances** (objects) of type `Velo`
+
+```{python}
+v1 = Velo("blue")
+print(v1)
+
+v2 = Velo("purple", True)
+print(v2)
+```
+
+```{python}
+## We can apply the methods defined in the bicycle class to this object
+v1.accelerer(20)
+v1.installer_porte_bagage()
+print(v1)
+```
+
+Let's analyze the syntax used to build an object class:
+
+* the `class` statement defines the **object class**. Different objects can be created according to the model defined by this class.
+  By convention, the class name should start with an uppercase letter.
+* the class specifies a number of functions called **methods**: these are functions specific to the defined object class.
+* the `__init__` method is called the **constructor**. It is **mandatory**, otherwise it is impossible to instantiate objects from the class.
+  It allows the definition of **attributes** attached to this object class.
+  Parameters can be passed to the constructor (e.g. `couleur`) to define attributes specific to an **instance** of the object.
+* the constructor has a mandatory parameter: `self`. It is a reference to the **instances** that will be created from this class.
+  The following syntax defines an attribute: `self.attribute = value`.
+* The `__str__` method (optional) allows redefining the string representation of an object.
+* the other methods are defined by the user. They also take `self` as a parameter to access attributes and methods.
+  Since they are functions, they can also accept additional parameters.
+
+### Attributes
+
+An attribute is a **variable associated with an object**. An attribute can contain any Python object.
+
+#### Accessing attributes
+
+Once the object is instantiated, it is possible to access its attributes. The syntax is simple: `instance.attribute`.
+
+```{python}
+print(v1.couleur)
+print(v2.couleur)
+print()
+print(v1.vitesse)
+print(v2.vitesse)
+```
+
+We can clearly see that both instances are **independent**: although they have the same type, their attributes are different.
+
+#### Modifying an attribute
+
+Modifying an instance attribute is very simple, the syntax is: `instance.attribute = new_value`.
+
+```{python}
+v2.couleur = "yellow"
+print(v2.couleur)
+```
+
+#### Class attributes
+
+Each `Velo` instance has its own instance attributes (couleur, vitesse, porte_bagage).
+It is possible to have attributes shared by all Velos: **class attributes**.
+
+Let's create the `VeloBis` class to illustrate with an attribute counting the number of created `VeloBis`.
+
+```{python}
+class VeloBis:
+    nb_velos_bis = 0                                       # Class attribute to count the number of VeloBis
+
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self.vitesse = 0
+        self.porte_bagage = porte_bagage
+        VeloBis.nb_velos_bis += 1
+```
+
+```{python}
+print(VeloBis.nb_velos_bis)
+vb1 = VeloBis("pink")
+print(VeloBis.nb_velos_bis)
+vb2 = VeloBis("orange")
+print(VeloBis.nb_velos_bis)
+```
+
+### Methods
+
+A method is a **function associated with an object**. It can use its attributes, modify them, and involve other object methods.
+
+#### Calling a method
+
+The syntax for calling a method of an instantiated object is:
+
+`instance.method(parameters)`.
+
+```{python}
+v1.est_arrete()
+```
+
+**Note**: methods do not exist independently outside the object.
+We cannot call the `est_arrete()` method alone, as it does not make sense.
+
+```{python}
+est_arrete()
+```
+
+**Note 2**:
+
+* the first parameter of every instance method is always `self` to refer to the object itself
+* when calling methods, we do not specify the `self` parameter
+
+#### Acting on attributes
+
+The main advantage of methods is that they can access attributes, modify them and implement controls.
+For example:
+
+* without using the `accelerer` and `ralentir` methods, it is possible to end up with a negative speed
+
+```{python}
+v1.vitesse = -10
+print(v1)
+```
+
+Directly modifying an attribute this way is bad practice because no validation is performed.
+It is possible to go even further:
+
+```{python}
+v1.vitesse = "Jean-Michel"
+print(v1)
+```
+
+Using **methods** prevents ending up in absurd or inconsistent situations.
+
+```{python}
+v1 = Velo("Blue")
+v1.accelerer(10)
+print(v1)
+v1.ralentir(20)
+print(v1)
+```
+
+### Bonus: the Property class
+
+To avoid these issues, an interesting solution is to use the [**property**](https://python.sdv.univ-paris-diderot.fr/19_avoir_la_classe_avec_les_objets/#1952-la-solution-la-classe-property) class.
+This property class allows calling setters while keeping the same attribute access syntax.
+
+```{python}
+class Velo:
+    def __init__(self, couleur, porte_bagage=False):
+        self.couleur = couleur
+        self._vitesse = 0
+        self.porte_bagage = porte_bagage
+
+    def __str__(self):
+        s = "I am a " + self.couleur + " bicycle."
+        s += " My speed is: " + str(self.vitesse) + "."
+        if self.porte_bagage:
+            s += " I have a rack."
+        return s
+
+    @property
+    def vitesse(self):
+        return self._vitesse
+
+    @vitesse.setter
+    def vitesse(self, nouvelle_vitesse):
+        if nouvelle_vitesse >= 0:
+            self._vitesse = nouvelle_vitesse
+        else:
+            raise ValueError("Speed must be a positive number.")
+
+    def installer_porte_bagage(self):
+        self.porte_bagage = True
+
+    def est_arrete(self):
+        return self.vitesse == 0
+```
+
+```{python}
+v3 = Velo("black")
+print(v3)
+v3.vitesse = 10
+print(v3)
+v3.vitesse = -20
+print(v3)
+```
+
+---
+
+## Best practices
+
+To conclude this introduction to Python, here is a list of good practices generally followed by developers.
+Following these practices is strongly recommended and will help you write better code.
+
+### Naming conventions
+
+* variables
+
+  * use explicit names (avoid `toto`, `var1`, ...)
+  * use lowercase letters with words separated by underscores (snake_case)
+
+    * exception for **constants**: use UPPERCASE letters with words separated by underscores
+  * this makes code more readable for yourself and others
+* functions and methods
+
+  * same convention as variables
+* classes
+
+  * use **camelCase**: each word starts with an uppercase letter.
+  * example: `VeloElectrique`
+
+### Indent code correctly
+
+Use an indentation of 4 spaces for each indentation level.
+Correct indentation is essential in Python because it determines the structure of the code.
+
+### Add relevant comments
+
+As soon as there is some complexity, comment your code to explain how it works.
+Add docstrings to functions, classes and modules to explain their operation, parameters and return values.
+
+---
+
+## Exercises
+
+### Exercise 1
+
+Create an `Etudiant` class with the following attributes:
+
+* name
+* age
+* list_of_grades
+
+With the following methods:
+
+* **init**(): constructor
+* ajouter_note(): to add a new grade to the list
+* calculer_moyenne(): calculate the average grade
+
+```{python}
+## Test your answer in this cell
+```
+
+### Exercise 2
+
+Create a `Point` class representing the coordinates of a 2D point.
+Add a distance(other_point) method that calculates the distance to another point.
+
+Create a `Cercle` class with the attributes center (from the Point class) and radius.
+Add a calculer_surface() method that returns the area of the circle.
+
+```{python}
+## Test your answer in this cell
+```
+
+### Exercise 3
+
+Create a `CompteBancaire` class with the following attributes:
+
+* titulaire: the account holder's name (string)
+* solde: the account balance (real number)
+
+The class must have the following methods:
+
+* `__init__(self, titulaire)`: the class constructor
+* `deposer(self, montant)`: a method that allows money to be deposited into the account. The amount must be added to the balance
+* `retirer(self, montant)`: a method that allows money to be withdrawn from the account. The amount must be subtracted from the balance
+* `afficher_solde(self)`: a method that displays the account balance
+* `transferer(self, autreCompte, montant)` which transfers money from the account to another one if the balance is sufficient
+
+Create 2 accounts and test the different features.
+
+```{python}
+## Test your answer in this cell
+```
+

@@ -1,0 +1,42 @@
+---
+title: Tests and Loops
+author: Ludovic Deneuville
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+  ipynb: default
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+jupyter: python3
+execute:
+  eval: false
+lightbox: true
+---
+
+
+## Before starting {.unnumbered}
+
+- Download this [Jupyter notebook](03-tests-et-boucles.ipynb){target="_blank"}
+- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} with your username and password
+  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Import the .ipynb file
+
+## Conditional structures and loops
+
+In this Notebook, we will cover the following topics:
+
+- **if, else** structures
+- **for** loop
+- **while** loop
+- **break** and **continue** statements
+
+---
+
+## Conditional structures
+
+We will test different Boolean conditions (see Notebook 1) using the keywords: **if**, **else** and **elif**.
+
+The principle is the following:
