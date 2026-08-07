@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Git">
 
-<title>Git – Remise à Niveau Informatique</title>
+<title>Tests and Loops – Remise à Niveau Informatique</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,25 +30,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,12 +76,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -252,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -263,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -272,11 +268,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -287,11 +283,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -302,35 +298,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/correction.html">
+    <a class="dropdown-item" href="../../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -341,17 +337,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../doc/UML/UML.html"> 
+    <a class="nav-link" href="../../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
 </ul>
@@ -362,63 +358,63 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-english">    
         <li>
-    <a class="dropdown-item" href="../../doc/english/home-en.html">
+    <a class="dropdown-item" href="../../../doc/english/home-en.html">
  <span class="dropdown-text">Home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/datalab-en.html">
+    <a class="dropdown-item" href="../../../doc/english/datalab-en.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/git-en.html">
+    <a class="dropdown-item" href="../../../doc/english/git-en.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-cours-en.html">
  <span class="dropdown-text">SQL lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-exercice-en.html">
  <span class="dropdown-text">SQL exercice</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-cours-en.html">
  <span class="dropdown-text">Python Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-notebooks-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-notebooks-en.html">
  <span class="dropdown-text">Python Notebooks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/01-types-et-variables-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/01-types-et-variables-en.html">
  <span class="dropdown-text">Python Types and variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/02-listes-et-dictionnaires-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/02-listes-et-dictionnaires-en.html">
  <span class="dropdown-text">Python List and Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/03-tests-et-boucles-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/03-tests-et-boucles-en.html">
  <span class="dropdown-text">Python Tests and Loops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/04-fonctions-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/04-fonctions-en.html">
  <span class="dropdown-text">Python functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/05-POO-introduction-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/05-POO-introduction-en.html">
  <span class="dropdown-text">Python POO introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-cours-en.html">
  <span class="dropdown-text">POO Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-exercice-en.html">
  <span class="dropdown-text">POO Exercices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/uml-en.html">
+    <a class="dropdown-item" href="../../../doc/english/uml-en.html">
  <span class="dropdown-text">UML</span></a>
   </li>  
     </ul>
@@ -429,7 +425,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -460,23 +456,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git"><span class="header-section-number">1</span> Git ?</a></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">2</span> Exercice</a>
-  <ul class="collapse">
-  <li><a href="#compte-github-et-jeton" id="toc-compte-github-et-jeton" class="nav-link" data-scroll-target="#compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</a></li>
-  <li><a href="#créer-un-dépôt-distant" id="toc-créer-un-dépôt-distant" class="nav-link" data-scroll-target="#créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</a></li>
-  <li><a href="#cloner-son-dépôt-local" id="toc-cloner-son-dépôt-local" class="nav-link" data-scroll-target="#cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</a></li>
-  <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
-  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
-  </ul></li>
-  <li><a href="#autres-points-importants" id="toc-autres-points-importants" class="nav-link" data-scroll-target="#autres-points-importants"><span class="header-section-number">3</span> Autres points importants</a>
-  <ul class="collapse">
-  <li><a href="#conflit" id="toc-conflit" class="nav-link" data-scroll-target="#conflit"><span class="header-section-number">3.1</span> Conflit</a></li>
-  <li><a href="#fichier-.gitignore" id="toc-fichier-.gitignore" class="nav-link" data-scroll-target="#fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</a></li>
-  </ul></li>
-  <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a></li>
+  <li><a href="#before-starting" id="toc-before-starting" class="nav-link active" data-scroll-target="#before-starting">Before starting</a></li>
+  <li><a href="#conditional-structures-and-loops" id="toc-conditional-structures-and-loops" class="nav-link" data-scroll-target="#conditional-structures-and-loops"><span class="header-section-number">1</span> Conditional structures and loops</a></li>
+  <li><a href="#conditional-structures" id="toc-conditional-structures" class="nav-link" data-scroll-target="#conditional-structures"><span class="header-section-number">2</span> Conditional structures</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/python/03-tests-et-boucles-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-tests-et-boucles-en.ipynb" download="03-tests-et-boucles-en.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -488,14 +472,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">Tests and Loops</h1>
 </div>
 
-<div>
-  <div class="description">
-    Introduction à Git
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -516,253 +495,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Le but est de vous présenter très rapidement Git et son utilisation. Pour plus d’informations, consultez les liens en bas de cette page.</p>
-<section id="git" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="git"><span class="header-section-number">1</span> Git ?</h2>
-<p>Git est un logiciel qui permet de :</p>
+<section id="before-starting" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="before-starting">Before starting</h2>
 <ul>
-<li>versionner son code</li>
-<li>synchroniser des dépôts de code</li>
-</ul>
-<p>Lorsque vous travailler à cinq sur un projet, ce n’est pas évident pour tous d’avoir à chaque instant la même version du code.</p>
-<p>En travaillant avec Git, vous allez avoir :</p>
+<li>Download this <a href="03-tests-et-boucles-en.ipynb" target="_blank">Jupyter notebook</a></li>
+<li>Connect to the <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a>
 <ul>
-<li>un dépôt de code commun central distant (remote) hébergé ici sur <a href="https://github.com/" target="_blank">https://github.com/</a></li>
-<li>chacun votre dépôt local sur lequel vous travaillez</li>
-</ul>
-<p>L’idée est synchroniser réguliérement ces dépôts pour que chaque membre de l’équipe travaille avec la version la plus récente.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Un dépôt ?">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Un dépôt ?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>C’est simplement un ensemble de dossiers et fichiers, comme un Drive.</p>
-<p>Pour faciliter la synchronisation, un dépôt doit être :</p>
-<ul>
-<li>léger (quelques Mo maximum)</li>
-<li>contenir principalement des fichiers lisibles par un éditeur de texte (.txt, .sql, .py, .R, etc.)</li>
-</ul>
-</div>
-</div>
-<p>Nous allons ensuite détailler le fonctionnement de Git dans le cadre d’un exercice.</p>
-</section>
-<section id="exercice" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice"><span class="header-section-number">2</span> Exercice</h2>
-<section id="compte-github-et-jeton" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</h3>
-<p>Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un compte sur <a href="https://github.com/" target="_blank">https://github.com/</a></label></li>
-<li><label><input type="checkbox">Créez un nouveau token classic : <a href="https://github.com/settings/tokens/new" target="_blank">Lien direct</a></label>
-<ul>
-<li>Note: for ENSAI datalabs</li>
-<li>Expiration: <code>30/06/&lt;year n+1&gt;</code></li>
-<li>cochez repo and workflow</li>
-<li><span class="green-button">Generate token</span></li>
+<li>or another platform (ENSAI <a href="https://jupyther.ensai.fr/" target="_blank">Jupyter</a>, Jupyter Lab, Google Colab, Kaggle…)</li>
 </ul></li>
-<li><label><input type="checkbox">Copiez le token (ghp_xxxxxxxxxx)</label></li>
+<li>Import the .ipynb file</li>
 </ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Attention sa valeur ne sera affichée qu’une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.</p>
-</div>
-</div>
-<p>Vous allez maintenant déclarer ce jeton sur le datalab :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Connectez-vous au datalab</label></li>
-<li><label><input type="checkbox">Allez dans <em>Mon Compte &gt; Git</em></label></li>
-<li><label><input type="checkbox">Collez le token</label></li>
-<li><label><input type="checkbox">Renseignez également ici votre nom d’utilisateur GitHub et mail</label></li>
-</ul>
-<p>Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.</p>
-<p>Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.</p>
 </section>
-<section id="créer-un-dépôt-distant" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</h3>
-<p>Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un nouveau dépôt (repository), <a href="https://github.com/new" target="_blank">Lien direct</a></label>
+<section id="conditional-structures-and-loops" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="conditional-structures-and-loops"><span class="header-section-number">1</span> Conditional structures and loops</h2>
+<p>In this Notebook, we will cover the following topics:</p>
 <ul>
-<li>Repository name : ENSAI-Git-TP</li>
-<li>Add README : On</li>
-<li>Add .gitignore : Python</li>
-<li><span class="green-button">Create repository</span></li>
-</ul></li>
+<li><strong>if, else</strong> structures</li>
+<li><strong>for</strong> loop</li>
+<li><strong>while</strong> loop</li>
+<li><strong>break</strong> and <strong>continue</strong> statements</li>
 </ul>
-<p>Votre dépôt distant est créé. Il contient uniquement les fichiers README et .gitignore.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Le dépôt distant n’a pas vocation à être modifié directement.</p>
-<p>Son rôle est de :</p>
-<ul>
-<li>avoir une sauvegarde de votre code</li>
-<li>avoir un dépôt central si vous travaillez à plusieurs</li>
-</ul>
-<p>Les modifications seront réalisées sur les dépôts locaux et partagées sur le dépôt distant.</p>
-</div>
-</div>
+<hr>
 </section>
-<section id="cloner-son-dépôt-local" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</h3>
-<p>Commençons par récupérer l’url du dépôt distant :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez la page GitHub de votre dépôt</label></li>
-<li><label><input type="checkbox">Cliquez sur <span class="green-button">Code</span></label></li>
-<li><label><input type="checkbox">Copiez l’adresse https</label></li>
-</ul>
-<p>Nous allons maintenant créer un clone local dans un service du datalab.</p>
-<p>Sur le datalab :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans le catalogue de services</label></li>
-<li><label><input type="checkbox">Sélectionnez <em>VScode-python</em> et cliquez sur <code>Lancer</code></label></li>
-</ul>
-<p>Vous arrivez sur la page des paramètres avant de lancer le service.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans l’onglet <em>Git</em></label></li>
-<li><label><input type="checkbox">Collez votre adresse dans la case <em>Repository url</em></label></li>
-<li><label><input type="checkbox">Open the service in the clone folder : Oui</label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Lancer</code>, puis ouvrez le service</label></li>
-</ul>
-<p>Vous avez maintenant un service VScode avec un clone local de votre dépôt.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Ce qu'il s'est passé">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ce qu’il s’est passé
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suite au lancement de votre service, la commande suivante a été exécutée :</p>
-<p>`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git</username></p>
-<p>avec :</p>
-<ul>
-<li><code>$GIT_PERSONAL_ACCESS_TOKEN</code> : une variable d’environnement contenant la valeur de votre jeton</li>
-<li><code>&lt;username&gt;</code> : votre nom d’utilisateur GitHub</li>
-</ul>
-<p>Cette commande crée localement un clone de votre dépôt distant.</p>
-</div>
-</div>
-</section>
-<section id="add-commit-push" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</h3>
-<p>Avant de commencer à modifier votre dépôt local, vérifiez qu’il est bien branché sur le dépôt distant.</p>
-<p>Dans Visual Studio Code :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Cliquez sur les 3 barres horizontales en haut à gauche &gt; Terminal &gt; New Terminal</label></li>
-<li><label><input type="checkbox">Lancez la commande : <code>git remote -v</code></label></li>
-</ul>
-<p>Vous devez voir apparaitre l’url de votre dépôt distant incluant votre jeton.</p>
-<p>Nous allons maintenant créer de nouveaux fichiers et les envoyer vers le dépôt distant.</p>
-<p>Dans l’explorer (à gauche) de Visual Studio Code :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un fichier <em>ex1.py</em></label>
-<ul>
-<li>Clic droit &gt; New file</li>
-<li>Insérer le code <code>print("Hello")</code> dans ce fichier et sauvegardez-le</li>
-</ul></li>
-</ul>
-<p>Partageons maintenant ce fichier avec le dépôt distant.</p>
-<p>Cet envoi se déroule en plusieurs étapes obligatoires :</p>
-<ol type="1">
-<li>Déclarez le fichier à Git</li>
-<li>Ajoutez-le dans un commit (point de sauvegarde)</li>
-<li>Envoyez ce commit au dépôt distant</li>
-</ol>
-<p>Voici la suite de commandes à connaitre et exécuter :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>git status</code> : elle affiche l’état du dépôt. Vous remarquez que le fichier <em>ex1.py</em> apparait dans les « Untracked files » i.e.&nbsp;les fichiers que Git a repéré mais ne versionne pas pour l’instant.</label></li>
-<li><label><input type="checkbox"><code>git add ex1.py</code> : indique à Git que ce fichier a été créé/modifié et qu’il faut l’ajouter au prochain commit</label></li>
-<li><label><input type="checkbox">Si vous faites de nouveau <code>git status</code>, le fichier apparait maintenant dans « Changes to be commited »</label></li>
-<li><label><input type="checkbox"><code>git commit -m "ajout du fichier ex1"</code> : pour créer un commit (point de sauvegarde). <code>-m</code> signifie que l’on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit</label></li>
-<li><label><input type="checkbox">Faites encore une fois <code>git status</code>. Vous notez que votre dépôt local a un commit d’avance sur le dépôt distant.</label></li>
-<li><label><input type="checkbox"><code>git push</code> comme précisé pour pousser votre code vers le dépôt distant</label></li>
-</ul>
-<p>Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.</p>
-</section>
-<section id="pull" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
-<p>Nous venons d’envoyer du code vers le dépôt distant.</p>
-<p>Maintenant imaginez que :</p>
-<ul>
-<li>vous travaillez en équipe</li>
-<li>un camarade a envoyé une modification sur le dépôt distant</li>
-<li>vous souhaitez mettre à jour votre dépôt local pour récupérer la modification</li>
-</ul>
-<p>Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier</label>
-<ul>
-<li><span class="emoji" data-emoji="warning">⚠️</span> ce n’est pas une bonne pratique mais ici c’est pour l’exercice</li>
-</ul></li>
-<li><label><input type="checkbox">Sur votre dépôt local : <code>git pull</code></label></li>
-</ul>
-<p>Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.</p>
-</section>
-</section>
-<section id="autres-points-importants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="autres-points-importants"><span class="header-section-number">3</span> Autres points importants</h2>
-<p>Ce qui a été fait ici n’est que le minimum du minimim à savoir pour utiliser Git.</p>
-<p>De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.</p>
-<p>N’hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).</p>
-<section id="conflit" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="conflit"><span class="header-section-number">3.1</span> Conflit</h3>
-<p>Par exemple, que se passe-t-il si :</p>
-<ul>
-<li>Kim a modifié le fichier <em>ex1.py</em> sur son dépôt local et a poussé sa modification vers le dépôt distant</li>
-<li>Sur votre dépôt local, vous avez également modifié le même fichier</li>
-<li>Vous essayez de faire <code>git push</code> : vous avez un message disant que vous devez commencer par <em>pull</em></li>
-<li>Vous faites donc <code>git pull</code> et là vous avez un conflit i.e.&nbsp;Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim</li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart
-    github[(Remote)]
-    dev1[(Local Kim)]
-    dev2[(Local yours)]
-    
-    github &lt;--&gt; dev1
-    github &lt;--&gt; dev2
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="fichier-.gitignore" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</h3>
-<p>Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C’est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.</p>
-</section>
-</section>
-<section id="liens" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="liens">Liens</h2>
-<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introdution à Git</a></p>
+<section id="conditional-structures" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="conditional-structures"><span class="header-section-number">2</span> Conditional structures</h2>
+<p>We will test different Boolean conditions (see Notebook 1) using the keywords: <strong>if</strong>, <strong>else</strong> and <strong>elif</strong>.</p>
+<p>The principle is the following:</p>
 
 
 </section>
@@ -1189,7 +947,7 @@ Tip
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/python/03-tests-et-boucles-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

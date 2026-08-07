@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Git">
+<meta name="description" content="Git introduction">
 
 <title>Git – Remise à Niveau Informatique</title>
 <style>
@@ -460,23 +460,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git"><span class="header-section-number">1</span> Git ?</a></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">2</span> Exercice</a>
+  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link active" data-scroll-target="#what-is-git"><span class="header-section-number">1</span> What is Git?</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2</span> Exercise</a>
   <ul class="collapse">
-  <li><a href="#compte-github-et-jeton" id="toc-compte-github-et-jeton" class="nav-link" data-scroll-target="#compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</a></li>
-  <li><a href="#créer-un-dépôt-distant" id="toc-créer-un-dépôt-distant" class="nav-link" data-scroll-target="#créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</a></li>
-  <li><a href="#cloner-son-dépôt-local" id="toc-cloner-son-dépôt-local" class="nav-link" data-scroll-target="#cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</a></li>
+  <li><a href="#github-account-and-token" id="toc-github-account-and-token" class="nav-link" data-scroll-target="#github-account-and-token"><span class="header-section-number">2.1</span> GitHub account and token</a></li>
+  <li><a href="#create-a-remote-repository" id="toc-create-a-remote-repository" class="nav-link" data-scroll-target="#create-a-remote-repository"><span class="header-section-number">2.2</span> Create a remote repository</a></li>
+  <li><a href="#clone-your-local-repository" id="toc-clone-your-local-repository" class="nav-link" data-scroll-target="#clone-your-local-repository"><span class="header-section-number">2.3</span> Clone your local repository</a></li>
   <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
   <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
   </ul></li>
-  <li><a href="#autres-points-importants" id="toc-autres-points-importants" class="nav-link" data-scroll-target="#autres-points-importants"><span class="header-section-number">3</span> Autres points importants</a>
+  <li><a href="#other-important-points" id="toc-other-important-points" class="nav-link" data-scroll-target="#other-important-points"><span class="header-section-number">3</span> Other important points</a>
   <ul class="collapse">
-  <li><a href="#conflit" id="toc-conflit" class="nav-link" data-scroll-target="#conflit"><span class="header-section-number">3.1</span> Conflit</a></li>
-  <li><a href="#fichier-.gitignore" id="toc-fichier-.gitignore" class="nav-link" data-scroll-target="#fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</a></li>
+  <li><a href="#conflict" id="toc-conflict" class="nav-link" data-scroll-target="#conflict"><span class="header-section-number">3.1</span> Conflict</a></li>
+  <li><a href="#gitignore-file" id="toc-gitignore-file" class="nav-link" data-scroll-target="#gitignore-file"><span class="header-section-number">3.2</span> .gitignore file</a></li>
   </ul></li>
-  <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/git-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -493,7 +493,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Introduction à Git
+    Git introduction
   </div>
 </div>
 
@@ -516,56 +516,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Le but est de vous présenter très rapidement Git et son utilisation. Pour plus d’informations, consultez les liens en bas de cette page.</p>
-<section id="git" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="git"><span class="header-section-number">1</span> Git ?</h2>
-<p>Git est un logiciel qui permet de :</p>
+<p>The purpose of this page is to give you a quick introduction to Git and how to use it. For more information, see the links at the bottom of this page.</p>
+<section id="what-is-git" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-is-git"><span class="header-section-number">1</span> What is Git?</h2>
+<p>Git is software that allows you to:</p>
 <ul>
-<li>versionner son code</li>
-<li>synchroniser des dépôts de code</li>
+<li>version your code</li>
+<li>synchronize code repositories</li>
 </ul>
-<p>Lorsque vous travailler à cinq sur un projet, ce n’est pas évident pour tous d’avoir à chaque instant la même version du code.</p>
-<p>En travaillant avec Git, vous allez avoir :</p>
+<p>When five people are working on the same project, it is not easy for everyone to always have the same version of the code.</p>
+<p>By using Git, you will have:</p>
 <ul>
-<li>un dépôt de code commun central distant (remote) hébergé ici sur <a href="https://github.com/" target="_blank">https://github.com/</a></li>
-<li>chacun votre dépôt local sur lequel vous travaillez</li>
+<li>a shared remote central repository hosted on https://github.com/{target=“_blank”}</li>
+<li>your own local repository where you work</li>
 </ul>
-<p>L’idée est synchroniser réguliérement ces dépôts pour que chaque membre de l’équipe travaille avec la version la plus récente.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Un dépôt ?">
+<p>The idea is to synchronize these repositories regularly so that every team member works with the most recent version.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="What is a repository?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Un dépôt ?
+<span class="screen-reader-only">Note</span>What is a repository?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>C’est simplement un ensemble de dossiers et fichiers, comme un Drive.</p>
-<p>Pour faciliter la synchronisation, un dépôt doit être :</p>
+<p>A repository is simply a collection of folders and files, similar to a Drive.</p>
+<p>To make synchronization easier, a repository should:</p>
 <ul>
-<li>léger (quelques Mo maximum)</li>
-<li>contenir principalement des fichiers lisibles par un éditeur de texte (.txt, .sql, .py, .R, etc.)</li>
+<li>be lightweight (a few MB at most)</li>
+<li>mainly contain files that can be read by a text editor (.txt, .sql, .py, .R, etc.)</li>
 </ul>
 </div>
 </div>
-<p>Nous allons ensuite détailler le fonctionnement de Git dans le cadre d’un exercice.</p>
+<p>We will now explain how Git works through a practical exercise.</p>
 </section>
-<section id="exercice" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice"><span class="header-section-number">2</span> Exercice</h2>
-<section id="compte-github-et-jeton" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</h3>
-<p>Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.</p>
+<section id="exercise" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2</span> Exercise</h2>
+<section id="github-account-and-token" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="github-account-and-token"><span class="header-section-number">2.1</span> GitHub account and token</h3>
+<p>First, create your GitHub account and then generate a token that will allow you to communicate between your repositories without additional authentication.</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Créez un compte sur <a href="https://github.com/" target="_blank">https://github.com/</a></label></li>
-<li><label><input type="checkbox">Créez un nouveau token classic : <a href="https://github.com/settings/tokens/new" target="_blank">Lien direct</a></label>
+<li><label><input type="checkbox">Create an account on https://github.com/{target=“_blank”}</label></li>
+<li><label><input type="checkbox">Create a new classic token: <a href="https://github.com/settings/tokens/new" target="_blank">Direct link</a></label>
 <ul>
 <li>Note: for ENSAI datalabs</li>
 <li>Expiration: <code>30/06/&lt;year n+1&gt;</code></li>
-<li>cochez repo and workflow</li>
+<li>Check <strong>repo</strong> and <strong>workflow</strong></li>
 <li><span class="green-button">Generate token</span></li>
 </ul></li>
-<li><label><input type="checkbox">Copiez le token (ghp_xxxxxxxxxx)</label></li>
+<li><label><input type="checkbox">Copy the token (<code>ghp_xxxxxxxxxx</code>)</label></li>
 </ul>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -577,32 +577,32 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Attention sa valeur ne sera affichée qu’une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.</p>
+<p>Be careful: its value will only be displayed once. If you lose it, you must delete it and create a new one.</p>
 </div>
 </div>
-<p>Vous allez maintenant déclarer ce jeton sur le datalab :</p>
+<p>Now register this token on the datalab:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Connectez-vous au datalab</label></li>
-<li><label><input type="checkbox">Allez dans <em>Mon Compte &gt; Git</em></label></li>
-<li><label><input type="checkbox">Collez le token</label></li>
-<li><label><input type="checkbox">Renseignez également ici votre nom d’utilisateur GitHub et mail</label></li>
+<li><label><input type="checkbox">Connect to the datalab</label></li>
+<li><label><input type="checkbox">Go to <em>My Account &gt; Git</em></label></li>
+<li><label><input type="checkbox">Paste the token</label></li>
+<li><label><input type="checkbox">Also enter your GitHub username and email address</label></li>
 </ul>
-<p>Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.</p>
-<p>Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.</p>
+<p>You can now use this token in your services to communicate with GitHub.</p>
+<p>Without this token, you would have to authenticate (login + password) every time your repositories communicate.</p>
 </section>
-<section id="créer-un-dépôt-distant" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</h3>
-<p>Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.</p>
+<section id="create-a-remote-repository" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="create-a-remote-repository"><span class="header-section-number">2.2</span> Create a remote repository</h3>
+<p>The easiest approach is to create the remote repository on GitHub first and then clone it.</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Créez un nouveau dépôt (repository), <a href="https://github.com/new" target="_blank">Lien direct</a></label>
+<li><label><input type="checkbox">Create a new repository, <a href="https://github.com/new" target="_blank">Direct link</a></label>
 <ul>
-<li>Repository name : ENSAI-Git-TP</li>
-<li>Add README : On</li>
-<li>Add .gitignore : Python</li>
+<li>Repository name: ENSAI-Git-TP</li>
+<li>Add README: On</li>
+<li>Add .gitignore: Python</li>
 <li><span class="green-button">Create repository</span></li>
 </ul></li>
 </ul>
-<p>Votre dépôt distant est créé. Il contient uniquement les fichiers README et .gitignore.</p>
+<p>Your remote repository has been created. It currently contains only the README and .gitignore files.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -613,128 +613,128 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le dépôt distant n’a pas vocation à être modifié directement.</p>
-<p>Son rôle est de :</p>
+<p>The remote repository is not intended to be modified directly.</p>
+<p>Its role is to:</p>
 <ul>
-<li>avoir une sauvegarde de votre code</li>
-<li>avoir un dépôt central si vous travaillez à plusieurs</li>
+<li>keep a backup of your code</li>
+<li>provide a central repository when working as a team</li>
 </ul>
-<p>Les modifications seront réalisées sur les dépôts locaux et partagées sur le dépôt distant.</p>
+<p>Changes should be made in local repositories and then shared with the remote repository.</p>
 </div>
 </div>
 </section>
-<section id="cloner-son-dépôt-local" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</h3>
-<p>Commençons par récupérer l’url du dépôt distant :</p>
+<section id="clone-your-local-repository" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="clone-your-local-repository"><span class="header-section-number">2.3</span> Clone your local repository</h3>
+<p>Let’s start by retrieving the URL of the remote repository:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Allez la page GitHub de votre dépôt</label></li>
-<li><label><input type="checkbox">Cliquez sur <span class="green-button">Code</span></label></li>
-<li><label><input type="checkbox">Copiez l’adresse https</label></li>
+<li><label><input type="checkbox">Go to your repository’s GitHub page</label></li>
+<li><label><input type="checkbox">Click <span class="green-button">Code</span></label></li>
+<li><label><input type="checkbox">Copy the HTTPS address</label></li>
 </ul>
-<p>Nous allons maintenant créer un clone local dans un service du datalab.</p>
-<p>Sur le datalab :</p>
+<p>We will now create a local clone inside a datalab service.</p>
+<p>On the datalab:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Allez dans le catalogue de services</label></li>
-<li><label><input type="checkbox">Sélectionnez <em>VScode-python</em> et cliquez sur <code>Lancer</code></label></li>
+<li><label><input type="checkbox">Go to the service catalog</label></li>
+<li><label><input type="checkbox">Select <em>VScode-python</em> and click <code>Launch</code></label></li>
 </ul>
-<p>Vous arrivez sur la page des paramètres avant de lancer le service.</p>
+<p>You will arrive at the service configuration page before launching it.</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Allez dans l’onglet <em>Git</em></label></li>
-<li><label><input type="checkbox">Collez votre adresse dans la case <em>Repository url</em></label></li>
-<li><label><input type="checkbox">Open the service in the clone folder : Oui</label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Lancer</code>, puis ouvrez le service</label></li>
+<li><label><input type="checkbox">Go to the <em>Git</em> tab</label></li>
+<li><label><input type="checkbox">Paste your repository URL into the <em>Repository URL</em> field</label></li>
+<li><label><input type="checkbox">Open the service in the clone folder: Yes</label></li>
+<li><label><input type="checkbox">Click <code>Launch</code>, then open the service</label></li>
 </ul>
-<p>Vous avez maintenant un service VScode avec un clone local de votre dépôt.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Ce qu'il s'est passé">
+<p>You now have a VS Code service with a local clone of your repository.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What just happened?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ce qu’il s’est passé
+<span class="screen-reader-only">Tip</span>What just happened?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suite au lancement de votre service, la commande suivante a été exécutée :</p>
-<p>`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git</username></p>
-<p>avec :</p>
+<p>When your service was launched, the following command was executed:</p>
+<p><code>git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-Git-TP.git</code></p>
+<p>where:</p>
 <ul>
-<li><code>$GIT_PERSONAL_ACCESS_TOKEN</code> : une variable d’environnement contenant la valeur de votre jeton</li>
-<li><code>&lt;username&gt;</code> : votre nom d’utilisateur GitHub</li>
+<li><code>$GIT_PERSONAL_ACCESS_TOKEN</code>: an environment variable containing the value of your token</li>
+<li><code>&lt;username&gt;</code>: your GitHub username</li>
 </ul>
-<p>Cette commande crée localement un clone de votre dépôt distant.</p>
+<p>This command creates a local clone of your remote repository.</p>
 </div>
 </div>
 </section>
 <section id="add-commit-push" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</h3>
-<p>Avant de commencer à modifier votre dépôt local, vérifiez qu’il est bien branché sur le dépôt distant.</p>
-<p>Dans Visual Studio Code :</p>
+<p>Before modifying your local repository, make sure it is properly connected to the remote repository.</p>
+<p>In Visual Studio Code:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Cliquez sur les 3 barres horizontales en haut à gauche &gt; Terminal &gt; New Terminal</label></li>
-<li><label><input type="checkbox">Lancez la commande : <code>git remote -v</code></label></li>
+<li><label><input type="checkbox">Click the three horizontal bars in the upper-left corner &gt; Terminal &gt; New Terminal</label></li>
+<li><label><input type="checkbox">Run the command: <code>git remote -v</code></label></li>
 </ul>
-<p>Vous devez voir apparaitre l’url de votre dépôt distant incluant votre jeton.</p>
-<p>Nous allons maintenant créer de nouveaux fichiers et les envoyer vers le dépôt distant.</p>
-<p>Dans l’explorer (à gauche) de Visual Studio Code :</p>
+<p>You should see the URL of your remote repository, including your token.</p>
+<p>We will now create new files and send them to the remote repository.</p>
+<p>In the Visual Studio Code Explorer (left panel):</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Créez un fichier <em>ex1.py</em></label>
+<li><label><input type="checkbox">Create a file named <em>ex1.py</em></label>
 <ul>
-<li>Clic droit &gt; New file</li>
-<li>Insérer le code <code>print("Hello")</code> dans ce fichier et sauvegardez-le</li>
+<li>Right-click &gt; New File</li>
+<li>Insert the code <code>print("Hello")</code> into this file and save it</li>
 </ul></li>
 </ul>
-<p>Partageons maintenant ce fichier avec le dépôt distant.</p>
-<p>Cet envoi se déroule en plusieurs étapes obligatoires :</p>
+<p>Let’s now share this file with the remote repository.</p>
+<p>This process requires several mandatory steps:</p>
 <ol type="1">
-<li>Déclarez le fichier à Git</li>
-<li>Ajoutez-le dans un commit (point de sauvegarde)</li>
-<li>Envoyez ce commit au dépôt distant</li>
+<li>Tell Git about the file</li>
+<li>Add it to a commit (a restore point)</li>
+<li>Send the commit to the remote repository</li>
 </ol>
-<p>Voici la suite de commandes à connaitre et exécuter :</p>
+<p>Here are the commands you need to know and run:</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><code>git status</code> : elle affiche l’état du dépôt. Vous remarquez que le fichier <em>ex1.py</em> apparait dans les « Untracked files » i.e.&nbsp;les fichiers que Git a repéré mais ne versionne pas pour l’instant.</label></li>
-<li><label><input type="checkbox"><code>git add ex1.py</code> : indique à Git que ce fichier a été créé/modifié et qu’il faut l’ajouter au prochain commit</label></li>
-<li><label><input type="checkbox">Si vous faites de nouveau <code>git status</code>, le fichier apparait maintenant dans « Changes to be commited »</label></li>
-<li><label><input type="checkbox"><code>git commit -m "ajout du fichier ex1"</code> : pour créer un commit (point de sauvegarde). <code>-m</code> signifie que l’on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit</label></li>
-<li><label><input type="checkbox">Faites encore une fois <code>git status</code>. Vous notez que votre dépôt local a un commit d’avance sur le dépôt distant.</label></li>
-<li><label><input type="checkbox"><code>git push</code> comme précisé pour pousser votre code vers le dépôt distant</label></li>
+<li><label><input type="checkbox"><code>git status</code>: displays the current status of the repository. You will notice that <em>ex1.py</em> appears under “Untracked files”, i.e.&nbsp;files detected by Git but not yet versioned.</label></li>
+<li><label><input type="checkbox"><code>git add ex1.py</code>: tells Git that this file has been created or modified and should be included in the next commit.</label></li>
+<li><label><input type="checkbox">Run <code>git status</code> again. The file now appears under “Changes to be committed”.</label></li>
+<li><label><input type="checkbox"><code>git commit -m "Add ex1 file"</code>: creates a commit (restore point). The <code>-m</code> option lets you add a message (required) briefly describing the contents of the commit.</label></li>
+<li><label><input type="checkbox">Run <code>git status</code> once again. You will notice that your local repository is now one commit ahead of the remote repository.</label></li>
+<li><label><input type="checkbox">Run <code>git push</code> to send your code to the remote repository.</label></li>
 </ul>
-<p>Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.</p>
+<p>Refresh your GitHub repository and verify that the file has appeared.</p>
 </section>
 <section id="pull" class="level3" data-number="2.5">
 <h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
-<p>Nous venons d’envoyer du code vers le dépôt distant.</p>
-<p>Maintenant imaginez que :</p>
+<p>We have just sent code to the remote repository.</p>
+<p>Now imagine that:</p>
 <ul>
-<li>vous travaillez en équipe</li>
-<li>un camarade a envoyé une modification sur le dépôt distant</li>
-<li>vous souhaitez mettre à jour votre dépôt local pour récupérer la modification</li>
+<li>you are working as part of a team</li>
+<li>a teammate has pushed changes to the remote repository</li>
+<li>you want to update your local repository to retrieve those changes</li>
 </ul>
-<p>Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.</p>
+<p>To simulate this, we will modify the remote repository directly.</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier</label>
+<li><label><input type="checkbox">On your remote GitHub repository page, create or edit a file</label>
 <ul>
-<li><span class="emoji" data-emoji="warning">⚠️</span> ce n’est pas une bonne pratique mais ici c’est pour l’exercice</li>
+<li><span class="emoji" data-emoji="warning">⚠️</span> this is not good practice, but we are doing it here for the exercise</li>
 </ul></li>
-<li><label><input type="checkbox">Sur votre dépôt local : <code>git pull</code></label></li>
+<li><label><input type="checkbox">In your local repository, run: <code>git pull</code></label></li>
 </ul>
-<p>Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.</p>
+<p>This updates your local repository with the changes made to the remote repository.</p>
 </section>
 </section>
-<section id="autres-points-importants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="autres-points-importants"><span class="header-section-number">3</span> Autres points importants</h2>
-<p>Ce qui a été fait ici n’est que le minimum du minimim à savoir pour utiliser Git.</p>
-<p>De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.</p>
-<p>N’hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).</p>
-<section id="conflit" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="conflit"><span class="header-section-number">3.1</span> Conflit</h3>
-<p>Par exemple, que se passe-t-il si :</p>
+<section id="other-important-points" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="other-important-points"><span class="header-section-number">3</span> Other important points</h2>
+<p>What we have covered here is only the absolute minimum required to use Git.</p>
+<p>Many essential concepts have deliberately been left aside to keep this introduction simple.</p>
+<p>Feel free to consult the course and lab material provided to first-year students (see the link below).</p>
+<section id="conflict" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="conflict"><span class="header-section-number">3.1</span> Conflict</h3>
+<p>For example, what happens if:</p>
 <ul>
-<li>Kim a modifié le fichier <em>ex1.py</em> sur son dépôt local et a poussé sa modification vers le dépôt distant</li>
-<li>Sur votre dépôt local, vous avez également modifié le même fichier</li>
-<li>Vous essayez de faire <code>git push</code> : vous avez un message disant que vous devez commencer par <em>pull</em></li>
-<li>Vous faites donc <code>git pull</code> et là vous avez un conflit i.e.&nbsp;Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim</li>
+<li>Kim modifies the file <em>ex1.py</em> in their local repository and pushes the changes to the remote repository</li>
+<li>you also modify the same file in your local repository</li>
+<li>you try to run <code>git push</code> and receive a message telling you to <code>pull</code> first</li>
+<li>you run <code>git pull</code> and encounter a conflict, i.e.&nbsp;Git cannot determine which version is the correct one: yours or Kim’s</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -745,7 +745,7 @@ Tip
     github[(Remote)]
     dev1[(Local Kim)]
     dev2[(Local yours)]
-    
+
     github &lt;--&gt; dev1
     github &lt;--&gt; dev2
 </pre>
@@ -755,14 +755,14 @@ Tip
 </div>
 </div>
 </section>
-<section id="fichier-.gitignore" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</h3>
-<p>Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C’est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.</p>
+<section id="gitignore-file" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="gitignore-file"><span class="header-section-number">3.2</span> .gitignore file</h3>
+<p>This file lists the files that should not be versioned by Git. It is useful, for example, to avoid sending files containing passwords or large data files to the remote repository.</p>
 </section>
 </section>
-<section id="liens" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="liens">Liens</h2>
-<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introdution à Git</a></p>
+<section id="links" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="links">Links</h2>
+<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introduction to Git</a></p>
 
 
 </section>
@@ -1189,7 +1189,7 @@ Tip
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/git-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Git">
+<meta name="description" content="Exercice de POO avec Python">
 
-<title>Git – Remise à Niveau Informatique</title>
+<title>Programmation Orientée Objet - Exercices – Remise à Niveau Informatique</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -28,28 +28,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,12 +112,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -252,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -263,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -272,11 +307,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -287,11 +322,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -302,35 +337,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/correction.html">
+    <a class="dropdown-item" href="../../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -341,17 +376,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../doc/UML/UML.html"> 
+    <a class="nav-link" href="../../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
 </ul>
@@ -362,63 +397,63 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-english">    
         <li>
-    <a class="dropdown-item" href="../../doc/english/home-en.html">
+    <a class="dropdown-item" href="../../../doc/english/home-en.html">
  <span class="dropdown-text">Home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/datalab-en.html">
+    <a class="dropdown-item" href="../../../doc/english/datalab-en.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/git-en.html">
+    <a class="dropdown-item" href="../../../doc/english/git-en.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-cours-en.html">
  <span class="dropdown-text">SQL lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-exercice-en.html">
  <span class="dropdown-text">SQL exercice</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-cours-en.html">
  <span class="dropdown-text">Python Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-notebooks-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-notebooks-en.html">
  <span class="dropdown-text">Python Notebooks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/01-types-et-variables-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/01-types-et-variables-en.html">
  <span class="dropdown-text">Python Types and variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/02-listes-et-dictionnaires-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/02-listes-et-dictionnaires-en.html">
  <span class="dropdown-text">Python List and Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/03-tests-et-boucles-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/03-tests-et-boucles-en.html">
  <span class="dropdown-text">Python Tests and Loops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/04-fonctions-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/04-fonctions-en.html">
  <span class="dropdown-text">Python functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/05-POO-introduction-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/05-POO-introduction-en.html">
  <span class="dropdown-text">Python POO introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-cours-en.html">
  <span class="dropdown-text">POO Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-exercice-en.html">
  <span class="dropdown-text">POO Exercices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/uml-en.html">
+    <a class="dropdown-item" href="../../../doc/english/uml-en.html">
  <span class="dropdown-text">UML</span></a>
   </li>  
     </ul>
@@ -429,7 +464,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -460,23 +495,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git"><span class="header-section-number">1</span> Git ?</a></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">2</span> Exercice</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup"><span class="header-section-number">1</span> Setup</a>
   <ul class="collapse">
-  <li><a href="#compte-github-et-jeton" id="toc-compte-github-et-jeton" class="nav-link" data-scroll-target="#compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</a></li>
-  <li><a href="#créer-un-dépôt-distant" id="toc-créer-un-dépôt-distant" class="nav-link" data-scroll-target="#créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</a></li>
-  <li><a href="#cloner-son-dépôt-local" id="toc-cloner-son-dépôt-local" class="nav-link" data-scroll-target="#cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</a></li>
-  <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
-  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
+  <li><a href="#start-a-vscode-service" id="toc-start-a-vscode-service" class="nav-link" data-scroll-target="#start-a-vscode-service"><span class="header-section-number">1.1</span> Start a VSCode service</a></li>
+  <li><a href="#retrieve-the-code" id="toc-retrieve-the-code" class="nav-link" data-scroll-target="#retrieve-the-code"><span class="header-section-number">1.2</span> Retrieve the code</a></li>
   </ul></li>
-  <li><a href="#autres-points-importants" id="toc-autres-points-importants" class="nav-link" data-scroll-target="#autres-points-importants"><span class="header-section-number">3</span> Autres points importants</a>
+  <li><a href="#exercise-1---points" id="toc-exercise-1---points" class="nav-link" data-scroll-target="#exercise-1---points"><span class="header-section-number">2</span> Exercise 1 - Points</a></li>
+  <li><a href="#exercise-2---polygons" id="toc-exercise-2---polygons" class="nav-link" data-scroll-target="#exercise-2---polygons"><span class="header-section-number">3</span> Exercise 2 - Polygons</a></li>
+  <li><a href="#exercise-3---domino" id="toc-exercise-3---domino" class="nav-link" data-scroll-target="#exercise-3---domino"><span class="header-section-number">4</span> Exercise 3 - Domino</a>
   <ul class="collapse">
-  <li><a href="#conflit" id="toc-conflit" class="nav-link" data-scroll-target="#conflit"><span class="header-section-number">3.1</span> Conflit</a></li>
-  <li><a href="#fichier-.gitignore" id="toc-fichier-.gitignore" class="nav-link" data-scroll-target="#fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</a></li>
+  <li><a href="#a-domino" id="toc-a-domino" class="nav-link" data-scroll-target="#a-domino"><span class="header-section-number">4.1</span> A Domino</a></li>
+  <li><a href="#game" id="toc-game" class="nav-link" data-scroll-target="#game"><span class="header-section-number">4.2</span> Game</a></li>
   </ul></li>
-  <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a></li>
+  <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction">Correction</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/POO/poo-exercice-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -488,12 +521,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">Programmation Orientée Objet - Exercices</h1>
 </div>
 
 <div>
   <div class="description">
-    Introduction à Git
+    Exercice de POO avec Python
   </div>
 </div>
 
@@ -516,238 +549,138 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Le but est de vous présenter très rapidement Git et son utilisation. Pour plus d’informations, consultez les liens en bas de cette page.</p>
-<section id="git" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="git"><span class="header-section-number">1</span> Git ?</h2>
-<p>Git est un logiciel qui permet de :</p>
-<ul>
-<li>versionner son code</li>
-<li>synchroniser des dépôts de code</li>
-</ul>
-<p>Lorsque vous travailler à cinq sur un projet, ce n’est pas évident pour tous d’avoir à chaque instant la même version du code.</p>
-<p>En travaillant avec Git, vous allez avoir :</p>
-<ul>
-<li>un dépôt de code commun central distant (remote) hébergé ici sur <a href="https://github.com/" target="_blank">https://github.com/</a></li>
-<li>chacun votre dépôt local sur lequel vous travaillez</li>
-</ul>
-<p>L’idée est synchroniser réguliérement ces dépôts pour que chaque membre de l’équipe travaille avec la version la plus récente.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Un dépôt ?">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Un dépôt ?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>C’est simplement un ensemble de dossiers et fichiers, comme un Drive.</p>
-<p>Pour faciliter la synchronisation, un dépôt doit être :</p>
-<ul>
-<li>léger (quelques Mo maximum)</li>
-<li>contenir principalement des fichiers lisibles par un éditeur de texte (.txt, .sql, .py, .R, etc.)</li>
-</ul>
-</div>
-</div>
-<p>Nous allons ensuite détailler le fonctionnement de Git dans le cadre d’un exercice.</p>
-</section>
-<section id="exercice" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice"><span class="header-section-number">2</span> Exercice</h2>
-<section id="compte-github-et-jeton" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</h3>
-<p>Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.</p>
+<section id="setup" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1</span> Setup</h2>
+<section id="start-a-vscode-service" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="start-a-vscode-service"><span class="header-section-number">1.1</span> Start a VSCode service</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Créez un compte sur <a href="https://github.com/" target="_blank">https://github.com/</a></label></li>
-<li><label><input type="checkbox">Créez un nouveau token classic : <a href="https://github.com/settings/tokens/new" target="_blank">Lien direct</a></label>
+<li><label><input type="checkbox">Connect to the <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a></label></li>
+<li><label><input type="checkbox">Start a <code>Vscode-python</code> service, then open it</label></li>
+</ul>
+</section>
+<section id="retrieve-the-code" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="retrieve-the-code"><span class="header-section-number">1.2</span> Retrieve the code</h3>
+<p>There are two possibilities to retrieve the code:</p>
 <ul>
-<li>Note: for ENSAI datalabs</li>
-<li>Expiration: <code>30/06/&lt;year n+1&gt;</code></li>
-<li>cochez repo and workflow</li>
-<li><span class="green-button">Generate token</span></li>
+<li>clone the teacher’s repository directly
+<ul>
+<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
 </ul></li>
-<li><label><input type="checkbox">Copiez le token (ghp_xxxxxxxxxx)</label></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Attention sa valeur ne sera affichée qu’une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.</p>
-</div>
-</div>
-<p>Vous allez maintenant déclarer ce jeton sur le datalab :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Connectez-vous au datalab</label></li>
-<li><label><input type="checkbox">Allez dans <em>Mon Compte &gt; Git</em></label></li>
-<li><label><input type="checkbox">Collez le token</label></li>
-<li><label><input type="checkbox">Renseignez également ici votre nom d’utilisateur GitHub et mail</label></li>
-</ul>
-<p>Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.</p>
-<p>Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.</p>
-</section>
-<section id="créer-un-dépôt-distant" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</h3>
-<p>Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un nouveau dépôt (repository), <a href="https://github.com/new" target="_blank">Lien direct</a></label>
+<li>create a fork of this repository, then clone this fork
 <ul>
-<li>Repository name : ENSAI-Git-TP</li>
-<li>Add README : On</li>
-<li>Add .gitignore : Python</li>
-<li><span class="green-button">Create repository</span></li>
+<li>https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork{target=“_blank”}</li>
+<li><code>git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-2A-remise-a-niveau.git</code></li>
 </ul></li>
 </ul>
-<p>Votre dépôt distant est créé. Il contient uniquement les fichiers README et .gitignore.</p>
+<p>If you clone the teacher’s repository directly, you will not be able to use Git to keep track of your work. You will have to download the files manually, for example.</p>
+<p>A fork is a copy of a remote repository. Since this copy belongs to you, you have the right to modify the code.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Clone the repository by choosing one of the two options above</label></li>
+</ul>
+<p>Then, go to the <code>src/POO</code> folder:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">File &gt; Open Folder &gt; <code>/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></label>
+<ul>
+<li>or directly from the terminal: <code>code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></li>
+</ul></li>
+</ul>
+<p>You can then code in the files in the <em>exercise</em> folder. If needed, you can create new files.</p>
+</section>
+</section>
+<section id="exercise-1---points" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercise-1---points"><span class="header-section-number">2</span> Exercise 1 - Points</h2>
+<p>Define a <code>Point</code> class to represent a point in the plane with x and y coordinates.</p>
+<p>Implement the following methods:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>__init__(self, x, y)</code>: point constructor with Cartesian coordinates</label></li>
+<li><label><input type="checkbox"><code>r(self)</code> and <code>t(self)</code>: returning the polar coordinates of the point</label></li>
+<li><label><input type="checkbox"><code>__str__(self)</code>: to display the Point as text, e.g.&nbsp;<code>(1.0, 2.4)</code></label></li>
+<li><label><input type="checkbox"><code>distance(self, other_point)</code>: distance to another point</label></li>
+<li><label><input type="checkbox"><code>__eq__(self, other_point) -&gt; bool</code>: indicates whether the two points are identical</label></li>
+<li><label><input type="checkbox"><code>homothety(self, k)</code>: applying a homothety centered at (0, 0) with ratio k</label></li>
+<li><label><input type="checkbox"><code>translation(self, dx, dy)</code>: applying a translation with vector (dx, dy)</label></li>
+<li><label><input type="checkbox"><code>rotation(self, a)</code> (bonus): applying a rotation centered at (0, 0) with angle a</label></li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Tip
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Le dépôt distant n’a pas vocation à être modifié directement.</p>
-<p>Son rôle est de :</p>
-<ul>
-<li>avoir une sauvegarde de votre code</li>
-<li>avoir un dépôt central si vous travaillez à plusieurs</li>
-</ul>
-<p>Les modifications seront réalisées sur les dépôts locaux et partagées sur le dépôt distant.</p>
+<p>To check that your methods are correct, you can add a <code>main</code> block at the end of your class. When you execute this file, this code will be run.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p1 : </span><span class="sc">{</span>p1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Distance between p1 and p2 : </span><span class="sc">{</span>p1<span class="sc">.</span>distance(p2)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"p1 is equal to p2 : </span><span class="sc">{</span>p1 <span class="op">==</span> p2<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</section>
-<section id="cloner-son-dépôt-local" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</h3>
-<p>Commençons par récupérer l’url du dépôt distant :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez la page GitHub de votre dépôt</label></li>
-<li><label><input type="checkbox">Cliquez sur <span class="green-button">Code</span></label></li>
-<li><label><input type="checkbox">Copiez l’adresse https</label></li>
-</ul>
-<p>Nous allons maintenant créer un clone local dans un service du datalab.</p>
-<p>Sur le datalab :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans le catalogue de services</label></li>
-<li><label><input type="checkbox">Sélectionnez <em>VScode-python</em> et cliquez sur <code>Lancer</code></label></li>
-</ul>
-<p>Vous arrivez sur la page des paramètres avant de lancer le service.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans l’onglet <em>Git</em></label></li>
-<li><label><input type="checkbox">Collez votre adresse dans la case <em>Repository url</em></label></li>
-<li><label><input type="checkbox">Open the service in the clone folder : Oui</label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Lancer</code>, puis ouvrez le service</label></li>
-</ul>
-<p>Vous avez maintenant un service VScode avec un clone local de votre dépôt.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Ce qu'il s'est passé">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ce qu’il s’est passé
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suite au lancement de votre service, la commande suivante a été exécutée :</p>
-<p>`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git</username></p>
-<p>avec :</p>
-<ul>
-<li><code>$GIT_PERSONAL_ACCESS_TOKEN</code> : une variable d’environnement contenant la valeur de votre jeton</li>
-<li><code>&lt;username&gt;</code> : votre nom d’utilisateur GitHub</li>
-</ul>
-<p>Cette commande crée localement un clone de votre dépôt distant.</p>
 </div>
 </div>
 </section>
-<section id="add-commit-push" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</h3>
-<p>Avant de commencer à modifier votre dépôt local, vérifiez qu’il est bien branché sur le dépôt distant.</p>
-<p>Dans Visual Studio Code :</p>
+<section id="exercise-2---polygons" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercise-2---polygons"><span class="header-section-number">3</span> Exercise 2 - Polygons</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">Cliquez sur les 3 barres horizontales en haut à gauche &gt; Terminal &gt; New Terminal</label></li>
-<li><label><input type="checkbox">Lancez la commande : <code>git remote -v</code></label></li>
-</ul>
-<p>Vous devez voir apparaitre l’url de votre dépôt distant incluant votre jeton.</p>
-<p>Nous allons maintenant créer de nouveaux fichiers et les envoyer vers le dépôt distant.</p>
-<p>Dans l’explorer (à gauche) de Visual Studio Code :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un fichier <em>ex1.py</em></label>
+<li><label><input type="checkbox">Create a <code>Polygon</code> class composed of objects from the <code>Point</code> class</label>
 <ul>
-<li>Clic droit &gt; New file</li>
-<li>Insérer le code <code>print("Hello")</code> dans ce fichier et sauvegardez-le</li>
+<li>We will assume from now on that segments do not cross</li>
 </ul></li>
-</ul>
-<p>Partageons maintenant ce fichier avec le dépôt distant.</p>
-<p>Cet envoi se déroule en plusieurs étapes obligatoires :</p>
-<ol type="1">
-<li>Déclarez le fichier à Git</li>
-<li>Ajoutez-le dans un commit (point de sauvegarde)</li>
-<li>Envoyez ce commit au dépôt distant</li>
-</ol>
-<p>Voici la suite de commandes à connaitre et exécuter :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>git status</code> : elle affiche l’état du dépôt. Vous remarquez que le fichier <em>ex1.py</em> apparait dans les « Untracked files » i.e.&nbsp;les fichiers que Git a repéré mais ne versionne pas pour l’instant.</label></li>
-<li><label><input type="checkbox"><code>git add ex1.py</code> : indique à Git que ce fichier a été créé/modifié et qu’il faut l’ajouter au prochain commit</label></li>
-<li><label><input type="checkbox">Si vous faites de nouveau <code>git status</code>, le fichier apparait maintenant dans « Changes to be commited »</label></li>
-<li><label><input type="checkbox"><code>git commit -m "ajout du fichier ex1"</code> : pour créer un commit (point de sauvegarde). <code>-m</code> signifie que l’on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit</label></li>
-<li><label><input type="checkbox">Faites encore une fois <code>git status</code>. Vous notez que votre dépôt local a un commit d’avance sur le dépôt distant.</label></li>
-<li><label><input type="checkbox"><code>git push</code> comme précisé pour pousser votre code vers le dépôt distant</label></li>
-</ul>
-<p>Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.</p>
-</section>
-<section id="pull" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
-<p>Nous venons d’envoyer du code vers le dépôt distant.</p>
-<p>Maintenant imaginez que :</p>
+<li><label><input type="checkbox">Add 2 abstract methods <code>area()</code> and <code>perimeter()</code> to this class</label>
 <ul>
-<li>vous travaillez en équipe</li>
-<li>un camarade a envoyé une modification sur le dépôt distant</li>
-<li>vous souhaitez mettre à jour votre dépôt local pour récupérer la modification</li>
-</ul>
-<p>Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier</label>
-<ul>
-<li><span class="emoji" data-emoji="warning">⚠️</span> ce n’est pas une bonne pratique mais ici c’est pour l’exercice</li>
+<li>these methods will be defined in child classes</li>
 </ul></li>
-<li><label><input type="checkbox">Sur votre dépôt local : <code>git pull</code></label></li>
-</ul>
-<p>Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.</p>
-</section>
-</section>
-<section id="autres-points-importants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="autres-points-importants"><span class="header-section-number">3</span> Autres points importants</h2>
-<p>Ce qui a été fait ici n’est que le minimum du minimim à savoir pour utiliser Git.</p>
-<p>De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.</p>
-<p>N’hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).</p>
-<section id="conflit" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="conflit"><span class="header-section-number">3.1</span> Conflit</h3>
-<p>Par exemple, que se passe-t-il si :</p>
+<li><label><input type="checkbox">Create the <code>Segment</code>, <code>Triangle</code> and <code>Quadrilateral</code> classes that inherit from the <code>Polygon</code> class</label>
 <ul>
-<li>Kim a modifié le fichier <em>ex1.py</em> sur son dépôt local et a poussé sa modification vers le dépôt distant</li>
-<li>Sur votre dépôt local, vous avez également modifié le même fichier</li>
-<li>Vous essayez de faire <code>git push</code> : vous avez un message disant que vous devez commencer par <em>pull</em></li>
-<li>Vous faites donc <code>git pull</code> et là vous avez un conflit i.e.&nbsp;Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim</li>
+<li>check the number of points each time</li>
+</ul></li>
+<li><label><input type="checkbox">Define the <code>area()</code> and <code>perimeter()</code> methods in these 3 classes</label></li>
+<li><label><input type="checkbox">Create the <code>Rectangle</code> class that inherits from <code>Quadrilateral</code></label></li>
+<li><label><input type="checkbox">For Rectangle, check that the 2 opposite sides have the same length and that there is a right angle</label></li>
 </ul>
+<p>Here is the class diagram generated with <a href="https://mermaid.js.org/syntax/classDiagram.html" target="_blank">Mermaid</a></p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart
-    github[(Remote)]
-    dev1[(Local Kim)]
-    dev2[(Local yours)]
-    
-    github &lt;--&gt; dev1
-    github &lt;--&gt; dev2
+<pre class="mermaid mermaid-js">classDiagram
+    Point --o Polygon
+    Polygon &lt;|-- Segment : 2
+    Polygon &lt;|-- Triangle : 3
+    Polygon &lt;|-- Quadrilateral : 4
+    Quadrilateral &lt;|-- Rectangle
+    class Point{
+        +float x
+        +float y
+        +distance(other_point)
+    }
+    class Polygon{
+        +list[Point] points_list
+        +area()
+        +perimeter()
+    }
+    class Quadrilateral{
+        +area()
+        +perimeter()
+    }
+    class Segment{
+        +area()
+        +perimeter()
+    }
+    class Triangle{
+        +area()
+        +perimeter()
+    }
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -755,14 +688,102 @@ Tip
 </div>
 </div>
 </section>
-<section id="fichier-.gitignore" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</h3>
-<p>Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C’est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.</p>
+<section id="exercise-3---domino" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="exercise-3---domino"><span class="header-section-number">4</span> Exercise 3 - Domino</h2>
+<section id="a-domino" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="a-domino"><span class="header-section-number">4.1</span> A Domino</h3>
+<p>Write a <code>Domino</code> class with:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">2 integer attributes between 0 and 6: <code>end_A</code> and <code>end_B</code></label></li>
+<li><label><input type="checkbox"><code>__str__()</code>: which displays the dots present on both ends</label></li>
+<li><label><input type="checkbox"><code>flip()</code>: which flips the domino (its A end becomes its B end and vice versa)</label></li>
+<li><label><input type="checkbox"><code>accepts_after(other_domino)</code>: checks whether the B end of the current domino has the same value as the A end of the other domino</label></li>
+</ul>
+</section>
+<section id="game" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="game"><span class="header-section-number">4.2</span> Game</h3>
+<p>Now we will try to code a domino game.</p>
+<p>For simplicity:</p>
+<ul>
+<li>there will only be one player</li>
+<li>it is only possible to place a domino on one side, at the end of the domino row</li>
+</ul>
+<p>Let’s start by generating all possible dominoes, i.e.&nbsp;all combinations from (0,0) to (6,6) without duplicates.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Write a function that generates all dominoes and returns the list</label></li>
+<li><label><input type="checkbox">Write an <code>display_dominoes()</code> function that displays a list of dominoes</label></li>
+<li><label><input type="checkbox">Write a <code>draw()</code> function that randomly draws a domino from a list and removes it from that list</label></li>
+<li><label><input type="checkbox">Write a <code>playable_dominoes(hand_dominoes, placed_dominoes)</code> function that takes two lists of dominoes as arguments. The function returns the list of dominoes in hand that could be placed after the last domino in the <code>placed_dominoes</code> list.</label></li>
+</ul>
+<p>Write a <code>play()</code> function that:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">generates the list of all dominoes</label></li>
+<li><label><input type="checkbox">randomly draws a first domino and places it in the <code>placed_dominoes</code> list</label></li>
+<li><label><input type="checkbox">randomly distributes 6 dominoes to the player</label></li>
+<li><label><input type="checkbox">displays the dominoes they can play</label></li>
+<li><label><input type="checkbox">if no domino can be played, offer them the possibility to draw</label></li>
+<li><label><input type="checkbox">asks which domino they want to play (for example by asking them to enter the number in the domino list, and <code>quit</code> to stop playing)</label></li>
+<li><label><input type="checkbox">adds the played domino to the <code>placed_dominoes</code> list and removes it from the <code>hand_dominoes</code> list</label></li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">classDiagram
+    class Domino{
+        +int end_A
+        +int end_B
+        +flip()
+        +accepts_after(other_domino)
+    }
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="liens" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="liens">Liens</h2>
-<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introdution à Git</a></p>
+<section id="correction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="correction">Correction</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggested solution">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Suggested solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="exercises-1-and-2" class="level4">
+<h4 class="anchored" data-anchor-id="exercises-1-and-2">Exercises 1 and 2</h4>
+<ul>
+<li><a href="../../POO/exercices/geometrie/point.py" target="_blank">point.py</a></li>
+<li><a href="../../POO/exercices/geometrie/polygone.py" target="_blank">polygone.py</a></li>
+<li><a href="../../POO/exercices/geometrie/segment.py" target="_blank">segment.py</a></li>
+<li><a href="../../POO/exercices/geometrie/triangle.py" target="_blank">triangle.py</a></li>
+<li><a href="../../POO/exercices/geometrie/quadrilatere.py" target="_blank">quadrilatere.py</a></li>
+<li><a href="../../POO/exercices/geometrie/rectangle.py" target="_blank">rectangle.py</a></li>
+</ul>
+<p>An example of unit tests for the Point class:</p>
+<ul>
+<li><a href="../../POO/exercices/geometrie/test_point.py" target="_blank">test_point.py</a></li>
+</ul>
+</section>
+<section id="exercise-3" class="level4">
+<h4 class="anchored" data-anchor-id="exercise-3">Exercise 3</h4>
+<ul>
+<li><a href="../../POO/exercices/domino/domino.py" target="_blank">domino.py</a></li>
+<li><a href="../../POO/exercices/domino/jeu.py" target="_blank">jeu.py</a></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -1189,7 +1210,7 @@ Tip
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/POO/poo-exercice-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

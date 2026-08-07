@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="Introduction à Git">
+<meta name="description" content="Exercice d’apprentissage du SQL">
 
-<title>Git – Remise à Niveau Informatique</title>
+<title>Exercice BDR et SQL – Remise à Niveau Informatique</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,25 +31,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8fc3c552f25792c921d4f0ccbfb37919.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3662ac67e9cd501dca117474e4771e7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,12 +77,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -252,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Remise à Niveau Informatique</span>
     </a>
   </div>
@@ -263,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -272,11 +272,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-premiers-pas">    
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/datalab.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/datalab.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/first-steps/git.html">
+    <a class="dropdown-item" href="../../../doc/first-steps/git.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
     </ul>
@@ -287,11 +287,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sql">    
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-cours.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-cours.html">
  <span class="dropdown-text">Introduction à SQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/sql/sql-exercice.html">
+    <a class="dropdown-item" href="../../../doc/sql/sql-exercice.html">
  <span class="dropdown-text">Exercice SQL</span></a>
   </li>  
     </ul>
@@ -302,35 +302,35 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-cours.html">
+    <a class="dropdown-item" href="../../../doc/python/python-cours.html">
  <span class="dropdown-text">Introduction à Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/python-notebooks.html">
+    <a class="dropdown-item" href="../../../doc/python/python-notebooks.html">
  <span class="dropdown-text">Notebooks Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/01-types-et-variables.html">
+    <a class="dropdown-item" href="../../../doc/python/01-types-et-variables.html">
  <span class="dropdown-text">Types et Variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/02-listes-et-dictionnaires.html">
+    <a class="dropdown-item" href="../../../doc/python/02-listes-et-dictionnaires.html">
  <span class="dropdown-text">Listes et Dictionnaires</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/03-tests-et-boucles.html">
+    <a class="dropdown-item" href="../../../doc/python/03-tests-et-boucles.html">
  <span class="dropdown-text">Tests et Boucles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/04-fonctions.html">
+    <a class="dropdown-item" href="../../../doc/python/04-fonctions.html">
  <span class="dropdown-text">Fonctions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/05-POO-introduction.html">
+    <a class="dropdown-item" href="../../../doc/python/05-POO-introduction.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/python/correction.html">
+    <a class="dropdown-item" href="../../../doc/python/correction.html">
  <span class="dropdown-text">Correction</span></a>
   </li>  
     </ul>
@@ -341,17 +341,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-poo">    
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-cours.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-cours.html">
  <span class="dropdown-text">Introduction à la POO</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/POO/poo-exercice.html">
+    <a class="dropdown-item" href="../../../doc/POO/poo-exercice.html">
  <span class="dropdown-text">Exercices POO</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../doc/UML/UML.html"> 
+    <a class="nav-link" href="../../../doc/UML/UML.html"> 
 <span class="menu-text">UML</span></a>
   </li>  
 </ul>
@@ -362,63 +362,63 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-english">    
         <li>
-    <a class="dropdown-item" href="../../doc/english/home-en.html">
+    <a class="dropdown-item" href="../../../doc/english/home-en.html">
  <span class="dropdown-text">Home</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/datalab-en.html">
+    <a class="dropdown-item" href="../../../doc/english/datalab-en.html">
  <span class="dropdown-text">Datalab</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/git-en.html">
+    <a class="dropdown-item" href="../../../doc/english/git-en.html">
  <span class="dropdown-text">Git</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-cours-en.html">
  <span class="dropdown-text">SQL lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/sql/sql-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/sql/sql-exercice-en.html">
  <span class="dropdown-text">SQL exercice</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-cours-en.html">
  <span class="dropdown-text">Python Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/python-notebooks-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/python-notebooks-en.html">
  <span class="dropdown-text">Python Notebooks</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/01-types-et-variables-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/01-types-et-variables-en.html">
  <span class="dropdown-text">Python Types and variables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/02-listes-et-dictionnaires-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/02-listes-et-dictionnaires-en.html">
  <span class="dropdown-text">Python List and Dictionaries</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/03-tests-et-boucles-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/03-tests-et-boucles-en.html">
  <span class="dropdown-text">Python Tests and Loops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/04-fonctions-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/04-fonctions-en.html">
  <span class="dropdown-text">Python functions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/python/05-POO-introduction-en.html">
+    <a class="dropdown-item" href="../../../doc/english/python/05-POO-introduction-en.html">
  <span class="dropdown-text">Python POO introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-cours-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-cours-en.html">
  <span class="dropdown-text">POO Lesson</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/POO/poo-exercice-en.html">
+    <a class="dropdown-item" href="../../../doc/english/POO/poo-exercice-en.html">
  <span class="dropdown-text">POO Exercices</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../doc/english/uml-en.html">
+    <a class="dropdown-item" href="../../../doc/english/uml-en.html">
  <span class="dropdown-text">UML</span></a>
   </li>  
     </ul>
@@ -429,7 +429,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-examens">    
         <li>
-    <a class="dropdown-item" href="../../doc/annales/examen-2024.html">
+    <a class="dropdown-item" href="../../../doc/annales/examen-2024.html">
  <span class="dropdown-text">Examen 2024</span></a>
   </li>  
     </ul>
@@ -460,23 +460,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git"><span class="header-section-number">1</span> Git ?</a></li>
-  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><span class="header-section-number">2</span> Exercice</a>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">1</span> Setup</a>
   <ul class="collapse">
-  <li><a href="#compte-github-et-jeton" id="toc-compte-github-et-jeton" class="nav-link" data-scroll-target="#compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</a></li>
-  <li><a href="#créer-un-dépôt-distant" id="toc-créer-un-dépôt-distant" class="nav-link" data-scroll-target="#créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</a></li>
-  <li><a href="#cloner-son-dépôt-local" id="toc-cloner-son-dépôt-local" class="nav-link" data-scroll-target="#cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</a></li>
-  <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
-  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
+  <li><a href="#start-the-services" id="toc-start-the-services" class="nav-link" data-scroll-target="#start-the-services"><span class="header-section-number">1.1</span> Start the services</a></li>
+  <li><a href="#create-a-connection" id="toc-create-a-connection" class="nav-link" data-scroll-target="#create-a-connection"><span class="header-section-number">1.2</span> Create a connection</a></li>
+  <li><a href="#insert-data" id="toc-insert-data" class="nav-link" data-scroll-target="#insert-data"><span class="header-section-number">1.3</span> Insert data</a></li>
+  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives"><span class="header-section-number">1.4</span> Alternatives</a></li>
   </ul></li>
-  <li><a href="#autres-points-importants" id="toc-autres-points-importants" class="nav-link" data-scroll-target="#autres-points-importants"><span class="header-section-number">3</span> Autres points importants</a>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><span class="header-section-number">2</span> Data description</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3</span> Questions</a>
   <ul class="collapse">
-  <li><a href="#conflit" id="toc-conflit" class="nav-link" data-scroll-target="#conflit"><span class="header-section-number">3.1</span> Conflit</a></li>
-  <li><a href="#fichier-.gitignore" id="toc-fichier-.gitignore" class="nav-link" data-scroll-target="#fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</a></li>
+  <li><a href="#discovering-tables" id="toc-discovering-tables" class="nav-link" data-scroll-target="#discovering-tables"><span class="header-section-number">3.1</span> Discovering tables</a></li>
+  <li><a href="#updating-data" id="toc-updating-data" class="nav-link" data-scroll-target="#updating-data"><span class="header-section-number">3.2</span> Updating data</a></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">3.3</span> Joins</a></li>
+  <li><a href="#aggregations" id="toc-aggregations" class="nav-link" data-scroll-target="#aggregations"><span class="header-section-number">3.4</span> Aggregations</a></li>
   </ul></li>
-  <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/sql/sql-exercice-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -488,12 +489,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">Exercice BDR et SQL</h1>
 </div>
 
 <div>
   <div class="description">
-    Introduction à Git
+    Exercice d’apprentissage du SQL
   </div>
 </div>
 
@@ -516,93 +517,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Le but est de vous présenter très rapidement Git et son utilisation. Pour plus d’informations, consultez les liens en bas de cette page.</p>
-<section id="git" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="git"><span class="header-section-number">1</span> Git ?</h2>
-<p>Git est un logiciel qui permet de :</p>
+<section id="objective" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objective">Objective</h2>
+<p>In this practical work, you will:</p>
 <ul>
-<li>versionner son code</li>
-<li>synchroniser des dépôts de code</li>
+<li>create a database: start a <em>PostgreSQL</em> service</li>
+<li>connect to this database: use a <em>CloudBeaver</em> service</li>
+<li>insert data using an SQL script</li>
+<li>write SQL queries to answer the questions</li>
 </ul>
-<p>Lorsque vous travailler à cinq sur un projet, ce n’est pas évident pour tous d’avoir à chaque instant la même version du code.</p>
-<p>En travaillant avec Git, vous allez avoir :</p>
+</section>
+<section id="setup" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="setup"><span class="header-section-number">1</span> Setup</h2>
+<section id="start-the-services" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="start-the-services"><span class="header-section-number">1.1</span> Start the services</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Connect to <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a></label></li>
+<li><label><input type="checkbox">Start a <strong>PostgreSQL</strong> service</label></li>
+<li><label><input type="checkbox">Start a <strong>CloudBeaver</strong> service</label></li>
+<li><label><input type="checkbox">Open CloudBeaver</label>
 <ul>
-<li>un dépôt de code commun central distant (remote) hébergé ici sur <a href="https://github.com/" target="_blank">https://github.com/</a></li>
-<li>chacun votre dépôt local sur lequel vous travaillez</li>
+<li>username: user-</li>
+<li>password: paste your password</li>
+</ul></li>
 </ul>
-<p>L’idée est synchroniser réguliérement ces dépôts pour que chaque membre de l’équipe travaille avec la version la plus récente.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Un dépôt ?">
+<div class="callout callout-style-default callout-tip callout-titled" title="What is what?">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Un dépôt ?
+<span class="screen-reader-only">Tip</span>What is what?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>C’est simplement un ensemble de dossiers et fichiers, comme un Drive.</p>
-<p>Pour faciliter la synchronisation, un dépôt doit être :</p>
 <ul>
-<li>léger (quelques Mo maximum)</li>
-<li>contenir principalement des fichiers lisibles par un éditeur de texte (.txt, .sql, .py, .R, etc.)</li>
+<li>PostgreSQL: Database</li>
+<li>CloudBeaver: Software used to communicate with a database</li>
 </ul>
+<p>It is possible to connect directly to a database, but it is much easier to use a tool such as CloudBeaver.</p>
 </div>
 </div>
-<p>Nous allons ensuite détailler le fonctionnement de Git dans le cadre d’un exercice.</p>
 </section>
-<section id="exercice" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice"><span class="header-section-number">2</span> Exercice</h2>
-<section id="compte-github-et-jeton" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="compte-github-et-jeton"><span class="header-section-number">2.1</span> Compte GitHub et jeton</h3>
-<p>Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un compte sur <a href="https://github.com/" target="_blank">https://github.com/</a></label></li>
-<li><label><input type="checkbox">Créez un nouveau token classic : <a href="https://github.com/settings/tokens/new" target="_blank">Lien direct</a></label>
+<section id="create-a-connection" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="create-a-connection"><span class="header-section-number">1.2</span> Create a connection</h3>
+<p>Normally, if you start both services in the correct order, when launching CloudBeaver, the PostgreSQL database is detected and the connection is automatically created.</p>
+<p>Has the connection been created?</p>
 <ul>
-<li>Note: for ENSAI datalabs</li>
-<li>Expiration: <code>30/06/&lt;year n+1&gt;</code></li>
-<li>cochez repo and workflow</li>
-<li><span class="green-button">Generate token</span></li>
-</ul></li>
-<li><label><input type="checkbox">Copiez le token (ghp_xxxxxxxxxx)</label></li>
+<li>If yes, it appears on the left in CloudBeaver (connection list)</li>
+<li>If no, create the connection</li>
 </ul>
-<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout callout-style-default callout-note callout-titled" title="Create a connection">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+<span class="screen-reader-only">Note</span>Create a connection
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Attention sa valeur ne sera affichée qu’une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.</p>
-</div>
-</div>
-<p>Vous allez maintenant déclarer ce jeton sur le datalab :</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Connectez-vous au datalab</label></li>
-<li><label><input type="checkbox">Allez dans <em>Mon Compte &gt; Git</em></label></li>
-<li><label><input type="checkbox">Collez le token</label></li>
-<li><label><input type="checkbox">Renseignez également ici votre nom d’utilisateur GitHub et mail</label></li>
-</ul>
-<p>Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.</p>
-<p>Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.</p>
-</section>
-<section id="créer-un-dépôt-distant" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="créer-un-dépôt-distant"><span class="header-section-number">2.2</span> Créer un dépôt distant</h3>
-<p>Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un nouveau dépôt (repository), <a href="https://github.com/new" target="_blank">Lien direct</a></label>
+<li><label><input type="checkbox">First open the README of the PostgreSQL service</label>
 <ul>
-<li>Repository name : ENSAI-Git-TP</li>
-<li>Add README : On</li>
-<li>Add .gitignore : Python</li>
-<li><span class="green-button">Create repository</span></li>
+<li>it contains the information needed to connect to the database</li>
+</ul></li>
+<li><label><input type="checkbox">In CloudBeaver &gt; New connection</label></li>
+<li><label><input type="checkbox">Select <strong>PostgreSQL</strong></label></li>
+<li><label><input type="checkbox">Fill in the following fields</label>
+<ul>
+<li>Hostname: <code>postgresql-&lt;...&gt;</code></li>
+<li>Port: 5432</li>
+<li>Database: defaultdb</li>
+<li>Username: <code>user-&lt;username&gt;</code></li>
+<li>Password: <code>&lt;password&gt;</code></li>
+</ul></li>
+<li><label><input type="checkbox">Click TEST, then <span class="blue-button">CREATE</span></label></li>
+</ul>
+</div>
+</div>
+<p>Once the connection has been created, open it:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Right-click on the connection &gt; Open</label>
+<ul>
+<li>a small green dot appears next to it</li>
 </ul></li>
 </ul>
-<p>Votre dépôt distant est créé. Il contient uniquement les fichiers README et .gitignore.</p>
+<p>Finally, open an SQL editor to write queries:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Right-click &gt; <em>SQL Editor</em></label></li>
+<li><label><input type="checkbox">Check that you are using the <code>public@defaultdb</code> profile</label>
+<ul>
+<li>At the top in the blue banner, otherwise select this profile</li>
+</ul></li>
+</ul>
+</section>
+<section id="insert-data" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="insert-data"><span class="header-section-number">1.3</span> Insert data</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Copy the contents of the file <a href="./exercice/echecs.sql" target="_blank">echecs.sql</a></label></li>
+<li><label><input type="checkbox">Paste it into CloudBeaver</label></li>
+<li><label><input type="checkbox">Execute the script</label>
+<ul>
+<li>Orange icon with a scroll containing an arrow <span class="emoji" data-emoji="scroll">📜</span></li>
+</ul></li>
+</ul>
+<p>If you did not get any error message, check that the tables were created:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Delete the whole script. Once the tables are created, you no longer need it</label></li>
+<li><label><input type="checkbox"><code>SELECT * FROM echecs.tournoi;</code></label></li>
+<li><label><input type="checkbox">Click the orange arrow</label></li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -613,141 +638,81 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le dépôt distant n’a pas vocation à être modifié directement.</p>
-<p>Son rôle est de :</p>
 <ul>
-<li>avoir une sauvegarde de votre code</li>
-<li>avoir un dépôt central si vous travaillez à plusieurs</li>
+<li>Scroll containing an arrow (ALT+X) <span class="emoji" data-emoji="arrow_right">➡️</span> execute all queries in the editor</li>
+<li>Orange arrow (CTRL+ENTER) <span class="emoji" data-emoji="arrow_right">➡️</span> execute the current query (where the mouse cursor is located)</li>
 </ul>
-<p>Les modifications seront réalisées sur les dépôts locaux et partagées sur le dépôt distant.</p>
 </div>
 </div>
 </section>
-<section id="cloner-son-dépôt-local" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="cloner-son-dépôt-local"><span class="header-section-number">2.3</span> Cloner son dépôt local</h3>
-<p>Commençons par récupérer l’url du dépôt distant :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez la page GitHub de votre dépôt</label></li>
-<li><label><input type="checkbox">Cliquez sur <span class="green-button">Code</span></label></li>
-<li><label><input type="checkbox">Copiez l’adresse https</label></li>
-</ul>
-<p>Nous allons maintenant créer un clone local dans un service du datalab.</p>
-<p>Sur le datalab :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans le catalogue de services</label></li>
-<li><label><input type="checkbox">Sélectionnez <em>VScode-python</em> et cliquez sur <code>Lancer</code></label></li>
-</ul>
-<p>Vous arrivez sur la page des paramètres avant de lancer le service.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Allez dans l’onglet <em>Git</em></label></li>
-<li><label><input type="checkbox">Collez votre adresse dans la case <em>Repository url</em></label></li>
-<li><label><input type="checkbox">Open the service in the clone folder : Oui</label></li>
-<li><label><input type="checkbox">Cliquez sur <code>Lancer</code>, puis ouvrez le service</label></li>
-</ul>
-<p>Vous avez maintenant un service VScode avec un clone local de votre dépôt.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Ce qu'il s'est passé">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ce qu’il s’est passé
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suite au lancement de votre service, la commande suivante a été exécutée :</p>
-<p>`git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-Git-TP.git</username></p>
-<p>avec :</p>
+<section id="alternatives" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="alternatives"><span class="header-section-number">1.4</span> Alternatives</h3>
+<p>Other tools can be used to complete the exercise:</p>
 <ul>
-<li><code>$GIT_PERSONAL_ACCESS_TOKEN</code> : une variable d’environnement contenant la valeur de votre jeton</li>
-<li><code>&lt;username&gt;</code> : votre nom d’utilisateur GitHub</li>
-</ul>
-<p>Cette commande crée localement un clone de votre dépôt distant.</p>
-</div>
-</div>
-</section>
-<section id="add-commit-push" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</h3>
-<p>Avant de commencer à modifier votre dépôt local, vérifiez qu’il est bien branché sur le dépôt distant.</p>
-<p>Dans Visual Studio Code :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Cliquez sur les 3 barres horizontales en haut à gauche &gt; Terminal &gt; New Terminal</label></li>
-<li><label><input type="checkbox">Lancez la commande : <code>git remote -v</code></label></li>
-</ul>
-<p>Vous devez voir apparaitre l’url de votre dépôt distant incluant votre jeton.</p>
-<p>Nous allons maintenant créer de nouveaux fichiers et les envoyer vers le dépôt distant.</p>
-<p>Dans l’explorer (à gauche) de Visual Studio Code :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Créez un fichier <em>ex1.py</em></label>
+<li><a href="https://onyxia.lab.groupe-genes.fr/" target="_blank">https://onyxia.lab.groupe-genes.fr/</a>: works like SSP Cloud</li>
+<li>DBeaver on the ENSAI VM
 <ul>
-<li>Clic droit &gt; New file</li>
-<li>Insérer le code <code>print("Hello")</code> dans ce fichier et sauvegardez-le</li>
+<li>Connect to the ENSAI VM</li>
+<li>Launch the DBeaver software</li>
 </ul></li>
-</ul>
-<p>Partageons maintenant ce fichier avec le dépôt distant.</p>
-<p>Cet envoi se déroule en plusieurs étapes obligatoires :</p>
-<ol type="1">
-<li>Déclarez le fichier à Git</li>
-<li>Ajoutez-le dans un commit (point de sauvegarde)</li>
-<li>Envoyez ce commit au dépôt distant</li>
-</ol>
-<p>Voici la suite de commandes à connaitre et exécuter :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>git status</code> : elle affiche l’état du dépôt. Vous remarquez que le fichier <em>ex1.py</em> apparait dans les « Untracked files » i.e.&nbsp;les fichiers que Git a repéré mais ne versionne pas pour l’instant.</label></li>
-<li><label><input type="checkbox"><code>git add ex1.py</code> : indique à Git que ce fichier a été créé/modifié et qu’il faut l’ajouter au prochain commit</label></li>
-<li><label><input type="checkbox">Si vous faites de nouveau <code>git status</code>, le fichier apparait maintenant dans « Changes to be commited »</label></li>
-<li><label><input type="checkbox"><code>git commit -m "ajout du fichier ex1"</code> : pour créer un commit (point de sauvegarde). <code>-m</code> signifie que l’on ajoute ensuite un message (obligatoire) pour expliquer brievement ce que contient ce commit</label></li>
-<li><label><input type="checkbox">Faites encore une fois <code>git status</code>. Vous notez que votre dépôt local a un commit d’avance sur le dépôt distant.</label></li>
-<li><label><input type="checkbox"><code>git push</code> comme précisé pour pousser votre code vers le dépôt distant</label></li>
-</ul>
-<p>Rafraichissez votre dépôt distant sur GitHub et vérifiez que le fichier est bien apparu.</p>
-</section>
-<section id="pull" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
-<p>Nous venons d’envoyer du code vers le dépôt distant.</p>
-<p>Maintenant imaginez que :</p>
+<li><a href="https://sqliteonline.com/" target="_blank">https://sqliteonline.com/</a>
 <ul>
-<li>vous travaillez en équipe</li>
-<li>un camarade a envoyé une modification sur le dépôt distant</li>
-<li>vous souhaitez mettre à jour votre dépôt local pour récupérer la modification</li>
-</ul>
-<p>Pour simuler ce processus, nous allons directement mettre à jour le dépôt distant.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Sur la page GitHub de votre dépôt distant, créez ou modifiez un fichier</label>
-<ul>
-<li><span class="emoji" data-emoji="warning">⚠️</span> ce n’est pas une bonne pratique mais ici c’est pour l’exercice</li>
+<li>PostgreSQL &gt; Click to connect</li>
 </ul></li>
-<li><label><input type="checkbox">Sur votre dépôt local : <code>git pull</code></label></li>
+<li><a href="https://aiven.io/tools/pg-playground" target="_blank">https://aiven.io/tools/pg-playground</a></li>
 </ul>
-<p>Cela vous permet de récupérer sur votre dépôt local la modification faite sur le dépôt distant.</p>
 </section>
 </section>
-<section id="autres-points-importants" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="autres-points-importants"><span class="header-section-number">3</span> Autres points importants</h2>
-<p>Ce qui a été fait ici n’est que le minimum du minimim à savoir pour utiliser Git.</p>
-<p>De nombreux essentiels ont été volontairement mis de côté pour ne pas complexifier ce sujet.</p>
-<p>N’hésitez pas à consulter le cours et le TP dispensé aux élèves de 1A (lien ci-dessous).</p>
-<section id="conflit" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="conflit"><span class="header-section-number">3.1</span> Conflit</h3>
-<p>Par exemple, que se passe-t-il si :</p>
-<ul>
-<li>Kim a modifié le fichier <em>ex1.py</em> sur son dépôt local et a poussé sa modification vers le dépôt distant</li>
-<li>Sur votre dépôt local, vous avez également modifié le même fichier</li>
-<li>Vous essayez de faire <code>git push</code> : vous avez un message disant que vous devez commencer par <em>pull</em></li>
-<li>Vous faites donc <code>git pull</code> et là vous avez un conflit i.e.&nbsp;Git ne peut pas décider quelle est la bonne version entre la votre et celle de Kim</li>
-</ul>
+<section id="data-description" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2</span> Data description</h2>
+<p>We have a list of <strong>players</strong> and <strong>tournaments</strong>. Players can participate in different tournaments.</p>
+<p>A tournament is supervised by an <strong>arbiter</strong>. An arbiter is a player who has obtained an <strong>arbiter grade</strong>.</p>
+<p>In a tournament, games are played at a certain <strong>time control</strong> (Classical, Rapid, Blitz).</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart
-    github[(Remote)]
-    dev1[(Local Kim)]
-    dev2[(Local yours)]
-    
-    github &lt;--&gt; dev1
-    github &lt;--&gt; dev2
+<pre class="mermaid mermaid-js">classDiagram
+  class arbitre_grade {
+    id_arbitre_grade: INT(PK)
+    nom: VARCHAR
+  }
+
+  class joueur {
+    id_joueur: INT(PK)
+    pseudo: VARCHAR
+    nom: VARCHAR
+    prenom: VARCHAR
+    elo: INT
+    mail: VARCHAR
+    id_arbitre_grade: INT(FK -&gt; arbitre_grade)
+  }
+
+  class cadence {
+    id_cadence: INT(PK)
+    nom: VARCHAR
+  }
+
+  class tournoi {
+    id_tournoi: INT(PK)
+    id_arbitre: INT(FK -&gt; joueur)
+    nom: VARCHAR
+    debut: DATE
+    fin: DATE
+    nb_rondes: INT
+    id_cadence: INT(FK -&gt; cadence)
+  }
+
+  class participant {
+    id_tournoi: INT(FK -&gt; tournoi)
+    id_joueur: INT(FK -&gt; joueur)
+  }
+
+  arbitre_grade -- joueur
+  cadence -- tournoi
+  tournoi -- participant
+  joueur -- participant
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -755,16 +720,73 @@ Tip
 </div>
 </div>
 </section>
-<section id="fichier-.gitignore" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="fichier-.gitignore"><span class="header-section-number">3.2</span> Fichier .gitignore</h3>
-<p>Ce fichier permet de lister des fichiers qui ne doivent pas être versionnés par Git. C’est utilise par exemple pour ne pas envoyer sur le dépôt distant des fichiers contenant des mots de passe ou encore des fichier de données volumineux.</p>
+<section id="questions" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions"><span class="header-section-number">3</span> Questions</h2>
+<section id="discovering-tables" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="discovering-tables"><span class="header-section-number">3.1</span> Discovering tables</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">List all players</label></li>
+<li><label><input type="checkbox">Do the same for the other tables to observe their contents</label></li>
+<li><label><input type="checkbox">List all players ordered by descending Elo rating</label></li>
+<li><label><input type="checkbox">List all players with an Elo rating less than or equal to 2000</label></li>
+<li><label><input type="checkbox">List all players with an Elo rating less than or equal to 2000 and whose first name contains an “e” (uppercase or lowercase)</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> see the UPPER method</li>
+</ul></li>
+</ul>
 </section>
+<section id="updating-data" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="updating-data"><span class="header-section-number">3.2</span> Updating data</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Create the player: <em>Martine Dupont, Elo: 1999, Elite Arbiter</em></label></li>
+<li><label><input type="checkbox">Delete the player with the username <em>marc78</em></label></li>
+<li><label><input type="checkbox">Try to delete the player with id: 20</label>
+<ul>
+<li>Why does this not work? What should be done to delete this player?</li>
+</ul></li>
+<li><label><input type="checkbox">List the players who are arbiters</label>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> see IS NOT NULL</li>
+</ul></li>
+<li><label><input type="checkbox">Add a boolean column <em>is_arbiter</em> to the player table</label></li>
+<li><label><input type="checkbox">Fill this new column for all players</label></li>
+</ul>
 </section>
-<section id="liens" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="liens">Liens</h2>
-<p><a href="https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html" target="_blank">Introdution à Git</a></p>
+<section id="joins" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="joins"><span class="header-section-number">3.3</span> Joins</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">List players (last name, first name) who are arbiters, along with their arbiter grade</label></li>
+<li><label><input type="checkbox">List all players (last name, first name) along with their arbiter grade if they have one</label></li>
+</ul>
+</section>
+<section id="aggregations" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="aggregations"><span class="header-section-number">3.4</span> Aggregations</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Count the number of players who are arbiters</label></li>
+<li><label><input type="checkbox">Count the number of arbiters by grade</label></li>
+<li><label><input type="checkbox">Count the number of arbiters by grade and display only grades where the average Elo rating of arbiters is greater than 2000</label></li>
+<li><label><input type="checkbox">Display the list of tournaments (tournament name, time control, arbiter)</label></li>
+<li><label><input type="checkbox">Add the number of players and the maximum Elo rating of the players</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Link to the <a href="../../sql/exercice/correction.sql/">solution</a></p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1189,7 +1211,7 @@ Tip
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/first-steps/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/sql/sql-exercice-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>

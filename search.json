@@ -277,14 +277,14 @@
     "href": "doc/python/python-cours.html",
     "title": "Introduction à Python",
     "section": "",
-    "text": "Créé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.12\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
+    "text": "Créé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.13: python --version\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
   },
   {
     "objectID": "doc/python/python-cours.html#historique",
     "href": "doc/python/python-cours.html#historique",
     "title": "Introduction à Python",
     "section": "",
-    "text": "Créé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.12\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
+    "text": "Créé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.13: python --version\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
   },
   {
     "objectID": "doc/python/python-cours.html#pourquoi-apprendre-python",
@@ -347,7 +347,7 @@
     "href": "doc/python/python-cours-slides.html#historique",
     "title": "Introduction à Python",
     "section": "Historique",
-    "text": "Historique\n\nCréé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.12\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
+    "text": "Historique\n\nCréé par Guido van Rossum (Pays-Bas)\n1ère version en 1991\nGéré par la Python Software Foundation depuis 2001\nPython 3.13: python --version\n\n\n\nCréé fin 1989 pendant les vacances de Noël\nPython Software Foundation (asso à but non lucratif) : promouvoir et protéger le langage afin d’étendre la communauté"
   },
   {
     "objectID": "doc/python/python-cours-slides.html#pourquoi-apprendre-python",
@@ -410,21 +410,21 @@
     "href": "doc/python/05-POO-introduction.html",
     "title": "Introduction à la POO",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/05-POO-introduction.html#avant-de-commencer",
     "href": "doc/python/05-POO-introduction.html#avant-de-commencer",
     "title": "Introduction à la POO",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/05-POO-introduction.html#la-programmation-orientée-objet",
     "href": "doc/python/05-POO-introduction.html#la-programmation-orientée-objet",
     "title": "Introduction à la POO",
     "section": "1 La programmation orientée objet",
-    "text": "1 La programmation orientée objet\nLa Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d’objets, qui contiennent :\n\ndes attributs (caractéristiques de l’objet)\ndes méthodes (fonctions propres à l’objet)\n\nEn Python, il est possible mais pas obligatoire d’utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.\n\n1.1 « Tout est objet »\nEn Python, tout est un objet (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.\n\nprint(type(1))\nprint(type(\"bonjour\"))\nprint(type([]))\nprint(type({}))          \nprint(type(lambda x: x**2))\n\n\n\n1.2 Définir ses propres objets\nPour créer un objet, nous avons besoin dans un premier temps d’un modèle : une classe.\nNous pouvons voir la classe comme un « moule » qui permettra ensuite de construire des objets.\nPar exemple, nous créons une classe Velo dont voici la documentation :\n    \"\"\"\n    Classe représentant un vélo.\n\n    Attributs:\n        couleur (str): La couleur du vélo.\n        vitesse (int): La vitesse actuelle du vélo.\n        porte_bagage (bool): Indique si le vélo a un porte-bagage.\n\n    Méthodes:\n        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo \n        __str__(): représentation en chaîne de caractères d'un objet Velo\n        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.\n        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.\n        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.\n        est_arrete(): Vérifie si le vélo est complètement arrêté.\n\n    \"\"\"\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        \n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    def accelerer(self, acceleration):\n        self.vitesse += acceleration\n\n    def ralentir(self, deceleration):\n        self.vitesse -= deceleration\n        if self.vitesse &lt; 0:\n            self.vitesse = 0\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n            \n    def est_arrete(self):\n        return self.vitesse == 0\n\nAvec cette classe nous pouvons maintenant créer des instances (objets) de type Velo\n\nv1 = Velo(\"bleu\")\nprint(v1)\n\nv2 = Velo(\"violet\", True)\nprint(v2)\n\n\n## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo\nv1.accelerer(20)\nv1.installer_porte_bagage()\nprint(v1)\n\nAnalysons la syntaxe de construction d’une classe d’objets :\n\nl’instruction class définit la classe d’objets. Différents objets pourront être créés selon le modèle défini par cette classe.\nPar convention, le nom de la classe doit commencer par une majuscule.\nla classe spécifie un certains nombres de fonctions que l’on appelle méthodes : ce sont des fonctions spécifiques à la classe d’objets définie.\nla méthode __init__, est appelée le constructeur. Elle est obligatoire, sinon il est impossible d’instancier d’objets de la classe.\nElle permet de définir les attributs attachés à cette classe d’objets.\nIl est possible de passer des paramètres au constructeur (ex : couleur) pour définir des attributs propres à une instance de l’objet.\nle constructeur a un paramètre obligatoire : self. C’est une référence aux instances qui vont être créées à partir de cette classe.\nLa syntaxe suivante définit un attribut : self.attribut = valeur.\nLa méthode __str__ (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet.\nles autres méthodes sont définies par l’utilisateur. Elles prennent également le self en paramètre, pour accéder aux attributs et méthodes.\nComme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.\n\n\n\n1.3 Attributs\nUn attribut est une variable associée à un objet. Un attribut peut contenir n’importe quel objet Python.\n\nAccéder aux attributs\nUne fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : instance.attribut.\n\nprint(v1.couleur)\nprint(v2.couleur)\nprint()\nprint(v1.vitesse)\nprint(v2.vitesse)\n\nOn voit bien que les deux instances sont autonomes : bien qu’elles soient du même type, leurs attributs diffèrent.\n\n\nModifier un attribut\nModifier un attribut d’une instance est très simple, la syntaxe est : instance.attribut = nouvelle_valeur.\n\nv2.couleur = \"jaune\"\nprint(v2.couleur)\n\n\n\nAttributs de classe\nChaque instance de Velo a ses propres attributs d’instance (couleur, vitesse, porte_bagage).\nIl est possible d’avoir des attributs communs à tous les Velos : les attributs de classe.\nCréons la classe VeloBis pour illustrer avec un attribut comptant le nombre de VeloBis créés.\n\nclass VeloBis:\n    nb_velos_bis = 0                                       # Attribut de classe pour compter le nombre de VeloBis\n\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        VeloBis.nb_velos_bis += 1\n\n\nprint(VeloBis.nb_velos_bis)\nvb1 = VeloBis(\"rose\")\nprint(VeloBis.nb_velos_bis)\nvb2 = VeloBis(\"orange\")\nprint(VeloBis.nb_velos_bis)\n\n\n\n\n1.4 Méthodes\nUne méthode est une fonction associée à un objet. Elle peut utiliser ses attributs, les modifier, et faire intervenir d’autres méthodes de l’objet.\n\nAppeler une méthode\nLa syntaxe pour appeler une méthode d’un objet instancié est la suivante : instance.methode(parametres).\n\nv1.est_arrete()\n\nRemarque : les méthodes n’ont pas d’existence propre en dehors de l’objet.\nNous ne pouvons pas appeler la méthode est_arrete() seule, cela n’a pas de sens.\n\nest_arrete()\n\nRemarque 2 :\n\nle 1er paramètre de chaque méthode d’instance est toujours self pour faire référence à l’objet lui même\nlors des appels aux méthodes, on ne spécifie pas ce paramètre self\n\n\n\nAgir sur les attributs\nTout l’intérêt des méthodes est qu’elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.\nPar exemple :\n\nsi l’on n’utilise pas les méthodes accelerer et decelerer, il est possible de se retrouver avec une vitesse négative\n\n\nv1.vitesse = -10\nprint(v1)\n\nModifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.\nIl est possible d’aller encore plus loin :\n\nv1.vitesse = \"Jean-Michel\"\nprint(v1)\n\nEn utilisant les méthodes, cela évite de se retrouver dans des situations absurdes ou incohérentes.\n\nv1 = Velo(\"Bleu\")\nv1.accelerer(10)\nprint(v1)\nv1.ralentir(20)\nprint(v1)\n\n\n\n\n1.5 Bonus : la classe Property\nPour écarter tout problème, une solution intéressante est d’utiliser la classe property.\nCette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self._vitesse = 0                                    # Attribut privé pour stocker la vitesse\n        self.porte_bagage = porte_bagage\n\n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    @property\n    def vitesse(self):\n        return self._vitesse\n\n    @vitesse.setter\n    def vitesse(self, nouvelle_vitesse):\n        if nouvelle_vitesse &gt;= 0:\n            self._vitesse = nouvelle_vitesse\n        else:\n            raise ValueError(\"La vitesse doit être un nombre positif.\")\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n\n    def est_arrete(self):\n        return self.vitesse == 0\n\n\nv3 = Velo(\"noir\")\nprint(v3)\nv3.vitesse = 10\nprint(v3)\nv3.vitesse = -20\nprint(v3)"
+    "text": "1 La programmation orientée objet\nLa Programmation Orientée Objet (POO) est un paradigme de programmation qui permet de structurer les programmes autour d’objets, qui contiennent :\n\ndes attributs (caractéristiques de l’objet)\ndes méthodes (fonctions propres à l’objet)\n\nEn Python, il est possible mais pas obligatoire d’utiliser la POO. Cependant, le fonctionnement interne de Python est fortement teinté de POO.\n\n1.1 « Tout est objet »\nEn Python, tout est un objet (au sens de la POO). Regardons ce que cela signifie en récupérant le type de différents objets que nous avons vus dans les précédents tutoriels.\n\nprint(type(1))\nprint(type(\"bonjour\"))\nprint(type([]))\nprint(type({}))          \nprint(type(lambda x: x**2))\n\n\n\n1.2 Définir ses propres objets\nPour créer un objet, nous avons besoin dans un premier temps d’un modèle : une classe.\nNous pouvons voir la classe comme un « moule » qui permettra ensuite de construire des objets.\nPar exemple, nous créons une classe Velo dont voici la documentation :\n    \"\"\"\n    Classe représentant un vélo.\n\n    Attributs:\n        couleur (str): La couleur du vélo.\n        vitesse (int): La vitesse actuelle du vélo.\n        porte_bagage (bool): Indique si le vélo a un porte-bagage.\n\n    Méthodes:\n        __init__(couleur, porte_bagage=False): Construit un nouvel objet Velo \n        __str__(): représentation en chaîne de caractères d'un objet Velo\n        accelerer(acceleration): Accélère le vélo en ajoutant l'accélération à sa vitesse actuelle.\n        ralentir(deceleration): Ralentit le vélo en soustrayant la décélération de sa vitesse actuelle.\n        installer_porte_bagage(): Installe un porte-bagage sur le vélo en le mettant à True.\n        est_arrete(): Vérifie si le vélo est complètement arrêté.\n\n    \"\"\"\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        \n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    def accelerer(self, acceleration):\n        self.vitesse += acceleration\n\n    def ralentir(self, deceleration):\n        self.vitesse -= deceleration\n        if self.vitesse &lt; 0:\n            self.vitesse = 0\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n            \n    def est_arrete(self):\n        return self.vitesse == 0\n\nAvec cette classe nous pouvons maintenant créer des instances (objets) de type Velo\n\nv1 = Velo(\"bleu\")\nprint(v1)\n\nv2 = Velo(\"violet\", True)\nprint(v2)\n\n\n## Nous pouvons appliquer les méthodes définies dans la classe à cet objet velo\nv1.accelerer(20)\nv1.installer_porte_bagage()\nprint(v1)\n\nAnalysons la syntaxe de construction d’une classe d’objets :\n\nl’instruction class définit la classe d’objets. Différents objets pourront être créés selon le modèle défini par cette classe.\nPar convention, le nom de la classe doit commencer par une majuscule.\nla classe spécifie un certains nombres de fonctions que l’on appelle méthodes : ce sont des fonctions spécifiques à la classe d’objets définie.\nla méthode __init__, est appelée le constructeur. Elle est obligatoire, sinon il est impossible d’instancier d’objets de la classe.\nElle permet de définir les attributs attachés à cette classe d’objets.\nIl est possible de passer des paramètres au constructeur (ex : couleur) pour définir des attributs propres à une instance de l’objet.\nle constructeur a un paramètre obligatoire : self. C’est une référence aux instances qui vont être créées à partir de cette classe.\nLa syntaxe suivante définit un attribut : self.attribut = valeur.\nLa méthode __str__ (facultative) permet de redéfinir la représentation en chaîne de caractères d’un objet.\nles autres méthodes sont définies par l’utilisateur. Elles prennent également le self en paramètre, pour accéder aux attributs et méthodes.\nComme ce sont des fonctions, elles peuvent également admettre d’autres paramètres.\n\n\n\n1.3 Attributs\nUn attribut est une variable associée à un objet. Un attribut peut contenir n’importe quel objet Python.\n\nAccéder aux attributs\nUne fois que l’objet est instancié, il est possible d’accéder à ses attributs. La syntaxe est simple : instance.attribut.\n\nprint(v1.couleur)\nprint(v2.couleur)\nprint()\nprint(v1.vitesse)\nprint(v2.vitesse)\n\nOn voit bien que les deux instances sont autonomes : bien qu’elles soient du même type, leurs attributs diffèrent.\n\n\nModifier un attribut\nModifier un attribut d’une instance est très simple, la syntaxe est : instance.attribut = nouvelle_valeur.\n\nv2.couleur = \"jaune\"\nprint(v2.couleur)\n\n\n\nAttributs de classe\nChaque instance de Velo a ses propres attributs d’instance (couleur, vitesse, porte_bagage).\nIl est possible d’avoir des attributs communs à tous les Velos : les attributs de classe.\nCréons la classe VeloBis pour illustrer avec un attribut comptant le nombre de VeloBis créés.\n\nclass VeloBis:\n    nb_velos_bis = 0                                       # Attribut de classe pour compter le nombre de VeloBis\n\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        VeloBis.nb_velos_bis += 1\n\n\nprint(VeloBis.nb_velos_bis)\nvb1 = VeloBis(\"rose\")\nprint(VeloBis.nb_velos_bis)\nvb2 = VeloBis(\"orange\")\nprint(VeloBis.nb_velos_bis)\n\n\n\n\n1.4 Méthodes\nUne méthode est une fonction associée à un objet. Elle peut utiliser ses attributs, les modifier, et faire intervenir d’autres méthodes de l’objet.\n\nAppeler une méthode\nLa syntaxe pour appeler une méthode d’un objet instancié est la suivante : instance.methode(parametres).\n\nv1.est_arrete()\n\nRemarque : les méthodes n’ont pas d’existence propre en dehors de l’objet.\nNous ne pouvons pas appeler la méthode est_arrete() seule, cela n’a pas de sens.\n\nest_arrete()\n\nRemarque 2 :\n\nle 1er paramètre de chaque méthode d’instance est toujours self pour faire référence à l’objet lui même\nlors des appels aux méthodes, on ne spécifie pas ce paramètre self\n\n\n\nAgir sur les attributs\nTout l’intérêt des méthodes est qu’elles peuvent accéder aux attributs, les modifier et mettre en place des contrôles.\nPar exemple :\n\nsi l’on n’utilise pas les méthodes accelerer et decelerer, il est possible de se retrouver avec une vitesse négative\n\n\nv1.vitesse = -10\nprint(v1)\n\nModifier directement un attribut de cette manière est une mauvaise pratique car on n’effectue aucun contrôle sur ce qui est saisi.\nIl est possible d’aller encore plus loin :\n\nv1.vitesse = \"Jean-Michel\"\nprint(v1)\n\nEn utilisant les méthodes, cela évite de se retrouver dans des situations absurdes ou incohérentes.\n\nv1 = Velo(\"Bleu\")\nv1.accelerer(10)\nprint(v1)\nv1.ralentir(20)\nprint(v1)\n\n\n\n\n1.5 Bonus : la classe Property\nPour écarter tout problème, une solution intéressante est d’utiliser la classe property Cette classe property permet sans changer la syntaxe d’accès aux attributs d’appeler des mutateurs.\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self._vitesse = 0                                    # Attribut privé pour stocker la vitesse\n        self.porte_bagage = porte_bagage\n\n    def __str__(self):\n        s = \"Je suis un vélo \" + self.couleur + \".\"\n        s += \" Ma vitesse est de : \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" J'ai un porte-bagages.\"\n        return s\n\n    @property\n    def vitesse(self):\n        return self._vitesse\n\n    @vitesse.setter\n    def vitesse(self, nouvelle_vitesse):\n        if nouvelle_vitesse &gt;= 0:\n            self._vitesse = nouvelle_vitesse\n        else:\n            raise ValueError(\"La vitesse doit être un nombre positif.\")\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n\n    def est_arrete(self):\n        return self.vitesse == 0\n\n\nv3 = Velo(\"noir\")\nprint(v3)\nv3.vitesse = 10\nprint(v3)\nv3.vitesse = -20\nprint(v3)"
   },
   {
     "objectID": "doc/python/05-POO-introduction.html#bonnes-pratiques",
@@ -445,14 +445,14 @@
     "href": "doc/python/03-tests-et-boucles.html",
     "title": "Tests et Boucles",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/03-tests-et-boucles.html#avant-de-commencer",
     "href": "doc/python/03-tests-et-boucles.html#avant-de-commencer",
     "title": "Tests et Boucles",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/03-tests-et-boucles.html#structures-condionnelles-et-boucles",
@@ -487,14 +487,14 @@
     "href": "doc/python/01-types-et-variables.html",
     "title": "Types et variables",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/01-types-et-variables.html#avant-de-commencer",
     "href": "doc/python/01-types-et-variables.html#avant-de-commencer",
     "title": "Types et variables",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/01-types-et-variables.html#introduction",
@@ -579,6 +579,482 @@
     "title": "Datalab",
     "section": "Liens utiles",
     "text": "Liens utiles\n\nDocumentation et tutoriels\nPrésentation du Datalab\nDécouverte du Datalab"
+  },
+  {
+    "objectID": "doc/english/sql/sql-exercice-en.html",
+    "href": "doc/english/sql/sql-exercice-en.html",
+    "title": "Exercice BDR et SQL",
+    "section": "",
+    "text": "In this practical work, you will:\n\ncreate a database: start a PostgreSQL service\nconnect to this database: use a CloudBeaver service\ninsert data using an SQL script\nwrite SQL queries to answer the questions"
+  },
+  {
+    "objectID": "doc/english/sql/sql-exercice-en.html#objective",
+    "href": "doc/english/sql/sql-exercice-en.html#objective",
+    "title": "Exercice BDR et SQL",
+    "section": "",
+    "text": "In this practical work, you will:\n\ncreate a database: start a PostgreSQL service\nconnect to this database: use a CloudBeaver service\ninsert data using an SQL script\nwrite SQL queries to answer the questions"
+  },
+  {
+    "objectID": "doc/english/sql/sql-exercice-en.html#setup",
+    "href": "doc/english/sql/sql-exercice-en.html#setup",
+    "title": "Exercice BDR et SQL",
+    "section": "1 Setup",
+    "text": "1 Setup\n\n1.1 Start the services\n\nConnect to SSP Cloud\nStart a PostgreSQL service\nStart a CloudBeaver service\nOpen CloudBeaver\n\nusername: user-\npassword: paste your password\n\n\n\n\n\n\n\n\nTipWhat is what?\n\n\n\n\nPostgreSQL: Database\nCloudBeaver: Software used to communicate with a database\n\nIt is possible to connect directly to a database, but it is much easier to use a tool such as CloudBeaver.\n\n\n\n\n1.2 Create a connection\nNormally, if you start both services in the correct order, when launching CloudBeaver, the PostgreSQL database is detected and the connection is automatically created.\nHas the connection been created?\n\nIf yes, it appears on the left in CloudBeaver (connection list)\nIf no, create the connection\n\n\n\n\n\n\n\nNoteCreate a connection\n\n\n\n\nFirst open the README of the PostgreSQL service\n\nit contains the information needed to connect to the database\n\nIn CloudBeaver &gt; New connection\nSelect PostgreSQL\nFill in the following fields\n\nHostname: postgresql-&lt;...&gt;\nPort: 5432\nDatabase: defaultdb\nUsername: user-&lt;username&gt;\nPassword: &lt;password&gt;\n\nClick TEST, then CREATE\n\n\n\nOnce the connection has been created, open it:\n\nRight-click on the connection &gt; Open\n\na small green dot appears next to it\n\n\nFinally, open an SQL editor to write queries:\n\nRight-click &gt; SQL Editor\nCheck that you are using the public@defaultdb profile\n\nAt the top in the blue banner, otherwise select this profile\n\n\n\n\n1.3 Insert data\n\nCopy the contents of the file echecs.sql\nPaste it into CloudBeaver\nExecute the script\n\nOrange icon with a scroll containing an arrow 📜\n\n\nIf you did not get any error message, check that the tables were created:\n\nDelete the whole script. Once the tables are created, you no longer need it\nSELECT * FROM echecs.tournoi;\nClick the orange arrow\n\n\n\n\n\n\n\nTip\n\n\n\n\nScroll containing an arrow (ALT+X) ➡️ execute all queries in the editor\nOrange arrow (CTRL+ENTER) ➡️ execute the current query (where the mouse cursor is located)\n\n\n\n\n\n1.4 Alternatives\nOther tools can be used to complete the exercise:\n\nhttps://onyxia.lab.groupe-genes.fr/: works like SSP Cloud\nDBeaver on the ENSAI VM\n\nConnect to the ENSAI VM\nLaunch the DBeaver software\n\nhttps://sqliteonline.com/\n\nPostgreSQL &gt; Click to connect\n\nhttps://aiven.io/tools/pg-playground"
+  },
+  {
+    "objectID": "doc/english/sql/sql-exercice-en.html#data-description",
+    "href": "doc/english/sql/sql-exercice-en.html#data-description",
+    "title": "Exercice BDR et SQL",
+    "section": "2 Data description",
+    "text": "2 Data description\nWe have a list of players and tournaments. Players can participate in different tournaments.\nA tournament is supervised by an arbiter. An arbiter is a player who has obtained an arbiter grade.\nIn a tournament, games are played at a certain time control (Classical, Rapid, Blitz).\n\n\n\n\n\nclassDiagram\n  class arbitre_grade {\n    id_arbitre_grade: INT(PK)\n    nom: VARCHAR\n  }\n\n  class joueur {\n    id_joueur: INT(PK)\n    pseudo: VARCHAR\n    nom: VARCHAR\n    prenom: VARCHAR\n    elo: INT\n    mail: VARCHAR\n    id_arbitre_grade: INT(FK -&gt; arbitre_grade)\n  }\n\n  class cadence {\n    id_cadence: INT(PK)\n    nom: VARCHAR\n  }\n\n  class tournoi {\n    id_tournoi: INT(PK)\n    id_arbitre: INT(FK -&gt; joueur)\n    nom: VARCHAR\n    debut: DATE\n    fin: DATE\n    nb_rondes: INT\n    id_cadence: INT(FK -&gt; cadence)\n  }\n\n  class participant {\n    id_tournoi: INT(FK -&gt; tournoi)\n    id_joueur: INT(FK -&gt; joueur)\n  }\n\n  arbitre_grade -- joueur\n  cadence -- tournoi\n  tournoi -- participant\n  joueur -- participant"
+  },
+  {
+    "objectID": "doc/english/sql/sql-exercice-en.html#questions",
+    "href": "doc/english/sql/sql-exercice-en.html#questions",
+    "title": "Exercice BDR et SQL",
+    "section": "3 Questions",
+    "text": "3 Questions\n\n3.1 Discovering tables\n\nList all players\nDo the same for the other tables to observe their contents\nList all players ordered by descending Elo rating\nList all players with an Elo rating less than or equal to 2000\nList all players with an Elo rating less than or equal to 2000 and whose first name contains an “e” (uppercase or lowercase)\n\n💡 see the UPPER method\n\n\n\n\n3.2 Updating data\n\nCreate the player: Martine Dupont, Elo: 1999, Elite Arbiter\nDelete the player with the username marc78\nTry to delete the player with id: 20\n\nWhy does this not work? What should be done to delete this player?\n\nList the players who are arbiters\n\n💡 see IS NOT NULL\n\nAdd a boolean column is_arbiter to the player table\nFill this new column for all players\n\n\n\n3.3 Joins\n\nList players (last name, first name) who are arbiters, along with their arbiter grade\nList all players (last name, first name) along with their arbiter grade if they have one\n\n\n\n3.4 Aggregations\n\nCount the number of players who are arbiters\nCount the number of arbiters by grade\nCount the number of arbiters by grade and display only grades where the average Elo rating of arbiters is greater than 2000\nDisplay the list of tournaments (tournament name, time control, arbiter)\nAdd the number of players and the maximum Elo rating of the players\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nLink to the solution"
+  },
+  {
+    "objectID": "doc/english/python/python-notebooks-en.html",
+    "href": "doc/english/python/python-notebooks-en.html",
+    "title": "Python Notebooks",
+    "section": "",
+    "text": "To discover Python, we will start by coding in these 5 notebooks:\n\nTypes and variables\nLists and dictionaries\nLoops\nFunctions\nIntroduction to Object-Oriented Programming\n\nTo create these notebooks, I was inspired by the resources below:\n\nIntroduction to Python training from the INSEE SSP Cloud\nPython Course from Université Paris Cité"
+  },
+  {
+    "objectID": "doc/english/python/python-notebooks-en.html#notebooks",
+    "href": "doc/english/python/python-notebooks-en.html#notebooks",
+    "title": "Python Notebooks",
+    "section": "",
+    "text": "To discover Python, we will start by coding in these 5 notebooks:\n\nTypes and variables\nLists and dictionaries\nLoops\nFunctions\nIntroduction to Object-Oriented Programming\n\nTo create these notebooks, I was inspired by the resources below:\n\nIntroduction to Python training from the INSEE SSP Cloud\nPython Course from Université Paris Cité"
+  },
+  {
+    "objectID": "doc/english/python/python-notebooks-en.html#using-a-notebook",
+    "href": "doc/english/python/python-notebooks-en.html#using-a-notebook",
+    "title": "Python Notebooks",
+    "section": "2 Using a notebook",
+    "text": "2 Using a notebook\n\n\n\n\n\n\nImportantInstructions\n\n\n\n\nStart by going to one of the 5 notebooks mentioned above\nDownload the .ipynb file to your machine\nConnect to one of the services offered below\nUpload the .ipynb file to this service\n\n\n\n\n2.1 Launching a Jupyter service\n\nConnect to the SSP Cloud\nGo to the Service Catalog menu\nLaunch a Jupyter-python service, then open it\nImport a notebook: at the top left, below the menu bar, use the ⬆️ arrow\n\nIn the left column:\n\nthe folder icon allows you to browse files\nthe list icon allows you to display the table of contents\n\nThe Code field indicates whether the cell expects Python code or text (Markdown)\n\n\n\n\n\n\nNoteAlternatives\n\n\n\n\n\nHere are other possibilities for using a notebook:\n\nthe GENES datalab\nan ENSAI Jupyter cluster ➡️ if you have your username and password\nJupyter Lab online\nKaggle notebooks\nGoogle Colab\n\n\n\n\n\n\n2.2 Cell types\nA notebook is made up of cells. You can create a new cell by clicking on the + button in the toolbar. There are two main types of cells:\n\ncode cells (where you write and execute Python code)\ntext cells (where you write formatted text using Markdown)\n\n\n\n\n\n\n\nTipThe Markdown language\n\n\n\n\n\nIt is a simple and intuitive language that allows you to format text (this website is generated with Markdown code).\nMany resources are available on the internet, for example\nSome examples:\n\n\n\nCode\nFormatting\n\n\n\n\n**bold text**\nbold text\n\n\n*italic text*\nitalic text\n\n\n# Level 1 title\n\n\n\n## Level 2 title\n\n\n\n- Bullet point item\n- Bullet point item\n\n\n\n\n\n\nThe desired cell type can be changed in the toolbar."
+  },
+  {
+    "objectID": "doc/english/python/python-notebooks-en.html#useful-commands",
+    "href": "doc/english/python/python-notebooks-en.html#useful-commands",
+    "title": "Python Notebooks",
+    "section": "3 Useful commands",
+    "text": "3 Useful commands\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nSHIFT + ENTER\nExecute a cell and move to the next one.\n\n\nCTRL + ENTER\nExecute a cell without moving to the next one.\n\n\nESC\nSwitch to command mode (cell borders become blue).\n\n\nENTER\nSwitch to edit mode (you can modify the cell content).\n\n\nA\nInsert a cell above the current cell.\n\n\nB\nInsert a cell below the current cell.\n\n\nD + D\nDelete a cell."
+  },
+  {
+    "objectID": "doc/english/python/python-notebooks-en.html#useful-resources",
+    "href": "doc/english/python/python-notebooks-en.html#useful-resources",
+    "title": "Python Notebooks",
+    "section": "4 Useful resources",
+    "text": "4 Useful resources\nYou will find more information about notebooks on the INSEE Python introductory training website."
+  },
+  {
+    "objectID": "doc/english/python/correction.html",
+    "href": "doc/english/python/correction.html",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "# Plusieurs manières de faire, par exemple\n\nnotes = [\"do\", \"re\", \"re\", \"re\", \"fa\", \"sol\", \"solsi\", \"la\"]\n\nnotes.pop(3)           # suppression par index\nnotes.pop(2)\nnotes.remove(\"solsi\")  # suppression par valeur\nnotes.insert(2, \"mi\")  \n\nnotes\n\n['do', 're', 'mi', 'fa', 'sol', 'la']\n\n\n\n\n\n\nl = [\"un\", \"deux\", \"trois\", \"quatre\"]\n\n# Inverse la liste sans la modifier\nl_inv = list(reversed(l)) # cast en list\nprint(l_inv)\n\n# Modifie la liste\nl.reverse()\nprint(l)\n\n['quatre', 'trois', 'deux', 'un']\n['quatre', 'trois', 'deux', 'un']\n\n\n\n\n\n\nentiers = [n for n in range(1, 10)]\nprint(entiers)\n\nentiers.pop()\nprint(entiers)\n\nentiers.pop(-1)\nprint(entiers)\n\n[1, 2, 3, 4, 5, 6, 7, 8, 9]\n[1, 2, 3, 4, 5, 6, 7, 8]\n[1, 2, 3, 4, 5, 6, 7]\n\n\n\n\n\n\nla = [\"triangle\", \"carré\", \"Rectangle\"]\nprint(max(la)) \nprint(min(la)) \n\n# Pour les chaines de caractères, c'est ordonné par code ASCII\n\n# Pas de notion d'ordre entre chaines de caractères et types numériques\n\ntriangle\nRectangle\n\n\n\n\n\n\ntype([])\n\n# ex extraire les entiers positifs\nrelatifs = [1, 12, -20, 5, 8, -19, -2]\n\npositifs = []\n\nfor z in relatifs:\n    if z &gt;= 0:\n        positifs.append(z)\n\nprint(positifs)\n\n[1, 12, 5, 8]\n\n\n\n\n\n🚧 TODO : faire sans boucle\n\nresultats = {\n    \"6emeA\": {\"Miranda\" : {\"notes\": {\"physique\": 16, \"histoire\": 12}},\n              \"Celestin\": {\"notes\": {\"physique\": \"absent\", \"histoire\": 18}}\n             },\n    \"6emeB\": {\"Hypolyte\": {\"notes\": {\"maths\": 11, \"anglais\": 0}},\n              \"Josephine\": {\"notes\": {\"maths\": 16, \"anglais\": 20}}\n             }\n}\n\nprint(list(resultats.keys()))\nprint(resultats[\"6emeA\"][\"Miranda\"][\"notes\"][\"histoire\"])\nprint(list(resultats[\"6emeB\"][\"Hypolyte\"][\"notes\"].values()))\nprint(list(resultats[\"6emeB\"].keys()))\n\nmatieres_6emeA = []\nfor eleve in resultats[\"6emeA\"].values():\n    matieres_6emeA += eleve[\"notes\"].keys()\n    \nprint(list(set(matieres_6emeA)))\n\n['6emeA', '6emeB']\n12\n[11, 0]\n['Hypolyte', 'Josephine']\n['physique', 'histoire']\n\n\n\n\n\n🚧 TODO : faire sans boucle\n\nchaine = \"Je compte le nombre d'occurences de chaque caractère de la phrase courante.\"\n\nlettres = {}\n\nfor c in chaine:\n    if c in lettres:\n        lettres[c] += 1\n    else:\n        lettres[c] = 1\n\nfor c, count in lettres.items():\n    print(f\"'{c}': {count}\")\n\n'J': 1\n'e': 12\n' ': 11\n'c': 8\n'o': 4\n'm': 2\n'p': 2\n't': 3\n'l': 2\n'n': 3\n'b': 1\n'r': 6\n'd': 3\n''': 1\n'u': 3\n's': 2\n'h': 2\n'a': 6\n'q': 1\n'è': 1\n'.': 1"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex1",
+    "href": "doc/english/python/correction.html#ex1",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "# Plusieurs manières de faire, par exemple\n\nnotes = [\"do\", \"re\", \"re\", \"re\", \"fa\", \"sol\", \"solsi\", \"la\"]\n\nnotes.pop(3)           # suppression par index\nnotes.pop(2)\nnotes.remove(\"solsi\")  # suppression par valeur\nnotes.insert(2, \"mi\")  \n\nnotes\n\n['do', 're', 'mi', 'fa', 'sol', 'la']"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex2",
+    "href": "doc/english/python/correction.html#ex2",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "l = [\"un\", \"deux\", \"trois\", \"quatre\"]\n\n# Inverse la liste sans la modifier\nl_inv = list(reversed(l)) # cast en list\nprint(l_inv)\n\n# Modifie la liste\nl.reverse()\nprint(l)\n\n['quatre', 'trois', 'deux', 'un']\n['quatre', 'trois', 'deux', 'un']"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex3",
+    "href": "doc/english/python/correction.html#ex3",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "entiers = [n for n in range(1, 10)]\nprint(entiers)\n\nentiers.pop()\nprint(entiers)\n\nentiers.pop(-1)\nprint(entiers)\n\n[1, 2, 3, 4, 5, 6, 7, 8, 9]\n[1, 2, 3, 4, 5, 6, 7, 8]\n[1, 2, 3, 4, 5, 6, 7]"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex4",
+    "href": "doc/english/python/correction.html#ex4",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "la = [\"triangle\", \"carré\", \"Rectangle\"]\nprint(max(la)) \nprint(min(la)) \n\n# Pour les chaines de caractères, c'est ordonné par code ASCII\n\n# Pas de notion d'ordre entre chaines de caractères et types numériques\n\ntriangle\nRectangle"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex5",
+    "href": "doc/english/python/correction.html#ex5",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "type([])\n\n# ex extraire les entiers positifs\nrelatifs = [1, 12, -20, 5, 8, -19, -2]\n\npositifs = []\n\nfor z in relatifs:\n    if z &gt;= 0:\n        positifs.append(z)\n\nprint(positifs)\n\n[1, 12, 5, 8]"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex6",
+    "href": "doc/english/python/correction.html#ex6",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "🚧 TODO : faire sans boucle\n\nresultats = {\n    \"6emeA\": {\"Miranda\" : {\"notes\": {\"physique\": 16, \"histoire\": 12}},\n              \"Celestin\": {\"notes\": {\"physique\": \"absent\", \"histoire\": 18}}\n             },\n    \"6emeB\": {\"Hypolyte\": {\"notes\": {\"maths\": 11, \"anglais\": 0}},\n              \"Josephine\": {\"notes\": {\"maths\": 16, \"anglais\": 20}}\n             }\n}\n\nprint(list(resultats.keys()))\nprint(resultats[\"6emeA\"][\"Miranda\"][\"notes\"][\"histoire\"])\nprint(list(resultats[\"6emeB\"][\"Hypolyte\"][\"notes\"].values()))\nprint(list(resultats[\"6emeB\"].keys()))\n\nmatieres_6emeA = []\nfor eleve in resultats[\"6emeA\"].values():\n    matieres_6emeA += eleve[\"notes\"].keys()\n    \nprint(list(set(matieres_6emeA)))\n\n['6emeA', '6emeB']\n12\n[11, 0]\n['Hypolyte', 'Josephine']\n['physique', 'histoire']"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex7",
+    "href": "doc/english/python/correction.html#ex7",
+    "title": "Corrections Notebooks",
+    "section": "",
+    "text": "🚧 TODO : faire sans boucle\n\nchaine = \"Je compte le nombre d'occurences de chaque caractère de la phrase courante.\"\n\nlettres = {}\n\nfor c in chaine:\n    if c in lettres:\n        lettres[c] += 1\n    else:\n        lettres[c] = 1\n\nfor c, count in lettres.items():\n    print(f\"'{c}': {count}\")\n\n'J': 1\n'e': 12\n' ': 11\n'c': 8\n'o': 4\n'm': 2\n'p': 2\n't': 3\n'l': 2\n'n': 3\n'b': 1\n'r': 6\n'd': 3\n''': 1\n'u': 3\n's': 2\n'h': 2\n'a': 6\n'q': 1\n'è': 1\n'.': 1"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex1-1",
+    "href": "doc/english/python/correction.html#ex1-1",
+    "title": "Corrections Notebooks",
+    "section": "ex1",
+    "text": "ex1\n\nsomme = 0\nfor i in range(1, 11):\n    somme += i**2\nsomme\n\n385"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex2-1",
+    "href": "doc/english/python/correction.html#ex2-1",
+    "title": "Corrections Notebooks",
+    "section": "ex2",
+    "text": "ex2\n\nfor i in range(5, -1, -1):\n    print(i)\nprint(\"Boom\")\n\n5\n4\n3\n2\n1\n0\nBoom"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex3-1",
+    "href": "doc/english/python/correction.html#ex3-1",
+    "title": "Corrections Notebooks",
+    "section": "ex3",
+    "text": "ex3\n\ngamme = ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']\n\ni = 0\nwhile i &lt; len(gamme):\n    print(\"La note numéro \" + str(i) + \" de la gamme de do majeur est \" + gamme[i])\n    i += 1\n\nLa note numéro 0 de la gamme de do majeur est do\nLa note numéro 1 de la gamme de do majeur est re\nLa note numéro 2 de la gamme de do majeur est mi\nLa note numéro 3 de la gamme de do majeur est fa\nLa note numéro 4 de la gamme de do majeur est sol\nLa note numéro 5 de la gamme de do majeur est la\nLa note numéro 6 de la gamme de do majeur est si"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex4-1",
+    "href": "doc/english/python/correction.html#ex4-1",
+    "title": "Corrections Notebooks",
+    "section": "ex4",
+    "text": "ex4\n\nliste = [34, 7, 20, 12, 50, 23, 16, 28, 6, 11, 19, 13, 26, 8, 9]\ntaille = len(liste)\n\nfor i in range(taille):\n    for j in range(i, taille):\n        if liste[i] &gt; liste[j]:\n            tmp = liste[j]\n            liste[j] = liste[i]\n            liste[i] = tmp\nliste\n\n[6, 7, 8, 9, 11, 12, 13, 16, 19, 20, 23, 26, 28, 34, 50]"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex5-1",
+    "href": "doc/english/python/correction.html#ex5-1",
+    "title": "Corrections Notebooks",
+    "section": "ex5",
+    "text": "ex5\n\na = 0\nb = 1\nfor i in range(10):\n    print(a + b)\n    b = a + b\n    a = b - a\n\n1\n2\n3\n5\n8\n13\n21\n34\n55\n89"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex6-1",
+    "href": "doc/english/python/correction.html#ex6-1",
+    "title": "Corrections Notebooks",
+    "section": "ex6",
+    "text": "ex6\n\nx = [8, 18, 6, 0, 15, 17.5, 9, 1]\nminimum = float('inf')\nmaximum = -float('inf')\n\nfor i in x:\n    if i &gt; maximum:\n        maximum = i\n    if i &lt; minimum:\n        minimum = i\n        \nprint(\"max : \" + str(maximum))\nprint(\"min : \" + str(minimum))\n\nmax : 18\nmin : 0"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex7-1",
+    "href": "doc/english/python/correction.html#ex7-1",
+    "title": "Corrections Notebooks",
+    "section": "ex7",
+    "text": "ex7\nfor eleve in notes:\n    print(eleve, end = ' : ')\n    nb_notes = 0\n    somme = 0\n    for note in notes[eleve]:\n        nb_notes += 1\n        somme += note\n    print(somme/nb_notes)"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex1-2",
+    "href": "doc/english/python/correction.html#ex1-2",
+    "title": "Corrections Notebooks",
+    "section": "ex1",
+    "text": "ex1\n\ndef puissance(x, y):\n    return x**y\n\nprint(puissance(2, 10))\n\n1024"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex2-2",
+    "href": "doc/english/python/correction.html#ex2-2",
+    "title": "Corrections Notebooks",
+    "section": "ex2",
+    "text": "ex2\nimport numpy as np\n\ndef statistiques_descriptives(liste):\n    return round(np.mean(liste),2), round(np.var(liste),2)\n\nstatistiques_descriptives([1,12,20,3,8,15,17])"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex3-2",
+    "href": "doc/english/python/correction.html#ex3-2",
+    "title": "Corrections Notebooks",
+    "section": "ex3",
+    "text": "ex3\n\ndef est_pair(i):\n    if type(i) is not int:\n        print(\"Le paramètre \" + str(i) + \" n'est pas entier\")\n    else:\n        return i%2 == 0\n    \nprint(est_pair(12))\nprint(est_pair(8.5))\nprint(est_pair(\"toto\"))\n\nTrue\nLe paramètre 8.5 n'est pas entier\nNone\nLe paramètre toto n'est pas entier\nNone"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex4-2",
+    "href": "doc/english/python/correction.html#ex4-2",
+    "title": "Corrections Notebooks",
+    "section": "ex4",
+    "text": "ex4\n\ndef enlever_doublons(liste, trier = False):\n    if trier:\n        return sorted(set(liste))\n    else:\n        return list(set(liste))\n\nprint(enlever_doublons([1,12,1,4,4]))\nprint(enlever_doublons([1,12,1,4,4], True))\n\n[1, 12, 4]\n[1, 4, 12]"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex5-2",
+    "href": "doc/english/python/correction.html#ex5-2",
+    "title": "Corrections Notebooks",
+    "section": "ex5",
+    "text": "ex5\n\ndef factoriel_rec(i):\n    if i == 0:\n        return 1\n    else:\n        return i * factoriel_rec(i-1)\n    \nfactoriel_rec(5)\n\n120"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex6-2",
+    "href": "doc/english/python/correction.html#ex6-2",
+    "title": "Corrections Notebooks",
+    "section": "ex6",
+    "text": "ex6\n\ndef appliquer_fonction_liste(liste, fonction):\n    res = [fonction(element) for element in liste]\n    return res\n\nl = [\"abcd\",\"Ensai\",\"ReNNes\"]\nmajuscule = lambda c:c.upper()\n\nappliquer_fonction_liste(l, majuscule)\n\n['ABCD', 'ENSAI', 'RENNES']"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex1-3",
+    "href": "doc/english/python/correction.html#ex1-3",
+    "title": "Corrections Notebooks",
+    "section": "ex1",
+    "text": "ex1\n# by ChatGPT\n\nclass Etudiant:\n    def __init__(self, nom, age):\n        self.nom = nom\n        self.age = age\n        self.liste_notes = []\n\n    def ajouter_note(self, note):\n        self.liste_notes.append(note)\n\n    def calculer_moyenne(self):\n        if len(self.liste_notes) == 0:\n            return 0\n        total = sum(self.liste_notes)\n        moyenne = total / len(self.liste_notes)\n        return moyenne\n\n# Exemple d'utilisation\netudiant1 = Etudiant(\"Alice\", 20)\netudiant1.ajouter_note(15)\netudiant1.ajouter_note(18)\netudiant1.ajouter_note(12)\nmoyenne_etudiant1 = etudiant1.calculer_moyenne()\nprint(f\"Moyenne de {etudiant1.nom}: {moyenne_etudiant1}\")"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex2-3",
+    "href": "doc/english/python/correction.html#ex2-3",
+    "title": "Corrections Notebooks",
+    "section": "ex2",
+    "text": "ex2\nclass Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n        \n    def distance(self, autrePoint):\n        return math.sqrt((self.x - autrePoint.x)**2 + (self.y - autrePoint.y)**2)\n    \np1 = Point(0,0)\np2 = Point(1,1)\nprint(p1.distance(p2))\n\nclass Cercle:\n    def __init__(self, p_centre, p_rayon):\n        self.centre = p_centre\n        self.rayon = p_rayon\n        \n    def calculer_surface(self):\n        return math.pi * self.rayon**2\n    \nc1 = Cercle(p1, 2)\nprint(c1.calculer_surface())"
+  },
+  {
+    "objectID": "doc/english/python/correction.html#ex3-3",
+    "href": "doc/english/python/correction.html#ex3-3",
+    "title": "Corrections Notebooks",
+    "section": "ex3",
+    "text": "ex3\nclass CompteBancaire:\n    def __init__(self, titulaire, solde):\n        self.titulaire = titulaire\n        self.solde = solde\n        \n    def afficher_solde(self):\n        print(\"Le solde du compte de \" + self.titulaire + \" est \" + str(self.solde) + \" euros.\")\n        \n    def deposer(self, montant):\n        self.solde += montant\n    \n    def retirer(self, montant):\n        if self.solde &gt;= montant:\n            self.solde -= montant\n            print(\"Retrait accepté.\")\n        else:\n            print(\"Retrait refusé : fonds insuffisants.\")\n            \n    def transferer(self, autreCompte, montant):\n        if self.solde &gt;= montant:\n            autreCompte.solde += montant\n            self.solde -= montant\n        else:\n            print(\"Transfert refusé : fonds insuffisants.\")\n            \nclient1 = CompteBancaire(\"Bernard\", 2000)\nclient2 = CompteBancaire(\"Bianca\", 5000)\n\nclient1.afficher_solde()\nclient2.afficher_solde()\n\nprint()  # saut de ligne\n\nclient1.deposer(1000)\nclient1.afficher_solde() # +1000\n\nprint()\n\nclient2.retirer(6000)\nclient2.afficher_solde() # aucun changement\n\nprint()\n\nclient2.retirer(1000)\nclient2.afficher_solde() # -1000\n\nprint()\n\nclient2.transferer(client1, 5000)\nclient2.afficher_solde() # aucun changement\n\nprint()\n\nclient2.transferer(client1, 2000)\nclient2.afficher_solde() # - 2000\nclient1.afficher_solde() # + 2000"
+  },
+  {
+    "objectID": "doc/english/python/04-fonctions-en.html",
+    "href": "doc/english/python/04-fonctions-en.html",
+    "title": "Functions",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/04-fonctions-en.html#before-starting",
+    "href": "doc/english/python/04-fonctions-en.html#before-starting",
+    "title": "Functions",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/04-fonctions-en.html#functions",
+    "href": "doc/english/python/04-fonctions-en.html#functions",
+    "title": "Functions",
+    "section": "1 Functions",
+    "text": "1 Functions\nThe idea of a function is to group together pieces of code that could be used in several places in your program. Using functions is a good practice:\n\nit reduces code duplication\nit allows you to better structure your code and make it clearer\n\nA function is composed of:\n\na set of parameters\ninstructions that use the parameters\nreturns or displays a result\n\nThe def keyword is used to define a function. Here is an example of a function:\n\nFunction name: ma_fonction\nParameters: 2 parameters p1 and p2\nOutput: result of the operation p1 x p2 + p1 + 5\n\n\ndef ma_fonction(p1, p2):\n    resultat = p1 * p2 + p1 + 5\n    return resultat\n\nNow that our function is defined, we can call it as many times as we want\n\nma_fonction(2, 6)\n\n\nma_fonction(5, 1) + ma_fonction(8, 2)\n\n\n1.1 Arguments\nArguments are the parameters of the function. When we call a function by specifying arguments, we say that we “pass” arguments to it. These arguments then become variables that can only be used inside the function.\n\ndef maximum(a, b):\n    if a &gt; b:\n        resultat = a\n    else:\n        resultat = b\n    return resultat\n\n\nmaximum(1, 5)\n\nOutside functions, arguments no longer exist and are no longer known.\n\na\n\n\nPositional arguments and keyword arguments\nIn Python, functions support two ways of passing arguments:\n\npositional arguments: arguments are passed in the order in which they were defined\nkeyword arguments: the parameter name is specified when passing the argument\n\nLet’s illustrate this difference using a function that simply performs a division.\n\ndef division(x, y):\n    if y == 0:\n        print(\"ERROR: Division by 0 is impossible\")\n    else:\n        return x / y\n\n\n# Positional arguments\ndivision(8, 2)\n\n\n# Keyword arguments\ndivision(x=8, y=2)\n\nIn the case of positional arguments, respecting the order is mandatory.\n\nprint(division(0, 5))\nprint(division(5, 0))\n\nWe notice that None is displayed above. The explanation is that when we enter the if y == 0 part of the code, there is no return. Therefore, by default, the method returns None, which represents the absence of a value.\nIn the case of keyword arguments, the order no longer matters.\n\nprint(division(x=0, y=5))\nprint(division(y=5, x=0))\n\n\n\nRequired arguments and optional arguments\nWhen defining a function, it is common to want to combine:\n\narguments that the user must absolutely specify\noptional arguments that specify a default behavior of the function, but can also be modified if necessary\n\nLet’s look at how we can modify the behavior of the print function using an optional argument.\n\nprint(\"salut\")\nprint(\"salut\")\n\n\nprint(\"salut\", end=' ')\nprint(\"salut\")\n\nWe modified the behavior of the first print call using the optional parameter end. By default, this value is set to '\\n', meaning a line break. We changed it in the second cell to a space, hence the difference in output.\nWe will now create a function with an optional argument. To explain the behavior of this method, documentation has been added between the characters \"\"\".\n\ndef note_finale(note1, note2, bonus=0) -&gt; float:\n    \"\"\"Fonction d'ajout de 2 notes\n    Parameters\n    ----------\n        note1 : float\n            la première note\n        note2 : float\n            la deuxième note\n        bonus : float\n            un bonus (optionnel, par défaut égal à 0)\n    Returns\n    -------\n        float : sommes des 2 notes et du bonus\n    \"\"\"\n    return note1 + note2 + bonus\n\n\n# Default behavior (bonus=0)\nnote_finale(8.5, 7)\n\n\n# Modified behavior\nnote_finale(8.5, 7, bonus = 2)\n\nYou will also notice that the function signature ends with -&gt; float.\nThis is also a non-binding documentation element. It indicates the expected data type of the output.\n\n\nBonus: variable number of arguments\n\nThe *args notation allows a function to receive a variable number of positional arguments\nThe **kwargs notation allows a function to receive a variable number of key-value arguments\n\n\n# Example using args\n\ndef moyenne(*args):\n    somme = 0\n    nb = 0\n    for a in args:\n        somme += a\n        nb += 1\n    print(f\"Moyenne de {args} : {somme / nb}\")\n\nmoyenne(10, 15)\nmoyenne(8, 20, 16, 12)\n\n\n# Example using kwargs\n\ndef recette(**kwargs):\n    for a in kwargs:\n        # get argument name\n        arg_name = a\n        # get argument value\n        arg_value = kwargs[arg_name]\n        print(arg_name, \" = \", arg_value)\n    \n    \nrecette(tomate=2, farine=\"100g\", sel=True)\n\n\n\n\n1.2 Results\n\nPrinciple\nWe have seen:\n\nthat every function returns an output result\nthat the return statement is used to specify this result\n\nWhen the function is called, it is evaluated to the value specified by return, and this value can then be stored in a variable and used in subsequent calculations, and so on.\n\ndef division(x, y):\n    return x / y\n\n\na = division(4, 2)\nb = division(9, 3)\ndivision(a, b)  # 2 / 3\n\nImportant note: when a return statement is reached in a function, the rest of the function is not executed.\n\ndef test(x):\n    return x\n    print(\"will I be displayed?\")\n    \ntest(3)\n\n\n\nReturning multiple results\nA function returns by definition one result, which can be any Python object. What should we do if we want to return several results? We can simply store the different results in a container (list, tuple, dictionary, etc.), which can itself contain a large number of objects.\n\ndef calculs_mathematiques(a, b):\n    somme = a + b\n    difference = a - b\n    produit = a * b\n    return somme, difference, produit\n\nresultats = calculs_mathematiques(10, 5)\n\nprint(resultats)\ntype(resultats)\n\nBy default, multiple returns are tuples. But it is also possible to return a list or a dictionary.\n\ndef puissance_liste(a):\n    return [a**2, a**3]\n\npuissance_liste(4)\n\n\ndef puissance_dico(nombre):\n    carre = nombre ** 2\n    cube = nombre ** 3\n    return {\"carre\": a**2, \"cube\": a**3}\n\npuissance_dico(4)\n\n\n\n\n1.3 Lambda functions\nThere is another concise way to define a simple function: the lambda function.\n\ncarre = lambda x: x**2\n\ncarre(6)"
+  },
+  {
+    "objectID": "doc/english/python/04-fonctions-en.html#exercises",
+    "href": "doc/english/python/04-fonctions-en.html#exercises",
+    "title": "Functions",
+    "section": "2 Exercises",
+    "text": "2 Exercises\n\n2.1 Exercise 1\nCreate a puissance function that takes two numbers x and y as input and returns the power function \\(x^y\\).\n\n# Test your answer in this cell\n\n\n\n2.2 Exercise 2\nWrite a statistiques_descriptives function that:\n\ntakes a list of numbers as input\nreturns the mean and variance\n\n\n# Test your answer in this cell\n\n\n\n2.3 Exercise 3\nWrite an est_pair function that:\n\ntakes one parameter as input\nreturns a boolean indicating whether this parameter is even\n\nAdd a test to check that the parameter is an integer.\n\n# Test your answer in this cell\n\n\n\n2.4 Exercise 4\nWrite a function that:\n\ntakes a list of any elements as input\nreturns a new list containing the unique elements from the initial list\nallows, through an optional parameter, to sort or not sort the final list in alphanumeric order (the default behavior is not to sort).\n\n\n# Test your answer in this cell\n\n\n\n2.5 Exercise 5\nRecursive functions are functions that call themselves within the body of the function, which leads to infinite calls until reaching a stopping criterion (see the Pascal triangle example below).\nImplement the factorial function recursively.\n\ndef triangle_pascal(n):\n    if n == 0:\n        return [[1]]                                          # Stopping condition\n    else:\n        triangle = triangle_pascal(n - 1)                     # Recursive call to obtain previous rows\n        prev_row = triangle[-1]                               # Retrieve the last generated row\n        new_row = [1]                                         # First element of the new row\n        # Calculate the elements of the new row\n        for i in range(len(prev_row) - 1):\n            new_row.append(prev_row[i] + prev_row[i + 1])  \n        new_row.append(1)                                     # Last element of the new row\n        triangle.append(new_row)                              # Add the new row to the triangle\n        return triangle\n\nprint('\\n'.join(['\\t'.join(map(str, row)) for row in triangle_pascal(10)]))\n\n\n# Test your answer in this cell\n\n\n\n2.6 Exercise 6\nWrite an appliquer_fonction_liste function that:\n\ntakes as parameters:\n\na list of integers\na function\n\nreturns the list to which the function has been applied\n\nExample:\nappliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2) -&gt; [1, 4, 9, 16]\n\n# Test your answer in this cell"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html",
+    "title": "Lists and Dictionaries",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#before-starting",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#before-starting",
+    "title": "Lists and Dictionaries",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#containers",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#containers",
+    "title": "Lists and Dictionaries",
+    "section": "1 Containers",
+    "text": "1 Containers\nThere are several data structures in Python:\n\nLists (list): ordered and mutable collection of elements\nDictionaries (dict): unordered collection of key-value pairs\nSets (set): unordered collection of unique elements\nTuples (tuple): ordered and immutable collection of elements\n\nHere we will focus on the two most common structures: lists and dictionaries"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#lists",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#lists",
+    "title": "Lists and Dictionaries",
+    "section": "2 Lists",
+    "text": "2 Lists\nProperties of Python lists:\n\nIndexing: List elements are indexed, which means they can be accessed using their position in the list. The index of the first element is 0, and the index of the last element is len(list) - 1.\nMutable: Lists are mutable objects, which means you can modify their elements. You can add, remove, or modify elements.\nHeterogeneity: Lists can contain elements of different data types: integers, strings, booleans, or even other lists.\nVariable length: Lists can contain a variable number of elements. They can be empty (without elements) or contain an unlimited number of elements.\n\n\n2.1 Creating a list\n\n# Integer list\na = [22, 29, 35, 56]\na\n\n\ntype(a)\n\n\n# Mixed list\nb = [\"bonjour\", 20, True]\nprint(b)\n\n\n# Concatenation\na + b\n\n\n# Repetition\na * 2\n\nThere are many other possibilities for creating lists.\n\nlist(range(1, 7))\n\n\n[x for x in range(1, 7)]\n\n\n# Splitting a string\nc = \"bleu;blanc;rouge;vert;jaune\"\nc.split(\";\")\n\n\n\n2.2 Useful methods\n\n# Number of elements\nlen(a)\n\n\n# First element\na[0]\n\n\n# Last element\na[-1]\n\n\n# All elements from position 1\na[1:]\n\n\n# Test if a value belongs to a list\n22 in a\n\n\n# Find the position of an element\na.index(29)\n\n\n# Reverse a list (without modifying the original list)\nprint(\"a[::-1] : \" + str(a[::-1]))\nprint(\"a :       \" + str(a))\n\n\n# Reverse a list (here the reversal is saved in variable **a**)\na.reverse()\na\n\n\n# Sort a list (without modifying the original list)\nsorted(a)\n\n\n# Descending order\nsorted(a, reverse=True)\n\n\n# Sort a list (saving the modification in variable **a**)\nprint(\"Before : \" + str(a))\na.sort()\nprint(\"After : \" + str(a))\n\n\n\n2.3 Adding, modifying and deleting\n\n# Add at the end\na.append(44)\na\n\n\n# Insert at a specific position\na.insert(2, 88)\na\n\n\n# Modify\na[0] = 99\na\n\n\n# Delete by position\na.pop(3)\na\n\n\n# Delete by value\na.remove(44)\na\n\n\n\n2.4 Copying a list\nObserve, then execute the code below. It contains the following instructions:\n\ncreation of the variable list\ncreation of the variable copy\ndeletion of the last element of copy\ndisplay of list\n\n\nlist = [1, 2, 3, 4]\nlist2 = list\nlist2.pop()\nlist\n\nWe might expect the variable list not to be modified and to display [1, 2, 3, 4]. However, variable list2 is not a copy of list, it is simply another way of referring to the same list.\n\n# To create a real copy that will be distinct from the original\ncopy = list(list)\ncopy.append(9)\nlist, copy\n\n\n# Another possibility to copy\ncp = list.copy()\ncp.append(8)\nlist, cp"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#dictionaries",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#dictionaries",
+    "title": "Lists and Dictionaries",
+    "section": "3 Dictionaries",
+    "text": "3 Dictionaries\nImportant properties of a Python dictionary:\n\nIndexing by key: Dictionary elements are indexed by keys rather than positions. Each key must be unique in the dictionary, and it is associated with a corresponding value. Searching for a value associated with a key is very fast.\nMutable: Dictionaries are mutable objects, which means you can add, remove, or modify dictionary elements after its creation.\nHeterogeneity: Dictionaries can contain key-value pairs with different data types. Keys can be immutable types such as strings, integers… Values can be any valid Python data type.\nVariable length: Dictionaries can contain a variable number of key-value pairs. They can be empty (without key-value pairs) or contain an unlimited number of pairs.\nUnordered: Unlike lists, dictionary elements have no defined order. The order in which key-value pairs are stored is not guaranteed and may change during dictionary modifications.\n\n\n3.1 Creating a dictionary\n\ningredients = {'sugar': '100g', 'pear': 2, 'milk': '1L', 'salt': True}\ningredients\n\n\ntype(ingredients)\n\n\n# Number of elements\nlen(ingredients)\n\n\n# Search by key\ningredients['milk']\n\n\n# Search by key - another possibility\ningredients.get('milk')\n\n\n\n3.2 Adding, modifying and deleting\n\n# Add an element\ningredients['strawberry'] = '200g'\ningredients\n\n\n# Modify\ningredients['sugar'] = '35g'\ningredients\n\n\n# Delete\ningredients.pop('milk')\ningredients\n\n\n\n3.3 Useful methods\n\n# List of keys\nlist(ingredients.keys())      # same as: list(ingredients)\n\n\n# List of values\nlist(ingredients.values())\n\n\n# List of items (list of tuples)\nlist(ingredients.items())"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#empty-types",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#empty-types",
+    "title": "Lists and Dictionaries",
+    "section": "4 “Empty” types",
+    "text": "4 “Empty” types\nNow that we have seen lists and dictionaries, we can talk about empty types. For example, it is possible to create:\n\na variable that contains nothing: None\nan empty list []\nan empty dictionary {}\n\n\nx = None\ntype(x)\n\n\ny = []\ntype(y)\n\n\nz = {}\ntype(z)"
+  },
+  {
+    "objectID": "doc/english/python/02-listes-et-dictionnaires-en.html#exercises",
+    "href": "doc/english/python/02-listes-et-dictionnaires-en.html#exercises",
+    "title": "Lists and Dictionaries",
+    "section": "5 Exercises",
+    "text": "5 Exercises\n\n5.1 Exercise 1\nStarting from the list notes = [\"do\", \"re\", \"re\", \"re\", \"fa\", \"sol\", \"solsi\", \"la\"], add, remove and modify elements so that it contains the musical notes “do re mi fa sol la si” in the correct order.\n\n# Test your answer in this cell\n\n\n\n5.2 Exercise 2\nSuggest two methods to reverse the list [\"un\", \"deux\", \"trois\", \"quatre\"]. What is the main difference between the two methods?\n\n# Test your answer in this cell\n\n\n\n5.3 Exercise 3\nTest the behavior of the pop method on the list of integers from 1 to 9. For example, test pop() without parameters or pop(-1).\n\n# Test your answer in this cell\n\n\n\n5.4 Exercise 4\nTest the behavior of the min and max methods on:\n\na list composed only of numeric objects (int and float);\na list composed only of strings;\na list composed of a mixture of numeric and text objects.\n\n\n# Test your answer in this cell\n\n\n\n5.5 Exercise 5\nTry creating an empty list, then check its type. What could be the purpose of this?\n\n# Test your answer in this cell\n\n\n\n5.6 Exercise 6\nGiven the following dictionary: animals = {'cats': 5, 'dogs': 12}\nWhat will the following membership tests return? Check your predictions.\n\n'cats' in animals.keys()\n'cats' in animals.values()\n'cats' in animals\n\n\n# Test your answer in this cell\n\n\n\n5.7 Exercise 7\nGiven the dictionary defined in the cell below. Display using print operations:\n\nthe list of names of the different classes\nMiranda’s history grade\nthe list of grades obtained by Hypolyte\nthe list of names of students in 6emeB\nthe list of subjects taught in 6eme A\nthe list of all taught subjects\nthe list of grades obtained by girls from both classes\n\n\nresultats = {\n    \"6emeA\": {\"Miranda\" : {\"notes\": {\"physique\": 16, \"histoire\": 12}},\n              \"Celestin\": {\"notes\": {\"physique\": \"absent\", \"histoire\": 18}}\n             },\n    \"6emeB\": {\"Hypolyte\": {\"notes\": {\"maths\": 11, \"anglais\": 0}},\n              \"Josephine\": {\"notes\": {\"maths\": 16, \"anglais\": 20}}\n             }\n}\n\n\n# Test your answer in this cell\n\n\n\n5.8 Exercise 8\nUsing a dictionary, count and display the number of occurrences of each character in the following sentence:\n\nJe compte le nombre d'occurences de chaque caractère de la phrase courante.\n\nTip: first, test on a smaller string.\n\n# Test your answer in this cell\n\n\n\n5.9 Exercise 9\nClean this list to remove all duplicates and keep only one occurrence of each fruit:\n\nfruits = ['pomme', 'banane', 'orange', 'fraise', 'citron', 'fraise', 'banane', 'orange', 'banane', 'pomme', 'fraise']\n\nHint: use sets\n\n# Test your answer in this cell"
+  },
+  {
+    "objectID": "doc/english/home-en.html",
+    "href": "doc/english/home-en.html",
+    "title": "IT refresher course",
+    "section": "",
+    "text": "This section has been translated by a generative AI and may contain errors."
+  },
+  {
+    "objectID": "doc/english/home-en.html#prerequisites-and-datalab",
+    "href": "doc/english/home-en.html#prerequisites-and-datalab",
+    "title": "IT refresher course",
+    "section": "Prerequisites and Datalab",
+    "text": "Prerequisites and Datalab\n\nCreate a GitHub account\nCreate an account on SSP Cloud\n\nusing your email firstname.lastname@eleve.ensai.fr\n\nRead this page about Datalab\nCreate a token by following the instructions above\n\nyou will find the information here"
+  },
+  {
+    "objectID": "doc/english/home-en.html#program",
+    "href": "doc/english/home-en.html#program",
+    "title": "IT refresher course",
+    "section": "Program",
+    "text": "Program\n\nGit\n\n3h\n\nGit is a version control system that allows you to track changes made to files, collaborate efficiently, and keep the history of a project.\n\nRead the Git presentation\nQuick Git practical work Introduction course to databases and SQL\n\n\n\nIntroduction to SQL\n\n3h\n\nSQL (Structured Query Language) is the standard language used to create, query, modify, and administer relational databases.\n\nRead the introduction course to databases and SQL\nComplete the exercise\n\n\n\nIntroduction to Python\n\n6h\n\nPython is a versatile programming language, easy to learn and widely used for application development, data analysis, artificial intelligence, and automation.\n\nRead the introduction course to Python\nRead and complete the exercises from the 5 notebooks\n\n\n\nObject-Oriented Programming\n\n9h\n\nOOP is a programming paradigm that consists of modeling a program as objects combining data (attributes) and behaviors (methods).\nYou can start by creating a clone of the Git repository on your machine:\n\nOpen Git Bash, then paste the following commands\n\nmkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\nthis creates a copy of the repository in P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau\n\n\n\n\nRead the introduction course to OOP\nFollow the instructions for VSCode configuration\nComplete the exercises\n\n\n\nUML\n\n3h\n\nUML is a graphical modeling language used to represent the structure and behavior of a software system before or during its development.\n\nRead the introduction course to UML\nComplete the exercise"
+  },
+  {
+    "objectID": "doc/english/home-en.html#alternatives",
+    "href": "doc/english/home-en.html#alternatives",
+    "title": "IT refresher course",
+    "section": "Alternatives",
+    "text": "Alternatives\nHere are other possibilities to get up to speed in Python, OOP, and SQL.\n\nVideos from the 2022-2023 session\nIf you have access to MyENSAI, videos from the 2022-2023 session are available here\n\n\nOnline courses to learn Python and SQL\n\nOpenclassrooms - Query a database with SQL\nIntroduction to Python from the Public Statistical Service\nOpenclassrooms - Python basics (parts 1 and 2)\nOpenclassrooms - OOP with Python (parts 1 and 2)\n\n\n\nUseful resources\n\nhttps://realpython.com/\nhttps://refactoring.guru/\nhttps://github.com/faif/python-patterns\nhttps://inseefrlab.github.io/formation-bonnes-pratiques-git-R/\nPython for data science, Lino Galiana (INSEE, ENSAE)"
+  },
+  {
+    "objectID": "doc/english/datalab-en.html",
+    "href": "doc/english/datalab-en.html",
+    "title": "Datalab",
+    "section": "",
+    "text": "At ENSAI, most practical sessions (labs) use a datalab.\nA datalab is a cloud environment where you can:\n\nreserve resources (CPU, GPU, RAM, storage)\ninstall your software, packages, and extensions\nrun your programs and computations\nrelease the resources after saving your code and results\n\nIt is as if you were provided with a fresh machine, completed your work, and then returned it."
+  },
+  {
+    "objectID": "doc/english/datalab-en.html#principle",
+    "href": "doc/english/datalab-en.html#principle",
+    "title": "Datalab",
+    "section": "",
+    "text": "At ENSAI, most practical sessions (labs) use a datalab.\nA datalab is a cloud environment where you can:\n\nreserve resources (CPU, GPU, RAM, storage)\ninstall your software, packages, and extensions\nrun your programs and computations\nrelease the resources after saving your code and results\n\nIt is as if you were provided with a fresh machine, completed your work, and then returned it."
+  },
+  {
+    "objectID": "doc/english/datalab-en.html#connecting",
+    "href": "doc/english/datalab-en.html#connecting",
+    "title": "Datalab",
+    "section": "2 Connecting",
+    "text": "2 Connecting\n\n\n\n\n\n\nImportantPrerequisites\n\n\n\nHave your myENSAI account activated and access to your ENSAI email inbox.\n\n\nTwo datalabs are available to ENSAI students:\n\nGENES Datalab\nINSEE SSP Cloud\n\ncreate an account using your ENSAI email address: firstname.lastname@eleve.ensai.fr\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt is strongly recommended to use the SSP Cloud first, as it is more stable."
+  },
+  {
+    "objectID": "doc/english/datalab-en.html#how-to-use-it",
+    "href": "doc/english/datalab-en.html#how-to-use-it",
+    "title": "Datalab",
+    "section": "3 How to use it?",
+    "text": "3 How to use it?\nOnce connected, you will arrive at the Onyxia interface.\n\nThis interface allows you to launch catalog services (Jupyter, VSCode, RStudio, Databases, etc.) in just a few clicks.\n\n\n\n\n\n\nNoteLaunching a service\n\n\n\nFor example, start by launching a Jupyter-python service:\n\nGo to the service catalog\nClick Launch\nModify the settings if necessary, then click Launch again\n\nWait a few seconds for the service to be deployed, then click:\n\nOpen\nClick to copy the password\nOpen service\n\nA new tab will open.\n\nPaste the password\n\nYour working environment is now ready."
+  },
+  {
+    "objectID": "doc/english/datalab-en.html#usage",
+    "href": "doc/english/datalab-en.html#usage",
+    "title": "Datalab",
+    "section": "4 Usage",
+    "text": "4 Usage\n\n\n\n\n\n\nCaution\n\n\n\nOn a datalab, services have a limited lifetime.\n\n\nMoreover, there is no service guarantee, i.e. your services may disappear at any time.\nIn practice, services do not disappear except in the event of an incident or after more than one week of inactivity.\nIt is therefore essential to save:\n\nyour code (see the next section: Git)\nyour data\n\nby sending it to S3 storage (not covered here, see the documentation below)\nor by downloading it manually"
+  },
+  {
+    "objectID": "doc/english/datalab-en.html#useful-links",
+    "href": "doc/english/datalab-en.html#useful-links",
+    "title": "Datalab",
+    "section": "Useful links",
+    "text": "Useful links\n\nDocumentation and tutorials\nDatalab presentation\nGetting started with the Datalab"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html",
+    "href": "doc/english/POO/poo-cours-en.html",
+    "title": "Programmation Orientée Objet",
+    "section": "",
+    "text": "OOP is a programming paradigm that organizes code around objects rather than functions and procedures.\nThese objects represent real-world entities and have:\n\nattributes: what they are\nmethods: what they can do\n\n\n\nOOP allows you to:\n\norganize code in a more structured way\npromote code reuse and maintainability\nnaturally model concepts from the application domain\n\nIt is widely used in many programming languages, including Python, to develop complex and scalable applications.\n\n\n\nLet’s model a person:\n\nAttributes: last name, first name, age, skills\nMethods: learn(), grow_older()\n\n\n\n\n\n\n\nNoteMethods can modify attributes\n\n\n\nThe grow_older() method will increase the person’s age by 1.\nThe learn(“Python”) method will add “Python” to the list of skills."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#introduction",
+    "href": "doc/english/POO/poo-cours-en.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "",
+    "text": "OOP is a programming paradigm that organizes code around objects rather than functions and procedures.\nThese objects represent real-world entities and have:\n\nattributes: what they are\nmethods: what they can do\n\n\n\nOOP allows you to:\n\norganize code in a more structured way\npromote code reuse and maintainability\nnaturally model concepts from the application domain\n\nIt is widely used in many programming languages, including Python, to develop complex and scalable applications.\n\n\n\nLet’s model a person:\n\nAttributes: last name, first name, age, skills\nMethods: learn(), grow_older()\n\n\n\n\n\n\n\nNoteMethods can modify attributes\n\n\n\nThe grow_older() method will increase the person’s age by 1.\nThe learn(“Python”) method will add “Python” to the list of skills."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#fundamental-principles",
+    "href": "doc/english/POO/poo-cours-en.html#fundamental-principles",
+    "title": "Programmation Orientée Objet",
+    "section": "Fundamental principles",
+    "text": "Fundamental principles\n\nEncapsulation\nEncapsulation consists of grouping data and the methods that manipulate it within the same object.\nIt allows you to:\n\nhide implementation details\nprovide a consistent interface for interacting with the object\n\n\n\nInheritance\nInheritance allows new classes to be created from existing classes by inheriting their attributes and methods. This promotes:\n\ncode reuse\nthe creation of class hierarchies\n\n\nExample: Square inherits from Rectangle. A square is a rectangle with additional properties.\n\n\n\nPolymorphism\nPolymorphism allows objects from different classes to respond differently to the same action.\nIt allows objects from different classes to be manipulated uniformly by using common interfaces."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#class-and-object",
+    "href": "doc/english/POO/poo-cours-en.html#class-and-object",
+    "title": "Programmation Orientée Objet",
+    "section": "Class and Object",
+    "text": "Class and Object\n\nA class is a model used to create objects\n\nIt defines the attributes and methods that will be present in every object of this class\n\nObjects are instances of classes\n\nThey have attributes and methods that define their state and behavior\n\n\n\nExample\n\nCreating the Person class, which represents a person\n\nwith its attributes and methods\n\nCreating the person1 object from this class\n\nfirst name = Sacha\nlast name = Touille\nage = 20\nskills = []\n\n\n\n\nPython Class\nclass Person:\n    def __init__(self, last_name, first_name, age):\n        self.last_name = last_name\n        self.first_name = first_name\n        self.age = age\n        self.skills = []\n\n    def learn(self, new_skill):\n        \"\"\"Adds a new skill to the list of skills.\"\"\"\n        self.skills.append(new_skill)\n\n    def grow_older(self):\n        \"\"\"Increments the person's age by one year.\"\"\"\n        self.age += 1\n\n\nPython Objects\nFrom the Person class, we can create objects.\nfrom person import Person\n\nperson1 = Person(\"Touille\", \"Sacha\", 20)\nperson2 = Person(\"Ginal\", \"Laury\", 30)\nperson2.grow_older()\nperson2.learn(\"SQL\")\n\n\nConstructor\nThe code Person(\"Touille\", \"Sacha\", 20) calls the __init__() method of the Person class.\nThis method is called the constructor.\nAs its name suggests, it is used to “build” objects from the class.\n\n\nPython Conventions\n\nA class name is written in CamelCase (uppercase letter at the beginning of each word)\nA Python file (or module) contains only one class\nA module name is written in snake_case (lowercase words separated by _)\n\nclass ElectricBike:\n    ..."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#inheritance-1",
+    "href": "doc/english/POO/poo-cours-en.html#inheritance-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Inheritance",
+    "text": "Inheritance\nOne of the three pillars of OOP is inheritance.\nA child class can use all the attributes and methods of its parent class.\nThis inheritance principle also allows common attributes and methods to be shared in order to avoid code duplication.\n\nInheritance Example\nSuppose that in our code, we want to manage bicycles and scooters.\nThe naive idea is to create a class for each one.\n\n\nInheritance Example\n\nBikeScooter\n\n\nclass Bike:\n    def __init__(self, color, nb_gears):\n        self.color = color\n        self.nb_gears = nb_gears\n        self.speed = 0  # Initial speed is 0\n\n    def accelerate(self, increment):\n        \"\"\"Increases the bike speed.\"\"\"\n        self.speed += increment\n\n    def slow_down(self, decrement):\n        \"\"\"Decreases the bike speed.\"\"\"\n        self.speed -= decrement\n        if self.speed &lt; 0:\n            self.speed = 0  # Speed cannot be negative\n\n\nclass Scooter:\n    def __init__(self, color):\n        self.color = color\n        self.speed = 0  # Initial speed is 0\n\n    def accelerate(self, increment):\n        \"\"\"Increases the speed.\"\"\"\n        self.speed += increment\n\n    def slow_down(self, decrement):\n        \"\"\"Decreases the speed.\"\"\"\n        self.speed -= decrement\n        if self.speed &lt; 0:\n            self.speed = 0  # Speed cannot be negative\n\n\n\n\n\nInheritance Example\nThinking about it, we realize that these two classes have common attributes and methods:\n\ncolor\nspeed\naccelerate()\nslow_down()\n\nOne idea is to group these common characteristics into a TwoWheels class. Then make Bike and Scooter inherit from TwoWheels.\n\n\nInheritance Example\n\nTwo WheelsBikeScooter\n\n\nclass TwoWheels:\n    def __init__(self, color):\n        self.color = color\n        self.speed = 0  # Initial speed is 0\n\n    def accelerate(self, increment):\n        \"\"\"Increases the speed.\"\"\"\n        self.speed += increment\n\n    def slow_down(self, decrement):\n        \"\"\"Decreases the speed.\"\"\"\n        self.speed -= decrement\n        if self.speed &lt; 0:\n            self.speed = 0  # Speed cannot be negative\n\n\nfrom two_wheels import TwoWheels\n\nclass Bike(TwoWheels):\n    def __init__(self, color, nb_gears):\n        super().__init__(color)  # Call the parent class constructor\n        self.nb_gears = nb_gears\n\n\nfrom two_wheels import TwoWheels\n\nclass Scooter(TwoWheels):\n    def __init__(self, color):\n        super().__init__(color)   # Call the parent class constructor\n\n\n\n\n\nSelf and Super\n\nself is a reference to the current instance of the class\n\nIt is used to access the attributes and methods of a specific class instance\n\nsuper() is a built-in function that references the parent class\n\nIt is used to call methods from the parent class in a child class"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#abstract-class",
+    "href": "doc/english/POO/poo-cours-en.html#abstract-class",
+    "title": "Programmation Orientée Objet",
+    "section": "Abstract Class",
+    "text": "Abstract Class\n\n\n\n\n\n\nTipDraw me a two-wheeler\n\n\n\n\nDoes it make sense to create an object from the TwoWheels class?\n\nIf you are asked to draw a two-wheeler, you do not really know how to do it because you lack information.\nWhereas drawing a bicycle or a scooter is much more concrete.\n\n\n\nAbstract Class - TwoWheels\nSome classes are not intended to be instantiated. For example, we will not create objects from the TwoWheels class.\nWe will directly create Bikes and Scooters.\nTherefore, we can define the TwoWheels class as abstract.\n\nobjects cannot be created from this class\n\n\n\nAbstract Class - TwoWheels\nThe main purpose of abstract classes is to define a contract for child classes.\nThey provide a consistent structure and organization for classes that share common characteristics, while allowing flexibility for specific implementations in each child class.\n\n\nAbstract Class - Python\n\n\n\n\n\n\nTip\n\n\n\nIn Python, the concept of abstract classes is implemented using the abc module (Abstract Base Classes).\nThis module provides the @abstractmethod decorator, which allows a method to be declared as abstract in an abstract class.\nAn abstract class is defined by inheriting from the ABC class of the abc module.\n\n\n\n\nAbstract Class - Note\n\n\n\n\n\n\nWarning\n\n\n\nA parent class does not necessarily mean an abstract class.\nFor example:\n\nConsider a ElectricBike class that inherits from the Bike class\nThis seems logical because an electric bike is a bike\n\ntherefore, it inherits all its attributes and methods\nand it has additional characteristics (battery, range, power…)\n\nHowever, in this case, the Bike class does not need to be abstract because creating a bike object is perfectly valid"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-en.html#exercises",
+    "href": "doc/english/POO/poo-cours-en.html#exercises",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercises",
+    "text": "Exercises\nexercises"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#introduction",
+    "href": "doc/english/POO/poo-cours-slides.html#introduction",
+    "title": "Programmation Orientée Objet",
+    "section": "Introduction",
+    "text": "Introduction\nOOP is a programming paradigm that organizes code around objects rather than functions and procedures.\nThese objects represent real-world entities and have:\n\nattributes: what they are\nmethods: what they can do"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#fundamental-principles",
+    "href": "doc/english/POO/poo-cours-slides.html#fundamental-principles",
+    "title": "Programmation Orientée Objet",
+    "section": "Fundamental principles",
+    "text": "Fundamental principles"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#class-and-object",
+    "href": "doc/english/POO/poo-cours-slides.html#class-and-object",
+    "title": "Programmation Orientée Objet",
+    "section": "Class and Object",
+    "text": "Class and Object\n\nA class is a model used to create objects\n\nIt defines the attributes and methods that will be present in every object of this class\n\nObjects are instances of classes\n\nThey have attributes and methods that define their state and behavior"
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#inheritance-1",
+    "href": "doc/english/POO/poo-cours-slides.html#inheritance-1",
+    "title": "Programmation Orientée Objet",
+    "section": "Inheritance",
+    "text": "Inheritance\nOne of the three pillars of OOP is inheritance.\nA child class can use all the attributes and methods of its parent class.\nThis inheritance principle also allows common attributes and methods to be shared in order to avoid code duplication."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#abstract-class",
+    "href": "doc/english/POO/poo-cours-slides.html#abstract-class",
+    "title": "Programmation Orientée Objet",
+    "section": "Abstract Class",
+    "text": "Abstract Class\n\n\n\n\n\n\n\nDraw me a two-wheeler\n\n\n\nDoes it make sense to create an object from the TwoWheels class?\n\nIf you are asked to draw a two-wheeler, you do not really know how to do it because you lack information.\nWhereas drawing a bicycle or a scooter is much more concrete."
+  },
+  {
+    "objectID": "doc/english/POO/poo-cours-slides.html#exercises",
+    "href": "doc/english/POO/poo-cours-slides.html#exercises",
+    "title": "Programmation Orientée Objet",
+    "section": "Exercises",
+    "text": "Exercises\nexercises"
   },
   {
     "objectID": "doc/UML/UML.html",
@@ -770,6 +1246,608 @@
     "text": "POO et UML\nUn magasin de légumes souhaite créer une application pour gérer son stock, ses clients et les commandes.\nChaque légume à un type, une variété, un prix et son stock (en kg).\nLe magasin dispose également d’une liste de clients qui sont déﬁnis par leurs numéros de client, nom, prénom, âge et s’ils possèdent la carte de ﬁdélité du magasin.\nUne commande possède un numéro de commande, un montant total initialement à 0, et est réalisée par un client. Une commande est décomposée en lignes de commandes. Chaque ligne contient un légume et une quantité.\n\n\n\n\n\n\nNote\n\n\n\nPour cet exercice, il y a plusieurs manières de répondre au besoin, en voici une.\n\n\n\n1\nProposez un diagramme de classes UML pour décrire l’application ci-dessus.\n\n\n\n\n\nclassDiagram\n    class Magasin {\n        -str nom\n        -List[Legume] stock\n        -List[Client] clients\n    }\n\n    class Legume {\n        -str type_leg\n        -str variete\n        -float prix\n        -float stock\n    }\n\n    class Client {\n        -int numeroClient\n        -str nom\n        -str prenom\n        -int age\n        -bool carteFidelite\n        -List[Commande]\n        +void validerCommande(int numeroCommande)\n    }\n\n    class Commande {\n        -int numeroClient\n        -int numeroCommande\n        -float montant\n        -List[LigneCommande] lignesCommande\n    }\n\n    class LigneCommande {\n        -Legume legume\n        -float quantite\n    }\n\n    Magasin o-- Client : gére\n    Client --&gt; Commande : réalise\n    Commande o-- LigneCommande : composée\n    LigneCommande -- Legume\n    Magasin o-- Legume : stocke\n\n\n\n\n\n\n\n\n2\nÉcrivez le constructeur de la classe Commande en Python.\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nclass Commande:\n    def __init__(self, numero_commande, numero_client):\n        self.numero_client = numero_client\n        self.numero_commande = numero_commande\n        self.montant = 0.0\n        self.lignes_commande = []\n\n\n\n\n\n3\nÉcrivez le code de la méthode valider_commande() dans la classe Magasin, qui permet de :\n\nVérifier si une commande est valide (si le stock de légumes est suffisant).\nCalculer et mettre à jour le montant total de la commande si la commande est valide.\nRetourner True si la commande est valide, False sinon.\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nclass Magasin:\n\n    def __init__(self, nom):\n        self.nom = nom\n        self.stock = []     # Liste de Legume\n        self.clients = []\n\n    def valider_commande(self, commande) -&gt; bool:\n        total_commande = 0.0\n        \n        # Pour chaque Legume de la commande\n        for ligne in commande.lignes_commande:\n            legume = ligne.legume\n            quantite = ligne.quantite\n            \n            # Vérifier si le stock est suffisant\n            stock_legume = None\n            \n            for l in self.stock:\n                if l.variete == legume.variete and l.type_leg == legume.type_leg:\n                    stock_legume = l.stock\n                    break\n            \n            # Si le légume n'est pas trouvé ou le stock est insuffisant\n            if stock_legume is None or stock_legume &lt; quantite:\n                return False  \n            else:\n                total_commande += legume.prix * quantite\n        \n        # Mettre à jour le montant de la commande\n        commande.montant = total_commande\n        \n        # Mettre à jour le stock\n        for ligne in commande.lignes_commande:\n            legume = ligne.legume\n            quantite = ligne.quantite\n            for l in self.stock:\n                if l.variete == legume.variete and l.type == legume.type:\n                    l.stock -= quantite\n                    break\n    \n        return True"
   },
   {
+    "objectID": "doc/english/POO/poo-exercice-en.html",
+    "href": "doc/english/POO/poo-exercice-en.html",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "",
+    "text": "Connect to the SSP Cloud\nStart a Vscode-python service, then open it\n\n\n\n\nThere are two possibilities to retrieve the code:\n\nclone the teacher’s repository directly\n\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\n\ncreate a fork of this repository, then clone this fork\n\nhttps://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork{target=“_blank”}\ngit clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-2A-remise-a-niveau.git\n\n\nIf you clone the teacher’s repository directly, you will not be able to use Git to keep track of your work. You will have to download the files manually, for example.\nA fork is a copy of a remote repository. Since this copy belongs to you, you have the right to modify the code.\n\nClone the repository by choosing one of the two options above\n\nThen, go to the src/POO folder:\n\nFile &gt; Open Folder &gt; /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/\n\nor directly from the terminal: code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/\n\n\nYou can then code in the files in the exercise folder. If needed, you can create new files."
+  },
+  {
+    "objectID": "doc/english/POO/poo-exercice-en.html#setup",
+    "href": "doc/english/POO/poo-exercice-en.html#setup",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "",
+    "text": "Connect to the SSP Cloud\nStart a Vscode-python service, then open it\n\n\n\n\nThere are two possibilities to retrieve the code:\n\nclone the teacher’s repository directly\n\ngit clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git\n\ncreate a fork of this repository, then clone this fork\n\nhttps://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork{target=“_blank”}\ngit clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-2A-remise-a-niveau.git\n\n\nIf you clone the teacher’s repository directly, you will not be able to use Git to keep track of your work. You will have to download the files manually, for example.\nA fork is a copy of a remote repository. Since this copy belongs to you, you have the right to modify the code.\n\nClone the repository by choosing one of the two options above\n\nThen, go to the src/POO folder:\n\nFile &gt; Open Folder &gt; /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/\n\nor directly from the terminal: code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/\n\n\nYou can then code in the files in the exercise folder. If needed, you can create new files."
+  },
+  {
+    "objectID": "doc/english/POO/poo-exercice-en.html#exercise-1---points",
+    "href": "doc/english/POO/poo-exercice-en.html#exercise-1---points",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "2 Exercise 1 - Points",
+    "text": "2 Exercise 1 - Points\nDefine a Point class to represent a point in the plane with x and y coordinates.\nImplement the following methods:\n\n__init__(self, x, y): point constructor with Cartesian coordinates\nr(self) and t(self): returning the polar coordinates of the point\n__str__(self): to display the Point as text, e.g. (1.0, 2.4)\ndistance(self, other_point): distance to another point\n__eq__(self, other_point) -&gt; bool: indicates whether the two points are identical\nhomothety(self, k): applying a homothety centered at (0, 0) with ratio k\ntranslation(self, dx, dy): applying a translation with vector (dx, dy)\nrotation(self, a) (bonus): applying a rotation centered at (0, 0) with angle a\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nTo check that your methods are correct, you can add a main block at the end of your class. When you execute this file, this code will be run.\nclass Point:\n\n    # ...\n\nif __name__ == \"__main__\":\n    p1 = Point(1, 2)\n    p2 = Point(1, 2)\n    print(f\"p1 : {p1}\")\n    print(f\"Distance between p1 and p2 : {p1.distance(p2)}\")\n    print(f\"p1 is equal to p2 : {p1 == p2}\")"
+  },
+  {
+    "objectID": "doc/english/POO/poo-exercice-en.html#exercise-2---polygons",
+    "href": "doc/english/POO/poo-exercice-en.html#exercise-2---polygons",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "3 Exercise 2 - Polygons",
+    "text": "3 Exercise 2 - Polygons\n\nCreate a Polygon class composed of objects from the Point class\n\nWe will assume from now on that segments do not cross\n\nAdd 2 abstract methods area() and perimeter() to this class\n\nthese methods will be defined in child classes\n\nCreate the Segment, Triangle and Quadrilateral classes that inherit from the Polygon class\n\ncheck the number of points each time\n\nDefine the area() and perimeter() methods in these 3 classes\nCreate the Rectangle class that inherits from Quadrilateral\nFor Rectangle, check that the 2 opposite sides have the same length and that there is a right angle\n\nHere is the class diagram generated with Mermaid\n\n\n\n\n\nclassDiagram\n    Point --o Polygon\n    Polygon &lt;|-- Segment : 2\n    Polygon &lt;|-- Triangle : 3\n    Polygon &lt;|-- Quadrilateral : 4\n    Quadrilateral &lt;|-- Rectangle\n    class Point{\n        +float x\n        +float y\n        +distance(other_point)\n    }\n    class Polygon{\n        +list[Point] points_list\n        +area()\n        +perimeter()\n    }\n    class Quadrilateral{\n        +area()\n        +perimeter()\n    }\n    class Segment{\n        +area()\n        +perimeter()\n    }\n    class Triangle{\n        +area()\n        +perimeter()\n    }"
+  },
+  {
+    "objectID": "doc/english/POO/poo-exercice-en.html#exercise-3---domino",
+    "href": "doc/english/POO/poo-exercice-en.html#exercise-3---domino",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "4 Exercise 3 - Domino",
+    "text": "4 Exercise 3 - Domino\n\n4.1 A Domino\nWrite a Domino class with:\n\n2 integer attributes between 0 and 6: end_A and end_B\n__str__(): which displays the dots present on both ends\nflip(): which flips the domino (its A end becomes its B end and vice versa)\naccepts_after(other_domino): checks whether the B end of the current domino has the same value as the A end of the other domino\n\n\n\n4.2 Game\nNow we will try to code a domino game.\nFor simplicity:\n\nthere will only be one player\nit is only possible to place a domino on one side, at the end of the domino row\n\nLet’s start by generating all possible dominoes, i.e. all combinations from (0,0) to (6,6) without duplicates.\n\nWrite a function that generates all dominoes and returns the list\nWrite an display_dominoes() function that displays a list of dominoes\nWrite a draw() function that randomly draws a domino from a list and removes it from that list\nWrite a playable_dominoes(hand_dominoes, placed_dominoes) function that takes two lists of dominoes as arguments. The function returns the list of dominoes in hand that could be placed after the last domino in the placed_dominoes list.\n\nWrite a play() function that:\n\ngenerates the list of all dominoes\nrandomly draws a first domino and places it in the placed_dominoes list\nrandomly distributes 6 dominoes to the player\ndisplays the dominoes they can play\nif no domino can be played, offer them the possibility to draw\nasks which domino they want to play (for example by asking them to enter the number in the domino list, and quit to stop playing)\nadds the played domino to the placed_dominoes list and removes it from the hand_dominoes list\n\n\n\n\n\n\nclassDiagram\n    class Domino{\n        +int end_A\n        +int end_B\n        +flip()\n        +accepts_after(other_domino)\n    }"
+  },
+  {
+    "objectID": "doc/english/POO/poo-exercice-en.html#correction",
+    "href": "doc/english/POO/poo-exercice-en.html#correction",
+    "title": "Programmation Orientée Objet - Exercices",
+    "section": "Correction",
+    "text": "Correction\n\n\n\n\n\n\nTipSuggested solution\n\n\n\n\n\n\nExercises 1 and 2\n\npoint.py\npolygone.py\nsegment.py\ntriangle.py\nquadrilatere.py\nrectangle.py\n\nAn example of unit tests for the Point class:\n\ntest_point.py\n\n\n\nExercise 3\n\ndomino.py\njeu.py"
+  },
+  {
+    "objectID": "doc/english/git-en.html",
+    "href": "doc/english/git-en.html",
+    "title": "Git",
+    "section": "",
+    "text": "The purpose of this page is to give you a quick introduction to Git and how to use it. For more information, see the links at the bottom of this page."
+  },
+  {
+    "objectID": "doc/english/git-en.html#what-is-git",
+    "href": "doc/english/git-en.html#what-is-git",
+    "title": "Git",
+    "section": "1 What is Git?",
+    "text": "1 What is Git?\nGit is software that allows you to:\n\nversion your code\nsynchronize code repositories\n\nWhen five people are working on the same project, it is not easy for everyone to always have the same version of the code.\nBy using Git, you will have:\n\na shared remote central repository hosted on https://github.com/{target=“_blank”}\nyour own local repository where you work\n\nThe idea is to synchronize these repositories regularly so that every team member works with the most recent version.\n\n\n\n\n\n\nNoteWhat is a repository?\n\n\n\nA repository is simply a collection of folders and files, similar to a Drive.\nTo make synchronization easier, a repository should:\n\nbe lightweight (a few MB at most)\nmainly contain files that can be read by a text editor (.txt, .sql, .py, .R, etc.)\n\n\n\nWe will now explain how Git works through a practical exercise."
+  },
+  {
+    "objectID": "doc/english/git-en.html#exercise",
+    "href": "doc/english/git-en.html#exercise",
+    "title": "Git",
+    "section": "2 Exercise",
+    "text": "2 Exercise\n\n2.1 GitHub account and token\nFirst, create your GitHub account and then generate a token that will allow you to communicate between your repositories without additional authentication.\n\nCreate an account on https://github.com/{target=“_blank”}\nCreate a new classic token: Direct link\n\nNote: for ENSAI datalabs\nExpiration: 30/06/&lt;year n+1&gt;\nCheck repo and workflow\nGenerate token\n\nCopy the token (ghp_xxxxxxxxxx)\n\n\n\n\n\n\n\nCaution\n\n\n\nBe careful: its value will only be displayed once. If you lose it, you must delete it and create a new one.\n\n\nNow register this token on the datalab:\n\nConnect to the datalab\nGo to My Account &gt; Git\nPaste the token\nAlso enter your GitHub username and email address\n\nYou can now use this token in your services to communicate with GitHub.\nWithout this token, you would have to authenticate (login + password) every time your repositories communicate.\n\n\n2.2 Create a remote repository\nThe easiest approach is to create the remote repository on GitHub first and then clone it.\n\nCreate a new repository, Direct link\n\nRepository name: ENSAI-Git-TP\nAdd README: On\nAdd .gitignore: Python\nCreate repository\n\n\nYour remote repository has been created. It currently contains only the README and .gitignore files.\n\n\n\n\n\n\nTip\n\n\n\nThe remote repository is not intended to be modified directly.\nIts role is to:\n\nkeep a backup of your code\nprovide a central repository when working as a team\n\nChanges should be made in local repositories and then shared with the remote repository.\n\n\n\n\n2.3 Clone your local repository\nLet’s start by retrieving the URL of the remote repository:\n\nGo to your repository’s GitHub page\nClick Code\nCopy the HTTPS address\n\nWe will now create a local clone inside a datalab service.\nOn the datalab:\n\nGo to the service catalog\nSelect VScode-python and click Launch\n\nYou will arrive at the service configuration page before launching it.\n\nGo to the Git tab\nPaste your repository URL into the Repository URL field\nOpen the service in the clone folder: Yes\nClick Launch, then open the service\n\nYou now have a VS Code service with a local clone of your repository.\n\n\n\n\n\n\nTipWhat just happened?\n\n\n\nWhen your service was launched, the following command was executed:\ngit clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-Git-TP.git\nwhere:\n\n$GIT_PERSONAL_ACCESS_TOKEN: an environment variable containing the value of your token\n&lt;username&gt;: your GitHub username\n\nThis command creates a local clone of your remote repository.\n\n\n\n\n2.4 Add, commit, push\nBefore modifying your local repository, make sure it is properly connected to the remote repository.\nIn Visual Studio Code:\n\nClick the three horizontal bars in the upper-left corner &gt; Terminal &gt; New Terminal\nRun the command: git remote -v\n\nYou should see the URL of your remote repository, including your token.\nWe will now create new files and send them to the remote repository.\nIn the Visual Studio Code Explorer (left panel):\n\nCreate a file named ex1.py\n\nRight-click &gt; New File\nInsert the code print(\"Hello\") into this file and save it\n\n\nLet’s now share this file with the remote repository.\nThis process requires several mandatory steps:\n\nTell Git about the file\nAdd it to a commit (a restore point)\nSend the commit to the remote repository\n\nHere are the commands you need to know and run:\n\ngit status: displays the current status of the repository. You will notice that ex1.py appears under “Untracked files”, i.e. files detected by Git but not yet versioned.\ngit add ex1.py: tells Git that this file has been created or modified and should be included in the next commit.\nRun git status again. The file now appears under “Changes to be committed”.\ngit commit -m \"Add ex1 file\": creates a commit (restore point). The -m option lets you add a message (required) briefly describing the contents of the commit.\nRun git status once again. You will notice that your local repository is now one commit ahead of the remote repository.\nRun git push to send your code to the remote repository.\n\nRefresh your GitHub repository and verify that the file has appeared.\n\n\n2.5 Pull\nWe have just sent code to the remote repository.\nNow imagine that:\n\nyou are working as part of a team\na teammate has pushed changes to the remote repository\nyou want to update your local repository to retrieve those changes\n\nTo simulate this, we will modify the remote repository directly.\n\nOn your remote GitHub repository page, create or edit a file\n\n⚠️ this is not good practice, but we are doing it here for the exercise\n\nIn your local repository, run: git pull\n\nThis updates your local repository with the changes made to the remote repository."
+  },
+  {
+    "objectID": "doc/english/git-en.html#other-important-points",
+    "href": "doc/english/git-en.html#other-important-points",
+    "title": "Git",
+    "section": "3 Other important points",
+    "text": "3 Other important points\nWhat we have covered here is only the absolute minimum required to use Git.\nMany essential concepts have deliberately been left aside to keep this introduction simple.\nFeel free to consult the course and lab material provided to first-year students (see the link below).\n\n3.1 Conflict\nFor example, what happens if:\n\nKim modifies the file ex1.py in their local repository and pushes the changes to the remote repository\nyou also modify the same file in your local repository\nyou try to run git push and receive a message telling you to pull first\nyou run git pull and encounter a conflict, i.e. Git cannot determine which version is the correct one: yours or Kim’s\n\n\n\n\n\n\nflowchart\n    github[(Remote)]\n    dev1[(Local Kim)]\n    dev2[(Local yours)]\n\n    github &lt;--&gt; dev1\n    github &lt;--&gt; dev2\n\n\n\n\n\n\n\n\n3.2 .gitignore file\nThis file lists the files that should not be versioned by Git. It is useful, for example, to avoid sending files containing passwords or large data files to the remote repository."
+  },
+  {
+    "objectID": "doc/english/git-en.html#links",
+    "href": "doc/english/git-en.html#links",
+    "title": "Git",
+    "section": "Links",
+    "text": "Links\nIntroduction to Git"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html",
+    "href": "doc/english/python/01-types-et-variables-en.html",
+    "title": "Types and variables",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#before-starting",
+    "href": "doc/english/python/01-types-et-variables-en.html#before-starting",
+    "title": "Types and variables",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#introduction",
+    "href": "doc/english/python/01-types-et-variables-en.html#introduction",
+    "title": "Types and variables",
+    "section": "Introduction",
+    "text": "Introduction\nIn this notebook, we will discover the basic types in Python:\n\nnumeric\n\nint: integers\nfloat: decimals\n\ncharacter strings: str\nbooleans: bool"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#variable-assignment",
+    "href": "doc/english/python/01-types-et-variables-en.html#variable-assignment",
+    "title": "Types and variables",
+    "section": "1 Variable assignment",
+    "text": "1 Variable assignment\n\n# Create variable a and assign it the value 8\na = 8\n\n# Create variable b and assign it the string \"texte\"\nb = \"texte\"\n\n# Create variable c and assign it the boolean True\nc = True\n\n\n# Display the content of a\na\n\nNote: A notebook only displays the last value requested from it. To display several values, you must use the print method.\n\nprint(a+1)\nprint(b)\nprint(c)\n\nPython is a dynamically typed language. This means that it is possible to modify the type of a variable without constraints. If the variable a contains text, it is possible to assign it an integer afterwards.\n\nprint(a)\na = \"abcd\"\nprint(a)\na = False\nprint(a)\n\nTip: To display all created variables and their values, you can use the %whos command.\n\n%whos"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#numbers",
+    "href": "doc/english/python/01-types-et-variables-en.html#numbers",
+    "title": "Types and variables",
+    "section": "2 Numbers",
+    "text": "2 Numbers\nThe type function allows you to know the type.\n\na = 8\ntype(a)\n\n\nb = 33.5\ntype(b)\n\n\nfloat('inf')\n\n\n2.1 Conversions\nThe float and int functions can be used to switch from one type to another.\n\n# Conversion to float\nfloat(a)\n\n\n# Conversion to int (integer part)\nint(b)\n\n\n# Scientific notation\n2.1e3\n\n\n\n2.2 Basic arithmetic operations\n\n# Addition\n1 + 1\n\n\n# Subtraction\n6 - 2\n\n\n# Multiplication\n3 * 4\n\n\n# Division\n11 / 5\n\n\n# Euclidean division: quotient\n11 // 5\n\n\n# Euclidean division: remainder (modulo)\n11 % 5\n\n\n# Power\n2 ** 10\n\n\n# Square root\n36 ** 0.5"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#character-strings",
+    "href": "doc/english/python/01-types-et-variables-en.html#character-strings",
+    "title": "Types and variables",
+    "section": "3 Character strings",
+    "text": "3 Character strings\nCharacter strings (strings) are used to store textual information.\nA string is defined by putting the information between single quotes ' or double quotes \".\n\n3.1 Definition\n\na = 'a string defined with single quotes'\na\n\n\nb = \"a string defined with double quotes\"\nb\n\n\n# To include an apostrophe inside the string\n\"j'inclus l'apostrophe\"\n\n\n# To include double quotes inside the string\n'les \"guillemets\" sont là'\n\n\n\n3.2 Useful methods\nHere is an overview of some useful methods. Many others exist (see official documentation)\n\n# String length (number of characters)\nlen(\"J'ai 18 caractères\")\n\n\n# Concatenation\n\"I am\" + \"your father\"\n\" \".join([\"I am\", \"your father\"])\n\n\n# Concatenation with a number\nyear = 2\n\"je suis en \" + year + \"ème année\"\n\nProblem: the number must first be converted into a string. The str method does the job.\n\n# Concatenation with a number - after converting the number to a string\nyear = 2\n\"je suis en \" + str(year) + \"ème année\"\n\n\n# Repetition\n\"hop \" * 5\n\n\n# Convert to uppercase\n\"C'est OK\".upper()\n\n\n# Convert to lowercase\n\"C'est OK\".lower()\n\n\n# Count the number of occurrences\n\"Mangez cinq fruits et légumes par jour\".count(\"a\")\n\n\n# Create a list of words\n\"Mangez cinq fruits et légumes par jour\".split()\n\n\n# Split words according to a specific character\n\"un-deux-trois-soleil\".split(\"-\")\n\n\n# Use strings as templates\n\"mon numéro est : {}\".format(\"06 12 34 56 78\")\n\n\n# Starts with ?\n\"vélo\".startswith(\"vé\")\n\n\n# Ends with ?\n\"vélo\".endswith(\"lo\")\n\n\n\n3.3 Extracting substrings\nA string is considered in Python as a list of characters. It is therefore possible to extract different elements from this list.\n\n# First element\n\"c'est de toute beauté\"[0]\n\n\n# Second element\n\"c'est de toute beauté\"[1]\n\n\n# Last element\n\"c'est de toute beauté\"[-1]\n\n\n# From a specific character\n\"c'est de toute beauté\"[6:]\n\n\n# Up to a specific character\n\"c'est de toute beauté\"[:8]\n\n\n# Extract a substring\n\"c'est de toute beauté\"[9:14]\n\n\n# Extract every 2 characters, starting from the 4th position\n\"c'est de toute beauté\"[4::2]\n\n\n# Reverse a string\n\"c'est de toute beauté\"[::-1]\n\n\nSpecial characters\nTo insert special characters within a string, you must use the escape character \\.\n\n\n\nCharacter\nDescription\n\n\n\n\n\nEscape character\n\n\n'\nApostrophe\n\n\n\"\nDouble quotes\n\n\n\nNew line\n\n\n Horizontal tab\n\n\n\n Carriage return\n\n\n\n\n\nc = \"une chaîne\\nsur 2 lignes\"\nprint(c)\n\n\n# Define a string over multiple lines\nd = \"\"\"une autre \\\"possibilité\\\" pour\navoir une chaîne sur 2 lignes\"\"\"\nprint(d)"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#booleans",
+    "href": "doc/english/python/01-types-et-variables-en.html#booleans",
+    "title": "Types and variables",
+    "section": "4 Booleans",
+    "text": "4 Booleans\nBooleans can only take two values: True and False Be careful to respect the notation with the first letter uppercase and the others lowercase.\n\ntype(True)\n\n\n4.1 Comparison operators\n\n\n\nOperator\nMeaning\n\n\n\n\n==\nEqual to\n\n\n!=\nNot equal to\n\n\n&lt;\nStrictly less than\n\n\n&gt;\nStrictly greater than\n\n\n&lt;=\nLess than or equal to\n\n\n&gt;=\nGreater than or equal to\n\n\n\n\n8 &gt; 5\n\n\n1+1 == 2\n\n\n[1, 2, 3] == [1, 2, 3]\n\n\n\"girafe\" != \"gnou\"\n\n\n# Chained operators\n1 &lt; 2 == 2 &gt;= 1 != 2\n\n\n\n4.2 and, or, not operators\n\na = True\nb = False\n\na and b\n\n\na or b\n\n\nnot a\n\n\n(a or b) and (a and not b)"
+  },
+  {
+    "objectID": "doc/english/python/01-types-et-variables-en.html#exercises",
+    "href": "doc/english/python/01-types-et-variables-en.html#exercises",
+    "title": "Types and variables",
+    "section": "5 Exercises",
+    "text": "5 Exercises\n\n5.1 Exercise 1\nCalculate the sum of the lengths of the following three strings:\n\n“une première chaîne”\n“et une deuxième”\n“jamais deux sans trois”\n\n\n# Type your answer in this cell\n\n\n\n5.2 Exercise 2\nWhat is the appropriate type for defining a postal code?\nTry defining the following postal codes in int format and string format:\n\n92120\n02350\n\nWhat do you conclude?\n\n# Type your answer in this cell\n\n\n\n5.3 Exercise 3\nCount the number of times the letter e appears in the following string: Je compte le nombre de e dans cette chaîne de caractères\n\n# Type your answer in this cell\n\n\n\n5.4 Exercise 4\nFind the first position where the letter e appears in the following string: “Je fais un comptage des e.”\nHint: you can use the built-in find method.\n\n# Type your answer in this cell\n\n\n\n5.5 Exercise 5\nRemove unnecessary spaces at the beginning and end of the following string:\nHint: you can use the built-in strip method.\n\n# Type your answer in this cell\na = \"    Un string très mal formatté.         \"\n\n\n\n5.6 Exercise 6\nPerform the following operations using increment operators, and print the final value:\n\ninitialize a variable to 1\nsubtract 5 from it\nmultiply it by 4\nadd 22 to it\n\n\n# Type your answer in this cell\n\n\n\n5.7 Exercise 7\nConsider the following two sequences:\n\n“nous sommes en”\n“2022”\n\nUsing the tutorial, find two different ways to use them to compose the sequence “nous sommes en 2022”.\n\n# Type your answer in this cell"
+  },
+  {
+    "objectID": "doc/english/python/03-tests-et-boucles-en.html",
+    "href": "doc/english/python/03-tests-et-boucles-en.html",
+    "title": "Tests and Loops",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/03-tests-et-boucles-en.html#before-starting",
+    "href": "doc/english/python/03-tests-et-boucles-en.html#before-starting",
+    "title": "Tests and Loops",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/03-tests-et-boucles-en.html#conditional-structures-and-loops",
+    "href": "doc/english/python/03-tests-et-boucles-en.html#conditional-structures-and-loops",
+    "title": "Tests and Loops",
+    "section": "1 Conditional structures and loops",
+    "text": "1 Conditional structures and loops\nIn this Notebook, we will cover the following topics:\n\nif, else structures\nfor loop\nwhile loop\nbreak and continue statements"
+  },
+  {
+    "objectID": "doc/english/python/03-tests-et-boucles-en.html#conditional-structures",
+    "href": "doc/english/python/03-tests-et-boucles-en.html#conditional-structures",
+    "title": "Tests and Loops",
+    "section": "2 Conditional structures",
+    "text": "2 Conditional structures\nWe will test different Boolean conditions (see Notebook 1) using the keywords: if, else and elif.\nThe principle is the following:"
+  },
+  {
+    "objectID": "doc/english/python/05-POO-introduction-en.html",
+    "href": "doc/english/python/05-POO-introduction-en.html",
+    "title": "POO Introduction",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/05-POO-introduction-en.html#before-starting",
+    "href": "doc/english/python/05-POO-introduction-en.html#before-starting",
+    "title": "POO Introduction",
+    "section": "",
+    "text": "Download this Jupyter notebook\nConnect to the SSP Cloud\n\nor another platform (ENSAI Jupyter, Jupyter Lab, Google Colab, Kaggle…)\n\nImport the .ipynb file"
+  },
+  {
+    "objectID": "doc/english/python/05-POO-introduction-en.html#object-oriented-programming",
+    "href": "doc/english/python/05-POO-introduction-en.html#object-oriented-programming",
+    "title": "POO Introduction",
+    "section": "1 Object-oriented programming",
+    "text": "1 Object-oriented programming\nObject-oriented programming (OOP) is a programming paradigm that allows programs to be structured around objects, which contain:\n\nattributes (characteristics of the object)\nmethods (functions specific to the object)\n\nIn Python, it is possible but not mandatory to use OOP. However, Python’s internal functioning is strongly influenced by OOP.\n\n1.1 “Everything is an object”\nIn Python, everything is an object (in the OOP sense). Let’s look at what this means by retrieving the type of different objects we have seen in previous tutorials.\n\nprint(type(1))\nprint(type(\"bonjour\"))\nprint(type([]))\nprint(type({}))          \nprint(type(lambda x: x**2))\n\n\n\n1.2 Defining your own objects\nTo create an object, we first need a model: a class. We can think of a class as a “mold” that will then be used to create objects. For example, we create a Velo class with the following documentation:\n    \"\"\"\n    Class representing a bicycle.\n\n    Attributes:\n        couleur (str): The color of the bicycle.\n        vitesse (int): The current speed of the bicycle.\n        porte_bagage (bool): Indicates whether the bicycle has a rack.\n\n    Methods:\n        __init__(couleur, porte_bagage=False): Builds a new Velo object\n        __str__(): string representation of a Velo object\n        accelerer(acceleration): Increases the bicycle speed by adding acceleration to its current speed.\n        ralentir(deceleration): Decreases the bicycle speed by subtracting deceleration from its current speed.\n        installer_porte_bagage(): Installs a rack on the bicycle by setting it to True.\n        est_arrete(): Checks whether the bicycle is completely stopped.\n\n    \"\"\"\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        \n    def __str__(self):\n        s = \"I am a \" + self.couleur + \" bicycle.\"\n        s += \" My speed is: \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" I have a rack.\"\n        return s\n\n    def accelerer(self, acceleration):\n        self.vitesse += acceleration\n\n    def ralentir(self, deceleration):\n        self.vitesse -= deceleration\n        if self.vitesse &lt; 0:\n            self.vitesse = 0\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n            \n    def est_arrete(self):\n        return self.vitesse == 0\n\nWith this class we can now create instances (objects) of type Velo\n\nv1 = Velo(\"blue\")\nprint(v1)\n\nv2 = Velo(\"purple\", True)\nprint(v2)\n\n\n## We can apply the methods defined in the bicycle class to this object\nv1.accelerer(20)\nv1.installer_porte_bagage()\nprint(v1)\n\nLet’s analyze the syntax used to build an object class:\n\nthe class statement defines the object class. Different objects can be created according to the model defined by this class. By convention, the class name should start with an uppercase letter.\nthe class specifies a number of functions called methods: these are functions specific to the defined object class.\nthe __init__ method is called the constructor. It is mandatory, otherwise it is impossible to instantiate objects from the class. It allows the definition of attributes attached to this object class. Parameters can be passed to the constructor (e.g. couleur) to define attributes specific to an instance of the object.\nthe constructor has a mandatory parameter: self. It is a reference to the instances that will be created from this class. The following syntax defines an attribute: self.attribute = value.\nThe __str__ method (optional) allows redefining the string representation of an object.\nthe other methods are defined by the user. They also take self as a parameter to access attributes and methods. Since they are functions, they can also accept additional parameters.\n\n\n\n1.3 Attributes\nAn attribute is a variable associated with an object. An attribute can contain any Python object.\n\nAccessing attributes\nOnce the object is instantiated, it is possible to access its attributes. The syntax is simple: instance.attribute.\n\nprint(v1.couleur)\nprint(v2.couleur)\nprint()\nprint(v1.vitesse)\nprint(v2.vitesse)\n\nWe can clearly see that both instances are independent: although they have the same type, their attributes are different.\n\n\nModifying an attribute\nModifying an instance attribute is very simple, the syntax is: instance.attribute = new_value.\n\nv2.couleur = \"yellow\"\nprint(v2.couleur)\n\n\n\nClass attributes\nEach Velo instance has its own instance attributes (couleur, vitesse, porte_bagage). It is possible to have attributes shared by all Velos: class attributes.\nLet’s create the VeloBis class to illustrate with an attribute counting the number of created VeloBis.\n\nclass VeloBis:\n    nb_velos_bis = 0                                       # Class attribute to count the number of VeloBis\n\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self.vitesse = 0\n        self.porte_bagage = porte_bagage\n        VeloBis.nb_velos_bis += 1\n\n\nprint(VeloBis.nb_velos_bis)\nvb1 = VeloBis(\"pink\")\nprint(VeloBis.nb_velos_bis)\nvb2 = VeloBis(\"orange\")\nprint(VeloBis.nb_velos_bis)\n\n\n\n\n1.4 Methods\nA method is a function associated with an object. It can use its attributes, modify them, and involve other object methods.\n\nCalling a method\nThe syntax for calling a method of an instantiated object is:\ninstance.method(parameters).\n\nv1.est_arrete()\n\nNote: methods do not exist independently outside the object. We cannot call the est_arrete() method alone, as it does not make sense.\n\nest_arrete()\n\nNote 2:\n\nthe first parameter of every instance method is always self to refer to the object itself\nwhen calling methods, we do not specify the self parameter\n\n\n\nActing on attributes\nThe main advantage of methods is that they can access attributes, modify them and implement controls. For example:\n\nwithout using the accelerer and ralentir methods, it is possible to end up with a negative speed\n\n\nv1.vitesse = -10\nprint(v1)\n\nDirectly modifying an attribute this way is bad practice because no validation is performed. It is possible to go even further:\n\nv1.vitesse = \"Jean-Michel\"\nprint(v1)\n\nUsing methods prevents ending up in absurd or inconsistent situations.\n\nv1 = Velo(\"Blue\")\nv1.accelerer(10)\nprint(v1)\nv1.ralentir(20)\nprint(v1)\n\n\n\n\n1.5 Bonus: the Property class\nTo avoid these issues, an interesting solution is to use the property class. This property class allows calling setters while keeping the same attribute access syntax.\n\nclass Velo:\n    def __init__(self, couleur, porte_bagage=False):\n        self.couleur = couleur\n        self._vitesse = 0\n        self.porte_bagage = porte_bagage\n\n    def __str__(self):\n        s = \"I am a \" + self.couleur + \" bicycle.\"\n        s += \" My speed is: \" + str(self.vitesse) + \".\"\n        if self.porte_bagage:\n            s += \" I have a rack.\"\n        return s\n\n    @property\n    def vitesse(self):\n        return self._vitesse\n\n    @vitesse.setter\n    def vitesse(self, nouvelle_vitesse):\n        if nouvelle_vitesse &gt;= 0:\n            self._vitesse = nouvelle_vitesse\n        else:\n            raise ValueError(\"Speed must be a positive number.\")\n\n    def installer_porte_bagage(self):\n        self.porte_bagage = True\n\n    def est_arrete(self):\n        return self.vitesse == 0\n\n\nv3 = Velo(\"black\")\nprint(v3)\nv3.vitesse = 10\nprint(v3)\nv3.vitesse = -20\nprint(v3)"
+  },
+  {
+    "objectID": "doc/english/python/05-POO-introduction-en.html#best-practices",
+    "href": "doc/english/python/05-POO-introduction-en.html#best-practices",
+    "title": "POO Introduction",
+    "section": "2 Best practices",
+    "text": "2 Best practices\nTo conclude this introduction to Python, here is a list of good practices generally followed by developers. Following these practices is strongly recommended and will help you write better code.\n\n2.1 Naming conventions\n\nvariables\n\nuse explicit names (avoid toto, var1, …)\nuse lowercase letters with words separated by underscores (snake_case)\n\nexception for constants: use UPPERCASE letters with words separated by underscores\n\nthis makes code more readable for yourself and others\n\nfunctions and methods\n\nsame convention as variables\n\nclasses\n\nuse camelCase: each word starts with an uppercase letter.\nexample: VeloElectrique\n\n\n\n\n2.2 Indent code correctly\nUse an indentation of 4 spaces for each indentation level. Correct indentation is essential in Python because it determines the structure of the code.\n\n\n2.3 Add relevant comments\nAs soon as there is some complexity, comment your code to explain how it works. Add docstrings to functions, classes and modules to explain their operation, parameters and return values."
+  },
+  {
+    "objectID": "doc/english/python/05-POO-introduction-en.html#exercises",
+    "href": "doc/english/python/05-POO-introduction-en.html#exercises",
+    "title": "POO Introduction",
+    "section": "3 Exercises",
+    "text": "3 Exercises\n\n3.1 Exercise 1\nCreate an Etudiant class with the following attributes:\n\nname\nage\nlist_of_grades\n\nWith the following methods:\n\ninit(): constructor\najouter_note(): to add a new grade to the list\ncalculer_moyenne(): calculate the average grade\n\n\n## Test your answer in this cell\n\n\n\n3.2 Exercise 2\nCreate a Point class representing the coordinates of a 2D point. Add a distance(other_point) method that calculates the distance to another point.\nCreate a Cercle class with the attributes center (from the Point class) and radius. Add a calculer_surface() method that returns the area of the circle.\n\n## Test your answer in this cell\n\n\n\n3.3 Exercise 3\nCreate a CompteBancaire class with the following attributes:\n\ntitulaire: the account holder’s name (string)\nsolde: the account balance (real number)\n\nThe class must have the following methods:\n\n__init__(self, titulaire): the class constructor\ndeposer(self, montant): a method that allows money to be deposited into the account. The amount must be added to the balance\nretirer(self, montant): a method that allows money to be withdrawn from the account. The amount must be subtracted from the balance\nafficher_solde(self): a method that displays the account balance\ntransferer(self, autreCompte, montant) which transfers money from the account to another one if the balance is sufficient\n\nCreate 2 accounts and test the different features.\n\n## Test your answer in this cell"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#history",
+    "href": "doc/english/python/python-cours-slides.html#history",
+    "title": "Python introduction",
+    "section": "History",
+    "text": "History\n\nCreated by Guido van Rossum (Netherlands)\nFirst version in 1991\nManaged by the Python Software Foundation since 2001\nPython 3.13: python --version\n\n\n\nCreated at the end of 1989 during the Christmas holidays\nPython Software Foundation (non-profit organization): promote and protect the language in order to expand the community"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#why-learn-python",
+    "href": "doc/english/python/python-cours-slides.html#why-learn-python",
+    "title": "Python introduction",
+    "section": "Why Learn Python?",
+    "text": "Why Learn Python?\n\nVersatile and popular language\nEasy to learn and read\nLarge community and many resources\nMany packages\n\n\n\nImportant in the world of data science and engineering."
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#python-fundamentals",
+    "href": "doc/english/python/python-cours-slides.html#python-fundamentals",
+    "title": "Python introduction",
+    "section": "Python Fundamentals",
+    "text": "Python Fundamentals\n\nInterpreted and interactive language\nDynamic typing\nClear and concise syntax\nSupports several paradigms (procedural, object-oriented, functional)\n\n\n\nExplain the difference between an interpreted and a compiled language.\nInteractive: an environment where you can enter Python commands one by one and immediately see the results (Notebook)\nDynamic typing (type checking at runtime)\n\n\na = 5\na = \"toto\""
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#python-at-ensai",
+    "href": "doc/english/python/python-cours-slides.html#python-at-ensai",
+    "title": "Python introduction",
+    "section": "Python at ENSAI",
+    "text": "Python at ENSAI\n\nCPython distribution\nVersion 3.10 (python --version)\nYou will code in:\nJupyter notebooks\nVisual Studio Code\nPre-installed packages\n\n\nDistribution: a pre-packaged version of the Python interpreter including many modules, libraries, and tools\n\nAnaconda (data science and machine learning)\nMiniconda (lighter)\n\nOther IDEs: PyCharm, Atom\nPackage manager pip, to be run in a terminal"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#packages",
+    "href": "doc/english/python/python-cours-slides.html#packages",
+    "title": "Python introduction",
+    "section": "Packages",
+    "text": "Packages\nIn a terminal (for example: Git Bash)\n\npip list                            # Installed packages\npip install &lt;package&gt;               # Install a package\npip install &lt;package&gt;==&lt;version&gt;    # Specific version\npip uninstall &lt;package&gt;\n\n# Distribution used\n\npython -c 'import platform; print(platform.python_implementation())'\n\n\nFor projects:\n\nlist of packages in a text file at the root\npip install - r requirements.txt\n\nDemo: run Python in the terminal"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#writing-your-first-python-code",
+    "href": "doc/english/python/python-cours-slides.html#writing-your-first-python-code",
+    "title": "Python introduction",
+    "section": "Writing Your First Python Code",
+    "text": "Writing Your First Python Code\n\nVariables and data types (int, float, str, bool, list, dict)\nBasic operations\nSensitive to indentation\nControl structures (if, for, while)\n\n\n\n= : assignment\n== : equality test / != difference\n\nIndentation: use a formatter in VSCode"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#collections---the-2-main-ones",
+    "href": "doc/english/python/python-cours-slides.html#collections---the-2-main-ones",
+    "title": "Python introduction",
+    "section": "Collections - the 2 main ones",
+    "text": "Collections - the 2 main ones\n\nList: ordered collection of modifiable values\n\n\nlist = [\"apple\", \"pear\", 2, True]\n\n\nDictionary: unordered collection of key-value pairs\n\n\nrecipe = {\"strawberry\": 5, \"Mustard\": \"5g\"}"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#development-assistance",
+    "href": "doc/english/python/python-cours-slides.html#development-assistance",
+    "title": "Python introduction",
+    "section": "Development Assistance",
+    "text": "Development Assistance\nTo learn the language, avoid rushing to LLMs.\nPrefer:\n\nOnline documentation\nYour favorite search engine\nStack Overflow"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-slides.html#at-work",
+    "href": "doc/english/python/python-cours-slides.html#at-work",
+    "title": "Python introduction",
+    "section": "At Work",
+    "text": "At Work\n5 notebooks are available to help you learn the basics of the language:\nHow to use notebooks"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html",
+    "href": "doc/english/python/python-cours-en.html",
+    "title": "Python introduction",
+    "section": "",
+    "text": "Created by Guido van Rossum (Netherlands)\nFirst version in 1991\nManaged by the Python Software Foundation since 2001\nPython 3.13: python --version\n\n\n\nCreated at the end of 1989 during the Christmas holidays\nPython Software Foundation (non-profit organization): promote and protect the language in order to expand the community"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#history",
+    "href": "doc/english/python/python-cours-en.html#history",
+    "title": "Python introduction",
+    "section": "",
+    "text": "Created by Guido van Rossum (Netherlands)\nFirst version in 1991\nManaged by the Python Software Foundation since 2001\nPython 3.13: python --version\n\n\n\nCreated at the end of 1989 during the Christmas holidays\nPython Software Foundation (non-profit organization): promote and protect the language in order to expand the community"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#why-learn-python",
+    "href": "doc/english/python/python-cours-en.html#why-learn-python",
+    "title": "Python introduction",
+    "section": "Why Learn Python?",
+    "text": "Why Learn Python?\n\nVersatile and popular language\nEasy to learn and read\nLarge community and many resources\nMany packages\n\n\n\nImportant in the world of data science and engineering."
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#python-fundamentals",
+    "href": "doc/english/python/python-cours-en.html#python-fundamentals",
+    "title": "Python introduction",
+    "section": "Python Fundamentals",
+    "text": "Python Fundamentals\n\nInterpreted and interactive language\nDynamic typing\nClear and concise syntax\nSupports several paradigms (procedural, object-oriented, functional)\n\n\n\nExplain the difference between an interpreted and a compiled language.\nInteractive: an environment where you can enter Python commands one by one and immediately see the results (Notebook)\nDynamic typing (type checking at runtime)\n\n\na = 5\na = \"toto\""
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#python-at-ensai",
+    "href": "doc/english/python/python-cours-en.html#python-at-ensai",
+    "title": "Python introduction",
+    "section": "Python at ENSAI",
+    "text": "Python at ENSAI\n\nCPython distribution\nVersion 3.10 (python --version)\nYou will code in:\nJupyter notebooks\nVisual Studio Code\nPre-installed packages\n\n\nDistribution: a pre-packaged version of the Python interpreter including many modules, libraries, and tools\n\nAnaconda (data science and machine learning)\nMiniconda (lighter)\n\nOther IDEs: PyCharm, Atom\nPackage manager pip, to be run in a terminal"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#packages",
+    "href": "doc/english/python/python-cours-en.html#packages",
+    "title": "Python introduction",
+    "section": "Packages",
+    "text": "Packages\nIn a terminal (for example: Git Bash)\n\npip list                            # Installed packages\npip install &lt;package&gt;               # Install a package\npip install &lt;package&gt;==&lt;version&gt;    # Specific version\npip uninstall &lt;package&gt;\n\n# Distribution used\n\npython -c 'import platform; print(platform.python_implementation())'\n\n\nFor projects:\n\nlist of packages in a text file at the root\npip install - r requirements.txt\n\nDemo: run Python in the terminal\n\n\nPopular Packages\nData science:\n\nNumPy\nPandas, Polars\nMatplotlib, Seaborn\n\n\n\nNumPy\n\nNumerical computation\nndarray, performance, statistics, array manipulation\n\nPandas\n\ndataframe, data analysis\n\nMatplotlib: charts"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#writing-your-first-python-code",
+    "href": "doc/english/python/python-cours-en.html#writing-your-first-python-code",
+    "title": "Python introduction",
+    "section": "Writing Your First Python Code",
+    "text": "Writing Your First Python Code\n\nVariables and data types (int, float, str, bool, list, dict)\nBasic operations\nSensitive to indentation\nControl structures (if, for, while)\n\n\n\n= : assignment\n== : equality test / != difference\n\nIndentation: use a formatter in VSCode\n\n\nControl Structures\n\nIfForWhileEnumerate\n\n\n\n#| eval: true\n#| echo: true\nnote = 18\n\nif note &gt; 16:\nprint(\"Validated with honors\")\nelif note &gt; 10:\nprint(\"Validated\")\nelse:\nprint(\"Not validated\")\n\n\n\n\n#| eval: true\n#| echo: true\nfor i in range(1, 5):\nprint(i)\n\n\n\n\n#| eval: true\n#| echo: true\ncpt = 10\nwhile cpt &gt; 0:\nprint(cpt, end = \" \")\ncpt -= 1\nprint(\"boom\")\n\n\n\n\n#| eval: true\n#| echo: true\nliste = [\"Alban\", \"Bertille\", \"Corine\"]\n\nfor i, v in enumerate(liste):\nprint(f\"index {i} : value {v}\")"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#collections---the-2-main-ones",
+    "href": "doc/english/python/python-cours-en.html#collections---the-2-main-ones",
+    "title": "Python introduction",
+    "section": "Collections - the 2 main ones",
+    "text": "Collections - the 2 main ones\n\nList: ordered collection of modifiable values\n\n\nlist = [\"apple\", \"pear\", 2, True]\n\n\nDictionary: unordered collection of key-value pairs\n\n\nrecipe = {\"strawberry\": 5, \"Mustard\": \"5g\"}\n\n\nOther Useful Collections\n\nSet: unordered collection of unique values\n\n\nprimes = {2, 3, 5, 7, 11, 13}\n\n\nTuple: ordered collection of immutable values\n\n\ncoord = (-1, 5, 4)\n\n\n\n\n\n\n\nNote\n\n\n\nMany other collection types exist (Tree, Linked List…).\n\n\n\n\nMain Collections - Summary\n\n\n\nData Type\nOrdered\nMutable\nDuplicate\n\n\n\n\nlist\n✔\n✔\n✔\n\n\ndict\n\n✔\n\n\n\ntuple\n✔\n\n✔\n\n\nset\n\n✔"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#development-assistance",
+    "href": "doc/english/python/python-cours-en.html#development-assistance",
+    "title": "Python introduction",
+    "section": "Development Assistance",
+    "text": "Development Assistance\nTo learn the language, avoid rushing to LLMs.\nPrefer:\n\nOnline documentation\nYour favorite search engine\nStack Overflow\n\n\nUseful Resources\n\nReal Python\nPython for Data Science\nAutomate the Boring Stuff with Python\n\n\nLLMs are not suitable for memorization but are useful for:\n\ndebugging\ndocumenting"
+  },
+  {
+    "objectID": "doc/english/python/python-cours-en.html#at-work",
+    "href": "doc/english/python/python-cours-en.html#at-work",
+    "title": "Python introduction",
+    "section": "At Work",
+    "text": "At Work\n5 notebooks are available to help you learn the basics of the language:\nHow to use notebooks"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#objectives",
+    "href": "doc/english/sql/sql-cours-slides.html#objectives",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Objectives",
+    "text": "Objectives\n\nWhat is a relational database?\nHow are tables built?\nKnow how to write SQL queries\nUse the CloudBeaver service"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#what-is-a-database",
+    "href": "doc/english/sql/sql-cours-slides.html#what-is-a-database",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "What is a database?",
+    "text": "What is a database?\n\nOrganized collection of data\nStored electronically\nStructured to facilitate access and management\nDesigned to minimize redundancy\n\n\n\nCan be used by applications\nCan be queried and modified by users"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#table",
+    "href": "doc/english/sql/sql-cours-slides.html#table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Table",
+    "text": "Table\nA Table is composed of rows and columns:\n\na row represents a specific record\na column represents a particular attribute of these records\nPrimary key (PK): a column or set of columns that uniquely identifies each record in a table\n\nallows a row to be identified unambiguously\n\n\n\nPK:\n\nmandatory (not null)\nunique"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#relationships-between-tables",
+    "href": "doc/english/sql/sql-cours-slides.html#relationships-between-tables",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Relationships between tables",
+    "text": "Relationships between tables"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#sql",
+    "href": "doc/english/sql/sql-cours-slides.html#sql",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "SQL",
+    "text": "SQL\n\nSQL: Structured Query Language\nInvented in 1970 by Edgar F. Codd\nProgramming language\nUsed to manage and manipulate relational databases\n\n\n\nVery, very, very widely used\nAll data-related programming languages can embed SQL"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#actions-on-a-table",
+    "href": "doc/english/sql/sql-cours-slides.html#actions-on-a-table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on a table",
+    "text": "Actions on a table"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#actions-on-rows",
+    "href": "doc/english/sql/sql-cours-slides.html#actions-on-rows",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on rows",
+    "text": "Actions on rows"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#actions-on-columns",
+    "href": "doc/english/sql/sql-cours-slides.html#actions-on-columns",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on columns",
+    "text": "Actions on columns"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#joins",
+    "href": "doc/english/sql/sql-cours-slides.html#joins",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Joins",
+    "text": "Joins"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#aggregation",
+    "href": "doc/english/sql/sql-cours-slides.html#aggregation",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Aggregation",
+    "text": "Aggregation"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#sort-rows",
+    "href": "doc/english/sql/sql-cours-slides.html#sort-rows",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Sort rows",
+    "text": "Sort rows\n\nQueryResult\n\n\nSELECT *\n  FROM personne\n ORDER BY dnais DESC\n\nTo sort the results\n\nOptionally add DESC for descending order\n\n\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\n\n\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\n\n\n\n\n\n\n\nIt is possible to sort by several columns."
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#normal-forms",
+    "href": "doc/english/sql/sql-cours-slides.html#normal-forms",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Normal forms",
+    "text": "Normal forms"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#schemas",
+    "href": "doc/english/sql/sql-cours-slides.html#schemas",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Schemas",
+    "text": "Schemas\nA good practice (not applied here) is to organize our tables into different schemas.\nIn the same way that you organize files into folders, you will find your way around more easily by organizing tables into schemas.\nIf you do not specify a schema when creating a table, it is placed in the public schema."
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#sql-without-a-table",
+    "href": "doc/english/sql/sql-cours-slides.html#sql-without-a-table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "SQL without a table",
+    "text": "SQL without a table\nSELECT CURRENT_DATE;\nSELECT 1 + 2;\nSELECT 1 &gt; 2;\nSELECT 'Hello';"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#other-concepts-not-covered",
+    "href": "doc/english/sql/sql-cours-slides.html#other-concepts-not-covered",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Other concepts not covered",
+    "text": "Other concepts not covered\n\nACID, COMMIT, ROLLBACK\nviews, snapshot\nindexes\nprivileges: grant / revoke\nWITH (Common Table Expressions)\nUNION, INTERSECT, EXCEPT\nDISTINCT\nEXISTS\nSEQUENCE"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#bibliography",
+    "href": "doc/english/sql/sql-cours-slides.html#bibliography",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Bibliography",
+    "text": "Bibliography\n\nENSAI 1A Course\nhttps://www-lisic.univ-littoral.fr/\\~hebert/bdd/introduction/\nhttps://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/\nhttps://sql.sh/"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-slides.html#exercise",
+    "href": "doc/english/sql/sql-cours-slides.html#exercise",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Exercise",
+    "text": "Exercise\nexercise"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html",
+    "href": "doc/english/sql/sql-cours-en.html",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "",
+    "text": "What is a relational database?\nHow are tables built?\nKnow how to write SQL queries\nUse the CloudBeaver service"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#objectives",
+    "href": "doc/english/sql/sql-cours-en.html#objectives",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "",
+    "text": "What is a relational database?\nHow are tables built?\nKnow how to write SQL queries\nUse the CloudBeaver service"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#what-is-a-database",
+    "href": "doc/english/sql/sql-cours-en.html#what-is-a-database",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "What is a database?",
+    "text": "What is a database?\n\nOrganized collection of data\nStored electronically\nStructured to facilitate access and management\nDesigned to minimize redundancy\n\n\n\nCan be used by applications\nCan be queried and modified by users\n\n\n\nRelational databases\n\nOrganizes data into Tables\nInterconnected tables\nStructured tables\n\n\n\nTable = spreadsheet\n\n\n\n\nDBMS\nA Database Management System (DBMS) is software that allows you to:\n\nstore\norganize\nmanage data in a structured way\n\nExamples of DBMS:\n\nrelational: PostgreSQL, MySQL, Oracle Database\nNoSQL: MongoDB, Cassandra\n\n\n\nDBMS: main interface with data\nFor us, PostgreSQL, free, open source, installed on a VM\nNoSQL: Not Only SQL\n\n\n\n\nWhat is it?\n\nPostgreSQL: DBMS\nDBeaver: client tool that allows connection to a DBMS\nSQL: programming language designed to manage and manipulate relational databases.\n\n\nSQL will be discussed afterwards\n\n\n\nData types\nThere are many different data types that can be stored, the main ones are:\n\nCharacter strings\nNumeric values\nBoolean values\nDate and time\nGeometric data\n\nMore details in the PostgreSQL documentation.\n\n\nDate and time -&gt; many functions\nGeometric -&gt; geographic boundaries\n\n\n\n\nTypes - example\nCREATE TABLE personne (\n    id_personne      SERIAL PRIMARY KEY,\n    nom              VARCHAR(100) NOT NULL,\n    prenom           VARCHAR(100) NOT NULL,\n    date_naissance   DATE,\n    email            VARCHAR(255) UNIQUE,\n    nb_enfants       INT CHECK (nb_enfants &gt;= 0),\n    taille_m         DECIMAL(3, 2)\n    est_actif        BOOLEAN,\n    last_updated     TIMESTAMPTZ DEFAULT NOW() \n);\n\n\nSERIAL: sequence\nNOT NULL: mandatory\nUNIQUE: distinct values, but does not prevent NULL values\nDECIMAL(3, 2): from -9.99 to 9.99\n\n3 significant digits including 2 decimal places\n\n\nWell-aligned code, keywords in uppercase"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#table",
+    "href": "doc/english/sql/sql-cours-en.html#table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Table",
+    "text": "Table\nA Table is composed of rows and columns:\n\na row represents a specific record\na column represents a particular attribute of these records\nPrimary key (PK): a column or set of columns that uniquely identifies each record in a table\n\nallows a row to be identified unambiguously\n\n\n\nPK:\n\nmandatory (not null)\nunique\n\n\n\nTable - example\n\nPhysical Data ModelData\n\n\nPhysical Data Model (UML)\n\n\n\n\n\n\nclassDiagram\n  class Joueuse {\n    id_joueuse: INT PK\n    nom: VARCHAR\n    prenom: VARCHAR\n    date_naissance: DATE\n    pays: VARCHAR\n  }\n\n\n\n\n\n\n\n\n\n\nJoueuse\n\n\n\n\n\n\n\n\n\nid_joueuse (PK)\nnom\nprenom\ndate_naissance\npays\n\n\n\n\n1\nSebag\nMarie\n1986-10-15\nFrance\n\n\n2\nPolgar\nJudit\n1976-07-23\nHungary\n\n\n3\nHou\nYifan\n1994-02-27\nChina\n\n\n4\nKosteniuk\nAlexandra\n1984-04-23\nSwitzerland\n\n\n5\nJu\nWenjun\n1991-01-31\nChina"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#relationships-between-tables",
+    "href": "doc/english/sql/sql-cours-en.html#relationships-between-tables",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Relationships between tables",
+    "text": "Relationships between tables\n\nForeign key\nA foreign key (FK):\n\nestablishes a link between 2 tables\nis a column of table A\ncorresponds to the primary key of table B\n\n\n\nTypes of relationships\n\n1..1: A Person has a Passport and a Passport belongs to a single Person\n\nforeign key in one of the 2 tables\n\n1..*: A Player plays for a single Team. A Team is composed of several Players\n\nforeign key in the Player table\n\n*..*: A Student attends several Courses and a Course is attended by several Students\n\nassociation table between Student and Course\n\n\n\n\nLink between 2 tables through a foreign key\n\nDiagramPlayer tableCountry table\n\n\n\n\n\n\n\n\nclassDiagram\n  direction LR\n  \n  class Joueuse {\n    id_joueuse: INT PK\n    nom: VARCHAR\n    prenom: VARCHAR\n    date_naissance: DATE\n    code_pays: VARCHAR FK\n  }\n  \n  class Pays {\n    code_pays: VARCHAR PK\n    nom: VARCHAR\n  }\n\n  Joueuse \"*\" -- \"1\" Pays : BelongsTo\n\n\n\n\n\n\n\n\n\n\n\n\nid_joueuse\nnom\nprenom\ndate_naissance\ncode_pays\n\n\n\n\n1\nSebag\nMarie\n1986-10-15\nFR\n\n\n2\nPolgar\nJudit\n1976-07-23\nHU\n\n\n3\nHou\nYifan\n1994-02-27\nCN\n\n\n4\nKosteniuk\nAlexandra\n1984-04-23\nCH\n\n\n5\nJu\nWenjun\n1991-01-31\nCN\n\n\n\n\n\n\n\n\ncode_pays\nnom\n\n\n\n\nCH\nSwitzerland\n\n\nCN\nChina\n\n\nFR\nFrance\n\n\nHU\nHungary\n\n\n\n\n\n\n\nWe assume here:\n\nA player has one country\nA country has several players\n\n\n\n\nLink between 2 tables through an association table\n\nDiagramPlayer tableParticipation tableTournament table\n\n\n\n\n\n\n\n\nclassDiagram\n  direction LR\n\n  class Joueuse {\n    id_joueuse: INT PK\n    nom: VARCHAR\n    prenom: VARCHAR\n    date_naissance: DATE\n    code_pays: VARCHAR FK\n  }\n  \n  class Tournoi {\n    id_tournoi: INT PK\n    nom: VARCHAR\n    ville: VARCHAR\n  }\n\n  \n  class Participation {\n    id_joueuse: INT FK\n    id_tournoi: INT FK\n  }\n\n  Joueuse \"*\" .. \"1\" Participation\n  Participation \"1\" .. \"*\" Tournoi\n\n\n\n\n\n\n\n\n\n\n\n\nid_joueuse\nnom\nprenom\ndate_naissance\ncode_pays\n\n\n\n\n1\nSebag\nMarie\n1986-10-15\nFR\n\n\n2\nPolgar\nJudit\n1976-07-23\nHU\n\n\n3\nHou\nYifan\n1994-02-27\nCN\n\n\n4\nKosteniuk\nAlexandra\n1984-04-23\nCH\n\n\n5\nJu\nWenjun\n1991-01-31\nCN\n\n\n\n\n\n\n\n\nid_joueuse\nid_tournoi\n\n\n\n\n1\n1\n\n\n1\n2\n\n\n3\n2\n\n\n4\n1\n\n\n4\n2\n\n\n\n\n\n\n\n\nid_tournoi\nnom\nville\n\n\n\n\n1\nNorway Chess\nOslo\n\n\n2\nTata Steel\nWijk aan Zee\n\n\n\n\n\n\n\n\nA player can participate in several tournaments\nA tournament hosts several players"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#sql",
+    "href": "doc/english/sql/sql-cours-en.html#sql",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "SQL",
+    "text": "SQL\n\nSQL: Structured Query Language\nInvented in 1970 by Edgar F. Codd\nProgramming language\nUsed to manage and manipulate relational databases\n\n\n\nVery, very, very widely used\nAll data-related programming languages can embed SQL\n\n\n\nCRUD operations\nSQL allows CRUD operations:\n\nSELECT: retrieve data from a table\nINSERT: insert new data into a table\nUPDATE: update existing data\nDELETE: delete data from a table\n\n\n\n\n\n\n\nNoteCRUD\n\n\n\nCreate, Read, Update, Delete"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#actions-on-a-table",
+    "href": "doc/english/sql/sql-cours-en.html#actions-on-a-table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on a table",
+    "text": "Actions on a table\n\nCreate a Table\n\nQueryResult\n\n\n-- Creation of the personne table (this line is a comment)\n\nCREATE TABLE personne (\n    id_personne      INT         PRIMARY KEY,\n    nom              VARCHAR(30) NOT NULL,\n    prenom           VARCHAR(40),\n    date_naissance   DATE,\n    adresse          TEXT\n);\n\n\nThe table is created but empty.\n\n\n\nid_personne\nnom\nprenom\ndate_naissance\nadresse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipBest practice\n\n\n\n\n\nA good practice is to store tables in a schema to properly organize your database.\nCREATE SCHEMA ran;\n\nCREATE TABLE ran.personne (\n    id_personne      INT         PRIMARY KEY,\n    ...\n);\n\n\n\n\n\n\n\n\nInsert data\n\nQueryResult\n\n\nINSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)\nVALUES\n    (1, 'Gatore' , 'Ali'  , '1990-05-15', 'Amiens'),\n    (2, 'Dure'   , 'Laure', '1985-09-22', 'Auxerre'),\n    (3, 'Erateur', 'Maud' , '1995-03-10', 'Lille');\n\n\n\n\n\nid_personne\nnom\nprenom\ndate_naissance\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAuxerre\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\n\n\nDelete a table\nDROP TABLE personne;\nIf you then try:\nSELECT *\n  FROM personne;\n\nERROR: relation “personne” does not exist"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#actions-on-rows",
+    "href": "doc/english/sql/sql-cours-en.html#actions-on-rows",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on rows",
+    "text": "Actions on rows\n\nSelect all\nTo display the entire contents of a table.\nSELECT *\n  FROM personne;\n\n\nA query ends with a ;\nIt is possible to limit the number of rows displayed\n\nLIMIT 5\n\n\n\n\n\nFilter rows\n\nQueryResultLIKE\n\n\nSELECT *\n  FROM personne\n WHERE adresse LIKE 'A%'\n   AND prenom = 'Laure'\n   AND adresse IN ('Amiens', 'Auxerre')\n   AND adresse IS NOT NULL\n   AND adresse != 'Lille'\n   AND id_personne BETWEEN 2 AND 3;\n\n\n\n\n\n\nTip\n\n\n\nFor better readability, align your code!\n\n\n\n\n\n\n\nid_personne\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n2\nLaure\nDure\n1985-09-22\nAuxerre\n\n\n\n\n\nThe LIKE clause is used to search for specific text in a text column.\n\n% represents zero, one, or more characters\n_ represents a single character\n\n\n\n\n\n\nUpdate rows\n\nQueryResult\n\n\nUPDATE personne\n   SET adresse = 'Amiens'\n WHERE id_personne = 2;\n\n\nIf you run SELECT * FROM personne; again:\n\n\n\nid_personne\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n1\nAli\nGatore\n1990-05-15\nAmiens\n\n\n2\nLaure\nDure\n1985-09-22\nAmiens\n\n\n3\nMaud\nErateur\n1995-03-10\nLille\n\n\n\n\n\n\n\n\nsingle quotes in SQL\nnot double quotes\n\n\n\n\nDelete rows\n\nQueryResult\n\n\nDELETE FROM personne\n WHERE prenom = 'Ali';\n\nTo bring Ali back:\nINSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)\nVALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');\n\n\n\n\n\nid_personne\nprenom\nnom\ndate_naissance\nadresse\n\n\n\n\n2\nLaure\nDure\n1985-09-22\nAmiens\n\n\n3\nMaud\nErateur\n1995-03-10\nLille"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#actions-on-columns",
+    "href": "doc/english/sql/sql-cours-en.html#actions-on-columns",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Actions on columns",
+    "text": "Actions on columns\n\nSelect columns\n\nQueryResult\n\n\nSELECT nom,\n       prenom\n  FROM personne;\n\n\n\n\n\nnom\nprenom\n\n\n\n\nGatore\nAli\n\n\nDure\nLaure\n\n\nErateur\nMaud\n\n\n\n\n\n\n\n\nRename a column\n\nQueryResult\n\n\nALTER TABLE personne\nRENAME COLUMN date_naissance TO dnais;\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\n\n\nAdd an attribute\n\nQueryResult\n\n\nALTER TABLE personne\nADD joue_echecs BOOLEAN;\n\nYou can add a default value.\nALTER TABLE personne\nADD joue_echecs BOOLEAN DEFAULT true;\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\njoue_echecs\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\ntrue\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\ntrue\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\ntrue\n\n\n\n\n\n\n\n\nDelete a column\n\nQueryResult\n\n\nALTER TABLE personne\nDROP COLUMN joue_echecs;\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\n\n\nRename when displaying\nThe AS keyword allows you to rename a column when displaying it.\n⚠️ It does not change the name of the column.\n\nQueryResult\n\n\nSELECT prenom,\n       adresse AS Ville\n  FROM personne;\n\n\n\n\n\nprenom\nVille\n\n\n\n\nMaud\nLille\n\n\nAli\nAmiens\n\n\nLaure\nAmiens"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#joins",
+    "href": "doc/english/sql/sql-cours-en.html#joins",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Joins",
+    "text": "Joins\n\nAlias\nUntil now, we only had one table.\nWe therefore knew that the nom field came from the personne table.\nWhat should we do if we join with a table that also has a column named nom?\nSELECT p.nom       -- 2. p.nom: nom attribute of the table aliased as p, i.e. personne\n  FROM personne p  -- 1. we declare p as an alias for the personne table\n\n\nFull join\n\nQueryAlternative queryPersonOrderResult\n\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM personne p\n  JOIN commande c ON p.id_personne = c.id_personne\n WHERE prenom = 'Laure';\n\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM personne p\n  JOIN commande c USING(id_personne);\n\n\n\n\n\n\nTipUSING\n\n\n\nIf and only if the 2 columns used to perform the join have the same name.\n↪️ You can then use this syntax with USING.\n\n\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\n\n\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n\n\n\n\n\n\n\n\n\nNoteCreate and insert data\n\n\n\n\n\nCREATE TABLE commande (\n    id_commande INT PRIMARY KEY,\n    produit VARCHAR(50),\n    quantite INT,\n    prix_unitaire DECIMAL(10, 2),\n    id_personne INT,\n    FOREIGN KEY (id_personne) REFERENCES personne(id_personne)\n);\n\nINSERT INTO commande (id_commande, produit, quantite, prix_unitaire, id_personne) VALUES\n(1, 'livre', 1, 10, 2),\n(2, 'pain', 3, 2, 3),\n(3, 'pomme', 10, 0.5, 2);\n\n\n\n\n\n\nid_commande\nproduit\nquantite\nprix_unitaire\nid_personne\n\n\n\n\n1\nlivre\n1\n10\n2\n\n\n2\npain\n3\n2\n3\n\n\n3\npomme\n10\n0.5\n2\n\n\n\n\n\n\n\n\nprenom\nproduit\nquantite\n\n\n\n\nLaure\nlivre\n1\n\n\nLaure\npomme\n10\n\n\nMaud\npain\n3\n\n\n\n\n\n\n\nPerforming a join is like creating a large merged table.\n\n\n\nTypes of joins\nIn the previous join:\n\nLaure appears twice because she has 2 orders\nMaud appears once\nAli does not appear\n\nHow can we include Ali in the table even though he has no order?\n\n\ninner join (INNER JOIN)\n\nthe value of id_personne must be present in both tables\notherwise, if id_personne exists in only one table, nothing is displayed for it\n\n\n\n\n\nOuter joins\n\nQueryResultExplanation\n\n\nSELECT p.prenom,\n       c.produit,\n       c.quantite\n  FROM personne p\n  LEFT JOIN commande c USING(id_personne);\n\nLEFT JOIN means that we keep all the content from the previous table\nand complete it with the content from the following table\nRIGHT JOIN does the opposite\n\n\n\n\n\n\nprenom\nproduit\nquantite\n\n\n\n\nLaure\nlivre\n1\n\n\nLaure\npomme\n10\n\n\nMaud\npain\n3\n\n\nAli\n\n\n\n\n\n\n\nThe ****outer join**** performed using the LEFT JOIN keyword indicates that we display:\n\nall data from the ****people**** table\nsupplemented with data from the ****orders**** table\n\nfor rows where the relationship is established"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#aggregation",
+    "href": "doc/english/sql/sql-cours-en.html#aggregation",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Aggregation",
+    "text": "Aggregation\n\nGROUP BY\n\nUsed to group results based on one or more columns\nAllows the use of aggregate functions such as COUNT, SUM, AVG…\n\n\nQueryResult\n\n\nSELECT adresse,\n       COUNT(1)\n  FROM personne\n GROUP BY adresse;\n\n\n\n\n\nadresse\ncount\n\n\n\n\nAmiens\n2\n\n\nLille\n1\n\n\n\n\n\n\n\n\nHAVING\nTo filter after a GROUP BY\n\nQueryResultWarning\n\n\nSELECT adresse,\n       COUNT(1)\n  FROM personne\n GROUP BY adresse\nHAVING COUNT(1) &gt; 1;\n\n\n\n\n\nadresse\ncount\n\n\n\n\nAmiens\n2\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\ndo not confuse it with WHERE\nHAVING is used to filter after a GROUP BY"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#sort-rows",
+    "href": "doc/english/sql/sql-cours-en.html#sort-rows",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Sort rows",
+    "text": "Sort rows\n\nQueryResult\n\n\nSELECT *\n  FROM personne\n ORDER BY dnais DESC\n\nTo sort the results\n\nOptionally add DESC for descending order\n\n\n\n\n\n\n\nid_personne\nnom\nprenom\ndnais\nadresse\n\n\n\n\n3\nErateur\nMaud\n1995-03-10\nLille\n\n\n1\nGatore\nAli\n1990-05-15\nAmiens\n\n\n2\nDure\nLaure\n1985-09-22\nAmiens\n\n\n\n\n\n\n\nIt is possible to sort by several columns."
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#normal-forms",
+    "href": "doc/english/sql/sql-cours-en.html#normal-forms",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Normal forms",
+    "text": "Normal forms\n\nFirst normal form\n\nStatementExamples\n\n\nA relation is in first normal form (1NF) if\n\nit has at least one key\nand all its attributes are atomic\n\n\n\n\n\n\n\nNoteAtomic attribute\n\n\n\n\nContains only one value for a given tuple\nTherefore, it does not group several values together\n\n\n\n\n\n\n\n\nid\nnom\n\n\n\n\n1\nAli Gator\n\n\n2\nLaure Dure\n\n\n3\nMaud Erateur\n\n\n\nThis table does not comply with 1NF because its nom attribute is not atomic.\n\n\n\n\n\nOther normal forms\n\n2NF: 1NF + every non-key attribute depends on the key\n3NF: 2NF + a non-key attribute cannot depend on another non-key attribute"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#schemas",
+    "href": "doc/english/sql/sql-cours-en.html#schemas",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Schemas",
+    "text": "Schemas\nA good practice (not applied here) is to organize our tables into different schemas.\nIn the same way that you organize files into folders, you will find your way around more easily by organizing tables into schemas.\nIf you do not specify a schema when creating a table, it is placed in the public schema.\n\nSchemas - example\nCreate a schema for the programming project\nCREATE schema projet;\n\nWhen creating the table, store it in the schema\nCREATE table projet.joueuse(\n  ...\n);\n\nSpecify the schema in queries\nSELECT *\n  FROM projet.joueuse;"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#sql-without-a-table",
+    "href": "doc/english/sql/sql-cours-en.html#sql-without-a-table",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "SQL without a table",
+    "text": "SQL without a table\nSELECT CURRENT_DATE;\nSELECT 1 + 2;\nSELECT 1 &gt; 2;\nSELECT 'Hello';"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#other-concepts-not-covered",
+    "href": "doc/english/sql/sql-cours-en.html#other-concepts-not-covered",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Other concepts not covered",
+    "text": "Other concepts not covered\n\nACID, COMMIT, ROLLBACK\nviews, snapshot\nindexes\nprivileges: grant / revoke\nWITH (Common Table Expressions)\nUNION, INTERSECT, EXCEPT\nDISTINCT\nEXISTS\nSEQUENCE"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#bibliography",
+    "href": "doc/english/sql/sql-cours-en.html#bibliography",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Bibliography",
+    "text": "Bibliography\n\nENSAI 1A Course\nhttps://www-lisic.univ-littoral.fr/\\~hebert/bdd/introduction/\nhttps://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/\nhttps://sql.sh/"
+  },
+  {
+    "objectID": "doc/english/sql/sql-cours-en.html#exercise",
+    "href": "doc/english/sql/sql-cours-en.html#exercise",
+    "title": "Bases de Données Relationnelles et SQL",
+    "section": "Exercise",
+    "text": "Exercise\nexercise"
+  },
+  {
+    "objectID": "doc/english/uml-en.html",
+    "href": "doc/english/uml-en.html",
+    "title": "UML",
+    "section": "",
+    "text": "UML (Unified Modeling Language) is a graphical modeling language widely used in the field of software engineering. It provides a set of standardized notations and diagrams to visually represent different aspects of a software system.\nThe main objective of UML is to facilitate communication, understanding, and documentation of complex software systems. It allows designers, developers, and stakeholders to collaborate effectively using understandable and standardized diagrams.\nThe 3 main diagrams:"
+  },
+  {
+    "objectID": "doc/english/uml-en.html#use-case-diagram",
+    "href": "doc/english/uml-en.html#use-case-diagram",
+    "title": "UML",
+    "section": "1 Use Case Diagram",
+    "text": "1 Use Case Diagram\nA UML (Unified Modeling Language) use case diagram is a type of diagram used to represent interactions between actors (users or external systems) and the software system. It focuses on the functionalities provided by the system from the users’ point of view.\nA use case diagram consists of several key elements:\n\nActor: An actor represents a role played by a user or an external system that interacts with the software system. It can be a person, another system, a hardware device, etc. Actors are often represented by stick figures.\nUse Case: A use case represents a functionality or action that the software system provides to its actors. It describes an interaction between actors and the system to achieve a specific goal.\nAssociation Relationship: Association relationships connect actors to use cases to show which actor uses which use case.\n\nUML use case diagrams are used to:\n\ncapture the functional requirements of the system\nidentify the actors involved\ndescribe interactions between actors and the system\ndefine the expected functionalities of the system\n\nThey help effectively communicate user needs and guide the software development process by focusing on end-user objectives.\n\n1.1 Tools\n\nPlantUML\n\nexample\n\n\n\n\n1.2 Example\n\n\n\n\n\ngraph LR\n\n  player[\"Player\"]\n  organizer[\"Organizer\"]\n\n  player --&gt; modifyProfile([Modify Profile])\n  player --&gt; register([Register Tournament])\n  player --&gt; becomeArbiter([Become Arbiter])\n  \n  organizer --&gt; createTournament([Create   Tournament])\n  organizer --&gt; modifyTournament([Modify Tournament])"
+  },
+  {
+    "objectID": "doc/english/uml-en.html#class-diagram",
+    "href": "doc/english/uml-en.html#class-diagram",
+    "title": "UML",
+    "section": "2 Class Diagram",
+    "text": "2 Class Diagram\nA UML (Unified Modeling Language) class diagram is a type of diagram used to represent the static structure of a software system. It shows the system’s classes, their attributes, their methods, and the relationships between classes.\nA UML class diagram consists of different boxes representing classes, with lines connecting these boxes to show relationships between classes. Here are some key elements commonly found in a class diagram:\n\nClass: It is represented by a box with three sections:\n\nthe class name\nattributes\nmethods\n\nAssociation Relationship: An association relationship represents a connection between two classes. It shows that objects of one class are associated with objects of another class. For example, a Student class can be associated with a Course class through an association relationship to indicate that students attend courses.\nInheritance: This allows modeling generalization and specialization concepts.\nAggregation and Composition: These relationships describe the structure of classes and their association with other classes.\n\nAggregation is a relationship where a class can be composed of other classes, but these classes can exist independently\nComposition is a stronger relationship where a class is composed of other classes, and these classes cannot exist without the parent class.\n\nMultiplicity: Multiplicity specifies the number of objects of one class associated with one or more objects of another class in an association relationship. It is represented by numbers or symbols such as “0..1”, “1”, “*“, etc.\n\nClass diagrams are used to model the conceptual structure of a software system and identify classes and their relationships. They provide a visual and standardized representation for analyzing, designing, and documenting object-oriented systems.\n\n2.1 Tools\n\nPlantUML\n\nexamples\n\nmermaid\n\n\n\n2.2 Example\n\n\n\n\n\nclassDiagram\n    class Address {\n        +number: string\n        +street: string\n        +city: string\n    }\n\n    class Person {\n        +name: string\n        +first_name: string\n        +age: int\n        +move()\n    }\n\n    class Driver {\n        +license_number: string\n    }\n\n    class Car {\n        +registration: string\n        +speed: float\n    }\n\n    class Wheel {\n        +size: string\n    }\n\n    class Bodywork {\n        +color: string\n    }\n\n    Person \"*\" -- \"1\" Address\n    Person &lt;|-- Driver\n    Driver \"*\" -- \"*\" Car : drives\n    Car o-- Wheel\n    Car *-- Bodywork"
+  },
+  {
+    "objectID": "doc/english/uml-en.html#exercise",
+    "href": "doc/english/uml-en.html#exercise",
+    "title": "UML",
+    "section": "3 Exercise",
+    "text": "3 Exercise\nA Mail item can be of 2 types: Letter or Package.\nA Letter is characterized by:\n\nweight (in grams)\nshipping mode (Express or Standard)\ndestination address\nformat (A3 or A4)\n\nA Package is characterized by:\n\nweight (in grams)\nshipping mode (Express or Standard)\ndestination address\nvolume (in liters)\n\nEach Mail item has the following methods:\n\n__init__() : a constructor\n__str__() : a method that returns a string describing the Mail item\ncalculate_postage()\n\nfor a Letter: base_rate + weight * 0.001\n\nwith base_rate = €2.50 for A4 format and €3.50 for A3 format\n\nfor a Package: volume / 4 + weight * 0.001\nin Express shipping mode, the amounts above are doubled\n\n\n\nQuestions\n\nDefine the class diagram\nCode these classes in Python\n\nExpected output example\n&gt;&gt;&gt; l1 = Letter(\"Bordeaux\", 80, \"standard\", \"A4\")\n&gt;&gt;&gt; print(l1)\nLetter : \n    Destination address : Bordeaux\n    Weight : 80 grams\n    Mode : standard\n    Format : A4\n    Stamp price : €2.58\n&gt;&gt;&gt; c1 = Package(\"Rennes\", 3500, \"express\", 2.25)\n&gt;&gt;&gt; print(c1)\nPackage : \n    Destination address : Rennes \n    Weight : 3500 grams \n    Mode : express \n    Volume : 2.25 liters \n    Stamp price : €8.12\nThe correction is available here"
+  },
+  {
     "objectID": "doc/first-steps/git.html",
     "href": "doc/first-steps/git.html",
     "title": "Git",
@@ -809,14 +1887,14 @@
     "href": "doc/python/02-listes-et-dictionnaires.html",
     "title": "Listes et Dictionnaires",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/02-listes-et-dictionnaires.html#avant-de-commencer",
     "href": "doc/python/02-listes-et-dictionnaires.html#avant-de-commencer",
     "title": "Listes et Dictionnaires",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/02-listes-et-dictionnaires.html#conteneurs",
@@ -858,14 +1936,14 @@
     "href": "doc/python/04-fonctions.html",
     "title": "Les fonctions",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/04-fonctions.html#avant-de-commencer",
     "href": "doc/python/04-fonctions.html#avant-de-commencer",
     "title": "Les fonctions",
     "section": "",
-    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au Jupyter ENSAI avec id et mot de passe\n\nou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
+    "text": "Téléchargez ce notebook Jupyter\nConnectez-vous au SSP Cloud\n\nou une autre plate-forme (Jupyter ENSAI, Jupyter Lab, Google Colab, Kaggle…)\n\nImportez le fichier .ipynb"
   },
   {
     "objectID": "doc/python/04-fonctions.html#fonctions",
