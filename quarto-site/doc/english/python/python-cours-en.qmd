@@ -20,16 +20,16 @@ lightbox: true
 
 ## History
 
-- Created by [Guido van Rossum](https://fr.wikipedia.org/wiki/Python_\(langage\)#/media/Fichier\:Guido_van_Rossum_OSCON_2006.jpg){target="_blank"} (Netherlands)
+- Created by Guido van Rossum (Netherlands)
 - First version in 1991
 - Managed by the *Python Software Foundation* since 2001
-- [Python](https://www.python.org/){target="_blank"} 3.12
+- [Python](https://www.python.org/){target="_blank"} 3.13: `python --version`
 
 ::: {.notes}
 
 - Created at the end of 1989 during the Christmas holidays
 - Python Software Foundation (non-profit organization): promote and protect the language in order to expand the community
-  :::
+:::
 
 ## Why Learn Python?
 
@@ -41,7 +41,7 @@ lightbox: true
 ::: {.notes}
 
 - Important in the world of data science and engineering.
-  :::
+:::
 
 ## Python Fundamentals
 
@@ -126,7 +126,7 @@ Data science:
 - Pandas
   - dataframe, data analysis
 - Matplotlib: charts
-  :::
+:::
 
 ## Writing Your First Python Code
 

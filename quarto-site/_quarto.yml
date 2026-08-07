@@ -81,7 +81,7 @@ website:
             text: "POO Lesson"
           - href: doc/english/POO/poo-exercice-en.qmd
             text: "POO Exercices"
-          - href: doc/english/UML-en.qmd
+          - href: doc/english/uml-en.qmd
             text: "UML"
       - text: Examens
         menu: 

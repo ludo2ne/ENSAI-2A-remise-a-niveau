@@ -23,7 +23,7 @@ These courses are to be completed independently. The estimated workload is 21 ho
 - [ ] Create a [GitHub](https://github.com/){target="_blank"} account
 - [ ] Create an account on [SSP Cloud](https://datalab.sspcloud.fr/){target="_blank"}
   - using your email `firstname.lastname@eleve.ensai.fr`
-- [ ] Read this page about [Datalab](./doc/english/datalab-en.qmd){target="_blank"}
+- [ ] Read this page about [Datalab](./datalab-en.qmd){target="_blank"}
 - [ ] Create a token by following the instructions above
   - you will find the information [here](https://ludo2ne.github.io/ENSAI-tools/doc/datalab/basics.html){target="_blank"}
 
@@ -36,7 +36,7 @@ These courses are to be completed independently. The estimated workload is 21 ho
 Git is a version control system that allows you to track changes made to files, collaborate efficiently, and keep the history of a project.
 
 - [ ] Read the [Git presentation](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}
-- [ ] Quick Git practical work [Introduction course to databases and SQL](doc/english/git-en.qmd)
+- [ ] Quick Git practical work [Introduction course to databases and SQL](./git-en.qmd)
 
 ### Introduction to SQL
 
@@ -44,7 +44,7 @@ Git is a version control system that allows you to track changes made to files, 
 
 SQL (Structured Query Language) is the standard language used to create, query, modify, and administer relational databases.
 
-- [ ] Read the [introduction course to databases and SQL](doc/english/sql/sql-cours-en.qmd)
+- [ ] Read the [introduction course to databases and SQL](./sql/sql-cours-en.qmd)
 - [ ] Complete the exercise
 
 ### Introduction to Python
@@ -53,7 +53,7 @@ SQL (Structured Query Language) is the standard language used to create, query, 
 
 Python is a versatile programming language, easy to learn and widely used for application development, data analysis, artificial intelligence, and automation.
 
-- [ ] Read the [introduction course to Python](doc/english/python/python-cours-en.qmd)
+- [ ] Read the [introduction course to Python](./python/python-cours-en.qmd)
 - [ ] Read and complete the exercises from the 5 notebooks
 
 ### Object-Oriented Programming
@@ -71,7 +71,7 @@ You can start by creating a clone of the Git repository on your machine:
 
 ---
 
-- [ ] Read the [introduction course to OOP](doc/english/POO/poo-cours-en.qmd)
+- [ ] Read the [introduction course to OOP](./POO/poo-cours-en.qmd)
 - [ ] Follow the instructions for VSCode configuration
 - [ ] Complete the exercises
 
@@ -81,7 +81,7 @@ You can start by creating a clone of the Git repository on your machine:
 
 UML is a graphical modeling language used to represent the structure and behavior of a software system before or during its development.
 
-- [ ] Read the [introduction course to UML](doc/english/UML/UML-en.qmd)
+- [ ] Read the [introduction course to UML](./UML-en.qmd)
 - [ ] Complete the exercise
 
 ## Alternatives
@@ -103,7 +103,6 @@ If you have access to *MyENSAI*, videos from the 2022-2023 session are available
 
 - [https://realpython.com/](https://realpython.com/){target="_blank"}
 - [https://refactoring.guru/](https://refactoring.guru/){target="_blank"}
-- https\://github.com/faif/python-patterns{target="_blank"}
+- <https://github.com/faif/python-patterns>{target="_blank"}
 - [https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/](https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/){target=_blank"}
-- [Python for data science](https://pythonds.linogaliana.fr/){target="_blank"}, Lino Galiana (INSEE, ENSAE)
-```
+- [Python for data science](https://pythonds.linogaliana.fr/en/){target="_blank"}, Lino Galiana (INSEE, ENSAE)

@@ -62,7 +62,7 @@ Has the connection been created?
   - Username: `user-<username>`
   - Password: `<password>`
 - [ ] Click TEST, then [CREATE]{.blue-button}
-  :::
+:::
 
 Once the connection has been created, open it:
 
@@ -80,7 +80,7 @@ Finally, open an SQL editor to write queries:
 - [ ] Copy the contents of the file [echecs.sql](./exercice/echecs.sql){target="_blank"}
 - [ ] Paste it into CloudBeaver
 - [ ] Execute the script
-  - Orange icon with a scroll containing an arrow \:scroll:
+  - Orange icon with a scroll containing an arrow :scroll:
 
 If you did not get any error message, check that the tables were created:
 
@@ -90,21 +90,21 @@ If you did not get any error message, check that the tables were created:
 
 ::: {.callout-tip}
 
-- Scroll containing an arrow (ALT+X) \:arrow\_right: execute all queries in the editor
-- Orange arrow (CTRL+ENTER) \:arrow\_right: execute the current query (where the mouse cursor is located)
-  :::
+- Scroll containing an arrow (ALT+X) :arrow_right: execute all queries in the editor
+- Orange arrow (CTRL+ENTER) :arrow_right: execute the current query (where the mouse cursor is located)
+:::
 
 ### Alternatives
 
 Other tools can be used to complete the exercise:
 
-- [https://onyxia.lab.groupe-genes.fr/](https://onyxia.lab.groupe-genes.fr/{target=)[{target=](https://onyxia.lab.groupe-genes.fr/{target=)"_blank"}: works like SSP Cloud
+- <https://onyxia.lab.groupe-genes.fr/>{target="_blank"}: works like SSP Cloud
 - DBeaver on the ENSAI VM
   - Connect to the ENSAI VM
   - Launch the DBeaver software
-- [https://sqliteonline.com/](https://sqliteonline.com/{target=)[{target=](https://sqliteonline.com/{target=)"_blank"}
+- <https://sqliteonline.com/>{target="_blank"}
   - PostgreSQL > Click to connect
-- [https://aiven.io/tools/pg-playground](https://aiven.io/tools/pg-playground{target=)[{target=](https://aiven.io/tools/pg-playground{target=)"_blank"}
+- <https://aiven.io/tools/pg-playground>{target="_blank"}
 
 ## Data description
 
@@ -155,7 +155,7 @@ classDiagram
   cadence -- tournoi
   tournoi -- participant
   joueur -- participant
-````
+```
 
 ## Questions
 
@@ -166,7 +166,6 @@ classDiagram
 * [ ] List all players ordered by descending Elo rating
 * [ ] List all players with an Elo rating less than or equal to 2000
 * [ ] List all players with an Elo rating less than or equal to 2000 and whose first name contains an "e" (uppercase or lowercase)
-
   * :bulb: see the UPPER method
 
 ### Updating data
@@ -174,10 +173,8 @@ classDiagram
 * [ ] Create the player: *Martine Dupont, Elo: 1999, Elite Arbiter*
 * [ ] Delete the player with the username *marc78*
 * [ ] Try to delete the player with id: 20
-
   * Why does this not work? What should be done to delete this player?
 * [ ] List the players who are arbiters
-
   * :bulb: see IS NOT NULL
 * [ ] Add a boolean column *is_arbiter* to the player table
 * [ ] Fill this new column for all players
@@ -196,6 +193,6 @@ classDiagram
 * [ ] Add the number of players and the maximum Elo rating of the players
 
 ::: {.callout-tip title="Solution" collapse="true"}
-Link to the [solution](./exercice/correction.sql)
+Link to the [solution](../../sql/exercice/correction.sql/)
 :::
 

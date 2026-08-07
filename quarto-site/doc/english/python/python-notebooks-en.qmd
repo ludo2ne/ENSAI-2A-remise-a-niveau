@@ -37,14 +37,14 @@ To create these notebooks, I was inspired by the resources below:
 2. Download the `.ipynb` file to your machine
 3. Connect to one of the services offered below
 4. Upload the `.ipynb` file to this service
-   :::
+:::
 
 ### Launching a Jupyter service
 
 - [ ] Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
 - [ ] Go to the *Service Catalog* menu
 - [ ] Launch a `Jupyter-python` service, then open it
-- [ ] Import a notebook: at the top left, below the menu bar, use the \:arrow\_up: arrow
+- [ ] Import a notebook: at the top left, below the menu bar, use the :arrow_up: arrow
 
 In the left column:
 
@@ -59,11 +59,11 @@ The `Code` field indicates whether the cell expects Python code or text (Markdow
 Here are other possibilities for using a notebook:
 
 - the [GENES datalab](https://onyxia.lab.groupe-genes.fr/){target="_blank"}
-- an [ENSAI Jupyter cluster](https://jupyther.ensai.fr/){target="_blank"} \:arrow\_right: if you have your username and password
+- an [ENSAI Jupyter cluster](https://jupyther.ensai.fr/){target="_blank"} :arrow_right: if you have your username and password
 - [Jupyter Lab online](https://jupyter.org/try-jupyter/lab/){target="_blank"}
 - [Kaggle notebooks](https://www.kaggle.com/code){target="_blank"}
 - [Google Colab](https://colab.research.google.com/){target="_blank"}
-  :::
+:::
 
 ### Cell types
 
@@ -87,7 +87,7 @@ Some examples:
 | `# Level 1 title`            |                             |
 | `## Level 2 title`           |                             |
 | `- Bullet point item`        | - Bullet point item         |
-| :::                          |                             |
+:::
 
 The desired cell type can be changed in the toolbar.
 

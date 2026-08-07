@@ -19,8 +19,8 @@ lightbox: true
 ## Avant de commencer {.unnumbered}
 
 - Téléchargez ce [notebook Jupyter](02-listes-et-dictionnaires.ipynb){target="_blank"}
-- Connectez-vous au [Jupyter](https://jupyther.ensai.fr/){target="_blank"} ENSAI avec id et mot de passe
-  - ou une autre plate-forme (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+  - ou une autre plate-forme ([Jupyter](https://jupyther.ensai.fr/){target="_blank"} ENSAI, Jupyter Lab, Google Colab, Kaggle...)
 - Importez le fichier .ipynb 
 
 

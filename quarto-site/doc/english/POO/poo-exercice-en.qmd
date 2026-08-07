@@ -58,7 +58,7 @@ Implement the following methods:
 - [ ] `translation(self, dx, dy)`: applying a translation with vector (dx, dy)
 - [ ] `rotation(self, a)` (bonus): applying a rotation centered at (0, 0) with angle a
 
-\::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="true"}
 To check that your methods are correct, you can add a `main` block at the end of your class. When you execute this file, this code will be run.
 
 ```{.python}
@@ -72,20 +72,17 @@ if __name__ == "__main__":
     print(f"p1 : {p1}")
     print(f"Distance between p1 and p2 : {p1.distance(p2)}")
     print(f"p1 is equal to p2 : {p1 == p2}")
-````
+```
 
 :::
 
 ## Exercise 2 - Polygons
 
 * [ ] Create a `Polygon` class composed of objects from the `Point` class
-
   * We will assume from now on that segments do not cross
 * [ ] Add 2 abstract methods `area()` and `perimeter()` to this class
-
   * these methods will be defined in child classes
 * [ ] Create the `Segment`, `Triangle` and `Quadrilateral` classes that inherit from the `Polygon` class
-
   * check the number of points each time
 * [ ] Define the `area()` and `perimeter()` methods in these 3 classes
 * [ ] Create the `Rectangle` class that inherits from `Quadrilateral`
@@ -177,20 +174,20 @@ classDiagram
 
 #### Exercises 1 and 2
 
-* [point.py](./exercices/geometrie/point.py){target="_blank"}
-* [polygone.py](./exercices/geometrie/polygone.py){target="_blank"}
-* [segment.py](./exercices/geometrie/segment.py){target="_blank"}
-* [triangle.py](./exercices/geometrie/triangle.py){target="_blank"}
-* [quadrilatere.py](./exercices/geometrie/quadrilatere.py){target="_blank"}
-* [rectangle.py](./exercices/geometrie/rectangle.py){target="_blank"}
+* [point.py](../../POO/exercices/geometrie/point.py){target="_blank"}
+* [polygone.py](../../POO/exercices/geometrie/polygone.py){target="_blank"}
+* [segment.py](../../POO/exercices/geometrie/segment.py){target="_blank"}
+* [triangle.py](../../POO/exercices/geometrie/triangle.py){target="_blank"}
+* [quadrilatere.py](../../POO/exercices/geometrie/quadrilatere.py){target="_blank"}
+* [rectangle.py](../../POO/exercices/geometrie/rectangle.py){target="_blank"}
 
 An example of unit tests for the Point class:
 
-* [test_point.py](./exercices/geometrie/test_point.py){target="_blank"}
+* [test_point.py](../../POO/exercices/geometrie/test_point.py){target="_blank"}
 
 #### Exercise 3
 
-* [domino.py](./exercices/domino/domino.py){target="_blank"}
-* [jeu.py](./exercices/domino/jeu.py){target="_blank"}
-  :::
+* [domino.py](../../POO/exercices/domino/domino.py){target="_blank"}
+* [jeu.py](../../POO/exercices/domino/jeu.py){target="_blank"}
+:::
 

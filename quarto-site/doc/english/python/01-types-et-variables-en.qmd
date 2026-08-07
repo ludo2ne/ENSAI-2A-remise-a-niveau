@@ -19,9 +19,9 @@ lightbox: true
 
 ## Before starting {.unnumbered}
 
-- Download this [Jupyter notebook](01-types-et-variables.ipynb){target="_blank"}
-- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} with your username and password
-  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Download this [Jupyter notebook](01-types-et-variables-en.ipynb){target="_blank"}
+- Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+  - or another platform (ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"}, Jupyter Lab, Google Colab, Kaggle...)
 - Import the .ipynb file
 
 ## Introduction {.unnumbered}
@@ -46,7 +46,7 @@ b = "texte"
 
 # Create variable c and assign it the boolean True
 c = True
-````
+```
 
 ```{python}
 #| vscode: {languageId: python}

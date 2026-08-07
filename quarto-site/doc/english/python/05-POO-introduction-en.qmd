@@ -19,9 +19,9 @@ lightbox: true
 
 ## Before starting {.unnumbered}
 
-- Download this [Jupyter notebook](05-POO-introduction.ipynb){target="_blank"}
-- Connect to the ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"} platform with your username and password
-  - or another platform (SSPCloud, Jupyter Lab, Google Colab, Kaggle...)
+- Download this [Jupyter notebook](05-POO-introduction-en.ipynb){target="_blank"}
+- Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+  - or another platform (ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"}, Jupyter Lab, Google Colab, Kaggle...)
 - Import the .ipynb file
 
 ## Object-oriented programming
@@ -43,7 +43,7 @@ print(type("bonjour"))
 print(type([]))
 print(type({}))          
 print(type(lambda x: x**2))
-````
+```
 
 ### Defining your own objects
 
@@ -296,17 +296,13 @@ Following these practices is strongly recommended and will help you write better
 ### Naming conventions
 
 * variables
-
   * use explicit names (avoid `toto`, `var1`, ...)
   * use lowercase letters with words separated by underscores (snake_case)
-
     * exception for **constants**: use UPPERCASE letters with words separated by underscores
   * this makes code more readable for yourself and others
 * functions and methods
-
   * same convention as variables
 * classes
-
   * use **camelCase**: each word starts with an uppercase letter.
   * example: `VeloElectrique`
 

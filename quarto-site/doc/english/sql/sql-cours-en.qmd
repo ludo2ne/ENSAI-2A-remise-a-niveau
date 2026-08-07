@@ -39,7 +39,7 @@ from: markdown+emoji
 
 - Can be used by applications
 - Can be queried and modified by users
-  :::
+:::
 
 ### Relational databases
 
@@ -50,7 +50,7 @@ from: markdown+emoji
 ::: {.notes}
 
 - Table = spreadsheet
-  :::
+:::
 
 ### DBMS
 
@@ -70,7 +70,7 @@ Examples of DBMS:
 - DBMS: main interface with data
 - For us, PostgreSQL, free, open source, installed on a VM
 - NoSQL: Not Only SQL
-  :::
+:::
 
 ### What is it?
 
@@ -98,7 +98,7 @@ More details in the [PostgreSQL documentation](https://www.postgresql.org/docs/c
 
 - Date and time -> many functions
 - Geometric -> geographic boundaries
-  :::
+:::
 
 ### Types - example
 
@@ -114,7 +114,7 @@ CREATE TABLE personne (
     est_actif        BOOLEAN,
     last_updated     TIMESTAMPTZ DEFAULT NOW() 
 );
-````
+```
 
 :::{.notes}
 
@@ -143,7 +143,7 @@ PK:
 
 * mandatory (not null)
 * unique
-  :::
+:::
 
 ### Table - example {.smaller}
 
@@ -260,7 +260,7 @@ We assume here:
 
 * A player has one country
 * A country has several players
-  :::
+:::
 
 ### Link between 2 tables through an association table {.smaller}
 
@@ -333,7 +333,7 @@ classDiagram
 
 * A player can participate in several tournaments
 * A tournament hosts several players
-  :::
+:::
 
 ## SQL
 
@@ -346,7 +346,7 @@ classDiagram
 
 * Very, very, very widely used
 * All data-related programming languages can embed SQL
-  :::
+:::
 
 ### CRUD operations
 
@@ -361,8 +361,669 @@ SQL allows CRUD operations:
 Create, Read, Update, Delete
 :::
 
+
 ## Actions on a table
 
 ### Create a Table
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+-- Creation of the personne table (this line is a comment)
+
+CREATE TABLE personne (
+    id_personne      INT         PRIMARY KEY,
+    nom              VARCHAR(30) NOT NULL,
+    prenom           VARCHAR(40),
+    date_naissance   DATE,
+    adresse          TEXT
+);
+```
+
+#### Result
+
+The table is created but empty.
+
+| id_personne | nom | prenom | date_naissance | adresse |
+| ----------- | --- | ------ | -------------- | ------- |
+|             |     |        |                |         |
+
+::: {.callout-tip title="Best practice" collapse="true"}
+A good practice is to store tables in a schema to properly organize your database.
+
+```{.sql}
+CREATE SCHEMA ran;
+
+CREATE TABLE ran.personne (
+    id_personne      INT         PRIMARY KEY,
+    ...
+);
+```
+
+:::
+
+:::
+
+### Insert data
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+INSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)
+VALUES
+    (1, 'Gatore' , 'Ali'  , '1990-05-15', 'Amiens'),
+    (2, 'Dure'   , 'Laure', '1985-09-22', 'Auxerre'),
+    (3, 'Erateur', 'Maud' , '1995-03-10', 'Lille');
+```
+
+#### Result
+
+| id_personne | nom     | prenom | date_naissance | adresse |
+| ----------- | ------- | ------ | -------------- | ------- |
+| 1           | Gatore  | Ali    | 1990-05-15     | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22     | Auxerre |
+| 3           | Erateur | Maud   | 1995-03-10     | Lille   |
+
+:::
+
+### Delete a table
+
+```{.sql}
+DROP TABLE personne;
+```
+
+If you then try:
+
+```{.sql}
+SELECT *
+  FROM personne;
+```
+
+> ERROR: relation "personne" does not exist
+
+## Actions on rows
+
+### Select all
+
+To display the entire contents of a table.
+
+```{.sql}
+SELECT *
+  FROM personne;
+```
+
+:::{.notes}
+
+* A query ends with a ;
+* It is possible to limit the number of rows displayed
+  * LIMIT 5
+:::
+
+### Filter rows
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT *
+  FROM personne
+ WHERE adresse LIKE 'A%'
+   AND prenom = 'Laure'
+   AND adresse IN ('Amiens', 'Auxerre')
+   AND adresse IS NOT NULL
+   AND adresse != 'Lille'
+   AND id_personne BETWEEN 2 AND 3;
+```
+
+::: {.callout-tip}
+For better readability, align your code!
+:::
+
+#### Result
+
+| id_personne | prenom | nom  | date_naissance | adresse |
+| ----------- | ------ | ---- | -------------- | ------- |
+| 2           | Laure  | Dure | 1985-09-22     | Auxerre |
+
+#### LIKE
+
+The `LIKE` clause is used to search for specific text in a text column.
+
+* `%` represents zero, one, or more characters
+* `_` represents a single character
+
+:::
+
+### Update rows
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+UPDATE personne
+   SET adresse = 'Amiens'
+ WHERE id_personne = 2;
+```
+
+#### Result
+
+If you run `SELECT * FROM personne;` again:
+
+| id_personne | prenom | nom     | date_naissance | adresse |
+| ----------- | ------ | ------- | -------------- | ------- |
+| 1           | Ali    | Gatore  | 1990-05-15     | Amiens  |
+| 2           | Laure  | Dure    | 1985-09-22     | Amiens  |
+| 3           | Maud   | Erateur | 1995-03-10     | Lille   |
+
+:::
+
+:::{.notes}
+
+* single quotes in SQL
+* not double quotes
+:::
+
+### Delete rows
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+DELETE FROM personne
+ WHERE prenom = 'Ali';
+```
+
+<br>
+
+To bring Ali back:
+
+```{.sql}
+INSERT INTO personne (id_personne, nom, prenom, date_naissance, adresse)
+VALUES (1, 'Gatore', 'Ali', '1990-05-15', 'Amiens');
+```
+
+#### Result
+
+| id_personne | prenom | nom     | date_naissance | adresse |
+| ----------- | ------ | ------- | -------------- | ------- |
+| 2           | Laure  | Dure    | 1985-09-22     | Amiens  |
+| 3           | Maud   | Erateur | 1995-03-10     | Lille   |
+
+:::
+
+## Actions on columns
+
+### Select columns
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT nom,
+       prenom
+  FROM personne;
+```
+
+#### Result
+
+| nom     | prenom |
+| ------- | ------ |
+| Gatore  | Ali    |
+| Dure    | Laure  |
+| Erateur | Maud   |
+
+:::
+
+### Rename a column
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+ALTER TABLE personne
+RENAME COLUMN date_naissance TO dnais;
+```
+
+#### Result
+
+| id_personne | nom     | prenom | dnais      | adresse |
+| ----------- | ------- | ------ | ---------- | ------- |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   |
+
+:::
+
+### Add an attribute
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+ALTER TABLE personne
+ADD joue_echecs BOOLEAN;
+```
+
+<br>
+
+You can add a default value.
+
+```{.sql}
+ALTER TABLE personne
+ADD joue_echecs BOOLEAN DEFAULT true;
+```
+
+#### Result
+
+| id_personne | nom     | prenom | dnais      | adresse | joue_echecs |
+| ----------- | ------- | ------ | ---------- | ------- | ----------- |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  | true        |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  | true        |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   | true        |
+
+:::
+
+### Delete a column
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+ALTER TABLE personne
+DROP COLUMN joue_echecs;
+```
+
+#### Result
+
+| id_personne | nom     | prenom | dnais      | adresse |
+| ----------- | ------- | ------ | ---------- | ------- |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   |
+
+:::
+
+### Rename when displaying
+
+The `AS` keyword allows you to rename a column when displaying it.
+
+:warning: It does not change the name of the column.
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT prenom,
+       adresse AS Ville
+  FROM personne;
+```
+
+#### Result
+
+| prenom | Ville  |
+| ------ | ------ |
+| Maud   | Lille  |
+| Ali    | Amiens |
+| Laure  | Amiens |
+
+:::
+
+## Joins
+
+### Alias
+
+Until now, we only had one table.
+
+We therefore knew that the **nom** field came from the **personne** table.
+
+What should we do if we join with a table that also has a column named **nom**?
+
+```{.sql}
+SELECT p.nom       -- 2. p.nom: nom attribute of the table aliased as p, i.e. personne
+  FROM personne p  -- 1. we declare p as an alias for the personne table
+```
+
+### Full join {.smaller}
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM personne p
+  JOIN commande c ON p.id_personne = c.id_personne
+ WHERE prenom = 'Laure';
+```
+
+#### Alternative query
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM personne p
+  JOIN commande c USING(id_personne);
+```
+
+::: {.callout-tip title="USING"}
+If and only if the 2 columns used to perform the join have the same name.
+
+:arrow_right_hook: You can then use this syntax with USING.
+:::
+
+#### Person
+
+| id_personne | nom     | prenom | dnais      | adresse |
+| ----------- | ------- | ------ | ---------- | ------- |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   |
+
+#### Order
+
+::: {.callout-note title="Create and insert data" collapse="true"}
+
+```{.sql}
+CREATE TABLE commande (
+    id_commande INT PRIMARY KEY,
+    produit VARCHAR(50),
+    quantite INT,
+    prix_unitaire DECIMAL(10, 2),
+    id_personne INT,
+    FOREIGN KEY (id_personne) REFERENCES personne(id_personne)
+);
+
+INSERT INTO commande (id_commande, produit, quantite, prix_unitaire, id_personne) VALUES
+(1, 'livre', 1, 10, 2),
+(2, 'pain', 3, 2, 3),
+(3, 'pomme', 10, 0.5, 2);
+```
+
+:::
+
+| id_commande | produit | quantite | prix_unitaire | id_personne |
+| ----------- | ------- | -------- | ------------- | ----------- |
+| 1           | livre   | 1        | 10            | 2           |
+| 2           | pain    | 3        | 2             | 3           |
+| 3           | pomme   | 10       | 0.5           | 2           |
+
+#### Result
+
+| prenom | produit | quantite |
+| ------ | ------- | -------- |
+| Laure  | livre   | 1        |
+| Laure  | pomme   | 10       |
+| Maud   | pain    | 3        |
+
+:::
+
+:::{.notes}
+Performing a join is like creating a large merged table.
+:::
+
+### Types of joins
+
+In the previous join:
+
+* Laure appears twice because she has 2 orders
+* Maud appears once
+* Ali does not appear
+
+How can we include Ali in the table even though he has no order?
+
+:::{.notes}
+
+* inner join (INNER JOIN)
+
+  * the value of **id_personne** must be present in both tables
+  * otherwise, if **id_personne** exists in only one table, nothing is displayed for it
+:::
+
+### Outer joins
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT p.prenom,
+       c.produit,
+       c.quantite
+  FROM personne p
+  LEFT JOIN commande c USING(id_personne);
+```
+
+* `LEFT JOIN` means that we keep all the content from the previous table
+* and complete it with the content from the following table
+* `RIGHT JOIN` does the opposite
+
+#### Result
+
+| prenom | produit | quantite |
+| ------ | ------- | -------- |
+| Laure  | livre   | 1        |
+| Laure  | pomme   | 10       |
+| Maud   | pain    | 3        |
+| Ali    |         |          |
+
+#### Explanation
+
+The ****outer join**** performed using the `LEFT JOIN` keyword indicates that we display:
+
+* all data from the ****people**** table
+* supplemented with data from the ****orders**** table
+
+  * for rows where the relationship is established
+
+:::
+
+## Aggregation
+
+### GROUP BY
+
+* Used to group results based on one or more columns
+* Allows the use of aggregate functions such as COUNT, SUM, AVG...
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT adresse,
+       COUNT(1)
+  FROM personne
+ GROUP BY adresse;
+```
+
+#### Result
+
+| adresse | count |
+| ------- | ----- |
+| Amiens  | 2     |
+| Lille   | 1     |
+
+:::
+
+### HAVING
+
+To filter after a **GROUP BY**
+
+::: {.panel-tabset .nav-pills}
+
+Used after the GROUP BY clause to filter the results.
+
+#### Query
+
+```{.sql}
+SELECT adresse,
+       COUNT(1)
+  FROM personne
+ GROUP BY adresse
+HAVING COUNT(1) > 1;
+```
+
+#### Result
+
+| adresse | count |
+| ------- | ----- |
+| Amiens  | 2     |
+
+#### Warning
+
+::: {.callout-warning}
+
+* do not confuse it with `WHERE`
+* `HAVING` is used to filter after a GROUP BY
+:::
+
+:::
+
+## Sort rows
+
+::: {.panel-tabset .nav-pills}
+
+#### Query
+
+```{.sql}
+SELECT *
+  FROM personne
+ ORDER BY dnais DESC
+```
+
+* To sort the results
+
+  * Optionally add **DESC** for descending order
+
+#### Result
+
+| id_personne | nom     | prenom | dnais      | adresse |
+| ----------- | ------- | ------ | ---------- | ------- |
+| 3           | Erateur | Maud   | 1995-03-10 | Lille   |
+| 1           | Gatore  | Ali    | 1990-05-15 | Amiens  |
+| 2           | Dure    | Laure  | 1985-09-22 | Amiens  |
+
+:::
+
+:::{.notes}
+It is possible to sort by several columns.
+:::
+
+## Normal forms
+
+### First normal form
+
+::: {.panel-tabset .nav-pills}
+
+#### Statement
+
+A relation is in first normal form (1NF) if
+
+* it has at least one key
+* and all its attributes are atomic
+
+::: {.callout-note title="Atomic attribute"}
+
+* Contains only one value for a given tuple
+* Therefore, it does not group several values together
+:::
+
+#### Examples
+
+| id | nom          |
+| -- | ------------ |
+| 1  | Ali Gator    |
+| 2  | Laure Dure   |
+| 3  | Maud Erateur |
+
+This table does not comply with 1NF because its **nom** attribute is not atomic.
+
+:::
+
+### Other normal forms
+
+* 2NF: 1NF + every non-key attribute depends on the key
+* 3NF: 2NF + a non-key attribute cannot depend on another non-key attribute
+
+## Schemas
+
+A good practice (not applied here) is to organize our tables into different schemas.
+
+In the same way that you organize files into folders, you will find your way around more easily by organizing tables into `schemas`.
+
+If you do not specify a schema when creating a table, it is placed in the **public** schema.
+
+### Schemas - example
+
+Create a schema for the programming project
+
+```{.sql}
+CREATE schema projet;
+```
+
+<br>
+
+When creating the table, store it in the schema
+
+```{.sql}
+CREATE table projet.joueuse(
+  ...
+);
+```
+
+<br>
+
+Specify the schema in queries
+
+```{.sql}
+SELECT *
+  FROM projet.joueuse;
+```
+
+## SQL without a table
+
+```{.sql}
+SELECT CURRENT_DATE;
+SELECT 1 + 2;
+SELECT 1 > 2;
+SELECT 'Hello';
+```
+
+## Other concepts not covered {.smaller}
+
+* ACID, COMMIT, ROLLBACK
+* views, snapshot
+* indexes
+* privileges: grant / revoke
+* WITH (Common Table Expressions)
+* UNION, INTERSECT, EXCEPT
+* DISTINCT
+* EXISTS
+* SEQUENCE
+
+## Bibliography
+
+* [ENSAI 1A Course](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
+* <https://www-lisic.univ-littoral.fr/\~hebert/bdd/introduction/>{target="_blank"}
+* <https://sgbd.developpez.com/tutoriels/cours-complet-bdd-sql/>{target="_blank"}
+* <https://sql.sh/>{target="_blank"}
+
+## Exercise
+
+[exercise](./sql-exercice-en.qmd){target="_blank"}
 
 

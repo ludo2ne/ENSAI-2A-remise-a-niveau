@@ -44,11 +44,11 @@ Let's model a person:
 - Attributes: last name, first name, age, skills
 - Methods: learn(), grow_older()
 
-\::: {.callout-note title="Methods can modify attributes"}
+::: {.callout-note title="Methods can modify attributes"}
 The *grow_older()* method will increase the person's age by 1.
 
 The *learn("Python")* method will add "Python" to the list of skills.
-\:::
+:::
 
 ## Fundamental principles
 
@@ -110,7 +110,7 @@ class Person:
     def grow_older(self):
         """Increments the person's age by one year."""
         self.age += 1
-````
+```
 
 ### Python Objects
 
@@ -319,7 +319,7 @@ For example:
   * therefore, it inherits all its attributes and methods
   * and it has additional characteristics (battery, range, power...)
 * However, in this case, the `Bike` class does not need to be abstract because creating a bike object is perfectly valid
-  :::
+:::
 
 ## Exercises
 

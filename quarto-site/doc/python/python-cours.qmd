@@ -24,7 +24,7 @@ lightbox: true
 - Créé par [Guido van Rossum](https://fr.wikipedia.org/wiki/Python_(langage)#/media/Fichier:Guido_van_Rossum_OSCON_2006.jpg){target="_blank"} (Pays-Bas)
 - 1ère version en 1991
 - Géré par la *Python Software Foundation* depuis 2001
-- [Python](https://www.python.org/){target="_blank"} 3.12
+- [Python](https://www.python.org/){target="_blank"} 3.13: `python --version`
 
 
 ::: {.notes}
