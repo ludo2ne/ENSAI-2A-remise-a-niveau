@@ -602,22 +602,22 @@ window.Quarto = {
 <li>Parameters: 2 parameters p1 and p2</li>
 <li>Output: result of the operation p1 x p2 + p1 + 5</li>
 </ul>
-<div id="a1ce744b" class="cell" data-execution_count="1">
+<div id="bd12ca9c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ma_fonction(p1, p2):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    resultat <span class="op">=</span> p1 <span class="op">*</span> p2 <span class="op">+</span> p1 <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that our function is defined, we can call it as many times as we want</p>
-<div id="f4748600" class="cell" data-execution_count="2">
+<div id="dfb549e2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ma_fonction(<span class="dv">2</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e9b5e17c" class="cell" data-execution_count="3">
+<div id="96d31592" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ma_fonction(<span class="dv">5</span>, <span class="dv">1</span>) <span class="op">+</span> ma_fonction(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="arguments" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="arguments"><span class="header-section-number">1.1</span> Arguments</h3>
 <p><strong>Arguments</strong> are the parameters of the function. When we call a function by specifying arguments, we say that we “pass” arguments to it. These arguments then become <strong>variables</strong> that can only be used inside the function.</p>
-<div id="e66549b2" class="cell" data-execution_count="4">
+<div id="0db1449c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maximum(a, b):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        resultat <span class="op">=</span> a</span>
@@ -625,11 +625,11 @@ window.Quarto = {
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        resultat <span class="op">=</span> b</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6226e80b" class="cell" data-execution_count="5">
+<div id="b35452b6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>maximum(<span class="dv">1</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Outside functions, arguments no longer exist and are no longer known.</p>
-<div id="5d34f402" class="cell" data-execution_count="6">
+<div id="040500aa" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="positional-arguments-and-keyword-arguments" class="level4">
@@ -640,29 +640,29 @@ window.Quarto = {
 <li><strong>keyword arguments</strong>: the parameter name is specified when passing the argument</li>
 </ul>
 <p>Let’s illustrate this difference using a function that simply performs a division.</p>
-<div id="296cda1b" class="cell" data-execution_count="7">
+<div id="0712c577" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(x, y):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> y <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"ERROR: Division by 0 is impossible"</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x <span class="op">/</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="412deb7b" class="cell" data-execution_count="8">
+<div id="e489b222" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Positional arguments</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>division(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="006314d7" class="cell" data-execution_count="9">
+<div id="d0efb824" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keyword arguments</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>division(x<span class="op">=</span><span class="dv">8</span>, y<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the case of positional arguments, respecting the order is mandatory.</p>
-<div id="d420aec0" class="cell" data-execution_count="10">
+<div id="a8b9bd45" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(division(<span class="dv">0</span>, <span class="dv">5</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(division(<span class="dv">5</span>, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We notice that <strong>None</strong> is displayed above. The explanation is that when we enter the <code>if y == 0</code> part of the code, there is no <strong>return</strong>. Therefore, by default, the method returns <strong>None</strong>, which represents the absence of a value.</p>
 <p>In the case of keyword arguments, the order no longer matters.</p>
-<div id="6bbd19a3" class="cell" data-execution_count="11">
+<div id="d07deb82" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(division(x<span class="op">=</span><span class="dv">0</span>, y<span class="op">=</span><span class="dv">5</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(division(y<span class="op">=</span><span class="dv">5</span>, x<span class="op">=</span><span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -675,17 +675,17 @@ window.Quarto = {
 <li>optional arguments that specify a default behavior of the function, but can also be modified if necessary</li>
 </ul>
 <p>Let’s look at how we can modify the behavior of the <code>print</code> function using an optional argument.</p>
-<div id="992a1d04" class="cell" data-execution_count="12">
+<div id="cbf1386a" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"salut"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"salut"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="62b5aa55" class="cell" data-execution_count="13">
+<div id="15017736" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"salut"</span>, end<span class="op">=</span><span class="st">' '</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"salut"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We modified the behavior of the first <strong>print</strong> call using the optional parameter <strong>end</strong>. By default, this value is set to <code>'\n'</code>, meaning a line break. We changed it in the second cell to a space, hence the difference in output.</p>
 <p>We will now create a function with an optional argument. To explain the behavior of this method, documentation has been added between the characters <code>"""</code>.</p>
-<div id="1b8837fb" class="cell" data-execution_count="14">
+<div id="4f652326" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> note_finale(note1, note2, bonus<span class="op">=</span><span class="dv">0</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fonction d'ajout de 2 notes</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
@@ -702,11 +702,11 @@ window.Quarto = {
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> note1 <span class="op">+</span> note2 <span class="op">+</span> bonus</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f2a6a732" class="cell" data-execution_count="15">
+<div id="d092e7a7" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default behavior (bonus=0)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>note_finale(<span class="fl">8.5</span>, <span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="09362f70" class="cell" data-execution_count="16">
+<div id="ff797306" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modified behavior</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>note_finale(<span class="fl">8.5</span>, <span class="dv">7</span>, bonus <span class="op">=</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -719,7 +719,7 @@ window.Quarto = {
 <li>The <code>*args</code> notation allows a function to receive a variable number of positional arguments</li>
 <li>The <code>**kwargs</code> notation allows a function to receive a variable number of key-value arguments</li>
 </ul>
-<div id="6acb63f4" class="cell" data-execution_count="17">
+<div id="cab8775f" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example using args</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> moyenne(<span class="op">*</span>args):</span>
@@ -733,7 +733,7 @@ window.Quarto = {
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>moyenne(<span class="dv">10</span>, <span class="dv">15</span>)</span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>moyenne(<span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">16</span>, <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="32e298d9" class="cell" data-execution_count="18">
+<div id="3a6bcb54" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example using kwargs</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recette(<span class="op">**</span>kwargs):</span>
@@ -759,17 +759,17 @@ window.Quarto = {
 <li>that the <code>return</code> statement is used to specify this result</li>
 </ul>
 <p>When the function is called, it is evaluated to the value specified by <code>return</code>, and this value can then be stored in a variable and used in subsequent calculations, and so on.</p>
-<div id="84cf90b1" class="cell" data-execution_count="19">
+<div id="4f5b17d3" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(x, y):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">/</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0aeb08f6" class="cell" data-execution_count="20">
+<div id="48e879d7" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> division(<span class="dv">4</span>, <span class="dv">2</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> division(<span class="dv">9</span>, <span class="dv">3</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>division(a, b)  <span class="co"># 2 / 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Important note</strong>: when a return statement is reached in a function, the rest of the function is not executed.</p>
-<div id="c695fbed" class="cell" data-execution_count="21">
+<div id="6732364a" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test(x):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"will I be displayed?"</span>)</span>
@@ -780,7 +780,7 @@ window.Quarto = {
 <section id="returning-multiple-results" class="level4">
 <h4 class="anchored" data-anchor-id="returning-multiple-results">Returning multiple results</h4>
 <p>A function returns by definition <strong>one</strong> result, which can be any Python object. What should we do if we want to return several results? We can simply store the different results in a container (list, tuple, dictionary, etc.), which can itself contain a large number of objects.</p>
-<div id="33bb1e1e" class="cell" data-execution_count="22">
+<div id="0849902a" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculs_mathematiques(a, b):</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    somme <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    difference <span class="op">=</span> a <span class="op">-</span> b</span>
@@ -793,13 +793,13 @@ window.Quarto = {
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(resultats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>By default, multiple returns are <strong>tuples</strong>. But it is also possible to return a list or a dictionary.</p>
-<div id="3c207558" class="cell" data-execution_count="23">
+<div id="ea7031db" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> puissance_liste(a):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [a<span class="op">**</span><span class="dv">2</span>, a<span class="op">**</span><span class="dv">3</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>puissance_liste(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fbe9e32a" class="cell" data-execution_count="24">
+<div id="2c190662" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> puissance_dico(nombre):</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    carre <span class="op">=</span> nombre <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    cube <span class="op">=</span> nombre <span class="op">**</span> <span class="dv">3</span></span>
@@ -812,7 +812,7 @@ window.Quarto = {
 <section id="lambda-functions" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="lambda-functions"><span class="header-section-number">1.3</span> Lambda functions</h3>
 <p>There is another concise way to define a simple function: the <strong>lambda</strong> function.</p>
-<div id="59a4e30e" class="cell" data-execution_count="25">
+<div id="ff120fae" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>carre <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>carre(<span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -825,7 +825,7 @@ window.Quarto = {
 <section id="exercise-1" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">2.1</span> Exercise 1</h3>
 <p>Create a <code>puissance</code> function that takes two numbers <code>x</code> and <code>y</code> as input and returns the power function <span class="math inline">\(x^y\)</span>.</p>
-<div id="df28682b" class="cell" data-tags="[]" data-execution_count="26">
+<div id="e73e57be" class="cell" data-tags="[]" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -836,7 +836,7 @@ window.Quarto = {
 <li>takes a list of numbers as input</li>
 <li>returns the mean and variance</li>
 </ul>
-<div id="e1c12d5f" class="cell" data-tags="[]" data-execution_count="27">
+<div id="8e33b685" class="cell" data-tags="[]" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -848,7 +848,7 @@ window.Quarto = {
 <li>returns a boolean indicating whether this parameter is even</li>
 </ul>
 <p>Add a test to check that the parameter is an integer.</p>
-<div id="808acac7" class="cell" data-execution_count="28">
+<div id="27a230cc" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -860,7 +860,7 @@ window.Quarto = {
 <li>returns a new list containing the unique elements from the initial list</li>
 <li>allows, through an optional parameter, to sort or not sort the final list in alphanumeric order (the default behavior is not to sort).</li>
 </ul>
-<div id="21dd346f" class="cell" data-tags="[]" data-execution_count="29">
+<div id="4c4c069f" class="cell" data-tags="[]" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -868,7 +868,7 @@ window.Quarto = {
 <h3 data-number="2.5" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">2.5</span> Exercise 5</h3>
 <p>Recursive functions are functions that call themselves within the body of the function, which leads to infinite calls until reaching a stopping criterion (see the Pascal triangle example below).</p>
 <p>Implement the <strong>factorial</strong> function recursively.</p>
-<div id="be5e8c84" class="cell" data-execution_count="30">
+<div id="cbfdf6c6" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> triangle_pascal(n):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [[<span class="dv">1</span>]]                                          <span class="co"># Stopping condition</span></span>
@@ -885,7 +885,7 @@ window.Quarto = {
 <span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">'</span><span class="ch">\t</span><span class="st">'</span>.join(<span class="bu">map</span>(<span class="bu">str</span>, row)) <span class="cf">for</span> row <span class="kw">in</span> triangle_pascal(<span class="dv">10</span>)]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5b2cd8f6" class="cell" data-tags="[]" data-execution_count="31">
+<div id="4e84d786" class="cell" data-tags="[]" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -902,7 +902,7 @@ window.Quarto = {
 </ul>
 <p>Example:</p>
 <p><code>appliquer_fonction_liste([1, 2, 3, 4], lambda x: x**2)</code> -&gt; <code>[1, 4, 9, 16]</code></p>
-<div id="bdecacf5" class="cell" data-execution_count="32">
+<div id="49494993" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
