@@ -35,7 +35,7 @@ Ces enseignements sont à réaliser en autonomie. La charge de travail est estim
 Git est un système de gestion de versions qui permet de suivre les modifications apportées à des fichiers, de collaborer efficacement et de conserver l'historique d'un projet.
 
 - [ ] Lire la [présentation de Git](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}
-- [ ] TP rapide Git [cours d'introduction aux bases de données et à SQL](doc/first-steps/git.qmd)
+- [ ] [TP rapide Git](doc/first-steps/git.qmd)
 
 ### Initiation à SQL
 
@@ -63,18 +63,8 @@ Python est un langage de programmation polyvalent, simple à apprendre et largem
 
 La POO est un paradigme de programmation qui consiste à modéliser un programme sous forme d'objets combinant des données (attributs) et des comportements (méthodes).
 
-Vous pouvez commencer par créer un clone du dépôt Git sur votre machine :
-
-- [ ] Ouvrez **Git Bash**, puis coller les commandes suivantes
-  - `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
-  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-  - cela crée une copie du dépôt dans *P:/Cours2A/UE3_Remise_a_niveau/ENSAI-2A-remise-a-niveau*
-
----
-
 - [ ] Lisez le [cours d'introduction à la POO](doc/POO/poo-cours.qmd)
-- [ ] Suivez les consignes pour le paramètrage de VSCode
-- [ ] Faites les exercices
+- [ ] Faites les [exercices](doc/POO/poo-exercice.qmd)
 
 
 ### UML
@@ -102,7 +92,7 @@ si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022
 - [Initiation à Python](https://inseefrlab.github.io/formation-python-initiation/){target="_blank"} dans le Service Statistique Public
 - [Openclassrooms - bases de Python](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parties 1 et 2)
 - [Openclassrooms - POO avec Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parties 1 et 2)
-		
+
 
 ### Ressources utiles
 
@@ -110,4 +100,5 @@ si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022
 - <https://refactoring.guru/>{target="_blank"}
 - <https://github.com/faif/python-patterns>{target="_blank"}
 - <https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/>{target="_blank"}
+- [ENSAI 1A : Base de données relationnelles](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
 - [Python pour la data science](https://pythonds.linogaliana.fr/){target="_blank"}, Lino Galiana (INSEE, ENSAE)

@@ -36,7 +36,7 @@ These courses are to be completed independently. The estimated workload is 21 ho
 Git is a version control system that allows you to track changes made to files, collaborate efficiently, and keep the history of a project.
 
 - [ ] Read the [Git presentation](https://ludo2ne.github.io/ENSAI-tools/doc/git/presentation.html){target="_blank"}
-- [ ] Quick Git practical work [Introduction course to databases and SQL](./git-en.qmd)
+- [ ] [Quick Git practical work](./git-en.qmd)
 
 ### Introduction to SQL
 
@@ -62,18 +62,8 @@ Python is a versatile programming language, easy to learn and widely used for ap
 
 OOP is a programming paradigm that consists of modeling a program as objects combining data (attributes) and behaviors (methods).
 
-You can start by creating a clone of the Git repository on your machine:
-
-- [ ] Open **Git Bash**, then paste the following commands
-  - `mkdir -p /p/Cours2A/UE3_Remise_a_niveau && cd $_`
-  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-  - this creates a copy of the repository in *P:/Cours2A/UE3\_Remise\_a\_niveau/ENSAI-2A-remise-a-niveau*
-
----
-
 - [ ] Read the [introduction course to OOP](./POO/poo-cours-en.qmd)
-- [ ] Follow the instructions for VSCode configuration
-- [ ] Complete the exercises
+- [ ] Complete the [exercises](./POO/poo-exercice-en.qmd)
 
 ### UML
 
@@ -105,4 +95,6 @@ If you have access to *MyENSAI*, videos from the 2022-2023 session are available
 - [https://refactoring.guru/](https://refactoring.guru/){target="_blank"}
 - <https://github.com/faif/python-patterns>{target="_blank"}
 - [https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/](https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/){target=_blank"}
+- [ENSAI 1A : Base de données relationnelles](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
+- [ENSAI tools](https://ludo2ne.github.io/ENSAI-tools/){target="_blank"}
 - [Python for data science](https://pythonds.linogaliana.fr/en/){target="_blank"}, Lino Galiana (INSEE, ENSAE)
