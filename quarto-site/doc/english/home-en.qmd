@@ -82,19 +82,26 @@ Here are other possibilities to get up to speed in Python, OOP, and SQL.
 
 If you have access to *MyENSAI*, videos from the 2022-2023 session are available [here](https://foad-moodle.ensai.fr/mod/url/view.php?id=11354){target="_blank"}
 
-### Online courses to learn Python and SQL
-
-- [Openclassrooms - Query a database with SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
-- [Introduction to Python](https://inseefrlab.github.io/formation-python-initiation/){target="_blank"} from the Public Statistical Service
-- [Openclassrooms - Python basics](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parts 1 and 2)
-- [Openclassrooms - OOP with Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parts 1 and 2)
-
 ### Useful resources
 
-- [https://realpython.com/](https://realpython.com/){target="_blank"}
-- [https://refactoring.guru/](https://refactoring.guru/){target="_blank"}
-- <https://github.com/faif/python-patterns>{target="_blank"}
+- <https://www.geeksforgeeks.org/git/git-introduction/>{target="_blank"}
 - [https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/](https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/){target=_blank"}
-- [ENSAI 1A : Base de données relationnelles](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
 - [ENSAI tools](https://ludo2ne.github.io/ENSAI-tools/){target="_blank"}
+
+#### SQL
+
+- [Openclassrooms - Query a database with SQL](https://openclassrooms.com/fr/courses/7818671-requetez-une-base-de-donnees-avec-sql){target="_blank"}
+- [ENSAI 1A : Base de données relationnelles](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
+
+#### Python
+
+- [Introduction to Python](https://inseefrlab.github.io/formation-python-initiation/){target="_blank"} from the Public Statistical Service
+- [Openclassrooms - Python basics](https://openclassrooms.com/fr/courses/7168871-apprenez-les-bases-du-langage-python#table-of-content){target="_blank"} (parts 1 and 2)
+- [https://realpython.com/](https://realpython.com/){target="_blank"}
+- <https://github.com/faif/python-patterns>{target="_blank"}
 - [Python for data science](https://pythonds.linogaliana.fr/en/){target="_blank"}, Lino Galiana (INSEE, ENSAE)
+
+#### OOP
+
+- [Openclassrooms - OOP with Python](https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python){target="_blank"} (parts 1 and 2)
+- [https://refactoring.guru/](https://refactoring.guru/){target="_blank"}
