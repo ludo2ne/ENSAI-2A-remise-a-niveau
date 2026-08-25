@@ -87,6 +87,12 @@ website:
         menu: 
           - href: doc/annales/examen-2024.qmd
             text: "Examen 2024"
+          - href: doc/annales/examen-2024-correction.qmd
+            text: "Examen 2024 - correction"
+          - href: doc/annales/examen-2025.qmd
+            text: "Examen 2025"
+          - href: doc/annales/examen-2025-correction.qmd
+            text: "Examen 2025 - correction"
       - icon: github
         href: https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau
         target: "_blank"

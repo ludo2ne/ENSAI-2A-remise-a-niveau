@@ -24,7 +24,7 @@ When five people are working on the same project, it is not easy for everyone to
 
 By using Git, you will have:
 
-- a shared remote central repository hosted on https://github.com/{target="_blank"}
+- a shared remote central repository hosted on <https://github.com/>{target="_blank"}
 - your own local repository where you work
 
 The idea is to synchronize these repositories regularly so that every team member works with the most recent version.
