@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ludovic Deneuville">
-<meta name="description" content="UML Introduction">
+<meta name="author" content="">
+<meta name="dcterms.date" content="2025-09-24">
 
-<title>UML – Remise à Niveau Informatique</title>
+<title>Examen final : Remise à niveau informatique – Remise à Niveau Informatique</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -112,15 +112,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -502,54 +499,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#use-case-diagram" id="toc-use-case-diagram" class="nav-link active" data-scroll-target="#use-case-diagram"><span class="header-section-number">1</span> Use Case Diagram</a>
-  <ul class="collapse">
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">1.1</span> Tools</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">1.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#class-diagram" id="toc-class-diagram" class="nav-link" data-scroll-target="#class-diagram"><span class="header-section-number">2</span> Class Diagram</a>
-  <ul class="collapse">
-  <li><a href="#tools-1" id="toc-tools-1" class="nav-link" data-scroll-target="#tools-1"><span class="header-section-number">2.1</span> Tools</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">2.2</span> Example</a></li>
-  </ul></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">3</span> Exercise</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/uml-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="examen-2025-correction.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">UML</h1>
+<h1 class="title">Examen final : Remise à niveau informatique</h1>
+<p class="subtitle lead">ENSAI 2A UE3</p>
 </div>
 
-<div>
-  <div class="description">
-    UML Introduction
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ludovic Deneuville </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 24, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -559,220 +533,215 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>UML (Unified Modeling Language) is a graphical modeling language widely used in the field of software engineering. It provides a set of standardized notations and diagrams to visually represent different aspects of a software system.</p>
-<p>The main objective of UML is to facilitate communication, understanding, and documentation of complex software systems. It allows designers, developers, and stakeholders to collaborate effectively using understandable and standardized diagrams.</p>
-<p>The 3 main diagrams:</p>
+<section id="instructions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="instructions">Instructions</h2>
 <ul>
-<li><code>Use Case Diagram</code>: It represents the functionalities provided by a software system from the users’ (actors’) point of view. It shows the interactions between actors and the system.</li>
-<li><code>Class Diagram</code>: It represents the static structure of a software system by showing the system’s classes, their attributes, their methods, and the relationships between classes. It allows modeling concepts, relationships, and dependencies between classes.</li>
-<li><code>Activity Diagram</code>: It represents the control flow within a software system or a business process. It shows steps, decisions, branches, and data flows.</li>
-<li>…</li>
+<li>Paper-based exam</li>
+<li>Duration: 1h30</li>
+<li>No documents</li>
+<li>No calculator</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-important callout-titled" title="Read before starting">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Important</span>Read before starting
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>UML cheat sheet available in the library</p>
+<p>The exam consists of several pages, numbered from 1 to the last page.</p>
+<ul>
+<li>The exam may seem a little long. Do not waste time if you are stuck on a question; move on to the next one.</li>
+<li>The exercises can be completed in any order.</li>
+<li>Within each exercise, the questions are not necessarily arranged in increasing order of difficulty.</li>
+<li>The different questions require <u>short answers</u>.</li>
+<li>Follow the instructions carefully. However, if a question does not seem clear to you, write on your answer sheet how you understood and approached it.</li>
+<li>When code is requested, please follow the basic rules of the language (keywords and indentation). Some errors will be tolerated, since you are working on paper. If you forget the name of a Python method, use pseudocode.</li>
+<li>Unless otherwise stated, you are not required to write code documentation (even though documentation is a good thing!)</li>
+</ul>
 </div>
 </div>
-<section id="use-case-diagram" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="use-case-diagram"><span class="header-section-number">1</span> Use Case Diagram</h2>
-<p>A UML (Unified Modeling Language) use case diagram is a type of diagram used to represent interactions between actors (users or external systems) and the software system. It focuses on the functionalities provided by the system from the users’ point of view.</p>
-<p>A use case diagram consists of several key elements:</p>
-<ul>
-<li><code>Actor</code>: An actor represents a role played by a user or an external system that interacts with the software system. It can be a person, another system, a hardware device, etc. Actors are often represented by stick figures.</li>
-<li><code>Use Case</code>: A use case represents a functionality or action that the software system provides to its actors. It describes an interaction between actors and the system to achieve a specific goal.</li>
-<li><code>Association Relationship</code>: Association relationships connect actors to use cases to show which actor uses which use case.</li>
-</ul>
-<p>UML use case diagrams are used to:</p>
-<ul>
-<li>capture the functional requirements of the system</li>
-<li>identify the actors involved</li>
-<li>describe interactions between actors and the system</li>
-<li>define the expected functionalities of the system</li>
-</ul>
-<p>They help effectively communicate user needs and guide the software development process by focusing on end-user objectives.</p>
-<section id="tools" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="tools"><span class="header-section-number">1.1</span> Tools</h3>
-<ul>
-<li><a href="http://www.plantuml.com/" class="external" target="_blank">PlantUML</a>
-<ul>
-<li><a href="https://github.com/ludo2ne/projet-info-2A/blob/main/doc/diagrammes/diag_cas_utilisation.txt" class="external" target="_blank">example</a></li>
-</ul></li>
-</ul>
+<p>Good luck!</p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="example" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="example"><span class="header-section-number">1.2</span> Example</h3>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-
-  player["Player"]
-  organizer["Organizer"]
-
-  player --&gt; modifyProfile([Modify Profile])
-  player --&gt; register([Register Tournament])
-  player --&gt; becomeArbiter([Become Arbiter])
-  
-  organizer --&gt; createTournament([Create   Tournament])
-  organizer --&gt; modifyTournament([Modify Tournament])
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="class-diagram" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="class-diagram"><span class="header-section-number">2</span> Class Diagram</h2>
-<p>A UML (Unified Modeling Language) class diagram is a type of diagram used to represent the static structure of a software system. It shows the system’s classes, their attributes, their methods, and the relationships between classes.</p>
-<p>A UML class diagram consists of different boxes representing classes, with lines connecting these boxes to show relationships between classes. Here are some key elements commonly found in a class diagram:</p>
+<section id="python-7-points" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="python-7-points"><span class="header-section-number">1</span> Python (7 points)</h2>
+<section id="questions" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="questions"><span class="header-section-number">1.1</span> Questions</h3>
+<ol type="a">
+<li><strong>Write the code for a function that displays a countdown starting from a value <code>n</code>.</strong></li>
+</ol>
+<p>Expected output: <code>5 4 3 2 1 0 boom.</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compte_a_rebours(n) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> n <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(n, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        n <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"boom."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="a">
+<li><strong>What will the following code display?</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>0<br>
+1<br>
+2<br>
+4</p>
+<ol start="3" type="a">
+<li><strong>Complete the <code>Velo</code> class below by creating the following methods:</strong></li>
+</ol>
 <ul>
-<li><p><code>Class</code>: It is represented by a box with three sections:</p>
-<ul>
-<li>the class name</li>
-<li>attributes</li>
-<li>methods</li>
-</ul></li>
-<li><p><code>Association Relationship</code>: An association relationship represents a connection between two classes. It shows that objects of one class are associated with objects of another class. For example, a <code>Student</code> class can be associated with a <code>Course</code> class through an association relationship to indicate that students attend courses.</p></li>
-<li><p><code>Inheritance</code>: This allows modeling generalization and specialization concepts.</p></li>
-<li><p><code>Aggregation and Composition</code>: These relationships describe the structure of classes and their association with other classes.</p>
-<ul>
-<li>Aggregation is a relationship where a class can be composed of other classes, but these classes can exist independently</li>
-<li>Composition is a stronger relationship where a class is composed of other classes, and these classes cannot exist without the parent class.</li>
-</ul></li>
-<li><p><code>Multiplicity</code>: Multiplicity specifies the number of objects of one class associated with one or more objects of another class in an association relationship. It is represented by numbers or symbols such as “0..1”, “1”, “*“, etc.</p></li>
+<li><code>accelerer</code>: Method to increase the bicycle’s speed by a value <code>v</code>.</li>
+<li><code>ralentir</code>: Method to decrease the bicycle’s speed by a value <code>v</code>.</li>
+<li><code>installer_porte_bagage</code>: Method to install a luggage rack on the bicycle.</li>
 </ul>
-<p>Class diagrams are used to model the conceptual structure of a software system and identify classes and their relationships. They provide a visual and standardized representation for analyzing, designing, and documenting object-oriented systems.</p>
-<section id="tools-1" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="tools-1"><span class="header-section-number">2.1</span> Tools</h3>
-<ul>
-<li><p><a href="http://www.plantuml.com/" class="external" target="_blank">PlantUML</a></p>
-<ul>
-<li><a href="https://github.com/ludo2ne/projet-info-2A/tree/main/doc/diagrammes" class="external" target="_blank">examples</a></li>
-</ul></li>
-<li><p><a href="https://mermaid.js.org/syntax/classDiagram.html" class="external" target="_blank">mermaid</a></p></li>
-</ul>
-</section>
-<section id="example-1" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">2.2</span> Example</h3>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">classDiagram
-    class Address {
-        +number: string
-        +street: string
-        +city: string
-    }
-
-    class Person {
-        +name: string
-        +first_name: string
-        +age: int
-        +move()
-    }
-
-    class Driver {
-        +license_number: string
-    }
-
-    class Car {
-        +registration: string
-        +speed: float
-    }
-
-    class Wheel {
-        +size: string
-    }
-
-    class Bodywork {
-        +color: string
-    }
-
-    Person "*" -- "1" Address
-    Person &lt;|-- Driver
-    Driver "*" -- "*" Car : drives
-    Car o-- Wheel
-    Car *-- Bodywork
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Velo:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, couleur, porte_bagage<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.couleur <span class="op">=</span> couleur</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> porte_bagage</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerer(<span class="va">self</span>, v: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">+=</span> v</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> ralentir(<span class="va">self</span>, v: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vitesse <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, <span class="va">self</span>.vitesse <span class="op">-</span> v)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> installer_porte_bagage(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.porte_bagage <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="a">
+<li><strong>Create a blue bicycle. Install a luggage rack on it and make it travel at 20 km/h.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> Velo(<span class="st">"Bleu"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>v.installer_porte_bagage()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>v.accelerer(<span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="a">
+<li><strong>Write the code for a function that takes a list as a parameter and returns that list without duplicates.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sans_doublons(liste):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> []</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> liste:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> v <span class="kw">not</span> <span class="kw">in</span> res:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            res.append(v)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or simply by using sets:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sans_doublons(liste):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">set</span>(liste))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="6" type="a">
+<li><strong>Write the code for a function that takes a string as input and returns the number of occurrences of each letter.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compter_lettres(chaine: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    occurrences <span class="op">=</span> {}</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> chaine:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c.isalpha():</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="kw">in</span> occurrences:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                occurrences[c] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                occurrences[c] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> occurrences</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div style="page-break-after: always;"></div>
 </section>
 </section>
-<section id="exercise" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercise"><span class="header-section-number">3</span> Exercise</h2>
-<p>A Mail item can be of 2 types: Letter or Package.</p>
-<p>A Letter is characterized by:</p>
+<section id="sql-7-points" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sql-7-points"><span class="header-section-number">2</span> SQL (7 points)</h2>
+<p>We model the data of a very simple social network where users can:</p>
 <ul>
-<li>weight (in grams)</li>
-<li>shipping mode (Express or Standard)</li>
-<li>destination address</li>
-<li>format (A3 or A4)</li>
+<li>create posts</li>
+<li>like posts</li>
+<li>comment on posts</li>
 </ul>
-<p>A Package is characterized by:</p>
-<ul>
-<li>weight (in grams)</li>
-<li>shipping mode (Express or Standard)</li>
-<li>destination address</li>
-<li>volume (in liters)</li>
-</ul>
-<p>Each Mail item has the following methods:</p>
-<ul>
-<li><code>__init__()</code> : a constructor</li>
-<li><code>__str__()</code> : a method that returns a string describing the Mail item</li>
-<li><code>calculate_postage()</code>
-<ul>
-<li>for a Letter: base_rate + weight * 0.001
-<ul>
-<li>with base_rate = €2.50 for A4 format and €3.50 for A3 format</li>
-</ul></li>
-<li>for a Package: volume / 4 + weight * 0.001</li>
-<li>in Express shipping mode, the amounts above are doubled</li>
-</ul></li>
-</ul>
-<section id="questions" class="level4">
-<h4 class="anchored" data-anchor-id="questions">Questions</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Define the class diagram</label></li>
-<li><label><input type="checkbox">Code these classes in Python</label></li>
-</ul>
-<p>Expected output example</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> l1 <span class="op">=</span> Letter(<span class="st">"Bordeaux"</span>, <span class="dv">80</span>, <span class="st">"standard"</span>, <span class="st">"A4"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(l1)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Letter : </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Destination address : Bordeaux</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    Weight : <span class="dv">80</span> grams</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Mode : standard</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    Format : A4</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    Stamp price : €<span class="fl">2.58</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> c1 <span class="op">=</span> Package(<span class="st">"Rennes"</span>, <span class="dv">3500</span>, <span class="st">"express"</span>, <span class="fl">2.25</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(c1)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Package : </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    Destination address : Rennes </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    Weight : <span class="dv">3500</span> grams </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    Mode : express </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    Volume : <span class="fl">2.25</span> liters </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Stamp price : €<span class="fl">8.12</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The correction is available <a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction" target="_blank">here</a></p>
-
-
+<p><img src="./img/2025-reseaux-sociaux.png" class="img-fluid" style="width:95.0%"></p>
+<p>Write the SQL query that answers each question below.</p>
+<ol type="a">
+<li><strong>List all users (last name and first name) in alphabetical order.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> nom, prenom</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> utilisateur</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">ORDER</span> <span class="kw">BY</span> nom, prenom;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="a">
+<li><strong>List the contents of comments containing both the letter Z and the letter W.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> contenu</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> commentaire</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> contenu <span class="kw">LIKE</span> <span class="st">'%Z%'</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">AND</span> contenu <span class="kw">LIKE</span> <span class="st">'%W%'</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="a">
+<li><strong>Which posts (content and username) are there where the user commented on a post they themselves wrote?</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.contenu,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       u.nom,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       u.prenom</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> post p</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> commentaire c <span class="kw">USING</span>(id_post)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> utilisateur <span class="kw">ON</span> p.id_utilisateur <span class="op">=</span> u.id_utilisateur</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> c.id_utilisateur <span class="op">=</span> p.id_utilisateur;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="a">
+<li><strong>How many comments did each user write? Include users who have never written a comment.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> u.nom,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       u.prenom,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="dv">1</span>) <span class="kw">AS</span> nb_commentaires</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> utilisateur u</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> commentaire c <span class="kw">USING</span>(id_utilisateur)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> u.nom, u.prenom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="a">
+<li><strong>How can you check that no user was able to like the same post twice?</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> id_utilisateur,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       id_post,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> nb_likes</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> <span class="kw">like</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">GROUP</span> <span class="kw">BY</span> id_utilisateur, id_post</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">1</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="6" type="a">
+<li><strong>How can you check that a user was not able to like a post they wrote themselves?</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> l.id_like,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       l.id_utilisateur,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       l.id_post</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> <span class="kw">like</span> l</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">JOIN</span> post p <span class="kw">USING</span>(id_post)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> l.id_utilisateur <span class="op">=</span> p.id_utilisateur;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="7" type="a">
+<li><strong>Delete the post with id 8888.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> post</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">WHERE</span> id_post <span class="op">=</span> <span class="dv">8888</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><u>Some SQL keywords</u>: <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>HAVING</code>, <code>ORDER BY</code>, <code>ASC</code>, <code>DESC</code>, <code>JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code>, <code>FULL JOIN</code>, <code>ON</code>, <code>USING</code>, <code>INSERT INTO</code>, <code>UPDATE</code>, <code>SET</code>, <code>DELETE FROM</code>, <code>CREATE TABLE</code>, <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>DROP TABLE</code>, <code>DISTINCT</code>, <code>AS</code>, <code>COUNT</code>, <code>AVG</code>, <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>AND</code>, <code>OR</code>, <code>BETWEEN</code>, <code>LIKE</code>, <code>IS NULL</code></p>
+<div style="page-break-after: always;"></div>
 </section>
+<section id="uml-and-oop-6-points" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="uml-and-oop-6-points"><span class="header-section-number">3</span> UML and OOP (6 points)</h2>
+<p>A medical practice wants to develop an application to manage its doctors, patients, and appointments.</p>
+<p>A Doctor has an identifier, a last name, a first name, and a graduation year.</p>
+<p>Among the doctors, there are two categories:</p>
+<ul>
+<li>General Practitioner, with an additional attribute indicating whether they make home visits.</li>
+<li>Specialist, who has a special consultation fee.</li>
+</ul>
+<p>A Patient is defined by a last name, a first name, a NIR (French social security number), and optionally a primary care physician. A patient must be able to declare, modify, or remove their primary care physician.</p>
+<p>An appointment is characterized by a date, a time, a doctor, a patient, and a status (upcoming, completed, cancelled, no-show).</p>
+<ol type="a">
+<li><p><strong>Propose a UML class diagram representing these entities and their relationships.</strong></p></li>
+<li><p><strong>Write the constructor of the <code>Generaliste</code> class.</strong></p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Generaliste(Medecin):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, id_medecin, nom, prenom, annee_diplome, deplacement_domicile<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(id_medecin, nom, prenom, annee_diplome)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.deplacement_domicile <span class="op">=</span> deplacement_domicile</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="a">
+<li><strong>Write the code for the method that allows a patient to declare a primary care physician.</strong></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Patient:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> declarer_medecin_traitant(<span class="va">self</span>, medecin):</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.medecin_traitant <span class="op">=</span> medecin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1197,7 +1166,7 @@ Tip
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/english/uml-en.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/edit/main/doc/annales/examen-2025-correction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Website built with <a href="https://quarto.org/" class="external" target="_blank">Quarto</a> <br> <a href="https://github.com/ludo2ne/ENSAI-2A-Remise-a-niveau" class="external" target="_blank">Source code</a></p>
 </div>
