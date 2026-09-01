@@ -101,4 +101,5 @@ si vous avez vos accès à *MyENSAI*, les vidéos de la session de l'année 2022
 - <https://github.com/faif/python-patterns>{target="_blank"}
 - <https://inseefrlab.github.io/formation-bonnes-pratiques-git-R/>{target="_blank"}
 - [ENSAI 1A : Base de données relationnelles](https://ludo2ne.github.io/ENSAI-1A-SQL/){target="_blank"}
+- [ENSAI tools](https://ludo2ne.github.io/ENSAI-tools/){target="_blank"}
 - [Python pour la data science](https://pythonds.linogaliana.fr/){target="_blank"}, Lino Galiana (INSEE, ENSAE)

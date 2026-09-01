@@ -77,7 +77,7 @@ Finally, open an SQL editor to write queries:
 
 ### Insert data
 
-- [ ] Copy the contents of the file [echecs.sql](./exercice/echecs.sql){target="_blank"}
+- [ ] Copy the contents of the file [echecs.sql](../sql/exercice/echecs.sql){target="_blank"}
 - [ ] Paste it into CloudBeaver
 - [ ] Execute the script
   - Orange icon with a scroll containing an arrow :scroll:
