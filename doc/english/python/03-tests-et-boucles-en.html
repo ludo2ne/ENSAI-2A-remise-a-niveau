@@ -592,8 +592,11 @@ window.Quarto = {
 <section id="before-starting" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="before-starting">Before starting</h2>
 <ul>
-<li>Download this <a href="03-tests-et-boucles-en.ipynb" target="_blank">Jupyter notebook</a></li>
-<li>Connect to <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a>
+<li>Download this <a href="03-tests-et-boucles-en.ipynb" target="_blank">Jupyter notebook</a>
+<ul>
+<li><span class="emoji" data-emoji="bulb">💡</span> Click the <code>Jupyter</code> button on the left, at the very bottom of the table of contents, if the file does not download automatically</li>
+</ul></li>
+<li>Connect to <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a> and open a <strong>Jupyter-python</strong> service
 <ul>
 <li>or another platform (<a href="https://jupyther.ensai.fr/" target="_blank">Jupyter</a> ENSAI, Jupyter Lab, Google Colab, Kaggle…)</li>
 </ul></li>
@@ -625,14 +628,14 @@ else:
 <li>there can be as many <strong>elif</strong> statements as necessary (between 0 and infinity)</li>
 <li>the <strong>else</strong> statement is optional <strong>Warning</strong>: It is important to respect the syntax, especially the indentation!</li>
 </ul>
-<div id="f598a5d0" class="cell" data-execution_count="1">
+<div id="04bab467" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple if</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">5</span>:</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"variable a(</span><span class="sc">{}</span><span class="st">) is strictly greater than 5"</span>.<span class="bu">format</span>(a))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5cf45fbc" class="cell" data-execution_count="2">
+<div id="15256a5f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># if else</span></span>
@@ -641,7 +644,7 @@ else:
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"variable a(</span><span class="sc">{}</span><span class="st">) is less than or equal to 5"</span>.<span class="bu">format</span>(a))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="09f3b565" class="cell" data-execution_count="3">
+<div id="28c81c2e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nb_habitants <span class="op">=</span> <span class="dv">750</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> nb_habitants <span class="op">&lt;</span> <span class="dv">500</span>:</span>
@@ -651,7 +654,7 @@ else:
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"large town"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="51412e11" class="cell" data-execution_count="4">
+<div id="9b9cba59" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple conditions</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>note_maths <span class="op">=</span> <span class="dv">14</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>note_info <span class="op">=</span> <span class="dv">20</span></span>
@@ -660,7 +663,7 @@ else:
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> note_maths <span class="op">&gt;</span> <span class="dv">10</span> <span class="kw">and</span> note_info <span class="op">&gt;</span> <span class="dv">10</span> <span class="kw">and</span> validation_anglais:</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Year validated"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="88bed9d8" class="cell" data-execution_count="5">
+<div id="22c9a20f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cascading conditions</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> note_maths <span class="op">&gt;</span> <span class="dv">10</span>:</span>
@@ -689,23 +692,23 @@ else:
 <li>stop: Ending value of the sequence (excluded).</li>
 <li>step: Increment step (optional). By default, it is set to 1.</li>
 </ul>
-<div id="e107e345" class="cell" data-execution_count="6">
+<div id="6cff2c64" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display integers between 1 and 6</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="14f59b36" class="cell" data-execution_count="7">
+<div id="012f1f1b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, i <span class="op">**</span> <span class="dv">2</span>, sep<span class="op">=</span><span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1bcc8ea8" class="cell" data-execution_count="8">
+<div id="27634230" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterating over a list</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>personnages <span class="op">=</span> [<span class="st">"Luke"</span>, <span class="st">"Leia"</span>, <span class="st">"Han"</span>, <span class="st">"Obi-Wan"</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> personnages:</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello "</span> <span class="op">+</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6a885e67" class="cell" data-execution_count="9">
+<div id="0d69af48" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterating over a list by index</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(personnages)):</span>
@@ -713,21 +716,21 @@ else:
 </div>
 <p>The <strong>enumerate()</strong> function is used to iterate simultaneously over indices and elements.</p>
 <p>It generates a tuple(index, element).</p>
-<div id="013a4669" class="cell" data-execution_count="10">
+<div id="1bf22d41" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">enumerate</span>(personnages))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4dca32b0" class="cell" data-execution_count="11">
+<div id="9f794ddc" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterating over a list using enumerate</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numero, nom <span class="kw">in</span> <span class="bu">enumerate</span>(personnages):</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Character "</span> <span class="op">+</span> <span class="bu">str</span>(numero) <span class="op">+</span> <span class="st">" : "</span> <span class="op">+</span> nom)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="261693b3" class="cell" data-execution_count="12">
+<div id="3f7c7c22" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterating over a string</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"Darth Vader"</span>:</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">" - "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2b8323bd" class="cell" data-execution_count="13">
+<div id="aae76eae" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Hello bunnies"</span></span>
@@ -736,7 +739,7 @@ else:
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(message[i], end<span class="op">=</span><span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0d636f2a" class="cell" data-execution_count="14">
+<div id="11bfaed4" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ingredients <span class="op">=</span> {<span class="st">'sucre'</span>: <span class="st">'100g'</span>, <span class="st">'poire'</span>: <span class="dv">2</span>, <span class="st">'lait'</span>: <span class="st">'1L'</span>, <span class="st">'sel'</span>: <span class="va">True</span>}</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterating over dictionary keys</span></span>
@@ -752,7 +755,7 @@ else:
 <li>as long as the condition is satisfied, the code inside the loop is executed</li>
 <li>and so on, until we exit the loop (or remain stuck in it forever…)</li>
 </ul>
-<div id="52bf8853" class="cell" data-execution_count="15">
+<div id="a8620c3c" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cpt <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpt <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
@@ -761,7 +764,7 @@ else:
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Boom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b95e0eda" class="cell" data-execution_count="16">
+<div id="465d5823" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter an even number: "</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">int</span>(user_input) <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -776,7 +779,7 @@ else:
 <p>In a <strong>for</strong> loop, this criterion is clear: the loop iterates over the elements of an iterable object, which necessarily has a finite size.</p>
 <p>In contrast, in a <strong>while</strong> loop, this criterion may never be met, and we then end up in an infinite loop…</p>
 <p>For example, if we make a mistake in the index variable name, here is the result:</p>
-<div id="d39cd3fd" class="cell" data-execution_count="17">
+<div id="3d7f83de" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the "Stop" button (black square) in Jupyter to stop the running program</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">1</span></span>
@@ -785,7 +788,7 @@ else:
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    j <span class="op">=</span> j <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Since <code>i = 1</code> and never changes, the condition <code>i &lt;= 5</code> is always equal to <strong>True</strong>.</p>
-<div id="2f8c45fb" class="cell" data-execution_count="18">
+<div id="1de0efd1" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(i)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -801,7 +804,7 @@ else:
 </ul>
 <p>The code also contains <code>try</code> and <code>except</code> statements, which handle the case where the entered value is not numeric.</p>
 <p>Note: in the case of nested loops, <strong>break</strong> only terminates the innermost loop.</p>
-<div id="f26f0572" class="cell" data-execution_count="19">
+<div id="650874e5" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>nombre_aleatoire <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">20</span>)</span>
@@ -839,7 +842,7 @@ else:
 <li>we only exit the loop once we have entered the correct password</li>
 </ul></li>
 </ul>
-<div id="e1cb80b6" class="cell" data-execution_count="20">
+<div id="e0c52207" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>votre_prenom <span class="op">=</span> <span class="st">"alice"</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
@@ -865,10 +868,10 @@ else:
 <h3 data-number="4.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">4.1</span> Exercise 1</h3>
 <p>Write a program that calculates the sum of the first 10 squared integers.</p>
 <p>Write a program that calculates the sum of the first 5 odd squared integers.</p>
-<div id="f82015d6" class="cell" data-execution_count="21">
+<div id="5bf0f080" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fab967ed" class="cell" data-execution_count="22">
+<div id="edcd0c82" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: with Python, it is sometimes possible to condense the code</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">11</span>) <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -878,7 +881,7 @@ else:
 <h3 data-number="4.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">4.2</span> Exercise 2</h3>
 <p>Rewrite the code below using a <strong>for</strong> loop.</p>
 <p>Hint: explore the different uses of the <strong>range()</strong> method.</p>
-<div id="7b586fe6" class="cell" data-execution_count="23">
+<div id="3fce1f96" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cpt <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpt <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
@@ -887,20 +890,20 @@ else:
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Boom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f28ae013" class="cell" data-tags="[]" data-execution_count="24">
+<div id="3301e00b" class="cell" data-tags="[]" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-3" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">4.3</span> Exercise 3</h3>
 <p>Rewrite the following <code>for</code> loop using a <code>while</code> loop.</p>
-<div id="152d837e" class="cell" data-tags="[]" data-execution_count="25">
+<div id="c45b5b2c" class="cell" data-tags="[]" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gamme <span class="op">=</span> [<span class="st">'do'</span>, <span class="st">'re'</span>, <span class="st">'mi'</span>, <span class="st">'fa'</span>, <span class="st">'sol'</span>, <span class="st">'la'</span>, <span class="st">'si'</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, note <span class="kw">in</span> <span class="bu">enumerate</span>(gamme):</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Note number "</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">" of the C major scale is "</span> <span class="op">+</span> note)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4d0e91c6" class="cell" data-tags="[]" data-execution_count="26">
+<div id="698a9b1e" class="cell" data-tags="[]" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -910,7 +913,7 @@ else:
 <ul>
 <li><code>liste = [34, 7, 20, 12, 50, 23, 16, 28, 6, 11, 19, 13, 26, 8, 9]</code></li>
 </ul>
-<div id="1154f386" class="cell" data-tags="[]" data-execution_count="27">
+<div id="da9f81ae" class="cell" data-tags="[]" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -923,7 +926,7 @@ else:
 <li>the first two numbers are 0 and 1</li>
 <li>each subsequent number in the sequence is obtained by adding the two preceding numbers</li>
 </ul>
-<div id="0e5a93b4" class="cell" data-tags="[]" data-execution_count="28">
+<div id="62417d30" class="cell" data-tags="[]" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -931,14 +934,14 @@ else:
 <h3 data-number="4.6" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">4.6</span> Exercise 6</h3>
 <p>Calculate the minimum and maximum of the following series of values, without using Python’s <code>min</code> and <code>max</code> functions.</p>
 <p>x = [8, 18, 6, 0, 15, 17.5, 9, 1]</p>
-<div id="77408945" class="cell" data-tags="[]" data-execution_count="29">
+<div id="0b27e624" class="cell" data-tags="[]" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exercise-7" class="level3" data-number="4.7">
 <h3 data-number="4.7" class="anchored" data-anchor-id="exercise-7"><span class="header-section-number">4.7</span> Exercise 7</h3>
 <p>Using <strong>for</strong> and <strong>while</strong> loops, iterate over this dictionary and display each student’s average.</p>
-<div id="87212de1" class="cell" data-tags="[]" data-execution_count="30">
+<div id="7edc1fe9" class="cell" data-tags="[]" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>notes <span class="op">=</span> {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Miranda"</span>  : [<span class="dv">16</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">12</span>],</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Celestin"</span> : [<span class="dv">19</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">10</span>],</span>
@@ -946,7 +949,7 @@ else:
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Josephine"</span>: [<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">14</span>, <span class="dv">14</span>]</span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="093b688a" class="cell" data-execution_count="31">
+<div id="96ebb1cb" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -959,10 +962,10 @@ else:
 <li>mean: <span class="math display">\[\bar{x} = {\frac {1}{n}}\sum_{i=1}^{n}x_{i}\]</span></li>
 <li>variance: <span class="math display">\[\sigma^2 = {\frac {1}{n}}\sum_{i=1}^{n} (x_{i}-\bar{x})^2\]</span></li>
 </ul>
-<div id="3fa698c0" class="cell" data-tags="[]" data-execution_count="32">
+<div id="26c7b843" class="cell" data-tags="[]" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer in this cell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8dd65903" class="cell" data-execution_count="33">
+<div id="abbdecc3" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To check your results</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>

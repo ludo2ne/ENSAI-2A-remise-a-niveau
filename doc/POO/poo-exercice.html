@@ -507,17 +507,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mise-en-place" id="toc-mise-en-place" class="nav-link active" data-scroll-target="#mise-en-place"><span class="header-section-number">1</span> Mise en place</a>
+  <li><a href="#mise-en-place" id="toc-mise-en-place" class="nav-link active" data-scroll-target="#mise-en-place">Mise en place</a>
   <ul class="collapse">
-  <li><a href="#lancer-un-service-vscode" id="toc-lancer-un-service-vscode" class="nav-link" data-scroll-target="#lancer-un-service-vscode"><span class="header-section-number">1.1</span> Lancer un service VSCode</a></li>
-  <li><a href="#récupérer-le-code" id="toc-récupérer-le-code" class="nav-link" data-scroll-target="#récupérer-le-code"><span class="header-section-number">1.2</span> Récupérer le code</a></li>
+  <li><a href="#lancer-un-service-vscode" id="toc-lancer-un-service-vscode" class="nav-link" data-scroll-target="#lancer-un-service-vscode">Lancer un service VSCode</a></li>
+  <li><a href="#créer-votre-arborescence" id="toc-créer-votre-arborescence" class="nav-link" data-scroll-target="#créer-votre-arborescence">Créer votre arborescence</a></li>
+  <li><a href="#aide" id="toc-aide" class="nav-link" data-scroll-target="#aide">Aide</a></li>
   </ul></li>
-  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">2</span> Exercice 1 - Points</a></li>
-  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">3</span> Exercice 2 - Polygones</a></li>
-  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">4</span> Exercice 3 - Domino</a>
+  <li><a href="#exercice-1---points" id="toc-exercice-1---points" class="nav-link" data-scroll-target="#exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</a></li>
+  <li><a href="#exercice-2---polygones" id="toc-exercice-2---polygones" class="nav-link" data-scroll-target="#exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</a></li>
+  <li><a href="#exercice-3---domino" id="toc-exercice-3---domino" class="nav-link" data-scroll-target="#exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</a>
   <ul class="collapse">
-  <li><a href="#un-domino" id="toc-un-domino" class="nav-link" data-scroll-target="#un-domino"><span class="header-section-number">4.1</span> Un Domino</a></li>
-  <li><a href="#jeu" id="toc-jeu" class="nav-link" data-scroll-target="#jeu"><span class="header-section-number">4.2</span> Jeu</a></li>
+  <li><a href="#un-domino" id="toc-un-domino" class="nav-link" data-scroll-target="#un-domino"><span class="header-section-number">3.1</span> Un Domino</a></li>
+  <li><a href="#jeu" id="toc-jeu" class="nav-link" data-scroll-target="#jeu"><span class="header-section-number">3.2</span> Jeu</a></li>
   </ul></li>
   <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction">Correction</a></li>
   </ul>
@@ -561,69 +562,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="mise-en-place" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="mise-en-place"><span class="header-section-number">1</span> Mise en place</h2>
-<section id="lancer-un-service-vscode" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="lancer-un-service-vscode"><span class="header-section-number">1.1</span> Lancer un service VSCode</h3>
+<section id="mise-en-place" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="mise-en-place">Mise en place</h2>
+<section id="lancer-un-service-vscode" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="lancer-un-service-vscode">Lancer un service VSCode</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Connectez-vous au <a href="https://www.sspcloud.fr/" target="_blank">SSP Cloud</a></label></li>
-<li><label><input type="checkbox">Lancez un service <code>Vscode-python</code>, puis ouvrez-le</label></li>
+<li><label><input type="checkbox">Lancez un service <strong>Vscode-python</strong>, puis ouvrez-le</label></li>
 </ul>
 </section>
-<section id="récupérer-le-code" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="récupérer-le-code"><span class="header-section-number">1.2</span> Récupérer le code</h3>
-<p>Deux possibilités pour récupérer le code, soit :</p>
-<ul>
-<li>vous clonez directement le dépôt de l’enseignant
-<ul>
-<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git</code></li>
-</ul></li>
-<li>vous créez un fork de ce dépôt, puis clonez ce fork
-<ul>
-<li><a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork" target="_blank">https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork</a></li>
-<li><code>git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/&lt;username&gt;/ENSAI-2A-remise-a-niveau.git</code></li>
-</ul></li>
-</ul>
-<p>Si vous clonez directement le dépôt de l’enseignant, vous ne pourrez pas utiliser Git pour conserver votre travail. Il faudra par exemple télécharger les fichiers à la main.</p>
-<p>Un fork est une copie d’un dépôt distant. Comme cette copie vous appartient, vous avez le droit d’en modifier le code.</p>
+<section id="créer-votre-arborescence" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="créer-votre-arborescence">Créer votre arborescence</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Clonez le dépôt en choisissant l’une des deux options ci-dessus</label></li>
-</ul>
-<p>Ensuite, positionnez-vous dans le dossier <code>src/POO</code> :</p>
-<ul class="task-list">
-<li><label><input type="checkbox">File &gt; Open Folder &gt; <code>/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></label>
+<li><label><input type="checkbox">Créez 2 dossiers <em>geometrie</em> (exercices 1 et 2) et <em>domino</em> (exercice 3)</label>
 <ul>
-<li>ou directement via le terminal : <code>code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/</code></li>
+<li><span class="emoji" data-emoji="bulb">💡</span> évitez d’utiliser des accents dans votre code, en informatique on n’aime pas trop</li>
 </ul></li>
 </ul>
-<p>Vous pouvez ensuite coder dans les fichiers du dossier <em>exercice</em>. Si besoin, vous pouvez créer de nouveaux fichiers.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>À chaque fois que l’on vous demandera de créer un classe, vous commencerez par créez un fichier du même nom.</p>
+</div>
+</div>
 </section>
-</section>
-<section id="exercice-1---points" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">2</span> Exercice 1 - Points</h2>
-<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y.</p>
-<p>Codez les méthodes suivantes :</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><code>__init__(self, x, y)</code> : constructeur du point avec des coordonnées cartésiennes</label></li>
-<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
-<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
-<li><label><input type="checkbox"><code>distance(self, autre_point)</code> : distance avec un autre point</label></li>
-<li><label><input type="checkbox"><code>__eq__(self, autre_point) -&gt; bool</code> : dit si les 2 points sont identiques</label></li>
-<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
-<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
-<li><label><input type="checkbox"><code>rotation(self, a)</code> (bonus) : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
-</ul>
+<section id="aide" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="aide">Aide</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Tip
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous trouverez des éléments de réponse sur la page de cours d’introduction à la POO.</p>
+</div>
+</div>
+<p>Voici quelques exemples simples de code si vous avez besoin d’inspiration :</p>
+<ul>
+<li><a href="./exercices/vehicules/deux_roues.py" target="_blank">deux_roues.py</a> : classe mère abstraite représentant un véhicule à deux roues</li>
+<li><a href="./exercices/vehicules/trottinette.py" target="_blank">trottinette.py</a> : classe représentant une trottinette (hérite de DeuxRoues)</li>
+<li><a href="./exercices/vehicules/velo.py" target="_blank">velo.py</a> : classe représentant un velo (hérite de DeuxRoues)</li>
+<li><a href="./exercices/vehicules/__main__.py" target="_blank"><strong>main</strong>.py</a> : un fichier bac à sable pour tester</li>
+</ul>
+</section>
+</section>
+<section id="exercice-1---points" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="exercice-1---points"><span class="header-section-number">1</span> Exercice 1 - Points</h2>
+<p>Définissez une classe <code>Point</code> pour représenter un point du plan de coordonnées x et y.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Commencez par créer un fichier <em>point.py</em> dans le dossier <em>geometrie</em></label></li>
+<li><label><input type="checkbox">Dans ce fichier, créez la classe <code>Point</code> et son constructeur <code>__init__(self, x, y)</code></label></li>
+</ul>
+<p>Codez les méthodes suivantes :</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>r(self)</code> et <code>t(self)</code> : renvoyant les coordonnées polaires du point</label></li>
+<li><label><input type="checkbox"><code>__str__(self)</code> : pour afficher le Point sous forme de texte, ex : <code>(1.0, 2.4)</code></label></li>
+<li><label><input type="checkbox"><code>distance(self, autre_point) -&gt; float</code> : distance avec un autre point</label></li>
+<li><label><input type="checkbox"><code>__eq__(self, autre_point) -&gt; bool</code> : dit si les 2 points sont identiques</label></li>
+<li><label><input type="checkbox"><code>homothetie(self, k)</code> : appliquant au point une homothétie de centre (0, 0) et de rapport k</label></li>
+<li><label><input type="checkbox"><code>translation(self, dx, dy)</code> : appliquant au point une translation de vecteur (dx, dy)</label></li>
+<li><label><input type="checkbox"><code>rotation(self, a)</code> (bonus) : appliquant au point une rotation de centre (0, 0) et d’angle a</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
 <div class="callout-body-container callout-body">
 <p>Pour vérifier que vos méthodes sont correctes, vous pouvez ajouter à la fin de votre classe un bloc <code>main</code>. Lorsque vous exécuterez ce fichier, c’est ce code qui sera lancé.</p>
 <div class="code-with-filename">
@@ -643,16 +662,17 @@ Tip
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="exercice-2---polygones" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">3</span> Exercice 2 - Polygones</h2>
+<section id="exercice-2---polygones" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exercice-2---polygones"><span class="header-section-number">2</span> Exercice 2 - Polygones</h2>
+<p>Vous allez maintenant utiliser des objets de la classe <code>Point</code> pour créer des objets plus complexe.</p>
+<p>Vous allez également utiliser l’héritage, i.e.&nbsp;les comportements mutualisables seront dans les classes mères et les comportements spécifiques dans les classes filles.</p>
 <ul class="task-list">
 <li><label><input type="checkbox">Créez une classe <code>Polygone</code> composées d’objets de la classe <code>Point</code></label>
 <ul>
 <li>Nous supposerons par la suite que les segments ne se croisent pas</li>
 </ul></li>
-<li><label><input type="checkbox">Ajoutez à cette classe 2 méthodes abstraites <code>aire()</code> et <code>périmètre()</code></label>
+<li><label><input type="checkbox">Ajoutez à cette classe 2 méthodes abstraites <code>aire()</code> et <code>perimetre()</code></label>
 <ul>
 <li>ces méthodes seront définies dans les classes filles</li>
 </ul></li>
@@ -660,7 +680,7 @@ Tip
 <ul>
 <li>vérifiez à chaque fois le nombre de points</li>
 </ul></li>
-<li><label><input type="checkbox">Définissez les méthodes <code>aire()</code> et <code>périmètre()</code> dans ces 3 classes</label></li>
+<li><label><input type="checkbox">Définissez les méthodes <code>aire()</code> et <code>perimetre()</code> dans ces 3 classes</label></li>
 <li><label><input type="checkbox">Créez la classe <code>Rectangle</code> qui hérite de <code>Quadrilatere</code></label></li>
 <li><label><input type="checkbox">Vérifier pour Rectangle, que les 2 cotés opposés sont de même longueur et qu’il y a un angle droit</label></li>
 </ul>
@@ -705,10 +725,10 @@ Tip
 </div>
 </div>
 </section>
-<section id="exercice-3---domino" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">4</span> Exercice 3 - Domino</h2>
-<section id="un-domino" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="un-domino"><span class="header-section-number">4.1</span> Un Domino</h3>
+<section id="exercice-3---domino" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exercice-3---domino"><span class="header-section-number">3</span> Exercice 3 - Domino</h2>
+<section id="un-domino" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="un-domino"><span class="header-section-number">3.1</span> Un Domino</h3>
 <p>Écrire une classe <code>Domino</code> avec :</p>
 <ul class="task-list">
 <li><label><input type="checkbox">2 attributs entiers entre 0 et 6 : <code>extr_A</code> et <code>extr_B</code></label></li>
@@ -717,8 +737,8 @@ Tip
 <li><label><input type="checkbox"><code>accepte_apres(autre_domino)</code> : vérifie si l’extrémité B du domino courant a la même valeur que l’extrémité A de l’autre domino</label></li>
 </ul>
 </section>
-<section id="jeu" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="jeu"><span class="header-section-number">4.2</span> Jeu</h3>
+<section id="jeu" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="jeu"><span class="header-section-number">3.2</span> Jeu</h3>
 <p>Maintenant nous allons essayer de coder un jeu de dominos.</p>
 <p>Pour plus de facilité :</p>
 <ul>
@@ -765,7 +785,7 @@ Tip
 <section id="correction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="correction">Correction</h2>
 <div class="callout callout-style-default callout-tip callout-titled" title="Proposition de correction">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -774,7 +794,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="exercices-1-et-2" class="level4">
 <h4 class="anchored" data-anchor-id="exercices-1-et-2">Exercices 1 et 2</h4>
