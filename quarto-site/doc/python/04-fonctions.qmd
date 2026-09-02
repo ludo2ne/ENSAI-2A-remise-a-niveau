@@ -19,7 +19,8 @@ lightbox: true
 ## Avant de commencer {.unnumbered}
 
 - Téléchargez ce [notebook Jupyter](04-fonctions.ipynb){target="_blank"}
-- Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+  - :bulb: Cliquez sur le bouton `Jupyter` à gauche, tout en bas de la table des matières si le téléchargement du fichier n'est pas automatique
+- Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"} et ouvrez un service **Jupyter-python**
   - ou une autre plate-forme ([Jupyter](https://jupyther.ensai.fr/){target="_blank"} ENSAI, Jupyter Lab, Google Colab, Kaggle...)
 - Importez le fichier .ipynb 
 

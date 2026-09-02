@@ -1,4 +1,4 @@
-from vehicules.deux_roues import DeuxRoues
+from deux_roues import DeuxRoues
 
 
 class Velo(DeuxRoues):
@@ -19,6 +19,7 @@ class Velo(DeuxRoues):
         installer_porte_bagage(): Installe un porte-bagage sur le vélo.
 
     """
+
     # ------------------------------------------------------------
     # Constructeur
     # ------------------------------------------------------------
@@ -27,7 +28,7 @@ class Velo(DeuxRoues):
         # -------------------
         # Attributs
         # -------------------
-        super().__init__(couleur, motorise)    # Appel du constructeur de la classe mère
+        super().__init__(couleur, motorise)  # Appel du constructeur de la classe mère
         self.porte_bagage = porte_bagage
 
     # ------------------------------------------------------------

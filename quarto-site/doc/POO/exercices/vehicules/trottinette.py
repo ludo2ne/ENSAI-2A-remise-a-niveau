@@ -1,4 +1,4 @@
-from vehicules.deux_roues import DeuxRoues
+from deux_roues import DeuxRoues
 
 
 class Trottinette(DeuxRoues):
@@ -17,6 +17,7 @@ class Trottinette(DeuxRoues):
         ralentir(): Ralentit la trottinette
 
     """
+
     # ------------------------------------------------------------
     # Constructeur
     # ------------------------------------------------------------
@@ -25,7 +26,7 @@ class Trottinette(DeuxRoues):
         # -------------------
         # Attributs
         # -------------------
-        super().__init__(couleur, motorise)    # Appel du constructeur de la classe mère
+        super().__init__(couleur, motorise)  # Appel du constructeur de la classe mère
 
     # ------------------------------------------------------------
     # Méthode spéciale pour afficher

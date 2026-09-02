@@ -12,52 +12,56 @@ number-sections: true
 number-depth: 3
 ---
 
-## Mise en place
+## Mise en place {.unnumbered}
 
-### Lancer un service VSCode
+### Lancer un service VSCode {.unnumbered}
 
 - [ ] Connectez-vous au [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
-- [ ] Lancez un service `Vscode-python`, puis ouvrez-le
+- [ ] Lancez un service **Vscode-python**, puis ouvrez-le
 
-### Récupérer le code
+### Créer votre arborescence {.unnumbered}
 
-Deux possibilités pour récupérer le code, soit :
+- [ ] Créez 2 dossiers *geometrie* (exercices 1 et 2) et *domino* (exercice 3)
+  - :bulb: évitez d'utiliser des accents dans votre code, en informatique on n'aime pas trop
 
-- vous clonez directement le dépôt de l'enseignant
-  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-- vous créez un fork de ce dépôt, puis clonez ce fork
-  - <https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork>{target="_blank"}
-  - `git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-2A-remise-a-niveau.git`
 
-Si vous clonez directement le dépôt de l'enseignant, vous ne pourrez pas utiliser Git pour conserver votre travail. Il faudra par exemple télécharger les fichiers à la main.
+::: {.callout-important}
+À chaque fois que l'on vous demandera de créer un classe, vous commencerez par créez un fichier du même nom.
+:::
 
-Un fork est une copie d'un dépôt distant. Comme cette copie vous appartient, vous avez le droit d'en modifier le code.
+### Aide {.unnumbered}
 
-- [ ] Clonez le dépôt en choisissant l'une des deux options ci-dessus
+::: {.callout-tip}
+Vous trouverez des éléments de réponse sur la page de cours d'introduction à la POO.
+:::
 
-Ensuite, positionnez-vous dans le dossier `src/POO` :
 
-- [ ] File > Open Folder > `/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
-  - ou directement via le terminal : `code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
+Voici quelques exemples simples de code si vous avez besoin d'inspiration :
 
-Vous pouvez ensuite coder dans les fichiers du dossier *exercice*. Si besoin, vous pouvez créer de nouveaux fichiers.
+- [deux_roues.py](./exercices/vehicules/deux_roues.py){target="_blank"} : classe mère abstraite représentant un véhicule à deux roues
+- [trottinette.py](./exercices/vehicules/trottinette.py){target="_blank"} : classe représentant une trottinette (hérite de DeuxRoues)
+- [velo.py](./exercices/vehicules/velo.py){target="_blank"} : classe représentant un velo (hérite de DeuxRoues)
+- [__main__.py](./exercices/vehicules/__main__.py){target="_blank"} : un fichier bac à sable pour tester
+
 
 ## Exercice 1 - Points
 
 Définissez une classe `Point` pour représenter un point du plan de coordonnées x et y.
 
+- [ ] Commencez par créer un fichier *point.py* dans le dossier *geometrie*
+- [ ] Dans ce fichier, créez la classe `Point` et son constructeur `__init__(self, x, y)`
+
 Codez les méthodes suivantes :
 
-- [ ] `__init__(self, x, y)` : constructeur du point avec des coordonnées cartésiennes
 - [ ] `r(self)` et `t(self)` : renvoyant les coordonnées polaires du point
 - [ ] `__str__(self)` : pour afficher le Point sous forme de texte, ex : `(1.0, 2.4)`
-- [ ] `distance(self, autre_point)` : distance avec un autre point
+- [ ] `distance(self, autre_point) -> float` : distance avec un autre point
 - [ ] `__eq__(self, autre_point) -> bool` : dit si les 2 points sont identiques
 - [ ] `homothetie(self, k)` : appliquant au point une homothétie de centre (0, 0) et de rapport k
 - [ ] `translation(self, dx, dy)` : appliquant au point une translation de vecteur (dx, dy)
 - [ ] `rotation(self, a)` (bonus) : appliquant au point une rotation de centre (0, 0) et d'angle a
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip}
 Pour vérifier que vos méthodes sont correctes, vous pouvez ajouter à la fin de votre classe un bloc `main`. Lorsque vous exécuterez ce fichier, c'est ce code qui sera lancé.
 
 ```{.python filename="point.py"}
@@ -74,15 +78,20 @@ if __name__ == "__main__":
 ```
 :::
 
+
 ## Exercice 2 - Polygones
+
+Vous allez maintenant utiliser des objets de la classe `Point` pour créer des objets plus complexe.
+
+Vous allez également utiliser l'héritage, i.e. les comportements mutualisables seront dans les classes mères et les comportements spécifiques dans les classes filles.
 
 - [ ] Créez une classe `Polygone` composées d'objets de la classe `Point`
   - Nous supposerons par la suite que les segments ne se croisent pas
-- [ ] Ajoutez à cette classe 2 méthodes abstraites `aire()` et `périmètre()` 
+- [ ] Ajoutez à cette classe 2 méthodes abstraites `aire()` et `perimetre()`
   - ces méthodes seront définies dans les classes filles
 - [ ] Créez les classes `Segment`, `Triangle` et `Quadrilatere` qui héritent de la classe `Polygone`
   - vérifiez à chaque fois le nombre de points
-- [ ] Définissez les méthodes `aire()` et `périmètre()` dans ces 3 classes
+- [ ] Définissez les méthodes `aire()` et `perimetre()` dans ces 3 classes
 - [ ] Créez la classe `Rectangle` qui hérite de `Quadrilatere`
 - [ ] Vérifier pour Rectangle, que les 2 cotés opposés sont de même longueur et qu'il y a un angle droit
 
@@ -118,6 +127,7 @@ classDiagram
         +perimetre()
     }
 ```
+
 
 ## Exercice 3 - Domino
 

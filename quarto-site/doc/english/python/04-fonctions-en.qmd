@@ -20,7 +20,8 @@ lightbox: true
 ## Before starting {.unnumbered}
 
 - Download this [Jupyter notebook](04-fonctions-en.ipynb){target="_blank"}
-- Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+  - :bulb: Click the `Jupyter` button on the left, at the very bottom of the table of contents, if the file does not download automatically
+- Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"} and open a **Jupyter-python** service
   - or another platform (ENSAI [Jupyter](https://jupyther.ensai.fr/){target="_blank"}, Jupyter Lab, Google Colab, Kaggle...)
 - Import the .ipynb file
 

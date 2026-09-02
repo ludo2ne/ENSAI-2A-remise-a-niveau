@@ -1,6 +1,6 @@
 ---
-title: "Programmation Orientée Objet - Exercices"
-description: "Exercice de POO avec Python"
+title: "Object-Oriented Programming - Exercises"
+description: "OOP exercise with Python"
 author: "Ludovic Deneuville"
 format: 
   html:
@@ -12,56 +12,56 @@ number-sections: true
 number-depth: 3
 ---
 
+## Setup {.unnumbered}
 
-## Setup
+### Launching a VSCode service {.unnumbered}
 
-### Start a VSCode service
+* [ ] Connect to [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
+* [ ] Launch a **Vscode-python** service, then open it
 
-- [ ] Connect to the [SSP Cloud](https://www.sspcloud.fr/){target="_blank"}
-- [ ] Start a `Vscode-python` service, then open it
+### Creating your directory structure {.unnumbered}
 
-### Retrieve the code
+* [ ] Create 2 folders *geometrie* (exercises 1 and 2) and *domino* (exercise 3)
+  * :bulb: avoid using accents in your code, computers don't like them very much
 
-There are two possibilities to retrieve the code:
+::: {.callout-important}
+Whenever you are asked to create a class, you should start by creating a file with the same name.
+:::
 
-- clone the teacher's repository directly
-  - `git clone https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau.git`
-- create a fork of this repository, then clone this fork
-  - https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/fork{target="_blank"}
-  - `git clone https://$GIT_PERSONAL_ACCESS_TOKEN@github.com/<username>/ENSAI-2A-remise-a-niveau.git`
+### Help {.unnumbered}
 
-If you clone the teacher's repository directly, you will not be able to use Git to keep track of your work. You will have to download the files manually, for example.
+::: {.callout-tip}
+You will find some suggested solutions on the introductory OOP course page.
+:::
 
-A fork is a copy of a remote repository. Since this copy belongs to you, you have the right to modify the code.
+Here are some simple code examples if you need inspiration:
 
-- [ ] Clone the repository by choosing one of the two options above
-
-Then, go to the `src/POO` folder:
-
-- [ ] File > Open Folder > `/home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
-  - or directly from the terminal: `code-server /home/onyxia/work/ENSAI-2A-remise-a-niveau/src/Python-POO/`
-
-You can then code in the files in the *exercise* folder. If needed, you can create new files.
+* [deux_roues.py](../../POO/exercices/vehicules/deux_roues.py){target="_blank"} : abstract parent class representing a two-wheeled vehicle
+* [trottinette.py](../../POO/exercices/vehicules/trottinette.py){target="_blank"} : class representing a scooter (inherits from DeuxRoues)
+* [velo.py](../../POO/exercices/vehicules/velo.py){target="_blank"} : class representing a bicycle (inherits from DeuxRoues)
+* [**main**.py](../../POO/exercices/vehicules/__main__.py){target="_blank"} : a sandbox file for testing
 
 ## Exercise 1 - Points
 
 Define a `Point` class to represent a point in the plane with x and y coordinates.
 
+* [ ] Start by creating a *point.py* file in the *geometrie* folder
+* [ ] In this file, create the `Point` class and its constructor `__init__(self, x, y)`
+
 Implement the following methods:
 
-- [ ] `__init__(self, x, y)`: point constructor with Cartesian coordinates
-- [ ] `r(self)` and `t(self)`: returning the polar coordinates of the point
-- [ ] `__str__(self)`: to display the Point as text, e.g. `(1.0, 2.4)`
-- [ ] `distance(self, other_point)`: distance to another point
-- [ ] `__eq__(self, other_point) -> bool`: indicates whether the two points are identical
-- [ ] `homothety(self, k)`: applying a homothety centered at (0, 0) with ratio k
-- [ ] `translation(self, dx, dy)`: applying a translation with vector (dx, dy)
-- [ ] `rotation(self, a)` (bonus): applying a rotation centered at (0, 0) with angle a
+* [ ] `r(self)` and `t(self)`: returning the polar coordinates of the point
+* [ ] `__str__(self)`: to display the Point as text, e.g.: `(1.0, 2.4)`
+* [ ] `distance(self, autre_point) -> float`: distance to another point
+* [ ] `__eq__(self, autre_point) -> bool`: tells whether the 2 points are identical
+* [ ] `homothetie(self, k)`: applying a homothety centered at (0, 0) with ratio k to the point
+* [ ] `translation(self, dx, dy)`: applying a translation with vector (dx, dy) to the point
+* [ ] `rotation(self, a)` (bonus): applying a rotation centered at (0, 0) with angle a to the point
 
-::: {.callout-tip collapse="true"}
-To check that your methods are correct, you can add a `main` block at the end of your class. When you execute this file, this code will be run.
+::: {.callout-tip}
+To check that your methods are correct, you can add a `main` block at the end of your class. When you run this file, this is the code that will be executed.
 
-```{.python}
+```{.python filename="point.py"}
 class Point:
 
     # ...
@@ -70,23 +70,27 @@ if __name__ == "__main__":
     p1 = Point(1, 2)
     p2 = Point(1, 2)
     print(f"p1 : {p1}")
-    print(f"Distance between p1 and p2 : {p1.distance(p2)}")
-    print(f"p1 is equal to p2 : {p1 == p2}")
+    print(f"Distance entre p1 et p2 : {p1.distance(p2)}")
+    print(f"p1 est égal à p2 : {p1 == p2}")
 ```
-
 :::
 
 ## Exercise 2 - Polygons
 
-* [ ] Create a `Polygon` class composed of objects from the `Point` class
-  * We will assume from now on that segments do not cross
-* [ ] Add 2 abstract methods `area()` and `perimeter()` to this class
-  * these methods will be defined in child classes
-* [ ] Create the `Segment`, `Triangle` and `Quadrilateral` classes that inherit from the `Polygon` class
+You will now use objects from the `Point` class to create more complex objects.
+
+You will also use inheritance, i.e. reusable behaviors will be defined in the parent classes and specific behaviors in the child classes.
+
+* [ ] Create a `Polygone` class composed of `Point` objects
+  * We will assume that the segments do not intersect
+* [ ] Add 2 abstract methods `aire()` and `perimetre()` to this class
+  * these methods will be defined in the child classes
+* [ ] Create the `Segment`, `Triangle` and `Quadrilatere` classes that inherit from the `Polygone` class
   * check the number of points each time
-* [ ] Define the `area()` and `perimeter()` methods in these 3 classes
-* [ ] Create the `Rectangle` class that inherits from `Quadrilateral`
-* [ ] For Rectangle, check that the 2 opposite sides have the same length and that there is a right angle
+* [ ] Define the `aire()` and `perimetre()` methods in these 3 classes
+* [ ] Create the `Rectangle` class that inherits from `Quadrilatere`
+* [ ] Check for Rectangle that the 2 opposite sides have the same length and that there is a right angle
+
 
 Here is the class diagram generated with [Mermaid](https://mermaid.js.org/syntax/classDiagram.html){target="_blank"}
 
