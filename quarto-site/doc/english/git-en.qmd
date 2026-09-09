@@ -42,33 +42,6 @@ We will now explain how Git works through a practical exercise.
 
 ## Exercise
 
-### GitHub account and token
-
-First, create your GitHub account and then generate a token that will allow you to communicate between your repositories without additional authentication.
-
-- [ ] Create an account on https://github.com/{target="_blank"}
-- [ ] Create a new classic token: [Direct link](https://github.com/settings/tokens/new){target="_blank"}
-  - Note: for ENSAI datalabs
-  - Expiration: `30/06/<year n+1>`
-  - Check **repo** and **workflow**
-  - [Generate token]{.green-button}
-- [ ] Copy the token (`ghp_xxxxxxxxxx`)
-
-::: {.callout-caution}
-Be careful: its value will only be displayed once. If you lose it, you must delete it and create a new one.
-:::
-
-Now register this token on the datalab:
-
-- [ ] Connect to the datalab
-- [ ] Go to *My Account > Git*
-- [ ] Paste the token
-- [ ] Also enter your GitHub username and email address
-
-You can now use this token in your services to communicate with GitHub.
-
-Without this token, you would have to authenticate (login + password) every time your repositories communicate.
-
 ### Create a remote repository
 
 The easiest approach is to create the remote repository on GitHub first and then clone it.

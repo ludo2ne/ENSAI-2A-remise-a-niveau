@@ -42,33 +42,6 @@ Nous allons ensuite détailler le fonctionnement de Git dans le cadre d'un exerc
 
 ## Exercice
 
-### Compte GitHub et jeton
-
-Vous allez commencer par créer créer votre compte GitHub et ensuite générer un jeton qui vous permettra de communiquer entre vos dépôts sans authentification supplémentaire.
-
-- [ ] Créez un compte sur <https://github.com/>{target="_blank"}
-- [ ] Créez un nouveau token classic : [Lien direct](https://github.com/settings/tokens/new){target="_blank"}
-  - Note: for ENSAI datalabs
-  - Expiration: `30/06/<year n+1>`
-  - cochez repo and workflow
-  - [Generate token]{.green-button}
-- [ ] Copiez le token (ghp_xxxxxxxxxx)
-
-::: {.callout-caution}
-Attention sa valeur ne sera affichée qu'une seule fois. En cas de perte, il faut le supprimer et en recréer un nouveau.
-:::
-
-Vous allez maintenant déclarer ce jeton sur le datalab :
-
-- [ ] Connectez-vous au datalab
-- [ ] Allez dans *Mon Compte > Git*
-- [ ] Collez le token
-- [ ] Renseignez également ici votre nom d'utilisateur GitHub et mail 
-
-Vous allez maintenant pouvoir utiliser ce jeton dans vos services pour communiquer avec GitHub.
-
-Sans ce jeton, vous seriez obligé de vous authentifier (login + pwassord) à chaque échange entre vos dépôts.
-
 ### Créer un dépôt distant
 
 Le plus facile est de commencer par créer le dépôt distant sur GitHub et ensuite de le cloner.

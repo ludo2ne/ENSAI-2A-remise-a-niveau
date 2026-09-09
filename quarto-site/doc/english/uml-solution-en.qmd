@@ -1,0 +1,171 @@
+---
+title: "UML"
+description: "Introduction to UML"
+author: "Ludovic Deneuville"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-expand: 3
+from: markdown+emoji
+number-sections: true
+number-depth: 3
+---
+
+## Class diagram
+
+```{mermaid}
+classDiagram
+    class MailItem {
+        <<Abstract>>
+        +weight: float
+        +express_shipping: bool
+        +destination_address: str
+        +__str__(): str
+        +additional_str()*: str
+        +calculate_postage()*: float
+    }
+    class Package {
+        +volume: float
+        +additional_str(): str
+        +calculate_postage(): float
+    }
+    class Letter {
+        +format: str
+        +additional_str(): str
+        +calculate_postage(): float
+    }
+    MailItem <|-- Package
+    MailItem <|-- Letter
+```
+
+## Code
+
+```{.python filename="mail_item.py"}
+from abc import ABC, abstractmethod
+
+class MailItem(ABC):
+    """Definition of a mail item
+    """
+    def __init__(self, weight, express_shipping, destination_address):
+        """Constructor
+
+        Parameters
+        ----------
+        weight : float
+            Weight in grams
+        express_shipping : bool
+            True if the shipping mode is Express
+        destination_address : str
+            Destination address
+        """
+        self.weight = weight
+        self.express_shipping = express_shipping
+        self.destination_address = destination_address
+
+    @abstractmethod
+    def calculate_postage(self):
+        pass
+
+    def __str__(self):
+        """Display a mail item"""
+        return f"""
+            Mail item :
+            Destination address : {self.destination_address}
+            Weight : {self.weight} grams
+            Shipping mode : {self.express_shipping}
+            {self.additional_str()}
+            Postage price : €{self.calculate_postage()}"""
+
+    @abstractmethod
+    def additional_str(self):
+        pass
+```
+
+```{.python filename="letter.py"}
+from mail_item import MailItem
+
+class Letter(MailItem):
+    """Definition of a letter"""
+    def __init__(self, weight, express_shipping, destination_address, format):
+        """
+        Parameters
+        ----------
+        format : str
+            Format of the letter (A3 or A4)
+        """
+        super().__init__(
+            weight,
+            express_shipping,
+            destination_address
+        )
+        self.format = format
+
+    def additional_str(self) -> str:
+        return "Format : {}".format(self.format)
+
+    def calculate_postage(self) -> float:
+        """Calculate the postage
+
+        Returns
+        --------
+        float
+            Postage price
+        """
+        postage = 0
+        if self.format == "A4":
+            postage = 2.5 + self.weight * 0.001
+        else:
+            postage = 3.5 + self.weight * 0.001
+        if self.express_shipping:
+            postage *= 2
+        return postage
+```
+
+```{.python filename="package.py"}
+from mail_item import MailItem
+
+class Package(MailItem):
+    """Definition of a package
+    """
+    def __init__(self, weight, express_shipping, destination_address, volume):
+        """
+        Parameters
+        ----------
+        volume : float
+            Volume in liters
+        """
+        super().__init__(
+            weight,
+            express_shipping,
+            destination_address
+        )
+        self.volume = volume
+
+    def additional_str(self) -> str:
+        return f"Volume : {self.volume} liters"
+
+    def calculate_postage(self):
+        """Calculate the postage
+
+        Returns
+        --------
+        float
+            Postage price
+        """
+        postage = self.volume / 4 + self.weight * 0.001
+        if self.express_shipping:
+            postage *= 2
+        return postage
+```
+
+```{.python filename="sandbox.py"}
+from package import Package
+from letter import Letter
+
+l1 = Letter(80, False, "Bordeaux", "A4")
+print(l1)
+
+c1 = Package(3500, True, "Rennes", 2.25)
+print(c1)
+```
