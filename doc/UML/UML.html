@@ -83,8 +83,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-88ddd8fe8f2e149ce738a858b302aa08.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-faf7545d7cd7f7fe51aac140dbe160a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3f686e3780fb05a2389bee263982c3c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-04ba2179d13fc1125eaa5c7782862b67.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -682,11 +682,13 @@ Tip
         +nom: string
         +prenom: string
         +age: int
-        +demenager()
+        +demenager(Adresse)
+        +passer_permis(): Conducteur
     }
 
     class Conducteur {
         +no_permis: string
+        +conduire(Voiture)
     }
 
     class Voiture {
@@ -769,7 +771,7 @@ Tip
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    Mode : rapide </span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    Volume : <span class="fl">2.25</span> litres </span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Prix du timbre : <span class="fl">8.12</span> €</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La correction est disponible <a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction" class="external" target="_blank">ici</a></p>
+<p>La correction est disponible <a href="https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/blob/main/quarto-site/doc/UML/correction/doc/diagramme.md" target="_blank">ici</a></p>
 
 
 </section>
