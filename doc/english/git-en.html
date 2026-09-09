@@ -475,11 +475,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link active" data-scroll-target="#what-is-git"><span class="header-section-number">1</span> What is Git?</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2</span> Exercise</a>
   <ul class="collapse">
-  <li><a href="#github-account-and-token" id="toc-github-account-and-token" class="nav-link" data-scroll-target="#github-account-and-token"><span class="header-section-number">2.1</span> GitHub account and token</a></li>
-  <li><a href="#create-a-remote-repository" id="toc-create-a-remote-repository" class="nav-link" data-scroll-target="#create-a-remote-repository"><span class="header-section-number">2.2</span> Create a remote repository</a></li>
-  <li><a href="#clone-your-local-repository" id="toc-clone-your-local-repository" class="nav-link" data-scroll-target="#clone-your-local-repository"><span class="header-section-number">2.3</span> Clone your local repository</a></li>
-  <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</a></li>
-  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.5</span> Pull</a></li>
+  <li><a href="#create-a-remote-repository" id="toc-create-a-remote-repository" class="nav-link" data-scroll-target="#create-a-remote-repository"><span class="header-section-number">2.1</span> Create a remote repository</a></li>
+  <li><a href="#clone-your-local-repository" id="toc-clone-your-local-repository" class="nav-link" data-scroll-target="#clone-your-local-repository"><span class="header-section-number">2.2</span> Clone your local repository</a></li>
+  <li><a href="#add-commit-push" id="toc-add-commit-push" class="nav-link" data-scroll-target="#add-commit-push"><span class="header-section-number">2.3</span> Add, commit, push</a></li>
+  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">2.4</span> Pull</a></li>
   </ul></li>
   <li><a href="#other-important-points" id="toc-other-important-points" class="nav-link" data-scroll-target="#other-important-points"><span class="header-section-number">3</span> Other important points</a>
   <ul class="collapse">
@@ -565,45 +564,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="exercise" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2</span> Exercise</h2>
-<section id="github-account-and-token" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="github-account-and-token"><span class="header-section-number">2.1</span> GitHub account and token</h3>
-<p>First, create your GitHub account and then generate a token that will allow you to communicate between your repositories without additional authentication.</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Create an account on https://github.com/{target=“_blank”}</label></li>
-<li><label><input type="checkbox">Create a new classic token: <a href="https://github.com/settings/tokens/new" target="_blank">Direct link</a></label>
-<ul>
-<li>Note: for ENSAI datalabs</li>
-<li>Expiration: <code>30/06/&lt;year n+1&gt;</code></li>
-<li>Check <strong>repo</strong> and <strong>workflow</strong></li>
-<li><span class="green-button">Generate token</span></li>
-</ul></li>
-<li><label><input type="checkbox">Copy the token (<code>ghp_xxxxxxxxxx</code>)</label></li>
-</ul>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Be careful: its value will only be displayed once. If you lose it, you must delete it and create a new one.</p>
-</div>
-</div>
-<p>Now register this token on the datalab:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Connect to the datalab</label></li>
-<li><label><input type="checkbox">Go to <em>My Account &gt; Git</em></label></li>
-<li><label><input type="checkbox">Paste the token</label></li>
-<li><label><input type="checkbox">Also enter your GitHub username and email address</label></li>
-</ul>
-<p>You can now use this token in your services to communicate with GitHub.</p>
-<p>Without this token, you would have to authenticate (login + password) every time your repositories communicate.</p>
-</section>
-<section id="create-a-remote-repository" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="create-a-remote-repository"><span class="header-section-number">2.2</span> Create a remote repository</h3>
+<section id="create-a-remote-repository" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="create-a-remote-repository"><span class="header-section-number">2.1</span> Create a remote repository</h3>
 <p>The easiest approach is to create the remote repository on GitHub first and then clone it.</p>
 <ul class="task-list">
 <li><label><input type="checkbox">Create a new repository, <a href="https://github.com/new" target="_blank">Direct link</a></label>
@@ -635,8 +597,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="clone-your-local-repository" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="clone-your-local-repository"><span class="header-section-number">2.3</span> Clone your local repository</h3>
+<section id="clone-your-local-repository" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="clone-your-local-repository"><span class="header-section-number">2.2</span> Clone your local repository</h3>
 <p>Let’s start by retrieving the URL of the remote repository:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">Go to your repository’s GitHub page</label></li>
@@ -678,8 +640,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="add-commit-push" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.4</span> Add, commit, push</h3>
+<section id="add-commit-push" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="add-commit-push"><span class="header-section-number">2.3</span> Add, commit, push</h3>
 <p>Before modifying your local repository, make sure it is properly connected to the remote repository.</p>
 <p>In Visual Studio Code:</p>
 <ul class="task-list">
@@ -714,8 +676,8 @@ Tip
 </ul>
 <p>Refresh your GitHub repository and verify that the file has appeared.</p>
 </section>
-<section id="pull" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.5</span> Pull</h3>
+<section id="pull" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="pull"><span class="header-section-number">2.4</span> Pull</h3>
 <p>We have just sent code to the remote repository.</p>
 <p>Now imagine that:</p>
 <ul>
