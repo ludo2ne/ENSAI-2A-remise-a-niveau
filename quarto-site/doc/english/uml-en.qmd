@@ -191,4 +191,4 @@ Package :
     Stamp price : €8.12
 ```
 
-The correction is available [here](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction){target="_blank"}
+The correction is available [here](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/blob/main/quarto-site/doc/UML/correction/doc/diagramme.md){target="_blank"}

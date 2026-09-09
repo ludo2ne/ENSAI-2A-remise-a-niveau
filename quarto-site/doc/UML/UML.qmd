@@ -110,11 +110,13 @@ classDiagram
         +nom: string
         +prenom: string
         +age: int
-        +demenager()
+        +demenager(Adresse)
+        +passer_permis(): Conducteur
     }
 
     class Conducteur {
         +no_permis: string
+        +conduire(Voiture)
     }
 
     class Voiture {
@@ -192,4 +194,4 @@ Colis :
     Prix du timbre : 8.12 €
 ```
 
-La correction est disponible [ici](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/tree/main/docs/UML/correction){.external target="_blank"}
+La correction est disponible [ici](https://github.com/ludo2ne/ENSAI-2A-remise-a-niveau/blob/main/quarto-site/doc/UML/correction/doc/diagramme.md){target="_blank"}
